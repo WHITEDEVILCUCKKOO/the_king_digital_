@@ -1,0 +1,20 @@
+* text=auto
+
+*.php text
+*.css text
+*.js text
+*.html text
+*.json text
+*.sql text
+*.md text
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
