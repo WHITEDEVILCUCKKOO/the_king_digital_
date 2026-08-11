@@ -1,7 +1,178 @@
 <style>
+    :root {
+
+        /* ========================================
+       BRAND COLORS
+    ======================================== */
+
+        --color-primary: #F47B20;
+        --color-primary-light: #FF9A4A;
+        --color-primary-dark: #D85F0B;
+
+        --color-secondary: #4F7FF7;
+        --color-secondary-light: #7FA3FF;
+        --color-secondary-dark: #315FCC;
+
+
+        /* ========================================
+       BACKGROUNDS
+    ======================================== */
+
+        --color-bg: #FFFFFF;
+        --color-bg-soft: #F7F8FA;
+        --color-bg-muted: #EEF1F5;
+
+        --color-bg-dark: #111827;
+        --color-bg-dark-soft: #1A2233;
+
+
+        /* ========================================
+       TEXT
+    ======================================== */
+
+        --color-text: #171B26;
+        --color-text-secondary: #5F6673;
+        --color-text-muted: #8A919D;
+
+        --color-text-light: #FFFFFF;
+        --color-text-light-secondary: #C4C9D2;
+
+
+        /* ========================================
+       BORDERS
+    ======================================== */
+
+        --color-border: #E3E7ED;
+        --color-border-dark: #30394A;
+
+
+        /* ========================================
+       PRIMARY GRADIENTS
+    ======================================== */
+
+        --gradient-primary:
+            linear-gradient(135deg,
+                #F47B20 0%,
+                #FF9A4A 100%);
+
+        --gradient-primary-dark:
+            linear-gradient(135deg,
+                #D85F0B 0%,
+                #F47B20 100%);
+
+
+        /* ========================================
+       SECONDARY GRADIENTS
+    ======================================== */
+
+        --gradient-secondary:
+            linear-gradient(135deg,
+                #315FCC 0%,
+                #4F7FF7 50%,
+                #7FA3FF 100%);
+
+        --gradient-secondary-dark:
+            linear-gradient(135deg,
+                #244BA5 0%,
+                #315FCC 100%);
+
+
+        /* ========================================
+       BRAND GRADIENTS
+    ======================================== */
+
+        --gradient-brand:
+            linear-gradient(135deg,
+                #F47B20 0%,
+                #FF9A4A 45%,
+                #4F7FF7 100%);
+
+        --gradient-brand-reverse:
+            linear-gradient(135deg,
+                #4F7FF7 0%,
+                #7FA3FF 55%,
+                #F47B20 100%);
+
+
+        /* ========================================
+       DARK GRADIENTS
+    ======================================== */
+
+        --gradient-dark:
+            linear-gradient(135deg,
+                #111827 0%,
+                #1A2233 100%);
+
+
+        /* ========================================
+       GLOW
+    ======================================== */
+
+        --gradient-glow:
+            radial-gradient(circle,
+                rgba(244, 123, 32, 0.16) 0%,
+                rgba(244, 123, 32, 0) 70%);
+
+        --gradient-glow-secondary:
+            radial-gradient(circle,
+                rgba(79, 127, 247, 0.18) 0%,
+                rgba(79, 127, 247, 0) 70%);
+
+
+        /* ========================================
+       STATUS COLORS
+    ======================================== */
+
+        --color-success: #16A34A;
+        --color-warning: #D99100;
+        --color-danger: #DC2626;
+        --color-info: #4F7FF7;
+
+
+        /* ========================================
+       SHADOWS
+    ======================================== */
+
+        --shadow-sm:
+            0 2px 8px rgba(15, 23, 42, 0.06);
+
+        --shadow-md:
+            0 8px 24px rgba(15, 23, 42, 0.10);
+
+        --shadow-lg:
+            0 16px 40px rgba(15, 23, 42, 0.14);
+
+        --shadow-orange:
+            0 10px 30px rgba(244, 123, 32, 0.18);
+
+        --shadow-blue:
+            0 10px 30px rgba(79, 127, 247, 0.18);
+
+
+        /* ========================================
+       RADIUS
+    ======================================== */
+
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-full: 999px;
+
+
+        /* ========================================
+       TRANSITIONS
+    ======================================== */
+
+        --transition-fast: 150ms ease;
+        --transition-normal: 250ms ease;
+        --transition-slow: 400ms ease;
+    }
+
+
     #home-hero-section {
         position: relative;
-        background: radial-gradient(ellipse 90% 70% at 15% 15%, #1f5f47 0%, #123f2f 45%, #0a2a20 75%, #071f18 100%);
+        background: radial-gradient(ellipse 90% 70% at 15% 15%, var(--color-secondary-light) 0%, var(--color-secondary) 45%, var(--color-secondary-dark) 75%, var(--color-secondary-light) 100%);
         padding: 100px 60px;
         overflow: hidden;
     }
@@ -20,8 +191,8 @@
         max-width: 1280px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1.05fr 0.85fr;
-        gap: 40px;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 30px;
         align-items: center;
     }
 
@@ -37,11 +208,11 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        background: rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.35);
         border: 1px solid rgba(255, 255, 255, 0.14);
         padding: 7px 14px 7px 10px;
         border-radius: 999px;
-        margin-bottom: 28px;
+        margin-bottom: 18px;
     }
 
     .home-hero-section_badge-google {
@@ -50,7 +221,7 @@
         gap: 6px;
         font-size: 10px;
         font-weight: 700;
-        color: #ffffff;
+        color: var(--color-text-light);
     }
 
     .home-hero-section_badge-google-icon {
@@ -71,7 +242,7 @@
         padding-left: 8px;
         border-left: 1px solid rgba(255, 255, 255, 0.2);
         font-size: 10px;
-        color: #ffcf4d;
+        color: yellow;
     }
 
     .home-hero-section_badge-stars::before {
@@ -84,9 +255,8 @@
 
     .home-hero-section_badge-rating {
         font-size: 10px;
-        color: rgba(255, 255, 255, 0.75);
-        padding-left: 8px;
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--color-bg-muted);
+        /* padding-left: 8px; */
     }
 
     .home-hero-section_badge-rating span {
@@ -96,15 +266,18 @@
 
     .home-hero-section_title {
         margin: 0 0 18px;
-        font-size: 50px;
+        font-size: 35px;
         line-height: 1.18;
-        font-weight: 800;
-        color: #ffffff;
+        color: var(--color-text-light);
         letter-spacing: -0.5px;
     }
 
     .home-hero-section_title span {
-        background: transparent;
+        background: var(--gradient-primary-dark);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
     }
 
     .home-hero-section_autotyping {
@@ -113,12 +286,13 @@
         gap: 6px;
         font-size: 15px;
         font-weight: 700;
-        color: #eafff5;
+        color: var(--color-bg-soft);
         margin-bottom: 18px;
         min-height: 22px;
     }
 
     .home-hero-section_autotyping .typing {
+        color: var(--color-text-light-secondary);
         border-right: 2px solid #7fe3bd;
         padding-right: 3px;
         animation: blink-caret 0.8s step-end infinite;
@@ -196,8 +370,9 @@
     .home-hero-section_ai-card {
         position: relative;
         width: 100%;
-        max-width: 380px;
-        background: #061e17;
+        max-width: 450px;
+        background: var(--gradient-secondary-dark);
+        filter: blur(0.2);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 22px;
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
@@ -210,10 +385,9 @@
         width: 100%;
         margin: 0;
         text-align: center;
-        background: linear-gradient(180deg, #2a9873, #1c7357);
-        color: #ffffff;
+        background: var(--gradient-secondary);
+        color: var(--color-text-light);
         font-size: 14px;
-        font-weight: 700;
         padding: 14px 0;
         border-radius: 22px 22px 0 0;
     }
@@ -232,40 +406,105 @@
 
     .ai-assistant-card>span {
         position: absolute;
+        top: 50%;
+        left: 50%;
+
         width: 90px;
         height: 90px;
+
         border-radius: 50%;
         border: 1px solid rgba(127, 227, 189, 0.35);
-        animation: ripple 3.2s ease-out infinite;
+
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0;
+
+        pointer-events: none;
+
+        animation: ripple 6s ease-out infinite;
     }
+
+
+    /* Stagger the waves */
 
     .ai-assistant-card>span:nth-of-type(1) {
         animation-delay: 0s;
     }
 
     .ai-assistant-card>span:nth-of-type(2) {
-        animation-delay: 0.8s;
+        animation-delay: 1.5s;
     }
 
     .ai-assistant-card>span:nth-of-type(3) {
-        animation-delay: 1.6s;
+        animation-delay: 3s;
     }
 
     .ai-assistant-card>span:nth-of-type(4) {
-        animation-delay: 2.4s;
+        animation-delay: 4.5s;
     }
 
+
     @keyframes ripple {
+
+        /* Start small and almost invisible */
+
         0% {
-            width: 90px;
-            height: 90px;
-            opacity: 0.55;
+            transform: translate(-50%, -50%) scale(0.35);
+            opacity: 0;
+            border-width: 1px;
         }
 
+
+        /* Slowly appear */
+
+        12% {
+            transform: translate(-50%, -50%) scale(0.55);
+            opacity: 0.18;
+            border-width: 1px;
+        }
+
+
+        /* Middle = strongest */
+
+        25% {
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 0.42;
+            border-width: 2px;
+        }
+
+
+        /* Continue expanding */
+
+        45% {
+            transform: translate(-50%, -50%) scale(1.7);
+            opacity: 0.30;
+            border-width: 2px;
+        }
+
+
+        /* Large and fading */
+
+        67% {
+            transform: translate(-50%, -50%) scale(2.5);
+            opacity: 0.14;
+            border-width: 1px;
+        }
+
+
+        /* Almost gone */
+
+        85% {
+            transform: translate(-50%, -50%) scale(3.3);
+            opacity: 0.04;
+            border-width: 1px;
+        }
+
+
+        /* Completely gone */
+
         100% {
-            width: 380px;
-            height: 380px;
+            transform: translate(-50%, -50%) scale(4);
             opacity: 0;
+            border-width: 1px;
         }
     }
 
@@ -273,17 +512,26 @@
     .ai-assistant-circle {
         position: relative;
         z-index: 2;
+
         width: 96px;
         height: 96px;
-        background: radial-gradient(circle at 35% 30%, #d6fff0 0%, #4fd39a 42%, #1c8f63 75%, #0c5c3d 100%);
+
+        border-radius: 50%;
+
+        background: radial-gradient(circle at 35% 30%,
+                #BFD3FF 0%,
+                #5F88F5 42%,
+                #284FAE 75%,
+                #183579 100%);
+
         filter: drop-shadow(0 0 34px rgba(79, 211, 154, 0.65));
+
         animation:
-            blob-morph 7s ease-in-out infinite,
             blob-glow 2.6s ease-in-out infinite,
             blob-drift 9s ease-in-out infinite;
     }
 
-    @keyframes blob-morph {
+    /* @keyframes blob-morph {
 
         0%,
         100% {
@@ -301,7 +549,7 @@
         75% {
             clip-path: polygon(48% 6%, 74% 2%, 96% 22%, 92% 50%, 92% 74%, 64% 96%, 36% 92%, 12% 76%, 2% 50%, 12% 24%, 34% 6%);
         }
-    }
+    } */
 
     @keyframes blob-glow {
 
@@ -364,7 +612,7 @@
     .home-hero-section_ai-card>p {
         font-size: 12px;
         font-style: italic;
-        color: rgba(255, 255, 255, 0.55);
+        color: var(--color-text-muted);
         margin: 0 0 18px;
     }
 
@@ -418,12 +666,12 @@
      so it spans the full card width and is never clipped. */
     .ai-assistant-options_list {
         position: absolute;
-        bottom: calc(100% + 12px);
+        bottom: 70px;
         left: 20px;
         right: 20px;
         max-height: 260px;
         overflow-y: auto;
-        background: #0a2b21;
+        background: var(--gradient-secondary);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 16px;
         padding: 6px;
@@ -496,7 +744,7 @@
 
     .ai-assistant-options_item-tag {
         flex-shrink: 0;
-        font-size: 8.5px;
+        font-size: 9px;
         font-weight: 800;
         padding: 2px 6px;
         border-radius: 4px;
@@ -504,13 +752,13 @@
     }
 
     .ai-assistant-options_item-tag.ind {
-        background: rgba(230, 168, 46, 0.18);
-        color: #e6a82e;
+        background: var(--color-primary);
+        color: var(--color-bg-soft);
     }
 
     .ai-assistant-options_item-tag.eng {
-        background: rgba(58, 141, 230, 0.18);
-        color: #4f9dff;
+        background: var(--color-primary-light);
+        color: var(--color-bg-soft);
     }
 
     /* ---- Talk With AI button ---- */
@@ -519,7 +767,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        background: linear-gradient(180deg, #38c98f, #1f9a68);
+        background: var(--gradient-brand-reverse);
         color: #ffffff;
         border: none;
         font-size: 13px;
@@ -555,8 +803,20 @@
             grid-template-columns: 1fr;
         }
 
+        .home-hero-section_info {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
         .home-hero-section_title {
+            /* text-align: center; */
             font-size: 34px;
+        }
+
+        .home-hero-section_title span {
+            display: block;
+            /* text-align: center; */
         }
 
         #home-hero-section {
@@ -680,7 +940,7 @@
     document.addEventListener('DOMContentLoaded', function() {
 
         /* ---- Autotyping effect ---- */
-        var phrases = ["Business WhatsApp Api", "IVR Solutions", "Bulk Sms"];
+        var phrases = ["Business WhatsApp API", "IVR Solutions", "Bulk SMS"];
         var typingEl = document.querySelector('.home-hero-section_autotyping .typing');
         var phraseIndex = 0;
         var charIndex = 0;
