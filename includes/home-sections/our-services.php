@@ -1,4 +1,49 @@
 <style>
+
+/* ===========================
+   SERVICES HEADING SCROLL ANIMATION
+=========================== */
+
+.tag,
+.sh,
+.sub{
+    opacity:0;
+    transition:all .9s cubic-bezier(.22,1,.36,1);
+    will-change:transform,opacity;
+}
+
+/* Left */
+.tag{
+    transform:translateX(-120px);
+}
+
+/* Right */
+.sh,
+.sub{
+    transform:translateX(120px);
+}
+
+.services.show-animation .tag{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.services.show-animation .sh{
+    opacity:1;
+    transform:translateX(0);
+    transition-delay:.2s;
+}
+
+.services.show-animation .sub{
+    opacity:1;
+    transform:translateX(0);
+    transition-delay:.4s;
+}
+
+
+
+
+
   /* ════ SERVICES ════ */
   .services {
     background: var(--bg)
@@ -285,6 +330,30 @@
 
 
 <script>
+
+/* ===========================
+   SERVICES HEADING SCROLL EFFECT
+=========================== */
+
+const serviceSection = document.querySelector(".services");
+
+const serviceObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("show-animation");
+        }
+
+    });
+
+},{
+    threshold:0.35
+});
+
+serviceObserver.observe(serviceSection);
+
+
   (function() {
     "use strict";
 

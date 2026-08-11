@@ -6,50 +6,57 @@
   }
 
   .qk-features-grid {
-    max-width: 1240px;
+    max-width: 1157px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    /* height: max-content; */
+    padding: 40px;
   }
 
   .qk-feature-card {
     position: relative;
-    background: #ffffff;
+    background: #fff;
     border: 1px solid #ececec;
     border-radius: 18px;
     padding: 28px 26px 24px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
     opacity: 0;
-    transform: translateY(28px);
-    animation: qkFadeInUp 0.65s ease forwards;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    transform: translateY(40px);
+
+    transition:
+      opacity .6s ease,
+      transform .25s ease,
+      box-shadow .25s ease,
+      border-color .25s ease;
   }
 
   .qk-feature-card:nth-child(1) {
-    animation-delay: 0.05s;
+    transition-delay: .1s;
   }
 
   .qk-feature-card:nth-child(2) {
-    animation-delay: 0.15s;
+    transition-delay: .2s;
   }
 
   .qk-feature-card:nth-child(3) {
-    animation-delay: 0.25s;
+    transition-delay: .3s;
   }
 
   .qk-feature-card:nth-child(4) {
-    animation-delay: 0.35s;
+    transition-delay: .4s;
   }
 
   .qk-feature-card:nth-child(5) {
-    animation-delay: 0.45s;
+    transition-delay: .5s;
   }
 
   .qk-feature-card:nth-child(6) {
-    animation-delay: 0.55s;
+    transition-delay: .6s;
   }
 
   @keyframes qkFadeInUp {
@@ -64,9 +71,16 @@
     }
   }
 
+
+  .qk-feature-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s !important;
+  }
+
   .qk-feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .09);
     border-color: #e2e2e2;
   }
 
@@ -408,6 +422,17 @@
       opacity: 0;
     }
   }
+
+  .ai_headeing{
+    opacity:0;
+    transform:translateY(60px);
+    transition:.8s ease;
+}
+
+.ai_headeing.in-view{
+    opacity:1;
+    transform:translateY(0);
+}
 </style>
 
 <section class="qk-features-wrap">
@@ -551,7 +576,7 @@
 
   </div>
 </section>
-
+<!-- 
 <script>
   (function qkFeaturesInit() {
     var qkCards = document.querySelectorAll('.qk-feature-card');
@@ -571,4 +596,76 @@
       qkObserver.observe(qkCard);
     });
   })();
+
+
+
+
+  const cards = document.querySelectorAll(".qk-feature-card");
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("show");
+
+      } else {
+
+        entry.target.classList.remove("show");
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.25
+  });
+
+  cards.forEach(card => observer.observe(card));
+</script> -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const aboutContent2 = document.querySelector('.ai_headeing');
+
+    console.log(aboutContent2)
+
+    if (!aboutContent2) return;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
+      });
+    }, {
+      threshold: 0.2, // fires once ~20% of the block is visible
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    if (aboutContent2) revealObserver.observe(aboutContent2);
+
+  });
+
+
+  const cards = document.querySelectorAll(".qk-feature-card");
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+
+    });
+
+  }, {
+    threshold: 0.2
+  });
+
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
 </script>
