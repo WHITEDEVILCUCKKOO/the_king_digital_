@@ -281,6 +281,7 @@
         font-weight: bolder;
         color: var(--color-text-light);
         letter-spacing: -0.5px;
+        font-family: Manrope;
     }
 
     .home-hero-section_title span {
