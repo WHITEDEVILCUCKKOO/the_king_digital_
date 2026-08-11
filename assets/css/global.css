@@ -1,6 +1,32 @@
 /* ========================================
    GLOBAL CSS RESET
 ======================================== */
+/* Poppins Regular */
+@font-face {
+    font-family: "Poppins-regular";
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Poppins SemiBold */
+@font-face {
+    font-family: "Poppins-semibold";
+    src: url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Poppins Bold */
+@font-face {
+    font-family: "Poppins-bold";
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 *,
 *::before,
@@ -26,6 +52,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-family: Poppins-regular;
+    
 }
 
 /* Typography */
@@ -38,6 +66,7 @@ h5,
 h6,
 p {
     margin: 0;
+    font-family: Poppins-bold;
 }
 
 /* Lists */
