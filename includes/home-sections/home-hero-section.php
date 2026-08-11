@@ -48,14 +48,14 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        font-size: 13px;
+        font-size: 10px;
         font-weight: 700;
         color: #ffffff;
     }
 
     .home-hero-section_badge-google-icon {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
         display: inline-flex;
     }
 
@@ -70,7 +70,7 @@
         gap: 2px;
         padding-left: 8px;
         border-left: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 11px;
+        font-size: 10px;
         color: #ffcf4d;
     }
 
@@ -83,7 +83,7 @@
     }
 
     .home-hero-section_badge-rating {
-        font-size: 12px;
+        font-size: 10px;
         color: rgba(255, 255, 255, 0.75);
         padding-left: 8px;
         border-left: 1px solid rgba(255, 255, 255, 0.2);
@@ -96,7 +96,7 @@
 
     .home-hero-section_title {
         margin: 0 0 18px;
-        font-size: 46px;
+        font-size: 50px;
         line-height: 1.18;
         font-weight: 800;
         color: #ffffff;
@@ -104,8 +104,7 @@
     }
 
     .home-hero-section_title span {
-        display: block;
-        color: #7fe3bd;
+        background: transparent;
     }
 
     .home-hero-section_autotyping {

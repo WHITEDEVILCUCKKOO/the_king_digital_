@@ -1,9 +1,3 @@
-<?php
-
-    require_once __DIR__ . '/../config/config.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,9 +14,9 @@
         <?= $pageTitle ?? 'Website Name' ?>
     </title>
 
-    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/assets/logo/king-digital-logo-2.png">
+    <link rel="icon" type="image/png" href="assets/logo/king-digital-logo-2.png">
 
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/global.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
