@@ -376,9 +376,9 @@
     // once revealed.
     document.addEventListener('DOMContentLoaded', function() {
         const aboutContent1 = document.querySelector('.home-about_content');
-        const aboutContent2 = document.querySelector('.home-about_content2');
+       
 
-        if (!aboutContent1 && !aboutContent2) return;
+        if (!aboutContent1) return;
 
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -390,6 +390,6 @@
         });
 
         if (aboutContent1) revealObserver.observe(aboutContent1);
-        if (aboutContent2) revealObserver.observe(aboutContent2);
+     
     });
 </script>
