@@ -3,7 +3,7 @@
 
         /* ========================================
        BRAND COLORS
-    ======================================== */
+         ======================================== */
 
         --color-primary: #F47B20;
         --color-primary-light: #FF9A4A;
@@ -16,19 +16,19 @@
 
         /* ========================================
        BACKGROUNDS
-    ======================================== */
+        ======================================== */
 
         --color-bg: #FFFFFF;
         --color-bg-soft: #F7F8FA;
         --color-bg-muted: #EEF1F5;
 
-        --color-bg-dark: #111827;
+        --color-bg-dark: #1C3D7B;
         --color-bg-dark-soft: #1A2233;
 
 
         /* ========================================
        TEXT
-    ======================================== */
+        ======================================== */
 
         --color-text: #171B26;
         --color-text-secondary: #5F6673;
@@ -40,7 +40,7 @@
 
         /* ========================================
        BORDERS
-    ======================================== */
+        ======================================== */
 
         --color-border: #E3E7ED;
         --color-border-dark: #30394A;
@@ -172,8 +172,8 @@
 
     #home-hero-section {
         position: relative;
-        background: radial-gradient(ellipse 90% 70% at 15% 15%, var(--color-secondary-light) 0%, var(--color-secondary) 45%, var(--color-secondary-dark) 75%, var(--color-secondary-light) 100%);
-        padding: 100px 60px;
+        background: radial-gradient(ellipse 90% 70% at 15% 15%, #081742 0%, #254295 45%, #08384e 75%, #082146 100%);
+        padding: 60px;
         overflow: hidden;
     }
 
@@ -183,6 +183,16 @@
         inset: 0;
         background: radial-gradient(circle at 78% 45%, rgba(56, 191, 140, 0.18) 0%, transparent 45%);
         pointer-events: none;
+    }
+
+    .home-hero-water {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+
+        pointer-events: none;
+        z-index: 1;
     }
 
     .home-hero-section_conetent {
@@ -202,6 +212,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
     }
 
     .home-hero-section_badge {
@@ -266,7 +277,7 @@
 
     .home-hero-section_title {
         margin: 0 0 18px;
-        font-size: 35px;
+        font-size: 42px;
         line-height: 1.18;
         color: var(--color-text-light);
         letter-spacing: -0.5px;
@@ -284,7 +295,7 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        font-size: 15px;
+        font-size: 20px;
         font-weight: 700;
         color: var(--color-bg-soft);
         margin-bottom: 18px;
@@ -339,12 +350,15 @@
 
     a.home-hero-section_cta-button:first-of-type {
         background: #ffffff;
-        color: #0e3327;
+        color: var(--color-primary);
     }
 
     a.home-hero-section_cta-button:first-of-type:hover {
         transform: translateY(-2px);
         opacity: 0.92;
+        background: var(--color-info);
+        color: var(--color-text-light);
+
     }
 
     a.home-hero-section_cta-button:last-of-type {
@@ -401,165 +415,134 @@
         justify-content: center;
         background: radial-gradient(circle at center, rgba(58, 199, 150, 0.16) 0%, transparent 65%);
         overflow: hidden;
-        /* clip only the ripple rings, not the whole card */
     }
 
+    /* ---- pulse waves ---- */
     .ai-assistant-card>span {
         position: absolute;
         top: 50%;
         left: 50%;
-
         width: 90px;
         height: 90px;
-
         border-radius: 50%;
-        border: 1px solid rgba(127, 227, 189, 0.35);
-
-        transform: translate(-50%, -50%) scale(0.2);
+        border: 1px solid;
+        transform: translate(-50%, -50%) scale(0.15);
         opacity: 0;
-
         pointer-events: none;
-
-        animation: ripple 6s ease-out infinite;
+        animation: ripple 3s linear infinite;
     }
 
-
-    /* Stagger the waves */
-
     .ai-assistant-card>span:nth-of-type(1) {
+        border-color: rgba(255, 255, 255, 0.5);
         animation-delay: 0s;
     }
 
     .ai-assistant-card>span:nth-of-type(2) {
-        animation-delay: 1.5s;
+        border-color: rgba(250, 204, 21, 0.5);
+        animation-delay: 0.8s;
     }
 
     .ai-assistant-card>span:nth-of-type(3) {
-        animation-delay: 3s;
+        border-color: rgba(239, 68, 68, 0.5);
+        animation-delay: 1.5s;
     }
 
     .ai-assistant-card>span:nth-of-type(4) {
-        animation-delay: 4.5s;
+        border-color: rgba(59, 130, 246, 0.5);
+        animation-delay: 2s;
     }
 
-
     @keyframes ripple {
-
-        /* Start small and almost invisible */
-
         0% {
-            transform: translate(-50%, -50%) scale(0.35);
+            transform: translate(-50%, -50%) scale(0.15);
             opacity: 0;
             border-width: 1px;
         }
 
-
-        /* Slowly appear */
-
-        12% {
-            transform: translate(-50%, -50%) scale(0.55);
+        10% {
+            transform: translate(-50%, -50%) scale(0.35);
             opacity: 0.18;
             border-width: 1px;
         }
 
-
-        /* Middle = strongest */
-
-        25% {
-            transform: translate(-50%, -50%) scale(1.2);
-            opacity: 0.42;
-            border-width: 2px;
+        20% {
+            transform: translate(-50%, -50%) scale(0.7);
+            opacity: 0.32;
+            border-width: 1.5px;
         }
 
+        30% {
+            transform: translate(-50%, -50%) scale(1.15);
+            opacity: 0.48;
+            border-width: 1.7px;
+        }
 
-        /* Continue expanding */
-
-        45% {
+        40% {
             transform: translate(-50%, -50%) scale(1.7);
-            opacity: 0.30;
+            opacity: 0.58;
             border-width: 2px;
         }
 
+        50% {
+            transform: translate(-50%, -50%) scale(2.3);
+            opacity: 0.5;
+            border-width: 1.5px;
+        }
 
-        /* Large and fading */
+        60% {
+            transform: translate(-50%, -50%) scale(3);
+            opacity: 0.38;
+            border-width: 1.4px;
+        }
 
-        67% {
-            transform: translate(-50%, -50%) scale(2.5);
+        70% {
+            transform: translate(-50%, -50%) scale(3.8);
+            opacity: 0.25;
+            border-width: 1.2px;
+        }
+
+        80% {
+            transform: translate(-50%, -50%) scale(4.6);
             opacity: 0.14;
             border-width: 1px;
         }
 
-
-        /* Almost gone */
-
-        85% {
-            transform: translate(-50%, -50%) scale(3.3);
-            opacity: 0.04;
+        90% {
+            transform: translate(-50%, -50%) scale(5.3);
+            opacity: 0.06;
             border-width: 1px;
         }
 
-
-        /* Completely gone */
-
         100% {
-            transform: translate(-50%, -50%) scale(4);
+            transform: translate(-50%, -50%) scale(6);
             opacity: 0;
             border-width: 1px;
         }
     }
 
-    /* ---- amoeba-like blob orb (clip-path polygon morph, no border-radius circle) ---- */
+    /* ---- central glass AI orb ---- */
     .ai-assistant-circle {
         position: relative;
         z-index: 2;
-
         width: 96px;
         height: 96px;
-
-        border-radius: 50%;
-
-        background: radial-gradient(circle at 35% 30%,
-                #BFD3FF 0%,
-                #5F88F5 42%,
-                #284FAE 75%,
-                #183579 100%);
-
+        background: radial-gradient(circle at 35% 30%, #BFD3FF 0%, #5F88F5 42%, #284FAE 75%, #183579 100%);
         filter: drop-shadow(0 0 34px rgba(79, 211, 154, 0.65));
-
         animation:
             blob-glow 2.6s ease-in-out infinite,
-            blob-drift 9s ease-in-out infinite;
+            blob-drift 7s ease-in-out infinite,
+            blob-morph 6s linear infinite;
     }
-
-    /* @keyframes blob-morph {
-
-        0%,
-        100% {
-            clip-path: polygon(58% 2%, 82% 10%, 96% 32%, 94% 58%, 78% 82%, 54% 96%, 28% 90%, 8% 70%, 4% 42%, 20% 16%, 40% 4%);
-        }
-
-        25% {
-            clip-path: polygon(52% 4%, 78% 6%, 98% 26%, 90% 52%, 96% 76%, 68% 94%, 40% 98%, 14% 82%, 2% 58%, 8% 32%, 30% 8%);
-        }
-
-        50% {
-            clip-path: polygon(62% 0%, 86% 16%, 94% 44%, 98% 68%, 74% 90%, 48% 100%, 22% 92%, 4% 68%, 6% 40%, 24% 14%, 44% 2%);
-        }
-
-        75% {
-            clip-path: polygon(48% 6%, 74% 2%, 96% 22%, 92% 50%, 92% 74%, 64% 96%, 36% 92%, 12% 76%, 2% 50%, 12% 24%, 34% 6%);
-        }
-    } */
 
     @keyframes blob-glow {
 
         0%,
         100% {
-            filter: drop-shadow(0 0 26px rgba(79, 211, 154, 0.55));
+            filter: drop-shadow(0 0 26px rgba(51, 112, 193, 0.55));
         }
 
         50% {
-            filter: drop-shadow(0 0 46px rgba(79, 211, 154, 0.9));
+            filter: drop-shadow(0 0 46px rgba(16, 68, 210, 0.9));
         }
     }
 
@@ -570,15 +553,42 @@
             transform: translate(0, 0) scale(1);
         }
 
-        33% {
-            transform: translate(2px, -3px) scale(1.03);
-        }
-
-        66% {
-            transform: translate(-3px, 2px) scale(0.97);
+        50% {
+            transform: translate(0, -2.5px) scale(1.02);
         }
     }
 
+    @keyframes blob-morph {
+        0% {
+            border-radius: 58% 42% 45% 55% / 55% 48% 58% 42%;
+        }
+
+        16.6% {
+            border-radius: 72% 28% 42% 58% / 58% 46% 68% 32%;
+        }
+
+        33.3% {
+            border-radius: 38% 62% 68% 32% / 70% 30% 40% 60%;
+        }
+
+        50% {
+            border-radius: 60% 40% 30% 70% / 35% 68% 60% 32%;
+        }
+
+        66.6% {
+            border-radius: 30% 70% 62% 38% / 62% 38% 30% 70%;
+        }
+
+        83.3% {
+            border-radius: 65% 35% 55% 45% / 40% 62% 45% 55%;
+        }
+
+        100% {
+            border-radius: 58% 42% 45% 55% / 55% 48% 58% 42%;
+        }
+    }
+
+    /* ---- internal glass reflections ---- */
     .ai-assistant-circle span {
         position: absolute;
         border-radius: 50%;
@@ -593,6 +603,17 @@
         background: rgba(255, 255, 255, 0.75);
         filter: blur(3px);
         transform: rotate(-20deg);
+        animation: light-shift 5s ease-in-out infinite;
+    }
+
+    .ai-assistant-circle span:nth-of-type(3) {
+        top: 30%;
+        left: 32%;
+        width: 20px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.30);
+        filter: blur(4px);
+        transform: rotate(-15deg);
     }
 
     .ai-assistant-circle span:nth-of-type(2) {
@@ -604,9 +625,22 @@
         filter: blur(6px);
     }
 
-    .ai-assistant-circle span:nth-of-type(3),
     .ai-assistant-circle span:nth-of-type(4) {
         display: none;
+    }
+
+    @keyframes light-shift {
+
+        0%,
+        100% {
+            opacity: 0.75;
+            transform: rotate(-20deg) translate(0, 0);
+        }
+
+        50% {
+            opacity: 0.9;
+            transform: rotate(-18deg) translate(1px, -1px);
+        }
     }
 
     .home-hero-section_ai-card>p {
@@ -671,7 +705,7 @@
         right: 20px;
         max-height: 260px;
         overflow-y: auto;
-        background: var(--gradient-secondary);
+        background: radial-gradient(ellipse 90% 70% at 15% 15%, #081742 0%, #254295 45%, #08384e 75%, #082146 100%);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 16px;
         padding: 6px;
@@ -767,7 +801,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        background: var(--gradient-brand-reverse);
+        background: var(--gradient-primary);
         color: #ffffff;
         border: none;
         font-size: 13px;
@@ -826,6 +860,7 @@
 </style>
 
 <section class="home-hero-section" id="home-hero-section">
+    <canvas class="home-hero-water" id="homeHeroWater"></canvas>
     <div class="home-hero-section_conetent">
         <div class="home-hero-section_info">
             <div class="home-hero-section_badge">
@@ -991,5 +1026,1028 @@
                 dropdown.classList.remove('open');
             });
         });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        /* ========================================
+           ELEMENTS
+        ======================================== */
+
+        const hero = document.querySelector(".home-hero-section");
+        const canvas = document.getElementById("homeHeroWater");
+
+        if (!hero || !canvas) {
+            return;
+        }
+
+        const ctx = canvas.getContext("2d");
+
+        if (!ctx) {
+            return;
+        }
+
+
+        /* ========================================
+           CANVAS VARIABLES
+        ======================================== */
+
+        let width = 0;
+        let height = 0;
+
+        let dpr = Math.min(
+            window.devicePixelRatio || 1,
+            2
+        );
+
+
+        /* ========================================
+           MOUSE VARIABLES
+        ======================================== */
+
+        let mouseX = -1000;
+        let mouseY = -1000;
+
+        let previousMouseX = -1000;
+        let previousMouseY = -1000;
+
+        let lastRippleX = -1000;
+        let lastRippleY = -1000;
+
+        let mouseInside = false;
+
+
+        /* ========================================
+           RIPPLE STORAGE
+        ======================================== */
+
+        const ripples = [];
+
+
+        /* ========================================
+           SETTINGS
+        ======================================== */
+
+        const settings = {
+
+            /*
+             * Minimum and maximum final ripple size.
+             *
+             * These are deliberately much larger
+             * than the previous version.
+             */
+
+            minSize: 50,
+            maxSize: 150,
+
+
+            /*
+             * Expansion speed.
+             */
+
+            animationSpeed: 2.1,
+
+
+            /*
+             * Existing water color family.
+             *
+             * This does NOT change your hero theme.
+             */
+
+            color: "148, 217, 255",
+
+
+            /*
+             * Keep the effect subtle.
+             */
+
+            opacity: 0.18,
+
+
+            /*
+             * Cursor must move this far before
+             * another disturbance is created.
+             */
+
+            rippleDistance: 26,
+
+
+            /*
+             * Maximum simultaneous disturbances.
+             */
+
+            maxRipples: 16,
+
+
+            /*
+             * Number of points used to draw
+             * an irregular water circumference.
+             */
+
+            ringPoints: 100
+        };
+
+
+        /* ========================================
+           RESIZE CANVAS
+        ======================================== */
+
+        function resizeCanvas() {
+
+            const rect =
+                hero.getBoundingClientRect();
+
+
+            width = rect.width;
+            height = rect.height;
+
+
+            dpr = Math.min(
+                window.devicePixelRatio || 1,
+                2
+            );
+
+
+            canvas.width =
+                Math.round(width * dpr);
+
+            canvas.height =
+                Math.round(height * dpr);
+
+
+            canvas.style.width =
+                `${width}px`;
+
+            canvas.style.height =
+                `${height}px`;
+
+
+            /*
+             * Draw using CSS pixel coordinates
+             * while keeping the canvas sharp on
+             * high-DPI displays.
+             */
+
+            ctx.setTransform(
+                dpr,
+                0,
+                0,
+                dpr,
+                0,
+                0
+            );
+        }
+
+
+        resizeCanvas();
+
+
+        window.addEventListener(
+            "resize",
+            resizeCanvas
+        );
+
+
+        /* ========================================
+           DISTANCE
+        ======================================== */
+
+        function getDistance(
+            x1,
+            y1,
+            x2,
+            y2
+        ) {
+
+            const dx = x2 - x1;
+            const dy = y2 - y1;
+
+            return Math.sqrt(
+                dx * dx +
+                dy * dy
+            );
+        }
+
+
+        /* ========================================
+           CREATE RIPPLE
+        ======================================== */
+
+        function createRipple(
+            x,
+            y,
+            velocity
+        ) {
+
+            /*
+             * Remove oldest ripple if we
+             * reach the maximum.
+             */
+
+            if (
+                ripples.length >=
+                settings.maxRipples
+            ) {
+
+                ripples.shift();
+            }
+
+
+            /*
+             * Convert cursor velocity into
+             * a value between 0 and 1.
+             */
+
+            const strength =
+                Math.min(
+                    velocity / 35,
+                    1
+                );
+
+
+            /*
+             * Faster cursor =
+             * larger disturbance.
+             */
+
+            const maxRadius =
+                settings.minSize +
+                (
+                    settings.maxSize -
+                    settings.minSize
+                ) * strength;
+
+
+            /*
+             * Give every ripple slightly
+             * different characteristics.
+             */
+
+            const ripple = {
+
+                x: x,
+                y: y,
+
+
+                /*
+                 * Current radius.
+                 */
+
+                radius: 5,
+
+
+                /*
+                 * Final radius.
+                 */
+
+                maxRadius: maxRadius,
+
+
+                /*
+                 * Animation speed.
+                 */
+
+                speed: settings.animationSpeed +
+                    strength * 1.3,
+
+
+                /*
+                 * Base opacity.
+                 */
+
+                opacity: settings.opacity +
+                    strength * 0.10,
+
+
+                /*
+                 * Random seed for
+                 * irregular water shape.
+                 */
+
+                seed: Math.random() * 10000,
+
+
+                /*
+                 * Rotation prevents all
+                 * ripples from looking identical.
+                 */
+
+                rotation: Math.random() *
+                    Math.PI *
+                    2,
+
+
+                /*
+                 * Small variation in shape.
+                 */
+
+                distortion: 0.018 +
+                    Math.random() * 0.012,
+
+
+                /*
+                 * Current life.
+                 */
+
+                life: 0
+            };
+
+
+            ripples.push(ripple);
+        }
+
+
+        /* ========================================
+           CREATE MULTIPLE WATER BANDS
+        ======================================== */
+
+        function drawWaterRing(
+            ripple,
+            radius,
+            opacity,
+            lineWidth,
+            blur
+        ) {
+
+            ctx.save();
+
+
+            ctx.translate(
+                ripple.x,
+                ripple.y
+            );
+
+
+            ctx.rotate(
+                ripple.rotation
+            );
+
+
+            /*
+             * Slightly flatten the ring.
+             *
+             * This prevents it from looking
+             * like a perfect geometric circle.
+             */
+
+            ctx.scale(
+                1,
+                0.88
+            );
+
+
+            ctx.beginPath();
+
+
+            const points =
+                settings.ringPoints;
+
+
+            for (
+                let i = 0; i <= points; i++
+            ) {
+
+                const angle =
+                    (
+                        i / points
+                    ) *
+                    Math.PI *
+                    2;
+
+
+                /*
+                 * Multiple low-frequency
+                 * sine waves create the
+                 * irregular water surface.
+                 */
+
+                const noise1 =
+                    Math.sin(
+                        angle * 3 +
+                        ripple.seed
+                    ) *
+                    ripple.distortion;
+
+
+                const noise2 =
+                    Math.sin(
+                        angle * 6 +
+                        ripple.seed * 1.7
+                    ) *
+                    ripple.distortion *
+                    0.55;
+
+
+                const noise3 =
+                    Math.sin(
+                        angle * 11 +
+                        ripple.seed * 0.63
+                    ) *
+                    ripple.distortion *
+                    0.25;
+
+
+                /*
+                 * Combine the distortions.
+                 */
+
+                const distortion =
+                    1 +
+                    noise1 +
+                    noise2 +
+                    noise3;
+
+
+                const currentRadius =
+                    radius *
+                    distortion;
+
+
+                const x =
+                    Math.cos(angle) *
+                    currentRadius;
+
+
+                const y =
+                    Math.sin(angle) *
+                    currentRadius;
+
+
+                if (i === 0) {
+
+                    ctx.moveTo(
+                        x,
+                        y
+                    );
+
+                } else {
+
+                    ctx.lineTo(
+                        x,
+                        y
+                    );
+                }
+            }
+
+
+            ctx.closePath();
+
+
+            /*
+             * Blur creates the soft water
+             * appearance from your reference.
+             */
+
+            ctx.filter =
+                `blur(${blur}px)`;
+
+
+            ctx.strokeStyle =
+                `rgba(
+                ${settings.color},
+                ${opacity}
+            )`;
+
+
+            ctx.lineWidth =
+                lineWidth;
+
+
+            ctx.stroke();
+
+
+            ctx.restore();
+        }
+
+
+        /* ========================================
+           DRAW ONE RIPPLE
+        ======================================== */
+
+        function drawRipple(ripple) {
+
+            /*
+             * Progress from 0 to 1.
+             */
+
+            const progress =
+                ripple.radius /
+                ripple.maxRadius;
+
+
+            /*
+             * Smooth expansion.
+             *
+             * Starts gently and expands
+             * naturally.
+             */
+
+            const easedProgress =
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
+
+
+            const radius =
+                5 +
+                (
+                    ripple.maxRadius - 5
+                ) *
+                easedProgress;
+
+
+            /* ====================================
+               OPACITY CURVE
+            ====================================
+
+            0%       invisible
+            10%      appears
+            30-40%   strongest
+            60%      fading
+            80%      very faint
+            100%     gone
+            */
+
+            let fade;
+
+
+            if (progress < 0.10) {
+
+                fade =
+                    progress / 0.10;
+
+            } else if (progress < 0.38) {
+
+                fade = 1;
+
+            } else {
+
+                fade =
+                    1 -
+                    (
+                        (progress - 0.38) /
+                        0.62
+                    );
+            }
+
+
+            fade =
+                Math.max(
+                    0,
+                    Math.min(
+                        1,
+                        fade
+                    )
+                );
+
+
+            /*
+             * Slight organic movement.
+             */
+
+            const movement =
+                Math.sin(
+                    ripple.life * 8 +
+                    ripple.seed
+                ) *
+                0.025;
+
+
+            const finalOpacity =
+                ripple.opacity *
+                fade;
+
+
+            /* ====================================
+               OUTER ATMOSPHERIC GLOW
+            ==================================== */
+
+            ctx.save();
+
+
+            ctx.translate(
+                ripple.x,
+                ripple.y
+            );
+
+
+            ctx.rotate(
+                ripple.rotation
+            );
+
+
+            ctx.scale(
+                1 + movement,
+                0.88 - movement
+            );
+
+
+            /*
+             * Large soft gradient surrounding
+             * the actual water ring.
+             */
+
+            const outerGradient =
+                ctx.createRadialGradient(
+                    0,
+                    0,
+                    radius * 0.72,
+
+                    0,
+                    0,
+                    radius * 1.04
+                );
+
+
+            outerGradient.addColorStop(
+                0,
+                `rgba(
+                ${settings.color},
+                0
+            )`
+            );
+
+
+            outerGradient.addColorStop(
+                0.72,
+                `rgba(
+                ${settings.color},
+                0
+            )`
+            );
+
+
+            outerGradient.addColorStop(
+                0.86,
+                `rgba(
+                ${settings.color},
+                ${finalOpacity * 0.08}
+            )`
+            );
+
+
+            outerGradient.addColorStop(
+                0.93,
+                `rgba(
+                ${settings.color},
+                ${finalOpacity * 0.20}
+            )`
+            );
+
+
+            outerGradient.addColorStop(
+                0.97,
+                `rgba(
+                ${settings.color},
+                ${finalOpacity * 0.10}
+            )`
+            );
+
+
+            outerGradient.addColorStop(
+                1,
+                `rgba(
+                ${settings.color},
+                0
+            )`
+            );
+
+
+            ctx.fillStyle =
+                outerGradient;
+
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+                0,
+                0,
+                radius * 1.04,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.fill();
+
+
+            ctx.restore();
+
+
+            /* ====================================
+               MAIN WATER RING
+            ==================================== */
+
+            drawWaterRing(
+                ripple,
+                radius,
+                finalOpacity * 0.62,
+                1.2,
+                4
+            );
+
+
+            /* ====================================
+               SECONDARY WAVE
+            ==================================== */
+
+            /*
+             * A second ring slightly inside
+             * the main ring makes the effect
+             * feel like actual water rather
+             * than one outline.
+             */
+
+            drawWaterRing(
+                ripple,
+                radius * 0.91,
+                finalOpacity * 0.30,
+                1,
+                7
+            );
+
+
+            /* ====================================
+               INNER WAVE
+            ==================================== */
+
+            drawWaterRing(
+                ripple,
+                radius * 0.78,
+                finalOpacity * 0.16,
+                1,
+                9
+            );
+
+
+            /* ====================================
+               SUBTLE HIGHLIGHT
+            ==================================== */
+
+            /*
+             * Only visible while the ripple
+             * is relatively young.
+             */
+
+            if (progress < 0.55) {
+
+                const highlightFade =
+                    Math.max(
+                        0,
+                        1 -
+                        progress / 0.55
+                    );
+
+
+                drawWaterRing(
+                    ripple,
+                    radius * 0.96,
+                    finalOpacity *
+                    highlightFade *
+                    0.20,
+                    0.8,
+                    2
+                );
+            }
+
+
+            /*
+             * Increase life.
+             */
+
+            ripple.life += 0.016;
+        }
+
+
+        /* ========================================
+           MOUSE ENTER
+        ======================================== */
+
+        hero.addEventListener(
+            "mouseenter",
+            (event) => {
+
+                mouseInside = true;
+
+
+                const rect =
+                    hero.getBoundingClientRect();
+
+
+                mouseX =
+                    event.clientX -
+                    rect.left;
+
+
+                mouseY =
+                    event.clientY -
+                    rect.top;
+
+
+                previousMouseX =
+                    mouseX;
+
+
+                previousMouseY =
+                    mouseY;
+
+
+                lastRippleX =
+                    mouseX;
+
+
+                lastRippleY =
+                    mouseY;
+            }
+        );
+
+
+        /* ========================================
+           MOUSE MOVE
+        ======================================== */
+
+        hero.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const rect =
+                    hero.getBoundingClientRect();
+
+
+                mouseX =
+                    event.clientX -
+                    rect.left;
+
+
+                mouseY =
+                    event.clientY -
+                    rect.top;
+
+
+                /*
+                 * How quickly is the cursor moving?
+                 */
+
+                const velocity =
+                    getDistance(
+                        mouseX,
+                        mouseY,
+                        previousMouseX,
+                        previousMouseY
+                    );
+
+
+                /*
+                 * How far since the last
+                 * ripple was generated?
+                 */
+
+                const distanceSinceRipple =
+                    getDistance(
+                        mouseX,
+                        mouseY,
+                        lastRippleX,
+                        lastRippleY
+                    );
+
+
+                /*
+                 * Only generate another
+                 * disturbance after the cursor
+                 * has travelled a certain distance.
+                 */
+
+                if (
+                    distanceSinceRipple >=
+                    settings.rippleDistance
+                ) {
+
+                    createRipple(
+                        mouseX,
+                        mouseY,
+                        velocity
+                    );
+
+
+                    lastRippleX =
+                        mouseX;
+
+
+                    lastRippleY =
+                        mouseY;
+                }
+
+
+                previousMouseX =
+                    mouseX;
+
+
+                previousMouseY =
+                    mouseY;
+            }
+        );
+
+
+        /* ========================================
+           MOUSE LEAVE
+        ======================================== */
+
+        hero.addEventListener(
+            "mouseleave",
+            () => {
+
+                mouseInside = false;
+
+                mouseX = -1000;
+                mouseY = -1000;
+
+                previousMouseX = -1000;
+                previousMouseY = -1000;
+            }
+        );
+
+
+        /* ========================================
+           ANIMATION LOOP
+        ======================================== */
+
+        function animate() {
+
+            /*
+             * Completely clear the transparent
+             * canvas every frame.
+             */
+
+            ctx.clearRect(
+                0,
+                0,
+                width,
+                height
+            );
+
+
+            /*
+             * Draw ripples from newest to oldest.
+             */
+
+            for (
+                let i = ripples.length - 1; i >= 0; i--
+            ) {
+
+                const ripple =
+                    ripples[i];
+
+
+                /*
+                 * Expand ripple.
+                 */
+
+                ripple.radius +=
+                    ripple.speed;
+
+
+                /*
+                 * Remove finished ripples.
+                 */
+
+                if (
+                    ripple.radius >=
+                    ripple.maxRadius
+                ) {
+
+                    ripples.splice(
+                        i,
+                        1
+                    );
+
+                    continue;
+                }
+
+
+                /*
+                 * Draw current ripple.
+                 */
+
+                drawRipple(
+                    ripple
+                );
+            }
+
+
+            requestAnimationFrame(
+                animate
+            );
+        }
+
+
+        /* ========================================
+           START
+        ======================================== */
+
+        animate();
+
     });
 </script>
