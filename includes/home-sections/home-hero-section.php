@@ -230,14 +230,14 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
         color: var(--color-text-light);
     }
 
     .home-hero-section_badge-google-icon {
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
         display: inline-flex;
     }
 
@@ -252,7 +252,7 @@
         gap: 2px;
         padding-left: 8px;
         border-left: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 10px;
+        font-size: 12px;
         color: yellow;
     }
 
@@ -265,9 +265,8 @@
     }
 
     .home-hero-section_badge-rating {
-        font-size: 10px;
+        font-size: 12px;
         color: var(--color-bg-muted);
-        /* padding-left: 8px; */
     }
 
     .home-hero-section_badge-rating span {
@@ -277,14 +276,15 @@
 
     .home-hero-section_title {
         margin: 0 0 18px;
-        font-size: 42px;
+        font-size: 58px;
         line-height: 1.18;
+        font-weight: bolder;
         color: var(--color-text-light);
         letter-spacing: -0.5px;
     }
 
     .home-hero-section_title span {
-        background: var(--gradient-primary-dark);
+        background: var(--gradient-brand);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -429,7 +429,7 @@
         transform: translate(-50%, -50%) scale(0.15);
         opacity: 0;
         pointer-events: none;
-        animation: ripple 3s linear infinite;
+        animation: ai-ripple 2s linear infinite;
     }
 
     .ai-assistant-card>span:nth-of-type(1) {
@@ -439,20 +439,20 @@
 
     .ai-assistant-card>span:nth-of-type(2) {
         border-color: rgba(250, 204, 21, 0.5);
-        animation-delay: 0.8s;
+        animation-delay: 0.5s;
     }
 
     .ai-assistant-card>span:nth-of-type(3) {
         border-color: rgba(239, 68, 68, 0.5);
-        animation-delay: 1.5s;
+        animation-delay: 1s;
     }
 
     .ai-assistant-card>span:nth-of-type(4) {
         border-color: rgba(59, 130, 246, 0.5);
-        animation-delay: 2s;
+        animation-delay: 1.5s;
     }
 
-    @keyframes ripple {
+    @keyframes ai-ripple {
         0% {
             transform: translate(-50%, -50%) scale(0.15);
             opacity: 0;
@@ -527,11 +527,18 @@
         width: 96px;
         height: 96px;
         background: radial-gradient(circle at 35% 30%, #BFD3FF 0%, #5F88F5 42%, #284FAE 75%, #183579 100%);
-        filter: drop-shadow(0 0 34px rgba(79, 211, 154, 0.65));
+        filter: drop-shadow(0 0 34px rgba(32, 138, 199, 0.5));
         animation:
             blob-glow 2.6s ease-in-out infinite,
-            blob-drift 7s ease-in-out infinite,
-            blob-morph 6s linear infinite;
+            blob-drift 8s ease-in-out infinite,
+            blob-morph 6s linear infinite,
+            blob-spin 10s linear infinite;
+    }
+
+    @keyframes blob-spin {
+        to {
+            transform: rotate(360deg);
+        }
     }
 
     @keyframes blob-glow {
@@ -554,37 +561,55 @@
         }
 
         50% {
-            transform: translate(0, -2.5px) scale(1.02);
+            transform: translate(0, -2.5px) scale(1.2);
         }
     }
 
     @keyframes blob-morph {
+
         0% {
             border-radius: 58% 42% 45% 55% / 55% 48% 58% 42%;
+            transform: rotate(0deg) scale(1);
         }
 
-        16.6% {
-            border-radius: 72% 28% 42% 58% / 58% 46% 68% 32%;
+        12.5% {
+            border-radius: 75% 25% 38% 62% / 42% 68% 32% 58%;
+            transform: rotate(8deg) scale(1.04);
         }
 
-        33.3% {
-            border-radius: 38% 62% 68% 32% / 70% 30% 40% 60%;
+        25% {
+            border-radius: 32% 68% 62% 38% / 70% 30% 64% 36%;
+            transform: rotate(-6deg) scale(0.97);
+        }
+
+        37.5% {
+            border-radius: 68% 32% 28% 72% / 35% 72% 28% 65%;
+            transform: rotate(10deg) scale(1.06);
         }
 
         50% {
-            border-radius: 60% 40% 30% 70% / 35% 68% 60% 32%;
+            border-radius: 25% 75% 68% 32% / 62% 35% 65% 38%;
+            transform: rotate(-8deg) scale(0.96);
         }
 
-        66.6% {
-            border-radius: 30% 70% 62% 38% / 62% 38% 30% 70%;
+        62.5% {
+            border-radius: 72% 28% 35% 65% / 30% 65% 35% 70%;
+            transform: rotate(7deg) scale(1.05);
         }
 
-        83.3% {
-            border-radius: 65% 35% 55% 45% / 40% 62% 45% 55%;
+        75% {
+            border-radius: 38% 62% 72% 28% / 68% 32% 58% 42%;
+            transform: rotate(-10deg) scale(0.98);
+        }
+
+        87.5% {
+            border-radius: 64% 36% 42% 58% / 52% 72% 28% 48%;
+            transform: rotate(5deg) scale(1.03);
         }
 
         100% {
             border-radius: 58% 42% 45% 55% / 55% 48% 58% 42%;
+            transform: rotate(0deg) scale(1);
         }
     }
 
@@ -871,7 +896,7 @@
                     <span>Google</span>
                 </div>
                 <span class="home-hero-section_badge-stars">★★★★★</span>
-                <div class="home-hero-section_badge-rating"><span>4.9</span> Customer Rating</div>
+                <div class="home-hero-section_badge-rating"><span>4.5</span> Customer Rating</div>
             </div>
             <h1 class="home-hero-section_title">
                 Empowering Communication with
