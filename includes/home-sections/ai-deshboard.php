@@ -617,6 +617,49 @@
         height: 14px;
     }
 
+    /* ========================================
+   INITIAL STATE
+======================================== */
+
+    .home-deshoard_features-side {
+        opacity: 0;
+        transform: translateX(-80px);
+
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+
+        will-change: opacity, transform;
+    }
+
+
+    .home-visual_content {
+        opacity: 0;
+        transform: translateX(80px);
+
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+
+        will-change: opacity, transform;
+    }
+
+
+    /* ========================================
+   IN VIEW
+======================================== */
+
+    .home-deshoard_features-side.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+    .home-visual_content.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
     /* ---------- Responsive ---------- */
     @media (max-width: 880px) {
         .home-deshboard_content {
@@ -662,7 +705,7 @@
     </div>
 
     <div class="home-deshboard_content">
-        <div>
+        <div class="home-deshoard_features-side">
             <div class="home-deshboard_features">
                 <div class="home-deshboard_feature-item">
                     <span class="home-deshboard_feature-icon">
@@ -726,7 +769,7 @@
             </div>
         </div>
 
-        <div class="home-visual_content"  >
+        <div class="home-visual_content">
             <div class="home-visual_content-item" style="margin-top: 55px;" id="card1">
                 <div class="home-visual_content-card">
                     <div class="home-visual_content-heading">
@@ -804,6 +847,68 @@
 </section>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const aboutContent1 = document.querySelector(
+            '.home-deshoard_features-side'
+        );
+
+        const aboutContent2 = document.querySelector(
+            '.home-visual_content'
+        );
+
+
+        /* ========================================
+           STOP IF ELEMENTS DON'T EXIST
+        ======================================== */
+
+        if (!aboutContent1 && !aboutContent2) {
+            return;
+        }
+
+
+        /* ========================================
+           INTERSECTION OBSERVER
+        ======================================== */
+
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('in-view');
+
+                    } else {
+
+                        entry.target.classList.remove('in-view');
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px'
+            }
+        );
+
+
+        /* ========================================
+           OBSERVE ELEMENTS
+        ======================================== */
+
+        if (aboutContent1) {
+            revealObserver.observe(aboutContent1);
+        }
+
+        if (aboutContent2) {
+            revealObserver.observe(aboutContent2);
+        }
+
+    });
+
     (function() {
         var card1 = document.getElementById('card1');
         var card2 = document.getElementById('card2');
