@@ -17,8 +17,8 @@
         radial-gradient(50% 50% at 85% 10%, rgba(255, 122, 26, 0.10), rgba(255, 122, 26, 0) 70%),
         #fbfbfc; */
         font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: #f1f4f8;
-        background-image: radial-gradient(ellipse 46% 28% at 8% 34%, rgba(239, 86, 13, .064) 0%, rgba(239, 86, 13, .021) 45%, transparent 76%), radial-gradient(ellipse 49% 29% at 92% 70%, rgba(16, 58, 107, .072) 0%, rgba(16, 58, 107, .024) 46%, transparent 76%), linear-gradient(180deg, #eef2f7 0%, #eef2f7 10%, #f1f4f8 20%, #f6f8fb 31%, #fbfcfe 43%, #ffffff 55%, #fafbfd 68%, #f7f9fc 80%, #f3f6fa 91%, #f1f4f8 100%);
+        background-color: #EAE9EF;
+        /* background-image: radial-gradient(ellipse 46% 28% at 8% 34%, rgba(90, 86, 84, 0.06) 0%, rgba(41, 39, 38, 0.02) 45%, transparent 76%), radial-gradient(ellipse 49% 29% at 92% 70%, rgba(16, 58, 107, .072) 0%, rgba(16, 58, 107, .024) 46%, transparent 76%), linear-gradient(180deg, #eef2f7 0%, #eef2f7 10%, #f1f4f8 20%, #f6f8fb 31%, #fbfcfe 43%, #ffffff 55%, #fafbfd 68%, #f7f9fc 80%, #f3f6fa 91%, #f1f4f8 100%); */
         /* background-repeat: no-repeat; */
         background-position: center;
         background-size: 100% 100%;
@@ -85,7 +85,7 @@
 
     .kdts-viewport {
         position: relative;
-        width: 70%;
+        /* width: 70%; */
         -webkit-mask-image: linear-gradient(to right,
                 /* transparent 0, */
                 #000 5%,

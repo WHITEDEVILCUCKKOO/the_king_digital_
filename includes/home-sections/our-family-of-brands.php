@@ -228,7 +228,7 @@
         border-color: rgba(27, 61, 123, .2)
     }
 
-    .port-thumb {
+    /* .port-thumb {
         height: 168px;
         display: flex;
         align-items: center;
@@ -247,7 +247,118 @@
         padding: 4px 10px;
         border-radius: 20px;
         letter-spacing: .5px
+    } */
+
+
+
+
+
+
+
+
+
+    .port-thumb {
+        position: relative;
+        height: 195px;
+        overflow: hidden;
+        background: #E8F5FF;
+        padding: 0;
     }
+
+    .img_box {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .pic {
+        width: 100%;
+        display: block;
+        transform: translateY(0);
+        transition: transform 8s linear;
+    }
+
+    .img_box:hover .pic {
+        transform: translateY(calc(-100% + 260px));
+    }
+
+    .port-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+        background: #2563EB;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .img_box_static {
+        width: 100%;
+        height: 195px;
+        /* apne card ke hisab se */
+        overflow: hidden;
+        background: #E8F5FF;
+    }
+
+    .pic_static {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+
+        transform: scale(1);
+        transition: transform .6s ease;
+    }
+
+    .img_box_static:hover .pic_static {
+        transform: scale(1.08);
+    }
+
+    .video_box {
+        position: relative;
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+    }
+
+    .video_thumb,
+    .card_video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video_thumb {
+        object-fit: cover;
+
+        /* Yaha se position control karo */
+        object-position: center top;
+        /* Examples:
+       center center
+       center 20%
+       center 40%
+       left center
+       right top
+    */
+
+        transition: opacity .3s;
+        z-index: 1;
+    }
+
+    .card_video {
+        object-fit: cover;
+    }
+
+
+
+
+
+
+
 
     .port-info {
         padding: 18px
@@ -353,15 +464,100 @@
             gap: 20px
         }
     }
+
+
+    .tagq {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        background: var(--blue-lt);
+        color: var(--blue);
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+    }
+
+    .dot-99 {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+        flex-shrink: 0;
+        position: relative;
+        isolation: isolate;
+    }
+
+    .dot-99::after,
+    .dot-99::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(27 61 123 / 19%);
+        border-radius: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%) scale(1);
+        animation: wavePulse 2s infinite ease-out;
+    }
+
+    /* Yeh line miss thi — ::after ko delay dene se 2 step wave banegi */
+    .dot-99::after {
+        animation-delay: 1s;
+    }
+
+    /* Animation Keyframes (agar CSS mein add nahi kiya tha) */
+    @keyframes wavePulse {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(4.5);
+            /* Scale size adjust kar sakte hain */
+            opacity: 0;
+        }
+    }
+
+    .shas {
+        font-size: clamp(26px, 3.8vw, 40px);
+        font-weight: 800;
+        margin-bottom: 14px;
+        letter-spacing: -.5px;
+        font-family: Poppins-bold;
+    }
+
+    /* green cursor-follow glow — spreads outward from wherever the cursor enters the card */
+    .icp-cursor-glow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(45, 190, 150, .22) 30%, rgba(34, 197, 94, .08) 55%, rgba(34, 197, 94, 0) 72%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .35s ease;
+        z-index: 0;
+    }
 </style>
+
+<div class="img_box"><img src="" alt="" class="pic"></div>
 
 
 <!-- ════ PORTFOLIO ════ -->
 <section class="portfolio section" id="portfolio">
     <div class="container">
-        <div class="reveal">
-            <div class="tag"><span class="dot"></span>Our Portfolio</div>
-            <h2 class="sh">Work that delivers real results</h2>
+        <div class="revealqw">
+            <div class="tagq"><span class="dot-99"></span>Our Portfolio</div>
+            <h2 class="shas">Work that delivers <span class="">real results</span></h2>
         </div>
         <div class="port-tabs">
             <button class="port-tab active" onclick="filterPort(this,'all')">All Work</button>
@@ -371,60 +567,103 @@
             <button class="port-tab" onclick="filterPort(this,'seo')">SEO Projects</button>
         </div>
         <div class="port-grid">
-            <div class="port-card reveal" data-type="website">
-                <div class="port-thumb" style="background:#E8F5FF;font-size:48px">🏛️
+
+            <!-- Card web -->
+            <div class="port-card reveal tlasma-card" data-type="website">
+                <div class="port-thumb" style="background:#E8F5FF;font-size:48px">
                     <span class="port-badge" style="background:#2563EB;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/lakshmibaicollege.in_.png" alt="Lakshmibai College" class="pic">
+                    </div>
                 </div>
                 <div class="port-info">
                     <h4>Lakshmibai College</h4>
                     <p>University website — Delhi University</p>
                 </div>
             </div>
-            <div class="port-card reveal" data-type="website">
-                <div class="port-thumb" style="background:#ECFDF5;font-size:48px">⚡
+
+            <!-- Card img -->
+            <div class="port-card reveal tlasma-card" data-type="website">
+                <div class="port-thumb" style="background:#ECFDF5;font-size:48px">
                     <span class="port-badge" style="background:#059669;color:#fff">E-Commerce</span>
+                    <div class="img_box_static">
+                        <img src="assets/images/img/Kumar Electric Product 2.png"
+                            alt="Lakshmibai College"
+                            class="pic_static">
+                    </div>
                 </div>
                 <div class="port-info">
                     <h4>Kumar Electric</h4>
                     <p>Product catalogue & B2B inquiry portal</p>
                 </div>
             </div>
-            <div class="port-card reveal" data-type="sms">
-                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">📱
+
+            <!-- Card img -->
+            <div class="port-card reveal tlasma-card" data-type="sms">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
                     <span class="port-badge" style="background:#F97316;color:#fff">SMS Campaign</span>
+                    <div class="img_box_static">
+                        <img src="assets/images/img/bulk_sms_banner.jpg"
+                            alt="Lakshmibai College"
+                            class="pic_static">
+                    </div>
                 </div>
                 <div class="port-info">
                     <h4>State Assembly Campaign</h4>
                     <p>5 million+ targeted messages delivered</p>
                 </div>
             </div>
-            <div class="port-card reveal" data-type="video">
-                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">🎬
+
+            <!-- Card video -->
+            <div class="port-card reveal tlasma-card" data-type="video">
+                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
                     <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
+
+                    <div class="video_box">
+                        <img src="assets/images/img/e5cnis_sdh.png" class="video_thumb" alt="">
+
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/images/img/vidssave.com Static King _ Bulk SMS Company India 1080P.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
                 </div>
                 <div class="port-info">
                     <h4>FMCG Brand Film</h4>
                     <p>Corporate promotional & product videos</p>
                 </div>
             </div>
-            <div class="port-card reveal" data-type="seo">
-                <div class="port-thumb" style="background:#EFF6FF;font-size:48px">📈
+
+            <!-- Card img -->
+            <div class="port-card reveal tlasma-card" data-type="seo">
+                <div class="port-thumb" style="background:#EFF6FF;font-size:48px">
                     <span class="port-badge" style="background:#2563EB;color:#fff">SEO</span>
+                    <div class="img_box_static">
+                        <img src="assets/images/img/seo_banner.jpg"
+                            alt="Lakshmibai College"
+                            class="pic_static">
+                    </div>
                 </div>
                 <div class="port-info">
                     <h4>Healthcare Brand</h4>
                     <p>Page 1 Google ranking in 90 days</p>
                 </div>
             </div>
-            <div class="port-card reveal" data-type="website">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">🏥
+
+            <!-- Card web -->
+            <div class="port-card reveal tlasma-card" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/img/sera_casdime521.png" alt="Lakshmibai College" class="pic">
+                    </div>
                 </div>
                 <div class="port-info">
                     <h4>SERA CASDIM</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
+
         </div>
         <div class="port-cta reveal">
             <a href="/portfolio.php" class="btn btn-outline"><i class="fas fa-eye"></i> View Full Portfolio</a>
@@ -433,7 +672,6 @@
 </section>
 
 <script>
-
     /* ─ Portfolio filter ─ */
     function filterPort(btn, type) {
         document.querySelectorAll('.port-tab').forEach(t => t.classList.remove('active'));
@@ -448,4 +686,67 @@
             }
         });
     }
+
+
+
+    (function() {
+        "use strict";
+
+        var icpCards = document.querySelectorAll('.tlasma-card');
+        var icpGlowRadius = 230; // px — soft green glow that spreads out from the cursor's corner
+        var icpMaxTilt = 12; // deg — max corner tilt
+
+        icpCards.forEach(function(card) {
+
+            // create the green cursor-follow glow layer once per card
+            var icpGlow = document.createElement('div');
+            icpGlow.className = 'icp-cursor-glow';
+            icpGlow.style.width = (icpGlowRadius * 0.5) + 'px';
+            icpGlow.style.height = (icpGlowRadius * 0.5) + 'px';
+            card.appendChild(icpGlow);
+
+            card.addEventListener('mousemove', function(e) {
+                var rect = card.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+
+                // 3D tilt — rotate toward whichever corner/edge the cursor is near
+                var px = (x / rect.width) - 0.5; // -0.5 .. 0.5
+                var py = (y / rect.height) - 0.5; // -0.5 .. 0.5
+                var rotateY = px * icpMaxTilt * 2;
+                var rotateX = py * -icpMaxTilt * 2;
+                card.style.transform =
+                    'perspective(800px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateZ(-6px) translateY(-4px)';
+
+                // green glow following the cursor, clipped to a 50px radius
+                icpGlow.style.left = x + 'px';
+                icpGlow.style.top = y + 'px';
+                icpGlow.style.opacity = '1';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = '';
+                icpGlow.style.opacity = '0';
+            });
+        });
+
+    })();
+
+    document.querySelectorAll(".video_box").forEach(box => {
+
+        const video = box.querySelector(".card_video");
+        const thumb = box.querySelector(".video_thumb");
+
+        box.addEventListener("mouseenter", () => {
+            thumb.style.opacity = "0";
+            video.play();
+        });
+
+        box.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
+            thumb.style.opacity = "1";
+        });
+
+    });
 </script>
