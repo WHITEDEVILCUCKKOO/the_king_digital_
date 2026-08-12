@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/header.php';
 
 ?>
 
-<main>
+<main style="overflow: hidden;">
     <!-- section 1 ( Hero ) -->
     <?php require_once __DIR__ . '/includes/home-sections/home-hero-section.php'; ?>
     

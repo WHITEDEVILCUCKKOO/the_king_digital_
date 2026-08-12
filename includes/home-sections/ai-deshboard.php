@@ -1,22 +1,71 @@
 <style>
     :root {
-        --teal: #0EA98E;
-        --teal-dark: #0C8A75;
-        --teal-light: #E7F7F3;
-        --ink: #101828;
-        --gray: #667085;
-        --gray-light: #98A2B3;
-        --border: #E7EAEE;
-        --green: #12B76A;
-        --purple-1: #7B4FE0;
-        --purple-2: #9B6BF2;
-        --blue-1: #3B6FF0;
-        --blue-2: #5B8CF7;
-        --bg: #FFFFFF;
+        /* ======== BRAND COLORS ======== */
+        --color-primary: #F47B20;
+        --color-primary-light: #FF9A4A;
+        --color-primary-dark: #D85F0B;
+
+        --color-secondary: #4F7FF7;
+        --color-secondary-light: #7FA3FF;
+        --color-secondary-dark: #315FCC;
+
+        /* ======== BACKGROUNDS ======== */
+        --color-bg: #FFFFFF;
+        --color-bg-soft: #F7F8FA;
+        --color-bg-muted: #EEF1F5;
+        --color-bg-dark: #1C3D7B;
+        --color-bg-dark-soft: #1A2233;
+
+        /* ======== TEXT ======== */
+        --color-text: #171B26;
+        --color-text-secondary: #5F6673;
+        --color-text-muted: #8A919D;
+        --color-text-light: #FFFFFF;
+        --color-text-light-secondary: #C4C9D2;
+
+        /* ======== BORDERS ======== */
+        --color-border: #E3E7ED;
+        --color-border-dark: #30394A;
+
+        /* ======== GRADIENTS ======== */
+        --gradient-primary: linear-gradient(135deg, #F47B20 0%, #FF9A4A 100%);
+        --gradient-primary-dark: linear-gradient(135deg, #D85F0B 0%, #F47B20 100%);
+        --gradient-secondary: linear-gradient(135deg, #315FCC 0%, #4F7FF7 50%, #7FA3FF 100%);
+        --gradient-secondary-dark: linear-gradient(135deg, #244BA5 0%, #315FCC 100%);
+        --gradient-brand: linear-gradient(135deg, #F47B20 0%, #FF9A4A 45%, #4F7FF7 100%);
+        --gradient-brand-reverse: linear-gradient(135deg, #4F7FF7 0%, #7FA3FF 55%, #F47B20 100%);
+        --gradient-dark: linear-gradient(135deg, #111827 0%, #1A2233 100%);
+        --gradient-glow: radial-gradient(circle, rgba(244, 123, 32, 0.16) 0%, rgba(244, 123, 32, 0) 70%);
+        --gradient-glow-secondary: radial-gradient(circle, rgba(79, 127, 247, 0.18) 0%, rgba(79, 127, 247, 0) 70%);
+
+        /* ======== STATUS ======== */
+        --color-success: #16A34A;
+        --color-warning: #D99100;
+        --color-danger: #DC2626;
+        --color-info: #4F7FF7;
+
+        /* ======== SHADOWS ======== */
+        --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10);
+        --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.14);
+        --shadow-orange: 0 10px 30px rgba(244, 123, 32, 0.18);
+        --shadow-blue: 0 10px 30px rgba(79, 127, 247, 0.18);
+
+        /* ======== RADIUS ======== */
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-full: 999px;
+
+        /* ======== TRANSITIONS ======== */
+        --transition-fast: 150ms ease;
+        --transition-normal: 250ms ease;
+        --transition-slow: 400ms ease;
     }
 
     .home-deshboard-section {
-        max-width: 1180px;
+        /* max-width: 1180px; */
         margin: 0 auto;
         padding: 64px 24px 96px;
     }
@@ -32,12 +81,12 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        background: var(--teal-light);
-        color: var(--teal-dark);
+        background: rgba(244, 123, 32, 0.10);
+        color: var(--color-primary-dark);
         font-size: 13px;
         font-weight: 600;
         padding: 6px 14px;
-        border-radius: 999px;
+        border-radius: var(--radius-full);
         margin-bottom: 20px;
     }
 
@@ -47,22 +96,23 @@
     }
 
     .home-deshboard_title {
-        font-size: 44px;
+        font-family: 'Roboto', 'San';
+        font-size: 50px;
         line-height: 1.15;
-        font-weight: 800;
+        font-weight: 900;
         letter-spacing: -0.02em;
         margin: 0 0 16px;
     }
 
     .home-deshboard_title span {
-        background: linear-gradient(90deg, #14B8A6, #3B82C4);
+        background: var(--gradient-brand);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
     }
 
     .home-deshboard_para {
-        color: var(--gray);
+        color: var(--color-text-secondary);
         font-size: 16px;
         line-height: 1.6;
         margin: 0;
@@ -74,6 +124,8 @@
         grid-template-columns: 1fr 1fr;
         gap: 56px;
         align-items: start;
+        max-width: 1024px;
+        margin: 0 auto;
     }
 
     .home-deshboard_features {
@@ -84,15 +136,19 @@
     }
 
     .home-deshboard_feature-item {
-        border: 1px solid var(--border);
+        border: 1px solid var(--color-border);
         border-radius: 14px;
         padding: 20px 20px 22px;
         background: #fff;
-        transition: box-shadow .2s ease, transform .2s ease;
+        transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
     }
 
     .home-deshboard_feature-item:hover {
-        box-shadow: 0 8px 24px rgba(16, 24, 40, .06);
+        box-shadow: var(--shadow-md);
         transform: translateY(-2px);
     }
 
@@ -100,53 +156,53 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 34px;
-        height: 34px;
+        width: 48px;
+        height: 44px;
+        flex-shrink: 0;
         border-radius: 9px;
-        background: linear-gradient(135deg, var(--teal), #17C9AC);
-        margin-bottom: 12px;
+        background: var(--gradient-primary);
     }
 
     .home-deshboard_feature-icon svg {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         stroke: #fff;
     }
 
     .home-deshboard_feature-title {
-        font-size: 15px;
+        font-size: 17px;
         font-weight: 700;
         margin: 0 0 6px;
-        color: var(--ink);
+        color: var(--color-text);
     }
 
     .home-deshboard_feature-para {
-        font-size: 13.5px;
-        line-height: 1.55;
-        color: var(--gray);
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--color-text-secondary);
         margin: 0;
     }
 
     .home-deshboard_report {
-        background: var(--teal-light);
-        border-radius: 14px;
-        padding: 20px 22px 8px;
+        background: rgba(244, 123, 32, 0.06);
+        border-radius: 20px;
+        padding: 16px 26px 8px;
     }
 
     .home-deshboard_report-heading {
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 700;
-        color: var(--teal-dark);
+        color: var(--color-primary-dark);
         margin: 0 0 14px;
     }
 
     .home-deshboard_report-heading span {
         width: 16px;
         height: 16px;
-        background: var(--teal-dark);
+        background: var(--color-primary-dark);
         -webkit-mask: polygon(60% 0, 0 60%, 40% 60%, 40% 100%, 100% 40%, 60% 40%);
         mask: polygon(60% 0, 0 60%, 40% 60%, 40% 100%, 100% 40%, 60% 40%);
     }
@@ -156,7 +212,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 12px 0;
-        border-top: 1px solid rgba(15, 157, 140, .14);
+        border-top: 1px solid rgba(244, 123, 32, .14);
         font-size: 13.5px;
     }
 
@@ -166,30 +222,47 @@
 
     .home-deshboard_report-item p {
         margin: 0;
-        color: #3B5B54;
+        color: var(--color-text-secondary);
     }
 
     .home-deshboard_report-item span {
         font-weight: 700;
-        color: var(--green);
+        color: var(--color-success);
         font-size: 14px;
     }
 
-    /* ---------- Visual / right column ---------- */
+    /* ---------- Visual / right column (carousel) ---------- */
     .home-visual_content {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+        display: grid;
         position: relative;
+    }
+
+    .home-visual_content-item,
+    .home-visual_content-item2 {
+        grid-column: 1;
+        grid-row: 1;
+        opacity: 1;
+        transition: opacity var(--transition-slow) ease;
+    }
+
+    .home-visual_content-item.is-hidden,
+    .home-visual_content-item2.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .home-visual_content-card,
+    .home-visual_content-item2>.home-visual_content-heading,
+    .home-visual_content-item2 {
+        background: #fff;
     }
 
     .home-visual_content-card,
     .home-visual_content-item2 {
-        background: #fff;
         border-radius: 18px;
         overflow: hidden;
-        box-shadow: 0 20px 45px rgba(16, 24, 40, .10), 0 2px 8px rgba(16, 24, 40, .05);
-        border: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--color-border);
     }
 
     .home-visual_content-heading {
@@ -202,17 +275,17 @@
     }
 
     .home-visual_content-card .home-visual_content-heading {
-        background: linear-gradient(120deg, var(--purple-1), var(--purple-2));
+        background: var(--gradient-secondary);
     }
 
     .home-visual_content-item2 .home-visual_content-heading {
-        background: linear-gradient(120deg, var(--blue-1), var(--blue-2));
+        background: var(--gradient-primary);
     }
 
     .home-visual_content-icon {
         width: 30px;
         height: 30px;
-        border-radius: 999px;
+        border-radius: var(--radius-full);
         background: rgba(255, 255, 255, .2);
         display: inline-flex;
         align-items: center;
@@ -270,14 +343,14 @@
         font-size: 11px;
         font-weight: 700;
         padding: 5px 10px;
-        border-radius: 999px;
+        border-radius: var(--radius-full);
         margin-bottom: 22px;
     }
 
     .home-visual_content-badge span {
         width: 6px;
         height: 6px;
-        border-radius: 999px;
+        border-radius: var(--radius-full);
         background: #E0433D;
     }
 
@@ -293,7 +366,7 @@
         display: block;
         width: 3px;
         border-radius: 2px;
-        background: linear-gradient(180deg, var(--purple-1), var(--purple-2));
+        background: var(--gradient-secondary);
         animation: wave 1.1s ease-in-out infinite;
     }
 
@@ -340,19 +413,32 @@
     }
 
     .home-visual_content-writing {
-        border-left: 3px solid var(--purple-1);
+        border-left: 3px solid var(--color-secondary);
         padding: 4px 0 4px 14px;
         margin-bottom: 22px;
+        min-height: 20px;
     }
 
     .home-visual_content-writing span {
         font-size: 13.5px;
         font-style: italic;
-        color: #3a3550;
+        color: var(--color-text);
     }
 
-    .home-visual_content-writing span::before {
-        content: '"Welcome to Crest Bank. Authenticating your…" ';
+    .home-visual_content-writing .type-cursor {
+        display: inline-block;
+        width: 2px;
+        height: 14px;
+        margin-left: 2px;
+        background: var(--color-secondary);
+        vertical-align: -2px;
+        animation: blink 0.9s step-end infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
     }
 
     .home-visual_content-btn {
@@ -364,8 +450,8 @@
     .home-visual_content-btn span {
         font-size: 12px;
         font-weight: 600;
-        color: var(--purple-1);
-        background: #F2EDFC;
+        color: var(--color-secondary-dark);
+        background: rgba(79, 127, 247, 0.08);
         padding: 8px 12px;
         border-radius: 8px;
     }
@@ -389,7 +475,7 @@
         padding: 10px 0 16px;
         font-size: 10.5px;
         letter-spacing: .05em;
-        color: var(--gray-light);
+        color: var(--color-text-muted);
         font-weight: 600;
     }
 
@@ -406,6 +492,17 @@
         gap: 10px;
     }
 
+    .msg-step {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .35s ease, transform .35s ease;
+    }
+
+    .msg-step.msg-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .home-visual_content-msg {
         max-width: 78%;
         margin: 0;
@@ -417,7 +514,7 @@
 
     .home-visual_content-msg:nth-of-type(1) {
         align-self: flex-end;
-        background: linear-gradient(120deg, var(--blue-1), var(--blue-2));
+        background: var(--gradient-primary);
         color: #fff;
         border-bottom-right-radius: 4px;
     }
@@ -428,8 +525,8 @@
 
     .home-visual_content-msg:nth-of-type(2) {
         align-self: flex-start;
-        background: #F2F4F7;
-        color: var(--ink);
+        background: var(--color-bg-muted);
+        color: var(--color-text);
         border-bottom-left-radius: 4px;
     }
 
@@ -443,8 +540,8 @@
     }
 
     .home-visual_content-form {
-        background: #F9FAFB;
-        border: 1px solid var(--border);
+        background: var(--color-bg-soft);
+        border: 1px solid var(--color-border);
         border-radius: 12px;
         padding: 14px;
         align-self: flex-start;
@@ -455,26 +552,26 @@
         font-size: 10.5px;
         font-weight: 700;
         letter-spacing: .06em;
-        color: var(--gray-light);
+        color: var(--color-text-muted);
         margin: 0 0 10px;
     }
 
     .home-visual_content-form input {
         width: 100%;
-        border: 1px solid var(--border);
+        border: 1px solid var(--color-border);
         background: #fff;
         border-radius: 8px;
         padding: 9px 10px;
         font-size: 12.5px;
         margin-bottom: 8px;
-        color: var(--gray);
+        color: var(--color-text-secondary);
         font-family: inherit;
     }
 
     .home-visual_content-form button {
         width: 100%;
         border: none;
-        background: var(--green);
+        background: var(--gradient-primary);
         color: #fff;
         font-weight: 700;
         font-size: 12.5px;
@@ -489,7 +586,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--color-border);
         padding-top: 12px;
     }
 
@@ -498,16 +595,16 @@
         border: none;
         outline: none;
         font-size: 13px;
-        color: var(--gray-light);
+        color: var(--color-text-muted);
         font-family: inherit;
     }
 
     .home-visual_content-item2 .home-visual_content-inputbar button {
         width: 30px;
         height: 30px;
-        border-radius: 999px;
+        border-radius: var(--radius-full);
         border: none;
-        background: var(--blue-1);
+        background: var(--color-primary);
         color: #fff;
         display: flex;
         align-items: center;
@@ -530,7 +627,24 @@
             font-size: 32px;
         }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+        .home-visual_content-animation span {
+            animation: none;
+        }
+
+        .type-cursor {
+            animation: none;
+        }
+
+        .home-visual_content-item,
+        .home-visual_content-item2,
+        .msg-step {
+            transition: none;
+        }
+    }
 </style>
+
 
 <section class="home-deshboard-section">
     <div class="home-deshboard_heading">
@@ -557,10 +671,12 @@
                             <path d="M9 12h6M12 9v6" />
                         </svg>
                     </span>
-                    <h3 class="home-deshboard_feature-title">Generative AI Conversations</h3>
-                    <p class="home-deshboard_feature-para">
-                        Build LLM-powered bots with hyper personalization and deep context awareness.
-                    </p>
+                    <div class="home-deshboard_features-text">
+                        <h3 class="home-deshboard_feature-title">Generative AI Conversations</h3>
+                        <p class="home-deshboard_feature-para">
+                            Build LLM-powered bots with hyper personalization and deep context awareness.
+                        </p>
+                    </div>
                 </div>
                 <div class="home-deshboard_feature-item">
                     <span class="home-deshboard_feature-icon">
@@ -568,10 +684,12 @@
                             <path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" />
                         </svg>
                     </span>
-                    <h3 class="home-deshboard_feature-title">RAG-Powered Knowledge Base</h3>
-                    <p class="home-deshboard_feature-para">
-                        Fetch instant, accurate answers from your enterprise documents and PDF data.
-                    </p>
+                    <div class="home-deshboard_features-text">
+                        <h3 class="home-deshboard_feature-title">RAG-Powered Knowledge Base</h3>
+                        <p class="home-deshboard_feature-para">
+                            Fetch instant, accurate answers from your enterprise documents and PDF data.
+                        </p>
+                    </div>
                 </div>
                 <div class="home-deshboard_feature-item">
                     <span class="home-deshboard_feature-icon">
@@ -579,10 +697,12 @@
                             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
                         </svg>
                     </span>
-                    <h3 class="home-deshboard_feature-title">Omnichannel AI Deployment</h3>
-                    <p class="home-deshboard_feature-para">
-                        Deploy smart bots seamlessly across WhatsApp API, RCS messaging, and Web Chat.
-                    </p>
+                    <div class="home-deshboard_features-text">
+                        <h3 class="home-deshboard_feature-title">Omnichannel AI Deployment</h3>
+                        <p class="home-deshboard_feature-para">
+                            Deploy smart bots seamlessly across WhatsApp API, RCS messaging, and Web Chat.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -606,8 +726,8 @@
             </div>
         </div>
 
-        <div class="home-visual_content">
-            <div class="home-visual_content-item">
+        <div class="home-visual_content"  >
+            <div class="home-visual_content-item" style="margin-top: 55px;" id="card1">
                 <div class="home-visual_content-card">
                     <div class="home-visual_content-heading">
                         <span class="home-visual_content-icon">
@@ -632,14 +752,16 @@
                         <div class="home-visual_content-animation">
                             <span></span><span></span><span></span><span></span><span></span><span></span>
                         </div>
-                        <div class="home-visual_content-writing"><span></span></div>
+                        <div class="home-visual_content-writing">
+                            <span id="typingText"></span><span class="type-cursor"></span>
+                        </div>
                         <div class="home-visual_content-btn"><span></span><span></span><span></span></div>
                     </div>
                     <p class="home-visual_content-bottom"></p>
                 </div>
             </div>
 
-            <div class="home-visual_content-item2">
+            <div class="home-visual_content-item2 is-hidden" id="card2">
                 <div class="home-visual_content-heading">
                     <span class="home-visual_content-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
@@ -653,22 +775,21 @@
                     </div>
                     <span class="home-visual_content-icon1">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16v16H4z" opacity="0" />
                             <circle cx="18" cy="6" r="2" />
                             <path d="M4 6h10M4 12h16M4 18h10" />
                         </svg>
                     </span>
                 </div>
                 <div class="home-visual_content-screen">
-                    <p class="home-visual_content-msg"></p>
-                    <p class="home-visual_content-msg"></p>
-                    <div class="home-visual_content-form">
+                    <p class="home-visual_content-msg msg-step" id="msg1"></p>
+                    <p class="home-visual_content-msg msg-step" id="msg2"></p>
+                    <div class="home-visual_content-form msg-step" id="msgForm">
                         <p class="home-visual_content-form-label">SCHEDULE MEETING</p>
                         <input type="text" placeholder="Your Full Name" disabled>
                         <input type="text" placeholder="Appointment Date" disabled>
                         <button type="button">Complete Scheduling</button>
                     </div>
-                    <div class="home-visual_content-inputbar">
+                    <div class="home-visual_content-inputbar msg-step" id="msgInputbar">
                         <input type="text" placeholder="Type your message..." disabled>
                         <button type="button">
                             <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
@@ -681,3 +802,89 @@
         </div>
     </div>
 </section>
+
+<script>
+    (function() {
+        var card1 = document.getElementById('card1');
+        var card2 = document.getElementById('card2');
+        var typingEl = document.getElementById('typingText');
+        var typingText = 'Welcome to Crest Bank. Authenticating your…';
+        var typeSpeed = 42;
+
+        var msgSteps = [
+            document.getElementById('msg1'),
+            document.getElementById('msg2'),
+            document.getElementById('msgForm'),
+            document.getElementById('msgInputbar')
+        ];
+        var msgDelays = [150, 950, 2050, 150];
+
+        var HOLD_TIME = 5000; // how long each card stays fully visible before switching
+        var typeTimer = null;
+        var stepTimers = [];
+
+        function clearTimers() {
+            if (typeTimer) {
+                clearInterval(typeTimer);
+                typeTimer = null;
+            }
+            stepTimers.forEach(function(t) {
+                clearTimeout(t);
+            });
+            stepTimers = [];
+        }
+
+        function runTyping(onDone) {
+            typingEl.textContent = '';
+            var i = 0;
+            typeTimer = setInterval(function() {
+                typingEl.textContent += typingText.charAt(i);
+                i++;
+                if (i >= typingText.length) {
+                    clearInterval(typeTimer);
+                    typeTimer = null;
+                    if (onDone) onDone();
+                }
+            }, typeSpeed);
+        }
+
+        function resetMessages() {
+            msgSteps.forEach(function(el) {
+                el.classList.remove('msg-visible');
+            });
+        }
+
+        function runMessageReveal() {
+            resetMessages();
+            msgSteps.forEach(function(el, idx) {
+                var t = setTimeout(function() {
+                    el.classList.add('msg-visible');
+                }, msgDelays[idx]);
+                stepTimers.push(t);
+            });
+        }
+
+        function showCard1() {
+            clearTimers();
+            card2.classList.add('is-hidden');
+            card1.classList.remove('is-hidden');
+            runTyping(function() {
+                // typing finished — hold, then move to card 2
+                var t = setTimeout(showCard2, HOLD_TIME - (typingText.length * typeSpeed));
+                stepTimers.push(t);
+            });
+        }
+
+        function showCard2() {
+            clearTimers();
+            card1.classList.add('is-hidden');
+            card2.classList.remove('is-hidden');
+            runMessageReveal();
+            var lastDelay = msgDelays[msgDelays.length - 1];
+            var t = setTimeout(showCard1, Math.max(HOLD_TIME, lastDelay + 1200));
+            stepTimers.push(t);
+        }
+
+        showCard1();
+    })();
+</script>
