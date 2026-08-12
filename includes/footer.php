@@ -1,5 +1,4 @@
    <style>
-
        /* ========================================
    FOOTER WAVE WRAPPER
 ======================================== */
@@ -194,6 +193,315 @@
                opacity: 0.15;
            }
        }
+
+       .card {
+           /* ========================================
+       COLORS
+    ======================================== */
+
+           --white: hsl(0, 0%, 100%);
+           --black: #0b112b;
+           --paragraph: hsl(225, 15%, 78%);
+           --line: rgba(255, 255, 255, 0.12);
+
+           --primary: #5d26c1;
+
+
+           /* ========================================
+       CARD
+    ======================================== */
+
+           position: relative;
+
+           display: flex;
+           flex-direction: column;
+           gap: 1rem;
+
+           padding: 1rem;
+           width: fit-content;
+
+           background:
+               linear-gradient(135deg,
+                   #0b112b 0%,
+                   #3b1f8f 38%,
+                   #5d26c1 58%,
+                   #2152ff 100%);
+
+           border-radius: 1rem;
+
+           box-shadow:
+               0 -16px 24px rgba(255, 255, 255, 0.12) inset;
+       }
+
+
+       /* ========================================
+   CARD BORDER
+======================================== */
+
+       .card .card__border {
+           overflow: hidden;
+           pointer-events: none;
+
+           position: absolute;
+           z-index: -10;
+
+           top: 50%;
+           left: 50%;
+
+           transform: translate(-50%, -50%);
+
+           width: calc(100% + 2px);
+           height: calc(100% + 2px);
+
+           background-image:
+               linear-gradient(135deg,
+                   #0b112b 0%,
+                   #3b1f8f 38%,
+                   #5d26c1 58%,
+                   #2152ff 100%);
+
+           border-radius: 1rem;
+       }
+
+
+       /* ========================================
+   ANIMATED BORDER
+======================================== */
+
+       .card .card__border::before {
+           content: "";
+
+           pointer-events: none;
+
+           position: absolute;
+
+           z-index: 200;
+
+           top: 50%;
+           left: 50%;
+
+           transform:
+               translate(-50%, -50%) rotate(0deg);
+
+           transform-origin: left;
+
+           width: 200%;
+           height: 10rem;
+
+           background-image:
+               linear-gradient(0deg,
+                   rgba(255, 255, 255, 0) 0%,
+                   #3b1f8f 25%,
+                   #5d26c1 45%,
+                   #2152ff 60%,
+                   rgba(255, 255, 255, 0) 100%);
+
+           animation: rotate 8s linear infinite;
+       }
+
+
+       @keyframes rotate {
+
+           to {
+               transform:
+                   translate(-50%, -50%) rotate(360deg);
+           }
+       }
+
+       .card_title__container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           position: relative;
+       }
+
+       .footer-card-img {
+           width: 95px;
+           position: absolute;
+           top: -11%;
+           right: -9%;
+       }
+
+       .footer-card-img img {
+           width: 100%;
+           height: 100%;
+           object-fit: fill;
+       }
+
+       /* ========================================
+   TITLE CONTAINER
+======================================== */
+
+       .card .card_title__container {
+           position: relative;
+           z-index: 2;
+       }
+
+
+       /* ========================================
+   TITLE
+======================================== */
+
+       .card .card_title__container .card_title {
+           font-size: 1rem;
+           color: var(--white);
+       }
+
+
+       /* ========================================
+   PARAGRAPH
+======================================== */
+
+       .card .card_title__container .card_paragraph {
+           margin-top: 0.25rem;
+
+           width: 65%;
+
+           font-size: 0.5rem;
+           line-height: 1.5;
+
+           color: var(--paragraph);
+       }
+
+
+       /* ========================================
+   LINE
+======================================== */
+
+       .card .line {
+           width: 100%;
+           height: 0.1rem;
+
+           background-color: var(--line);
+
+           border: none;
+       }
+
+
+       /* ========================================
+   LIST
+======================================== */
+
+       .card .card__list {
+           display: flex;
+           flex-direction: column;
+           gap: 0.5rem;
+       }
+
+
+       /* ========================================
+   LIST ITEM
+======================================== */
+
+       .card .card__list .card__list_item {
+           display: flex;
+           align-items: center;
+           gap: 0.5rem;
+       }
+
+
+       /* ========================================
+   CHECK
+======================================== */
+
+       .card .card__list .card__list_item .check {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+
+           width: 1rem;
+           height: 1rem;
+
+           background:
+               linear-gradient(135deg,
+                   #5d26c1 0%,
+                   #2152ff 100%);
+
+           border-radius: 50%;
+
+           box-shadow:
+               0 0 12px rgba(33, 82, 255, 0.35);
+       }
+
+
+       /* ========================================
+   CHECK SVG
+======================================== */
+
+       .card .card__list .card__list_item .check .check_svg {
+           width: 0.75rem;
+           height: 0.75rem;
+
+           fill: var(--white);
+       }
+
+
+       /* ========================================
+   LIST TEXT
+======================================== */
+
+       .card .card__list .card__list_item .list_text {
+           font-size: 0.75rem;
+
+           color: var(--white);
+       }
+
+
+       /* ========================================
+   BUTTON
+======================================== */
+
+       .button {
+           display: flex;
+           justify-content: center;
+           gap: 10px;
+       }
+
+
+       .card .button {
+           cursor: pointer;
+
+           position: relative;
+           z-index: 2;
+
+           padding: 0.5rem;
+
+           width: 100%;
+
+           background:
+               linear-gradient(135deg,
+                   #3b1f8f 0%,
+                   #5d26c1 45%,
+                   #2152ff 100%);
+
+           font-size: 0.75rem;
+
+           color: var(--white);
+
+           border: 0;
+           border-radius: 9999px;
+
+           box-shadow:
+               inset 0 -2px 25px -4px rgba(255, 255, 255, 0.45),
+               0 8px 24px rgba(33, 82, 255, 0.25);
+
+           transition:
+               transform 250ms ease,
+               box-shadow 250ms ease;
+       }
+
+
+       /* ========================================
+   BUTTON HOVER
+======================================== */
+
+       .card .button:hover {
+           transform: translateY(-2px);
+
+           box-shadow:
+               inset 0 -2px 25px -4px rgba(255, 255, 255, 0.55),
+               0 12px 30px rgba(33, 82, 255, 0.35);
+       }
    </style>
 
    <!-- ======================================================================================================================
@@ -208,15 +516,15 @@
                    <div>
                        <div class="f-brand"><img src="assets/images/logos/king-digital-logo.png" alt=""></div>
                        <div class="f-tagline">Delhi's #1 360° digital marketing company since 2010. Serving 15,000+ businesses across India with websites, SMS, WhatsApp, IVR, SEO, hosting, and more.</div>
-                       <div class="f-sub-brands">
+                       <!-- <div class="f-sub-brands">
                            <span class="f-sub">staticking.com</span>
                            <span class="f-sub">kingdigitalstudio.in</span>
                            <span class="f-sub">ivrking.in</span>
                            <span class="f-sub">kingcloud.in</span>
                            <span class="f-sub">myraint.com</span>
                            <span class="f-sub">academy.kingdigital.in</span>
-                       </div>
-                       <div class="f-social">
+                       </div> -->
+                       <div class="f-social" style="margin-bottom: 20px;">
                            <a href="https://www.facebook.com/KingDigitalPL/"><i class="fab fa-facebook-f"></i></a>
                            <a href="https://instagram.com/kingdigitalpl"><i class="fab fa-instagram"></i></a>
                            <a href="https://twitter.com/KINGDIGITALPL"><i class="fab fa-x-twitter"></i></a>
@@ -224,6 +532,61 @@
                            <a href="https://www.youtube.com/channel/UCz9Bekby1W-14f6Z0t7NeoQ"><i class="fab fa-youtube"></i></a>
                            <a href="https://t.me/kingdigitalpl"><i class="fab fa-telegram"></i></a>
                        </div>
+                       <div class="card">
+                           <div class="card__border"></div>
+                           <div class="card_title__container">
+                               <div class="card-heading">
+                                   <span class="card_title">For Leads
+                                   </span>
+                                   <p class="card_paragraph">
+                                       Perfect for your next Market, leave to us and enjoy the result!
+                                   </p>
+                               </div>
+                               <div class="footer-card-img">
+                                   <img src="assets/images/Rocket+icon.png">
+                               </div>
+                           </div>
+                           <hr class="line" />
+                           <ul class="card__list">
+                               <li class="card__list_item">
+                                   <span class="check">
+                                       <svg
+                                           xmlns="http://www.w3.org/2000/svg"
+                                           viewBox="0 0 16 16"
+                                           fill="currentColor"
+                                           class="check_svg">
+                                           <path
+                                               fill-rule="evenodd"
+                                               d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                               clip-rule="evenodd"></path>
+                                       </svg>
+                                   </span>
+                                   <span class="list_text">Fast Leads</span>
+                               </li>
+                               <li class="card__list_item">
+                                   <span class="check">
+                                       <svg
+                                           xmlns="http://www.w3.org/2000/svg"
+                                           viewBox="0 0 16 16"
+                                           fill="currentColor"
+                                           class="check_svg">
+                                           <path
+                                               fill-rule="evenodd"
+                                               d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                               clip-rule="evenodd"></path>
+                                       </svg>
+                                   </span>
+                                   <span class="list_text">Ai Powered</span>
+                               </li>
+                           </ul>
+                           <button class="button">Book a Demo
+                               <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                                   <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                               </svg>
+                           </button>
+                       </div>
+
+
                    </div>
                    <div>
                        <h4>Our Services</h4>

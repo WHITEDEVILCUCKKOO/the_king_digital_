@@ -345,22 +345,62 @@
         }
     }
 
-   .hello_cont_box{
-    position:absolute;
-    left:-15px;
-    top:-10px;
+    .home-about-svg {
+        position: absolute;
+        left: -10px;
+        top: -5px;
 
-    width:70px;
-    height:70px;
+        width: 100px;
+        height: 100px;
 
-    transform:rotate(-22deg)
-}
+        transform: rotate(-15deg)
+    }
 
-.hello_cont_box video{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
+    .home-about-svg img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .home-about-svg-2 {
+        position: absolute;
+        right: -10px;
+        bottom: -60px;
+        width: 100px;
+        height: 100px;
+        transform: rotate(15deg);
+    }
+
+    .home-about-svg-2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .about-float {
+        animation: aboutFloat 5s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    @keyframes aboutFloat {
+
+        0%,
+        100% {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+
+        25% {
+            transform: translate3d(4px, -10px, 0) rotate(0.5deg);
+        }
+
+        50% {
+            transform: translate3d(0, -16px, 0) rotate(0deg);
+        }
+
+        75% {
+            transform: translate3d(-4px, -9px, 0) rotate(-0.5deg);
+        }
+    }
 </style>
 
 <section class="home-about">
@@ -373,12 +413,15 @@
 
         </span>
         <h2 class="home-about_content--heading">
+            <div class="home-about-svg about-float">
+                <img src="assets/svg/about.svg">
+            </div>
 
-            <div class="hello_cont_box">
+            <!-- <div class="hello_cont_box">
                 <video autoplay muted loop playsinline>
                     <source src="assets/animtions_video/Mujhe_Ashe_same_animation_wali.mp4" type="video/webm">
                 </video>
-            </div>
+            </div> -->
 
             Your Trusted Partner for <span>Business Growth</span>
         </h2>
@@ -388,7 +431,12 @@
         <p class="home-about_content--para">
             Our complete range of services includes professional website development, landing page design,Google Ads, Meta Ads, search engine optimization, social media marketing, graphic designing, video production and digital branding. Every campaign and digital platform is planned according to the business objectives, target audience and market requirements of our clients.
         </p>
+
+        <div class="home-about-svg-2 about-float">
+            <img src="assets/svg/about-2.svg">
+        </div>
     </div>
+
 
 
 
