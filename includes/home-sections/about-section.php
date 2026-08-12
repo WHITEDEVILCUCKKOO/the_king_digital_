@@ -52,7 +52,7 @@
         height: 7px;
         border-radius: 50%;
         background: #df4d0f31;
-        z-index:-1 ;
+        z-index: -1;
         animation: homeAboutBlinkingDot 1.5s infinite;
     }
 
@@ -345,7 +345,22 @@
         }
     }
 
-    /* ////////////////////////////////////////////////// Scroll Reveal Animations End ////////////////////////////////////////// */
+   .hello_cont_box{
+    position:absolute;
+    left:-15px;
+    top:-10px;
+
+    width:70px;
+    height:70px;
+
+    transform:rotate(-22deg)
+}
+
+.hello_cont_box video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
 </style>
 
 <section class="home-about">
@@ -354,8 +369,17 @@
 
             <span class="home-about_content--bullet"></span>
             <h3 style="font-size: 12px;">About King Digital</h3>
+
+
         </span>
         <h2 class="home-about_content--heading">
+
+            <div class="hello_cont_box">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/animtions_video/Mujhe_Ashe_same_animation_wali.mp4" type="video/webm">
+                </video>
+            </div>
+
             Your Trusted Partner for <span>Business Growth</span>
         </h2>
         <p class="home-about_content--para">
@@ -365,6 +389,8 @@
             Our complete range of services includes professional website development, landing page design,Google Ads, Meta Ads, search engine optimization, social media marketing, graphic designing, video production and digital branding. Every campaign and digital platform is planned according to the business objectives, target audience and market requirements of our clients.
         </p>
     </div>
+
+
 
 </section>
 
@@ -376,7 +402,7 @@
     // once revealed.
     document.addEventListener('DOMContentLoaded', function() {
         const aboutContent1 = document.querySelector('.home-about_content');
-       
+
 
         if (!aboutContent1) return;
 
@@ -390,6 +416,6 @@
         });
 
         if (aboutContent1) revealObserver.observe(aboutContent1);
-     
+
     });
 </script>

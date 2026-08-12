@@ -24,11 +24,7 @@
         --trans: all .22s ease;
     }
 
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
+  
 
     /* Utilities */
     .container {
@@ -186,7 +182,7 @@
 
     .faq-wrap {
         display: grid;
-        grid-template-columns: 1fr 1.4fr;
+        grid-template-columns: 1.4fr 1fr ;
         gap: 56px;
         align-items: start;
         margin-top: 52px
@@ -380,7 +376,7 @@
     }
 
     .contact-form {
-        background: var(--bg);
+        background: var(--blue);
         border: 1.5px solid var(--bdr);
         border-radius: 20px;
         padding: 32px
@@ -390,13 +386,16 @@
         font-family: 'Poppins', sans-serif;
         font-size: 20px;
         font-weight: 800;
-        margin-bottom: 6px
+        margin-bottom: 6px;
+        color:var(--white);
     }
 
     .cf-sub {
         font-size: 14px;
         color: var(--txt2);
-        margin-bottom: 28px
+        margin-bottom: 28px;
+        color: #8f8787;
+
     }
 
     .form-row {
@@ -414,7 +413,7 @@
         font-size: 13px;
         font-weight: 700;
         font-family: 'Poppins', sans-serif;
-        color: var(--txt2);
+        color: #e6e1e1c5;
         margin-bottom: 7px
     }
 
@@ -422,14 +421,14 @@
     .form-group select,
     .form-group textarea {
         width: 100%;
-        padding: 12px 14px;
+        padding: 10px 10px;
         border: 1.5px solid var(--bdr);
         border-radius: 8px;
         font-size: 14px;
         color: var(--txt);
         background: #fff;
         outline: none;
-        transition: border-color .2s
+        transition: border-color .2s;
     }
 
     .form-group input:focus,
@@ -535,16 +534,104 @@
             gap: 20px
         }
     }
+
+
+
+    /* Container (Left-aligned as shown in image) */
+.reveal8494 {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  text-align: left;
+  max-width: 650px;
+}
+
+/* FAQS Badge Tag */
+.tag9649 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #EEF2FF; /* Light blue/lavender tint */
+  color: #3538CD;            /* Navy blue text */
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+/* Dot Base with Wave Animation Support */
+.dot854 {
+  width: 7px;
+  height: 7px;
+  background-color: #3538CD;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Wave Animation (Before & After) */
+.dot854::before,
+.dot854::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(53, 56, 205, 0.4);
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(1);
+  animation: dotWavePulse 2s infinite ease-out;
+}
+
+/* Second Wave Delay */
+.dot854::after {
+  animation-delay: 1s;
+}
+
+/* Keyframes for Wave Effect */
+@keyframes dotWavePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* Heading Styling */
+.sh84a {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0F172A; /* Dark Navy Black */
+  margin: 0 0 16px 0;
+  letter-spacing: -1px;
+}
+
+/* Subtitle Paragraph */
+.subas84 {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #475569; /* Slate grey */
+  margin: 0;
+  font-weight: 400;
+}
 </style>
 
 
 <!-- ════ FAQ ════ -->
 <section class="faq section" id="faq">
     <div class="container">
-        <div class="reveal">
-            <div class="tag"><span class="dot"></span>FAQs</div>
-            <h2 class="sh">Frequently asked questions</h2>
-            <p class="sub">Everything you need to know before getting started with King Digital.</p>
+        <div class="reveal8494">
+            <div class="tag9649"><span class="dot854"></span>FAQs</div>
+            <h2 class="sh84a">Frequently asked questions</h2>
+            <p class="subas84">Everything you need to know before getting started with King Digital.</p>
         </div>
         <div class="faq-wrap">
             <div class="faq-list reveal">
@@ -638,11 +725,11 @@
                         <option>Other / Multiple Services</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Your Message</label>
                     <textarea
                         placeholder="Tell us about your project — goals, timeline, budget, or any questions you have..."></textarea>
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-primary form-submit">
                     <i class="fas fa-paper-plane"></i> Send Message — We'll Reply in 2 Hours
                 </button>
