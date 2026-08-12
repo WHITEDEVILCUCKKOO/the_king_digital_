@@ -20,6 +20,14 @@ require_once __DIR__ . '/includes/header.php';
     <!-- section 5 ( Our Servers ) -->
     <?php require_once __DIR__ . '/includes/home-sections/our-services.php'; ?>
 
+    <!-- section 8 ( Process ) -->
+    <?php require_once __DIR__ . '/includes/home-sections/process-section.php'; ?>
+    
+    <!-- section 10 ( Process ) -->
+    <?php require_once __DIR__ . '/includes/home-sections/our-family-of-brands.php'; ?>
+    
+    <!-- section 12  ( Faq Section ) -->
+    <?php require_once __DIR__ . '/includes/home-sections/faq-content.php'; ?>  
 
 </main>
 
