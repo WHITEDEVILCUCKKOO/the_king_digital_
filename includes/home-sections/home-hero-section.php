@@ -1040,7 +1040,7 @@
 </style>
 
 <section class="home-hero-section" id="home-hero-section">
-    <canvas class="home-hero-water" id="homeHeroWater"></canvas>
+    <!-- <canvas class="home-hero-water" id="homeHeroWater"></canvas> -->
     <div class="home-hero-section_conetent">
         <div class="home-hero-section_info">
             <div class="home-hero-section_badge">
@@ -1220,1026 +1220,1026 @@
         });
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
+    // document.addEventListener("DOMContentLoaded", () => {
 
-        /* ========================================
-           ELEMENTS
-        ======================================== */
+    //     /* ========================================
+    //        ELEMENTS
+    //     ======================================== */
 
-        const hero = document.querySelector(".home-hero-section");
-        const canvas = document.getElementById("homeHeroWater");
+    //     const hero = document.querySelector(".home-hero-section");
+    //     const canvas = document.getElementById("homeHeroWater");
 
-        if (!hero || !canvas) {
-            return;
-        }
+    //     if (!hero || !canvas) {
+    //         return;
+    //     }
 
-        const ctx = canvas.getContext("2d");
+    //     const ctx = canvas.getContext("2d");
 
-        if (!ctx) {
-            return;
-        }
+    //     if (!ctx) {
+    //         return;
+    //     }
 
 
-        /* ========================================
-           CANVAS VARIABLES
-        ======================================== */
+    //     /* ========================================
+    //        CANVAS VARIABLES
+    //     ======================================== */
 
-        let width = 0;
-        let height = 0;
+    //     let width = 0;
+    //     let height = 0;
 
-        let dpr = Math.min(
-            window.devicePixelRatio || 1,
-            2
-        );
+    //     let dpr = Math.min(
+    //         window.devicePixelRatio || 1,
+    //         2
+    //     );
 
 
-        /* ========================================
-           MOUSE VARIABLES
-        ======================================== */
+    //     /* ========================================
+    //        MOUSE VARIABLES
+    //     ======================================== */
 
-        let mouseX = -1000;
-        let mouseY = -1000;
+    //     let mouseX = -1000;
+    //     let mouseY = -1000;
 
-        let previousMouseX = -1000;
-        let previousMouseY = -1000;
+    //     let previousMouseX = -1000;
+    //     let previousMouseY = -1000;
 
-        let lastRippleX = -1000;
-        let lastRippleY = -1000;
+    //     let lastRippleX = -1000;
+    //     let lastRippleY = -1000;
 
-        let mouseInside = false;
+    //     let mouseInside = false;
 
 
-        /* ========================================
-           RIPPLE STORAGE
-        ======================================== */
+    //     /* ========================================
+    //        RIPPLE STORAGE
+    //     ======================================== */
 
-        const ripples = [];
+    //     const ripples = [];
 
 
-        /* ========================================
-           SETTINGS
-        ======================================== */
+    //     /* ========================================
+    //        SETTINGS
+    //     ======================================== */
 
-        const settings = {
+    //     const settings = {
 
-            /*
-             * Minimum and maximum final ripple size.
-             *
-             * These are deliberately much larger
-             * than the previous version.
-             */
+    //         /*
+    //          * Minimum and maximum final ripple size.
+    //          *
+    //          * These are deliberately much larger
+    //          * than the previous version.
+    //          */
 
-            minSize: 50,
-            maxSize: 150,
+    //         minSize: 50,
+    //         maxSize: 150,
 
 
-            /*
-             * Expansion speed.
-             */
+    //         /*
+    //          * Expansion speed.
+    //          */
 
-            animationSpeed: 2.1,
+    //         animationSpeed: 2.1,
 
 
-            /*
-             * Existing water color family.
-             *
-             * This does NOT change your hero theme.
-             */
+    //         /*
+    //          * Existing water color family.
+    //          *
+    //          * This does NOT change your hero theme.
+    //          */
 
-            color: "148, 217, 255",
+    //         color: "148, 217, 255",
 
 
-            /*
-             * Keep the effect subtle.
-             */
+    //         /*
+    //          * Keep the effect subtle.
+    //          */
 
-            opacity: 0.18,
+    //         opacity: 0.18,
 
 
-            /*
-             * Cursor must move this far before
-             * another disturbance is created.
-             */
+    //         /*
+    //          * Cursor must move this far before
+    //          * another disturbance is created.
+    //          */
 
-            rippleDistance: 26,
+    //         rippleDistance: 26,
 
 
-            /*
-             * Maximum simultaneous disturbances.
-             */
+    //         /*
+    //          * Maximum simultaneous disturbances.
+    //          */
 
-            maxRipples: 16,
+    //         maxRipples: 16,
 
 
-            /*
-             * Number of points used to draw
-             * an irregular water circumference.
-             */
+    //         /*
+    //          * Number of points used to draw
+    //          * an irregular water circumference.
+    //          */
 
-            ringPoints: 100
-        };
+    //         ringPoints: 100
+    //     };
 
 
-        /* ========================================
-           RESIZE CANVAS
-        ======================================== */
+    //     /* ========================================
+    //        RESIZE CANVAS
+    //     ======================================== */
 
-        function resizeCanvas() {
+    //     function resizeCanvas() {
 
-            const rect =
-                hero.getBoundingClientRect();
+    //         const rect =
+    //             hero.getBoundingClientRect();
 
 
-            width = rect.width;
-            height = rect.height;
+    //         width = rect.width;
+    //         height = rect.height;
 
 
-            dpr = Math.min(
-                window.devicePixelRatio || 1,
-                2
-            );
+    //         dpr = Math.min(
+    //             window.devicePixelRatio || 1,
+    //             2
+    //         );
 
 
-            canvas.width =
-                Math.round(width * dpr);
+    //         canvas.width =
+    //             Math.round(width * dpr);
 
-            canvas.height =
-                Math.round(height * dpr);
+    //         canvas.height =
+    //             Math.round(height * dpr);
 
 
-            canvas.style.width =
-                `${width}px`;
+    //         canvas.style.width =
+    //             `${width}px`;
 
-            canvas.style.height =
-                `${height}px`;
+    //         canvas.style.height =
+    //             `${height}px`;
 
 
-            /*
-             * Draw using CSS pixel coordinates
-             * while keeping the canvas sharp on
-             * high-DPI displays.
-             */
+    //         /*
+    //          * Draw using CSS pixel coordinates
+    //          * while keeping the canvas sharp on
+    //          * high-DPI displays.
+    //          */
 
-            ctx.setTransform(
-                dpr,
-                0,
-                0,
-                dpr,
-                0,
-                0
-            );
-        }
+    //         ctx.setTransform(
+    //             dpr,
+    //             0,
+    //             0,
+    //             dpr,
+    //             0,
+    //             0
+    //         );
+    //     }
 
 
-        resizeCanvas();
+    //     resizeCanvas();
 
 
-        window.addEventListener(
-            "resize",
-            resizeCanvas
-        );
+    //     window.addEventListener(
+    //         "resize",
+    //         resizeCanvas
+    //     );
 
 
-        /* ========================================
-           DISTANCE
-        ======================================== */
+    //     /* ========================================
+    //        DISTANCE
+    //     ======================================== */
 
-        function getDistance(
-            x1,
-            y1,
-            x2,
-            y2
-        ) {
+    //     function getDistance(
+    //         x1,
+    //         y1,
+    //         x2,
+    //         y2
+    //     ) {
 
-            const dx = x2 - x1;
-            const dy = y2 - y1;
+    //         const dx = x2 - x1;
+    //         const dy = y2 - y1;
 
-            return Math.sqrt(
-                dx * dx +
-                dy * dy
-            );
-        }
+    //         return Math.sqrt(
+    //             dx * dx +
+    //             dy * dy
+    //         );
+    //     }
 
 
-        /* ========================================
-           CREATE RIPPLE
-        ======================================== */
+    //     /* ========================================
+    //        CREATE RIPPLE
+    //     ======================================== */
 
-        function createRipple(
-            x,
-            y,
-            velocity
-        ) {
+    //     function createRipple(
+    //         x,
+    //         y,
+    //         velocity
+    //     ) {
 
-            /*
-             * Remove oldest ripple if we
-             * reach the maximum.
-             */
+    //         /*
+    //          * Remove oldest ripple if we
+    //          * reach the maximum.
+    //          */
 
-            if (
-                ripples.length >=
-                settings.maxRipples
-            ) {
+    //         if (
+    //             ripples.length >=
+    //             settings.maxRipples
+    //         ) {
 
-                ripples.shift();
-            }
+    //             ripples.shift();
+    //         }
 
 
-            /*
-             * Convert cursor velocity into
-             * a value between 0 and 1.
-             */
+    //         /*
+    //          * Convert cursor velocity into
+    //          * a value between 0 and 1.
+    //          */
 
-            const strength =
-                Math.min(
-                    velocity / 35,
-                    1
-                );
+    //         const strength =
+    //             Math.min(
+    //                 velocity / 35,
+    //                 1
+    //             );
 
 
-            /*
-             * Faster cursor =
-             * larger disturbance.
-             */
+    //         /*
+    //          * Faster cursor =
+    //          * larger disturbance.
+    //          */
 
-            const maxRadius =
-                settings.minSize +
-                (
-                    settings.maxSize -
-                    settings.minSize
-                ) * strength;
+    //         const maxRadius =
+    //             settings.minSize +
+    //             (
+    //                 settings.maxSize -
+    //                 settings.minSize
+    //             ) * strength;
 
 
-            /*
-             * Give every ripple slightly
-             * different characteristics.
-             */
+    //         /*
+    //          * Give every ripple slightly
+    //          * different characteristics.
+    //          */
 
-            const ripple = {
+    //         const ripple = {
 
-                x: x,
-                y: y,
+    //             x: x,
+    //             y: y,
 
 
-                /*
-                 * Current radius.
-                 */
+    //             /*
+    //              * Current radius.
+    //              */
 
-                radius: 5,
+    //             radius: 5,
 
 
-                /*
-                 * Final radius.
-                 */
+    //             /*
+    //              * Final radius.
+    //              */
 
-                maxRadius: maxRadius,
+    //             maxRadius: maxRadius,
 
 
-                /*
-                 * Animation speed.
-                 */
+    //             /*
+    //              * Animation speed.
+    //              */
 
-                speed: settings.animationSpeed +
-                    strength * 1.3,
+    //             speed: settings.animationSpeed +
+    //                 strength * 1.3,
 
 
-                /*
-                 * Base opacity.
-                 */
+    //             /*
+    //              * Base opacity.
+    //              */
 
-                opacity: settings.opacity +
-                    strength * 0.10,
+    //             opacity: settings.opacity +
+    //                 strength * 0.10,
 
 
-                /*
-                 * Random seed for
-                 * irregular water shape.
-                 */
+    //             /*
+    //              * Random seed for
+    //              * irregular water shape.
+    //              */
 
-                seed: Math.random() * 10000,
+    //             seed: Math.random() * 10000,
 
 
-                /*
-                 * Rotation prevents all
-                 * ripples from looking identical.
-                 */
+    //             /*
+    //              * Rotation prevents all
+    //              * ripples from looking identical.
+    //              */
 
-                rotation: Math.random() *
-                    Math.PI *
-                    2,
+    //             rotation: Math.random() *
+    //                 Math.PI *
+    //                 2,
 
 
-                /*
-                 * Small variation in shape.
-                 */
+    //             /*
+    //              * Small variation in shape.
+    //              */
 
-                distortion: 0.018 +
-                    Math.random() * 0.012,
+    //             distortion: 0.018 +
+    //                 Math.random() * 0.012,
 
 
-                /*
-                 * Current life.
-                 */
+    //             /*
+    //              * Current life.
+    //              */
 
-                life: 0
-            };
+    //             life: 0
+    //         };
 
 
-            ripples.push(ripple);
-        }
+    //         ripples.push(ripple);
+    //     }
 
 
-        /* ========================================
-           CREATE MULTIPLE WATER BANDS
-        ======================================== */
+    //     /* ========================================
+    //        CREATE MULTIPLE WATER BANDS
+    //     ======================================== */
 
-        function drawWaterRing(
-            ripple,
-            radius,
-            opacity,
-            lineWidth,
-            blur
-        ) {
+    //     function drawWaterRing(
+    //         ripple,
+    //         radius,
+    //         opacity,
+    //         lineWidth,
+    //         blur
+    //     ) {
 
-            ctx.save();
+    //         ctx.save();
 
 
-            ctx.translate(
-                ripple.x,
-                ripple.y
-            );
+    //         ctx.translate(
+    //             ripple.x,
+    //             ripple.y
+    //         );
 
 
-            ctx.rotate(
-                ripple.rotation
-            );
+    //         ctx.rotate(
+    //             ripple.rotation
+    //         );
 
 
-            /*
-             * Slightly flatten the ring.
-             *
-             * This prevents it from looking
-             * like a perfect geometric circle.
-             */
+    //         /*
+    //          * Slightly flatten the ring.
+    //          *
+    //          * This prevents it from looking
+    //          * like a perfect geometric circle.
+    //          */
 
-            ctx.scale(
-                1,
-                0.88
-            );
+    //         ctx.scale(
+    //             1,
+    //             0.88
+    //         );
 
 
-            ctx.beginPath();
+    //         ctx.beginPath();
 
 
-            const points =
-                settings.ringPoints;
+    //         const points =
+    //             settings.ringPoints;
 
 
-            for (
-                let i = 0; i <= points; i++
-            ) {
+    //         for (
+    //             let i = 0; i <= points; i++
+    //         ) {
 
-                const angle =
-                    (
-                        i / points
-                    ) *
-                    Math.PI *
-                    2;
+    //             const angle =
+    //                 (
+    //                     i / points
+    //                 ) *
+    //                 Math.PI *
+    //                 2;
 
 
-                /*
-                 * Multiple low-frequency
-                 * sine waves create the
-                 * irregular water surface.
-                 */
+    //             /*
+    //              * Multiple low-frequency
+    //              * sine waves create the
+    //              * irregular water surface.
+    //              */
 
-                const noise1 =
-                    Math.sin(
-                        angle * 3 +
-                        ripple.seed
-                    ) *
-                    ripple.distortion;
+    //             const noise1 =
+    //                 Math.sin(
+    //                     angle * 3 +
+    //                     ripple.seed
+    //                 ) *
+    //                 ripple.distortion;
 
 
-                const noise2 =
-                    Math.sin(
-                        angle * 6 +
-                        ripple.seed * 1.7
-                    ) *
-                    ripple.distortion *
-                    0.55;
+    //             const noise2 =
+    //                 Math.sin(
+    //                     angle * 6 +
+    //                     ripple.seed * 1.7
+    //                 ) *
+    //                 ripple.distortion *
+    //                 0.55;
 
 
-                const noise3 =
-                    Math.sin(
-                        angle * 11 +
-                        ripple.seed * 0.63
-                    ) *
-                    ripple.distortion *
-                    0.25;
+    //             const noise3 =
+    //                 Math.sin(
+    //                     angle * 11 +
+    //                     ripple.seed * 0.63
+    //                 ) *
+    //                 ripple.distortion *
+    //                 0.25;
 
 
-                /*
-                 * Combine the distortions.
-                 */
+    //             /*
+    //              * Combine the distortions.
+    //              */
 
-                const distortion =
-                    1 +
-                    noise1 +
-                    noise2 +
-                    noise3;
+    //             const distortion =
+    //                 1 +
+    //                 noise1 +
+    //                 noise2 +
+    //                 noise3;
 
 
-                const currentRadius =
-                    radius *
-                    distortion;
+    //             const currentRadius =
+    //                 radius *
+    //                 distortion;
 
 
-                const x =
-                    Math.cos(angle) *
-                    currentRadius;
+    //             const x =
+    //                 Math.cos(angle) *
+    //                 currentRadius;
 
 
-                const y =
-                    Math.sin(angle) *
-                    currentRadius;
+    //             const y =
+    //                 Math.sin(angle) *
+    //                 currentRadius;
 
 
-                if (i === 0) {
+    //             if (i === 0) {
 
-                    ctx.moveTo(
-                        x,
-                        y
-                    );
+    //                 ctx.moveTo(
+    //                     x,
+    //                     y
+    //                 );
 
-                } else {
+    //             } else {
 
-                    ctx.lineTo(
-                        x,
-                        y
-                    );
-                }
-            }
+    //                 ctx.lineTo(
+    //                     x,
+    //                     y
+    //                 );
+    //             }
+    //         }
 
 
-            ctx.closePath();
+    //         ctx.closePath();
 
 
-            /*
-             * Blur creates the soft water
-             * appearance from your reference.
-             */
+    //         /*
+    //          * Blur creates the soft water
+    //          * appearance from your reference.
+    //          */
 
-            ctx.filter =
-                `blur(${blur}px)`;
+    //         ctx.filter =
+    //             `blur(${blur}px)`;
 
 
-            ctx.strokeStyle =
-                `rgba(
-                ${settings.color},
-                ${opacity}
-            )`;
+    //         ctx.strokeStyle =
+    //             `rgba(
+    //             ${settings.color},
+    //             ${opacity}
+    //         )`;
 
 
-            ctx.lineWidth =
-                lineWidth;
+    //         ctx.lineWidth =
+    //             lineWidth;
 
 
-            ctx.stroke();
+    //         ctx.stroke();
 
 
-            ctx.restore();
-        }
+    //         ctx.restore();
+    //     }
 
 
-        /* ========================================
-           DRAW ONE RIPPLE
-        ======================================== */
+    //     /* ========================================
+    //        DRAW ONE RIPPLE
+    //     ======================================== */
 
-        function drawRipple(ripple) {
+    //     function drawRipple(ripple) {
 
-            /*
-             * Progress from 0 to 1.
-             */
+    //         /*
+    //          * Progress from 0 to 1.
+    //          */
 
-            const progress =
-                ripple.radius /
-                ripple.maxRadius;
+    //         const progress =
+    //             ripple.radius /
+    //             ripple.maxRadius;
 
 
-            /*
-             * Smooth expansion.
-             *
-             * Starts gently and expands
-             * naturally.
-             */
+    //         /*
+    //          * Smooth expansion.
+    //          *
+    //          * Starts gently and expands
+    //          * naturally.
+    //          */
 
-            const easedProgress =
-                1 -
-                Math.pow(
-                    1 - progress,
-                    3
-                );
+    //         const easedProgress =
+    //             1 -
+    //             Math.pow(
+    //                 1 - progress,
+    //                 3
+    //             );
 
 
-            const radius =
-                5 +
-                (
-                    ripple.maxRadius - 5
-                ) *
-                easedProgress;
+    //         const radius =
+    //             5 +
+    //             (
+    //                 ripple.maxRadius - 5
+    //             ) *
+    //             easedProgress;
 
 
-            /* ====================================
-               OPACITY CURVE
-            ====================================
+    //         /* ====================================
+    //            OPACITY CURVE
+    //         ====================================
 
-            0%       invisible
-            10%      appears
-            30-40%   strongest
-            60%      fading
-            80%      very faint
-            100%     gone
-            */
+    //         0%       invisible
+    //         10%      appears
+    //         30-40%   strongest
+    //         60%      fading
+    //         80%      very faint
+    //         100%     gone
+    //         */
 
-            let fade;
+    //         let fade;
 
 
-            if (progress < 0.10) {
+    //         if (progress < 0.10) {
 
-                fade =
-                    progress / 0.10;
+    //             fade =
+    //                 progress / 0.10;
 
-            } else if (progress < 0.38) {
+    //         } else if (progress < 0.38) {
 
-                fade = 1;
+    //             fade = 1;
 
-            } else {
+    //         } else {
 
-                fade =
-                    1 -
-                    (
-                        (progress - 0.38) /
-                        0.62
-                    );
-            }
+    //             fade =
+    //                 1 -
+    //                 (
+    //                     (progress - 0.38) /
+    //                     0.62
+    //                 );
+    //         }
 
 
-            fade =
-                Math.max(
-                    0,
-                    Math.min(
-                        1,
-                        fade
-                    )
-                );
+    //         fade =
+    //             Math.max(
+    //                 0,
+    //                 Math.min(
+    //                     1,
+    //                     fade
+    //                 )
+    //             );
 
 
-            /*
-             * Slight organic movement.
-             */
+    //         /*
+    //          * Slight organic movement.
+    //          */
 
-            const movement =
-                Math.sin(
-                    ripple.life * 8 +
-                    ripple.seed
-                ) *
-                0.025;
+    //         const movement =
+    //             Math.sin(
+    //                 ripple.life * 8 +
+    //                 ripple.seed
+    //             ) *
+    //             0.025;
 
 
-            const finalOpacity =
-                ripple.opacity *
-                fade;
+    //         const finalOpacity =
+    //             ripple.opacity *
+    //             fade;
 
 
-            /* ====================================
-               OUTER ATMOSPHERIC GLOW
-            ==================================== */
+    //         /* ====================================
+    //            OUTER ATMOSPHERIC GLOW
+    //         ==================================== */
 
-            ctx.save();
+    //         ctx.save();
 
 
-            ctx.translate(
-                ripple.x,
-                ripple.y
-            );
+    //         ctx.translate(
+    //             ripple.x,
+    //             ripple.y
+    //         );
 
 
-            ctx.rotate(
-                ripple.rotation
-            );
+    //         ctx.rotate(
+    //             ripple.rotation
+    //         );
 
 
-            ctx.scale(
-                1 + movement,
-                0.88 - movement
-            );
+    //         ctx.scale(
+    //             1 + movement,
+    //             0.88 - movement
+    //         );
 
 
-            /*
-             * Large soft gradient surrounding
-             * the actual water ring.
-             */
+    //         /*
+    //          * Large soft gradient surrounding
+    //          * the actual water ring.
+    //          */
 
-            const outerGradient =
-                ctx.createRadialGradient(
-                    0,
-                    0,
-                    radius * 0.72,
+    //         const outerGradient =
+    //             ctx.createRadialGradient(
+    //                 0,
+    //                 0,
+    //                 radius * 0.72,
 
-                    0,
-                    0,
-                    radius * 1.04
-                );
+    //                 0,
+    //                 0,
+    //                 radius * 1.04
+    //             );
 
 
-            outerGradient.addColorStop(
-                0,
-                `rgba(
-                ${settings.color},
-                0
-            )`
-            );
+    //         outerGradient.addColorStop(
+    //             0,
+    //             `rgba(
+    //             ${settings.color},
+    //             0
+    //         )`
+    //         );
 
 
-            outerGradient.addColorStop(
-                0.72,
-                `rgba(
-                ${settings.color},
-                0
-            )`
-            );
+    //         outerGradient.addColorStop(
+    //             0.72,
+    //             `rgba(
+    //             ${settings.color},
+    //             0
+    //         )`
+    //         );
 
 
-            outerGradient.addColorStop(
-                0.86,
-                `rgba(
-                ${settings.color},
-                ${finalOpacity * 0.08}
-            )`
-            );
+    //         outerGradient.addColorStop(
+    //             0.86,
+    //             `rgba(
+    //             ${settings.color},
+    //             ${finalOpacity * 0.08}
+    //         )`
+    //         );
 
 
-            outerGradient.addColorStop(
-                0.93,
-                `rgba(
-                ${settings.color},
-                ${finalOpacity * 0.20}
-            )`
-            );
+    //         outerGradient.addColorStop(
+    //             0.93,
+    //             `rgba(
+    //             ${settings.color},
+    //             ${finalOpacity * 0.20}
+    //         )`
+    //         );
 
 
-            outerGradient.addColorStop(
-                0.97,
-                `rgba(
-                ${settings.color},
-                ${finalOpacity * 0.10}
-            )`
-            );
+    //         outerGradient.addColorStop(
+    //             0.97,
+    //             `rgba(
+    //             ${settings.color},
+    //             ${finalOpacity * 0.10}
+    //         )`
+    //         );
 
 
-            outerGradient.addColorStop(
-                1,
-                `rgba(
-                ${settings.color},
-                0
-            )`
-            );
+    //         outerGradient.addColorStop(
+    //             1,
+    //             `rgba(
+    //             ${settings.color},
+    //             0
+    //         )`
+    //         );
 
 
-            ctx.fillStyle =
-                outerGradient;
+    //         ctx.fillStyle =
+    //             outerGradient;
 
 
-            ctx.beginPath();
+    //         ctx.beginPath();
 
 
-            ctx.arc(
-                0,
-                0,
-                radius * 1.04,
-                0,
-                Math.PI * 2
-            );
+    //         ctx.arc(
+    //             0,
+    //             0,
+    //             radius * 1.04,
+    //             0,
+    //             Math.PI * 2
+    //         );
 
 
-            ctx.fill();
+    //         ctx.fill();
 
 
-            ctx.restore();
+    //         ctx.restore();
 
 
-            /* ====================================
-               MAIN WATER RING
-            ==================================== */
+    //         /* ====================================
+    //            MAIN WATER RING
+    //         ==================================== */
 
-            drawWaterRing(
-                ripple,
-                radius,
-                finalOpacity * 0.62,
-                1.2,
-                4
-            );
+    //         drawWaterRing(
+    //             ripple,
+    //             radius,
+    //             finalOpacity * 0.62,
+    //             1.2,
+    //             4
+    //         );
 
 
-            /* ====================================
-               SECONDARY WAVE
-            ==================================== */
+    //         /* ====================================
+    //            SECONDARY WAVE
+    //         ==================================== */
 
-            /*
-             * A second ring slightly inside
-             * the main ring makes the effect
-             * feel like actual water rather
-             * than one outline.
-             */
+    //         /*
+    //          * A second ring slightly inside
+    //          * the main ring makes the effect
+    //          * feel like actual water rather
+    //          * than one outline.
+    //          */
 
-            drawWaterRing(
-                ripple,
-                radius * 0.91,
-                finalOpacity * 0.30,
-                1,
-                7
-            );
+    //         drawWaterRing(
+    //             ripple,
+    //             radius * 0.91,
+    //             finalOpacity * 0.30,
+    //             1,
+    //             7
+    //         );
 
 
-            /* ====================================
-               INNER WAVE
-            ==================================== */
+    //         /* ====================================
+    //            INNER WAVE
+    //         ==================================== */
 
-            drawWaterRing(
-                ripple,
-                radius * 0.78,
-                finalOpacity * 0.16,
-                1,
-                9
-            );
+    //         drawWaterRing(
+    //             ripple,
+    //             radius * 0.78,
+    //             finalOpacity * 0.16,
+    //             1,
+    //             9
+    //         );
 
 
-            /* ====================================
-               SUBTLE HIGHLIGHT
-            ==================================== */
+    //         /* ====================================
+    //            SUBTLE HIGHLIGHT
+    //         ==================================== */
 
-            /*
-             * Only visible while the ripple
-             * is relatively young.
-             */
+    //         /*
+    //          * Only visible while the ripple
+    //          * is relatively young.
+    //          */
 
-            if (progress < 0.55) {
+    //         if (progress < 0.55) {
 
-                const highlightFade =
-                    Math.max(
-                        0,
-                        1 -
-                        progress / 0.55
-                    );
+    //             const highlightFade =
+    //                 Math.max(
+    //                     0,
+    //                     1 -
+    //                     progress / 0.55
+    //                 );
 
 
-                drawWaterRing(
-                    ripple,
-                    radius * 0.96,
-                    finalOpacity *
-                    highlightFade *
-                    0.20,
-                    0.8,
-                    2
-                );
-            }
+    //             drawWaterRing(
+    //                 ripple,
+    //                 radius * 0.96,
+    //                 finalOpacity *
+    //                 highlightFade *
+    //                 0.20,
+    //                 0.8,
+    //                 2
+    //             );
+    //         }
 
 
-            /*
-             * Increase life.
-             */
+    //         /*
+    //          * Increase life.
+    //          */
 
-            ripple.life += 0.016;
-        }
+    //         ripple.life += 0.016;
+    //     }
 
 
-        /* ========================================
-           MOUSE ENTER
-        ======================================== */
+    //     /* ========================================
+    //        MOUSE ENTER
+    //     ======================================== */
 
-        hero.addEventListener(
-            "mouseenter",
-            (event) => {
+    //     hero.addEventListener(
+    //         "mouseenter",
+    //         (event) => {
 
-                mouseInside = true;
+    //             mouseInside = true;
 
 
-                const rect =
-                    hero.getBoundingClientRect();
+    //             const rect =
+    //                 hero.getBoundingClientRect();
 
 
-                mouseX =
-                    event.clientX -
-                    rect.left;
+    //             mouseX =
+    //                 event.clientX -
+    //                 rect.left;
 
 
-                mouseY =
-                    event.clientY -
-                    rect.top;
+    //             mouseY =
+    //                 event.clientY -
+    //                 rect.top;
 
 
-                previousMouseX =
-                    mouseX;
+    //             previousMouseX =
+    //                 mouseX;
 
 
-                previousMouseY =
-                    mouseY;
+    //             previousMouseY =
+    //                 mouseY;
 
 
-                lastRippleX =
-                    mouseX;
+    //             lastRippleX =
+    //                 mouseX;
 
 
-                lastRippleY =
-                    mouseY;
-            }
-        );
+    //             lastRippleY =
+    //                 mouseY;
+    //         }
+    //     );
 
 
-        /* ========================================
-           MOUSE MOVE
-        ======================================== */
+    //     /* ========================================
+    //        MOUSE MOVE
+    //     ======================================== */
 
-        hero.addEventListener(
-            "mousemove",
-            (event) => {
+    //     hero.addEventListener(
+    //         "mousemove",
+    //         (event) => {
 
-                const rect =
-                    hero.getBoundingClientRect();
+    //             const rect =
+    //                 hero.getBoundingClientRect();
 
 
-                mouseX =
-                    event.clientX -
-                    rect.left;
+    //             mouseX =
+    //                 event.clientX -
+    //                 rect.left;
 
 
-                mouseY =
-                    event.clientY -
-                    rect.top;
+    //             mouseY =
+    //                 event.clientY -
+    //                 rect.top;
 
 
-                /*
-                 * How quickly is the cursor moving?
-                 */
+    //             /*
+    //              * How quickly is the cursor moving?
+    //              */
 
-                const velocity =
-                    getDistance(
-                        mouseX,
-                        mouseY,
-                        previousMouseX,
-                        previousMouseY
-                    );
+    //             const velocity =
+    //                 getDistance(
+    //                     mouseX,
+    //                     mouseY,
+    //                     previousMouseX,
+    //                     previousMouseY
+    //                 );
 
 
-                /*
-                 * How far since the last
-                 * ripple was generated?
-                 */
+    //             /*
+    //              * How far since the last
+    //              * ripple was generated?
+    //              */
 
-                const distanceSinceRipple =
-                    getDistance(
-                        mouseX,
-                        mouseY,
-                        lastRippleX,
-                        lastRippleY
-                    );
+    //             const distanceSinceRipple =
+    //                 getDistance(
+    //                     mouseX,
+    //                     mouseY,
+    //                     lastRippleX,
+    //                     lastRippleY
+    //                 );
 
 
-                /*
-                 * Only generate another
-                 * disturbance after the cursor
-                 * has travelled a certain distance.
-                 */
+    //             /*
+    //              * Only generate another
+    //              * disturbance after the cursor
+    //              * has travelled a certain distance.
+    //              */
 
-                if (
-                    distanceSinceRipple >=
-                    settings.rippleDistance
-                ) {
+    //             if (
+    //                 distanceSinceRipple >=
+    //                 settings.rippleDistance
+    //             ) {
 
-                    createRipple(
-                        mouseX,
-                        mouseY,
-                        velocity
-                    );
+    //                 createRipple(
+    //                     mouseX,
+    //                     mouseY,
+    //                     velocity
+    //                 );
 
 
-                    lastRippleX =
-                        mouseX;
+    //                 lastRippleX =
+    //                     mouseX;
 
 
-                    lastRippleY =
-                        mouseY;
-                }
+    //                 lastRippleY =
+    //                     mouseY;
+    //             }
 
 
-                previousMouseX =
-                    mouseX;
+    //             previousMouseX =
+    //                 mouseX;
 
 
-                previousMouseY =
-                    mouseY;
-            }
-        );
+    //             previousMouseY =
+    //                 mouseY;
+    //         }
+    //     );
 
 
-        /* ========================================
-           MOUSE LEAVE
-        ======================================== */
+    //     /* ========================================
+    //        MOUSE LEAVE
+    //     ======================================== */
 
-        hero.addEventListener(
-            "mouseleave",
-            () => {
+    //     hero.addEventListener(
+    //         "mouseleave",
+    //         () => {
 
-                mouseInside = false;
+    //             mouseInside = false;
 
-                mouseX = -1000;
-                mouseY = -1000;
+    //             mouseX = -1000;
+    //             mouseY = -1000;
 
-                previousMouseX = -1000;
-                previousMouseY = -1000;
-            }
-        );
+    //             previousMouseX = -1000;
+    //             previousMouseY = -1000;
+    //         }
+    //     );
 
 
-        /* ========================================
-           ANIMATION LOOP
-        ======================================== */
+    //     /* ========================================
+    //        ANIMATION LOOP
+    //     ======================================== */
 
-        function animate() {
+    //     function animate() {
 
-            /*
-             * Completely clear the transparent
-             * canvas every frame.
-             */
+    //         /*
+    //          * Completely clear the transparent
+    //          * canvas every frame.
+    //          */
 
-            ctx.clearRect(
-                0,
-                0,
-                width,
-                height
-            );
+    //         ctx.clearRect(
+    //             0,
+    //             0,
+    //             width,
+    //             height
+    //         );
 
 
-            /*
-             * Draw ripples from newest to oldest.
-             */
+    //         /*
+    //          * Draw ripples from newest to oldest.
+    //          */
 
-            for (
-                let i = ripples.length - 1; i >= 0; i--
-            ) {
+    //         for (
+    //             let i = ripples.length - 1; i >= 0; i--
+    //         ) {
 
-                const ripple =
-                    ripples[i];
+    //             const ripple =
+    //                 ripples[i];
 
 
-                /*
-                 * Expand ripple.
-                 */
+    //             /*
+    //              * Expand ripple.
+    //              */
 
-                ripple.radius +=
-                    ripple.speed;
+    //             ripple.radius +=
+    //                 ripple.speed;
 
 
-                /*
-                 * Remove finished ripples.
-                 */
+    //             /*
+    //              * Remove finished ripples.
+    //              */
 
-                if (
-                    ripple.radius >=
-                    ripple.maxRadius
-                ) {
+    //             if (
+    //                 ripple.radius >=
+    //                 ripple.maxRadius
+    //             ) {
 
-                    ripples.splice(
-                        i,
-                        1
-                    );
+    //                 ripples.splice(
+    //                     i,
+    //                     1
+    //                 );
 
-                    continue;
-                }
+    //                 continue;
+    //             }
 
 
-                /*
-                 * Draw current ripple.
-                 */
+    //             /*
+    //              * Draw current ripple.
+    //              */
 
-                drawRipple(
-                    ripple
-                );
-            }
+    //             drawRipple(
+    //                 ripple
+    //             );
+    //         }
 
 
-            requestAnimationFrame(
-                animate
-            );
-        }
+    //         requestAnimationFrame(
+    //             animate
+    //         );
+    //     }
 
 
-        /* ========================================
-           START
-        ======================================== */
+    //     /* ========================================
+    //        START
+    //     ======================================== */
 
-        animate();
+    //     animate();
 
-    });
+    // });
 </script>
