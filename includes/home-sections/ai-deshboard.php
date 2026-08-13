@@ -65,7 +65,6 @@
     }
 
     .home-deshboard-section {
-        /* max-width: 1180px; */
         margin: 0 auto;
         padding: 64px 24px 96px;
     }
@@ -660,6 +659,175 @@
         transform: translateX(0);
     }
 
+    .home-deshboard-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .decor-circle {
+        position: absolute;
+        top: -140px;
+        right: -140px;
+        width: 450px;
+        height: 450px;
+        border: 5px dashed var(--color-primary);
+        border-radius: 50%;
+        opacity: 0.35;
+        animation: decor-spin 16s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .decor-circle::before {
+        content: '';
+        position: absolute;
+        inset: 24px;
+        border: 7px dashed var(--color-secondary);
+        border-radius: 50%;
+        opacity: 0.6;
+    }
+
+    @keyframes decor-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .decor-clouds {
+        position: absolute;
+        bottom: -260px;
+        left: 14.3%;
+        width: 980px;
+        height: 720px;
+        transform: translateX(-50%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .decor-cloud {
+        position: absolute;
+        filter: blur(70px);
+    }
+
+    .decor-cloud.c1 {
+        width: 420px;
+        height: 280px;
+        left: 40px;
+        bottom: 70px;
+        background: var(--color-primary);
+        opacity: 0.36;
+        border-radius: 42% 58% 63% 37% / 55% 45% 55% 45%;
+        animation: cloud-drift-1 17s ease-in-out infinite;
+    }
+
+    .decor-cloud.c2 {
+        width: 360px;
+        height: 240px;
+        left: 240px;
+        bottom: 150px;
+        background: var(--color-primary-light);
+        opacity: 0.32;
+        border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%;
+        animation: cloud-drift-2 14s ease-in-out infinite;
+    }
+
+    .decor-cloud.c3 {
+        width: 480px;
+        height: 300px;
+        left: 360px;
+        bottom: 30px;
+        background: var(--color-secondary);
+        opacity: 0.34;
+        border-radius: 60% 40% 45% 55% / 50% 55% 45% 50%;
+        animation: cloud-drift-3 21s ease-in-out infinite;
+    }
+
+    .decor-cloud.c4 {
+        width: 310px;
+        height: 220px;
+        left: 560px;
+        bottom: 170px;
+        background: var(--color-secondary-light);
+        opacity: 0.30;
+        border-radius: 48% 52% 58% 42% / 60% 40% 60% 40%;
+        animation: cloud-drift-4 12s ease-in-out infinite;
+    }
+
+    .decor-cloud.c5 {
+        width: 280px;
+        height: 190px;
+        left: 140px;
+        bottom: 250px;
+        background: var(--color-primary);
+        opacity: 0.24;
+        border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+        animation: cloud-drift-5 19s ease-in-out infinite;
+    }
+
+    @keyframes cloud-drift-1 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(70px, -35px) scale(1.06);
+        }
+    }
+
+    @keyframes cloud-drift-2 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(-45px, 30px) scale(0.94);
+        }
+    }
+
+    @keyframes cloud-drift-3 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(-75px, -28px) scale(1.05);
+        }
+    }
+
+    @keyframes cloud-drift-4 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(42px, 36px) scale(0.92);
+        }
+    }
+
+    @keyframes cloud-drift-5 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(-38px, -42px) scale(1.1);
+        }
+    }
+
     /* ---------- Responsive ---------- */
     @media (max-width: 880px) {
         .home-deshboard_content {
@@ -690,6 +858,14 @@
 
 
 <section class="home-deshboard-section">
+    <div class="decor-circle"></div>
+    <div class="decor-clouds">
+        <div class="decor-cloud c1"></div>
+        <div class="decor-cloud c2"></div>
+        <div class="decor-cloud c3"></div>
+        <div class="decor-cloud c4"></div>
+        <div class="decor-cloud c5"></div>
+    </div>
     <div class="home-deshboard_heading">
         <div class="home-deshboard_eyebrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
