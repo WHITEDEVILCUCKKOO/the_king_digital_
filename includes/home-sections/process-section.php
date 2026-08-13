@@ -371,9 +371,9 @@
   }
 
   .proc-num:hover::before,
-  .proc-num:hover::after{
+  .proc-num:hover::after {
     opacity: 1;
-    visibility:visible;
+    visibility: visible;
   }
 
   /* Animation Keyframes */
@@ -410,6 +410,155 @@
     /* font-weight: 400; */
   }
 
+  .processewq {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .processewq .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .decor-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 260px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .decor-dot {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .decor-dot.p1 {
+    width: 14px;
+    height: 14px;
+    top: 24px;
+    left: 30px;
+    background: var(--gold);
+    opacity: .5;
+    animation: dot-bob-1 5s ease-in-out infinite;
+  }
+
+  .decor-dot.p2 {
+    width: 9px;
+    height: 9px;
+    top: 70px;
+    left: 90px;
+    background: var(--blue);
+    opacity: .45;
+    animation: dot-bob-2 6.5s ease-in-out infinite;
+  }
+
+  .decor-dot.p3 {
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    left: 150px;
+    background: var(--blue-md);
+    opacity: .28;
+    animation: dot-bob-3 7s ease-in-out infinite;
+  }
+
+  .decor-dot.p4 {
+    width: 11px;
+    height: 11px;
+    top: 120px;
+    left: 40px;
+    background: var(--gold);
+    opacity: .35;
+    animation: dot-bob-2 5.5s ease-in-out infinite;
+  }
+
+  .decor-dot.p5 {
+    width: 7px;
+    height: 7px;
+    top: 140px;
+    left: 130px;
+    background: var(--gold-dk);
+    opacity: .5;
+    animation: dot-bob-1 6s ease-in-out infinite;
+  }
+
+  .decor-dot.p6 {
+    width: 16px;
+    height: 16px;
+    top: 90px;
+    left: 190px;
+    background: var(--blue);
+    opacity: .22;
+    animation: dot-bob-3 8s ease-in-out infinite;
+  }
+
+  @keyframes dot-bob-1 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(10px, -18px);
+    }
+  }
+
+  @keyframes dot-bob-2 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(-14px, 12px);
+    }
+  }
+
+  @keyframes dot-bob-3 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(12px, 16px);
+    }
+  }
+
+  .decor-grid {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 260px;
+    height: 220px;
+    background-image: radial-gradient(circle, #1B3D7B 1.6px, transparent 1.6px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse at bottom right, black 0%, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at bottom right, black 0%, black 30%, transparent 75%);
+    opacity: .5;
+    pointer-events: none;
+    z-index: 0;
+    animation: grid-shift 9s ease-in-out infinite;
+  }
+
+  @keyframes grid-shift {
+
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 10px -10px;
+    }
+  }
+
   /* Responsive adjust for mobile screens */
   @media (max-width: 600px) {
     .sh12 {
@@ -435,6 +584,15 @@
 
 <!-- ════ HOW WE WORK ════ -->
 <section class="processewq sectionq" id="process">
+  <div class="decor-particles">
+    <div class="decor-dot p1"></div>
+    <div class="decor-dot p2"></div>
+    <div class="decor-dot p3"></div>
+    <div class="decor-dot p4"></div>
+    <div class="decor-dot p5"></div>
+    <div class="decor-dot p6"></div>
+  </div>
+  <div class="decor-grid"></div>
   <div class="container">
 
 

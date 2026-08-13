@@ -324,6 +324,116 @@
         color: white;
     }
 
+
+    .kdts-header,
+    .kdts-viewport {
+        position: relative;
+        z-index: 1;
+    }
+
+    .kdts-decor-blob,
+    .kdts-decor-ring,
+    .kdts-decor-dots {
+        position: absolute;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Warm blurred blob, top-left corner — sliced by section's overflow:hidden */
+    .kdts-decor-blob {
+        top: -120px;
+        left: -100px;
+        width: 320px;
+        height: 320px;
+        border-radius: 42% 58% 63% 37% / 55% 45% 55% 45%;
+        background: radial-gradient(circle at 35% 30%,
+                var(--kdts-orange) 0%,
+                var(--kdts-orange-dark) 55%,
+                transparent 75%);
+        opacity: 0.16;
+        filter: blur(28px);
+        animation: kdts-blob-drift 14s ease-in-out infinite;
+    }
+
+    @keyframes kdts-blob-drift {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(24px, 18px) scale(1.08);
+        }
+    }
+
+    /* Dashed rotating ring, bottom-right corner, shifted inward slightly */
+    .kdts-decor-ring {
+        bottom: -60px;
+        right: 6%;
+        width: 180px;
+        height: 180px;
+        border: 2px dashed var(--kdts-orange);
+        border-radius: 50%;
+        opacity: 0.22;
+        animation: kdts-ring-spin 22s linear infinite;
+    }
+
+    @keyframes kdts-ring-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Fading dot-grid texture, anchored 1/7 in from the left, upper area */
+    .kdts-decor-dots {
+        top: 6%;
+        left: 14.28%;
+        transform: translateX(-50%);
+        width: 260px;
+        height: 180px;
+        background-image: radial-gradient(circle, var(--kdts-orange-dark) 1.6px, transparent 1.6px);
+        background-size: 22px 22px;
+        opacity: 0.25;
+        -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, transparent 75%);
+        mask-image: radial-gradient(ellipse at center, #000 0%, transparent 75%);
+    }
+
+    /* Respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+
+        .kdts-decor-blob,
+        .kdts-decor-ring {
+            animation: none;
+        }
+    }
+
+    /* Scale down / thin out on small screens so decorations don't dominate */
+    @media (max-width: 640px) {
+        .kdts-decor-blob {
+            width: 200px;
+            height: 200px;
+            top: -80px;
+            left: -70px;
+        }
+
+        .kdts-decor-ring {
+            width: 120px;
+            height: 120px;
+            right: 2%;
+            bottom: -40px;
+        }
+
+        .kdts-decor-dots {
+            display: none;
+            /* keep mobile clean */
+        }
+    }
+
     /* ---------------- RESPONSIVE ---------------- */
 
     @media (max-width: 1024px) {
@@ -364,6 +474,10 @@
 </style>
 
 <section class="kdts-section">
+
+    <div class="kdts-decor-blob"></div>
+    <div class="kdts-decor-ring"></div>
+    <div class="kdts-decor-dots"></div>
 
     <div class="kdts-header">
 
