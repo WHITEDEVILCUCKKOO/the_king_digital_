@@ -1,7 +1,7 @@
 <style>
     .home-about {
         width: 100%;
-        /* max-width: 1440px; */
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         padding: 80px 0;
         background: linear-gradient(356deg, #b9c3e726, #535c7429);
     }
@@ -130,12 +130,14 @@
     }
 
     .home-about_content--heading {
-        font-size: 41px;
-        font-weight: 800;
+        font-size: 48px;
+        font-weight: 900;
         line-height: 1.2;
         color: #101827;
         margin-bottom: 20px;
         text-align: center;
+
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .home-about_content--heading span {

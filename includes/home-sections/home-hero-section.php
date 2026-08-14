@@ -175,6 +175,7 @@
         background: radial-gradient(ellipse 90% 70% at 15% 15%, #081742 0%, #254295 45%, #08384e 75%, #082146 100%);
         padding: 60px;
         overflow: hidden;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     #home-hero-section::before {
