@@ -492,7 +492,7 @@
     </div>
 
     <div class="kdts-viewport">
-        <div class="kdts-track">
+        <div class="kdts-track" style="padding-top: 12px;"> 
 
             <!-- GROUP A -->
             <div class="kdts-track-group" id="kdts-group-a">
