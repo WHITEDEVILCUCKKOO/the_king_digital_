@@ -547,6 +547,208 @@
         transition: opacity .35s ease;
         z-index: 0;
     }
+
+    .portfolio {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .portfolio .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* top-left: big rotating double dashed ring */
+    .decor-tl {
+        position: absolute;
+        top: -220px;
+        left: -220px;
+        width: 440px;
+        height: 440px;
+        border: 3px dashed var(--blue);
+        border-radius: 50%;
+        opacity: .28;
+        animation: decor-spin 22s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .decor-tl::before {
+        content: '';
+        position: absolute;
+        inset: 46px;
+        border: 3px dashed var(--gold);
+        border-radius: 50%;
+        opacity: .6;
+    }
+
+    @keyframes decor-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* top-right: big fading dot-grid */
+    .decor-tr {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 420px;
+        height: 380px;
+        background-image: radial-gradient(circle, var(--blue) 2px, transparent 2px);
+        background-size: 30px 30px;
+        -webkit-mask-image: radial-gradient(ellipse at top right, black 0%, black 30%, transparent 75%);
+        mask-image: radial-gradient(ellipse at top right, black 0%, black 30%, transparent 75%);
+        opacity: .4;
+        pointer-events: none;
+        z-index: 0;
+        animation: grid-shift 11s ease-in-out infinite;
+    }
+
+    @keyframes grid-shift {
+
+        0%,
+        100% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: -12px 12px;
+        }
+    }
+
+    /* bottom-left: big floating sparkle cluster */
+    .decor-bl {
+        position: absolute;
+        bottom: -40px;
+        left: -20px;
+        width: 380px;
+        height: 420px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .decor-dot {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--gold);
+    }
+
+    .decor-dot.d1 {
+        width: 26px;
+        height: 26px;
+        bottom: 60px;
+        left: 40px;
+        opacity: .38;
+        animation: dot-bob-1 6s ease-in-out infinite;
+    }
+
+    .decor-dot.d2 {
+        width: 16px;
+        height: 16px;
+        bottom: 170px;
+        left: 130px;
+        opacity: .3;
+        background: var(--blue-md);
+        animation: dot-bob-2 7s ease-in-out infinite;
+    }
+
+    .decor-dot.d3 {
+        width: 34px;
+        height: 34px;
+        bottom: 90px;
+        left: 220px;
+        opacity: .24;
+        animation: dot-bob-3 8s ease-in-out infinite;
+    }
+
+    .decor-dot.d4 {
+        width: 18px;
+        height: 18px;
+        bottom: 260px;
+        left: 70px;
+        opacity: .28;
+        background: var(--blue-md);
+        animation: dot-bob-1 6.5s ease-in-out infinite .5s;
+    }
+
+    .decor-dot.d5 {
+        width: 12px;
+        height: 12px;
+        bottom: 320px;
+        left: 180px;
+        opacity: .32;
+        animation: dot-bob-2 5.5s ease-in-out infinite .3s;
+    }
+
+    @keyframes dot-bob-1 {
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(18px, -26px);
+        }
+    }
+
+    @keyframes dot-bob-2 {
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(-20px, 18px);
+        }
+    }
+
+    @keyframes dot-bob-3 {
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(16px, 22px);
+        }
+    }
+
+    /* bottom-right: big soft ambient glow */
+    .decor-br {
+        position: absolute;
+        bottom: -280px;
+        right: -240px;
+        width: 640px;
+        height: 640px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.18) 0%, rgba(27, 61, 123, 0.12) 45%, rgba(255, 255, 255, 0) 72%);
+        filter: blur(10px);
+        pointer-events: none;
+        z-index: 0;
+        animation: glow-pulse 10s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.08);
+            opacity: .85;
+        }
+    }
 </style>
 
 <div class="img_box"><img src="" alt="" class="pic"></div>
@@ -554,6 +756,17 @@
 
 <!-- ════ PORTFOLIO ════ -->
 <section class="portfolio section" id="portfolio">
+
+    <div class="decor-tl"></div>
+    <div class="decor-tr"></div>
+    <div class="decor-bl">
+        <div class="decor-dot d1"></div>
+        <div class="decor-dot d2"></div>
+        <div class="decor-dot d3"></div>
+        <div class="decor-dot d4"></div>
+        <div class="decor-dot d5"></div>
+    </div>
+    <div class="decor-br"></div>
     <div class="container">
         <div class="revealqw">
             <div class="tagq"><span class="dot-99"></span>Our Portfolio</div>

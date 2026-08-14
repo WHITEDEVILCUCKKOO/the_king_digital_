@@ -1,44 +1,43 @@
 <style>
-
-/* ===========================
+  /* ===========================
    SERVICES HEADING SCROLL ANIMATION
 =========================== */
 
-.tag,
-.sh,
-.sub{
-    opacity:0;
-    transition:all .9s cubic-bezier(.22,1,.36,1);
-    will-change:transform,opacity;
-}
+  .tag,
+  .sh,
+  .sub {
+    opacity: 0;
+    transition: all .9s cubic-bezier(.22, 1, .36, 1);
+    will-change: transform, opacity;
+  }
 
-/* Left */
-.tag{
-    transform:translateX(-120px);
-}
+  /* Left */
+  .tag {
+    transform: translateX(-120px);
+  }
 
-/* Right */
-.sh,
-.sub{
-    transform:translateX(120px);
-}
+  /* Right */
+  .sh,
+  .sub {
+    transform: translateX(120px);
+  }
 
-.services.show-animation .tag{
-    opacity:1;
-    transform:translateX(0);
-}
+  .services.show-animation .tag {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
-.services.show-animation .sh{
-    opacity:1;
-    transform:translateX(0);
-    transition-delay:.2s;
-}
+  .services.show-animation .sh {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: .2s;
+  }
 
-.services.show-animation .sub{
-    opacity:1;
-    transform:translateX(0);
-    transition-delay:.4s;
-}
+  .services.show-animation .sub {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: .4s;
+  }
 
 
 
@@ -87,7 +86,7 @@
   }
 
   .svc-card:hover::after {
-  transition: 1s ease;
+    transition: 1s ease;
     transform: scaleX(1)
   }
 
@@ -250,17 +249,211 @@
     top: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(45,190,150,.22) 30%, rgba(34,197,94,.08) 55%, rgba(34,197,94,0) 72%);
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, rgba(45, 190, 150, .22) 30%, rgba(34, 197, 94, .08) 55%, rgba(34, 197, 94, 0) 72%);
     opacity: 0;
     pointer-events: none;
     transition: opacity .35s ease;
     z-index: 0;
+  }
+
+  .services {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* top-left: rotating dashed ring */
+  .decor-tl {
+    position: absolute;
+    top: -110px;
+    left: -110px;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed var(--blue);
+    border-radius: 50%;
+    opacity: .3;
+    animation: decor-spin 18s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes decor-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* top-right: fading dot-grid */
+  .decor-tr {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 220px;
+    height: 200px;
+    background-image: radial-gradient(circle, var(--blue) 1.6px, transparent 1.6px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(ellipse at top right, black 0%, black 25%, transparent 72%);
+    mask-image: radial-gradient(ellipse at top right, black 0%, black 25%, transparent 72%);
+    opacity: .35;
+    pointer-events: none;
+    z-index: 0;
+    animation: grid-shift 10s ease-in-out infinite;
+  }
+
+  @keyframes grid-shift {
+
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: -8px 8px;
+    }
+  }
+
+  /* bottom-left: floating sparkle dots */
+  .decor-bl {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 220px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .decor-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .decor-dot.d1 {
+    width: 12px;
+    height: 12px;
+    bottom: 30px;
+    left: 26px;
+    opacity: .4;
+    animation: dot-bob-1 5.5s ease-in-out infinite;
+  }
+
+  .decor-dot.d2 {
+    width: 8px;
+    height: 8px;
+    bottom: 90px;
+    left: 70px;
+    opacity: .32;
+    background: var(--blue-md);
+    animation: dot-bob-2 6.5s ease-in-out infinite;
+  }
+
+  .decor-dot.d3 {
+    width: 16px;
+    height: 16px;
+    bottom: 50px;
+    left: 120px;
+    opacity: .26;
+    animation: dot-bob-3 7.5s ease-in-out infinite;
+  }
+
+  .decor-dot.d4 {
+    width: 9px;
+    height: 9px;
+    bottom: 140px;
+    left: 40px;
+    opacity: .3;
+    background: var(--blue-md);
+    animation: dot-bob-1 6s ease-in-out infinite .4s;
+  }
+
+  @keyframes dot-bob-1 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(10px, -16px);
+    }
+  }
+
+  @keyframes dot-bob-2 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(-12px, 10px);
+    }
+  }
+
+  @keyframes dot-bob-3 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(8px, 14px);
+    }
+  }
+
+  /* bottom-right: soft ambient glow */
+  .decor-br {
+    position: absolute;
+    bottom: -180px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.16) 0%, rgba(27, 61, 123, 0.10) 45%, rgba(255, 255, 255, 0) 72%);
+    filter: blur(8px);
+    pointer-events: none;
+    z-index: 0;
+    animation: glow-pulse 9s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.08);
+      opacity: .85;
+    }
   }
 </style>
 
 
 <!-- ════ SERVICES ════ -->
 <section class="services section" id="services">
+
+  <div class="decor-tl"></div>
+  <div class="decor-tr"></div>
+  <div class="decor-bl">
+    <div class="decor-dot d1"></div>
+    <div class="decor-dot d2"></div>
+    <div class="decor-dot d3"></div>
+    <div class="decor-dot d4"></div>
+  </div>
+  <div class="decor-br"></div>
   <div class="container">
     <div class="reveal">
       <div class="tag"><span class="dot"></span> Our Services</div>
@@ -330,28 +523,27 @@
 
 
 <script>
-
-/* ===========================
+  /* ===========================
    SERVICES HEADING SCROLL EFFECT
 =========================== */
 
-const serviceSection = document.querySelector(".services");
+  const serviceSection = document.querySelector(".services");
 
-const serviceObserver = new IntersectionObserver((entries)=>{
+  const serviceObserver = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-        if(entry.isIntersecting){
-            entry.target.classList.add("show-animation");
-        }
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show-animation");
+      }
 
     });
 
-},{
-    threshold:0.35
-});
+  }, {
+    threshold: 0.35
+  });
 
-serviceObserver.observe(serviceSection);
+  serviceObserver.observe(serviceSection);
 
 
   (function() {
