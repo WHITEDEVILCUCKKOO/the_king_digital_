@@ -623,11 +623,46 @@
   margin: 0;
   font-weight: 400;
 }
+
+.faq { position: relative; overflow: hidden; }
+.faq .container { position: relative; z-index: 1; }
+
+/* big faint watermark */
+.decor-qmark-big {
+    position: absolute; top: -70px; right: 40px;
+    font-size: 280px; font-weight: 800; line-height: 1;
+    color: var(--blue); opacity: .05; font-family: Georgia, serif;
+    z-index: 0; pointer-events: none;
+    animation: qmark-sway 10s ease-in-out infinite;
+}
+@keyframes qmark-sway {
+    0%, 100% { transform: rotate(-4deg) scale(1); }
+    50% { transform: rotate(2deg) scale(1.03); }
+}
+
+/* scattered small marks */
+.decor-qmarks-scatter { position: absolute; bottom: -10px; left: -10px; width: 220px; height: 260px; pointer-events: none; z-index: 0; }
+.decor-qmark { position: absolute; font-weight: 800; font-family: Georgia, serif; line-height: 1; }
+.decor-qmark.q1 { font-size: 40px; bottom: 40px; left: 20px; color: var(--gold); opacity: .18; animation: qmark-float-1 6s ease-in-out infinite; }
+.decor-qmark.q2 { font-size: 26px; bottom: 130px; left: 90px; color: var(--blue-md); opacity: .16; animation: qmark-float-2 7s ease-in-out infinite .4s; }
+.decor-qmark.q3 { font-size: 56px; bottom: 60px; left: 140px; color: var(--blue); opacity: .1; animation: qmark-float-3 8s ease-in-out infinite .8s; }
+.decor-qmark.q4 { font-size: 20px; bottom: 190px; left: 40px; color: var(--gold); opacity: .2; animation: qmark-float-1 5.5s ease-in-out infinite .2s; }
+
+@keyframes qmark-float-1 { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(8px,-14px) rotate(-8deg); } }
+@keyframes qmark-float-2 { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-10px,10px) rotate(6deg); } }
+@keyframes qmark-float-3 { 0%, 100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(6px,12px) rotate(-4deg); } }
 </style>
 
 
 <!-- ════ FAQ ════ -->
 <section class="faq section" id="faq">
+    <div class="decor-qmark-big">?</div>
+    <div class="decor-qmarks-scatter">
+        <span class="decor-qmark q1">?</span>
+        <span class="decor-qmark q2">?</span>
+        <span class="decor-qmark q3">?</span>
+        <span class="decor-qmark q4">?</span>
+    </div>
     <div class="container">
         <div class="reveal8494">
             <div class="tag9649"><span class="dot854"></span>FAQs</div>

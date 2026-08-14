@@ -425,19 +425,159 @@
     }
   }
 
-  .ai_headeing{
-    opacity:0;
-    transform:translateY(60px);
-    transition:.8s ease;
-}
+  .ai_headeing {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: .8s ease;
+  }
 
-.ai_headeing.in-view{
-    opacity:1;
-    transform:translateY(0);
-}
+  .ai_headeing.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .qk-features-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .qk-features-wrap .ai_headeing,
+  .qk-features-wrap .qk-features-grid {
+    position: relative;
+    z-index: 1;
+  }
+
+  .decor-glow {
+    position: absolute;
+    top: -220px;
+    right: -160px;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(239, 86, 13, 0.16) 0%, rgba(18, 61, 107, 0.10) 45%, rgba(255, 255, 255, 0) 72%);
+    filter: blur(10px);
+    z-index: 0;
+    pointer-events: none;
+    animation: glow-pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.08);
+      opacity: .85;
+    }
+  }
+
+  .decor-sparkles {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    height: 320px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .decor-plus {
+    position: absolute;
+    color: #ef560d;
+    opacity: .35;
+    animation: plus-float 6s ease-in-out infinite;
+  }
+
+  .decor-plus svg {
+    display: block;
+  }
+
+  .decor-plus.s1 {
+    top: 40px;
+    left: 24px;
+    width: 18px;
+    height: 18px;
+    animation-duration: 5s;
+  }
+
+  .decor-plus.s2 {
+    top: 120px;
+    left: 90px;
+    width: 12px;
+    height: 12px;
+    color: #123d6b;
+    opacity: .3;
+    animation-duration: 6.5s;
+    animation-delay: .6s;
+  }
+
+  .decor-plus.s3 {
+    top: 200px;
+    left: 40px;
+    width: 22px;
+    height: 22px;
+    opacity: .22;
+    animation-duration: 7s;
+    animation-delay: 1.2s;
+  }
+
+  .decor-plus.s4 {
+    top: 60px;
+    left: 160px;
+    width: 10px;
+    height: 10px;
+    color: #123d6b;
+    opacity: .32;
+    animation-duration: 5.5s;
+    animation-delay: .3s;
+  }
+
+  .decor-plus.s5 {
+    top: 250px;
+    left: 140px;
+    width: 16px;
+    height: 16px;
+    opacity: .28;
+    animation-duration: 8s;
+    animation-delay: .9s;
+  }
+
+  @keyframes plus-float {
+
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+      transform: translate(10px, -14px) rotate(90deg);
+    }
+  }
 </style>
 
 <section class="qk-features-wrap">
+  <div class="decor-glow"></div>
+  <div class="decor-sparkles">
+    <span class="decor-plus s1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M12 2v20M2 12h20" />
+      </svg></span>
+    <span class="decor-plus s2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M12 2v20M2 12h20" />
+      </svg></span>
+    <span class="decor-plus s3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M12 2v20M2 12h20" />
+      </svg></span>
+    <span class="decor-plus s4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M12 2v20M2 12h20" />
+      </svg></span>
+    <span class="decor-plus s5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+        <path d="M12 2v20M2 12h20" />
+      </svg></span>
+  </div>
   <div class="jsidfj91">
     <span class="home-about_content--upper-feature ">
       <span class="home-about_content--bullet"></span>
