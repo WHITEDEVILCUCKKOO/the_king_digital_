@@ -2,7 +2,7 @@
   .qk-features-wrap {
     background-color: white;
     padding: 40px 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   .qk-features-grid {
@@ -317,6 +317,8 @@
     width: 100%;
     margin: auto;
     display: flex;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 900;
     align-items: center;
     justify-content: center;
   }
@@ -324,7 +326,7 @@
   .ai-content--heading {
 
     font-size: 48px;
-    font-weight: 500;
+    font-weight: 900;
     line-height: 1.2;
     color: #101827;
     margin-bottom: 20px;

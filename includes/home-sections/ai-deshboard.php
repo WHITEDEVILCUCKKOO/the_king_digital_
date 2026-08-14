@@ -67,6 +67,7 @@
     .home-deshboard-section {
         margin: 0 auto;
         padding: 64px 24px 96px;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     /* ---------- Heading ---------- */
@@ -95,7 +96,7 @@
     }
 
     .home-deshboard_title {
-        font-family: 'Roboto', 'San';
+        font-family: "Segoe UI",'Roboto', 'San';
         font-size: 50px;
         line-height: 1.15;
         font-weight: 900;

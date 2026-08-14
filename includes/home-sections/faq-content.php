@@ -30,7 +30,8 @@
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 24px
+        padding: 0 24px;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .section {
