@@ -47,7 +47,7 @@
             <div class="container">
                 <div class="nav-in">
 
-                    <a href="/" class="logo">
+                    <a href="index.php" class="logo">
 
 
                         <img src="assets/images/logos/king-digital-logo.png" alt="">
@@ -56,7 +56,7 @@
                     </a>
 
                     <div class="nav-links">
-                        <a href="/" class="bottom_link_78">Home</a>
+                        <a href="index.php" class="bottom_link_78">Home</a>
                         <div class="has-dd">
                             <a href="#" class="botom_link_78">Services</a>
                             <div class="dd">
@@ -103,7 +103,7 @@
                         <!-- <a href="/client.php">Clients</a> -->
 
                         <!-- <a href="/blog/">Blog</a> -->
-                        <a href="/contactus.html" class="bottom_link_78">Contact</a>
+                        <a href="contact.php" class="bottom_link_78">Contact</a>
                     </div>
 
                     <div class="nav-right">
@@ -119,12 +119,12 @@
             <!-- Mobile nav -->
             <div class="mob-nav" id="mob-nav">
                 <div class="mob-nav-sep">Main</div>
-                <a href="/">Home</a>
+                <a href="index.php">Home</a>
                 <a href="about.php">About Us</a>
                 <!-- <a href="/client.php">Our Clients</a> -->
                 <a href="/portfolio.php">Portfolio</a>
                 <!-- <a href="/blog/">Blog</a> -->
-                <a href="/contactus.html">Contact Us</a>
+                <a href="contact.php">Contact Us</a>
                 <div class="mob-nav-sep">Services</div>
                 <a href="https://www.staticking.com/bulk-sms.shtml">Bulk SMS</a>
                 <a href="/wabasignup.html">WhatsApp Business API</a>
