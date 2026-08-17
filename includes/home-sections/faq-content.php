@@ -928,9 +928,9 @@
                 </div> -->
                 <button type="submit" class="btn btn-primary form-submit " onclick="flyr_tyse()">
                     Send Message — We'll Reply in 2 Hours
-                    <div class="submit_btn_animtion">
+                    <!-- <div class="submit_btn_animtion">
                         <i class="fa-solid fa-paper-plane sesa885" ></i>
-                    </div>
+                    </div> -->
                 </button>
             </div>
 
@@ -940,7 +940,7 @@
 
 
 
-<script>
+<!-- <script>
 
     function flyr_tyse(){
  let btn_sew = document.getElementsByClassName("submit_btn_animtion")
@@ -971,4 +971,4 @@
             if (!isOpen) item.classList.add('open');
         });
     });
-</script>
+</script> -->
