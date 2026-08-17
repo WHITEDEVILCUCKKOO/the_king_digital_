@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <a href="/portfolio.php" class="bottom_link_78">Portfolio</a>
-                        <a href="/who-we-are.html" class="bottom_link_78">About</a>
+                        <a href="/the_king_digital_/about.php" class="bottom_link_78">About</a>
 
                         <!-- <div class="has-dd">
                             <a href="#">Brands</a>
@@ -120,7 +120,7 @@
             <div class="mob-nav" id="mob-nav">
                 <div class="mob-nav-sep">Main</div>
                 <a href="/">Home</a>
-                <a href="/who-we-are.html">About Us</a>
+                <a href="/the_king_digital_/about.php">About Us</a>
                 <!-- <a href="/client.php">Our Clients</a> -->
                 <a href="/portfolio.php">Portfolio</a>
                 <!-- <a href="/blog/">Blog</a> -->
