@@ -811,6 +811,71 @@
             transform: translate(6px, 12px) rotate(-4deg);
         }
     }
+
+
+
+    /* submit btn  */
+    .from_btn_submit {
+        width: 100%;
+        font-family: inherit;
+        font-size: 16px;
+        background: #ff7300;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    .from_btn_submit span {
+        display: block;
+        margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .from_btn_submit svg {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    .from_btn_submit:hover {
+        background: royalblue;
+        transition: .25s ease;
+    }
+
+    .from_btn_submit .svg-wrapper {
+        animation: fly-1 0.6s ease-in-out infinite alternate;
+    }
+
+    .from_btn_submit:hover svg {
+        transform: translateX(1em) rotate(45deg) scale(1.1);
+    }
+
+    .from_btn_submit:hover span {
+        /* transform: translateX(1); */
+    }
+
+    .from_btn_submit:active {
+        transform: scale(0.95);
+    }
+
+    @keyframes fly-1 {
+        from {
+            transform: translateY(0.1em);
+        }
+
+        to {
+            transform: translateY(-0.1em);
+        }
+    }
 </style>
 
 
@@ -888,7 +953,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Your Name *</label>
-                        <input type="text" placeholder="Rajesh Sharma" required>
+                        <input  type="text" placeholder="Rajesh Sharma" required>
                     </div>
                     <div class="form-group">
                         <label>Mobile Number *</label>
@@ -926,17 +991,42 @@
                     <textarea
                         placeholder="Tell us about your project — goals, timeline, budget, or any questions you have..."></textarea>
                 </div> -->
-                <button type="submit" class="btn btn-primary form-submit " onclick="flyr_tyse()">
+                <button class="btn btn-primary  " style="display: none;">
                     Send Message — We'll Reply in 2 Hours
                     <!-- <div class="submit_btn_animtion">
                         <i class="fa-solid fa-paper-plane sesa885" ></i>
                     </div> -->
                 </button>
+
+                <button type="submit" class="from_btn_submit" onclick="submit_btn_form()">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path
+                                    fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span style="padding-right: 5px;">Send Message — We'll Reply in 2 Hours</span>
+                </button>
+
             </div>
 
         </div>
     </div>
 </section>
+
+<script>
+    function submit_btn_form() {
+
+    }
+</script>
 
 
 
