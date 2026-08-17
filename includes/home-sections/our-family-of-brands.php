@@ -877,6 +877,40 @@
                 </div>
             </div>
 
+            <!-- Card video -->
+            <div class="port-card reveal tlasma-card" data-type="video">
+                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
+                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
+
+                    <div class="video_box">
+                        <img src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital themb.png" class="video_thumb" alt="">
+
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Brand Film</h4>
+                    <p>Corporate promotional & product videos</p>
+                </div>
+            </div>
+
+            <!-- Card web -->
+            <div class="port-card reveal tlasma-card" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/img/www.staticking.com_.png" alt="Lakshmibai College" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Static King</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
         </div>
         <div class="port-cta reveal">
             <a href="/portfolio.php" class="btn btn-outline"><i class="fas fa-eye"></i> View Full Portfolio</a>
