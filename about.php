@@ -17,6 +17,17 @@ require_once __DIR__ . '/includes/header.php';
     
     <!-- section 3 ( Team Member ) -->
     <?php require_once __DIR__ . '/includes/about-sections/about-team-section.php'; ?>
+
+
+
+
+
+ <!-- section 3 ( Office Gallery ) -->
+<?php require_once __DIR__ . '/includes/about-sections/office-gallery-section.php'; ?>
+
+ <!-- section  ( Why Choose Us ) -->
+<?php require_once __DIR__ . '/includes/about-sections/why-choose-us.php'; ?>
+
 </main>
 
 <?php
