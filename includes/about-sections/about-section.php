@@ -169,174 +169,161 @@
         --transition-slow: 400ms ease;
     }
 
-    .about-why {
-        background: var(--color-bg-muted);
+
+    .about-section {
+        background: var(--color-bg);
         padding: 100px 40px;
         overflow: hidden;
     }
 
-    .about-why_heading {
+    .about-section_heading {
         max-width: 700px;
-        margin: 0 auto 60px;
+        margin: 0 auto 50px;
         text-align: center;
     }
 
-    .about-why_heading span {
-        display: inline-block;
-        padding: 6px 18px;
-        margin-bottom: 16px;
+    .about-section_heading h2 {
         font-size: 13px;
         font-weight: 600;
-        letter-spacing: 0.5px;
-        color: var(--color-primary-dark);
-        background: rgba(244, 123, 32, 0.1);
-        border-radius: var(--radius-full);
-    }
-
-    .about-why_heading span::before {
-        content: "KingDigital";
-    }
-
-    .about-why_heading h1 {
-        font-size: 42px;
-        font-weight: 700;
-        margin: 0 0 10px;
-        line-height: 1.2;
-        background: var(--gradient-brand-reverse);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .about-why_heading p {
-        font-size: 15px;
-        font-weight: 500;
-        color: var(--color-text-muted);
-        margin: 0;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        color: var(--color-primary-dark);
+        margin: 0 auto;
+        padding: 5px 15px;
+        background: var(--color-bg-dark);
+        width: fit-content;
+        text-align: center;
+        border-radius: 20px;
     }
 
-    .about-why_content {
+    .about-section_content {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 70px;
         align-items: center;
+    }
+
+    .about-section_content-text {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(-60px);
         transition: opacity var(--transition-slow), transform var(--transition-slow);
     }
 
-    .about-why_content.in-view {
+    .about-section_content-text.in-view {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
-    .about-why_content-visual {
-        position: relative;
-    }
-
-    .about-why_content-visual::before {
-        content: "";
-        position: absolute;
-        inset: -20px;
-        background: var(--gradient-glow);
-        border-radius: var(--radius-xl);
-        z-index: 0;
-    }
-
-    .about-why_content-visual-img {
-        position: relative;
-        z-index: 1;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: var(--shadow-lg);
-    }
-
-    .about-why_content-visual-img img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .about-why_content-text h2 {
-        font-size: 28px;
-        font-weight: 700;
+    .about-section_content-text h2 {
+        font-size: 42px;
+        font-weight: 800;
         color: var(--color-text);
         margin: 0 0 20px;
         line-height: 1.3;
     }
 
-    .about-why_content-text h2 span {
+    .about-section_content-text h2 span {
         background: var(--gradient-brand);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    .about-why_content-text p {
+    .about-section_content-text p {
         font-size: 16px;
         line-height: 1.75;
         color: var(--color-text-secondary);
         margin: 0;
     }
 
+    .about-section_content-visual {
+        position: relative;
+        opacity: 0;
+        transform: translateX(60px);
+        transition: opacity var(--transition-slow), transform var(--transition-slow);
+    }
+
+    .about-section_content-visual.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .about-section_content-visual::before {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        background: var(--gradient-glow-secondary);
+        border-radius: var(--radius-xl);
+        z-index: 0;
+    }
+
+    .about-section_content-visual img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+    }
+
     @media (max-width: 900px) {
-        .about-why {
+        .about-section {
             padding: 70px 24px;
         }
 
-        .about-why_heading h1 {
-            font-size: 32px;
+        .about-section_content {
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
 
-        .about-why_content {
-            grid-template-columns: 1fr;
-            gap: 36px;
+        .about-section_content-text,
+        .about-section_content-visual {
+            transform: translateY(40px);
+        }
+
+        .about-section_content-text.in-view,
+        .about-section_content-visual.in-view {
+            transform: translateY(0);
         }
     }
 </style>
 
-<section class="about-why">
-    <div class="about-why_heading">
-        <span></span>
-        <h1>Why Choose Us</h1>
-        <p>KingDigital</p>
+<section class="about-section">
+    <div class="about-section_heading">
+        <h2>About Us</h2>
     </div>
-    <div class="about-why_content">
-        <div class="about-why_content-visual">
-            <div class="about-why_content-visual-img">
-                <img src="assets/images/home-about-office.avif" alt="">
-            </div>
+    <div class="about-section_content">
+        <div class="about-section_content-text">
+            <h2>Know About <span>KingDigital</span></h2>
+            <p>King Digital Private Limited is a company that provides online marketing and digital services in Delhi. The company specialises in a range of web development and design processes, technical management of online accounts and digital marketing strategies. We strive to make the optimum use of technology for providing the best when it comes to creating a strong brand awareness for our clients at several levels. King Digital Private Limited ensures that the customers are able to enjoy maximum advantages for the growth and expansion of their businesses</p><br>
+            <p>We have some of the best technical experts who are well experienced in their respective domains while possessing the perfect skills that are required at the professional front. Our team has a strong hold over the latest web technology and it is our constant endeavour to come up with the best in terms of quality and commitment. The dedicated team of King Digital Private Limited makes it an utmost priority to keep constant watch over the several online accounts that we manage on popular social networks and on other platforms. We ensure that we are able to exceed the expectations of our clients and also to prove our expertise in all the projects that we undertake.</p>
         </div>
-        <div class="about-why_content-text">
-            <h2>Why Choose <span>KingDigital</span></h2>
-            <p>King Digital Private Limited lays equal emphasis on the core values of dedication and a united effort towards achieving the goals regardless of whether those goals are set on a long term or short term basis. We believe in emerging as a knowledge based enterprise with an emphasis on making our ultimate vision a reality.</p><br>
-            <p>In addition to the convenient web and marketing solutions that we provide, there are other ways in which we extend our help to all our clients. Not only can they turn to us for a round the clock support for any of the features that they have paid for but they can also ask us for making any changes or updates in case they are not satisfied with any of our services which they have opted for. Our efforts are directed towards building up the strength of the organisations who choose to believe in us.</p>
+        <div class="about-section_content-visual">
+            <img src="assets/images/hero-image.avif" alt="#">
         </div>
     </div>
 </section>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const aboutContent1 = document.querySelector('.about-why_content-visual');
-        const aboutContent2 = document.querySelector('.about-why_content-text');
-        const aboutWhyContent = document.querySelector('.about-why_content');
+        const revealTargets = document.querySelectorAll(
+            '.about-section_content-text, .about-section_content-visual'
+        );
 
-        if (aboutContent1 || aboutContent2 || aboutWhyContent) {
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    entry.target.classList.toggle('in-view', entry.isIntersecting);
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -10% 0px'
+        if (!revealTargets.length) return;
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                entry.target.classList.toggle('in-view', entry.isIntersecting);
             });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -10% 0px'
+        });
 
-            if (aboutContent1) revealObserver.observe(aboutContent1);
-            if (aboutContent2) revealObserver.observe(aboutContent2);
-            if (aboutWhyContent) revealObserver.observe(aboutWhyContent);
-        }
+        revealTargets.forEach((el) => revealObserver.observe(el));
     });
 </script>

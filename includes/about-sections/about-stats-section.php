@@ -52,25 +52,25 @@
 <section class="about-stats">
     <div class="about-stats_content">
         <div class="about-stats_item">
-            <p class="about-stats_number"><span class="about-count" data-count="500">0</span><span class="about-count-suffix">+</span></p>
-            <p class="about-stats_label">Clients Powered</p>
+            <p class="about-stats_number"><span class="about-count" data-count="15000">0</span><span class="about-count-suffix">+</span></p>
+            <p class="about-stats_label">Happy Customer Worldwide</p>
         </div>
         <div class="about-stats_item">
-            <p class="about-stats_number"><span class="about-count" data-count="1200">0</span><span class="about-count-suffix">+</span></p>
-            <p class="about-stats_label">Projects Completed</p>
+            <p class="about-stats_number"><span class="about-count" data-count="7500">0</span><span class="about-count-suffix">+</span></p>
+            <p class="about-stats_label">Websites Done</p>
         </div>
         <div class="about-stats_item">
-            <p class="about-stats_number"><span class="about-count" data-count="10">0</span><span class="about-count-suffix">+</span></p>
-            <p class="about-stats_label">Years Experience</p>
+            <p class="about-stats_number"><span class="about-count" data-count="15">0</span><span class="about-count-suffix">+</span></p>
+            <p class="about-stats_label">Year of Services</p>
         </div>
         <div class="about-stats_item">
             <p class="about-stats_number"><span class="about-count" data-count="30">0</span><span class="about-count-suffix">+</span></p>
             <p class="about-stats_label">Team Members</p>
         </div>
-        <div class="about-stats_item">
+        <!-- <div class="about-stats_item">
             <p class="about-stats_number"><span class="about-count" data-count="10">0</span><span class="about-count-suffix">+</span></p>
             <p class="about-stats_label">Countries Served</p>
-        </div>
+        </div> -->
     </div>
 </section>
 
