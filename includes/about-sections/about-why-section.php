@@ -207,14 +207,6 @@
         -webkit-text-fill-color: transparent;
     }
 
-    .about-why_heading p {
-        font-size: 15px;
-        font-weight: 500;
-        color: var(--color-text-muted);
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
 
     .about-why_content {
         max-width: 1200px;
@@ -262,8 +254,8 @@
     }
 
     .about-why_content-text h2 {
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 30px;
+        font-weight: 800;
         color: var(--color-text);
         margin: 0 0 20px;
         line-height: 1.3;
@@ -302,12 +294,11 @@
     <div class="about-why_heading">
         <span></span>
         <h1>Why Choose Us</h1>
-        <p>KingDigital</p>
     </div>
     <div class="about-why_content">
         <div class="about-why_content-visual">
             <div class="about-why_content-visual-img">
-                <img src="assets/images/home-about-office.avif" alt="">
+                <img src="assets/images/about2.png" alt="">
             </div>
         </div>
         <div class="about-why_content-text">
