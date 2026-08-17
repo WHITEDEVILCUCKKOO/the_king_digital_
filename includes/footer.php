@@ -502,6 +502,28 @@
                inset 0 -2px 25px -4px rgba(255, 255, 255, 0.55),
                0 12px 30px rgba(33, 82, 255, 0.35);
        }
+
+
+ .footer_card_2 {
+     display: none;
+     width: 100%;
+    }
+    .footer_card_2 .footer-card-img{
+        right: -4%;
+    }
+    .footer_card_2 .card_title__container{
+        justify-content: start;
+    }
+    
+    @media (max-width: 636px) {
+    .footer_card_1 {
+        display: none;
+    }
+
+    .footer_card_2 {
+        display: flex;
+    }
+}
    </style>
 
    <!-- ======================================================================================================================
@@ -532,7 +554,7 @@
                            <a href="https://www.youtube.com/channel/UCz9Bekby1W-14f6Z0t7NeoQ"><i class="fab fa-youtube"></i></a>
                            <a href="https://t.me/kingdigitalpl"><i class="fab fa-telegram"></i></a>
                        </div>
-                       <div class="card">
+                       <div class="card footer_card_1">
                            <div class="card__border"></div>
                            <div class="card_title__container">
                                <div class="card-heading">
@@ -627,6 +649,60 @@
                            <li><a class="bottom_link_79" href="/term-and-condition.html">Refund Policy</a></li>
                        </ul>
                    </div>
+
+                      <div class="card footer_card_2">
+                           <div class="card__border"></div>
+                           <div class="card_title__container">
+                               <div class="card-heading">
+                                   <span class="card_title">For Leads
+                                   </span>
+                                   <p class="card_paragraph">
+                                       Perfect for your next Market, leave to us and enjoy the result!
+                                   </p>
+                               </div>
+                               <div class="footer-card-img">
+                                   <img src="assets/images/Rocket+icon.png">
+                               </div>
+                           </div>
+                           <hr class="line" />
+                           <ul class="card__list">
+                               <li class="card__list_item">
+                                   <span class="check">
+                                       <svg
+                                           xmlns="http://www.w3.org/2000/svg"
+                                           viewBox="0 0 16 16"
+                                           fill="currentColor"
+                                           class="check_svg">
+                                           <path
+                                               fill-rule="evenodd"
+                                               d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                               clip-rule="evenodd"></path>
+                                       </svg>
+                                   </span>
+                                   <span class="list_text">Fast Leads</span>
+                               </li>
+                               <li class="card__list_item">
+                                   <span class="check">
+                                       <svg
+                                           xmlns="http://www.w3.org/2000/svg"
+                                           viewBox="0 0 16 16"
+                                           fill="currentColor"
+                                           class="check_svg">
+                                           <path
+                                               fill-rule="evenodd"
+                                               d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                                               clip-rule="evenodd"></path>
+                                       </svg>
+                                   </span>
+                                   <span class="list_text">Ai Powered</span>
+                               </li>
+                           </ul>
+                           <button class="button">Book a Demo
+                               <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                                   <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                               </svg>
+                           </button>
+                       </div>
                </div>
            </div>
        </div>
@@ -643,6 +719,7 @@
                </div>
            </div>
        </div>
+       
 
        <div class="Footer-module__Grjkva__waveWrap" aria-hidden="true">
 
