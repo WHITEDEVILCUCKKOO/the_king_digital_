@@ -183,14 +183,14 @@
     }
 
     .about-section_heading h2 {
-        font-size: 13px;
-        font-weight: 600;
+        font-size: 12px;
+        font-weight: 800;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--color-primary-dark);
+        color: var(--color-secondary-dark);
         margin: 0 auto;
         padding: 5px 15px;
-        background: var(--color-bg-dark);
+        background: var(--color-primary-light);
         width: fit-content;
         text-align: center;
         border-radius: 20px;
@@ -302,7 +302,7 @@
             <p>We have some of the best technical experts who are well experienced in their respective domains while possessing the perfect skills that are required at the professional front. Our team has a strong hold over the latest web technology and it is our constant endeavour to come up with the best in terms of quality and commitment. The dedicated team of King Digital Private Limited makes it an utmost priority to keep constant watch over the several online accounts that we manage on popular social networks and on other platforms. We ensure that we are able to exceed the expectations of our clients and also to prove our expertise in all the projects that we undertake.</p>
         </div>
         <div class="about-section_content-visual">
-            <img src="assets/images/hero-image.avif" alt="#">
+            <img src="assets/images/about1.png" alt="#">
         </div>
     </div>
 </section>

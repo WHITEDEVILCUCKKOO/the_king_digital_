@@ -1,13 +1,182 @@
 <style>
+    :root {
+
+        /* ========================================
+       BRAND COLORS
+         ======================================== */
+
+        --color-primary: #F47B20;
+        --color-primary-light: #FF9A4A;
+        --color-primary-dark: #D85F0B;
+
+        --color-secondary: #4F7FF7;
+        --color-secondary-light: #7FA3FF;
+        --color-secondary-dark: #315FCC;
+
+
+        /* ========================================
+       BACKGROUNDS
+        ======================================== */
+
+        --color-bg: #FFFFFF;
+        --color-bg-soft: #F7F8FA;
+        --color-bg-muted: #EEF1F5;
+
+        --color-bg-dark: #1C3D7B;
+        --color-bg-dark-soft: #1A2233;
+
+
+        /* ========================================
+       TEXT
+        ======================================== */
+
+        --color-text: #171B26;
+        --color-text-secondary: #5F6673;
+        --color-text-muted: #8A919D;
+
+        --color-text-light: #FFFFFF;
+        --color-text-light-secondary: #C4C9D2;
+
+
+        /* ========================================
+       BORDERS
+        ======================================== */
+
+        --color-border: #E3E7ED;
+        --color-border-dark: #30394A;
+
+
+        /* ========================================
+       PRIMARY GRADIENTS
+    ======================================== */
+
+        --gradient-primary:
+            linear-gradient(135deg,
+                #F47B20 0%,
+                #FF9A4A 100%);
+
+        --gradient-primary-dark:
+            linear-gradient(135deg,
+                #D85F0B 0%,
+                #F47B20 100%);
+
+
+        /* ========================================
+       SECONDARY GRADIENTS
+    ======================================== */
+
+        --gradient-secondary:
+            linear-gradient(135deg,
+                #315FCC 0%,
+                #4F7FF7 50%,
+                #7FA3FF 100%);
+
+        --gradient-secondary-dark:
+            linear-gradient(135deg,
+                #244BA5 0%,
+                #315FCC 100%);
+
+
+        /* ========================================
+       BRAND GRADIENTS
+    ======================================== */
+
+        --gradient-brand:
+            linear-gradient(135deg,
+                #F47B20 0%,
+                #FF9A4A 45%,
+                #4F7FF7 100%);
+
+        --gradient-brand-reverse:
+            linear-gradient(135deg,
+                #4F7FF7 0%,
+                #7FA3FF 55%,
+                #F47B20 100%);
+
+
+        /* ========================================
+       DARK GRADIENTS
+    ======================================== */
+
+        --gradient-dark:
+            linear-gradient(135deg,
+                #111827 0%,
+                #1A2233 100%);
+
+
+        /* ========================================
+       GLOW
+    ======================================== */
+
+        --gradient-glow:
+            radial-gradient(circle,
+                rgba(244, 123, 32, 0.16) 0%,
+                rgba(244, 123, 32, 0) 70%);
+
+        --gradient-glow-secondary:
+            radial-gradient(circle,
+                rgba(79, 127, 247, 0.18) 0%,
+                rgba(79, 127, 247, 0) 70%);
+
+
+        /* ========================================
+       STATUS COLORS
+    ======================================== */
+
+        --color-success: #16A34A;
+        --color-warning: #D99100;
+        --color-danger: #DC2626;
+        --color-info: #4F7FF7;
+
+
+        /* ========================================
+       SHADOWS
+    ======================================== */
+
+        --shadow-sm:
+            0 2px 8px rgba(15, 23, 42, 0.06);
+
+        --shadow-md:
+            0 8px 24px rgba(15, 23, 42, 0.10);
+
+        --shadow-lg:
+            0 16px 40px rgba(15, 23, 42, 0.14);
+
+        --shadow-orange:
+            0 10px 30px rgba(244, 123, 32, 0.18);
+
+        --shadow-blue:
+            0 10px 30px rgba(79, 127, 247, 0.18);
+
+
+        /* ========================================
+       RADIUS
+    ======================================== */
+
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-full: 999px;
+
+
+        /* ========================================
+       TRANSITIONS
+    ======================================== */
+
+        --transition-fast: 150ms ease;
+        --transition-normal: 250ms ease;
+        --transition-slow: 400ms ease;
+    }
+
     .about-stats {
-        background: #0C1D4D;
+        background: var(--color-bg-dark);
         padding: 40px 20px;
     }
 
     .about-stats_content {
         margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: space-evenly;
         gap: 30px;
@@ -43,8 +212,46 @@
     }
 
     @media (max-width: 900px) {
-        .about-stats_content {
-            justify-content: flex-start;
+        .about-stats_number {
+            display: flex;
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin: 0 0 14px;
+        }
+
+        .about-stats_number .about-count-suffix {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .about-stats_label {
+            font-size: 8px;
+            font-weight: 600;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .about-stats_number {
+            display: flex;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1;
+            margin: 0 0 14px;
+        }
+
+        .about-stats_number .about-count-suffix {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .about-stats_label {
+            font-size: 8px;
+            font-weight: 600;
         }
     }
 </style>

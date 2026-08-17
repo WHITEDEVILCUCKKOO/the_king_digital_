@@ -16,8 +16,11 @@
     <!-- section 3 ( About Us ) -->
     <?php require_once __DIR__ . '/includes/about-sections/about-section.php'; ?>
     
-    <!-- section 3 ( why Choose ) -->
+    <!-- section 4 ( why Choose ) -->
     <?php require_once __DIR__ . '/includes/about-sections/about-why-section.php'; ?>
+    
+    <!-- section 5 ( Testimonials ) -->
+    <?php require_once __DIR__ . '/includes/about-sections/about-testimonial.php'; ?>
     
     <!-- section 3 ( Team Member ) -->
     <?php require_once __DIR__ . '/includes/about-sections/about-team-section.php'; ?>
