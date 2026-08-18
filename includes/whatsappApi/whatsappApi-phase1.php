@@ -5,7 +5,7 @@
 
     .whatsappApi-phase1 {
         width: 100%;
-        padding: 40px 20px 80px;
+        padding: 40px 80px 80px;
         background: #f8fbff;
     }
 
@@ -302,7 +302,7 @@
         width: 260px;
         padding: 20px;
         border-radius: 16px;
-        background:rgba(255, 255, 255, .92);
+        background: rgba(255, 255, 255, .92);
         border: 1px solid rgba(218, 227, 239, .9);
         box-shadow:
             0 15px 40px rgba(36, 68, 110, .10);
@@ -796,6 +796,281 @@
         }
 
     }
+/* =========================================================
+   WHATSAPP API PHASE 1 - FOOTER CARDS
+========================================================= */
+
+.whatsappApi-phase1-footer-cards {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: 32px;
+
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.whatsappApi-phase1-cards {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 148px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    padding: 28px 32px;
+
+    border: 1px solid rgba(220, 226, 235, 0.8);
+
+    border-radius: 48px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 25px rgba(20, 35, 60, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   SECOND CARD
+========================================================= */
+
+.whatsappApi-phase1-cards:nth-child(2) {
+    background: #11182b;
+
+    border-color: #11182b;
+
+    box-shadow:
+        0 12px 25px rgba(10, 18, 35, 0.15);
+}
+
+
+/* =========================================================
+   ICON CONTAINER
+========================================================= */
+
+.whatsappApi-phase1-cards .phase1-icon {
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+    flex: 0 0 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #d3f9e8;
+
+    overflow: hidden;
+}
+
+
+/* Second card icon background */
+
+.whatsappApi-phase1-cards:nth-child(2) .phase1-icon {
+    background: #1c3768;
+}
+
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.whatsappApi-phase1-cards .phase1-icon svg {
+    display: block;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+}
+
+
+/* First SVG */
+
+.whatsappApi-phase1-cards:first-child .phase1-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+
+/* Second SVG */
+
+.whatsappApi-phase1-cards:nth-child(2) .phase1-icon svg {
+    width: 38px;
+    height: 38px;
+}
+
+
+/* =========================================================
+   SVG COLORS
+========================================================= */
+
+/*
+    Your SVGs currently contain:
+
+    stroke="#000000"
+    fill="#000000"
+
+    Change them to the desired colors.
+*/
+
+.whatsappApi-phase1-cards:first-child .phase1-icon svg path {
+    stroke: #00a96b;
+}
+
+
+.whatsappApi-phase1-cards:nth-child(2) .phase1-icon svg {
+    fill: #66a5ff;
+}
+
+
+/* =========================================================
+   TEXT CONTAINER
+========================================================= */
+
+.whatsappApi-phase1-cards .phase1-card-text {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.whatsappApi-phase1-cards .phase1-card-text h2 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* Dark card heading */
+
+.whatsappApi-phase1-cards:nth-child(2) .phase1-card-text h2 {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.whatsappApi-phase1-cards .phase1-card-text p {
+    margin: 0;
+
+    max-width: 520px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #587092;
+}
+
+
+/* Dark card description */
+
+.whatsappApi-phase1-cards:nth-child(2) .phase1-card-text p {
+    color: #8ea4c7;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.whatsappApi-phase1-cards:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(20, 35, 60, 0.14);
+}
+
+
+.whatsappApi-phase1-cards:nth-child(2):hover {
+    box-shadow:
+        0 18px 35px rgba(10, 18, 35, 0.22);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .whatsappApi-phase1-footer-cards {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .whatsappApi-phase1-cards {
+        min-height: 130px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .whatsappApi-phase1-cards {
+        gap: 20px;
+
+        padding: 24px;
+
+        border-radius: 32px;
+    }
+
+    .whatsappApi-phase1-cards .phase1-icon {
+        width: 54px;
+        height: 54px;
+
+        min-width: 54px;
+        flex-basis: 54px;
+    }
+
+    .whatsappApi-phase1-cards .phase1-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .whatsappApi-phase1-cards .phase1-card-text h2 {
+        font-size: 17px;
+    }
+
+    .whatsappApi-phase1-cards .phase1-card-text p {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+}
 </style>
 
 
@@ -1045,6 +1320,43 @@
 
         </div>
 
+    </div>
+
+    <div class="whatsappApi-phase1-footer-cards">
+        <div class="whatsappApi-phase1-cards">
+            <span class="phase1-icon">
+                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M4 9V18C4 19.1046 4.89543 20 6 20H9M4 9V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V9M4 9H9M20 9H9M20 9V14.5M9 9V14.5M9 20H18C19.1046 20 20 19.1046 20 18V14.5M9 20V14.5M9 14.5H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </span>
+            <div class="phase1-card-text">
+                <h2>Native WhatsApp Flows</h2>
+                <p>Build multi-step interactive forms for lead gen, appointment booking, or complex orders directly in WhatsApp.</p>
+            </div>
+        </div>
+        <div class="whatsappApi-phase1-cards">
+            <span class="phase1-icon">
+                <svg fill="#000000" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <g>
+                                <path d="M498.095,198.122c0-25.763-9.68-50.313-27.257-69.131c-13.197-14.129-29.915-24.039-48.274-28.848 c0.253-2.749,0.397-5.521,0.397-8.313C422.962,41.194,381.768,0,331.133,0C300.099,0,272.631,15.49,256,39.129 C239.369,15.49,211.901,0,180.867,0c-50.635,0-91.828,41.194-91.828,91.828c0,2.794,0.145,5.565,0.397,8.313 c-18.359,4.808-35.075,14.719-48.274,28.848c-17.578,18.819-27.257,43.37-27.257,69.132c0,21.486,6.731,41.427,18.185,57.837 c-11.804,16.895-18.185,37.001-18.185,57.919c0,46.95,32.11,86.538,75.522,97.967c-0.249,2.761-0.39,5.537-0.39,8.327 c0,50.635,41.194,91.828,91.828,91.828c31.035,0,58.503-15.49,75.133-39.129C272.631,496.51,300.099,512,331.133,512 c50.635,0,91.828-41.194,91.828-91.828c0-2.788-0.14-5.565-0.39-8.327c43.412-11.429,75.522-51.016,75.522-97.967 c0-20.919-6.382-41.025-18.185-57.919C491.365,239.549,498.095,219.608,498.095,198.122z M239.304,343.088v77.084 c0,32.221-26.216,58.437-58.437,58.437c-32.223,0-58.437-26.216-58.437-58.437c0-1.771,0.088-3.532,0.245-5.284 c25.807-1.92,50.123-13.714,67.616-33.029l-24.749-22.417c-12.857,14.195-31.206,22.337-50.343,22.337 c-37.442,0-67.902-30.461-67.902-67.901c0-11.892,3.075-23.392,8.834-33.519c16.639,11.985,37.042,19.055,59.068,19.055v-33.391 c-37.442,0-67.902-30.461-67.902-67.901c0-31.399,21.722-58.325,51.228-65.815c10.151,20.567,27.843,37.177,50.093,45.523 l11.728-31.264c-22.678-8.507-37.916-30.504-37.916-54.737c0-32.223,26.216-58.437,58.437-58.437s58.437,26.216,58.437,58.437 v77.084v23.211h-13.79v-23.211h-33.391v23.211h-23.211v33.391h23.211v13.79h-23.211v33.391h23.211v13.789h-23.211v33.391h23.211 v23.211h33.391v-23.211h13.79V343.088z M225.516,286.485v-60.969h60.969v60.969H225.516z M455.869,280.359 c5.759,10.128,8.834,21.628,8.834,33.519c0,37.442-30.461,67.901-67.902,67.901c-19.137,0-37.486-8.141-50.343-22.337 L321.71,381.86c17.494,19.314,41.809,31.107,67.616,33.029c0.157,1.751,0.245,3.513,0.245,5.284 c0,32.223-26.216,58.437-58.437,58.437s-58.438-26.214-58.438-58.437v-77.084v-23.211h13.789v23.211h33.391v-23.211h23.211 v-33.391h-23.211v-13.789h23.211v-33.391h-23.211v-13.79h23.211v-33.391h-23.211v-23.211h-33.391v23.211h-13.789v-23.211V91.828 c0-32.223,26.216-58.437,58.437-58.437s58.437,26.214,58.437,58.437c0,24.232-15.238,46.229-37.916,54.737l11.728,31.264 c22.251-8.347,39.942-24.957,50.094-45.523c29.506,7.491,51.228,34.416,51.228,65.815c0,37.441-30.461,67.901-67.902,67.901 v33.391C418.827,299.414,439.23,292.343,455.869,280.359z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            <div class="phase1-card-text">
+                <h2>LLM-Powered Intelligence</h2>
+                <p>Integrate GPT-4 level understanding to handle complex human queries with automated precision.</p>
+            </div>
+        </div>
     </div>
 
 </section>
