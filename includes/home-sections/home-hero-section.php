@@ -1037,6 +1037,10 @@
         #home-hero-section {
             padding: 60px 24px;
         }
+
+        .home-hero-section_ai {
+            display: none;
+        }
     }
 </style>
 
