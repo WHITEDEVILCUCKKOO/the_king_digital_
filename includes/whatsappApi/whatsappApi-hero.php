@@ -326,6 +326,22 @@
         margin-bottom: 6px;
     }
 
+    .whatsappApi-hero_content-text-features li:nth-child(1) strong::after {
+        content: "%";
+    }
+
+    .whatsappApi-hero_content-text-features li:nth-child(2) strong::after {
+        content: "%+";
+    }
+
+    .whatsappApi-hero_content-text-features li:nth-child(3) strong::after {
+        content: "%";
+    }
+
+    .whatsappApi-hero_content-text-features li:nth-child(4) strong::after {
+        content: "%+";
+    }
+
     .whatsappApi-hero_content-text-features li span {
         display: block;
         font-size: 11px;
@@ -757,10 +773,22 @@
                 Get Started For Free
             </a>
             <ul class="whatsappApi-hero_content-text-features">
-                <li><strong>98%</strong><span>Message Open Rate</span></li>
-                <li><strong>45%+</strong><span>CTA Click Rate</span></li>
-                <li><strong>92%</strong><span>Satisfaction Rate</span></li>
-                <li><strong>60%+</strong><span>Automation</span></li>
+                <li>
+                    <strong class="whatsappApi-counter" data-target="98">0%</strong>
+                    <span>Message Open Rate</span>
+                </li>
+                <li>
+                    <strong class="whatsappApi-counter" data-target="45">0%+</strong>
+                    <span>CTA Click Rate</span>
+                </li>
+                <li>
+                    <strong class="whatsappApi-counter" data-target="92">0%</strong>
+                    <span>Satisfaction Rate</span>
+                </li>
+                <li>
+                    <strong class="whatsappApi-counter" data-target="60">0%+</strong>
+                    <span>Automation</span>
+                </li>
             </ul>
         </div>
         <div class="whatsappApi-hero_content-visual">
@@ -800,3 +828,112 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const counters = document.querySelectorAll(".whatsappApi-counter");
+
+        const observer = new IntersectionObserver((entries, observer) => {
+
+            entries.forEach(entry => {
+
+                // Counter is not visible yet
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                const counter = entry.target;
+
+                // Prevent the same counter from running again
+                observer.unobserve(counter);
+
+                const target = Number(counter.dataset.target);
+
+                const duration = 2000;
+
+                let startTime = null;
+
+
+                function animateCounter(timestamp) {
+
+                    // Set starting time
+                    if (startTime === null) {
+                        startTime = timestamp;
+                    }
+
+
+                    // Calculate elapsed time
+                    const elapsed = timestamp - startTime;
+
+
+                    // Progress from 0 → 1
+                    const progress = Math.min(
+                        elapsed / duration,
+                        1
+                    );
+
+
+                    // Smooth easing
+                    const easeOut =
+                        1 - Math.pow(1 - progress, 3);
+
+
+                    // Calculate current number
+                    const current = Math.floor(
+                        target * easeOut
+                    );
+
+
+                    // Display number
+                    counter.textContent =
+                        current.toLocaleString();
+
+
+                    // Continue animation
+                    if (progress < 1) {
+
+                        requestAnimationFrame(
+                            animateCounter
+                        );
+
+                    } else {
+
+                        // Make absolutely sure the final
+                        // number is correct
+                        counter.textContent =
+                            target.toLocaleString();
+
+                    }
+
+                }
+
+
+                // Start ONLY when the counter
+                // enters the viewport
+                requestAnimationFrame(
+                    animateCounter
+                );
+
+            });
+
+        }, {
+
+            /*
+             * Start when 50% of the counter
+             * becomes visible.
+             */
+            threshold: 0.5
+
+        });
+
+
+        // Observe every counter
+        counters.forEach(counter => {
+
+            observer.observe(counter);
+
+        });
+
+    });
+</script>
