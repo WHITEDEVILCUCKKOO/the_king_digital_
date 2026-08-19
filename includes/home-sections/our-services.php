@@ -469,21 +469,21 @@
         <div class="svc-tags"><span class="stag">Static Sites</span><span class="stag">E-Commerce</span><span class="stag">Portals</span><span class="stag">Mobile Apps</span></div>
       </div>
       <div class="svc-card reveal">
-        <a href="https://www.staticking.com/bulk-sms.shtml" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <a href="service-bluk-sms.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></div>
         <div class="svc-name">Bulk SMS Services</div>
         <div class="svc-desc">DLT-compliant promotional, transactional, OTP, and election SMS. Reach lakhs of customers in seconds with 99%+ delivery rates.</div>
         <div class="svc-tags"><span class="stag">Promotional</span><span class="stag">Transactional</span><span class="stag">OTP</span><span class="stag">Election</span></div>
       </div>
       <div class="svc-card reveal">
-        <a href="/wabasignup.html" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <a href="service-whatsAppApi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></div>
         <div class="svc-name">WhatsApp Business API</div>
         <div class="svc-desc">Official Meta-approved WhatsApp Business API. Bulk campaigns, chatbots, automated workflows, and real-time analytics.</div>
         <div class="svc-tags"><span class="stag">WABA Signup</span><span class="stag">Chatbot</span><span class="stag">Automation</span></div>
       </div>
       <div class="svc-card reveal">
-        <a href="https://www.ivrking.in/" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <a href="service-ivr.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FEF3C7;color:#D97706"><i class="fas fa-phone-volume"></i></div>
         <div class="svc-name">IVR, Voice & Telecom</div>
         <div class="svc-desc">Hosted IVR, toll-free numbers, missed call alerts, OBD voice broadcasting, virtual numbers, and cloud telephony for businesses.</div>
