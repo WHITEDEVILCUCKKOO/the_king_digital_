@@ -60,10 +60,10 @@
                         <div class="has-dd">
                             <a href="#" class="botom_link_78">Services</a>
                             <div class="dd">
-                                <a href="https://www.staticking.com/bulk-sms.shtml">
+                                <a href="service-bluk-sms.php">
                                     <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></span>Bulk SMS
                                 </a>
-                                <a href="/wabasignup.html">
+                                <a href="service-whatsAppApi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></span>WhatsApp API
                                 </a>
                                 <a href="/website-designing-company-india.html">
@@ -126,8 +126,8 @@
                 <!-- <a href="/blog/">Blog</a> -->
                 <a href="contact.php">Contact Us</a>
                 <div class="mob-nav-sep">Services</div>
-                <a href="https://www.staticking.com/bulk-sms.shtml">Bulk SMS</a>
-                <a href="/wabasignup.html">WhatsApp Business API</a>
+                <a href="service-bluk-sms.php">Bulk SMS</a>
+                <a href="service-whatsAppApi.php">WhatsApp Business API</a>
                 <a href="/website-designing-company-india.html">Website Design</a>
                 <a href="/seo-service-company-in-delhi.html">SEO Services</a>
                 <a href="https://www.ivrking.in/">IVR & Voice</a>
