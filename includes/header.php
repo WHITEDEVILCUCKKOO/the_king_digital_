@@ -69,7 +69,7 @@
                                 <a href="/website-designing-company-india.html">
                                     <span class="dd-icon" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></span>Website Design
                                 </a>
-                                <a href="/seo-service-company-in-delhi.html">
+                                <a href="seo-service.php">
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fas fa-chart-line"></i></span>SEO Services
                                 </a>
                                 <div class="dd-sep"></div>
@@ -129,7 +129,7 @@
                 <a href="service-bluk-sms.php">Bulk SMS</a>
                 <a href="service-whatsAppApi.php">WhatsApp Business API</a>
                 <a href="/website-designing-company-india.html">Website Design</a>
-                <a href="/seo-service-company-in-delhi.html">SEO Services</a>
+                <a href="seo-service.php">SEO Services</a>
                 <a href="service-ivr.php">IVR & Voice</a>
                 <a href="/email-marketing-company-india.html">Email Marketing</a>
                 <a href="https://www.kingcloud.in/">Hosting & Cloud</a>

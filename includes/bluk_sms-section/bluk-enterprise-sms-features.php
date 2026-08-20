@@ -21,7 +21,7 @@
     align-items: center;
     gap: 8px;
     background: #07355f21;
-    color: #0A5CFF;
+    color: #2b4e95;
     font-size: 14px;
     font-weight: 600;
     padding: 8px 18px;
@@ -34,15 +34,20 @@
     height: 16px;
   }
 
-  h1 {
-    font-size: 48px;
+  .asdihas7121we {
+    font-size: 44px;
     font-weight: 800;
+
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .asdihas7121we em{
     background: linear-gradient(to bottom, #0A5CFF 0%, #0A5CFF 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1.15;
-    margin-bottom: 20px;
+    font-style: normal;
   }
 
   .subtitle {
@@ -86,37 +91,35 @@
     padding: 2px;
     border-radius: 16px;
 
-    background: conic-gradient(
-        from var(--snake-angle),
+    background: conic-gradient(from var(--snake-angle),
         transparent 0deg,
         transparent 270deg,
         rgba(60, 95, 165, 0.2) 285deg,
         #3c5fa5 310deg,
         #082a6e 345deg,
-        transparent 360deg
-    );
+        transparent 360deg);
 
     -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
 
     -webkit-mask-composite: xor;
 
     mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
 
     mask-composite: exclude;
 
     opacity: 0;
     pointer-events: none;
     z-index: 10;
-}
+  }
 
-.card1298he:hover::before {
+  .card1298he:hover::before {
     opacity: 1;
     animation: snakeBorderMove 1.5s linear infinite;
-}
+  }
 
 
   @keyframes snakeBorderMove {
@@ -189,7 +192,7 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    h1 {
+    .asdihas7121we {
       font-size: 34px;
     }
   }
@@ -199,7 +202,7 @@
       grid-template-columns: 1fr;
     }
 
-    h1 {
+    .asdihas7121we {
       font-size: 28px;
     }
 
@@ -224,13 +227,179 @@
 
 
   .bluk-enterprise-sms-features {
-    background: var(--bg);
+    background: #f1f1f1;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     padding: 80px 24px;
   }
+
+  .effect_version_20 {
+    position: relative;
+    overflow: hidden;
+  }
+
+
+  .decor-hero-ring {
+    position: absolute;
+    top: -90px;
+    left: -90px;
+    width: 300px;
+    height: 300px;
+    border: 2px dashed var(--ivr-primary-light, #818CF8);
+    border-radius: 50%;
+    opacity: .3;
+    z-index: 1;
+    pointer-events: none;
+    animation: hero-ring-spin 20s linear infinite;
+  }
+
+  .decor-hero-ring::before {
+    content: '';
+    position: absolute;
+    inset: 34px;
+    border: 2px dashed #22D3EE;
+    border-radius: 50%;
+    opacity: .6;
+  }
+
+
+  @keyframes hero-ring-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .decor-hero-orb.o1 {
+    width: 14px;
+    height: 14px;
+    top: 40px;
+    right: 70px;
+    background: #8B5CF6;
+    opacity: .5;
+    animation: hero-orb-1 5s ease-in-out infinite;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .decor-hero-orb.o2 {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    bottom: 100px;
+    right: 20px;
+    background: #22D3EE;
+    opacity: .5;
+    animation: hero-orb-2 6s ease-in-out infinite .3s;
+    border-radius: 50%;
+  }
+
+  .decor-hero-orb.o3 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 200px;
+    right: -10px;
+    background: #2563EB;
+    opacity: .3;
+    animation: hero-orb-1 7s ease-in-out infinite .6s;
+    border-radius: 50%;
+  }
+
+
+  @keyframes hero-orb-1 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(-10px, -14px);
+    }
+  }
+
+  @keyframes hero-orb-2 {
+
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    50% {
+      transform: translate(-8px, 10px);
+    }
+  }
+
+  .decor-hero-grid {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 260px;
+    height: 220px;
+    background-image: radial-gradient(circle, #4F46E5 1.6px, transparent 1.6px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse at bottom left, black 0%, black 25%, transparent 72%);
+    mask-image: radial-gradient(ellipse at bottom left, black 0%, black 25%, transparent 72%);
+    opacity: .28;
+    z-index: 0;
+    pointer-events: none;
+    animation: hero-grid-shift 9s ease-in-out infinite;
+  }
+
+
+  @keyframes hero-grid-shift {
+
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 8px -8px;
+    }
+  }
+
+  .decor-hero-glow1 {
+    position: absolute;
+    top: -180px;
+    left: -160px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+    opacity: .18;
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+    animation: hero-glow-drift 12s ease-in-out infinite;
+  }
+
+
+  @keyframes hero-glow-drift {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate(30px, 20px) scale(1.08);
+    }
+  }
 </style>
 
-<section class="bluk-enterprise-sms-features">
+<section class="bluk-enterprise-sms-features effect_version_20">
+  <div class="decor-hero-glow1"></div>
+  <div class="decor-hero-ring"></div>
+  <div class="decor-hero-orb o1"></div>
+  <div class="decor-hero-orb o2"></div>
+  <div class="decor-hero-orb o3"></div>
+  <div class="decor-hero-grid"></div>
+
+
   <div class="wrap">
     <div class="badge">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -240,7 +409,7 @@
       Enterprise SMS Features
     </div>
 
-    <h1>Power Your Business with Bulk SMS</h1>
+    <h1 class="asdihas7121we">Power Your <em>Business with Bulk SMS</em></h1>
     <p class="subtitle">Industry-leading bulk SMS gateway built for scale, fast delivery, DLT compliance, and enterprise reliability</p>
 
     <div class="grid">
