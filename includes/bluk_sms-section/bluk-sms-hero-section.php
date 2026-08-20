@@ -19,6 +19,36 @@
         padding: 40px 50px;
     }
 
+
+
+    .cycle_animation {
+        position: relative;
+    }
+
+    .cycle_animation::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        right: -30px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 7.5px dashed rgba(7, 63, 167, 0.14);
+        pointer-events: none;
+        animation: decor-spin 16s linear infinite;
+    }
+
+    @keyframes decor-spin {
+
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
     .bluk-sms-hero .bluk-box {
 
         margin: auto;
@@ -366,7 +396,7 @@
         }
     }
 </style>
-<section class="bluk-sms-hero">
+<section class="bluk-sms-hero cycle_animation">
 
     <div class="bluk-box">
 
