@@ -73,7 +73,7 @@
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fas fa-chart-line"></i></span>SEO Services
                                 </a>
                                 <div class="dd-sep"></div>
-                                <a href="https://www.ivrking.in/">
+                                <a href="service-ivr.php">
                                     <span class="dd-icon" style="background:#FEF3C7;color:#D97706"><i class="fas fa-phone-volume"></i></span>IVR & Voice
                                 </a>
                                 <a href="/email-marketing-company-india.html">
@@ -130,7 +130,7 @@
                 <a href="service-whatsAppApi.php">WhatsApp Business API</a>
                 <a href="/website-designing-company-india.html">Website Design</a>
                 <a href="/seo-service-company-in-delhi.html">SEO Services</a>
-                <a href="https://www.ivrking.in/">IVR & Voice</a>
+                <a href="service-ivr.php">IVR & Voice</a>
                 <a href="/email-marketing-company-india.html">Email Marketing</a>
                 <a href="https://www.kingcloud.in/">Hosting & Cloud</a>
                 <div class="mob-nav-sep">Brands</div>
