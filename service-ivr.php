@@ -7,6 +7,7 @@
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-products.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-section.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-why.php' ?>
+    <?php require_once __DIR__ . '/includes/ivr-sections/ivr-testimonials.php' ?>
 
 </main>
 
