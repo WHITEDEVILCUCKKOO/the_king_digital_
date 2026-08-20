@@ -246,11 +246,13 @@
 
     .whatsapp-business_marquee {
         width: 100%;
-        background: linear-gradient(356deg, #b9c3e726, #535c7429);
+        /* background: linear-gradient(356deg, #b9c3e726, #535c7429); */
+        background: var(--color-bg-muted);
     }
 
     .whatsapp-business_marquee-slider {
-        background: linear-gradient(356deg, #b9c3e726, #535c7429);
+        /* background: linear-gradient(356deg, #b9c3e726, #535c7429); */
+        background: var(--color-bg-muted);
         position: relative;
         overflow: hidden;
         margin: auto;
@@ -273,20 +275,14 @@
 
     .whatsapp-business_marquee-slider::before {
         left: 0;
-
-        background: linear-gradient(to right,
-                #E8E9ED 0%,
-                rgba(232, 233, 237, 0.9) 50%,
-                transparent 100%);
+        /* background: var(--color-bg-muted); */
+        background: linear-gradient(to right, #E8E9ED 0%, rgba(232, 233, 237, 0.9) 50%, transparent 100%);
     }
 
     .whatsapp-business_marquee-slider::after {
         right: 0;
-
-        background: linear-gradient(to left,
-                #E8E9ED 0%,
-                rgba(232, 233, 237, 0.9) 50%,
-                transparent 100%);
+        /* background: var(--color-bg-muted); */
+        background: linear-gradient(to left, #E8E9ED 0%, rgba(232, 233, 237, 0.9) 50%, transparent 100%);
     }
 
     /* ========================================
