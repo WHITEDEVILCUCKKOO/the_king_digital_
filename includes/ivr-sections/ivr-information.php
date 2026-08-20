@@ -75,8 +75,6 @@
         padding: 80px;
         overflow: hidden;
         background: var(--ivr-gradient-dark);
-        color: var(--ivr-text-light);
-        font-family: "Segoe UI", Roboto, sans-serif;
     }
 
     .ivr-information_content {
