@@ -16,7 +16,9 @@
                 #eef3ff 70%,
                 #e5edff 100%);
 
-        padding: 40px 50px;
+        padding: 100px 24px 100px 126px;
+        /* display: flex; */
+        /* height: 75; */
     }
 
 
@@ -94,11 +96,15 @@
         font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-weight: 800;
 
+    }
+    
+    .bluk-titial em{
         background: linear-gradient(to bottom, #0A5CFF 0%, #0A5CFF 70%);
-
+    
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+
     }
 
     .bluk_set .tital_pera {
@@ -124,13 +130,18 @@
     }
 
     .bluk_tags_hero span {
-        font-size: 12px;
+        font-size: 11px;
         background-color: #fbfcffb0;
         width: max-content;
         padding: 5px 10px;
         border: 1px solid #13409b52;
         border-radius: 999px;
         color: #0B5CFF;
+    }
+    .bluk_tags_hero span em {
+        font-weight: bolder;
+    font-size: 15px;
+    margin-right: 5px;
     }
 
     .bluk-trial_mess {
@@ -152,11 +163,12 @@
 
 
     .img_card {
-        width: 50%;
+        width: 60%;
         background-color: white;
         position: relative;
         border-radius: 15px;
         margin: auto;
+        height: 100%;
     }
 
     .img_card .message_box_grid {
@@ -176,7 +188,8 @@
 
     .top-box_for-hero_sole {
         width: 100%;
-        padding-bottom: 4px;
+        padding-top: 10px;
+        padding-bottom: 17px;
         border-bottom: 1px solid#6666664d
     }
 
@@ -254,7 +267,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
 
-        margin-top: 10px;
+        margin-top: 17px;
     }
 
     .card_img_bluk_hero-1 {
@@ -309,7 +322,7 @@
 
     .hero_first_img {
         position: absolute;
-        width: 250px;
+        width: 270px;
         bottom: 0;
         left: -73%;
         z-index: 0;
@@ -395,9 +408,38 @@
             }
         }
     }
+
+    .decor-hero-grid {
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        width: 260px;
+        height: 220px;
+        background-image: radial-gradient(circle, #4F46E5 1.6px, transparent 1.6px);
+        background-size: 24px 24px;
+        -webkit-mask-image: radial-gradient(ellipse at bottom left, black 0%, black 25%, transparent 72%);
+        mask-image: radial-gradient(ellipse at bottom left, black 0%, black 25%, transparent 72%);
+        opacity: .28;
+        z-index: 0;
+        pointer-events: none;
+        animation: hero-grid-shift 9s ease-in-out infinite;
+    }
+
+
+    @keyframes hero-grid-shift {
+
+        0%,
+        100% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 8px -8px;
+        }
+    }
 </style>
 <section class="bluk-sms-hero cycle_animation">
-
+    <div class="decor-hero-grid"></div>
     <div class="bluk-box">
 
         <div class="bluk_set">
@@ -406,20 +448,20 @@
                 <p>Enterprise Bulk SMS Gateways</p>
             </div>
             <div class="bluk-titial">
-                <h1>Bulk SMS Solutions for Every Business Need</h1>
+                <h1>Bulk SMS Solutions for <em> Every Business Need </em></h1>
             </div>
 
             <p class="tital_pera">
                 Enterprise Bulk SMS Gateway
-                Bulk SMS Solutions for Every Business Need
-                Send millions of transactional <em> SMS </em>, <em> OTP </em>, and promotional messages instantly with <em>98.9% </em> delivery rate. DLT compliant, fast, and trusted by <em> 10,000+ businesses. </em></p>
+                Bulk SMS Solutions for <em> Every Business Need
+                Send millions</em> of transactional <em> SMS , OTP </em>, and promotional messages instantly with <em>98.9% delivery rate.  </em> DLT compliant, fast, and <em>trusted by  10,000+ businesses. </em></p>
 
 
             <div class="bluk_tags_hero">
-                <span> ✓ DLT Compliant </span>
-                <span> ✓ 98.9% Delivery </span>
-                <span> ✓ Sub-3s OTP SMS </span>
-                <span> ✓ REST API + Webhooks </span>
+                <span> <em>✓</em> DLT Compliant </span>
+                <span> <em>✓</em> 98.9% Delivery </span>
+                <span> <em>✓</em> Sub-3s OTP SMS </span>
+                <span> <em>✓</em> REST API + Webhooks </span>
 
             </div>
 
@@ -494,9 +536,9 @@
                         </span>
                         <div>
                             <h6>Order confirmation SMS</h6>
-                            <p>+91 98765-43210</p>
+                            <p>+917894561232</p>
                         </div>
-                        <span>2m ago</span>
+                        <span>10s ago</span>
                     </div>
                 </div>
 
@@ -511,9 +553,25 @@
                         </span>
                         <div>
                             <h6>Order confirmation SMS</h6>
-                            <p>+91 98765-43210</p>
+                            <p>+917894561230</p>
                         </div>
-                        <span>2m ago</span>
+                        <span>1m ago</span>
+                    </div>
+                </div>
+
+                <div class="fourth-box_for-hero_sole your-box-up-and_down-animation">
+                    <div class="gar_card_788">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 text-green-500 flex-shrink-0">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <path d="m9 11 3 3L22 4"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h6>Order confirmation SMS</h6>
+                            <p>+917894561231</p>
+                        </div>
+                        <span>1m ago</span>
                     </div>
                 </div>
 
