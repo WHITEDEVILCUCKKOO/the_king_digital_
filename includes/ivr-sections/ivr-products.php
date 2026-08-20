@@ -438,7 +438,7 @@
             <div class="ivr-grid">
                 <div class="ivr-card reveal">
                     <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></div>
+                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-phone-volume"></i></div>
                     <div class="ivr-name">Hosted IVR</div>
                     <div class="ivr-desc">Hosted IVR is a cloud-managed automated phone system that greets callers with pre-recorded voice menus and routes their calls based on keypad inputs or voice commands.</div>
                     <div class="ivr-tags">
@@ -450,7 +450,7 @@
                 </div>
                 <div class="ivr-card reveal">
                     <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></div>
+                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-square-poll-horizontal"></i></div>
                     <div class="ivr-name">Toll-Free</div>
                     <div class="ivr-desc">A toll-free number is a special telephone number that allows callers to reach a business or organization without being charged.</div>
                     <div class="ivr-tags">
@@ -462,7 +462,7 @@
                 </div>
                 <div class="ivr-card reveal">
                     <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></div>
+                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-voicemail"></i></div>
                     <div class="ivr-name">Missed Call Alert</div>
                     <div class="ivr-desc">It is a cloud tool that logs customer numbers for free lead generation and auto-replies.</div>
                     <div class="ivr-tags">
@@ -474,7 +474,7 @@
                 </div>
                 <div class="ivr-card reveal">
                     <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></div>
+                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-phone-volume"></i></div>
                     <div class="ivr-name">OBD Voice</div>
                     <div class="ivr-desc">An automated communication technology that dials a list of phone numbers and plays a pre-recorded audio message or text-to-speech alert to thousands of recipients simultaneously without manual intervention.</div>
                     <div class="ivr-tags">
