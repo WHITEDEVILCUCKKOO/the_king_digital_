@@ -210,7 +210,7 @@
         }
 
         .ivr-hero_content {
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: center;
         }
 
