@@ -5,6 +5,7 @@
     <?php require_once __DIR__ . '/includes/seo-service-sections/seo-service-hero.php' ?>
     <?php require_once __DIR__ . '/includes/seo-service-sections/seo-stats.php' ?>
     <?php require_once __DIR__ . '/includes/seo-service-sections/seo-what.php' ?>
+    <?php require_once __DIR__ . '/includes/seo-service-sections/seo-our-service.php' ?>
     
 </main>
 

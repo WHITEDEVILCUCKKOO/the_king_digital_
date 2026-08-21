@@ -62,7 +62,7 @@
 
     .seo-what {
         background: var(--seo-bg);
-        padding: 100px 5vw;
+        padding: 50px 5vw;
     }
 
     .seo-what_content {
@@ -71,11 +71,11 @@
     }
 
     .seo-what_content--heading {
-        font-size: clamp(1.9rem, 3vw, 2.5rem);
+        font-size: clamp(1.9rem, 3vw, 44px);
         font-weight: 700;
         color: var(--seo-heading);
         text-align: center;
-        max-width: 720px;
+        max-width: 800px;
         margin: 0 auto 56px;
         line-height: 1.25;
     }
@@ -85,6 +85,8 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        font-size: 50px;
+        font-weight: 800;
     }
 
     /* ---------- Grid ---------- */
@@ -157,7 +159,6 @@
     }
 
     .seo-card-content .h6 {
-        font-family: 'Space Grotesk', 'Inter', sans-serif;
         font-size: 1.15rem;
         font-weight: 600;
         color: var(--seo-heading);
