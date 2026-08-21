@@ -101,8 +101,8 @@
     }
 
     .seo-hero_content--heading {
-        font-size: clamp(2rem, 3.6vw, 3rem);
-        font-weight: 700;
+        font-size: clamp(2rem, 3.6vw, 44px);
+        font-weight: 800;
         line-height: 1.15;
         letter-spacing: -0.02em;
         color: var(--seo-heading);
