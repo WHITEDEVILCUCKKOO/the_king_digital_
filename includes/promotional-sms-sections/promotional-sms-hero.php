@@ -679,6 +679,7 @@
     }
 
     #kdPromoHero .kd-connection-line {
+        display: none;
         position: absolute;
         z-index: 5;
         top: 57px;
@@ -746,7 +747,7 @@
     #kdPromoHero .kd-delivery-card {
         right: -2%;
         bottom: 58px;
-        min-width: 197px;
+        min-width: 177px;
         animation: kdDeliveryFloat 4.7s ease-in-out infinite;
     }
 
@@ -1268,7 +1269,7 @@
 
     /* Supporting floating elements adjusted to the refined phone */
     #kdPromoHero .kd-high-reach {
-        left: calc(50% - 174px);
+        left: calc(50% - 257px);
         top: 12px;
         padding: 11px 13px;
         min-width: 150px;
@@ -1295,7 +1296,7 @@
     }
 
     #kdPromoHero .kd-delivery-card {
-        right: -1%;
+        right: 11%;
         bottom: 56px;
     }
 
