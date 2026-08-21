@@ -60,8 +60,8 @@
                         <div class="has-dd">
                             <a href="#" class="botom_link_78">Services</a>
                             <div class="dd">
-                                <a href="service-bluk-sms.php">
-                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></span>Bulk SMS
+                                <a href="promotional-sms.php">
+                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></span>Promotional SMS
                                 </a>
                                 <a href="service-whatsAppApi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></span>WhatsApp API
@@ -126,7 +126,7 @@
                 <!-- <a href="/blog/">Blog</a> -->
                 <a href="contact.php">Contact Us</a>
                 <div class="mob-nav-sep">Services</div>
-                <a href="service-bluk-sms.php">Bulk SMS</a>
+                <a href="promotional-sms.php">Promotional SMS</a>
                 <a href="service-whatsAppApi.php">WhatsApp Business API</a>
                 <a href="/website-designing-company-india.html">Website Design</a>
                 <a href="seo-service.php">SEO Services</a>
