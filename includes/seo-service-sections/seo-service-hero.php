@@ -10,7 +10,7 @@
 
         --seo-accent: #F59E0B;
 
-        --seo-bg: #FFF7ED;
+        --seo-bg: #FDF1E5;
         --seo-bg-soft: #FFEDD5;
 
         --seo-white: #FFFFFF;
@@ -89,6 +89,7 @@
         grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: 50px;
+        padding: 20px 80px;
     }
 
     /* ---------- Text column ---------- */
@@ -181,7 +182,7 @@
         content: "";
         position: absolute;
         inset: 6%;
-        background: var(--seo-gradient);
+        /* background: var(--seo-gradient); */
         border-radius: var(--seo-radius-xl);
         opacity: 0.14;
         /* filter: blur(30px); */
@@ -238,7 +239,7 @@
 
 
     .seo-hero_content--visual-floatingPoints:nth-of-type(3) {
-        top: 8%;
+        top: 2%;
         right: 4%;
         animation-delay: 2.6s;
     }
@@ -425,123 +426,326 @@
     }
 
 
-    /* ========================================
-   RESPONSIVE
-    ======================================== */
+    /* =========================================================
+   SEO HERO RESPONSIVE SYSTEM
+   Replace ALL existing SEO hero media queries with this
+   ========================================================= */
+
+
+    /* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+   1024px and below
+   ========================================================= */
+
+    @media (max-width: 1024px) {
+
+        .seo-hero_content {
+            max-width: 100%;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px 40px;
+        }
+
+        .seo-hero_content--heading {
+            font-size: clamp(2rem, 4vw, 2.7rem);
+        }
+
+        .seo-hero_content--text>p {
+            max-width: 55ch;
+            font-size: 1rem;
+        }
+
+        .seo-hero_content--visual {
+            min-width: 0;
+        }
+
+        /* Floating badges become less intrusive */
+        .seo-hero_content--visual-floatingPoints {
+            display: none;
+        }
+
+        /* Feature cards */
+        .seo-hero_content--features {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            padding: 0 40px;
+        }
+
+        .seo-hero_content--features-items {
+            min-width: 0;
+            padding: 18px 16px;
+        }
+
+        .seo-hero_content--features-items h2 {
+            font-size: 0.88rem;
+        }
+
+        .seo-hero_content--features-items p {
+            font-size: 0.76rem;
+        }
+    }
+
+
+    /* =========================================================
+   TABLET
+   900px and below
+   ========================================================= */
 
     @media (max-width: 900px) {
 
+        .seo-hero_content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 50px 35px 30px;
+        }
+
+        /*
+       Hide visual completely.
+       Since grid is now 1 column, there is no empty
+       second column left behind.
+    */
+        .seo-hero_content--visual {
+            display: none;
+        }
+
+        .seo-hero_content--text {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        .seo-hero_content--heading {
+            width: 100%;
+            max-width: 700px;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+        }
+
+        .seo-hero_content--text hr {
+            width: 80px;
+            margin: 0 auto 20px;
+        }
+
+        .seo-hero_content--text>p {
+            max-width: 65ch;
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+
         .seo-hero_content--features {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
+            padding: 0 35px;
+            margin-bottom: 35px;
         }
 
         .seo-hero_content--features-items {
             min-height: 120px;
-            padding: 16px;
-        }
-
-        .seo-hero_content--features-items h2 {
-            font-size: 0.85rem;
-        }
-
-        .seo-hero_content--features-items p {
-            font-size: 0.75rem;
+            padding: 17px 15px;
         }
     }
 
+
+    /* =========================================================
+   MOBILE
+   700px and below
+   ========================================================= */
 
     @media (max-width: 700px) {
 
+        .seo-hero {
+            padding: 60px 16px 45px;
+        }
+
+        .seo-hero_content {
+            width: 100%;
+            padding: 0;
+            gap: 25px;
+        }
+
+        .seo-hero_content--text {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .seo-hero_content--heading {
+            width: 100%;
+            max-width: 100%;
+            font-size: clamp(1.8rem, 8vw, 2.35rem);
+            line-height: 1.15;
+            margin-bottom: 18px;
+            letter-spacing: -0.015em;
+        }
+
+        .seo-hero_content--text>p {
+            width: 100%;
+            max-width: 100%;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .seo-hero_content--cta {
+            font-size: 0.88rem;
+            padding: 13px 24px;
+            margin-bottom: 10px;
+        }
+
+
+        /* ========================================
+       FEATURE CARDS
+       ======================================== */
+
         .seo-hero_content--features {
+            display: grid;
             grid-template-columns: 1fr;
-
-            width: min(100%, 500px);
-
+            width: 100%;
+            max-width: 520px;
             gap: 12px;
-
-            padding: 0 14px;
+            padding: 0;
+            margin: 0 auto;
+            margin-bottom: 25px;
         }
 
         .seo-hero_content--features-items {
+            width: 100%;
             min-height: auto;
-
             padding: 16px 17px;
-        }
-    }
-
-
-    /* ========================================
-   SMALL MOBILE
-    ======================================== */
-
-    @media (max-width: 480px) {
-
-        .seo-hero_content--features {
-            margin-bottom: 28px;
-        }
-
-        .seo-hero_content--features-items {
-            padding: 15px;
+            border-radius: var(--seo-radius-md);
         }
 
         .seo-hero_content--features-items::before {
-            width: 24px;
+            width: 25px;
             height: 3px;
             margin-bottom: 9px;
         }
 
         .seo-hero_content--features-items h2 {
-            font-size: 0.84rem;
+            font-size: 0.88rem;
+            line-height: 1.3;
+            margin-bottom: 6px;
         }
 
         .seo-hero_content--features-items p {
-            font-size: 0.74rem;
+            font-size: 0.76rem;
+            line-height: 1.5;
+        }
+
+        .seo-hero_content--features-items:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+
+    /* =========================================================
+   SMALL MOBILE
+   480px and below
+   ========================================================= */
+
+    @media (max-width: 480px) {
+
+        .seo-hero {
+            padding: 50px 14px 35px;
+        }
+
+        .seo-hero_content {
+            gap: 22px;
+        }
+
+        .seo-hero_content--heading {
+            font-size: clamp(1.7rem, 8.5vw, 2rem);
+            line-height: 1.18;
+            margin-bottom: 16px;
+        }
+
+        .seo-hero_content--text hr {
+            width: 60px;
+            height: 2px;
+            margin-bottom: 17px;
+        }
+
+        .seo-hero_content--text>p {
+            font-size: 0.86rem;
+            line-height: 1.55;
+            margin-bottom: 22px;
+        }
+
+        .seo-hero_content--cta {
+            font-size: 0.84rem;
+            padding: 12px 21px;
+            gap: 8px;
+        }
+
+        .seo-hero_content--features {
+            width: 100%;
+            max-width: 100%;
+            gap: 10px;
+        }
+
+        .seo-hero_content--features-items {
+            padding: 14px;
+        }
+
+        .seo-hero_content--features-items::before {
+            width: 23px;
+            height: 3px;
+            margin-bottom: 8px;
+        }
+
+        .seo-hero_content--features-items h2 {
+            font-size: 0.83rem;
+        }
+
+        .seo-hero_content--features-items p {
+            font-size: 0.73rem;
             line-height: 1.45;
         }
     }
 
-    /* =========================
-   RESPONSIVE
-   ========================= */
 
-    @media (max-width: 1024px) {
-        .seo-hero_content {
-            grid-template-columns: 1fr;
+    /* =========================================================
+   VERY SMALL PHONES
+   360px and below
+   ========================================================= */
+
+    @media (max-width: 360px) {
+
+        .seo-hero {
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
-        .seo-hero_content--visual {
-            order: -1;
-        }
-
-        .seo-hero_content--text {
-            align-items: center;
-            text-align: center;
+        .seo-hero_content--heading {
+            font-size: 1.65rem;
         }
 
         .seo-hero_content--text>p {
-            max-width: 60ch;
+            font-size: 0.82rem;
         }
 
-        .seo-hero_content--features {
-            grid-template-columns: 1fr 1fr;
+        .seo-hero_content--cta {
+            padding: 11px 18px;
+            font-size: 0.8rem;
+        }
+
+        .seo-hero_content--features-items {
+            padding: 13px;
+        }
+
+        .seo-hero_content--features-items h2 {
+            font-size: 0.8rem;
+        }
+
+        .seo-hero_content--features-items p {
+            font-size: 0.7rem;
         }
     }
 
-    @media (max-width: 640px) {
-        .seo-hero {
-            padding: 80px 6vw;
-        }
 
-        .seo-hero_content--features {
-            grid-template-columns: 1fr;
-        }
-
-        .seo-hero_content--visual::after {
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -6%;
-        }
-    }
+    /* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -550,6 +754,10 @@
         .seo-hero_content--cta span {
             transition: none;
         }
+
+        .seo-hero_content--features-items:hover {
+            transform: none;
+        }
     }
 </style>
 
@@ -557,9 +765,8 @@
     <div class="seo-hero_content">
         <div class="seo-hero_content--text">
             <h1 class="seo-hero_content--heading">
-                SEO Services that
-                results in
-                <span>MQLs and orders</span>
+                SEO Services that results
+                in <span>MQLs and orders</span>
             </h1>
             <hr>
             <p>
