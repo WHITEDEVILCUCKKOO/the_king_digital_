@@ -4,6 +4,7 @@
 
     <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-hero.php' ?>
     <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-stats.php' ?>
+    <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-tech.php' ?>
     
 </main>
 
