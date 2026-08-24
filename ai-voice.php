@@ -7,6 +7,7 @@
     <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-tech.php' ?>
     <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-progress.php' ?>
     <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-tools.php' ?>
+    <?php require_once __DIR__ . '/includes/ai-voice-sections/ai-voice-compare.php' ?>
     
 </main>
 
