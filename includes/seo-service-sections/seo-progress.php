@@ -70,6 +70,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
+        pointer-events: none;
     }
 
     /* ---------------------------------------------------------
@@ -803,8 +804,8 @@
         var seoWorkflowSupportsHover =
             window.matchMedia && window.matchMedia('(hover: hover)').matches;
 
-        var seoWorkflowStepDwellMs = 1000; // time a step stays active before advancing
-        var seoWorkflowLoopPauseMs = 2000; // pause after step 8 before restarting
+        var seoWorkflowStepDwellMs = 500; // time a step stays active before advancing
+        var seoWorkflowLoopPauseMs = 1000; // pause after step 8 before restarting
         var seoWorkflowIntroDelayMs = 200; // small breathing room before step 1 fires
 
         var seoWorkflowCurrentStep = -1; // -1 = nothing activated yet
