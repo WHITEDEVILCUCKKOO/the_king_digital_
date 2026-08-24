@@ -66,18 +66,21 @@
                                 <a href="service-whatsAppApi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></span>WhatsApp API
                                 </a>
+                                <a href="aggregator_platform.php">
+                                    <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fa-solid fa-mobile-screen-button"></i></span>Aggregator Platform
+                                </a>
                                 <a href="/website-designing-company-india.html">
                                     <span class="dd-icon" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></span>Website Design
                                 </a>
                                 <a href="seo-service.php">
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fas fa-chart-line"></i></span>SEO Services
                                 </a>
-                                <a href="aggregator_platform.php">
-                                    <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fa-solid fa-mobile-screen-button"></i></span>Aggregator Platform
-                                </a>
                                 <div class="dd-sep"></div>
                                 <a href="service-ivr.php">
                                     <span class="dd-icon" style="background:#FEF3C7;color:#D97706"><i class="fas fa-phone-volume"></i></span>IVR & Voice
+                                </a>
+                                <a href="ai-voice.php">
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i class="fa-solid fa-robot"></i></span>Ai Voice
                                 </a>
                                 <a href="/email-marketing-company-india.html">
                                     <span class="dd-icon" style="background:#F5F3FF;color:#7C3AED"><i class="fas fa-envelope-open"></i></span>Email Marketing
