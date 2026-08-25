@@ -1,204 +1,374 @@
 <style>
     :root {
+        /* =========================
+       SEO SERVICE COLOR THEME
+       ========================= */
 
-        /* ========================================
-       AI VOICE — COLOR SYSTEM
-        ======================================== */
+        --seo-primary: #F97316;
+        --seo-primary-dark: #EA580C;
+        --seo-primary-light: #FB923C;
 
-        /* ---------- Primary ---------- */
-        --ai-orange: #EA5C28;
-        --ai-orange-bright: #F4511E;
-        --ai-orange-dark: #D94717;
+        --seo-accent: #F59E0B;
 
-        /* ---------- Secondary ---------- */
-        --ai-red: #E3413E;
-        --ai-pink: #E31D5B;
-        --ai-pink-light: #EC4899;
+        --seo-bg: #FDF1E5;
+        --seo-bg-soft: #FFEDD5;
 
-        /* ---------- Gradients ---------- */
-        --ai-gradient: linear-gradient(90deg,
-                #F4511E 0%,
-                #E3413E 50%,
-                #E31D5B 100%);
+        --seo-white: #FFFFFF;
 
-        --ai-gradient-reverse: linear-gradient(90deg,
-                #E31D5B 0%,
-                #E3413E 50%,
-                #F4511E 100%);
+        --seo-heading: #1F2937;
+        --seo-text: #374151;
+        --seo-muted: #6B7280;
 
-        --ai-gradient-soft: linear-gradient(135deg,
-                rgba(244, 81, 30, 0.12),
-                rgba(227, 29, 91, 0.12));
+        --seo-border: #FED7AA;
 
 
-        /* ========================================
-       DARK / AI SECTIONS
-        ======================================== */
+        /* =========================
+       SEO GRADIENTS
+       ========================= */
 
-        --ai-dark: #120E20;
-        --ai-dark-secondary: #171126;
-        --ai-dark-purple: #251636;
-        --ai-dark-card: #1F1A31;
-        --ai-dark-card-hover: #2A2040;
+        --seo-gradient: linear-gradient(135deg,
+                #F97316 0%,
+                #F59E0B 100%);
 
-        --ai-dark-border: rgba(255, 255, 255, 0.08);
-
-        --ai-dark-text: #FFFFFF;
-        --ai-dark-text-secondary: #E5E7EB;
-        --ai-dark-text-muted: #A1A1AA;
+        --seo-gradient-soft: linear-gradient(135deg,
+                #FFF7ED 0%,
+                #FFEDD5 100%);
 
 
-        /* ========================================
-       LIGHT SECTIONS
-        ======================================== */
+        /* =========================
+       SEO SHADOWS
+       ========================= */
 
-        --ai-white: #FFFFFF;
-        --ai-bg: #FFFFFF;
+        --seo-shadow: 0 10px 30px rgba(249, 115, 22, 0.10);
 
-        --ai-bg-warm: #ffffffdc;
-        --ai-bg-soft: #FEF3F1;
-        --ai-bg-orange: #FFF1E8;
-
-        --ai-bg-pink: #FFF1F5;
-        --ai-bg-purple: #F7F3FF;
+        --seo-shadow-hover: 0 18px 45px rgba(249, 115, 22, 0.18);
 
 
-        /* ========================================
-       TEXT
-        ======================================== */
+        /* =========================
+       SEO UI
+       ========================= */
 
-        --ai-text: #111827;
-        --ai-text-heading: #111827;
-        --ai-text-body: #374151;
-        --ai-text-muted: #6B7280;
-        --ai-text-light: #9CA3AF;
+        --seo-radius-sm: 8px;
+        --seo-radius-md: 14px;
+        --seo-radius-lg: 20px;
+        --seo-radius-xl: 28px;
 
-        --ai-text-white: #FFFFFF;
+        --seo-transition: 0.3s ease;
+    }
 
+    .seo-faqs {
+        position: relative;
+        background: var(--seo-bg);
+        padding: 80px 24px;
+        overflow: hidden;
+    }
 
-        /* ========================================
-       BORDERS
-        ======================================== */
+    /* Soft ambient glow, subtle, in the corner — echoes the gradient without competing with content */
+    .seo-faqs::before {
+        content: "";
+        position: absolute;
+        top: -220px;
+        right: -160px;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background: var(--seo-gradient);
+        opacity: 0.10;
+        filter: blur(90px);
+        pointer-events: none;
+    }
 
-        --ai-border: #E5E7EB;
-        --ai-border-light: #F3F4F6;
-        --ai-border-orange: rgba(234, 92, 40, 0.25);
-        --ai-border-pink: rgba(227, 29, 91, 0.20);
+    .seo-faqs_content {
+        position: relative;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+    }
 
+    .seo-faqs_content--heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 44px;
+        text-align: center;
+    }
 
-        /* ========================================
-       CARDS
-        ======================================== */
+    .seo-faqs_content--heading .seo-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--seo-primary-dark);
+        background: var(--seo-bg-soft);
+        border: 1px solid var(--seo-border);
+        padding: 6px 16px;
+        border-radius: 999px;
+    }
 
-        --ai-card-bg: #FFFFFF;
-        --ai-card-bg-soft: #FFF9F5;
+    .seo-faqs_content--heading h1 {
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 0;
+        color: var(--seo-heading);
+        letter-spacing: -0.01em;
+    }
 
-        --ai-card-shadow:
-            0 4px 20px rgba(17, 24, 39, 0.06);
+    .seo-faqs_content--heading p {
+        font-size: 16px;
+        color: var(--seo-muted);
+        margin: 0;
+        max-width: 480px;
+    }
 
-        --ai-card-shadow-hover:
-            0 12px 35px rgba(17, 24, 39, 0.10);
+    .seo-faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
 
+    .seo-faq-qa {
+        background: var(--seo-white);
+        border: 1px solid var(--seo-border);
+        border-radius: var(--seo-radius-lg);
+        box-shadow: var(--seo-shadow);
+        overflow: hidden;
+        transition: box-shadow var(--seo-transition), border-color var(--seo-transition);
+    }
 
-        /* ========================================
-       STATUS / UI COLORS
-        ======================================== */
+    .seo-faq-qa:hover {
+        box-shadow: var(--seo-shadow-hover);
+    }
 
-        --ai-success: #22C55E;
-        --ai-success-light: #DCFCE7;
+    .seo-faq-qa.is-open {
+        border-color: var(--seo-primary-light);
+    }
 
-        --ai-warning: #F59E0B;
-        --ai-warning-light: #FEF3C7;
+    .seo-question {
+        margin: 0;
+        font-size: 16px;
+    }
 
-        --ai-info: #3B82F6;
-        --ai-info-light: #DBEAFE;
+    .seo-question-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 20px 24px;
+        font: inherit;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--seo-heading);
+        -webkit-tap-highlight-color: transparent;
+    }
 
-        --ai-danger: #EF4444;
-        --ai-danger-light: #FEE2E2;
+    .seo-question-btn:focus-visible {
+        outline: 2px solid var(--seo-primary);
+        outline-offset: -2px;
+        border-radius: var(--seo-radius-sm);
+    }
 
+    .seo-question-icon {
+        flex: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--seo-gradient-soft);
+        border: 1px solid var(--seo-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: background var(--seo-transition), border-color var(--seo-transition), transform var(--seo-transition);
+    }
 
-        /* ========================================
-       VOICE / WAVEFORM
-        ======================================== */
+    .seo-question-icon::before,
+    .seo-question-icon::after {
+        content: "";
+        position: absolute;
+        background: var(--seo-primary-dark);
+        border-radius: 2px;
+        transition: transform var(--seo-transition), opacity var(--seo-transition);
+    }
 
-        --ai-wave-primary: #F4511E;
-        --ai-wave-secondary: #E31D5B;
-        --ai-wave-light: rgba(244, 81, 30, 0.20);
+    .seo-question-icon::before {
+        width: 12px;
+        height: 2px;
+    }
 
-        --ai-pulse: rgba(234, 92, 40, 0.25);
+    .seo-question-icon::after {
+        width: 2px;
+        height: 12px;
+    }
 
+    .seo-faq-qa.is-open .seo-question-icon {
+        background: var(--seo-gradient);
+        border-color: var(--seo-primary-dark);
+    }
 
-        /* ========================================
-       BUTTONS
-        ======================================== */
+    .seo-faq-qa.is-open .seo-question-icon::before,
+    .seo-faq-qa.is-open .seo-question-icon::after {
+        background: var(--seo-white);
+    }
 
-        --ai-btn-primary: #EA5C28;
-        --ai-btn-primary-hover: #D94717;
+    .seo-faq-qa.is-open .seo-question-icon::after {
+        transform: rotate(90deg);
+        opacity: 0;
+    }
 
-        --ai-btn-gradient: linear-gradient(90deg,
-                #F4511E,
-                #E31D5B);
+    .seo-answer-wrap {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.35s ease;
+    }
 
-        --ai-btn-text: #FFFFFF;
+    .seo-faq-qa.is-open .seo-answer-wrap {
+        grid-template-rows: 1fr;
+    }
 
+    .seo-answer-inner {
+        overflow: hidden;
+    }
 
-        /* ========================================
-       RADIUS
-        ======================================== */
+    .seo-answer {
+        margin: 0;
+        padding: 0 24px 22px 24px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--seo-text);
+    }
 
-        --ai-radius-sm: 6px;
-        --ai-radius-md: 10px;
-        --ai-radius-lg: 14px;
-        --ai-radius-xl: 20px;
-        --ai-radius-full: 999px;
+    @media (prefers-reduced-motion: reduce) {
+        .seo-answer-wrap {
+            transition: none;
+        }
 
+        .seo-question-icon,
+        .seo-question-icon::before,
+        .seo-question-icon::after {
+            transition: none;
+        }
+    }
 
-        /* ========================================
-       SPACING
-        ======================================== */
+    @media (max-width: 640px) {
+        .seo-faqs {
+            padding: 56px 18px;
+        }
 
-        --ai-section-padding: 100px;
-        --ai-container-width: 1200px;
+        .seo-faqs_content--heading h1 {
+            font-size: 28px;
+        }
 
+        .seo-question-btn {
+            padding: 16px 18px;
+            font-size: 15px;
+            gap: 14px;
+        }
 
-        /* ========================================
-       TRANSITIONS
-        ======================================== */
-
-        --ai-transition-fast: 0.2s ease;
-        --ai-transition: 0.3s ease;
-        --ai-transition-slow: 0.5s ease;
+        .seo-answer {
+            padding: 0 18px 18px 18px;
+            font-size: 14px;
+        }
     }
 </style>
 
-<section class="voice-faq">
-    <div class="voice-faq_content">
-        <div class="voice-faq_content--heading">
-            <p><span></span>FAQS</p>
-            <h1>What People Want to Ask:</h1>
-            <p>Everything you need to know about our AI Voice solutions.</p>
+<section class="seo-faqs">
+    <div class="seo-faqs_content">
+        <div class="seo-faqs_content--heading">
+            <span class="seo-eyebrow">FAQ</span>
+            <h1>People Also Ask</h1>
+            <p>Straight answers to the questions we hear most from clients considering SEO.</p>
         </div>
-        <div class="voice-faq_content--body">
-            <div class="voice-faq_content-qa">
-                <h3 class="voice-faq_content-qa-question">01. What is an AI Voice Agent?</h3>
-                <p class="voice-faq_content-qa-answer">An AI Voice Agent is an automated voice system that can understand spoken conversations, process customer requests, and respond naturally in real time. It can be used for customer support, lead qualification, appointment booking, outbound calls, and other business workflows.</p>
+
+        <div class="seo-faq-container">
+            <div class="seo-faq-qa is-open">
+                <h3 class="seo-question">
+                    <button type="button" class="seo-question-btn" aria-expanded="true" aria-controls="seo-answer-1" id="seo-question-1">
+                        How long does SEO take to show results?
+                        <span class="seo-question-icon" aria-hidden="true"></span>
+                    </button>
+                </h3>
+                <div class="seo-answer-wrap" id="seo-answer-1" role="region" aria-labelledby="seo-question-1">
+                    <div class="seo-answer-inner">
+                        <p class="seo-answer">3 to 6 months for early signals (impressions, low-competition keywords) and 6 to 12 months for meaningful traffic and revenue growth. Google officials cite a 4 to 12 month window for significant impact.</p>
+                    </div>
+                </div>
             </div>
-            <div class="voice-faq_content-qa">
-                <h3 class="voice-faq_content-qa-question">02. How is an AI Voice Agent different from traditional IVR?</h3>
-                <p class="voice-faq_content-qa-answer">Traditional IVR relies on predefined menus such as “Press 1 for Sales.” An AI Voice Agent allows customers to speak naturally, understand their intent, and respond based on the context of the conversation.</p>
+
+            <div class="seo-faq-qa">
+                <h3 class="seo-question">
+                    <button type="button" class="seo-question-btn" aria-expanded="false" aria-controls="seo-answer-2" id="seo-question-2">
+                        What is included in your SEO service?
+                        <span class="seo-question-icon" aria-hidden="true"></span>
+                    </button>
+                </h3>
+                <div class="seo-answer-wrap" id="seo-answer-2" role="region" aria-labelledby="seo-question-2">
+                    <div class="seo-answer-inner">
+                        <p class="seo-answer">King Digital SEO service typically includes four core pillars: Technical SEO, On-Page Optimization, Content Strategy, and Off-Page Authority Building.</p>
+                    </div>
+                </div>
             </div>
-            <div class="voice-faq_content-qa">
-                <h3 class="voice-faq_content-qa-question">03. Can the AI Voice Agent handle inbound and outbound calls?</h3>
-                <p class="voice-faq_content-qa-answer">Yes. AI Voice Agents can be configured for inbound customer support as well as outbound use cases such as lead qualification, reminders, follow-ups, surveys, and campaigns.</p>
+
+            <div class="seo-faq-qa">
+                <h3 class="seo-question">
+                    <button type="button" class="seo-question-btn" aria-expanded="false" aria-controls="seo-answer-3" id="seo-question-3">
+                        Do you guarantee first-page rankings?
+                        <span class="seo-question-icon" aria-hidden="true"></span>
+                    </button>
+                </h3>
+                <div class="seo-answer-wrap" id="seo-answer-3" role="region" aria-labelledby="seo-question-3">
+                    <div class="seo-answer-inner">
+                        <p class="seo-answer">No legitimate SEO agency or expert can guarantee first-page rankings. Any provider promising specific positions (e.g., "#1 on Google" or "First Page in 30 Days") is either misleading you or using high-risk tactics that could penalize your site.</p>
+                    </div>
+                </div>
             </div>
-            <div class="voice-faq_content-qa">
-                <h3 class="voice-faq_content-qa-question">04. Can it understand different languages?</h3>
-                <p class="voice-faq_content-qa-answer">AI Voice solutions can support multiple languages depending on the speech-recognition and voice technologies used for the implementation. Language support can be configured according to your business requirements.</p>
-            </div>
-            <div class="voice-faq_content-qa">
-                <h3 class="voice-faq_content-qa-question">05. Can the AI Voice Agent integrate with our CRM or existing systems?</h3>
-                <p class="voice-faq_content-qa-answer">Yes. The voice agent can be connected with business systems such as CRMs, databases, APIs, and other applications to retrieve information, update records, and trigger workflows.</p>
+
+            <div class="seo-faq-qa">
+                <h3 class="seo-question">
+                    <button type="button" class="seo-question-btn" aria-expanded="false" aria-controls="seo-answer-4" id="seo-question-4">
+                        Do you provide monthly SEO reports?
+                        <span class="seo-question-icon" aria-hidden="true"></span>
+                    </button>
+                </h3>
+                <div class="seo-answer-wrap" id="seo-answer-4" role="region" aria-labelledby="seo-question-4">
+                    <div class="seo-answer-inner">
+                        <p class="seo-answer">Yes, comprehensive monthly SEO reports are standard.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    (function() {
+        var items = document.querySelectorAll('.seo-faq-qa');
+
+        items.forEach(function(item) {
+            var btn = item.querySelector('.seo-question-btn');
+
+            btn.addEventListener('click', function() {
+                var isOpen = item.classList.contains('is-open');
+
+                items.forEach(function(other) {
+                    other.classList.remove('is-open');
+                    other.querySelector('.seo-question-btn').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    })();
+</script>
