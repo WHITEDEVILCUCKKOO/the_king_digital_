@@ -69,7 +69,7 @@
                                 <a href="aggregator_platform.php">
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fa-solid fa-mobile-screen-button"></i></span>Aggregator Platform
                                 </a>
-                                <a href="/website-designing-company-india.html">
+                                <a href="web-design.php">
                                     <span class="dd-icon" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></span>Website Design
                                 </a>
                                 <a href="seo-service.php">
@@ -91,7 +91,7 @@
                                 <a href="https://www.kingcloud.in/">
                                     <span class="dd-icon" style="background:#F0FDF4;color:#16A34A"><i class="fas fa-server"></i></span>Hosting & Cloud
                                 </a>
-                                <a href="https://kingdigitalstudio.in/">
+                                <a href="video-audio.php">
                                     <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i class="fas fa-video"></i></span>Video & Audio
                                 </a>
                             </div>
@@ -137,12 +137,13 @@
                 <div class="mob-nav-sep">Services</div>
                 <a href="promotional-sms.php">Promotional SMS</a>
                 <a href="service-whatsAppApi.php">WhatsApp Business API</a>
-                <a href="/website-designing-company-india.html">Website Design</a>
+                <a href="web-design.php">Website Design</a>
                 <a href="seo-service.php">SEO Services</a>
                 <a href="aggregator_platform.php">Aggregator Platform</a>
                 <a href="service-ivr.php">IVR & Voice</a>
                 <!-- <a href="/email-marketing-company-india.html">Email Marketing</a> -->
                 <a href="https://www.kingcloud.in/">Hosting & Cloud</a>
+                <a href="video-audio.php">Video & Audio</a>
                 <div class="mob-nav-sep">Brands</div>
                 <a href="https://www.staticking.com/">StaticKing</a>
                 <a href="https://kingdigitalstudio.in/">King Digital Studio</a>
