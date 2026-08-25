@@ -412,7 +412,7 @@
                 </span>
                 AI Voice Technology 2026
             </div>
-            <h1 class="ai-tech_content--heading">The Intelligence Behind Every Conversation</h1>
+            <h1 class="ai-tech_content--head">The Intelligence Behind Every Conversation</h1>
             <p class="ai-tech_content--para">
                 Powerful AI voice capabilities designed to make every customer interaction faster, smarter, and more natural.
             </p>
