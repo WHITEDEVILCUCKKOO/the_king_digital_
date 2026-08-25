@@ -109,6 +109,7 @@
     /* ---------- Timeline ---------- */
 
     .voice-timeline_content--steps {
+        --fill: 0%;
         position: relative;
         margin-bottom: 70px;
     }
@@ -124,30 +125,17 @@
         background: var(--ai-border);
     }
 
-    /* animated fill line running down the track, looping */
+    /* fill line — height driven live by scroll position via --fill, no auto-loop animation */
     .voice-timeline_content--steps::after {
         content: "";
         position: absolute;
         left: 27px;
         top: 8px;
         width: 2px;
-        height: 0%;
+        height: var(--fill);
         background: var(--ai-gradient);
-        animation: fillDown 9s ease-in-out infinite;
-    }
-
-    @keyframes fillDown {
-        0% {
-            height: 0%;
-        }
-
-        85% {
-            height: 100%;
-        }
-
-        100% {
-            height: 100%;
-        }
+        transition: height 0.2s ease-out;
+        will-change: height;
     }
 
     .tl-step {
@@ -176,30 +164,19 @@
         justify-content: center;
         font-weight: 800;
         font-size: 18px;
-        color: var(--ai-text-light, #9CA3AF);
-        animation: nodeActivate 9s infinite;
-        animation-delay: calc(var(--i) * 1.15s);
+        color: var(--ai-text-muted);
+        transition: background var(--ai-transition-fast), border-color var(--ai-transition-fast),
+            color var(--ai-transition-fast), box-shadow var(--ai-transition-fast),
+            transform var(--ai-transition-fast);
     }
 
-    @keyframes nodeActivate {
-
-        0%,
-        6%,
-        100% {
-            border-color: var(--ai-border);
-            color: var(--ai-text-muted);
-            background: var(--ai-card-bg);
-            box-shadow: none;
-            transform: scale(1);
-        }
-
-        3% {
-            border-color: var(--ai-orange);
-            color: var(--ai-white);
-            background: var(--ai-gradient);
-            box-shadow: 0 0 0 6px var(--ai-border-orange);
-            transform: scale(1.08);
-        }
+    /* Active state toggled by JS as scroll progress passes each node, not a keyframe loop */
+    .tl-node.is-active {
+        border-color: var(--ai-orange);
+        color: var(--ai-white);
+        background: var(--ai-gradient);
+        box-shadow: 0 0 0 6px var(--ai-border-orange);
+        transform: scale(1.08);
     }
 
     .tl-card {
@@ -235,6 +212,7 @@
     .tl-card .tl-icon svg {
         width: 22px;
         height: 22px;
+        fill: var(--ai-orange);
     }
 
     .tl-card h3 {
@@ -316,15 +294,14 @@
             <p class="voice-timeline_content--para">From the first word spoken to the final response, every conversation passes through an intelligent real-time voice pipeline.</p>
         </div>
 
-        <div class="voice-timeline_content--steps">
+        <div class="voice-timeline_content--steps" id="voiceTimelineSteps">
 
-            <div class="tl-step" style="--i:0">
+            <div class="tl-step">
                 <span class="tl-node">1</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M24 14c-6 0-10 5-10 12s2 12 6 15l-4 6h12l3-6c5-1 8-5 8-11" />
-                            <path d="M40 24c2 2 3 5 3 8s-1 6-3 8" opacity="0.85" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path d="M96 96c0-53 43-96 96-96 50.3 0 91.6 38.7 95.7 88L232 88c-13.3 0-24 10.7-24 24s10.7 24 24 24l56 0 0 48-56 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l55.7 0c-4.1 49.3-45.3 88-95.7 88-53 0-96-43-96-96L96 96zM24 160c13.3 0 24 10.7 24 24l0 40c0 79.5 64.5 144 144 144s144-64.5 144-144l0-40c0-13.3 10.7-24 24-24s24 10.7 24 24l0 40c0 97.9-73.3 178.7-168 190.5l0 49.5 48 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-144 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0 0-49.5C73.3 402.7 0 321.9 0 224l0-40c0-13.3 10.7-24 24-24z" />
                         </svg>
                     </span>
                     <div>
@@ -334,15 +311,12 @@
                 </div>
             </div>
 
-            <div class="tl-step" style="--i:1">
+            <div class="tl-step">
                 <span class="tl-node">2</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="6" y="10" width="24" height="18" rx="4" />
-                            <path d="M12 22v-6M18 24v-10M24 22v-6" stroke-width="3" />
-                            <rect x="28" y="26" width="28" height="24" rx="4" />
-                            <path d="M35 35h14M35 41h10M35 47h14" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                            <path d="M533.6 32.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C557.5 113.8 592 180.8 592 256s-34.5 142.2-88.7 186.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C598.5 426.7 640 346.2 640 256S598.5 85.2 533.6 32.5zM473.1 107c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C475.3 170.7 496 210.9 496 256s-20.7 85.3-53.2 111.8c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5c43.2-35.2 70.9-88.9 70.9-149s-27.7-113.8-70.9-149zm-60.5 74.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C393.1 227.6 400 241 400 256s-6.9 28.4-17.7 37.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C434.1 312.9 448 286.1 448 256s-13.9-56.9-35.4-74.5zM80 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L128 160 80 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48z" />
                         </svg>
                     </span>
                     <div>
@@ -352,15 +326,12 @@
                 </div>
             </div>
 
-            <div class="tl-step" style="--i:2">
+            <div class="tl-step">
                 <span class="tl-node">3</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="32" cy="16" r="9" />
-                            <path d="M32 26v6" />
-                            <rect x="12" y="36" width="40" height="7" rx="2" />
-                            <rect x="12" y="46" width="40" height="7" rx="2" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                            <path d="M160 0c17.7 0 32 14.3 32 32l0 32 128 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-9.6 0-8.4 23.1c-16.4 45.2-41.1 86.5-72.2 122 14.2 8.8 29 16.6 44.4 23.5l50.4 22.4 62.2-140c5.1-11.6 16.6-19 29.2-19s24.1 7.4 29.2 19l128 288c7.2 16.2-.1 35.1-16.2 42.2s-35.1-.1-42.2-16.2l-20-45-157.5 0-20 45c-7.2 16.2-26.1 23.4-42.2 16.2s-23.4-26.1-16.2-42.2l39.8-89.5-50.4-22.4c-23-10.2-45-22.4-65.8-36.4-21.3 17.2-44.6 32.2-69.5 44.7L78.3 380.6c-15.8 7.9-35 1.5-42.9-14.3s-1.5-35 14.3-42.9l34.5-17.3c16.3-8.2 31.8-17.7 46.4-28.3-13.8-12.7-26.8-26.4-38.9-40.9L81.6 224.7c-11.3-13.6-9.5-33.8 4.1-45.1s33.8-9.5 45.1 4.1l10.2 12.2c11.5 13.9 24.1 26.8 37.4 38.7 27.5-30.4 49.2-66.1 63.5-105.4l.5-1.2-210.3 0C14.3 128 0 113.7 0 96S14.3 64 32 64l96 0 0-32c0-17.7 14.3-32 32-32zM416 270.8L365.7 384 466.3 384 416 270.8z" />
                         </svg>
                     </span>
                     <div>
@@ -370,16 +341,12 @@
                 </div>
             </div>
 
-            <div class="tl-step" style="--i:3">
+            <div class="tl-step">
                 <span class="tl-node">4</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="18" cy="14" r="7" />
-                            <path d="M15 14l2 2 4-4" />
-                            <circle cx="46" cy="14" r="7" />
-                            <path d="M43 11l6 6M49 11l-6 6" />
-                            <path d="M18 21v6h28v-6M32 27v10" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path d="M320 32l-8.6 0C300.4 12.9 279.7 0 256 0L128 0C104.3 0 83.6 12.9 72.6 32L64 32C28.7 32 0 60.7 0 96L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-352c0-35.3-28.7-64-64-64zM136 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-112 0z" />
                         </svg>
                     </span>
                     <div>
@@ -389,14 +356,12 @@
                 </div>
             </div>
 
-            <div class="tl-step" style="--i:4">
+            <div class="tl-step">
                 <span class="tl-node">5</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="32" cy="32" r="9" />
-                            <path d="M14 22a22 22 0 0 1 38-4M50 42a22 22 0 0 1-38 4" />
-                            <path d="M50 12l4 4-6 2M14 52l-4-4 6-2" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                            <path d="M384 144c0 97.2-86 176-192 176-26.7 0-52.1-5-75.2-14L35.2 349.2c-9.3 4.9-20.7 3.2-28.2-4.2s-9.2-18.9-4.2-28.2l35.6-67.2C14.3 220.2 0 183.6 0 144 0 46.8 86-32 192-32S384 46.8 384 144zm0 368c-94.1 0-172.4-62.1-188.8-144 120-1.5 224.3-86.9 235.8-202.7 83.3 19.2 145 88.3 145 170.7 0 39.6-14.3 76.2-38.4 105.6l35.6 67.2c4.9 9.3 3.2 20.7-4.2 28.2s-18.9 9.2-28.2 4.2L459.2 498c-23.1 9-48.5 14-75.2 14z" />
                         </svg>
                     </span>
                     <div>
@@ -406,15 +371,12 @@
                 </div>
             </div>
 
-            <div class="tl-step" style="--i:5">
+            <div class="tl-step">
                 <span class="tl-node">6</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="6" y="26" width="28" height="24" rx="4" />
-                            <path d="M13 35h14M13 41h10" stroke-width="3" />
-                            <rect x="30" y="10" width="24" height="18" rx="4" />
-                            <path d="M37 22v-6M43 24v-10M49 22v-6" stroke-width="3" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M285.1 50.7C279.9 39.3 268.5 32 256 32s-23.9 7.3-29.1 18.7L59.5 416 48 416c-17.7 0-32 14.3-32 32s14.3 32 32 32l88 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-6.1 0 22-48 208.3 0 22 48-6.1 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l88 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-11.5 0-167.4-365.3zM330.8 304L181.2 304 256 140.8 330.8 304z" />
                         </svg>
                     </span>
                     <div>
@@ -424,16 +386,12 @@
                 </div>
             </div>
 
-            <div class="tl-step" style="--i:6">
+            <div class="tl-step">
                 <span class="tl-node">7</span>
                 <div class="tl-card">
                     <span class="tl-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22a20 20 0 1 1 -2 14" />
-                            <path d="M8 16l2 8 8-2" />
-                            <rect x="24" y="30" width="6" height="14" rx="1.5" />
-                            <rect x="33" y="24" width="6" height="20" rx="1.5" />
-                            <rect x="42" y="34" width="6" height="10" rx="1.5" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                            <path d="M0 256c0-88.4 71.6-160 160-160 50.4 0 97.8 23.7 128 64l32 42.7 32-42.7c30.2-40.3 77.6-64 128-64 88.4 0 160 71.6 160 160S568.4 416 480 416c-50.4 0-97.8-23.7-128-64l-32-42.7-32 42.7c-30.2 40.3-77.6 64-128 64-88.4 0-160-71.6-160-160zm280 0l-43.2-57.6c-18.1-24.2-46.6-38.4-76.8-38.4-53 0-96 43-96 96s43 96 96 96c30.2 0 58.7-14.2 76.8-38.4L280 256zm80 0l43.2 57.6c18.1 24.2 46.6 38.4 76.8 38.4 53 0 96-43 96-96s-43-96-96-96c-30.2 0-58.7 14.2-76.8 38.4L360 256z" />
                         </svg>
                     </span>
                     <div>
@@ -466,3 +424,63 @@
 
     </div>
 </section>
+
+<script>
+    (function() {
+        var container = document.getElementById('voiceTimelineSteps');
+        if (!container) return;
+
+        var nodes = container.querySelectorAll('.tl-node');
+        var ticking = false;
+
+        function calcProgress() {
+            var rect = container.getBoundingClientRect();
+            var vh = window.innerHeight;
+
+            // Line starts filling once the top of the timeline reaches 80% down the
+            // viewport (just entering view), and reaches 100% once the bottom of the
+            // timeline reaches 20% from the top (mostly scrolled past).
+            var startLine = vh * 0.8;
+            var endLine = vh * 0.2;
+            var totalDistance = rect.height + (startLine - endLine);
+            var scrolled = startLine - rect.top;
+
+            var progress = scrolled / totalDistance;
+            return Math.max(0, Math.min(1, progress));
+        }
+
+        function update() {
+            ticking = false;
+
+            var progress = calcProgress();
+            container.style.setProperty('--fill', (progress * 100) + '%');
+
+            nodes.forEach(function(node) {
+                var rect = container.getBoundingClientRect();
+                var nodeRect = node.getBoundingClientRect();
+                var nodeProgress = ((nodeRect.top + nodeRect.height / 2) - rect.top) / rect.height;
+
+                if (nodeProgress <= progress) {
+                    node.classList.add('is-active');
+                } else {
+                    node.classList.remove('is-active');
+                }
+            });
+        }
+
+        function requestUpdate() {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener('scroll', requestUpdate, {
+            passive: true
+        });
+        window.addEventListener('resize', requestUpdate);
+
+        // Set the initial state on load, in case the section is already in view.
+        update();
+    })();
+</script>
