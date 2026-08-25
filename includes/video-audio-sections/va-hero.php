@@ -223,7 +223,7 @@
     .va-hero {
         position: relative;
         background: var(--video-bg);
-        padding: var(--video-space-3xl) var(--video-space-xl);
+        padding: var(--video-space-3xl) var(--video-space-xl) 0;
         overflow: hidden;
     }
 
@@ -433,28 +433,69 @@
         align-items: center;
     }
 
-    /* dot-grid accent between the copy and the photo */
-    .va-hero_content--visual:before {
-        content: "";
-        position: absolute;
-        left: -6px;
-        top: -6px;
-        width: 84px;
-        height: 64px;
-        background-image: radial-gradient(var(--video-border-dark) 1.4px, transparent 1.4px);
-        background-size: 12px 12px;
-        opacity: .35;
-        z-index: 1;
-    }
-
     .va-hero_content--visual-image {
         position: relative;
         width: 100%;
         height: 420px;
-        border-radius: var(--video-radius-2xl) var(--video-radius-2xl) var(--video-radius-2xl) 140px;
+
+        border-radius: 50% 50% 140px 140px;
+
         overflow: hidden;
+
         box-shadow: var(--video-shadow-lg);
         background: var(--video-bg-soft);
+
+        animation: radiusMoving 5s ease-in-out infinite;
+
+        will-change: border-radius;
+    }
+
+
+    @keyframes radiusMoving {
+
+        0% {
+            border-radius: 50% 50% 140px 140px;
+        }
+
+        10% {
+            border-radius: 48% 52% 130px 150px;
+        }
+
+        20% {
+            border-radius: 46% 54% 120px 155px;
+        }
+
+        30% {
+            border-radius: 42% 58% 110px 150px;
+        }
+
+        40% {
+            border-radius: 38% 62% 100px 145px;
+        }
+
+        50% {
+            border-radius: 140px 140px 50% 50%;
+        }
+
+        60% {
+            border-radius: 145px 135px 48% 52%;
+        }
+
+        70% {
+            border-radius: 150px 130px 46% 54%;
+        }
+
+        80% {
+            border-radius: 145px 135px 44% 56%;
+        }
+
+        90% {
+            border-radius: 135px 145px 48% 52%;
+        }
+
+        100% {
+            border-radius: 50% 50% 140px 140px;
+        }
     }
 
     .va-hero_content--visual-image img {
