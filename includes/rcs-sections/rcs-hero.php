@@ -8,12 +8,6 @@
         --line: #dfe6f0;
     }
 
-    body {
-        font-family: Manrope, Arial, sans-serif;
-        background: #f3f5f8;
-        color: var(--ink)
-    }
-
     .kd-rcs-hero {
         position: relative;
         overflow: hidden;
@@ -91,7 +85,6 @@
     }
 
     .kd-title {
-        font-family: "Plus Jakarta Sans", sans-serif;
         font-size: clamp(40px, 3.5vw, 50px);
         line-height: 1.12;
         letter-spacing: -.05em;
@@ -1007,7 +1000,7 @@
 </style>
 
 
-<section class="kd-rcs-hero">
+<section class="kd-rcs-hero" id="kingDigitalRcsHero">
     <div class="kd-rcs-inner">
 
         <div class="kd-copy">
@@ -1064,14 +1057,14 @@
                 </div>
 
                 <div class="kd-stats">
-                    <div class="kd-stat"><b>98%</b><span>Read Rate</span></div>
-                    <div class="kd-stat"><b>3×</b><span>Higher CTR</span></div>
+                    <div class="kd-stat"><b data-count-target="98" data-count-suffix="%">0%</b><span>Read Rate</span></div>
+                    <div class="kd-stat"><b data-count-target="3" data-count-suffix="×">0×</b><span>Higher CTR</span></div>
                     <div class="kd-stat"><b>24/7</b><span>Campaigns</span></div>
                 </div>
             </div>
 
             <div class="kd-float-card kd-float-one">
-                <b>+62%</b>
+                <b data-count-target="62" data-count-suffix="%">0%</b>
                 <span>Customer engagement</span>
             </div>
 
@@ -1083,3 +1076,56 @@
 
     </div>
 </section>
+
+<script>
+    (function() {
+        // Scoped strictly to this section — will not affect counters/stats anywhere else on the page.
+        var section = document.getElementById('kingDigitalRcsHero');
+        if (!section) return;
+
+        // Only elements explicitly marked with data-count-target get animated.
+        // "24/7" and other non-numeric labels are left alone automatically since they have no data-count-target.
+        var countEls = section.querySelectorAll('[data-count-target]');
+        if (!countEls.length) return;
+
+        var hasRun = false;
+
+        function animateCount(el) {
+            var target = parseInt(el.getAttribute('data-count-target'), 10);
+            var suffix = el.getAttribute('data-count-suffix') || '';
+            if (isNaN(target)) return;
+
+            var duration = 900; // ms
+            var startTime = null;
+
+            function step(ts) {
+                if (!startTime) startTime = ts;
+                var progress = Math.min((ts - startTime) / duration, 1);
+                var current = Math.floor(progress * target);
+                el.textContent = current + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + suffix; // lock exact final value, avoids rounding drift
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        // IntersectionObserver ensures the count-up ONLY fires when the user actually
+        // scrolls this section into view — not on page load, not for other sections.
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !hasRun) {
+                    hasRun = true;
+                    countEls.forEach(animateCount);
+                    observer.disconnect(); // run once only, then stop observing
+                }
+            });
+        }, {
+            threshold: 0.4
+        });
+
+        observer.observe(section);
+    })();
+</script>
