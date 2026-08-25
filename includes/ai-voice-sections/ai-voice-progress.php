@@ -92,12 +92,20 @@
     }
 
     .voice-timeline_content--texting {
-        font-size: 40px;
+        font-size: 44px;
         line-height: 1.15;
         font-weight: 800;
         letter-spacing: -1px;
         color: var(--ai-text-heading);
         margin-bottom: 16px;
+    }
+
+    .voice-timeline_content--texting span {
+        background: var(--ai-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 48px;
     }
 
     .voice-timeline_content--para {
@@ -276,6 +284,10 @@
         .voice-timeline_content--texting {
             font-size: 30px;
         }
+
+        .voice-timeline_content--texting span {
+            font-size: 34px;
+        }
     }
 </style>
 
@@ -290,7 +302,7 @@
                 </svg>
                 How
             </p>
-            <h1 class="voice-timeline_content--texting">How AI Voice Agents Work</h1>
+            <h1 class="voice-timeline_content--texting">How <span>AI Voice Agents</span> Work</h1>
             <p class="voice-timeline_content--para">From the first word spoken to the final response, every conversation passes through an intelligent real-time voice pipeline.</p>
         </div>
 

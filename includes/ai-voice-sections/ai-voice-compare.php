@@ -96,7 +96,7 @@
 
     .voice-compare_content-heading-text {
         color: var(--ai-text-heading);
-        font-size: 2.25rem;
+        font-size: 44px;
         font-weight: 700;
         letter-spacing: -0.02em;
         margin: 0 0 14px;
@@ -278,7 +278,7 @@
     @media (max-width: 720px) {
 
         .voice-compare_content-heading-text {
-            font-size: 1.7rem;
+            font-size: 38px;
         }
 
         .voice-compare_content--container-heading {
