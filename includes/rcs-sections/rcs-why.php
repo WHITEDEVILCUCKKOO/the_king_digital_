@@ -26,7 +26,6 @@
     }
 
     .kd-rcs-why {
-        font-family: "Poppins", sans-serif;
         color: var(--navy);
         position: relative;
         overflow: hidden;
@@ -90,12 +89,15 @@
         display: inline-flex;
         align-items: center;
         gap: 9px;
-        margin-bottom: 12px;
-        color: #4665a9;
+        padding: 8px 15px;
+        margin-bottom: 16px;
+        border: 1px solid rgba(49, 89, 183, 0.16);
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.62);
+        color: #3159b7;
         font-size: 11px;
         font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+        letter-spacing: 1.1px;
     }
 
     .kd-rcs-why .kd-kicker i {
@@ -218,7 +220,8 @@
         display: block;
         width: 100%;
         height: 480px;
-        object-fit: cover;
+        object-fit: contain;
+        background: #FDF8F1;
         object-position: center;
         max-width: none;
     }
@@ -606,7 +609,7 @@
                     </svg>
                 </div>
                 <div class="kd-image-frame">
-                    <img src="REPLACE_WITH_YOUR_IMAGE_URL.jpg" alt="KING DIGITAL RCS business messaging experience" loading="lazy">
+                    <img src="assets/images/rcs1.png" alt="KING DIGITAL RCS business messaging experience" loading="lazy">
                 </div>
             </div>
 
