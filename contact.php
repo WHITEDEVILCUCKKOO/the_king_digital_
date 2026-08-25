@@ -13,6 +13,9 @@
     <!-- section 1 ( Hero ) -->
     <?php require_once __DIR__ . '/includes/contact-sections/contact-page.php'; ?>
 
+    <!-- section 2 ( loaction  ) -->
+    <?php require_once __DIR__ . '/includes/contact-sections/contact-section-2.php'; ?>
+
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
