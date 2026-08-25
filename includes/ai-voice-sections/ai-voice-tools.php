@@ -193,10 +193,18 @@
 
     .voice-tools_content-text {
         color: var(--ai-dark-text);
-        font-size: 2.25rem;
+        font-size: 44px;
         font-weight: 700;
         letter-spacing: -0.02em;
         margin: 0 0 14px;
+    }
+
+    .voice-tools_content-text span {
+        background: var(--ai-gradient-reverse);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 48px;
     }
 
     .voice-tools_content-para {
@@ -366,7 +374,7 @@
 <section class="voice-tools">
     <div class="voice-tools_content">
         <div class="voice-tools_content--heading">
-            <h1 class="voice-tools_content-text">Top AI Voice Technologies We Integrate With</h1>
+            <h1 class="voice-tools_content-text">Top AI <span>Voice Technologies</span> We Integrate With</h1>
             <p class="voice-tools_content-para">
                 We work with leading AI voice and language technologies to build reliable, natural, and scalable voice experiences.
             </p>

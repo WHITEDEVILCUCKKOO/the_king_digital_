@@ -231,8 +231,15 @@
         line-height: 1.12;
         font-weight: 800;
         letter-spacing: -1.2px;
-        color: var(--ai-orange-bright);
+        color: var(--ai-text-heading);
         margin-bottom: 18px;
+    }
+
+    .ai-voice-hero_content--heading span {
+        background: var(--ai-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     /* ---------- Paragraph ---------- */
@@ -282,10 +289,6 @@
         width: 8px;
         height: 4px;
         color: var(--ai-orange);
-    }
-
-    .ai-voice-hero_content--points span {
-        display: none;
     }
 
     /* ---------- CTA ---------- */
@@ -345,6 +348,56 @@
         padding: 26px;
         max-width: 400px;
         margin-left: auto;
+
+        /* Gentle floating motion */
+        animation: aiVoiceVisualFloat 5s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    @keyframes aiVoiceVisualFloat {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        10% {
+            transform: translate3d(0, -4px, 0);
+        }
+
+        20% {
+            transform: translate3d(0, -8px, 0);
+        }
+
+        30% {
+            transform: translate3d(0, -7px, 0);
+        }
+
+        40% {
+            transform: translate3d(0, -9px, 0);
+        }
+
+        50% {
+            transform: translate3d(0, -10px, 0);
+        }
+
+        60% {
+            transform: translate3d(0, -8px, 0);
+        }
+
+        70% {
+            transform: translate3d(0, -6px, 0);
+        }
+
+        80% {
+            transform: translate3d(0, -3px, 0);
+        }
+
+        90% {
+            transform: translate3d(0, -1px, 0);
+        }
+
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     .ai-voice-hero_content--visual-card-heading {
@@ -417,190 +470,40 @@
     }
 
     /* ========================================
-   VOICE BAR
-======================================== */
-
-    .ai-voice-hero_content--visual-card-bar {
-        position: relative;
-
-        width: 100%;
-        height: 6px;
-
-        overflow: hidden;
-
-        border-radius: 999px;
-
-        background: rgba(0, 0, 0, 0.08);
-    }
-
-
-    /* ========================================
-   ANIMATED FILL
-======================================== */
-
-    .ai-voice-hero_content--visual-card-bar span {
-        display: block;
-
-        width: 0%;
-        height: 100%;
-
-        border-radius: inherit;
-
-        background: var(--ai-gradient);
-
-        transform-origin: left center;
-
-        animation: aiVoiceBarFill 3s ease-in-out infinite;
-    }
-
-
-    /* ========================================
-   EMPTY → FULL → EMPTY
-======================================== */
-
-    @keyframes aiVoiceBarFill {
-
-        /* -------------------------------
-       START EMPTY
-    ------------------------------- */
-
-        0% {
-            width: 0%;
-        }
-
-
-        /* -------------------------------
-       BEGIN FILLING
-    ------------------------------- */
-
-        8% {
-            width: 8%;
-        }
-
-        16% {
-            width: 18%;
-        }
-
-        25% {
-            width: 32%;
-        }
-
-        35% {
-            width: 48%;
-        }
-
-        45% {
-            width: 64%;
-        }
-
-        55% {
-            width: 78%;
-        }
-
-        65% {
-            width: 91%;
-        }
-
-
-        /* -------------------------------
-       COMPLETELY FULL
-    ------------------------------- */
-
-        72% {
-            width: 100%;
-        }
-
-        78% {
-            width: 100%;
-        }
-
-
-        /* -------------------------------
-       EMPTY AGAIN
-    ------------------------------- */
-
-        84% {
-            width: 82%;
-        }
-
-        90% {
-            width: 55%;
-        }
-
-        95% {
-            width: 25%;
-        }
-
-        100% {
-            width: 0%;
-        }
-    }
-
-
-    /* ========================================
-   REDUCED MOTION
+       METRIC STRIP (Calls Dialed / Pick-Up Rate)
     ======================================== */
 
-    @media (prefers-reduced-motion: reduce) {
-
-        .ai-voice-hero_content--visual-card-bar span {
-            animation: none;
-            width: 65%;
-        }
-    }
-
     .ai-voice-hero_content--visual-card-stip {
+        width: 100%;
+        margin-bottom: 24px;
         background: var(--ai-bg-warm);
         padding: 10px 15px;
         border-radius: var(--ai-radius-md);
     }
 
-    .ai-voice-hero_content--visual-card-stip-text {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        column-gap: 10px;
-        row-gap: 8px;
+    .ai-voice-hero_content--visual-card-stip-header {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 8px;
     }
 
-    .ai-voice-hero_content--visual-card-stip-text p {
+    .ai-voice-hero_content--visual-card-stip-header p {
+        margin: 0;
         font-size: 13px;
-        font-weight: 500;
+        line-height: 1.4;
         color: var(--ai-text-muted);
     }
 
-    .ai-voice-hero_content--visual-card-stip-text span {
+    .ai-voice-hero_content--visual-card-stip-header strong {
+        margin: 0;
         font-size: 15px;
+        line-height: 1.4;
         font-weight: 700;
         color: var(--ai-text-heading);
+        font-variant-numeric: tabular-nums;
     }
-
-    .ai-voice-hero_content--visual-card-stip-bar {
-        grid-column: 1 / -1;
-        position: relative;
-        height: 7px;
-        border-radius: var(--ai-radius-full);
-        background: var(--ai-border-light);
-        overflow: hidden;
-    }
-
-    .ai-voice-hero_content--visual-card-stip-bar::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        border-radius: var(--ai-radius-full);
-        background: var(--ai-gradient);
-        width: 72%;
-    }
-
-    .ai-voice-hero_content--visual-card-stip:nth-of-type(2) .ai-voice-hero_content--visual-card-stip-bar::after {
-        background: var(--ai-success);
-        width: 68%;
-    }
-
-
 
     .ai-voice-hero_content--visual-card-features {
         display: grid;
@@ -640,13 +543,80 @@
     }
 
     /* ========================================
-   RESPONSIVE
-   ======================================== */
+       PROGRESS BARS (Calls Dialed / Pick-Up Rate)
+       Fill once, triggered by IntersectionObserver
+       adding the `.animate` class — see script below.
+    ======================================== */
+
+    .voice-progress {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        margin-top: 8px;
+        background: var(--ai-border-light);
+        border-radius: var(--ai-radius-full);
+        overflow: hidden;
+    }
+
+    .voice-progress span {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        border-radius: inherit;
+        background: var(--ai-gradient);
+        transform-origin: left center;
+        will-change: width;
+    }
+
+    /* Calls Dialed — track starts at 0%, fill begins at the
+       47% mark (visual reference point) and animates to 100%. */
+    .voice-progress--calls span {
+        left: 0;
+    }
+
+    .voice-progress--calls.animate span {
+        animation: callsDialedBar 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+
+    @keyframes callsDialedBar {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 98%;
+        }
+    }
+
+    /* Pick-Up Rate — fills from the left to the 60% mark. */
+    .voice-progress--pickup span {
+        left: 0;
+    }
+
+    .voice-progress--pickup.animate span {
+        animation: pickupRateBar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+
+    @keyframes pickupRateBar {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 60%;
+        }
+    }
+
+    .count-number {
+        font-variant-numeric: tabular-nums;
+    }
 
     /* ========================================
-   TABLET
-   Visual hidden
-   ======================================== */
+       RESPONSIVE
+    ======================================== */
+
+    /* ---------- Tablet: visual hidden ---------- */
 
     @media (max-width: 900px) {
 
@@ -690,17 +660,12 @@
             align-self: center;
         }
 
-        /* HIDE VISUAL ON TABLET */
         .ai-voice-hero_content--visual {
             display: none;
         }
     }
 
-
-    /* ========================================
-   MOBILE
-   Visual becomes visible again
-   ======================================== */
+    /* ---------- Mobile: visual visible again ---------- */
 
     @media (max-width: 600px) {
 
@@ -743,7 +708,6 @@
             font-size: 14px;
         }
 
-        /* SHOW VISUAL AGAIN ON MOBILE */
         .ai-voice-hero_content--visual {
             order: -1;
             display: flex;
@@ -765,10 +729,7 @@
         }
     }
 
-
-    /* ========================================
-   SMALL MOBILE
-   ======================================== */
+    /* ---------- Small mobile ---------- */
 
     @media (max-width: 420px) {
 
@@ -837,14 +798,6 @@
             padding: 4px 7px;
         }
 
-        .ai-voice-hero_content--visual-card-stip-text p {
-            font-size: 11px;
-        }
-
-        .ai-voice-hero_content--visual-card-stip-text span {
-            font-size: 13px;
-        }
-
         .ai-voice-hero_content--visual-card-features {
             gap: 6px;
         }
@@ -862,10 +815,7 @@
         }
     }
 
-
-    /* ========================================
-   VERY SMALL MOBILE
-   ======================================== */
+    /* ---------- Very small mobile ---------- */
 
     @media (max-width: 350px) {
 
@@ -910,8 +860,11 @@
         }
     }
 
-
-    /* ---------- Reduced Motion ---------- */
+    /* ========================================
+       REDUCED MOTION
+       Disables decorative motion; progress bars get a
+       static resting width instead of staying empty.
+    ======================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -925,6 +878,16 @@
         .ai-voice-hero_content--cta:hover,
         .ai-voice-hero_content--visual-card:hover {
             transform: none;
+        }
+
+        .voice-progress--calls.animate span {
+            animation: none;
+            width: 53%;
+        }
+
+        .voice-progress--pickup.animate span {
+            animation: none;
+            width: 60%;
         }
     }
 </style>
@@ -941,7 +904,7 @@
                 </span>
                 Bulk Voice Call Platform
             </p>
-            <h1 class="ai-voice-hero_content--heading">Reach Millions with Bulk Voice Calls</h1>
+            <h1 class="ai-voice-hero_content--heading">Reach Millions with <span>Bulk Voice Calls</span></h1>
             <p class="ai-voice-hero_content--para">Send pre-recorded voice messages to thousands of contacts instantly. Perfect for marketing, elections, alerts, reminders, and more — in 20+ regional languages.</p>
             <div class="ai-voice-hero_content--points">
                 <p>Upload CSV or integrate via API</p>
@@ -975,39 +938,191 @@
                 </div>
                 <div class="ai-voice-hero_content--visual-card-body">
                     <div class="ai-voice-hero_content--visual-card-stip">
-                        <div class="ai-voice-hero_content--visual-card-stip-text">
+
+                        <div class="ai-voice-hero_content--visual-card-stip-header">
                             <p>Calls Dialed</p>
-                            <span>24,582</span>
-                            <div class="ai-voice-hero_content--visual-card-bar">
-                                <span></span>
-                            </div>
+                            <strong class="count-number" data-target="24582">0</strong>
                         </div>
+
+                        <div class="voice-progress voice-progress--calls">
+                            <span></span>
+                        </div>
+
                     </div>
+
+
                     <div class="ai-voice-hero_content--visual-card-stip">
-                        <div class="ai-voice-hero_content--visual-card-stip-text">
+
+                        <div class="ai-voice-hero_content--visual-card-stip-header">
                             <p>Pick-Up Rate</p>
-                            <span>68%</span>
-                            <div class="ai-voice-hero_content--visual-card-bar">
-                                <span></span>
-                            </div>
+                            <strong class="count-number" data-target="68" data-suffix="%">0%</strong>
                         </div>
+
+                        <div class="voice-progress voice-progress--pickup">
+                            <span></span>
+                        </div>
+
                     </div>
                     <div class="ai-voice-hero_content--visual-card-features">
+
                         <div class="ai-voice-hero_content--visual-card-features-items">
-                            <span>16,716</span>
+                            <span class="count-number" data-target="16716">0</span>
                             <small>Delivered</small>
                         </div>
+
                         <div class="ai-voice-hero_content--visual-card-features-items">
-                            <span>7,866</span>
+                            <span class="count-number" data-target="7866">0</span>
                             <small>Pending</small>
                         </div>
+
                         <div class="ai-voice-hero_content--visual-card-features-items">
                             <span>0</span>
                             <small>Failed</small>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const visualCard = document.querySelector(
+            ".ai-voice-hero_content--visual-card"
+        );
+
+        if (!visualCard) return;
+
+
+        /* =====================================================
+           COUNT FUNCTION
+           ===================================================== */
+
+        function animateCounter(element) {
+
+            const target = Number(element.dataset.target);
+            const suffix = element.dataset.suffix || "";
+
+            const duration = 1600;
+            const startTime = performance.now();
+
+
+            function updateCounter(currentTime) {
+
+                const elapsed = currentTime - startTime;
+
+                const progress = Math.min(
+                    elapsed / duration,
+                    1
+                );
+
+
+                /*
+                 * Ease-out effect.
+                 * Starts quickly and slows down near the target.
+                 */
+                const easedProgress =
+                    1 - Math.pow(1 - progress, 3);
+
+
+                const currentValue = Math.floor(
+                    easedProgress * target
+                );
+
+
+                element.textContent =
+                    currentValue.toLocaleString() + suffix;
+
+
+                if (progress < 1) {
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    element.textContent =
+                        target.toLocaleString() + suffix;
+                }
+            }
+
+
+            requestAnimationFrame(updateCounter);
+        }
+
+
+        /* =====================================================
+           START ANIMATIONS WHEN VISUAL ENTERS VIEW
+           ===================================================== */
+
+        const observer = new IntersectionObserver(
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (!entry.isIntersecting) return;
+
+
+                    /* -----------------------------
+                       COUNTERS
+                    ----------------------------- */
+
+                    const counters =
+                        visualCard.querySelectorAll(".count-number");
+
+
+                    counters.forEach(function(counter) {
+
+                        animateCounter(counter);
+
+                    });
+
+
+                    /* -----------------------------
+                       PROGRESS BARS
+                    ----------------------------- */
+
+                    const callsBar =
+                        visualCard.querySelector(
+                            ".voice-progress--calls"
+                        );
+
+                    const pickupBar =
+                        visualCard.querySelector(
+                            ".voice-progress--pickup"
+                        );
+
+
+                    if (callsBar) {
+                        callsBar.classList.add("animate");
+                    }
+
+
+                    if (pickupBar) {
+                        pickupBar.classList.add("animate");
+                    }
+
+
+                    /*
+                     * Run only once.
+                     * Remove this if you want the animation
+                     * to restart every time the card enters
+                     * the viewport.
+                     */
+
+                    observer.unobserve(visualCard);
+
+                });
+
+            }, {
+                threshold: 0.35
+            }
+        );
+
+
+        observer.observe(visualCard);
+
+    });
+</script>
