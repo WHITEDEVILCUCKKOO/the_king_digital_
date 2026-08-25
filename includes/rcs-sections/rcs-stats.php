@@ -92,7 +92,6 @@ Professional Poppins Design | Responsive | Animated
         overflow: hidden;
         isolation: isolate;
         padding: 18px 5%;
-        font-family: "Poppins", sans-serif;
         background:
             linear-gradient(105deg, #315abf 0%, #3e52bb 52%, #4b43b9 100%);
     }
@@ -205,7 +204,6 @@ Professional Poppins Design | Responsive | Animated
     .kd-rcs-performance__number {
         margin-bottom: 4px;
         color: var(--kd-white);
-        font-family: "Poppins", sans-serif;
         font-size: clamp(24px, 2vw, 34px);
         font-weight: 800;
         line-height: 1.05;
@@ -215,7 +213,6 @@ Professional Poppins Design | Responsive | Animated
 
     .kd-rcs-performance__label {
         color: var(--kd-muted);
-        font-family: "Poppins", sans-serif;
         font-size: clamp(11px, .9vw, 14px);
         font-weight: 500;
         line-height: 1.4;
