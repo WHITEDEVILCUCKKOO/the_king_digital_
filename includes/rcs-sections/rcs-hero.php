@@ -1022,7 +1022,7 @@
             </div>
 
             <div class="kd-actions">
-                <a class="kd-btn kd-btn-primary" href="#contact">Get Started with RCS</a>
+                <a class="kd-btn kd-btn-primary" href="contact.php">Get Started with RCS</a>
                 <a class="kd-btn kd-btn-secondary" href="#features">Explore Features</a>
             </div>
         </div>
