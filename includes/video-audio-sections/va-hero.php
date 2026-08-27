@@ -222,7 +222,11 @@
 
     .va-hero {
         position: relative;
-        background: var(--video-bg-soft);
+        /* layered soft brand-color glows over the original base tone */
+        background:
+            radial-gradient(circle at 12% 15%, rgba(255, 107, 26, 0.05) 0%, rgba(255, 107, 26, 0) 55%),
+            radial-gradient(circle at 88% 85%, rgba(255, 138, 69, 0.06) 0%, rgba(255, 138, 69, 0) 55%),
+            var(--video-bg-soft);
         overflow: hidden;
     }
 
@@ -245,6 +249,8 @@
 
         filter: blur(10px);
         pointer-events: none;
+        animation: vaDrift 13s ease-in-out infinite;
+        will-change: transform;
     }
 
     .va-hero::after {
@@ -262,6 +268,13 @@
 
         filter: blur(12px);
         pointer-events: none;
+        animation: vaDrift 16s ease-in-out infinite reverse;
+        will-change: transform;
+    }
+
+    @keyframes vaDrift {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(18px, 14px); }
     }
 
     .va-hero_content {
@@ -270,6 +283,18 @@
         margin: 0 auto;
         min-height: 600px;
         padding: 0 64px;
+    }
+
+    /* Faint dot-grid texture — sits behind the slides, adds premium studio-grid feel */
+    .va-hero_content::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(20, 33, 61, 0.07) 1px, transparent 1px);
+        background-size: 28px 28px;
+        opacity: 0.45;
+        z-index: 0;
+        pointer-events: none;
     }
 
     /* =========================================================
@@ -292,6 +317,8 @@
     .va-hero_content-slide2.is-active,
     .va-hero_content-slide3.is-active {
         display: grid;
+        position: relative;
+        z-index: 1;
         animation: vaSlideIn 0.6s ease both;
     }
 
@@ -317,23 +344,45 @@
     }
 
     .va-hero_content--text-eyebrow {
+        position: relative;
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        width: fit-content;
         font-size: var(--video-text-xs);
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--video-primary);
         margin-bottom: var(--video-space-lg);
+        padding: 7px 16px 7px 12px;
+        border-radius: var(--video-radius-pill);
+        background: rgba(255, 107, 26, 0.08);
+        border: 1px solid rgba(255, 107, 26, 0.18);
     }
 
     .va-hero_content--text-eyebrow span {
+        position: relative;
         width: 8px;
         height: 8px;
-        border-radius: 2px;
+        border-radius: 50%;
         background: var(--video-gradient-primary);
         flex: none;
+    }
+
+    .va-hero_content--text-eyebrow span::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        background: rgba(255, 107, 26, 0.35);
+        animation: vaPulse 2.2s ease-out infinite;
+    }
+
+    @keyframes vaPulse {
+        0% { transform: scale(0.6); opacity: 0.9; }
+        70% { transform: scale(2); opacity: 0; }
+        100% { opacity: 0; }
     }
 
     .va-hero_content--text--heading {
@@ -350,7 +399,22 @@
     }
 
     .va-hero_content--text--heading .row.accent {
+        position: relative;
+        display: inline-block;
         color: var(--video-primary);
+    }
+
+    .va-hero_content--text--heading .row.accent::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 5px;
+        border-radius: 3px;
+        background: var(--video-gradient-primary);
+        opacity: 0.85;
     }
 
     .va-hero_content--text-para {
@@ -385,9 +449,28 @@
 
     /* First CTA — primary, orange */
     .va-hero_content--text-cta a:first-child {
+        position: relative;
+        overflow: hidden;
         background: var(--video-gradient-primary);
         color: var(--video-text-light);
         box-shadow: var(--video-shadow-orange);
+    }
+
+    .va-hero_content--text-cta a:first-child::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -60%;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+        transform: skewX(-20deg);
+        transition: left 0.6s ease;
+        pointer-events: none;
+    }
+
+    .va-hero_content--text-cta a:first-child:hover::before {
+        left: 130%;
     }
 
     .va-hero_content--text-cta a:first-child:hover {
@@ -439,6 +522,7 @@
         transform: translateY(-2px);
         border-color: var(--video-primary);
         color: var(--video-primary-dark);
+        box-shadow: var(--video-shadow-sm);
     }
 
     .va-hero_content--text-cta a:last-child span {
@@ -484,13 +568,56 @@
         align-items: center;
     }
 
+    /* Soft halo glow that bleeds beyond the image edges */
+    .va-hero_content--visual::before {
+        content: "";
+        position: absolute;
+        inset: -32px;
+        background: var(--video-glow-orange);
+        filter: blur(4px);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Floating "lens" accent badge, echoes the video/camera theme */
+    /* .va-hero_content--visual::after {
+        content: "";
+        position: absolute;
+        left: -16px;
+        bottom: 34px;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background:
+            radial-gradient(circle at 35% 32%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.15) 30%, transparent 31%),
+            var(--video-gradient-primary);
+        box-shadow: var(--video-shadow-orange);
+        z-index: 2;
+        pointer-events: none;
+        animation: vaFloat 4.5s ease-in-out infinite;
+        will-change: transform;
+    } */
+
+    @keyframes vaFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-9px); }
+    }
+
     .va-hero_content--visual-image {
         position: relative;
+        z-index: 1;
         width: 100%;
         aspect-ratio: 4 / 3.1;
         border-radius: var(--video-radius-2xl);
         overflow: hidden;
-        box-shadow: var(--video-shadow-lg);
+        box-shadow: var(--video-shadow-lg), 0 22px 44px -14px rgba(255, 107, 26, 0.18);
+        outline: 2px dashed rgba(255, 107, 26, 0.28);
+        outline-offset: 10px;
+        transition: outline-color var(--video-transition-normal);
+    }
+
+    .va-hero_content--visual-image:hover {
+        outline-color: rgba(255, 107, 26, 0.45);
     }
 
     .va-hero_content--visual-image img {
@@ -498,7 +625,12 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: transform 0.7s ease;
     }
+
+    /* .va-hero_content--visual-image:hover img {
+        transform: scale(1.04);
+    } */
 
     /* Fade the photo into the text column, like the reference */
     .va-hero_content--visual-image::before {
@@ -509,6 +641,18 @@
                 var(--video-bg-soft) 0%,
                 rgba(241, 231, 223, 0.35) 18%,
                 rgba(241, 231, 223, 0) 42%);
+        pointer-events: none;
+    }
+
+    /* Subtle glass-shine corner accent */
+    .va-hero_content--visual-image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 70%);
         pointer-events: none;
     }
 
@@ -546,13 +690,14 @@
         font-weight: 700;
         cursor: pointer;
         box-shadow: var(--video-shadow-md);
-        transition: background var(--video-transition-normal), color var(--video-transition-normal), transform var(--video-transition-normal);
+        transition: background var(--video-transition-normal), color var(--video-transition-normal), transform var(--video-transition-normal), box-shadow var(--video-transition-normal);
     }
 
     .va-hero_content-slide-control-btn button:hover {
         background: var(--video-gradient-primary);
         color: var(--video-text-light);
         transform: scale(1.06);
+        box-shadow: var(--video-shadow-orange);
     }
 
     /* Half the button hangs off the section edge */
@@ -575,6 +720,12 @@
         font-size: var(--video-text-sm);
         font-weight: 700;
         color: var(--video-text-muted);
+        padding: 7px 16px;
+        border-radius: var(--video-radius-pill);
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(20, 33, 61, 0.06);
+        box-shadow: var(--video-shadow-sm);
     }
 
     .va-hero_content-slide-control-pignation .va-pg-current {
@@ -583,7 +734,13 @@
     }
 
     .va-hero_content-slide-control-pignation .va-pg-sep {
-        color: var(--video-border-dark);
+        display: inline-block;
+        width: 14px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--video-gradient-primary);
+        color: transparent;
+        overflow: hidden;
     }
 
     /* =========================================================
@@ -632,6 +789,15 @@
             justify-content: center;
         }
 
+        .va-hero_content--text-eyebrow {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .va-hero_content--text--heading .row.accent::after {
+            left: 50%;
+        }
+
         .va-hero_content--text-para {
             max-width: 100%;
             margin-left: auto;
@@ -644,12 +810,20 @@
 
         .va-hero_content--visual-image {
             aspect-ratio: 16 / 10;
+            outline-offset: 8px;
         }
 
         .va-hero_content--visual-image::before {
             background: linear-gradient(180deg,
                     var(--video-bg-soft) 0%,
                     rgba(241, 231, 223, 0) 35%);
+        }
+
+        .va-hero_content--visual::after {
+            width: 46px;
+            height: 46px;
+            left: -10px;
+            bottom: 18px;
         }
 
         .va-hero_content-slide-control-btn {
@@ -689,6 +863,17 @@
             padding: 13px 20px;
             font-size: var(--video-text-sm);
         }
+
+        .va-hero_content--visual::after {
+            width: 38px;
+            height: 38px;
+            left: -8px;
+            bottom: 12px;
+        }
+
+        .va-hero_content--visual-image {
+            outline-offset: 6px;
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -696,6 +881,13 @@
         .va-hero_content-slide1.is-active,
         .va-hero_content-slide2.is-active,
         .va-hero_content-slide3.is-active {
+            animation: none;
+        }
+
+        .va-hero::before,
+        .va-hero::after,
+        .va-hero_content--visual::after,
+        .va-hero_content--text-eyebrow span::after {
             animation: none;
         }
     }

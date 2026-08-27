@@ -44,10 +44,25 @@
         pointer-events: none;
     }
 
+    /* Two faint corner glows to frame the section without
+       competing with the steps themselves */
+    .hiw-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+            radial-gradient(circle, rgba(226, 75, 75, 0.05) 0%, rgba(226, 75, 75, 0) 70%) -120px -100px / 320px 320px no-repeat,
+            radial-gradient(circle, rgba(34, 166, 90, 0.05) 0%, rgba(34, 166, 90, 0) 70%) calc(100% + 120px) calc(100% + 100px) / 320px 320px no-repeat;
+    }
+
     .hiw-container {
         max-width: 1160px;
         margin-inline: auto;
         padding-inline: 24px;
+        position: relative;
+        z-index: 1;
     }
 
     /* ---------- Header ---------- */
@@ -58,13 +73,28 @@
     }
 
     .hiw-eyebrow {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         font-size: 11px;
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--hiw-orange);
         margin-bottom: 8px;
+    }
+
+    .hiw-eyebrow::before,
+    .hiw-eyebrow::after {
+        content: "";
+        width: 14px;
+        height: 1.5px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, transparent, var(--hiw-orange));
+    }
+
+    .hiw-eyebrow::after {
+        background: linear-gradient(90deg, var(--hiw-orange), transparent);
     }
 
     .hiw-title {
@@ -94,6 +124,26 @@
         z-index: 0;
     }
 
+    /* Soft gradient wash over the connector so it feels like a single
+       thread of "flow" rather than a flat grey rule */
+    .hiw-steps::after {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 10%;
+        right: 10%;
+        height: 20px;
+        background: linear-gradient(90deg,
+            rgba(226, 75, 75, 0.08) 0%,
+            rgba(59, 125, 219, 0.08) 25%,
+            rgba(139, 92, 246, 0.08) 50%,
+            rgba(34, 166, 90, 0.08) 75%,
+            rgba(255, 107, 26, 0.08) 100%);
+        filter: blur(10px);
+        z-index: 0;
+        pointer-events: none;
+    }
+
     .hiw-step {
         position: relative;
         z-index: 1;
@@ -101,7 +151,13 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-inline: 12px;
+        padding: 14px 12px;
+        border-radius: 16px;
+        transition: transform 280ms ease;
+    }
+
+    .hiw-step:hover {
+        transform: translateY(-3px);
     }
 
     .hiw-step__icon {
@@ -114,6 +170,11 @@
         margin-bottom: 16px;
         background: #FBFBFC;
         box-shadow: 0 0 0 6px #FBFBFC;
+        transition: transform 280ms ease, box-shadow 280ms ease;
+    }
+
+    .hiw-step:hover .hiw-step__icon {
+        transform: scale(1.07);
     }
 
     .hiw-step__icon svg {
@@ -127,9 +188,17 @@
         box-shadow: 0 0 0 6px #FBFBFC;
     }
 
+    .hiw-step--red:hover .hiw-step__icon {
+        box-shadow: 0 0 0 6px #FBFBFC, 0 8px 18px rgba(226, 75, 75, 0.25);
+    }
+
     .hiw-step--blue .hiw-step__icon {
         background: var(--hiw-blue-soft);
         color: var(--hiw-blue);
+    }
+
+    .hiw-step--blue:hover .hiw-step__icon {
+        box-shadow: 0 0 0 6px #FBFBFC, 0 8px 18px rgba(59, 125, 219, 0.25);
     }
 
     .hiw-step--purple .hiw-step__icon {
@@ -137,9 +206,17 @@
         color: var(--hiw-purple);
     }
 
+    .hiw-step--purple:hover .hiw-step__icon {
+        box-shadow: 0 0 0 6px #FBFBFC, 0 8px 18px rgba(139, 92, 246, 0.25);
+    }
+
     .hiw-step--green .hiw-step__icon {
         background: var(--hiw-green-soft);
         color: var(--hiw-green);
+    }
+
+    .hiw-step--green:hover .hiw-step__icon {
+        box-shadow: 0 0 0 6px #FBFBFC, 0 8px 18px rgba(34, 166, 90, 0.25);
     }
 
     .hiw-step--orange .hiw-step__icon {
@@ -147,31 +224,43 @@
         color: var(--hiw-orange);
     }
 
+    .hiw-step--orange:hover .hiw-step__icon {
+        box-shadow: 0 0 0 6px #FBFBFC, 0 8px 18px rgba(255, 107, 26, 0.25);
+    }
+
     .hiw-step__number {
-        font-size: 13px;
+        display: inline-block;
+        font-size: 11px;
         font-weight: 800;
-        letter-spacing: 0.02em;
-        margin-bottom: 6px;
+        letter-spacing: 0.04em;
+        margin-bottom: 10px;
+        padding: 3px 11px;
+        border-radius: 999px;
     }
 
     .hiw-step--red .hiw-step__number {
         color: var(--hiw-red);
+        background: var(--hiw-red-soft);
     }
 
     .hiw-step--blue .hiw-step__number {
         color: var(--hiw-blue);
+        background: var(--hiw-blue-soft);
     }
 
     .hiw-step--purple .hiw-step__number {
-        color: var(--hiw-ink);
+        color: var(--hiw-purple);
+        background: var(--hiw-purple-soft);
     }
 
     .hiw-step--green .hiw-step__number {
         color: var(--hiw-green);
+        background: var(--hiw-green-soft);
     }
 
     .hiw-step--orange .hiw-step__number {
         color: var(--hiw-orange);
+        background: var(--hiw-orange-soft);
     }
 
     .hiw-step__title {
@@ -196,8 +285,15 @@
             row-gap: 40px;
         }
 
-        .hiw-steps::before {
+        .hiw-steps::before,
+        .hiw-steps::after {
             display: none;
+        }
+
+        .hiw-section::after {
+            background:
+                radial-gradient(circle, rgba(226, 75, 75, 0.05) 0%, rgba(226, 75, 75, 0) 70%) -100px -80px / 240px 240px no-repeat,
+                radial-gradient(circle, rgba(34, 166, 90, 0.05) 0%, rgba(34, 166, 90, 0) 70%) calc(100% + 100px) calc(100% + 80px) / 240px 240px no-repeat;
         }
     }
 
@@ -217,6 +313,17 @@
 
         .hiw-step__desc {
             max-width: 280px;
+        }
+
+        .hiw-step:hover {
+            transform: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .hiw-step,
+        .hiw-step__icon {
+            transition: none;
         }
     }
 </style>

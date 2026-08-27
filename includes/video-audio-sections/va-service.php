@@ -21,7 +21,6 @@
         --studio-shadow-hover: 0 14px 30px rgba(20, 33, 61, 0.10);
 
         position: relative;
-        /* background: var(--studio-blue-soft); */
         background:
             radial-gradient(circle at 8% 20%,
                 rgba(59, 130, 246, 0.08),
@@ -66,19 +65,51 @@
     /* ---------- Header ---------- */
 
     .studio-services__header {
+        position: relative;
         text-align: center;
         max-width: 560px;
         margin: 0 auto 36px;
     }
 
+    /* Soft spotlight glow sitting behind the heading */
+    .studio-services__header::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -30px;
+        width: 380px;
+        height: 200px;
+        transform: translateX(-50%);
+        background: radial-gradient(ellipse at center,
+            rgba(255, 107, 26, 0.08) 0%,
+            rgba(255, 107, 26, 0) 70%);
+        pointer-events: none;
+        z-index: -1;
+    }
+
     .studio-services__eyebrow {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--studio-orange);
         margin-bottom: 8px;
+    }
+
+    .studio-services__eyebrow::before,
+    .studio-services__eyebrow::after {
+        content: "";
+        width: 14px;
+        height: 1.5px;
+        background: linear-gradient(90deg, transparent, var(--studio-orange));
+        border-radius: 2px;
+    }
+
+    .studio-services__eyebrow::after {
+        background: linear-gradient(90deg, var(--studio-orange), transparent);
     }
 
     .studio-services__title {
@@ -114,13 +145,57 @@
     .studio-services__card {
         display: flex;
         flex-direction: column;
+        position: relative;
         background: #FFFFFF;
         border: 1px solid var(--studio-border);
         border-radius: 12px;
         box-shadow: var(--studio-shadow);
-        padding: 22px 20px;
+        padding: 24px 20px 22px;
         text-decoration: none;
+        overflow: hidden;
         transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease, background 280ms ease;
+    }
+
+    /* Top accent bar — neutral by default, tinted to match each
+       card's icon color when the browser supports :has() */
+    .studio-services__card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--studio-orange), var(--studio-blue));
+        transform: translateY(-100%);
+        transition: transform 280ms ease;
+    }
+
+    .studio-services__card:hover::before {
+        transform: translateY(0);
+    }
+
+    .studio-services__card:has(.studio-services__icon--orange)::before {
+        background: linear-gradient(90deg, var(--studio-orange-dark), var(--studio-orange));
+    }
+
+    .studio-services__card:has(.studio-services__icon--blue)::before {
+        background: linear-gradient(90deg, var(--studio-blue), #6FA3E8);
+    }
+
+    .studio-services__card:has(.studio-services__icon--purple)::before {
+        background: linear-gradient(90deg, var(--studio-purple), #B49CF9);
+    }
+
+    .studio-services__card:has(.studio-services__icon--green)::before {
+        background: linear-gradient(90deg, var(--studio-green), #57C583);
+    }
+
+    .studio-services__card:has(.studio-services__icon--red)::before {
+        background: linear-gradient(90deg, var(--studio-red), #EC7A7A);
+    }
+
+    .studio-services__card:has(.studio-services__icon--yellow)::before {
+        background: linear-gradient(90deg, var(--studio-yellow), #E8BC5E);
     }
 
     .studio-services__card:hover {
@@ -138,12 +213,15 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 14px;
-        transition: transform 280ms ease;
+        position: relative;
+        box-shadow: 0 0 0 5px rgba(20, 33, 61, 0.025);
+        transition: transform 280ms ease, box-shadow 280ms ease;
     }
 
     .studio-services__card:hover .studio-services__icon {
         transform: scale(1.06);
         background: rgba(255, 255, 255, 0.14);
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1);
     }
 
     .studio-services__icon svg {
@@ -249,6 +327,16 @@
         background: radial-gradient(circle, rgba(59, 125, 219, 0.06) 0%, rgba(59, 125, 219, 0) 70%);
     }
 
+    /* Balancing glow, top-right, echoing the palette used in the cards */
+    .studio-services__decor--blob-top {
+        right: -80px;
+        top: -90px;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.055) 0%, rgba(139, 92, 246, 0) 70%);
+    }
+
     .studio-services__decor--dots {
         right: 0;
         top: 46%;
@@ -289,6 +377,13 @@
             width: 100px;
             height: 100px;
         }
+
+        .studio-services__decor--blob-top {
+            width: 200px;
+            height: 200px;
+            right: -70px;
+            top: -70px;
+        }
     }
 
     @media (max-width: 640px) {
@@ -320,6 +415,21 @@
             height: 160px;
             left: -50px;
             bottom: -50px;
+        }
+
+        .studio-services__decor--blob-top {
+            width: 150px;
+            height: 150px;
+            right: -50px;
+            top: -50px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .studio-services__card,
+        .studio-services__icon,
+        .studio-services__link svg {
+            transition: none;
         }
     }
 </style>
@@ -463,5 +573,6 @@
     </div>
 
     <span class="studio-services__decor studio-services__decor--blob"></span>
+    <span class="studio-services__decor studio-services__decor--blob-top"></span>
     <span class="studio-services__decor studio-services__decor--dots"></span>
 </section>
