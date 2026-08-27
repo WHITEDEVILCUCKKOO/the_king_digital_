@@ -117,8 +117,9 @@
     .smm-stats_card {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        background: var(--smm-white);
-        border: 1px solid var(--smm-border);
+        background: #fff;
+        border-top: 1px solid var(--smm-border);
+        border-bottom: 1px solid var(--smm-border);
         border-radius: var(--smm-radius-lg);
         box-shadow: var(--smm-shadow-md);
         overflow: hidden;
