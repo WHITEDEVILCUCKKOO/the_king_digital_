@@ -13,48 +13,99 @@
 
         background: var(--fp-purple-soft);
         padding: 68px 0;
+        position: relative;
+        z-index: 2;
         overflow: hidden;
     }
 
+    /* Graph-paper texture, faded toward the edges so it reads as an
+       ambient backdrop rather than a hard-edged tile */
     .fp-section::before {
         content: "";
 
         position: absolute;
         inset: 0;
+        z-index: 0;
 
         background-image:
-            linear-gradient(rgba(99, 102, 241, 0.025) 1px,
+            linear-gradient(rgba(99, 102, 241, 0.03) 1px,
                 transparent 1px),
             linear-gradient(90deg,
-                rgba(99, 102, 241, 0.025) 1px,
+                rgba(99, 102, 241, 0.03) 1px,
                 transparent 1px);
 
         background-size: 36px 36px;
 
+        -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, #000 45%, transparent 90%);
+        mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, #000 45%, transparent 90%);
+
         pointer-events: none;
+    }
+
+    /* Warm accent glows to offset the cool purple wash */
+    .fp-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(circle, rgba(255, 107, 26, 0.07) 0%, rgba(255, 107, 26, 0) 70%) calc(100% + 100px) -80px / 320px 320px no-repeat,
+            radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0) 70%) -100px calc(100% + 60px) / 300px 300px no-repeat;
     }
 
     .fp-container {
         max-width: 1160px;
         margin-inline: auto;
         padding-inline: 24px;
+        position: relative;
+        z-index: 1;
     }
 
     /* ---------- Header ---------- */
 
     .fp-header {
+        position: relative;
         text-align: center;
         margin-bottom: 40px;
     }
 
+    .fp-header::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -24px;
+        width: 320px;
+        height: 160px;
+        transform: translateX(-50%);
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 72%);
+        pointer-events: none;
+        z-index: -1;
+    }
+
     .fp-eyebrow {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         font-size: 11px;
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--fp-orange);
         margin-bottom: 8px;
+    }
+
+    .fp-eyebrow::before,
+    .fp-eyebrow::after {
+        content: "";
+        width: 14px;
+        height: 1.5px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, transparent, var(--fp-orange));
+    }
+
+    .fp-eyebrow::after {
+        background: linear-gradient(90deg, var(--fp-orange), transparent);
     }
 
     .fp-title {
@@ -74,6 +125,11 @@
 
     .fp-card {
         display: block;
+        transition: transform 300ms ease;
+    }
+
+    .fp-card:hover {
+        transform: translateY(-4px);
     }
 
     .fp-card__thumb {
@@ -82,7 +138,13 @@
         border-radius: 14px;
         overflow: hidden;
         margin-bottom: 12px;
-        background: var(--fp-border);
+        background: linear-gradient(145deg, #E9ECF4 0%, var(--fp-border) 100%);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 10px 26px rgba(20, 33, 61, 0.10);
+        transition: box-shadow 300ms ease;
+    }
+
+    .fp-card:hover .fp-card__thumb {
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 16px 34px rgba(20, 33, 61, 0.16);
     }
 
     .fp-card__thumb video {
@@ -96,6 +158,21 @@
 
     .fp-card__thumb:not(.is-playing):hover video {
         transform: scale(1.06);
+    }
+
+    /* Gentle vignette so the play button always has contrast,
+       whatever the poster image looks like */
+    .fp-card__thumb::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(20, 33, 61, 0) 55%, rgba(20, 33, 61, 0.18) 100%);
+        pointer-events: none;
+        transition: opacity 280ms ease;
+    }
+
+    .fp-card__thumb.is-playing::after {
+        opacity: 0;
     }
 
     .fp-card__play {
@@ -113,7 +190,7 @@
         align-items: center;
         justify-content: center;
         box-shadow: 0 8px 20px rgba(20, 33, 61, 0.22);
-        transition: transform 280ms ease, background 280ms ease, opacity 200ms ease;
+        transition: transform 280ms ease, background 280ms ease, opacity 200ms ease, box-shadow 280ms ease;
     }
 
     .fp-card__play svg {
@@ -126,6 +203,7 @@
     .fp-card__thumb:hover .fp-card__play {
         transform: translate(-50%, -50%) scale(1.1);
         background: var(--fp-orange);
+        box-shadow: 0 8px 20px rgba(255, 107, 26, 0.35), 0 0 0 8px rgba(255, 107, 26, 0.14);
     }
 
     .fp-card__thumb:hover .fp-card__play svg {
@@ -166,11 +244,13 @@
         padding: 13px 26px;
         border-radius: 999px;
         border: 1.5px solid var(--fp-orange);
+        background: rgba(255, 255, 255, 0.5);
         color: var(--fp-orange);
         font-size: 13px;
         font-weight: 700;
         text-decoration: none;
-        transition: background 260ms ease, color 260ms ease, transform 260ms ease;
+        box-shadow: 0 4px 14px rgba(255, 107, 26, 0.12);
+        transition: background 260ms ease, color 260ms ease, transform 260ms ease, box-shadow 260ms ease;
     }
 
     .fp-cta a svg {
@@ -183,6 +263,7 @@
         background: var(--fp-orange);
         color: #FFFFFF;
         transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(255, 107, 26, 0.28);
     }
 
     .fp-cta a:hover svg {
@@ -215,6 +296,20 @@
 
         .fp-card__title {
             font-size: 12.5px;
+        }
+
+        .fp-card:hover {
+            transform: none;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .fp-card,
+        .fp-card__thumb,
+        .fp-card__thumb video,
+        .fp-card__play,
+        .fp-cta a {
+            transition: none;
         }
     }
 </style>

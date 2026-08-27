@@ -222,11 +222,11 @@
 
     .video-stats {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 20px 8px;
         margin-top: -1px;
         position: relative;
         z-index: 2;
-        /* overflow: hidden; */
+        overflow: hidden;
     }
 
     /* ========================================
@@ -253,24 +253,76 @@
         border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 
         pointer-events: none;
+        z-index: 3;
+    }
+
+    /* Ambient decorative glows floating behind the stat cards.
+       Purely atmospheric — kept soft so the numbers stay the focus. */
+    .video-stats::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+
+        background:
+            var(--video-glow-orange) -60px -80px / 340px 340px no-repeat,
+            var(--video-glow-blue) calc(100% + 40px) 10% / 300px 300px no-repeat,
+            var(--video-glow-purple) 30% calc(100% + 60px) / 280px 280px no-repeat;
+
+        opacity: 0.9;
+        animation: video-stats-drift 14s ease-in-out infinite;
+    }
+
+    @keyframes video-stats-drift {
+        0%, 100% { transform: translate3d(0, 0, 0); }
+        50% { transform: translate3d(0, 8px, 0); }
     }
 
     .video-stats-container {
         width: 100%;
-        /* max-width: 1100px; */
+        max-width: 1180px;
         margin: 0 auto;
 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
 
-        background: var(--video-bg);
-        /* border: 1px solid var(--video-border); */
+        background: linear-gradient(180deg, #ffffff 0%, #fdfbf9 100%);
+        border: 1px solid var(--video-border-light);
 
-        /* border-radius: var(--video-radius-xl); */
+        border-radius: var(--video-radius-xl);
 
-        /* box-shadow: var(--video-shadow-md); */
+        box-shadow: var(--video-shadow-md);
+
+        position: relative;
+        z-index: 3;
 
         overflow: hidden;
+
+        transition: box-shadow var(--video-transition-slow);
+    }
+
+    .video-stats-container:hover {
+        box-shadow: var(--video-shadow-lg);
+    }
+
+    /* Thin brand-gradient accent strip along the top of the panel */
+    .video-stats-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+
+        background: linear-gradient(90deg,
+            var(--service-orange) 0%,
+            var(--service-blue) 33%,
+            var(--service-purple) 66%,
+            var(--service-green) 100%);
+
+        opacity: 0.9;
+        z-index: 2;
     }
 
 
@@ -288,23 +340,48 @@
         padding: 22px 24px;
 
         position: relative;
+        z-index: 1;
+
+        transition:
+            background var(--video-transition-normal),
+            transform var(--video-transition-normal);
+    }
+
+    .video-stat-card:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(180deg, rgba(255, 107, 26, 0.05), rgba(255, 107, 26, 0) 70%);
+    }
+
+    .video-stat-card:nth-child(2):hover {
+        background: linear-gradient(180deg, rgba(66, 133, 244, 0.05), rgba(66, 133, 244, 0) 70%);
+    }
+
+    .video-stat-card:nth-child(3):hover {
+        background: linear-gradient(180deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0) 70%);
+    }
+
+    .video-stat-card:nth-child(4):hover {
+        background: linear-gradient(180deg, rgba(34, 197, 94, 0.05), rgba(34, 197, 94, 0) 70%);
     }
 
 
-    /* Vertical divider */
+    /* Vertical divider — soft fade instead of a hard line */
 
     .video-stat-card:not(:last-child)::after {
         content: "";
 
         position: absolute;
 
-        top: 24px;
+        top: 20px;
         right: 0;
-        bottom: 24px;
+        bottom: 20px;
 
         width: 1px;
 
-        background: var(--video-border);
+        background: linear-gradient(180deg,
+            rgba(228, 232, 238, 0) 0%,
+            var(--video-border) 50%,
+            rgba(228, 232, 238, 0) 100%);
     }
 
 
@@ -329,6 +406,20 @@
         color: var(--video-primary);
 
         font-size: 19px;
+
+        position: relative;
+        z-index: 1;
+
+        box-shadow: 0 0 0 5px rgba(255, 107, 26, 0.06);
+
+        transition:
+            transform var(--video-transition-normal),
+            box-shadow var(--video-transition-normal);
+    }
+
+    .video-stat-card:hover .video-stat-icon {
+        transform: scale(1.08) rotate(-4deg);
+        box-shadow: 0 0 0 6px rgba(255, 107, 26, 0.12), var(--video-shadow-sm);
     }
 
 
@@ -337,16 +428,31 @@
     .video-stat-card:nth-child(2) .video-stat-icon {
         background: var(--service-blue-soft);
         color: var(--service-blue);
+        box-shadow: 0 0 0 5px rgba(66, 133, 244, 0.06);
+    }
+
+    .video-stat-card:nth-child(2):hover .video-stat-icon {
+        box-shadow: 0 0 0 6px rgba(66, 133, 244, 0.12), var(--video-shadow-sm);
     }
 
     .video-stat-card:nth-child(3) .video-stat-icon {
         background: var(--service-purple-soft);
         color: var(--service-purple);
+        box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.06);
+    }
+
+    .video-stat-card:nth-child(3):hover .video-stat-icon {
+        box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.12), var(--video-shadow-sm);
     }
 
     .video-stat-card:nth-child(4) .video-stat-icon {
         background: var(--service-green-soft);
         color: var(--service-green);
+        box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.06);
+    }
+
+    .video-stat-card:nth-child(4):hover .video-stat-icon {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12), var(--video-shadow-sm);
     }
 
 
@@ -379,24 +485,10 @@
 
         font-size: 11px;
         line-height: 1.3;
+        letter-spacing: 0.2px;
 
         color: var(--video-text-secondary);
     }
-
-
-    /* =========================================================
-   HOVER
-========================================================= */
-
-    /* .video-stat-card {
-        transition:
-            background var(--video-transition-normal),
-            transform var(--video-transition-normal);
-    }
-
-    .video-stat-card:hover {
-        background: var(--video-bg-soft);
-    } */
 
 
     /* =========================================================
@@ -417,6 +509,12 @@
             display: block;
         }
 
+        .video-stats::after {
+            background:
+                var(--video-glow-orange) -80px -60px / 260px 260px no-repeat,
+                var(--video-glow-purple) calc(100% + 60px) calc(100% + 40px) / 240px 240px no-repeat;
+        }
+
     }
 
 
@@ -427,7 +525,7 @@
     @media (max-width: 600px) {
 
         .video-stats {
-            padding: 0 16px;
+            padding: 0 16px 8px;
         }
 
         .video-stats-container {
@@ -441,6 +539,10 @@
             padding: 18px 20px;
         }
 
+        .video-stat-card:hover {
+            transform: none;
+        }
+
         .video-stat-card::after {
             top: auto !important;
             right: 20px !important;
@@ -449,12 +551,36 @@
 
             width: auto !important;
             height: 1px;
+
+            background: linear-gradient(90deg,
+                rgba(228, 232, 238, 0) 0%,
+                var(--video-border) 50%,
+                rgba(228, 232, 238, 0) 100%) !important;
         }
 
         .video-stat-card:last-child::after {
             display: none;
         }
 
+        .video-stats::after {
+            background:
+                var(--video-glow-orange) -100px -60px / 220px 220px no-repeat,
+                var(--video-glow-blue) calc(100% + 80px) calc(100% + 60px) / 220px 220px no-repeat;
+        }
+
+    }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .video-stats::after {
+            animation: none;
+        }
+
+        .video-stat-card,
+        .video-stat-icon,
+        .video-stats-container {
+            transition: none;
+        }
     }
 </style>
 
