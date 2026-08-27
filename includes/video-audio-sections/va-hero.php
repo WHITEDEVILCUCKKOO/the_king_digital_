@@ -216,14 +216,13 @@
 
     }
 
-    /* =============================================================
-       HERO SECTION
-    ============================================================= */
+    /* =========================================================
+       HERO SHELL
+    ========================================================= */
 
     .va-hero {
         position: relative;
-        background: var(--video-bg);
-        padding: var(--video-space-3xl) var(--video-space-xl) 0;
+        background: var(--video-bg-soft);
         overflow: hidden;
     }
 
@@ -231,30 +230,37 @@
         position: relative;
         max-width: var(--video-container);
         margin: 0 auto;
+        min-height: 600px;
+        padding: 0 64px;
     }
 
-    /* Each slide is absolutely stacked on top of the next; JS toggles
-       the .is-active class so only one slide is laid out/visible at a time. */
+    /* =========================================================
+       SLIDES
+       Stacked in normal flow; only .is-active is shown, so the
+       section height always tracks whichever slide is visible.
+    ========================================================= */
+
     .va-hero_content-slide1,
     .va-hero_content-slide2,
     .va-hero_content-slide3 {
         display: none;
-        grid-template-columns: minmax(0, 460px) 1fr;
+        grid-template-columns: 1.05fr 0.95fr;
         align-items: center;
-        gap: var(--video-space-2xl);
+        gap: 48px;
+        min-height: 600px;
     }
 
     .va-hero_content-slide1.is-active,
     .va-hero_content-slide2.is-active,
     .va-hero_content-slide3.is-active {
         display: grid;
-        animation: vaFadeIn var(--video-transition-slow);
+        animation: vaSlideIn 0.6s ease both;
     }
 
-    @keyframes vaFadeIn {
+    @keyframes vaSlideIn {
         from {
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(14px);
         }
 
         to {
@@ -263,172 +269,179 @@
         }
     }
 
-    /* =============================================================
-       TEXT COLUMN
-    ============================================================= */
+    /* ---------- Text column ---------- */
+
+    .va-hero_content--text {
+        position: relative;
+        z-index: 2;
+        max-width: 560px;
+        /* padding: var(--video-space-4xl) 0; */
+    }
 
     .va-hero_content--text-eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: var(--video-space-sm);
-        color: var(--video-primary);
+        gap: 10px;
         font-size: var(--video-text-xs);
         font-weight: 800;
-        letter-spacing: .14em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        margin: 0 0 var(--video-space-md);
+        color: var(--video-primary);
+        margin-bottom: var(--video-space-lg);
     }
 
     .va-hero_content--text-eyebrow span {
-        width: 22px;
-        height: 2px;
-        background: var(--video-primary);
-        border-radius: var(--video-radius-pill);
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: var(--video-gradient-primary);
+        flex: none;
     }
 
     .va-hero_content--text--heading {
-        font-size: var(--video-heading-xl);
-        line-height: 1.04;
-        letter-spacing: -.02em;
+        font-size: clamp(34px, 4vw, var(--video-heading-xl));
+        line-height: 1.06;
         font-weight: 800;
-        color: var(--video-secondary);
-        margin: 0 0 var(--video-space-md);
-        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        color: var(--video-text);
+        margin-bottom: var(--video-space-lg);
     }
 
-    .va-hero_content--text--heading br {
-        content: "";
-    }
-
-    /* last line of the heading (INSPIRE / DELIVER / ENGAGE) rendered in orange */
-    .va-hero_content--text--heading .va-heading-accent {
+    .va-hero_content--text--heading .row {
         display: block;
+    }
+
+    .va-hero_content--text--heading .row.accent {
         color: var(--video-primary);
     }
 
     .va-hero_content--text-para {
-        max-width: 420px;
-        font-size: var(--video-text-md);
+        font-size: var(--video-text-lg);
         line-height: 1.7;
         color: var(--video-text-secondary);
-        margin: 0 0 var(--video-space-xl);
+        max-width: 460px;
+        margin-bottom: var(--video-space-xl);
     }
 
-    /* =============================================================
-       CTA BUTTONS
-    ============================================================= */
+    /* ---------- CTA buttons ---------- */
 
     .va-hero_content--text-cta {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: var(--video-space-md);
-        margin-bottom: var(--video-space-xl);
+        margin-bottom: var(--video-space-2xl);
     }
 
     .va-hero_content--text-cta a {
         display: inline-flex;
         align-items: center;
-        gap: var(--video-space-sm);
-        height: 52px;
-        padding: 0 var(--video-space-lg);
-        border-radius: var(--video-radius-md);
-        font-size: var(--video-text-sm);
+        gap: 10px;
+        padding: 15px 26px;
+        border-radius: var(--video-radius-pill);
+        font-size: var(--video-text-md);
         font-weight: 700;
         text-decoration: none;
-        transition: transform var(--video-transition-fast), box-shadow var(--video-transition-fast), background var(--video-transition-fast);
-        white-space: nowrap;
+        transition: transform var(--video-transition-normal), box-shadow var(--video-transition-normal), background var(--video-transition-normal);
     }
 
-    /* primary = solid orange, arrow icon */
+    /* First CTA — primary, orange */
     .va-hero_content--text-cta a:first-child {
-        color: var(--video-text-light);
         background: var(--video-gradient-primary);
+        color: var(--video-text-light);
         box-shadow: var(--video-shadow-orange);
+    }
+
+    .va-hero_content--text-cta a:first-child:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(255, 107, 26, 0.28);
     }
 
     .va-hero_content--text-cta a:first-child span {
         width: 16px;
         height: 16px;
         flex: none;
+        position: relative;
+    }
+
+    .va-hero_content--text-cta a:first-child span::before,
+    .va-hero_content--text-cta a:first-child span::after {
+        content: "";
+        position: absolute;
         background: currentColor;
-        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><line x1='5' y1='12' x2='19' y2='12'/><polyline points='12 5 19 12 12 19'/></svg>") center / contain no-repeat;
-        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><line x1='5' y1='12' x2='19' y2='12'/><polyline points='12 5 19 12 12 19'/></svg>") center / contain no-repeat;
     }
 
-    .va-hero_content--text-cta a:first-child:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 32px rgba(255, 107, 26, .28);
+    .va-hero_content--text-cta a:first-child span::before {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        transform: translateY(-50%);
     }
 
-    /* secondary = white outline, calendar icon */
+    .va-hero_content--text-cta a:first-child span::after {
+        top: 50%;
+        right: 0;
+        width: 7px;
+        height: 7px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+        background: none;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    /* Second CTA — outline */
     .va-hero_content--text-cta a:last-child {
-        color: var(--video-secondary);
         background: var(--video-bg);
+        color: var(--video-text);
         border: 1.5px solid var(--video-border);
-    }
-
-    .va-hero_content--text-cta a:last-child span {
-        width: 16px;
-        height: 16px;
-        flex: none;
-        background: currentColor;
-        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='3'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") center / contain no-repeat;
-        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='3'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") center / contain no-repeat;
     }
 
     .va-hero_content--text-cta a:last-child:hover {
         transform: translateY(-2px);
-        border-color: var(--video-secondary);
+        border-color: var(--video-primary);
+        color: var(--video-primary-dark);
     }
 
-    /* =============================================================
-       FEATURES ROW (Professional Equipment / Creative Experts / High Quality Delivery)
-    ============================================================= */
+    .va-hero_content--text-cta a:last-child span {
+        width: 15px;
+        height: 15px;
+        flex: none;
+        border: 2px solid currentColor;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    .va-hero_content--text-cta a:last-child span::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: 2px;
+        width: 2px;
+        height: 4px;
+        background: currentColor;
+        box-shadow: 6px 0 0 currentColor;
+    }
+
+    /* ---------- Trust / feature strip (kept minimal; empty by default) ---------- */
 
     .va-hero_content--text-features {
         display: flex;
-        flex-wrap: wrap;
-        gap: var(--video-space-lg);
-    }
-
-    .va-hero_content--text-features-item {
-        display: flex;
         align-items: center;
-        gap: var(--video-space-sm);
+        gap: 10px;
+        min-height: 1px;
     }
 
-    .va-hero_content--text-features-item span {
-        display: grid;
-        place-items: center;
-        flex: none;
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        border: 1.5px dashed var(--video-primary-light);
-        color: var(--video-primary);
+    .va-hero_content--text-features span:empty,
+    .va-hero_content--text-features p:empty {
+        display: none;
     }
 
-    .va-hero_content--text-features-item span svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    .va-hero_content--text-features-item p {
-        margin: 0;
-        font-size: 12.5px;
-        line-height: 1.35;
-        font-weight: 700;
-        color: var(--video-text);
-    }
-
-    /* =============================================================
-       VISUAL COLUMN
-    ============================================================= */
+    /* ---------- Visual column ---------- */
 
     .va-hero_content--visual {
         position: relative;
-        min-height: 420px;
+        height: 100%;
         display: flex;
         align-items: center;
     }
@@ -436,66 +449,10 @@
     .va-hero_content--visual-image {
         position: relative;
         width: 100%;
-        height: 420px;
-
-        border-radius: 50% 50% 140px 140px;
-
+        aspect-ratio: 4 / 3.1;
+        border-radius: var(--video-radius-2xl);
         overflow: hidden;
-
         box-shadow: var(--video-shadow-lg);
-        background: var(--video-bg-soft);
-
-        animation: radiusMoving 5s ease-in-out infinite;
-
-        will-change: border-radius;
-    }
-
-
-    @keyframes radiusMoving {
-
-        0% {
-            border-radius: 50% 50% 140px 140px;
-        }
-
-        10% {
-            border-radius: 48% 52% 130px 150px;
-        }
-
-        20% {
-            border-radius: 46% 54% 120px 155px;
-        }
-
-        30% {
-            border-radius: 42% 58% 110px 150px;
-        }
-
-        40% {
-            border-radius: 38% 62% 100px 145px;
-        }
-
-        50% {
-            border-radius: 140px 140px 50% 50%;
-        }
-
-        60% {
-            border-radius: 145px 135px 48% 52%;
-        }
-
-        70% {
-            border-radius: 150px 130px 46% 54%;
-        }
-
-        80% {
-            border-radius: 145px 135px 44% 56%;
-        }
-
-        90% {
-            border-radius: 135px 145px 48% 52%;
-        }
-
-        100% {
-            border-radius: 50% 50% 140px 140px;
-        }
     }
 
     .va-hero_content--visual-image img {
@@ -505,141 +462,218 @@
         display: block;
     }
 
-    /* concentric orange sound-wave rings, bottom right of the photo */
-    .va-hero_content--visual-image:after {
+    /* Fade the photo into the text column, like the reference */
+    .va-hero_content--visual-image::before {
         content: "";
         position: absolute;
-        right: 22px;
-        bottom: 22px;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        border: 2px solid rgba(255, 107, 26, .55);
-        box-shadow:
-            0 0 0 10px rgba(255, 107, 26, .28),
-            0 0 0 20px rgba(255, 107, 26, .14);
+        inset: 0;
+        background: linear-gradient(90deg,
+                var(--video-bg-soft) 0%,
+                rgba(241, 231, 223, 0.35) 18%,
+                rgba(241, 231, 223, 0) 42%);
         pointer-events: none;
     }
 
-    /* =============================================================
+    /* =========================================================
        SLIDE CONTROLS
-    ============================================================= */
+       Positioned independently of the grid so the arrows can sit
+       on the section edges and the counter under the text column.
+    ========================================================= */
 
     .va-hero_content-slide-control {
-        display: flex;
-        align-items: center;
-        gap: var(--video-space-lg);
-        margin-top: var(--video-space-2xl);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 3;
     }
 
     .va-hero_content-slide-control-btn {
+        position: absolute;
+        inset: 0;
         display: flex;
-        gap: var(--video-space-sm);
+        align-items: center;
+        justify-content: space-between;
     }
 
     .va-hero_content-slide-control-btn button {
-        width: 42px;
-        height: 42px;
+        pointer-events: auto;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
-        border: 1.5px solid var(--video-border);
-        background: var(--video-bg);
-        color: var(--video-secondary);
-        font-size: 16px;
+        border: 1px solid rgba(20, 33, 61, 0.10);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(6px);
+        color: var(--video-text);
+        font-size: 18px;
         font-weight: 700;
         cursor: pointer;
-        display: grid;
-        place-items: center;
-        transition: background var(--video-transition-fast), color var(--video-transition-fast), border-color var(--video-transition-fast), transform var(--video-transition-fast);
+        box-shadow: var(--video-shadow-md);
+        transition: background var(--video-transition-normal), color var(--video-transition-normal), transform var(--video-transition-normal);
     }
 
     .va-hero_content-slide-control-btn button:hover {
         background: var(--video-gradient-primary);
-        border-color: transparent;
         color: var(--video-text-light);
-        transform: translateY(-2px);
+        transform: scale(1.06);
+    }
+
+    /* Half the button hangs off the section edge */
+    .va-hero_content-slide-control-btn button:first-child {
+        margin-left: -26px;
+    }
+
+    .va-hero_content-slide-control-btn button:last-child {
+        margin-right: -26px;
     }
 
     .va-hero_content-slide-control-pignation {
+        pointer-events: auto;
+        position: absolute;
+        left: 64px;
+        bottom: 40px;
         display: flex;
-        align-items: center;
-        gap: var(--video-space-sm);
+        align-items: baseline;
+        gap: 8px;
+        font-size: var(--video-text-sm);
+        font-weight: 700;
+        color: var(--video-text-muted);
     }
 
-    .va-hero_content-slide-control-pignation button {
-        width: 9px;
-        height: 9px;
-        padding: 0;
-        border-radius: var(--video-radius-pill);
-        border: none;
-        background: var(--video-border);
-        cursor: pointer;
-        transition: width var(--video-transition-normal), background var(--video-transition-normal);
+    .va-hero_content-slide-control-pignation .va-pg-current {
+        font-size: 15px;
+        color: var(--video-text);
     }
 
-    .va-hero_content-slide-control-pignation button.is-active {
-        width: 26px;
-        background: var(--video-gradient-primary);
+    .va-hero_content-slide-control-pignation .va-pg-sep {
+        color: var(--video-border-dark);
     }
 
-    /* =============================================================
+    /* =========================================================
        RESPONSIVE
-    ============================================================= */
+    ========================================================= */
 
-    @media (max-width: 980px) {
-
-        .va-hero_content-slide1.is-active,
-        .va-hero_content-slide2.is-active,
-        .va-hero_content-slide3.is-active {
-            grid-template-columns: 1fr;
+    @media (max-width: 1100px) {
+        .va-hero_content {
+            padding: 0 40px;
         }
 
-        .va-hero_content--visual {
-            min-height: 320px;
-            order: -1;
-        }
-
-        .va-hero_content--visual-image {
-            height: 300px;
+        .va-hero_content-slide1,
+        .va-hero_content-slide2,
+        .va-hero_content-slide3 {
+            gap: 32px;
         }
 
         .va-hero_content--text--heading {
-            font-size: var(--video-heading-lg);
+            font-size: clamp(30px, 5vw, 52px);
         }
     }
 
-    @media (max-width: 560px) {
-        .va-hero {
-            padding: var(--video-space-2xl) var(--video-space-md);
+    @media (max-width: 900px) {
+        .va-hero_content {
+            min-height: 0;
+            padding: 88px 24px 60px;
         }
 
-        .va-hero_content--text--heading {
-            font-size: 36px;
+        .va-hero_content-slide1,
+        .va-hero_content-slide2,
+        .va-hero_content-slide3 {
+            grid-template-columns: 1fr;
+            min-height: 0;
+            gap: 32px;
         }
 
-        .va-hero_content--text-cta a {
-            flex: 1;
+        .va-hero_content--text {
+            max-width: 100%;
+            padding: 0;
+            order: 1;
+            text-align: center;
+        }
+
+        .va-hero_content--text-eyebrow,
+        .va-hero_content--text-cta {
             justify-content: center;
         }
 
-        .va-hero_content--text-features {
-            gap: var(--video-space-md);
+        .va-hero_content--text-para {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .va-hero_content--visual {
+            order: 0;
+        }
+
+        .va-hero_content--visual-image {
+            aspect-ratio: 16 / 10;
+        }
+
+        .va-hero_content--visual-image::before {
+            background: linear-gradient(180deg,
+                    var(--video-bg-soft) 0%,
+                    rgba(241, 231, 223, 0) 35%);
+        }
+
+        .va-hero_content-slide-control-btn {
+            top: auto;
+            bottom: 16px;
+            inset: auto 24px 16px 24px;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .va-hero_content-slide-control-btn button:first-child,
+        .va-hero_content-slide-control-btn button:last-child {
+            margin: 0;
+        }
+
+        .va-hero_content-slide-control-pignation {
+            left: 50%;
+            bottom: 78px;
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .va-hero_content {
+            padding: 76px 18px 130px;
+        }
+
+        .va-hero_content--text--heading {
+            font-size: clamp(28px, 9vw, 38px);
+        }
+
+        .va-hero_content--text-para {
+            font-size: var(--video-text-md);
+        }
+
+        .va-hero_content--text-cta a {
+            padding: 13px 20px;
+            font-size: var(--video-text-sm);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .va-hero_content-slide1.is-active,
+        .va-hero_content-slide2.is-active,
+        .va-hero_content-slide3.is-active {
+            animation: none;
         }
     }
 </style>
 
-<section class="va-hero" id="vaHeroSlider">
-    <div class="va-hero_content">
-
-        <div class="va-hero_content-slide1 is-active">
+<section class="va-hero">
+    <div class="va-hero_content" id="vaHeroContent">
+        <div class="va-hero_content-slide1">
             <div class="va-hero_content--text">
                 <p class="va-hero_content--text-eyebrow">
                     <span></span>
                     Audio & Video Production Studio
                 </p>
                 <h1 class="va-hero_content--text--heading">
-                    CREATE.<br>
-                    RECORD.<br>
-                    <span class="va-heading-accent">INSPIRE.</span>
+                    <span class="row">CREATE.</span>
+                    <span class="row">RECORD.</span>
+                    <span class="row accent">INSPIRE.</span>
                 </h1>
                 <p class="va-hero_content--text-para">
                     From podcasts and interviews to branded audio content, we provide the studio, equipment, and production expertise to bring your ideas to life.
@@ -649,38 +683,16 @@
                     <a href="#va-service"><span></span>Check Other Services</a>
                 </div>
                 <div class="va-hero_content--text-features">
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="2" width="6" height="12" rx="3"></rect>
-                                <path d="M5 10a7 7 0 0 0 14 0"></path>
-                                <line x1="12" y1="17" x2="12" y2="22"></line>
-                            </svg></span>
-                        <p>Professional<br>Equipment</p>
-                    </div>
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="9" cy="8" r="3.2"></circle>
-                                <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path>
-                                <circle cx="18" cy="9" r="2.4"></circle>
-                                <path d="M15.5 14.2c2.6.3 4.5 2.6 4.5 5.3"></path>
-                            </svg></span>
-                        <p>Creative<br>Experts</p>
-                    </div>
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 3l2.4 5 5.6.6-4.1 3.9 1 5.5L12 15.6 7.1 18l1-5.5L4 8.6 9.6 8z"></path>
-                            </svg></span>
-                        <p>High Quality<br>Delivery</p>
-                    </div>
+                    <span></span>
+                    <p></p>
                 </div>
             </div>
             <div class="va-hero_content--visual">
                 <div class="va-hero_content--visual-image">
-                    <img src="assets/images/va-slide1.png" alt="Recording studio with microphone and editing setup">
+                    <img src="assets/images/va-slide1.png" alt="Podcast recording studio with professional microphone">
                 </div>
             </div>
         </div>
-
         <div class="va-hero_content-slide2">
             <div class="va-hero_content--text">
                 <p class="va-hero_content--text-eyebrow">
@@ -688,9 +700,9 @@
                     Audio & Video Production Studio
                 </p>
                 <h1 class="va-hero_content--text--heading">
-                    SHOOT.<br>
-                    EDIT.<br>
-                    <span class="va-heading-accent">DELIVER.</span>
+                    <span class="row">SHOOT.</span>
+                    <span class="row">EDIT.</span>
+                    <span class="row accent">DELIVER.</span>
                 </h1>
                 <p class="va-hero_content--text-para">
                     From promotional videos to social media campaigns, create professional visual content with our production setup and creative team.
@@ -700,37 +712,16 @@
                     <a href="#va-service"><span></span>Check Other Services</a>
                 </div>
                 <div class="va-hero_content--text-features">
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="6" width="14" height="12" rx="2"></rect>
-                                <path d="M16 10l5.2-3v10L16 14"></path>
-                            </svg></span>
-                        <p>Pro Camera<br>Gear</p>
-                    </div>
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="9" cy="8" r="3.2"></circle>
-                                <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path>
-                                <circle cx="18" cy="9" r="2.4"></circle>
-                                <path d="M15.5 14.2c2.6.3 4.5 2.6 4.5 5.3"></path>
-                            </svg></span>
-                        <p>Creative<br>Editors</p>
-                    </div>
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 3l2.4 5 5.6.6-4.1 3.9 1 5.5L12 15.6 7.1 18l1-5.5L4 8.6 9.6 8z"></path>
-                            </svg></span>
-                        <p>Fast<br>Turnaround</p>
-                    </div>
+                    <span></span>
+                    <p></p>
                 </div>
             </div>
             <div class="va-hero_content--visual">
                 <div class="va-hero_content--visual-image">
-                    <img src="assets/images/va-slide2.png" alt="Video production camera and lighting setup">
+                    <img src="assets/images/va-slide2.png" alt="Video production camera setup on set">
                 </div>
             </div>
         </div>
-
         <div class="va-hero_content-slide3">
             <div class="va-hero_content--text">
                 <p class="va-hero_content--text-eyebrow">
@@ -738,9 +729,9 @@
                     Audio & Video Production Studio
                 </p>
                 <h1 class="va-hero_content--text--heading">
-                    SPEAK.<br>
-                    CONNECT.<br>
-                    <span class="va-heading-accent">ENGAGE.</span>
+                    <span class="row">SPEAK.</span>
+                    <span class="row">CONNECT.</span>
+                    <span class="row accent">ENGAGE.</span>
                 </h1>
                 <p class="va-hero_content--text-para">
                     Professional voice recording, voice-over production, dubbing, and multilingual audio for brands that need to be heard clearly.
@@ -750,130 +741,113 @@
                     <a href="#va-service"><span></span>Check Other Services</a>
                 </div>
                 <div class="va-hero_content--text-features">
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="2" width="6" height="12" rx="3"></rect>
-                                <path d="M5 10a7 7 0 0 0 14 0"></path>
-                                <line x1="12" y1="17" x2="12" y2="22"></line>
-                            </svg></span>
-                        <p>Studio Grade<br>Mics</p>
-                    </div>
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 12h3l2-6 4 12 2-8 2 4h3"></path>
-                            </svg></span>
-                        <p>Native<br>Voice Talent</p>
-                    </div>
-                    <div class="va-hero_content--text-features-item">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9"></circle>
-                                <path d="M3 12h18M12 3c2.4 2.6 3.6 5.7 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.7-3.6-9S9.6 5.6 12 3z"></path>
-                            </svg></span>
-                        <p>Multilingual<br>Audio</p>
-                    </div>
+                    <span></span>
+                    <p></p>
                 </div>
             </div>
             <div class="va-hero_content--visual">
                 <div class="va-hero_content--visual-image">
-                    <img src="assets/images/va-slide3.png" alt="Voice-over recording booth with microphone">
+                    <img src="assets/images/va-slide3.png" alt="Voice-over artist recording in booth">
                 </div>
             </div>
         </div>
-
         <div class="va-hero_content-slide-control">
             <div class="va-hero_content-slide-control-btn">
-                <button type="button" data-va-prev aria-label="Previous slide">&lt;</button>
-                <button type="button" data-va-next aria-label="Next slide">&gt;</button>
+                <button type="button" aria-label="Previous slide">&lt;</button>
+                <button type="button" aria-label="Next slide">&gt;</button>
             </div>
-            <div class="va-hero_content-slide-control-pignation" data-va-dots></div>
+            <div class="va-hero_content-slide-control-pignation"></div>
         </div>
-
     </div>
 </section>
 
 <script>
     (function() {
-        // Scoped strictly to this section instance.
-        var root = document.getElementById('vaHeroSlider');
+        const root = document.getElementById("vaHeroContent");
         if (!root) return;
 
-        var slides = Array.prototype.slice.call(
-            root.querySelectorAll('.va-hero_content-slide1, .va-hero_content-slide2, .va-hero_content-slide3')
-        );
+        const slides = [
+            root.querySelector(".va-hero_content-slide1"),
+            root.querySelector(".va-hero_content-slide2"),
+            root.querySelector(".va-hero_content-slide3")
+        ].filter(Boolean);
+
         if (!slides.length) return;
 
-        var prevBtn = root.querySelector('[data-va-prev]');
-        var nextBtn = root.querySelector('[data-va-next]');
-        var dotsWrap = root.querySelector('[data-va-dots]');
+        const prevBtn = root.querySelector(".va-hero_content-slide-control-btn button:first-child");
+        const nextBtn = root.querySelector(".va-hero_content-slide-control-btn button:last-child");
+        const pagination = root.querySelector(".va-hero_content-slide-control-pignation");
 
-        var current = slides.findIndex(function(s) {
-            return s.classList.contains('is-active');
-        });
-        if (current < 0) current = 0;
+        let current = 0;
+        let autoplayTimer = null;
+        const AUTOPLAY_DELAY = 6000;
 
-        var autoplayMs = 6000;
-        var timer = null;
-
-        // Build pagination dots to match however many slides exist.
-        var dots = slides.map(function(_, i) {
-            var b = document.createElement('button');
-            b.type = 'button';
-            b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-            b.addEventListener('click', function() {
-                goTo(i);
-                restartAutoplay();
-            });
-            dotsWrap.appendChild(b);
-            return b;
-        });
-
-        function render() {
-            slides.forEach(function(s, i) {
-                s.classList.toggle('is-active', i === current);
-            });
-            dots.forEach(function(d, i) {
-                d.classList.toggle('is-active', i === current);
-            });
+        function pad(n) {
+            return String(n + 1).padStart(2, "0");
         }
 
-        function goTo(i) {
-            current = (i + slides.length) % slides.length;
-            render();
+        function renderPagination() {
+            if (!pagination) return;
+            pagination.innerHTML =
+                '<span class="va-pg-current">' + pad(current) + '</span>' +
+                '<span class="va-pg-sep">—</span>' +
+                '<span class="va-pg-total">' + pad(slides.length - 1) + '</span>';
+        }
+
+        function goTo(index) {
+            slides[current].classList.remove("is-active");
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add("is-active");
+            renderPagination();
         }
 
         function next() {
             goTo(current + 1);
         }
 
-        function prevSlide() {
+        function prev() {
             goTo(current - 1);
         }
 
         function startAutoplay() {
-            timer = window.setInterval(next, autoplayMs);
+            stopAutoplay();
+            autoplayTimer = setInterval(next, AUTOPLAY_DELAY);
         }
 
-        function restartAutoplay() {
-            if (timer) window.clearInterval(timer);
+        function stopAutoplay() {
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+                autoplayTimer = null;
+            }
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", function() {
+                next();
+                startAutoplay();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", function() {
+                prev();
+                startAutoplay();
+            });
+        }
+
+        root.addEventListener("mouseenter", stopAutoplay);
+        root.addEventListener("mouseleave", startAutoplay);
+
+        // Initial state
+        slides.forEach(function(slide) {
+            slide.classList.remove("is-active");
+        });
+        slides[0].classList.add("is-active");
+        renderPagination();
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!prefersReducedMotion) {
             startAutoplay();
         }
-
-        if (prevBtn) prevBtn.addEventListener('click', function() {
-            prevSlide();
-            restartAutoplay();
-        });
-        if (nextBtn) nextBtn.addEventListener('click', function() {
-            next();
-            restartAutoplay();
-        });
-
-        // Pause autoplay while the user's mouse is over the hero.
-        root.addEventListener('mouseenter', function() {
-            if (timer) window.clearInterval(timer);
-        });
-        root.addEventListener('mouseleave', startAutoplay);
-
-        render();
-        startAutoplay();
     })();
 </script>
