@@ -3,6 +3,7 @@
 <main style="overflow: hidden; font-family:'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif">
 
     <?php require_once __DIR__ . '/includes/ssm/ssm-hero.php' ?>
+    <?php require_once __DIR__ . '/includes/ssm/ssm-stats.php' ?>
 
 </main>
 
