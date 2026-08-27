@@ -226,6 +226,44 @@
         overflow: hidden;
     }
 
+    /* ========================================
+   HERO DECORATION
+======================================== */
+
+    .va-hero::before {
+        content: "";
+        position: absolute;
+
+        width: 320px;
+        height: 320px;
+
+        top: -140px;
+        right: -100px;
+
+        background: rgba(255, 112, 40, 0.07);
+        border-radius: 50%;
+
+        filter: blur(10px);
+        pointer-events: none;
+    }
+
+    .va-hero::after {
+        content: "";
+        position: absolute;
+
+        width: 220px;
+        height: 220px;
+
+        bottom: -100px;
+        left: -80px;
+
+        background: rgba(255, 177, 90, 0.08);
+        border-radius: 50%;
+
+        filter: blur(12px);
+        pointer-events: none;
+    }
+
     .va-hero_content {
         position: relative;
         max-width: var(--video-container);
@@ -654,6 +692,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
         .va-hero_content-slide1.is-active,
         .va-hero_content-slide2.is-active,
         .va-hero_content-slide3.is-active {
