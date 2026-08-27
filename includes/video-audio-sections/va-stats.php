@@ -230,18 +230,18 @@
 
     .video-stats-container {
         width: 100%;
-        max-width: 1100px;
+        /* max-width: 1100px; */
         margin: 0 auto;
 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
 
         background: var(--video-bg);
-        border: 1px solid var(--video-border);
+        /* border: 1px solid var(--video-border); */
 
-        border-radius: var(--video-radius-xl);
+        /* border-radius: var(--video-radius-xl); */
 
-        box-shadow: var(--video-shadow-md);
+        /* box-shadow: var(--video-shadow-md); */
 
         overflow: hidden;
     }
