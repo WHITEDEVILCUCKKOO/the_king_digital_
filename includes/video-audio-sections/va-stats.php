@@ -226,6 +226,33 @@
         margin-top: -1px;
         position: relative;
         z-index: 2;
+        /* overflow: hidden; */
+    }
+
+    /* ========================================
+   STATS DECORATION
+    ======================================== */
+
+    .video-stats {
+        background: #ffffff;
+        z-index: 2;
+    }
+
+    .video-stats::before {
+        content: "";
+        position: absolute;
+
+        width: 120%;
+        height: 70px;
+
+        top: -35px;
+        left: -10%;
+
+        background: #ffffff;
+
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+        pointer-events: none;
     }
 
     .video-stats-container {
@@ -361,7 +388,7 @@
    HOVER
 ========================================================= */
 
-    .video-stat-card {
+    /* .video-stat-card {
         transition:
             background var(--video-transition-normal),
             transform var(--video-transition-normal);
@@ -369,7 +396,7 @@
 
     .video-stat-card:hover {
         background: var(--video-bg-soft);
-    }
+    } */
 
 
     /* =========================================================

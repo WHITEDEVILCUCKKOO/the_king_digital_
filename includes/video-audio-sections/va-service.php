@@ -21,9 +21,38 @@
         --studio-shadow-hover: 0 14px 30px rgba(20, 33, 61, 0.10);
 
         position: relative;
-        background: var(--studio-blue-soft);
+        /* background: var(--studio-blue-soft); */
+        background:
+            radial-gradient(circle at 8% 20%,
+                rgba(59, 130, 246, 0.08),
+                transparent 25%),
+            radial-gradient(circle at 92% 75%,
+                rgba(37, 211, 102, 0.045),
+                transparent 25%),
+            #eef5ff;
         padding: 72px 0;
         overflow: hidden;
+    }
+
+    .studio-services::after {
+        content: "";
+
+        position: absolute;
+
+        width: 120px;
+        height: 120px;
+
+        right: 25px;
+        bottom: 60px;
+
+        background-image: radial-gradient(rgba(255, 102, 40, 0.25) 1px,
+                transparent 1px);
+
+        background-size: 8px 8px;
+
+        opacity: 0.45;
+
+        pointer-events: none;
     }
 
     .studio-services__container {
