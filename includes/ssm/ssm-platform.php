@@ -121,11 +121,11 @@
         margin-bottom: 20px;
     }
 
-    .ssm-platform_content-heading p {
+    /* .ssm-platform_content-heading p {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        /* margin: 0 0 18px; */
+        margin: 0 0 18px;
         padding: 8px 18px 8px 14px;
         border-radius: 999px;
         background: var(--smm-bg-purple);
@@ -135,15 +135,15 @@
         font-weight: 600;
         letter-spacing: .08em;
         text-transform: uppercase;
-    }
+    } */
 
-    .ssm-platform_content-heading p span {
+    /* .ssm-platform_content-heading p span {
         width: 8px;
         height: 8px;
         border-radius: 50%;
         background: var(--smm-gradient);
         box-shadow: 0 0 0 4px rgba(124, 58, 237, .14);
-    }
+    } */
 
     .ssm-platform_content-heading h2 {
         margin: 0;
@@ -267,10 +267,6 @@
 <section class="ssm-platform">
     <div class="ssm-platform_content">
         <div class="ssm-platform_content-heading">
-            <p>
-                <span></span>
-                Social Platform
-            </p>
             <h2>Platform We Manage</h2>
         </div>
         <div class="ssm-platform_content-container">
