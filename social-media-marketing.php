@@ -6,6 +6,7 @@
     <?php require_once __DIR__ . '/includes/ssm/ssm-stats.php' ?>
     <?php require_once __DIR__ . '/includes/ssm/ssm-platform.php' ?>
     <?php require_once __DIR__ . '/includes/ssm/ssm-wwd.php' ?>
+    <?php require_once __DIR__ . '/includes/ssm/ssm-portfolio.php' ?>
 
 </main>
 
