@@ -269,7 +269,9 @@
         white-space: nowrap;
     }
 
-    .smm-stat_count {
+    /* Renamed & scoped to this section only — see note below the
+       code block for why this replaces .smm-stat_count */
+    .smm-stats-counter__value {
         color: inherit;
     }
 
@@ -347,7 +349,7 @@
     }
 </style>
 
-<section class="smm-stats">
+<section class="smm-stats" id="smm-stats-section">
     <div class="container smm-stats_container">
         <div class="smm-stats_card">
             <div class="smm-stat">
@@ -356,7 +358,7 @@
                 </div>
                 <div class="smm-stat_content">
                     <h3>
-                        <span class="smm-stat_count" data-count="10">0</span>M+
+                        <span class="smm-stats-counter__value" data-stats-count="10">0</span>M+
                     </h3>
                     <p>Impressions Generated</p>
                 </div>
@@ -367,7 +369,7 @@
                 </div>
                 <div class="smm-stat_content">
                     <h3>
-                        <span class="smm-stat_count" data-count="500">0</span>+
+                        <span class="smm-stats-counter__value" data-stats-count="500">0</span>+
                     </h3>
                     <p>Successful Campaigns</p>
                 </div>
@@ -378,7 +380,7 @@
                 </div>
                 <div class="smm-stat_content">
                     <h3>
-                        <span class="smm-stat_count" data-count="80">0</span>%+
+                        <span class="smm-stats-counter__value" data-stats-count="80">0</span>%+
                     </h3>
                     <p>Average Engagement Growth</p>
                 </div>
@@ -389,7 +391,7 @@
                 </div>
                 <div class="smm-stat_content">
                     <h3>
-                        <span class="smm-stat_count" data-count="4.8">0</span>/5
+                        <span class="smm-stats-counter__value" data-stats-count="4.8">0</span>/5
                     </h3>
                     <p>Client Satisfaction Rating</p>
                 </div>
@@ -400,41 +402,35 @@
 
 <script>
     /**
-     * Counter animation
-     * ------------------
-     * Animates any element with a `data-count` attribute from 0 up to
-     * the target value when it scrolls into view.
+     * Section-scoped counter animation for #smm-stats-section only.
+     * ----------------------------------------------------------------
+     * This is intentionally namespaced and self-contained so it cannot
+     * collide with any other counter script on the page, even one that
+     * also targets `data-count` / `.smm-stat_count`-style elements:
      *
-     * IMPORTANT: this script writes ONLY the number itself into the
-     * element — it never appends "+", "%", "M", "/5", etc. Any suffix
-     * (like the "M+" after the span, or the "/5" after it) should stay
-     * as static text in your HTML, right next to the span, exactly like
-     * your markup already does:
+     *   - Selector is scoped to the section id: only elements INSIDE
+     *     #smm-stats-section are ever touched.
+     *   - Uses its own attribute name, `data-stats-count`, instead of
+     *     the generic `data-count` that another script might already
+     *     be watching.
+     *   - Uses its own class, `.smm-stats-counter__value`, instead of
+     *     the more generic `.smm-stat_count`.
+     *   - Wrapped in an IIFE with a unique namespace
+     *     (`SmmStatsSectionCounters`) so it never leaks globals or
+     *     re-runs if included twice by accident.
      *
-     *   <span class="smm-stat_count" data-count="10">0</span>M+
-     *   <span class="smm-stat_count" data-count="500">0</span>+
-     *   <span class="smm-stat_count" data-count="4.8">0</span>/5
-     *
-     * Works with both integer counts (10, 500, 1000) and decimal counts
-     * (4.8) — it detects decimals automatically from data-count and
-     * keeps that many decimal places throughout the animation, so 4.8
-     * counts up as 0.0 -> 1.2 -> ... -> 4.8, never truncating to 4.
-     *
-     * Usage: include this file once, and put `data-count="..."` on any
-     * element you want animated. By default it targets elements with
-     * either .smm-stat_count or .video-stat-number, plus any generic
-     * [data-count] element — edit COUNTER_SELECTOR below to match
-     * whatever class names your stat numbers use.
+     * It writes ONLY the plain number into the element — no "+", "%",
+     * "M", "/5", etc. Those suffixes stay as static text in the HTML,
+     * right after each span, exactly as written above.
      */
 
-    (function() {
+    var SmmStatsSectionCounters = SmmStatsSectionCounters || (function() {
         "use strict";
 
-        var COUNTER_SELECTOR = ".smm-stat_count, .video-stat-number, [data-count]";
+        var SECTION_ID = "smm-stats-section";
+        var COUNTER_ATTR = "data-stats-count";
         var ANIMATION_DURATION_MS = 1600;
 
-        // Ease-out curve so the count starts fast and settles gently,
-        // rather than a flat linear tick.
         function easeOutQuad(t) {
             return 1 - (1 - t) * (1 - t);
         }
@@ -457,13 +453,11 @@
         }
 
         function animateCounter(el) {
-            // Guard against running twice on the same element (e.g. if
-            // it re-enters the viewport after already finishing).
-            if (el.dataset.counted === "true") {
+            if (el.dataset.smmStatsCounted === "true") {
                 return;
             }
 
-            var rawTarget = el.getAttribute("data-count");
+            var rawTarget = el.getAttribute(COUNTER_ATTR);
             var target = parseFloat(rawTarget);
 
             if (isNaN(target)) {
@@ -471,9 +465,9 @@
             }
 
             var decimalPlaces = getDecimalPlaces(rawTarget);
-            var useThousandsSeparator = el.dataset.thousands !== "false" && target >= 1000;
+            var useThousandsSeparator = target >= 1000;
 
-            el.dataset.counted = "true";
+            el.dataset.smmStatsCounted = "true";
 
             var startTime = null;
 
@@ -492,8 +486,6 @@
                 if (progress < 1) {
                     requestAnimationFrame(step);
                 } else {
-                    // Snap to the exact target at the end to avoid any
-                    // floating point rounding drift.
                     el.textContent = formatValue(target, decimalPlaces, useThousandsSeparator);
                 }
             }
@@ -502,20 +494,24 @@
         }
 
         function init() {
-            var counters = document.querySelectorAll(COUNTER_SELECTOR);
+            var section = document.getElementById(SECTION_ID);
+
+            if (!section) {
+                return;
+            }
+
+            var counters = section.querySelectorAll("[" + COUNTER_ATTR + "]");
 
             if (!counters.length) {
                 return;
             }
 
-            // Respect users who've asked for reduced motion: just show
-            // the final numbers immediately instead of animating.
             var prefersReducedMotion = window.matchMedia &&
                 window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
             if (prefersReducedMotion) {
                 counters.forEach(function(el) {
-                    var rawTarget = el.getAttribute("data-count");
+                    var rawTarget = el.getAttribute(COUNTER_ATTR);
                     var target = parseFloat(rawTarget);
                     if (!isNaN(target)) {
                         var decimalPlaces = getDecimalPlaces(rawTarget);
@@ -526,7 +522,6 @@
             }
 
             if (!("IntersectionObserver" in window)) {
-                // Fallback for very old browsers: just animate immediately.
                 counters.forEach(animateCounter);
                 return;
             }
@@ -554,5 +549,9 @@
         } else {
             init();
         }
+
+        return {
+            init: init
+        };
     })();
 </script>
