@@ -10,6 +10,7 @@
     <?php require_once __DIR__ . '/includes/ssm/ssm-strategy.php' ?>
     <?php require_once __DIR__ . '/includes/ssm/ssm-case.php' ?>
     <?php require_once __DIR__ . '/includes/ssm/ssm-faqs.php' ?>
+    <?php require_once __DIR__ . '/includes/ssm/ssm-cta.php' ?>
 
 </main>
 
