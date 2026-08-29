@@ -879,8 +879,7 @@
         }
 
         .host-hero_container {
-            grid-template-columns: 1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
@@ -938,27 +937,7 @@
         }
 
         .host-hero_visual {
-            min-height: 400px;
-
-            transform: scale(0.82);
-
-            transform-origin: center;
-        }
-
-        .host-floating_card--speed {
-            right: 0;
-        }
-
-        .host-floating_card--support {
-            right: -5%;
-        }
-
-        .host-node--server {
-            left: 0;
-        }
-
-        .host-node--cdn {
-            right: 0;
+            display: none;
         }
     }
 
