@@ -105,7 +105,7 @@
 
     /* Thin brand-gradient strip along the bottom, echoing the one
        used on the card panels elsewhere on the site */
-    .ssm-faqs::before {
+    /* .ssm-faqs::before {
         content: "";
         position: absolute;
         left: 0;
@@ -115,7 +115,7 @@
         background: var(--smm-gradient);
         opacity: 0.7;
         z-index: 0;
-    }
+    } */
 
     /* Faint dotted grid, bottom-right */
     .ssm-faqs::after {
