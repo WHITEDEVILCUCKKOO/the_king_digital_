@@ -5,6 +5,8 @@
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-home.php' ?>
     
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-stats.php' ?>
+    
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-solution.php' ?>
 
 </main>
 
