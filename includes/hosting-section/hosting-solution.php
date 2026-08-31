@@ -348,13 +348,14 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -60%;
+        left: -68%;
         width: 45%;
         height: 100%;
         background: linear-gradient(115deg, transparent, rgba(255, 255, 255, .14), transparent);
         transform: skewX(-18deg);
         transition: left .75s ease;
         pointer-events: none;
+        opacity: 0.5;
     }
 
     .hosting-solution_content-card:hover::before {
