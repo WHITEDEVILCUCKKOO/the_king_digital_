@@ -10,6 +10,8 @@
     
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-infrastructure.php' ?>
 
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-plan.php' ?>
+
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php' ?>
