@@ -114,11 +114,8 @@
        ======================================== */
 
     .hosting-faq-section {
-        background: var(--host-dark);
-        background-image:
-            radial-gradient(circle at 8% 10%, rgba(249, 115, 22, 0.10), transparent 45%),
-            radial-gradient(circle at 95% 85%, rgba(37, 99, 235, 0.12), transparent 45%);
-        padding: var(--host-section-space) 24px;
+        background: var(--host-bg-soft);
+        padding: 60px 24px;
     }
 
     .hosting-faq-container {
@@ -141,9 +138,9 @@
         font-size: 12.5px;
         font-weight: 700;
         letter-spacing: 0.06em;
-        color: var(--host-primary-light);
-        background: rgba(249, 115, 22, 0.12);
-        border: 1px solid rgba(249, 115, 22, 0.3);
+        color: var(--host-primary-dark);
+        background: var(--host-white);
+        border: 1px solid var(--host-border-orange);
         padding: 6px 14px;
         border-radius: 999px;
         margin-bottom: 18px;
@@ -153,20 +150,20 @@
         margin: 0 0 14px;
         font-size: clamp(28px, 3.4vw, 42px);
         line-height: 1.2;
-        color: var(--host-white);
+        color: var(--host-text);
         font-weight: 700;
         letter-spacing: -0.01em;
     }
 
     .hosting-faq-header h2 span {
-        color: var(--host-primary-light);
+        color: var(--host-primary);
     }
 
     .hosting-faq-header p {
         margin: 0;
         font-size: 16.5px;
         line-height: 1.6;
-        color: #9CA6B8;
+        color: var(--host-text-muted);
     }
 
     /* wrapper */
@@ -191,8 +188,8 @@
     }
 
     .hosting-faq-visual-card {
-        background: var(--host-dark-2);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--host-white);
+        border: 1px solid var(--host-border);
         border-radius: var(--host-radius-lg);
         padding: 32px 28px;
         box-shadow: var(--host-shadow-md);
@@ -205,8 +202,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(249, 115, 22, 0.14);
-        color: var(--host-primary-light);
+        background: var(--host-bg-orange);
+        color: var(--host-primary);
         font-size: 20px;
         margin-bottom: 18px;
     }
@@ -215,7 +212,7 @@
         margin: 0 0 12px;
         font-size: 19px;
         line-height: 1.35;
-        color: var(--host-white);
+        color: var(--host-text);
         font-weight: 700;
     }
 
@@ -223,7 +220,7 @@
         margin: 0 0 22px;
         font-size: 14px;
         line-height: 1.6;
-        color: #8B94A7;
+        color: var(--host-text-muted);
     }
 
     .hosting-faq-contact-btn {
@@ -257,20 +254,21 @@
     /* decorative server */
 
     .hosting-faq-server {
-        background: var(--host-dark-2);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--host-white);
+        border: 1px solid var(--host-border);
         border-radius: var(--host-radius-lg);
         padding: 20px;
         display: flex;
         flex-direction: column;
         gap: 10px;
+        box-shadow: var(--host-shadow-sm);
     }
 
     .faq-server-top {
         height: 6px;
         border-radius: 3px;
         background: linear-gradient(90deg, var(--host-primary), transparent);
-        opacity: 0.6;
+        opacity: 0.5;
         margin-bottom: 4px;
     }
 
@@ -278,8 +276,8 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        background: var(--host-dark-card);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: var(--host-bg-soft);
+        border: 1px solid var(--host-border);
         border-radius: 8px;
         padding: 10px 12px;
     }
@@ -288,8 +286,8 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: var(--host-primary-light);
-        box-shadow: 0 0 6px rgba(251, 146, 60, 0.7);
+        background: var(--host-primary);
+        box-shadow: 0 0 6px rgba(249, 115, 22, 0.5);
         animation: blink 2.5s ease-in-out infinite;
     }
 
@@ -332,15 +330,16 @@
     }
 
     .hosting-faq-item {
-        background: var(--host-dark-2);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--host-white);
+        border: 1px solid var(--host-border);
         border-radius: var(--host-radius-md);
         overflow: hidden;
-        transition: border-color 0.2s ease;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .hosting-faq-item.active {
-        border-color: rgba(249, 115, 22, 0.35);
+        border-color: var(--host-border-orange);
+        box-shadow: var(--host-shadow-sm);
     }
 
     .hosting-faq-question {
@@ -356,7 +355,7 @@
         padding: 18px 20px;
         font-size: 15px;
         font-weight: 600;
-        color: var(--host-white);
+        color: var(--host-text);
         font-family: inherit;
     }
 
@@ -368,8 +367,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--host-dark-card);
-        color: var(--host-primary-light);
+        background: var(--host-bg-orange);
+        color: var(--host-primary);
         font-size: 12px;
         transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
@@ -391,7 +390,7 @@
         padding: 0 20px 20px;
         font-size: 14px;
         line-height: 1.65;
-        color: #9CA6B8;
+        color: var(--host-text-secondary);
     }
 
     .hosting-faq-item.active .hosting-faq-answer {

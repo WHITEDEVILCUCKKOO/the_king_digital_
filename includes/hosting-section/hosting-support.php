@@ -452,6 +452,7 @@
     .performance-chart span:nth-child(2) {
         height: 65%;
         animation-delay: 0.1s;
+        background: var(--host-secondary);
     }
 
     .performance-chart span:nth-child(3) {
@@ -462,6 +463,7 @@
     .performance-chart span:nth-child(4) {
         height: 80%;
         animation-delay: 0.3s;
+        background: var(--host-secondary);
     }
 
     .performance-chart span:nth-child(5) {
@@ -472,6 +474,7 @@
     .performance-chart span:nth-child(6) {
         height: 90%;
         animation-delay: 0.5s;
+        background: var(--host-secondary);
     }
 
     .performance-chart span:nth-child(7) {
@@ -482,6 +485,7 @@
     .performance-chart span:nth-child(8) {
         height: 100%;
         animation-delay: 0.7s;
+        background: var(--host-secondary);
     }
 
     .performance-chart span:nth-child(9) {
@@ -492,17 +496,29 @@
     .performance-chart span:nth-child(10) {
         height: 85%;
         animation-delay: 0.9s;
+        background: var(--host-secondary);
     }
 
     @keyframes bar-grow {
 
-        0%,
-        100% {
-            transform: scaleY(0.85);
+        0% {
+            transform: scaleY(0.88);
+        }
+
+        25% {
+            transform: scaleY(0.94);
         }
 
         50% {
             transform: scaleY(1);
+        }
+
+        75% {
+            transform: scaleY(0.94);
+        }
+
+        100% {
+            transform: scaleY(0.88);
         }
     }
 

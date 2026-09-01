@@ -137,7 +137,7 @@
     .hosting-solution {
         position: relative;
         overflow: hidden;
-        padding: 30px 20px;
+        padding: 60px 20px;
         background: var(--host-dark);
     }
 
