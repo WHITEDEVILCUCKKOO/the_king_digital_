@@ -12,6 +12,8 @@
 
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-plan.php' ?>
 
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-why.php' ?>
+
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php' ?>
