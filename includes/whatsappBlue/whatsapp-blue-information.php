@@ -643,18 +643,11 @@
                 </h2>
 
                 <p class="whatsappBlue-about_text">
-                    The WhatsApp Blue Tick is a verification signal
-                    associated with an eligible business presence on
-                    WhatsApp. It helps distinguish an official business
-                    presence and gives customers an additional signal
-                    of authenticity.
+                    The <strong>WhatsApp Blue Tick (earlier WhatsApp Green Tick)</strong> is the official verification badge given by Meta to qualified companies that use the WhatsApp Business Platform.
                 </p>
 
                 <p class="whatsappBlue-about_text">
-                    For growing brands, verification can become part
-                    of a broader strategy to build a professional and
-                    recognizable presence while communicating with
-                    customers on WhatsApp.
+                    It verifies that your business is genuine, assisting clients in recognizing your brand credibility, having trust in your message, and interacting with reliability and customer confidence.
                 </p>
 
 
@@ -870,7 +863,7 @@
                 <div class="whatsappBlue-floating_trust">
 
                     <div class="floating-trust_icon">
-                        <i class="fa-solid fa-shield-check"></i>
+                        <i class="fa-solid fa-hands-helping"></i>
                     </div>
 
                     <div>
