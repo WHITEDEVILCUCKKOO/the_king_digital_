@@ -7,8 +7,6 @@
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-stats.php' ?>
     
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-solution.php' ?>
-    
-    <?php require_once __DIR__ . '/includes/hosting-section/hosting-infrastructure.php' ?>
 
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-plan.php' ?>
 
