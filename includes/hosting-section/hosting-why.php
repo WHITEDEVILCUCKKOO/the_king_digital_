@@ -135,6 +135,21 @@
         margin: 0 auto 56px;
     }
 
+    .hosting-eyebrow {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        background: var(--host-primary-light);
+        padding: 4px 12px;
+        border-radius: 999px;
+    }
+
+
+
     .hosting-why_content--heading h2 {
         font-size: clamp(28px, 3.4vw, 40px);
         line-height: 1.2;
@@ -241,6 +256,9 @@
 <section class="hosting-why">
     <div class="hosting-why_content">
         <div class="hosting-why_content--heading">
+            <span class="hosting-eyebrow">
+                Why choose <strong>The King Digital</strong> for hosting?
+            </span>
             <h2>More than just hosting</h2>
             <p>Everything you need to keep your digital presence fast, secure, and online.</p>
         </div>

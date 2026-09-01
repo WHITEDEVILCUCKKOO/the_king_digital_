@@ -132,6 +132,12 @@
             letter-spacing: -0.01em;
         }
 
+        .hosting-plan_content-heading h2 span {
+            color: var(--host-primary);
+            font-weight: 700;
+            font-size: clamp(28px, 3.4vw, 44px);
+        }
+
         .hosting-plan_content-heading p {
             color: var(--host-text-muted);
             font-size: 17px;
@@ -301,7 +307,7 @@
     <section class="hosting-plan">
         <div class="hosting-plan_content">
             <div class="hosting-plan_content-heading">
-                <h2>Choose the hosting that fits your business</h2>
+                <h2>Choose the <span>Perfect Hosting</span> that fits your business</h2>
                 <p>Simple, transparent plans built for websites of every size.</p>
             </div>
             <div class="hosting-plan_content-container">
