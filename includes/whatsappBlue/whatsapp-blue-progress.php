@@ -1,9 +1,8 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
     .whatsappBlue-process {
         position: relative;
-        padding: 30px 0 40px;
+        padding: 40px 0 20px;
         background: var(--wa-bg);
     }
 
