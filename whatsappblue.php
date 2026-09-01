@@ -14,6 +14,7 @@
     <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-information.php'; ?>
     <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-why.php'; ?>
     <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-benefits.php'; ?>
+    <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-who.php'; ?>
 
 </main>
 
