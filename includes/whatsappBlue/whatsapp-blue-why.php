@@ -94,7 +94,7 @@
 
     .whatsappBlue-why {
         position: relative;
-        padding: 88px 0;
+        padding: 60px 0;
         background: var(--wa-green-soft);
         overflow: hidden;
     }

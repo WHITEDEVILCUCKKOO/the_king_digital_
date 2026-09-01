@@ -94,7 +94,7 @@
 
     .whatsappBlue-benefits {
         position: relative;
-        padding: 88px 0;
+        padding: 60px 0;
         background: var(--wa-bg);
     }
 
