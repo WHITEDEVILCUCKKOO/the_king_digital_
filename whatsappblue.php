@@ -18,6 +18,7 @@
     <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-progress.php'; ?>
     <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-requirements.php'; ?>
     <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-whykd.php'; ?>
+    <?php require_once __DIR__ . '/includes/whatsappBlue/whatsapp-blue-faq.php'; ?>
 
 </main>
 
