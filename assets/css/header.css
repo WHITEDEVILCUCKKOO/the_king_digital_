@@ -27,26 +27,152 @@
 
 
 /* Utilities */
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-.section{padding:88px 0}
-.section-sm{padding:56px 0}
-.flex{display:flex;align-items:center}
-.gap-8{gap:8px} .gap-12{gap:12px} .gap-16{gap:16px} .gap-24{gap:24px}
-.tag{display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;background:var(--blue-lt);color:var(--blue);padding:5px 14px;border-radius:20px;margin-bottom:16px}
-.tag.orange{background:var(--gold-lt);color:var(--gold)}
-.tag .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
-.sh{font-size:clamp(26px,3.8vw,40px);font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
-.sub{font-size:16px;color:var(--txt2);line-height:1.85;max-width:560px}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:var(--trans);white-space:nowrap}
-.btn-primary{background:var(--gold);color:#fff;border-color:var(--gold)}
-.btn-primary:hover{background:var(--gold-dk);border-color:var(--gold-dk);transform:translateY(-2px);box-shadow:0 6px 20px rgba(249,115,22,.35)}
-.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
-.btn-blue:hover{background:var(--blue-dk);border-color:var(--blue-dk);transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,61,123,.3)}
-.btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}
-.btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
-.btn-white{background:#fff;color:var(--blue);border-color:#fff}
-.btn-white:hover{background:var(--blue-lt);transform:translateY(-2px)}
-.btn-sm{padding:8px 18px;font-size:13px}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px
+}
+
+.section {
+    padding: 88px 0
+}
+
+.section-sm {
+    padding: 56px 0
+}
+
+.flex {
+    display: flex;
+    align-items: center
+}
+
+.gap-8 {
+    gap: 8px
+}
+
+.gap-12 {
+    gap: 12px
+}
+
+.gap-16 {
+    gap: 16px
+}
+
+.gap-24 {
+    gap: 24px
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: var(--blue-lt);
+    color: var(--blue);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px
+}
+
+.tag.orange {
+    background: var(--gold-lt);
+    color: var(--gold)
+}
+
+.tag .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0
+}
+
+.sh {
+    font-size: clamp(26px, 3.8vw, 40px);
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: -.5px
+}
+
+.sub {
+    font-size: 16px;
+    color: var(--txt2);
+    line-height: 1.85;
+    max-width: 560px
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 24px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--trans);
+    white-space: nowrap
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold)
+}
+
+.btn-primary:hover {
+    background: var(--gold-dk);
+    border-color: var(--gold-dk);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, .35)
+}
+
+.btn-blue {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue)
+}
+
+.btn-blue:hover {
+    background: var(--blue-dk);
+    border-color: var(--blue-dk);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27, 61, 123, .3)
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--blue);
+    border-color: var(--blue)
+}
+
+.btn-outline:hover {
+    background: var(--blue);
+    color: #fff;
+    transform: translateY(-2px)
+}
+
+.btn-white {
+    background: #fff;
+    color: var(--blue);
+    border-color: #fff
+}
+
+.btn-white:hover {
+    background: var(--blue-lt);
+    transform: translateY(-2px)
+}
+
+.btn-sm {
+    padding: 8px 18px;
+    font-size: 13px
+}
 
 
 /* link bottom animtion */
@@ -55,6 +181,7 @@
 
     position: relative;
 }
+
 .bottom_link_78::after {
     content: "";
     position: absolute;
@@ -81,6 +208,7 @@
     position: relative;
     width: 100%;
 }
+
 .bottom_link_79::after {
     content: "";
     position: absolute;
@@ -102,10 +230,11 @@
 }
 
 
-.header_top{
+.header_top {
     position: sticky !important;
     top: 0;
     z-index: 999;
+    position: relative;
 }
 
 
@@ -197,9 +326,11 @@ nav {
     background: var(--blue-lt)
 }
 
-.has-dd {
+
+/* old dd header */
+/* .has-dd {
     position: relative;
-}
+} */
 
 .has-dd>a::after {
     content: ' ▾';
@@ -209,10 +340,13 @@ nav {
 .has-dd:hover .dd {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0)
+    transform: translate(-50%, 0);
+    /* transform: translateY(0) */
 }
 
-.dd {
+
+/* old dd code  */
+/* .dd {
     position: absolute;
     top: calc(100% + 6px);
     left: 0;
@@ -226,6 +360,33 @@ nav {
     visibility: hidden;
     transform: translateY(8px);
     transition: var(--trans)
+} */
+.dd {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    width: 99%;
+    margin: 0;
+
+    background: #fff;
+    border: 1px solid var(--bdr);
+    border-radius: 12px;
+
+    padding: 2.5rem;
+
+    box-shadow: var(--shlg);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, 8px);
+    transition: var(--trans);
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
 }
 
 .dd a {
@@ -234,7 +395,7 @@ nav {
     gap: 11px;
     padding: 10px 13px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--txt2);
     transition: var(--trans)
@@ -246,8 +407,8 @@ nav {
 }
 
 .dd-icon {
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
     border-radius: 7px;
     display: flex;
     align-items: center;
@@ -396,9 +557,9 @@ nav {
         width: 180px;
     }
 
-    
+
     .nav-links,
-    .nav-right  {
+    .nav-right {
         display: none;
     }
 

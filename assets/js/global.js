@@ -101,7 +101,7 @@ window.addEventListener('scroll', () => {
 
 
 
-// new counting function 
+// ==================== new counting function 
 document.querySelectorAll(".qunik-count").forEach((counter) => {
 
     const target = parseFloat(counter.dataset.target);
@@ -131,8 +131,44 @@ document.querySelectorAll(".qunik-count").forEach((counter) => {
     requestAnimationFrame(count);
 });
 
- 
+
 // how to use this new counting function in html
 // <span class="qunik-count" data-target="1.2" data-suffix="M">0</span>
 // <span class="qunik-count" data-target="98.9" data-suffix="%">0</span>
 // <span class="qunik-count" data-target="10" data-suffix="K+">0</span>
+
+
+
+
+
+// ==================== random number conter 
+function randomCounter(element) {
+
+    function animate() {
+        const start = Date.now();
+
+        function update() {
+
+            element.textContent = Math.floor(Math.random() * 10);
+
+            if (Date.now() - start < 800) {
+                requestAnimationFrame(update);
+            } else {
+                setTimeout(animate, 1000);
+            }
+        }
+
+        update();
+    }
+
+    animate();
+}
+
+document.querySelectorAll(".randomNumber").forEach(function (element) {
+    randomCounter(element);
+});
+
+
+// for use do this ( <span class="randomNumber">0</span> )
+
+
