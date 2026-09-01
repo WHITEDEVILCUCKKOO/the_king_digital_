@@ -3,6 +3,7 @@
 <style>
     .contact-main {
         font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
         
     }
 </style>

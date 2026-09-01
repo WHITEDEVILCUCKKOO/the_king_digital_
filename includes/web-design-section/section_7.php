@@ -38,7 +38,7 @@
   .kdst-container .kdst-stat:nth-child(4){ animation-delay: 0.26s; }
 
   .kdst-icon{
-    font-size: 24px;
+    font-size: 34px;
   }
 
   .kdst-num{
@@ -48,7 +48,7 @@
   }
 
   .kdst-label{
-    font-size: 12px;
+    font-size: 16px;
     color: #b9c2e6;
   }
 
@@ -68,7 +68,7 @@
     <div class="kdst-stat">
       <span class="kdst-icon">&#128578;</span>
       <div>
-        <div class="kdst-num">150+</div>
+        <div class="kdst-num qunik-count" data-target="150" data-suffix="+">0</div>
         <div class="kdst-label">Happy Clients</div>
       </div>
     </div>
@@ -76,7 +76,7 @@
     <div class="kdst-stat">
       <span class="kdst-icon">&#128188;</span>
       <div>
-        <div class="kdst-num">250+</div>
+        <div class="kdst-num qunik-count" data-target="250" data-suffix="+">0</div>
         <div class="kdst-label">Projects Completed</div>
       </div>
     </div>
@@ -84,7 +84,7 @@
     <div class="kdst-stat">
       <span class="kdst-icon">&#127942;</span>
       <div>
-        <div class="kdst-num">8+</div>
+        <div class="kdst-num qunik-count" data-target="8" data-suffix="+">0</div>
         <div class="kdst-label">Years of Experience</div>
       </div>
     </div>
@@ -92,7 +92,7 @@
     <div class="kdst-stat">
       <span class="kdst-icon">&#127911;</span>
       <div>
-        <div class="kdst-num">24/7</div>
+        <div class="kdst-num"><span class="qunik-count" data-target="27">0</span>/<span class="qunik-count" data-target="7">0</span></div>
         <div class="kdst-label">Support Available</div>
       </div>
     </div>

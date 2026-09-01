@@ -20,10 +20,15 @@
   }
 
   .kdte-heading{
-    font-size: 24px;
+    font-size: 44px;
     font-weight: 800;
     color: #101828;
     margin: 0 0 36px 0;
+  }
+
+  .kdte-heading em{
+    color: #2f6df3;
+    font-style: normal;
   }
 
   .kdte-grid{
@@ -90,6 +95,7 @@
     font-size: 11px;
     color: #7590d6;
     flex: 0 0 auto;
+    overflow: hidden;
   }
 
   .kdte-person-name{
@@ -132,7 +138,7 @@
 
 <section class="kdte-section">
   <p class="kdte-eyebrow">CLIENTS FEEDBACK</p>
-  <h2 class="kdte-heading">What Our Clients Say</h2>
+  <h2 class="kdte-heading">What Our <em>Clients Say</em></h2>
 
   <div class="kdte-grid" id="kdteGrid">
 
@@ -140,7 +146,7 @@
       <div class="kdte-quote-icon">&#8220;</div>
       <p class="kdte-quote-text">King Digital transformed our vision into a stunning website. Their attention to detail and support is incredible!</p>
       <div class="kdte-person">
-        <span class="kdte-avatar">Img</span>
+        <span class="kdte-avatar"><img src="assets/images/img/52.jpg" alt=""></span>
         <div>
           <div class="kdte-person-name">Rohit Sharma</div>
           <div class="kdte-person-role">CEO, Interior Studio</div>
@@ -152,7 +158,7 @@
       <div class="kdte-quote-icon">&#8220;</div>
       <p class="kdte-quote-text">Professional, creative and reliable! Our website not only looks great but also brings in more customers.</p>
       <div class="kdte-person">
-        <span class="kdte-avatar">Img</span>
+        <span class="kdte-avatar"><img src="assets/images/img/71.jpg" alt=""></span>
         <div>
           <div class="kdte-person-name">Priya Mehta</div>
           <div class="kdte-person-role">Marketing Head, Foodies</div>
@@ -164,7 +170,7 @@
       <div class="kdte-quote-icon">&#8220;</div>
       <p class="kdte-quote-text">Excellent team to work with. They delivered on time and the support after launch is fantastic.</p>
       <div class="kdte-person">
-        <span class="kdte-avatar">Img</span>
+        <span class="kdte-avatar"><img src="assets/images/img/68.jpg" alt=""></span>
         <div>
           <div class="kdte-person-name">Vikram Patel</div>
           <div class="kdte-person-role">Founder, TechVision</div>
@@ -174,7 +180,7 @@
 
   </div>
 
-  <div class="kdte-dots" id="kdteDots">
+  <div class="kdte-dots" id="kdteDots" style="display: none;">
     <span class="kdte-dot kdte-dot-active"></span>
     <span class="kdte-dot"></span>
     <span class="kdte-dot"></span>

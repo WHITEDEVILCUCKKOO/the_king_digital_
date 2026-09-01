@@ -88,7 +88,7 @@
                                 <!-- <a href="/email-marketing-company-india.html">
                                     <span class="dd-icon" style="background:#F5F3FF;color:#7C3AED"><i class="fas fa-envelope-open"></i></span>Email Marketing
                                 </a> -->
-                                <a href="https://www.kingcloud.in/">
+                                <a href="hosting-cloud.php">
                                     <span class="dd-icon" style="background:#F0FDF4;color:#16A34A"><i class="fas fa-server"></i></span>Hosting & Cloud
                                 </a>
                                 <a href="video-audio.php">
@@ -142,7 +142,7 @@
                 <a href="aggregator_platform.php">Aggregator Platform</a>
                 <a href="service-ivr.php">IVR & Voice</a>
                 <!-- <a href="/email-marketing-company-india.html">Email Marketing</a> -->
-                <a href="https://www.kingcloud.in/">Hosting & Cloud</a>
+                <a href="hosting-cloud.php">Hosting & Cloud</a>
                 <a href="video-audio.php">Video & Audio</a>
                 <div class="mob-nav-sep">Brands</div>
                 <a href="https://www.staticking.com/">StaticKing</a>
