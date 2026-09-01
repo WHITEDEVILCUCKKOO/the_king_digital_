@@ -9,10 +9,11 @@
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #0a0e1a;
     padding: 56px 20px;
+    position: relative;
   }
 
   .kdt-container{
-    max-width: 1100px;
+    max-width: 1130px;
     margin: 0 auto;
     text-align: center;
   }
@@ -26,17 +27,21 @@
   }
 
   .kdt-heading{
-    font-size: 24px;
+    font-size: 44px;
     font-weight: 800;
     color: #fff;
     margin: 0 0 40px 0;
+  }
+  .kdt-heading em{
+    font-style: normal;
+    color: #4E8DFF;
   }
 
   .kdt-grid{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 10px;
   }
 
   .kdt-badge{
@@ -74,8 +79,8 @@
   }
 
   .kdt-icon{
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -85,13 +90,13 @@
     color: #fff;
   }
 
-  .kdt-icon-html{ background: #e34f26; }
+  /* .kdt-icon-html{ background: #e34f26; }
   .kdt-icon-css{ background: #1572b6; }
   .kdt-icon-js{ background: #f0db4f; color: #1a1a1a; }
   .kdt-icon-react{ background: #20232a; color: #61dafb; }
   .kdt-icon-php{ background: #777bb4; }
-  .kdt-icon-mysql{ background: #1c2733; color: #00758f; }
-  .kdt-icon-wp{ background: #21759b; }
+  .kdt-icon-mysql{ background: #fcfcfc; color: #ffffff; }
+  .kdt-icon-wp{ background: #21759b; } */
 
   .kdt-label{
     font-size: 12.5px;
@@ -104,22 +109,77 @@
     .kdt-badge{ width: 100px; padding: 16px 8px; }
   }
 
+.glowing_box {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.8) 0%,
+        rgba(120,120,120,0.3) 35%,
+        transparent 70%
+    );
+    filter: blur(20px);
+    opacity: 0.45;
+    pointer-events: none;
+    animation: floatingGlow 6s ease-in-out infinite alternate;
+}
+
+.glowing_box:nth-child(1) {
+    top: -100px;
+    left: -80px;
+}
+
+.glowing_box:nth-child(2) {
+    top: 15%;
+    right: -120px;
+    animation-delay: 1s;
+}
+
+.glowing_box:nth-child(3) {
+    bottom: -120px;
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.glowing_box:nth-child(4) {
+    bottom: 5%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes floatingGlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, -25px) scale(1.15);
+    }
+}
+
 </style>
 
 <section class="kdt-section">
+  <div class="glowing_box"></div>
+  <div class="glowing_box"></div>
+  <div class="glowing_box"></div>
+  <!-- <div class="glowing_box"></div> -->
   <div class="kdt-container">
 
     <p class="kdt-eyebrow">TECHNOLOGIES WE USE</p>
-    <h2 class="kdt-heading">Powerful Technologies for Best Results</h2>
+    <h2 class="kdt-heading"><em>Powerful Technologies </em> <br> for Best Results</h2>
 
     <div class="kdt-grid">
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-html">5</span><span class="kdt-label">HTML5</span></div>
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-css">3</span><span class="kdt-label">CSS3</span></div>
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-js">JS</span><span class="kdt-label">JavaScript</span></div>
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-react">&#9883;</span><span class="kdt-label">React JS</span></div>
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-php">php</span><span class="kdt-label">PHP</span></div>
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-mysql">&#128034;</span><span class="kdt-label">MySQL</span></div>
-      <div class="kdt-badge"><span class="kdt-icon kdt-icon-wp">W</span><span class="kdt-label">WordPress</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-html"><img src="assets/images/logos/html_logo.png" alt=""></span><span class="kdt-label">HTML5</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-css"><img src="assets/images/logos/css_logo.png" alt=""></span><span class="kdt-label">CSS3</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-js"><img src="assets/images/logos/js_logo.png" alt=""></span><span class="kdt-label">JavaScript</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-react"><img src="assets/images/logos/react_logo.png" alt=""></span><span class="kdt-label">React JS</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-php"><img src="assets/images/logos/python_logo.png" alt=""></span><span class="kdt-label">Python</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-php"><img src="assets/images/logos/php_logo.png" alt=""></span><span class="kdt-label">PHP</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-mysql"><img src="assets/images/logos/mysql_logo.png" alt=""></span><span class="kdt-label">MySQL</span></div>
+      <div class="kdt-badge"><span class="kdt-icon kdt-icon-wp"><img src="assets/images/logos/wordpress_logo.png" alt=""></span><span class="kdt-label">WordPress</span></div>
     </div>
 
   </div>

@@ -89,7 +89,7 @@
     /* ---------- Left panel ---------- */
 
     .qcontact-panel {
-        background: #1C3D7B;
+        background: #f3eae2;
         border-radius: 22px;
         padding: 34px 30px;
         opacity: 0;
@@ -100,14 +100,14 @@
     .qcontact-panel-title {
         font-size: 21px;
         font-weight: 700;
-        color: #f3f4f5;
+        color: #141414;
         margin: 0 0 12px;
     }
 
     .qcontact-panel-desc {
         font-size: 13.8px;
         line-height: 1.7;
-        color: #cacbce;
+        color: #636364;
         margin: 0 0 24px;
     }
 
@@ -115,7 +115,7 @@
         display: flex;
         align-items: flex-start;
         gap: 14px;
-        background: #ffffff;
+        background: #ffffff8f;
         border-radius: 14px;
         padding: 16px 18px;
         margin-bottom: 14px;
@@ -170,7 +170,7 @@
     }
 
     .qcontact-response-card {
-        background: #ffffff;
+        background: #ffffff6e;
         border-radius: 14px;
         padding: 18px 18px 20px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -213,7 +213,8 @@
     /* ---------- Right form panel ---------- */
 
     .qcontact-form-panel {
-        background: #ffffff;
+
+        background: #1C3D7B;
         border: 1px solid #ececf5;
         border-radius: 22px;
         padding: 24px 34px 13px;
@@ -237,7 +238,7 @@
         display: block;
         font-size: 13.5px;
         font-weight: 700;
-        color: #171a2b;
+        color: #f4f5f8;
         margin-bottom: 8px;
     }
 
@@ -524,7 +525,7 @@
             <div class="qcontact-panel">
                 <h3 class="qcontact-panel-title">Let's Connect</h3>
                 <p class="qcontact-panel-desc">Have a question or a project in mind? Fill out the form and our team will get back to you within 24 hours. We're here to understand your needs and find the right solution for your business.
-</p>
+                </p>
 
                 <div class="qcontact-info-card">
                     <div class="qcontact-info-icon">

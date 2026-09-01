@@ -33,10 +33,15 @@
   }
 
   .kdj-heading{
-    font-size: 24px;
+    font-size: 44px;
     font-weight: 800;
     color: #101828;
     margin: 0;
+  }
+
+  .kdj-heading em {
+    color: #4E8DFF;
+    font-style: normal;
   }
 
   .kdj-view-all{
@@ -88,14 +93,20 @@
   }
 
   .kdj-thumb{
-    height: 150px;
+    width: 100%;
+    /* height: 150px; */
     display: flex;
-    align-items: flex-start;
-    padding: 14px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    box-sizing: border-box;
+    /* align-items: flex-start; */
+    /* padding: 14px; */
+    /* color: #fff; */
+    /* font-size: 13px; */
+    /* font-weight: 700; */
+    /* box-sizing: border-box; */
+
+    img{
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   .kdj-thumb-1{ background: linear-gradient(160deg, #4a3524, #241a14); }
@@ -170,7 +181,7 @@
     <div class="kdj-top-row">
       <div>
         <p class="kdj-eyebrow">OUR WORK</p>
-        <h2 class="kdj-heading">Our Recent Projects</h2>
+        <h2 class="kdj-heading">Our Recent <em> Projects</em></h2>
       </div>
       <button class="kdj-view-all">View All Projects &#8594;</button>
     </div>
@@ -178,7 +189,7 @@
     <div class="kdj-grid" id="kdjGrid">
 
       <div class="kdj-card">
-        <div class="kdj-thumb kdj-thumb-1">Interior Design Studio</div>
+        <div class="kdj-thumb kdj-thumb-1"><img src="assets/images/img/design_web_ss.png" alt=""></div>
         <div class="kdj-info">
           <div>
             <p class="kdj-info-title">Interior Design</p>
@@ -189,7 +200,7 @@
       </div>
 
       <div class="kdj-card">
-        <div class="kdj-thumb kdj-thumb-2">Healthy Food Delivery</div>
+        <div class="kdj-thumb kdj-thumb-2"><img src="assets/images/img/food_web_ss.png" alt=""></div>
         <div class="kdj-info">
           <div>
             <p class="kdj-info-title">Healthy Food Delivery</p>
@@ -200,7 +211,7 @@
       </div>
 
       <div class="kdj-card">
-        <div class="kdj-thumb kdj-thumb-3">Luxury Villas</div>
+        <div class="kdj-thumb kdj-thumb-3"><img src="assets/images/img/villa_lux.png" alt=""></div>
         <div class="kdj-info">
           <div>
             <p class="kdj-info-title">Luxury Villas</p>
@@ -211,7 +222,7 @@
       </div>
 
       <div class="kdj-card">
-        <div class="kdj-thumb kdj-thumb-4">Digital Agency</div>
+        <div class="kdj-thumb kdj-thumb-4"><img src="assets/images/img/digital_agence.png" alt=""></div>
         <div class="kdj-info">
           <div>
             <p class="kdj-info-title">Digital Agency</p>
@@ -223,7 +234,7 @@
 
     </div>
 
-    <div class="kdj-dots" id="kdjDots">
+    <div class="kdj-dots" id="kdjDots" style="display: none;">
       <span class="kdj-dot kdj-dot-active"></span>
       <span class="kdj-dot"></span>
       <span class="kdj-dot"></span>

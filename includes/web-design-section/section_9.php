@@ -27,14 +27,14 @@
   }
 
   .kdf-icon{
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: rgba(255,255,255,0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 22px;
     color: #fff;
     flex: 0 0 auto;
     animation: kdf-icon-pulse 2.5s ease-in-out infinite;
@@ -46,7 +46,7 @@
   }
 
   .kdf-title{
-    font-size: 17px;
+    font-size: 25px;
     font-weight: 800;
     color: #fff;
     margin: 0 0 4px 0;
