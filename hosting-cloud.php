@@ -12,6 +12,16 @@
 
     <?php require_once __DIR__ . '/includes/hosting-section/hosting-why.php' ?>
 
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-guarantee.php' ?>
+
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-dedicated.php' ?>
+
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-support.php' ?>
+
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-faq.php' ?>
+
+    <?php require_once __DIR__ . '/includes/hosting-section/hosting-cta.php' ?>
+
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php' ?>
