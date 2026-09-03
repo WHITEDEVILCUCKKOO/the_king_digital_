@@ -57,13 +57,56 @@
 
                     <div class="nav-links">
                         <a href="index.php" class="bottom_link_78">Home</a>
+                        
+                        <!-- product links -->
                         <div class="has-dd">
                             <a href="#" class="botom_link_78">Services</a>
                             <div class="dd">
                                 <a href="promotional-sms.php">
-                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></span>Promotional SMS
+                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i  style="font-size: 18px;"  class="fas fa-comment-sms"></i></span>Promotional SMS
                                 </a>
                                 <a href="service-whatsAppApi.php">
+                                    <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i  style="font-size: 18px;"  class="fab fa-whatsapp"></i></span>WhatsApp API
+                                </a>
+                                <a href="aggregator_platform.php">
+                                    <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i  style="font-size: 18px;"  class="fa-solid fa-mobile-screen-button"></i></span>Aggregator Platform
+                                </a>
+                                <a href="web-design.php">
+                                    <span class="dd-icon" style="background:#EEF2FF;color:#4F46E5"><i  style="font-size: 18px;"  class="fas fa-globe"></i></span>Website Design
+                                </a>
+                                <a href="seo-service.php">
+                                    <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i  style="font-size: 18px;"  class="fas fa-chart-line"></i></span>SEO Services
+                                </a>
+                                <!-- <div class="dd-sep"></div> -->
+                                <a href="rcs-service.php">
+                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i  style="font-size: 18px;"  class="fa-solid fa-mobile-screen-button"></i></span>RCS Service
+                                </a>
+                                <a href="service-ivr.php">
+                                    <span class="dd-icon" style="background:#FEF3C7;color:#D97706"><i  style="font-size: 18px;"  class="fas fa-phone-volume"></i></span>IVR & Voice
+                                </a>
+                                <a href="ai-voice.php">
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fa-solid fa-robot"></i></span>Ai Voice
+                                </a>
+                                <!-- <a href="/email-marketing-company-india.html">
+                                    <span class="dd-icon" style="background:#F5F3FF;color:#7C3AED"><i  style="font-size: 18px;"  class="fas fa-envelope-open"></i></span>Email Marketing
+                                </a> -->
+                                <a href="hosting-cloud.php">
+                                    <span class="dd-icon" style="background:#F0FDF4;color:#16A34A"><i  style="font-size: 18px;"  class="fas fa-server"></i></span>Hosting & Cloud
+                                </a>
+                                <a href="video-audio.php">
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fas fa-video"></i></span>Video & Audio
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- integration links -->
+                        <div class="has-dd_inter">
+                            <a href="#" class="botom_link_78">Iintegration</a>
+                            <div class="dd-inder">
+                                <a href="omni.php">
+                                    <span class="dd-icon" style="background: #e9ffe6;color: #23a811"><i  style="font-size: 18px;"  class="fa-solid fa-puzzle-piece"></i></span>Omni API
+                                </a>
+                                <!-- <a href="service-whatsAppApi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></span>WhatsApp API
                                 </a>
                                 <a href="aggregator_platform.php">
@@ -74,9 +117,9 @@
                                 </a>
                                 <a href="seo-service.php">
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fas fa-chart-line"></i></span>SEO Services
-                                </a>
+                                </a> -->
                                 <!-- <div class="dd-sep"></div> -->
-                                <a href="rcs-service.php">
+                                <!-- <a href="rcs-service.php">
                                     <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i class="fa-solid fa-mobile-screen-button"></i></span>RCS Service
                                 </a>
                                 <a href="service-ivr.php">
@@ -84,15 +127,15 @@
                                 </a>
                                 <a href="ai-voice.php">
                                     <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i class="fa-solid fa-robot"></i></span>Ai Voice
-                                </a>
+                                </a> -->
                                 <!-- <a href="/email-marketing-company-india.html">
                                     <span class="dd-icon" style="background:#F5F3FF;color:#7C3AED"><i class="fas fa-envelope-open"></i></span>Email Marketing
                                 </a> -->
-                                <a href="hosting-cloud.php">
-                                    <span class="dd-icon" style="background:#F0FDF4;color:#16A34A"><i class="fas fa-server"></i></span>Hosting & Cloud
+                                <a href="application-guide.php">
+                                    <span class="dd-icon" style="background: #f0f6fd;color: #1658a3"><i style="font-size: 18px;" class="fa-solid fa-circle-info"></i></span>Application Guide
                                 </a>
-                                <a href="video-audio.php">
-                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i class="fas fa-video"></i></span>Video & Audio
+                                <a href="other_api.php">
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fa-solid fa-circle-question"></i></span>other Api
                                 </a>
                             </div>
                         </div>
@@ -134,6 +177,12 @@
                 <a href="/portfolio.php">Portfolio</a>
                 <!-- <a href="/blog/">Blog</a> -->
                 <a href="contact.php">Contact Us</a>
+                <div class="mob-nav-sep">Iintegration</div>
+                <a href="omni.php">Omni Api</a>
+                <a href="application-guide.php">Application Guide</a>
+                <a href="other_api.php">Other Api</a>
+
+
                 <div class="mob-nav-sep">Services</div>
                 <a href="promotional-sms.php">Promotional SMS</a>
                 <a href="service-whatsAppApi.php">WhatsApp Business API</a>
