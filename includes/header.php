@@ -101,7 +101,7 @@
 
                         <!-- integration links -->
                         <div class="has-dd_inter">
-                            <a href="#" class="botom_link_78">Iintegration</a>
+                            <a href="#" class="botom_link_78">Integration</a>
                             <div class="dd-inder">
                                 <a href="omni.php">
                                     <span class="dd-icon" style="background: #e9ffe6;color: #23a811"><i  style="font-size: 18px;"  class="fa-solid fa-puzzle-piece"></i></span>Omni API
@@ -177,7 +177,7 @@
                 <a href="/portfolio.php">Portfolio</a>
                 <!-- <a href="/blog/">Blog</a> -->
                 <a href="contact.php">Contact Us</a>
-                <div class="mob-nav-sep">Iintegration</div>
+                <div class="mob-nav-sep">Integration</div>
                 <a href="omni.php">Omni Api</a>
                 <a href="application-guide.php">Application Guide</a>
                 <a href="other_api.php">Other Api</a>
