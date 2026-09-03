@@ -102,33 +102,96 @@ window.addEventListener('scroll', () => {
 
 
 // ==================== new counting function 
-document.querySelectorAll(".qunik-count").forEach((counter) => {
 
-    const target = parseFloat(counter.dataset.target);
-    const suffix = counter.dataset.suffix || "";
-    const duration = 2000;
-    const startTime = performance.now();
+document.addEventListener("DOMContentLoaded", () => {
 
-    function count(currentTime) {
+    const scrollBox = document.querySelector(".right_section_1");
 
-        const progress = Math.min(
-            (currentTime - startTime) / duration,
-            1
-        );
-
-        const ease = 1 - Math.pow(1 - progress, 3);
-        const value = target * ease;
-
-        counter.textContent =
-            (target % 1 !== 0 ? value.toFixed(1) : Math.floor(value))
-            + suffix;
-
-        if (progress < 1) {
-            requestAnimationFrame(count);
-        }
+    if (!scrollBox) {
+        console.log("right_section_1 not found");
+        return;
     }
 
-    requestAnimationFrame(count);
+    const counterSection = document.querySelector(".counrt_grid_wer854_card");
+
+    if (!counterSection) {
+        console.log("Counter section not found");
+        return;
+    }
+
+    function startCounter(counter) {
+
+        if (counter.dataset.counted === "true") {
+            return;
+        }
+
+        counter.dataset.counted = "true";
+
+        const target = parseFloat(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+        const duration = 2000;
+
+        const startTime = performance.now();
+
+        function count(currentTime) {
+
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            const ease = 1 - Math.pow(1 - progress, 3);
+
+            const value = target * ease;
+
+            counter.textContent =
+                (target % 1 !== 0
+                    ? value.toFixed(1)
+                    : Math.floor(value)
+                ) + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(count);
+            } else {
+                counter.textContent =
+                    (target % 1 !== 0
+                        ? target.toFixed(1)
+                        : target
+                    ) + suffix;
+            }
+        }
+
+        requestAnimationFrame(count);
+    }
+
+
+    const observer = new IntersectionObserver((entries, observer) => {
+
+        entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            console.log("Counter section visible");
+
+            const counters = counterSection.querySelectorAll(".qunik-count");
+
+            counters.forEach((counter) => {
+                startCounter(counter);
+            });
+
+            observer.unobserve(counterSection);
+        });
+
+    }, {
+        root: scrollBox,
+        threshold: 0.2
+    });
+
+
+    observer.observe(counterSection);
+
 });
 
 
