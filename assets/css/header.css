@@ -337,7 +337,20 @@ nav {
     font-size: 10px
 }
 
+.has-dd_inter>a::after {
+    content: ' ▾';
+    font-size: 10px
+}
+
 .has-dd:hover .dd {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    /* transform: translateY(0) */
+}
+
+
+.has-dd_inter:hover .dd-inder {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 0);
@@ -422,6 +435,56 @@ nav {
     background: var(--bdr);
     margin: 6px 0
 }
+
+
+
+/* dd-inder */
+.dd-inder {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    width: 99%;
+    margin: 0;
+
+    background: #fff;
+    border: 1px solid var(--bdr);
+    border-radius: 12px;
+
+    padding: 2.5rem;
+
+    box-shadow: var(--shlg);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, 8px);
+    transition: var(--trans);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.dd-inder a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--txt2);
+    transition: var(--trans)
+}
+
+.dd-inder a:hover {
+    background: var(--blue-lt);
+    color: var(--blue)
+}
+
+
 
 .nav-right {
     display: flex;
