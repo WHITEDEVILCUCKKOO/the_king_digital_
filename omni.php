@@ -154,7 +154,7 @@
             font-size: 13px;
             font-weight: 500;
             color: var(--nav-soft);
-            padding: 10px 14px;
+            padding: 6px 8px;
             border-radius: 6px;
             cursor: pointer;
         }
@@ -181,10 +181,11 @@
             font-weight: 700;
             letter-spacing: .02em;
             color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            min-width: 38px;
+            padding: 3px 7px;
+            border-radius: 5px;
+            min-width: 36px;
             text-align: center;
+            line-height: 1.3;
         }
 
         .method-GET {
@@ -227,17 +228,51 @@
             border-right: 1px solid var(--border);
         }
 
+        .omni_content--main-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
         .omni_content--main-heading h2 {
-            font-size: 34px;
+            font-size: 26px;
             font-weight: 700;
             margin: 0 0 10px;
             letter-spacing: -.01em;
         }
 
+        .authorize-btn {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #a7f3d0;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background .15s ease, border-color .15s ease;
+            white-space: nowrap;
+        }
+
+        .authorize-btn:hover {
+            background: #d1fae5;
+            border-color: var(--accent);
+        }
+
+        .authorize-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
         .endpoint-meta {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 18px;
         }
 
@@ -245,11 +280,13 @@
             font-size: 13.5px;
             background: var(--bg-soft);
             border: 1px solid var(--border);
-            padding: 6px 10px;
-            border-radius: 6px;
+            padding: 8px 12px;
+            border-radius: 8px;
             color: var(--nav-soft);
             overflow-x: auto;
             white-space: nowrap;
+            flex: 1;
+            min-width: 0;
         }
 
         .endpoint-desc {
@@ -265,14 +302,10 @@
         }
 
         .doc-section h3 {
-            font-size: 13px;
+            font-size: 16px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .04em;
-            color: var(--nav-soft);
-            margin: 0 0 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
+            color: var(--nav);
+            margin: 0 0 14px;
         }
 
         .doc-empty {
@@ -346,6 +379,55 @@
             max-width: 100%;
         }
 
+        .code-panel {
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--nav);
+        }
+
+        .code-panel-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: #94a3b8;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .code-panel-head svg {
+            width: 12px;
+            height: 12px;
+            opacity: .7;
+        }
+
+        .code-panel pre.code-block {
+            border-radius: 0;
+        }
+
+        .tok-str {
+            color: #fca5a5;
+        }
+
+        .tok-key {
+            color: #7dd3fc;
+        }
+
+        .tok-flag {
+            color: #93c5fd;
+        }
+
+        .tok-num {
+            color: #fcd34d;
+        }
+
+        .tok-punct {
+            color: #64748b;
+        }
+
         /* ============ RIGHT PANEL ============ */
 
         .omni_content--rightside {
@@ -370,38 +452,46 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .rightside-language-btn button {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 6px;
+            width: 56px;
             border: 1px solid var(--border);
             background: #fff;
-            border-radius: 6px;
-            padding: 6px 10px;
-            font-size: 12.5px;
+            border-radius: 10px;
+            padding: 10px 4px;
+            font-size: 11px;
             font-weight: 600;
             color: var(--nav-soft);
             cursor: pointer;
             transition: all .15s ease;
         }
 
+        .rightside-language-btn button p {
+            margin: 0;
+        }
+
         .rightside-language-btn button span svg {
-            width: 13px;
-            height: 13px;
+            width: 18px;
+            height: 18px;
         }
 
         .rightside-language-btn button:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: #cbd5e1;
+            color: var(--nav);
         }
 
         .rightside-language-btn button.active {
-            background: #ffffff67;
+            background: #fff;
             border-color: var(--nav);
-            color: #000;
+            color: var(--nav);
+            box-shadow: 0 0 0 1px var(--nav);
         }
 
         .rightside-request,
@@ -576,53 +666,140 @@
             margin-left: 4px;
         }
 
-        /* ============ MOBILE NAV TOGGLE ============ */
+        /* ============ MOBILE / TABLET TOPBAR + DRAWER ============ */
 
-        .mobile-nav-toggle {
+        .mobile-topbar {
+            display: none;
+        }
+
+        .sidebar-backdrop {
+            display: none;
+        }
+
+        .sidebar-drawer-head {
             display: none;
         }
 
         /* ============ RESPONSIVE ============ */
 
-        @media (max-width: 1180px) {
+        @media (max-width: 1180px) and (min-width: 1025px) {
             .omni_content {
                 grid-template-columns: 240px minmax(0, 1fr) 320px;
             }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
             .omni_content {
                 grid-template-columns: 1fr;
             }
 
-            .omni_content--leftside {
-                position: static;
-                height: auto;
-                max-height: none;
-                border-right: none;
+            .mobile-topbar {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                position: sticky;
+                top: 0;
+                z-index: 900;
+                background: #fff;
                 border-bottom: 1px solid var(--border);
-                display: none;
+                padding: 12px 16px;
+            }
+
+            .hamburger-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border: 1px solid var(--border);
+                background: var(--bg-soft);
+                border-radius: 8px;
+                cursor: pointer;
+                flex-shrink: 0;
+                color: var(--nav);
+                transition: background .15s ease, border-color .15s ease;
+            }
+
+            .hamburger-btn:hover {
+                background: #fff;
+                border-color: #cbd5e1;
+            }
+
+            .hamburger-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .mobile-topbar-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--nav);
+            }
+
+            .omni_content--leftside {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 280px;
+                max-width: 84vw;
+                background: #fff;
+                border-right: 1px solid var(--border);
+                transform: translateX(-100%);
+                transition: transform .25s ease;
+                z-index: 1100;
+                box-shadow: 8px 0 24px rgba(15, 23, 42, .12);
             }
 
             .omni_content--leftside.mobile-open {
-                display: block;
+                transform: translateX(0);
             }
 
-            .mobile-nav-toggle {
+            .sidebar-drawer-head {
                 display: flex;
                 align-items: center;
-                gap: 8px;
-                width: 100%;
-                border: 1px solid var(--border);
-                background: var(--bg-soft);
-                border-radius: var(--radius);
-                padding: 10px 12px;
+                justify-content: space-between;
+                margin-bottom: 14px;
+                padding: 0 2px;
+            }
+
+            .sidebar-drawer-head span {
                 font-size: 13px;
-                font-weight: 600;
+                font-weight: 700;
                 color: var(--nav);
+            }
+
+            .sidebar-close-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 28px;
+                height: 28px;
+                border: none;
+                background: var(--bg-soft);
+                border-radius: 6px;
                 cursor: pointer;
-                margin: 12px 16px 0;
-                width: calc(100% - 32px);
+                color: var(--nav-soft);
+            }
+
+            .sidebar-close-btn svg {
+                width: 15px;
+                height: 15px;
+            }
+
+            .sidebar-backdrop {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(15, 23, 42, .45);
+                z-index: 1050;
+                opacity: 0;
+                transition: opacity .2s ease;
+            }
+
+            .sidebar-backdrop.open {
+                display: block;
+                opacity: 1;
             }
 
             .omni_content--main {
@@ -650,12 +827,29 @@
     </style>
 
     <section class="omni">
-        <button class="mobile-nav-toggle" id="mobileNavToggle" type="button">
-            <span>&#9776;</span> Browse endpoints
-        </button>
+        <div class="mobile-topbar">
+            <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <span class="mobile-topbar-title">API Reference</span>
+        </div>
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
         <div class="omni_content">
             <div class="omni_content--leftside" id="sidebarContainer">
+                <div class="sidebar-drawer-head">
+                    <span>Menu</span>
+                    <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" aria-label="Close menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
                 <button class="omni_content--input" id="searchOpenBtn" type="button">
                     <span>
                         <svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -672,9 +866,17 @@
             <div class="omni_content--main" id="mainContent">
                 <div class="omni_content--main-heading">
                     <h2 id="endpointTitle"></h2>
-                    <div class="endpoint-meta" id="endpointMeta"></div>
-                    <p class="endpoint-desc" id="endpointDesc"></p>
+                    <button class="authorize-btn" id="authorizeBtn" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                            <path d="m21 2-9.6 9.6"></path>
+                            <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                        </svg>
+                        <span>Authorize</span>
+                    </button>
                 </div>
+                <div class="endpoint-meta" id="endpointMeta"></div>
+                <p class="endpoint-desc" id="endpointDesc"></p>
 
                 <div class="doc-section">
                     <h3>Headers</h3>
@@ -697,16 +899,28 @@
                 <div class="rightside-language-btn" id="languageButtons"><!-- rendered by renderLanguageButtons() --></div>
 
                 <div class="rightside-request">
-                    <h5>Request</h5>
-                    <div class="code-panel-scroll">
-                        <pre class="code-block" id="requestCode"></pre>
+                    <div class="code-panel">
+                        <div class="code-panel-head">
+                            <span id="requestPanelLabel">SHELL REQUEST</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                        <div class="code-panel-scroll">
+                            <pre class="code-block" id="requestCode"></pre>
+                        </div>
                     </div>
                 </div>
 
                 <div class="right-response">
-                    <h5>Response <span class="status-code" id="responseStatus">200 OK</span></h5>
-                    <div class="code-panel-scroll">
-                        <pre class="code-block" id="responseCode"></pre>
+                    <div class="code-panel">
+                        <div class="code-panel-head">
+                            <span>RESPONSE</span>
+                            <span class="status-code" id="responseStatus">200 OK</span>
+                        </div>
+                        <div class="code-panel-scroll">
+                            <pre class="code-block" id="responseCode"></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -738,6 +952,8 @@
             /* =========================================================
                1. DATA — single source of truth for the whole doc page
                ========================================================= */
+            const BASE_URL = "https://omni.icpaas.ai";
+
             const apiData = {
                 categories: [{
                         name: "Getting Started",
@@ -747,13 +963,7 @@
                             method: "AUTH",
                             path: "",
                             description: "Learn how to authenticate API requests.",
-                            status: "Not Set",
-                            headers: [{
-                                name: "Authorization",
-                                type: "string",
-                                required: true,
-                                description: "Bearer token"
-                            }]
+                            status: "Not Set"
                         }]
                     },
                     {
@@ -1286,6 +1496,31 @@
                 return JSON.stringify(value, null, 2);
             }
 
+            // Lightweight token highlighter for request/response code panels.
+            // Tokenizes the RAW (unescaped) string first, escaping each piece as it's
+            // emitted, so HTML entities never collide with the matching logic.
+            function highlightCode(code) {
+                const pattern = /("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')(\s*:)?|(--[a-zA-Z-]+|(?:^|\s)-[a-zA-Z])|\b(\d+(?:\.\d+)?)\b/g;
+                let result = "";
+                let lastIndex = 0;
+                let m;
+                while ((m = pattern.exec(code)) !== null) {
+                    result += escapeHtml(code.slice(lastIndex, m.index));
+                    if (m[1]) {
+                        result += m[2] ?
+                            `<span class="tok-key">${escapeHtml(m[1])}</span>${escapeHtml(m[2])}` :
+                            `<span class="tok-str">${escapeHtml(m[1])}</span>`;
+                    } else if (m[3]) {
+                        result += `<span class="tok-flag">${escapeHtml(m[3])}</span>`;
+                    } else if (m[4]) {
+                        result += `<span class="tok-num">${escapeHtml(m[4])}</span>`;
+                    }
+                    lastIndex = pattern.lastIndex;
+                }
+                result += escapeHtml(code.slice(lastIndex));
+                return result;
+            }
+
             /* =========================================================
                5. SIDEBAR
                ========================================================= */
@@ -1327,6 +1562,13 @@
                     group.appendChild(head);
                     group.appendChild(items);
                     container.appendChild(group);
+
+                    if (catIndex === 0) {
+                        const eyebrow = document.createElement("div");
+                        eyebrow.className = "sidebar-eyebrow";
+                        eyebrow.textContent = "API Endpoints";
+                        container.appendChild(eyebrow);
+                    }
                 });
 
                 updateActiveSidebarItem();
@@ -1382,11 +1624,11 @@
 
             function renderLanguageButtons() {
                 const iconMap = {
-                    shell: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(116, 192, 252)" d="M9.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L146.7 256 9.4 118.6zM224 384l256 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>`,
-                    node: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="rgb(37, 200, 14)" d="M224.5 508c-6.7 0-13.5-1.8-19.4-5.2l-61.7-36.5c-9.2-5.2-4.7-7-1.7-8 12.3-4.3 14.8-5.2 27.9-12.7 1.4-.8 3.2-.5 4.6 .4l47.4 28.1c1.7 1 4.1 1 5.7 0L412 367.5c1.7-1 2.8-3 2.8-5l0-213.2c0-2.1-1.1-4-2.9-5.1L227.3 37.7c-1.7-1-4-1-5.7 0L37.1 144.3c-1.8 1-2.9 3-2.9 5.1l0 213.1c0 2 1.1 4 2.9 4.9l50.6 29.2c27.5 13.7 44.3-2.4 44.3-18.7l0-210.4c0-3 2.4-5.3 5.4-5.3l23.4 0c2.9 0 5.4 2.3 5.4 5.3l0 210.5c0 36.6-20 57.6-54.7 57.6-10.7 0-19.1 0-42.5-11.6L20.6 396.1c-12-6.9-19.4-19.8-19.4-33.7l0-213.1c0-13.8 7.4-26.8 19.4-33.7L205.1 9c11.7-6.6 27.2-6.6 38.8 0L428.6 115.7c12 6.9 19.4 19.8 19.4 33.7l0 213.1c0 13.8-7.4 26.7-19.4 33.7L243.9 502.8c-5.9 3.4-12.6 5.2-19.4 5.2zM373.6 297.9c0-39.9-27-50.5-83.7-58-57.4-7.6-63.2-11.5-63.2-24.9 0-11.1 4.9-25.9 47.4-25.9 37.9 0 51.9 8.2 57.7 33.8 .5 2.4 2.7 4.2 5.2 4.2l24 0c1.5 0 2.9-.6 3.9-1.7s1.5-2.6 1.4-4.1c-3.7-44.1-33-64.6-92.2-64.6-52.7 0-84.1 22.2-84.1 59.5 0 40.4 31.3 51.6 81.8 56.6 60.5 5.9 65.2 14.8 65.2 26.7 0 20.6-16.6 29.4-55.5 29.4-48.9 0-59.6-12.3-63.2-36.6-.4-2.6-2.6-4.5-5.3-4.5l-23.9 0c-3 0-5.3 2.4-5.3 5.3 0 31.1 16.9 68.2 97.8 68.2 58.4-.1 92-23.2 92-63.4z"/></svg>`,
-                    ruby: `<svg width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5941 19.8407L8.8916 27.9998L26.6338 26.7925L28.0003 8.85254L22.5941 19.8407Z" fill="url(#paint0_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6631 26.7806L25.1381 16.2261L20.9844 21.7262L26.6631 26.7806Z" fill="url(#paint1_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6836 26.7803L15.5117 25.9009L8.95117 27.9769L26.6836 26.7803Z" fill="url(#paint2_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.96674 27.9796L11.7576 18.811L5.61621 20.1279L8.96674 27.9796Z" fill="url(#paint3_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M27.4176 11.8117L20.4706 6.12207L18.5361 12.3936L27.4176 11.8117Z" fill="url(#paint4_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M24.1684 4.09336L20.0826 6.35755L17.5049 4.06299L24.1684 4.09336Z" fill="url(#paint5_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M4 23.2031L5.7116 20.0729L4.32706 16.3438L4 23.2031Z" fill="url(#paint6_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23535 16.2259L5.62838 20.1883L11.6814 18.8265L18.592 12.3862L20.5422 6.17431L17.4714 4L12.2506 5.95931C10.6057 7.49347 7.41387 10.529 7.29879 10.5861C7.18493 10.6444 5.19109 14.4233 4.23535 16.2259Z" fill="white"></path> <path d="M11.7227 18.7882L18.592 12.3863L18.5951 12.3765L20.9832 21.7566L11.7227 18.7882Z" fill="url(#paint7_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.12619 9.10774C12.6911 5.56325 17.2869 3.46911 19.0506 5.2535C20.8132 7.03789 18.944 11.3744 15.3791 14.9176C11.8141 18.4609 7.27528 20.6705 5.5128 18.8861C3.74911 17.1029 5.56126 12.651 9.12619 9.10774Z" fill="url(#paint8_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.9668 27.9755L11.7359 18.7778L20.9323 21.7405C17.6072 24.8671 13.909 27.5103 8.9668 27.9755Z" fill="url(#paint9_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.6035 12.3679L20.9644 21.7454C23.742 18.8167 26.2349 15.6682 27.4558 11.7739L18.6035 12.3679Z" fill="url(#paint10_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M27.4317 11.8217C28.3765 8.96229 28.5945 4.86025 24.1392 4.09863L20.4834 6.12354L27.4317 11.8217Z" fill="url(#paint11_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M4 23.162C4.13082 27.8812 7.52617 27.9515 8.97249 27.9929L5.63166 20.1689L4 23.162Z" fill="#9E1209"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.6172 12.3826C20.7515 13.6981 25.0531 16.3401 25.1403 16.3887C25.2758 16.4652 26.9948 13.4819 27.3849 11.7959L18.6172 12.3826Z" fill="url(#paint12_radial_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7324 18.7778L15.4342 25.9397C17.6231 24.7493 19.3371 23.2989 20.907 21.7453L11.7324 18.7778Z" fill="url(#paint13_radial_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.61728 20.1783L5.09277 26.4413C6.08243 27.7969 7.44396 27.9147 8.87211 27.8091C7.83885 25.2303 5.77475 20.0739 5.61728 20.1783Z" fill="url(#paint14_linear_87_8208)"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4619 6.1393L27.8159 7.17422C27.4234 5.50644 26.2181 4.43022 24.1637 4.09375L20.4619 6.1393Z" fill="url(#paint15_linear_87_8208)"></path> <defs> <linearGradient id="paint0_linear_87_8208" x1="25.0863" y1="30.1825" x2="20.0019" y2="21.2307" gradientUnits="userSpaceOnUse"> <stop stop-color="#FB7655"></stop> <stop offset="0.41" stop-color="#E42B1E"></stop> <stop offset="0.99" stop-color="#990000"></stop> <stop offset="1" stop-color="#990000"></stop> </linearGradient> <linearGradient id="paint1_linear_87_8208" x1="27.6086" y1="22.6528" x2="21.0723" y2="18.2786" gradientUnits="userSpaceOnUse"> <stop stop-color="#871101"></stop> <stop offset="0.99" stop-color="#911209"></stop> <stop offset="1" stop-color="#911209"></stop> </linearGradient> <linearGradient id="paint2_linear_87_8208" x1="22.3878" y1="30.4542" x2="15.8517" y2="26.0802" gradientUnits="userSpaceOnUse"> <stop stop-color="#871101"></stop> <stop offset="0.99" stop-color="#911209"></stop> <stop offset="1" stop-color="#911209"></stop> </linearGradient> <linearGradient id="paint3_linear_87_8208" x1="8.68769" y1="19.4743" x2="9.70472" y2="26.0657" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="0.23" stop-color="#E57252"></stop> <stop offset="0.46" stop-color="#DE3B20"></stop> <stop offset="0.99" stop-color="#A60003"></stop> <stop offset="1" stop-color="#A60003"></stop> </linearGradient> <linearGradient id="paint4_linear_87_8208" x1="21.8192" y1="7.10002" x2="22.9409" y2="11.9204" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="0.18" stop-color="#E46342"></stop> <stop offset="0.4" stop-color="#C82410"></stop> <stop offset="0.99" stop-color="#A80D00"></stop> <stop offset="1" stop-color="#A80D00"></stop> </linearGradient> <linearGradient id="paint5_linear_87_8208" x1="18.4117" y1="5.40177" x2="23.2251" y2="3.00175" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="0.54" stop-color="#C81F11"></stop> <stop offset="0.99" stop-color="#BF0905"></stop> <stop offset="1" stop-color="#BF0905"></stop> </linearGradient> <linearGradient id="paint6_linear_87_8208" x1="4.47282" y1="17.7935" x2="4.87073" y2="21.7663" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="0.31" stop-color="#DE4024"></stop> <stop offset="0.99" stop-color="#BF190B"></stop> <stop offset="1" stop-color="#BF190B"></stop> </linearGradient> <linearGradient id="paint7_linear_87_8208" x1="15.6452" y1="13.3187" x2="16.02" y2="20.0464" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="0.23" stop-color="#E4714E"></stop> <stop offset="0.56" stop-color="#BE1A0D"></stop> <stop offset="0.99" stop-color="#A80D00"></stop> <stop offset="1" stop-color="#A80D00"></stop> </linearGradient> <linearGradient id="paint8_linear_87_8208" x1="1.75216" y1="22.8404" x2="20.4078" y2="3.71053" gradientUnits="userSpaceOnUse"> <stop stop-color="#BD0012"></stop> <stop offset="0.07" stop-color="white"></stop> <stop offset="0.17" stop-color="white"></stop> <stop offset="0.27" stop-color="#C82F1C"></stop> <stop offset="0.33" stop-color="#820C01"></stop> <stop offset="0.46" stop-color="#A31601"></stop> <stop offset="0.72" stop-color="#B31301"></stop> <stop offset="0.99" stop-color="#E82609"></stop> <stop offset="1" stop-color="#E82609"></stop> </linearGradient> <linearGradient id="paint9_linear_87_8208" x1="16.0015" y1="24.7752" x2="10.3965" y2="23.3957" gradientUnits="userSpaceOnUse"> <stop stop-color="#8C0C01"></stop> <stop offset="0.54" stop-color="#990C00"></stop> <stop offset="0.99" stop-color="#A80D0E"></stop> <stop offset="1" stop-color="#A80D0E"></stop> </linearGradient> <linearGradient id="paint10_linear_87_8208" x1="25.6251" y1="18.0314" x2="20.635" y2="13.5714" gradientUnits="userSpaceOnUse"> <stop stop-color="#7E110B"></stop> <stop offset="0.99" stop-color="#9E0C00"></stop> <stop offset="1" stop-color="#9E0C00"></stop> </linearGradient> <linearGradient id="paint11_linear_87_8208" x1="27.4539" y1="9.82314" x2="24.9671" y2="7.17189" gradientUnits="userSpaceOnUse"> <stop stop-color="#79130D"></stop> <stop offset="0.99" stop-color="#9E120B"></stop> <stop offset="1" stop-color="#9E120B"></stop> </linearGradient> <radialGradient id="paint12_radial_87_8208" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(21.4229 13.6432) scale(6.09995 6.11692)"> <stop stop-color="#A80D00"></stop> <stop offset="0.99" stop-color="#7E0E08"></stop> <stop offset="1" stop-color="#7E0E08"></stop> </radialGradient> <radialGradient id="paint13_radial_87_8208" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.9755 21.7042) scale(8.10906 8.13164)"> <stop stop-color="#A30C00"></stop> <stop offset="0.99" stop-color="#800E08"></stop> <stop offset="1" stop-color="#800E08"></stop> </radialGradient> <linearGradient id="paint14_linear_87_8208" x1="7.23075" y1="27.9701" x2="5.19975" y2="21.0987" gradientUnits="userSpaceOnUse"> <stop stop-color="#8B2114"></stop> <stop offset="0.43" stop-color="#9E100A"></stop> <stop offset="0.99" stop-color="#B3100C"></stop> <stop offset="1" stop-color="#B3100C"></stop> </linearGradient> <linearGradient id="paint15_linear_87_8208" x1="22.7321" y1="5.19037" x2="27.2663" y2="7.18628" gradientUnits="userSpaceOnUse"> <stop stop-color="#B31000"></stop> <stop offset="0.44" stop-color="#910F08"></stop> <stop offset="0.99" stop-color="#791C12"></stop> <stop offset="1" stop-color="#791C12"></stop> </linearGradient> </defs> </g></svg>`,
-                    php: `<svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_php3</title><path d="M7.6,13.791a2.352,2.352,0,0,1,1.745.483,1.916,1.916,0,0,1,.207,1.66,2.78,2.78,0,0,1-.918,1.748,3.375,3.375,0,0,1-2.07.529h-1.4L6.024,13.8ZM2,22.677H4.3l.545-2.8H6.812A7.049,7.049,0,0,0,8.956,19.6a4.06,4.06,0,0,0,1.53-.918A4.585,4.585,0,0,0,11.93,16.1a3.288,3.288,0,0,0-.55-2.922A3.671,3.671,0,0,0,8.47,12.129H4.057Z" style="fill:#8993be"></path><path d="M13.617,9.323H15.9l-.553,2.8h2.031a3.956,3.956,0,0,1,2.645.669,2.213,2.213,0,0,1,.436,2.167l-.954,4.909H17.195l.908-4.667a1.267,1.267,0,0,0-.114-1.086,1.6,1.6,0,0,0-1.144-.286H15.022l-1.175,6.044H11.559Z" style="fill:#8993be"></path><path d="M25.539,13.791a2.352,2.352,0,0,1,1.745.483,1.916,1.916,0,0,1,.207,1.66,2.78,2.78,0,0,1-.918,1.748,3.375,3.375,0,0,1-2.074.529H23.1l.858-4.416Zm-5.6,8.886h2.3l.545-2.8h1.968A7.049,7.049,0,0,0,26.9,19.6a4.06,4.06,0,0,0,1.53-.918A4.585,4.585,0,0,0,29.869,16.1a3.288,3.288,0,0,0-.55-2.922,3.671,3.671,0,0,0-2.909-1.046h-4.42Z" style="fill:#8993be"></path></g></svg>`,
-                    python: `<svg width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><linearGradient id="a" x1="-133.268" y1="-202.91" x2="-133.198" y2="-202.84" gradientTransform="translate(25243.061 38519.17) scale(189.38 189.81)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#387eb8"></stop><stop offset="1" stop-color="#366994"></stop></linearGradient><linearGradient id="b" x1="-133.575" y1="-203.203" x2="-133.495" y2="-203.133" gradientTransform="translate(25309.061 38583.42) scale(189.38 189.81)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe052"></stop><stop offset="1" stop-color="#ffc331"></stop></linearGradient></defs><title>file_type_python</title><path d="M15.885,2.1c-7.1,0-6.651,3.07-6.651,3.07V8.36h6.752v1H6.545S2,8.8,2,16.005s4.013,6.912,4.013,6.912H8.33V19.556s-.13-4.013,3.9-4.013h6.762s3.772.06,3.772-3.652V5.8s.572-3.712-6.842-3.712h0ZM12.153,4.237a1.214,1.214,0,1,1-1.183,1.244v-.02a1.214,1.214,0,0,1,1.214-1.214h0Z" style="fill:url(#a)"></path><path d="M16.085,29.91c7.1,0,6.651-3.08,6.651-3.08V23.65H15.985v-1h9.47S30,23.158,30,15.995s-4.013-6.912-4.013-6.912H23.64V12.4s.13,4.013-3.9,4.013H12.975S9.2,16.356,9.2,20.068V26.2s-.572,3.712,6.842,3.712h.04Zm3.732-2.147A1.214,1.214,0,1,1,21,26.519v.03a1.214,1.214,0,0,1-1.214,1.214h.03Z" style="fill:url(#b)"></path></g></svg>`
+                    shell: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.792725 12.2929L5.08562 8.00002L0.792725 3.70712L2.20694 2.29291L7.91405 8.00002L2.20694 13.7071L0.792725 12.2929Z" fill="currentColor"></path><path d="M7.00006 15H15.0001V13H7.00006V15Z" fill="currentColor"></path></svg>`,
+                    node: `<svg fill="#000000" width="64px" height="64px" viewBox="-1.5 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m10.639 24c-.001 0-.002 0-.003 0-.339 0-.656-.091-.928-.251l.009.005-2.937-1.737c-.438-.246-.224-.332-.08-.383.506-.159.946-.365 1.352-.618l-.024.014c.028-.013.06-.02.094-.02.046 0 .089.014.125.038l-.001-.001 2.256 1.339c.039.021.086.034.136.034s.097-.013.138-.035l-.002.001 8.794-5.077c.081-.05.134-.138.134-.238 0-.001 0-.001 0-.002v-10.147c-.001-.101-.055-.19-.136-.239l-.001-.001-8.791-5.072c-.039-.022-.086-.035-.135-.035s-.096.013-.137.036l.001-.001-8.789 5.073c-.083.049-.138.138-.139.24v10.149c0 .101.055.188.137.234l.001.001 2.41 1.392c1.307.654 2.107-.116 2.107-.889v-10.022c0-.14.114-.254.254-.254h.003 1.115.001c.14 0 .254.113.254.254v10.022c0 1.745-.95 2.746-2.604 2.746-.02 0-.043.001-.066.001-.725 0-1.402-.205-1.976-.56l-2.29-1.318c-.556-.328-.922-.923-.922-1.605v-10.151c.001-.68.368-1.273.914-1.595l.009-.005 8.795-5.082c.267-.149.585-.236.924-.236s.658.088.934.241l-.01-.005 8.794 5.082c.555.327.921.92.923 1.6v10.15c-.001.681-.368 1.276-.915 1.6l-.009.005-8.792 5.078c-.264.155-.582.246-.922.246-.002 0-.005 0-.007 0z"></path><path d="m13.356 17.009c-3.848 0-4.655-1.766-4.655-3.249v-.001c0-.14.113-.253.253-.253h.002 1.137.001c.127 0 .232.093.252.214v.001c.171 1.158.683 1.742 3.01 1.742 1.853 0 2.64-.419 2.64-1.402 0-.567-.223-.987-3.102-1.269-2.406-.24-3.894-.77-3.894-2.695 0-1.774 1.496-2.833 4-2.833 2.818 0 4.212.978 4.388 3.076.001.007.001.015.001.022 0 .141-.114.254-.254.254h-1.133c-.12 0-.221-.085-.246-.198v-.002c-.274-1.218-.94-1.607-2.746-1.607-2.023 0-2.258.705-2.258 1.232 0 .64.278.826 3.009 1.187 2.702.358 3.986.863 3.986 2.762-.004 1.919-1.601 3.017-4.388 3.017z"></path></g></svg>`,
+                    ruby: `<svg fill="#000000" width="64px" height="64px" viewBox="-1.5 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m6.28 7.906-.014-.014-2.96 2.96 7.186 7.174 2.96-2.946 4.226-4.226-2.96-2.96v-.014h-8.452z"></path><path d="m10.466 0-10.466 6v12l10.466 6 10.466-6v-12zm8.466 16.854-8.466 4.88-8.466-4.88v-9.734l8.466-4.88 8.466 4.88z"></path></g></svg>`,
+                    php: `<svg fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="5151e0c8492e5103c096af88a51e39be"> <path display="inline" d="M171.844,204.374c-11.137-12.748-28.856-19.123-53.146-19.123H37.96L0.5,377.99h41.984l9.96-51.241 h35.963c15.869,0,28.923-1.663,39.173-5.003c10.247-3.33,19.562-8.92,27.945-16.767c7.037-6.467,12.725-13.599,17.087-21.4 c4.354-7.797,7.448-16.401,9.278-25.812C186.333,234.919,182.98,217.124,171.844,204.374z M138.493,254.823 c-2.903,14.917-8.492,25.563-16.775,31.941c-8.288,6.38-20.897,9.569-37.822,9.569H58.354l15.678-80.667H102.8 c15.952,0,26.582,2.943,31.896,8.832C140.006,230.39,141.275,240.497,138.493,254.823z M337.828,237.059l-17.429,89.69h-42.317 l16.572-85.278c1.884-9.702,1.193-16.32-2.084-19.847c-3.272-3.529-10.242-5.296-20.9-5.296h-33.289l-21.458,110.421h-41.656 l37.46-192.739h41.656l-9.959,51.241h37.111c23.346,0,39.452,4.077,48.317,12.218C338.718,205.615,341.371,218.813,337.828,237.059 z M499.554,204.374c-11.137-12.748-28.856-19.123-53.142-19.123h-80.738l-37.46,192.739h41.984l9.96-51.241h35.963 c15.869,0,28.918-1.663,39.169-5.003c10.247-3.33,19.562-8.92,27.945-16.767c7.036-6.467,12.729-13.599,17.088-21.4 c4.354-7.797,7.447-16.401,9.277-25.812C514.042,234.919,510.694,217.124,499.554,204.374z M466.206,254.823 c-2.902,14.917-8.491,25.563-16.779,31.941c-8.284,6.38-20.896,9.569-37.822,9.569h-25.537l15.678-80.667h28.765 c15.952,0,26.581,2.943,31.899,8.832C467.72,230.39,468.984,240.497,466.206,254.823z"> </path> </g> </g></svg>`,
+                    python: `<svg width="64px" height="64px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>python [#127]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7599.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M296.744,7457.45798 C296.262,7457.45798 295.872,7457.06594 295.872,7456.58142 C295.872,7456.0969 296.262,7455.70587 296.744,7455.70587 C297.226,7455.70587 297.616,7456.0969 297.616,7456.58142 C297.616,7457.06594 297.226,7457.45798 296.744,7457.45798 M294.072,7459 C299.15,7459 298.833,7456.78649 298.833,7456.78649 L298.827,7454.49357 L293.982,7454.49357 L293.982,7453.80499 L300.751,7453.80499 C300.751,7453.80499 304,7454.17591 304,7449.02614 C304,7443.87636 301.165,7444.0583 301.165,7444.0583 L299.472,7444.0583 L299.472,7446.44873 C299.472,7446.44873 299.563,7449.29855 296.682,7449.29855 L291.876,7449.29855 C291.876,7449.29855 289.176,7449.25533 289.176,7451.9222 L289.176,7456.33112 C289.176,7456.33112 288.766,7459 294.072,7459 M291.257,7440.54202 C291.739,7440.54202 292.128,7440.93406 292.128,7441.41858 C292.128,7441.9031 291.739,7442.29413 291.257,7442.29413 C290.775,7442.29413 290.385,7441.9031 290.385,7441.41858 C290.385,7440.93406 290.775,7440.54202 291.257,7440.54202 M293.928,7439 C288.851,7439 289.168,7441.21351 289.168,7441.21351 L289.174,7443.50643 L294.019,7443.50643 L294.019,7444.19501 L287.249,7444.19501 C287.249,7444.19501 284,7443.82409 284,7448.97386 C284,7454.12364 286.836,7453.9417 286.836,7453.9417 L288.528,7453.9417 L288.528,7451.55127 C288.528,7451.55127 288.437,7448.70145 291.319,7448.70145 L296.124,7448.70145 C296.124,7448.70145 298.824,7448.74467 298.824,7446.0778 L298.824,7441.66888 C298.824,7441.66888 299.234,7439 293.928,7439" id="python-[#127]"> </path> </g> </g> </g> </g></svg>`
                 };
 
                 const container = document.getElementById("languageButtons");
@@ -1410,12 +1652,16 @@
                 const reqEl = document.getElementById("requestCode");
                 const resEl = document.getElementById("responseCode");
                 const statusEl = document.getElementById("responseStatus");
+                const labelEl = document.getElementById("requestPanelLabel");
+
+                const langMeta = LANGUAGES.find((l) => l.key === currentLanguage);
+                labelEl.textContent = `${(langMeta ? langMeta.label : currentLanguage).toUpperCase()} REQUEST`;
 
                 const langCode = endpoint && endpoint.languages ? endpoint.languages[currentLanguage] : null;
-                reqEl.textContent = langCode ? langCode : "// No code example available for this language yet.";
+                reqEl.innerHTML = langCode ? highlightCode(langCode) : "// No code example available for this language yet.";
 
                 if (endpoint && endpoint.response !== undefined) {
-                    resEl.textContent = jsonToPretty(endpoint.response);
+                    resEl.innerHTML = highlightCode(jsonToPretty(endpoint.response));
                     statusEl.textContent = "200 OK";
                     statusEl.style.display = "";
                 } else {
@@ -1427,7 +1673,7 @@
             /* =========================================================
                7. loadEndpoint — the core render function
                ========================================================= */
-            function loadEndpoint(endpointId) {
+            function loadEndpoint(endpointId, skipScroll) {
                 const endpoint = findEndpoint(endpointId);
                 if (!endpoint) return;
 
@@ -1436,13 +1682,17 @@
 
                 document.getElementById("endpointTitle").textContent = endpoint.title;
 
+                const authBtn = document.getElementById("authorizeBtn");
+                authBtn.style.display = endpoint.method === "AUTH" ? "none" : "flex";
+
                 const metaEl = document.getElementById("endpointMeta");
                 if (endpoint.method === "AUTH") {
                     metaEl.innerHTML = `<span class="method-badge ${methodClass(endpoint.method)}">AUTH</span>`;
                 } else {
+                    const fullUrl = endpoint.path ? `${BASE_URL}${endpoint.path}` : "";
                     metaEl.innerHTML = `
-                <span class="method-badge ${methodClass(endpoint.method)}">${escapeHtml(endpoint.method)}</span>
-                ${endpoint.path ? `<code class="endpoint-path">${escapeHtml(endpoint.path)}</code>` : ""}
+                <span class="method-badge ${methodClass(endpoint.method)}">${escapeHtml(methodBadgeText(endpoint.method))}</span>
+                ${fullUrl ? `<code class="endpoint-path">${escapeHtml(fullUrl)}</code>` : `<code class="endpoint-path">Path not documented yet</code>`}
             `;
                 }
 
@@ -1455,15 +1705,18 @@
                 renderCodePanels(endpoint);
                 updateActiveSidebarItem();
 
-                // collapse mobile sidebar after selection on small screens
-                if (window.innerWidth <= 900) {
+                // collapse mobile/tablet sidebar drawer after selection
+                if (window.innerWidth <= 1024) {
                     document.getElementById("sidebarContainer").classList.remove("mobile-open");
+                    document.getElementById("sidebarBackdrop").classList.remove("open");
                 }
 
-                document.getElementById("mainContent").scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                if (!skipScroll) {
+                    document.getElementById("mainContent").scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
             }
 
             /* =========================================================
@@ -1535,6 +1788,8 @@
             document.addEventListener("keydown", (e) => {
                 if (e.key === "Escape" && overlay.classList.contains("open")) {
                     closeSearch();
+                } else if (e.key === "Escape" && sidebarEl.classList.contains("mobile-open")) {
+                    closeSidebarDrawer();
                 } else if (e.key === "/" && !overlay.classList.contains("open") && document.activeElement.tagName !== "INPUT") {
                     e.preventDefault();
                     openSearch();
@@ -1542,18 +1797,33 @@
             });
 
             /* =========================================================
-               9. MOBILE NAV TOGGLE
+               9. MOBILE / TABLET NAV DRAWER
                ========================================================= */
-            document.getElementById("mobileNavToggle").addEventListener("click", () => {
-                document.getElementById("sidebarContainer").classList.toggle("mobile-open");
-            });
+            const sidebarEl = document.getElementById("sidebarContainer");
+            const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+
+            function openSidebarDrawer() {
+                sidebarEl.classList.add("mobile-open");
+                sidebarBackdrop.classList.add("open");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeSidebarDrawer() {
+                sidebarEl.classList.remove("mobile-open");
+                sidebarBackdrop.classList.remove("open");
+                document.body.style.overflow = "";
+            }
+
+            document.getElementById("hamburgerBtn").addEventListener("click", openSidebarDrawer);
+            document.getElementById("sidebarCloseBtn").addEventListener("click", closeSidebarDrawer);
+            sidebarBackdrop.addEventListener("click", closeSidebarDrawer);
 
             /* =========================================================
                10. INIT
                ========================================================= */
             renderSidebar();
             const firstEndpoint = flattenEndpoints()[0];
-            if (firstEndpoint) loadEndpoint(firstEndpoint.id);
+            if (firstEndpoint) loadEndpoint(firstEndpoint.id, true);
         })();
     </script>
 
