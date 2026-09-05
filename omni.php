@@ -18,9 +18,12 @@
             --auth: #6b7280;
             --radius: 8px;
             --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 8px rgba(15, 23, 42, 0.04);
+            --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
         }
 
         .omni {
+            font-family: var(--sans);
             color: var(--nav);
             background: var(--bg);
         }
@@ -57,6 +60,7 @@
             cursor: pointer;
             margin-bottom: 18px;
             transition: border-color .15s ease, background .15s ease;
+            font-family: inherit;
         }
 
         .omni_content--input:hover {
@@ -87,6 +91,7 @@
             border: 1px solid var(--border);
             border-radius: 4px;
             padding: 1px 5px;
+            font-family: var(--mono);
         }
 
         .sidebar-eyebrow {
@@ -109,6 +114,7 @@
             justify-content: space-between;
             background: transparent;
             border: none;
+            font-family: inherit;
             font-size: 12.5px;
             font-weight: 700;
             color: var(--nav);
@@ -151,6 +157,7 @@
             text-align: left;
             border: none;
             background: transparent;
+            font-family: inherit;
             font-size: 13px;
             font-weight: 500;
             color: var(--nav-soft);
@@ -250,6 +257,7 @@
             border: 1px solid #a7f3d0;
             background: var(--accent-soft);
             color: var(--accent);
+            font-family: inherit;
             font-size: 13px;
             font-weight: 600;
             padding: 8px 16px;
@@ -259,15 +267,17 @@
             white-space: nowrap;
         }
 
-        .authorize-btn:hover {
-            background: #d1fae5;
+        .authorize-btn:hover { background: #d1fae5; border-color: var(--accent); }
+
+        .authorize-btn.authorized {
+            background: var(--accent);
             border-color: var(--accent);
+            color: #fff;
         }
 
-        .authorize-btn svg {
-            width: 14px;
-            height: 14px;
-        }
+        .authorize-btn.authorized:hover { background: #047857; }
+
+        .authorize-btn svg { width: 14px; height: 14px; }
 
         .endpoint-meta {
             display: flex;
@@ -277,6 +287,7 @@
         }
 
         .endpoint-path {
+            font-family: var(--mono);
             font-size: 13.5px;
             background: var(--bg-soft);
             border: 1px solid var(--border);
@@ -349,6 +360,7 @@
         }
 
         .prop-name {
+            font-family: var(--mono);
             font-weight: 600;
             color: var(--nav);
         }
@@ -360,6 +372,7 @@
 
         .prop-type {
             color: var(--accent);
+            font-family: var(--mono);
             font-size: 12px;
         }
 
@@ -372,6 +385,7 @@
             color: #e2e8f0;
             padding: 14px 16px;
             border-radius: var(--radius);
+            font-family: var(--mono);
             font-size: 12.5px;
             line-height: 1.6;
             overflow-x: auto;
@@ -404,29 +418,84 @@
             opacity: .7;
         }
 
+        .code-panel-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 0;
+            transition: color .15s ease, background .15s ease;
+        }
+
+        .copy-btn:hover {
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .copy-btn svg {
+            width: 13px;
+            height: 13px;
+            opacity: 1;
+        }
+
+        .copy-btn.copied {
+            color: #34d399;
+        }
+
+        .code-panel[hidden] {
+            display: none;
+        }
+
+        .try-it-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            width: 100%;
+            border: 1px dashed #a7f3d0;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 14px;
+            transition: background .15s ease, border-color .15s ease;
+        }
+
+        .try-it-btn:hover {
+            background: #d1fae5;
+            border-color: var(--accent);
+        }
+
+        .try-it-btn svg {
+            width: 13px;
+            height: 13px;
+        }
+
         .code-panel pre.code-block {
             border-radius: 0;
         }
 
-        .tok-str {
-            color: #fca5a5;
-        }
-
-        .tok-key {
-            color: #7dd3fc;
-        }
-
-        .tok-flag {
-            color: #93c5fd;
-        }
-
-        .tok-num {
-            color: #fcd34d;
-        }
-
-        .tok-punct {
-            color: #64748b;
-        }
+        .tok-str { color: #fca5a5; }
+        .tok-key { color: #7dd3fc; }
+        .tok-flag { color: #93c5fd; }
+        .tok-num { color: #fcd34d; }
+        .tok-punct { color: #64748b; }
 
         /* ============ RIGHT PANEL ============ */
 
@@ -470,12 +539,11 @@
             font-weight: 600;
             color: var(--nav-soft);
             cursor: pointer;
+            font-family: inherit;
             transition: all .15s ease;
         }
 
-        .rightside-language-btn button p {
-            margin: 0;
-        }
+        .rightside-language-btn button p { margin: 0; }
 
         .rightside-language-btn button span svg {
             width: 18px;
@@ -511,6 +579,7 @@
         }
 
         .status-code {
+            font-family: var(--mono);
             font-size: 11px;
             background: var(--accent-soft);
             color: var(--accent);
@@ -584,6 +653,7 @@
             border: none;
             outline: none;
             font-size: 15px;
+            font-family: inherit;
             color: var(--nav);
         }
 
@@ -616,6 +686,7 @@
             padding: 9px 10px;
             border-radius: 8px;
             cursor: pointer;
+            font-family: inherit;
         }
 
         .search-result-item:hover,
@@ -659,12 +730,139 @@
         }
 
         .search-modal-foot kbd {
+            font-family: var(--mono);
             background: var(--bg-soft);
             border: 1px solid var(--border);
             border-radius: 4px;
             padding: 1px 5px;
             margin-left: 4px;
         }
+
+        /* ============ AUTHORIZE MODAL ============ */
+
+        .authorize-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(2px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1200;
+            opacity: 0;
+            transition: opacity .15s ease;
+        }
+
+        .authorize-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .authorize-modal {
+            width: 100%;
+            max-width: 380px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, .25);
+            overflow: hidden;
+            margin: 0 16px;
+            transform: scale(.97) translateY(-6px);
+            transition: transform .15s ease;
+        }
+
+        .authorize-overlay.open .authorize-modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .authorize-modal-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .authorize-modal-head h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--nav);
+        }
+
+        .authorize-modal-body {
+            padding: 18px;
+        }
+
+        .authorize-modal-body label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--nav-soft);
+            margin-bottom: 6px;
+        }
+
+        .authorize-modal-body input {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 11px;
+            font-size: 13.5px;
+            font-family: var(--mono);
+            outline: none;
+            color: var(--nav);
+        }
+
+        .authorize-modal-body input:focus {
+            border-color: var(--accent);
+        }
+
+        .authorize-hint {
+            font-size: 11.5px;
+            color: #94a3b8;
+            margin: 10px 0 0;
+            line-height: 1.5;
+        }
+
+        .authorize-hint code {
+            font-family: var(--mono);
+            background: var(--bg-soft);
+            border-radius: 4px;
+            padding: 1px 4px;
+        }
+
+        .authorize-modal-foot {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            padding: 14px 18px;
+            border-top: 1px solid var(--border);
+        }
+
+        .authorize-clear-btn,
+        .authorize-save-btn {
+            font-family: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .authorize-clear-btn {
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--nav-soft);
+        }
+
+        .authorize-clear-btn:hover { background: var(--bg-soft); }
+
+        .authorize-save-btn {
+            border: 1px solid var(--accent);
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .authorize-save-btn:hover { background: #047857; }
 
         /* ============ MOBILE / TABLET TOPBAR + DRAWER ============ */
 
@@ -720,15 +918,9 @@
                 transition: background .15s ease, border-color .15s ease;
             }
 
-            .hamburger-btn:hover {
-                background: #fff;
-                border-color: #cbd5e1;
-            }
+            .hamburger-btn:hover { background: #fff; border-color: #cbd5e1; }
 
-            .hamburger-btn svg {
-                width: 18px;
-                height: 18px;
-            }
+            .hamburger-btn svg { width: 18px; height: 18px; }
 
             .mobile-topbar-title {
                 font-size: 14px;
@@ -782,10 +974,7 @@
                 color: var(--nav-soft);
             }
 
-            .sidebar-close-btn svg {
-                width: 15px;
-                height: 15px;
-            }
+            .sidebar-close-btn svg { width: 15px; height: 15px; }
 
             .sidebar-backdrop {
                 display: none;
@@ -829,11 +1018,7 @@
     <section class="omni">
         <div class="mobile-topbar">
             <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Open menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
             <span class="mobile-topbar-title">API Reference</span>
         </div>
@@ -844,10 +1029,7 @@
                 <div class="sidebar-drawer-head">
                     <span>Menu</span>
                     <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" aria-label="Close menu">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                 </div>
                 <button class="omni_content--input" id="searchOpenBtn" type="button">
@@ -867,11 +1049,7 @@
                 <div class="omni_content--main-heading">
                     <h2 id="endpointTitle"></h2>
                     <button class="authorize-btn" id="authorizeBtn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="7.5" cy="15.5" r="5.5"></circle>
-                            <path d="m21 2-9.6 9.6"></path>
-                            <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
                         <span>Authorize</span>
                     </button>
                 </div>
@@ -899,12 +1077,19 @@
                 <div class="rightside-language-btn" id="languageButtons"><!-- rendered by renderLanguageButtons() --></div>
 
                 <div class="rightside-request">
-                    <div class="code-panel">
+                    <button class="try-it-btn" id="tryItBtn" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                        <span>Try it</span>
+                    </button>
+                    <div class="code-panel" id="requestPanel" hidden>
                         <div class="code-panel-head">
                             <span id="requestPanelLabel">SHELL REQUEST</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m6 9 6 6 6-6"></path>
-                            </svg>
+                            <div class="code-panel-actions">
+                                <button class="copy-btn" data-copy-target="requestCode" type="button" aria-label="Copy request code">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                </button>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                            </div>
                         </div>
                         <div class="code-panel-scroll">
                             <pre class="code-block" id="requestCode"></pre>
@@ -913,15 +1098,39 @@
                 </div>
 
                 <div class="right-response">
-                    <div class="code-panel">
+                    <div class="code-panel" id="responsePanel" hidden>
                         <div class="code-panel-head">
                             <span>RESPONSE</span>
-                            <span class="status-code" id="responseStatus">200 OK</span>
+                            <div class="code-panel-actions">
+                                <button class="copy-btn" data-copy-target="responseCode" type="button" aria-label="Copy response code">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                </button>
+                                <span class="status-code" id="responseStatus">200 OK</span>
+                            </div>
                         </div>
                         <div class="code-panel-scroll">
                             <pre class="code-block" id="responseCode"></pre>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ AUTHORIZE MODAL ============ -->
+        <div class="authorize-overlay" id="authorizeOverlay">
+            <div class="authorize-modal">
+                <div class="authorize-modal-head">
+                    <h3>Authorize</h3>
+                    <button class="search-modal-close" id="authorizeCloseBtn" type="button">&times;</button>
+                </div>
+                <div class="authorize-modal-body">
+                    <label for="apiKeyInput">Bearer Token</label>
+                    <input type="text" id="apiKeyInput" placeholder="Enter your API key" autocomplete="off">
+                    <p class="authorize-hint">Saved in this browser only. Once set, it replaces <code>YOUR_API_KEY</code> in every code example on the right.</p>
+                </div>
+                <div class="authorize-modal-foot">
+                    <button class="authorize-clear-btn" id="authorizeClearBtn" type="button">Clear</button>
+                    <button class="authorize-save-btn" id="authorizeSaveBtn" type="button">Save</button>
                 </div>
             </div>
         </div>
@@ -1434,6 +1643,12 @@
                ========================================================= */
             let currentEndpointId = null;
             let currentLanguage = "shell";
+            let authToken = "";
+            try {
+                authToken = window.localStorage.getItem("omniApiToken") || "";
+            } catch (e) {
+                authToken = "";
+            }
 
             /* =========================================================
                3. HELPERS
@@ -1507,9 +1722,9 @@
                 while ((m = pattern.exec(code)) !== null) {
                     result += escapeHtml(code.slice(lastIndex, m.index));
                     if (m[1]) {
-                        result += m[2] ?
-                            `<span class="tok-key">${escapeHtml(m[1])}</span>${escapeHtml(m[2])}` :
-                            `<span class="tok-str">${escapeHtml(m[1])}</span>`;
+                        result += m[2]
+                            ? `<span class="tok-key">${escapeHtml(m[1])}</span>${escapeHtml(m[2])}`
+                            : `<span class="tok-str">${escapeHtml(m[1])}</span>`;
                     } else if (m[3]) {
                         result += `<span class="tok-flag">${escapeHtml(m[3])}</span>`;
                     } else if (m[4]) {
@@ -1657,7 +1872,10 @@
                 const langMeta = LANGUAGES.find((l) => l.key === currentLanguage);
                 labelEl.textContent = `${(langMeta ? langMeta.label : currentLanguage).toUpperCase()} REQUEST`;
 
-                const langCode = endpoint && endpoint.languages ? endpoint.languages[currentLanguage] : null;
+                let langCode = endpoint && endpoint.languages ? endpoint.languages[currentLanguage] : null;
+                if (langCode && authToken) {
+                    langCode = langCode.split("YOUR_API_KEY").join(authToken);
+                }
                 reqEl.innerHTML = langCode ? highlightCode(langCode) : "// No code example available for this language yet.";
 
                 if (endpoint && endpoint.response !== undefined) {
@@ -1684,6 +1902,7 @@
 
                 const authBtn = document.getElementById("authorizeBtn");
                 authBtn.style.display = endpoint.method === "AUTH" ? "none" : "flex";
+                updateAuthorizeButtonUI();
 
                 const metaEl = document.getElementById("endpointMeta");
                 if (endpoint.method === "AUTH") {
@@ -1703,6 +1922,7 @@
                 renderResponseMain(endpoint.response);
                 renderLanguageButtons();
                 renderCodePanels(endpoint);
+                resetTryIt();
                 updateActiveSidebarItem();
 
                 // collapse mobile/tablet sidebar drawer after selection
@@ -1711,7 +1931,9 @@
                     document.getElementById("sidebarBackdrop").classList.remove("open");
                 }
 
-                if (!skipScroll) {
+                // Only auto-scroll on mobile/tablet, where the drawer can leave content
+                // scrolled out of view. On desktop this caused an unwanted "jump" on every click.
+                if (!skipScroll && window.innerWidth <= 1024) {
                     document.getElementById("mainContent").scrollIntoView({
                         behavior: "smooth",
                         block: "start"
@@ -1785,9 +2007,127 @@
                 if (e.target === overlay) closeSearch();
             });
 
+            /* =========================================================
+               8.5 AUTHORIZE MODAL
+               ========================================================= */
+            const authorizeOverlay = document.getElementById("authorizeOverlay");
+            const apiKeyInput = document.getElementById("apiKeyInput");
+
+            function updateAuthorizeButtonUI() {
+                const btn = document.getElementById("authorizeBtn");
+                if (!btn) return;
+                const label = btn.querySelector("span");
+                if (authToken) {
+                    btn.classList.add("authorized");
+                    if (label) label.textContent = "Authorized";
+                } else {
+                    btn.classList.remove("authorized");
+                    if (label) label.textContent = "Authorize";
+                }
+            }
+
+            function openAuthorize() {
+                apiKeyInput.value = authToken;
+                authorizeOverlay.classList.add("open");
+                setTimeout(() => apiKeyInput.focus(), 30);
+            }
+
+            function closeAuthorize() {
+                authorizeOverlay.classList.remove("open");
+            }
+
+            document.getElementById("authorizeBtn").addEventListener("click", openAuthorize);
+            document.getElementById("authorizeCloseBtn").addEventListener("click", closeAuthorize);
+            authorizeOverlay.addEventListener("click", (e) => {
+                if (e.target === authorizeOverlay) closeAuthorize();
+            });
+
+            document.getElementById("authorizeSaveBtn").addEventListener("click", () => {
+                authToken = apiKeyInput.value.trim();
+                try {
+                    window.localStorage.setItem("omniApiToken", authToken);
+                } catch (e) { /* localStorage unavailable — token still works for this session */ }
+                updateAuthorizeButtonUI();
+                renderCodePanels(findEndpoint(currentEndpointId));
+                closeAuthorize();
+            });
+
+            document.getElementById("authorizeClearBtn").addEventListener("click", () => {
+                authToken = "";
+                apiKeyInput.value = "";
+                try {
+                    window.localStorage.removeItem("omniApiToken");
+                } catch (e) { /* ignore */ }
+                updateAuthorizeButtonUI();
+                renderCodePanels(findEndpoint(currentEndpointId));
+            });
+
+            /* =========================================================
+               8.6 TRY IT + COPY TO CLIPBOARD
+               ========================================================= */
+            function resetTryIt() {
+                document.getElementById("requestPanel").hidden = true;
+                document.getElementById("responsePanel").hidden = true;
+                const tryBtn = document.getElementById("tryItBtn");
+                tryBtn.hidden = false;
+                tryBtn.querySelector("span").textContent = "Try it";
+            }
+
+            document.getElementById("tryItBtn").addEventListener("click", function () {
+                const reqPanel = document.getElementById("requestPanel");
+                const resPanel = document.getElementById("responsePanel");
+                const willShow = reqPanel.hidden;
+                reqPanel.hidden = !willShow;
+                resPanel.hidden = !willShow;
+                this.querySelector("span").textContent = willShow ? "Hide" : "Try it";
+            });
+
+            function fallbackCopy(text, cb) {
+                const ta = document.createElement("textarea");
+                ta.value = text;
+                ta.style.position = "fixed";
+                ta.style.opacity = "0";
+                document.body.appendChild(ta);
+                ta.select();
+                try {
+                    document.execCommand("copy");
+                } catch (e) { /* ignore */ }
+                document.body.removeChild(ta);
+                if (cb) cb();
+            }
+
+            document.querySelectorAll(".copy-btn").forEach((btn) => {
+                const successIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                const originalIcon = btn.innerHTML;
+
+                btn.addEventListener("click", () => {
+                    const targetId = btn.dataset.copyTarget;
+                    const codeEl = document.getElementById(targetId);
+                    if (!codeEl) return;
+                    const text = codeEl.textContent;
+
+                    const onDone = () => {
+                        btn.classList.add("copied");
+                        btn.innerHTML = successIcon;
+                        setTimeout(() => {
+                            btn.innerHTML = originalIcon;
+                            btn.classList.remove("copied");
+                        }, 1400);
+                    };
+
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(onDone).catch(() => fallbackCopy(text, onDone));
+                    } else {
+                        fallbackCopy(text, onDone);
+                    }
+                });
+            });
+
             document.addEventListener("keydown", (e) => {
                 if (e.key === "Escape" && overlay.classList.contains("open")) {
                     closeSearch();
+                } else if (e.key === "Escape" && authorizeOverlay.classList.contains("open")) {
+                    closeAuthorize();
                 } else if (e.key === "Escape" && sidebarEl.classList.contains("mobile-open")) {
                     closeSidebarDrawer();
                 } else if (e.key === "/" && !overlay.classList.contains("open") && document.activeElement.tagName !== "INPUT") {
