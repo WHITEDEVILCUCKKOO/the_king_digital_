@@ -267,7 +267,10 @@
             white-space: nowrap;
         }
 
-        .authorize-btn:hover { background: #d1fae5; border-color: var(--accent); }
+        .authorize-btn:hover {
+            background: #d1fae5;
+            border-color: var(--accent);
+        }
 
         .authorize-btn.authorized {
             background: var(--accent);
@@ -275,9 +278,14 @@
             color: #fff;
         }
 
-        .authorize-btn.authorized:hover { background: #047857; }
+        .authorize-btn.authorized:hover {
+            background: #047857;
+        }
 
-        .authorize-btn svg { width: 14px; height: 14px; }
+        .authorize-btn svg {
+            width: 14px;
+            height: 14px;
+        }
 
         .endpoint-meta {
             display: flex;
@@ -491,11 +499,25 @@
             border-radius: 0;
         }
 
-        .tok-str { color: #fca5a5; }
-        .tok-key { color: #7dd3fc; }
-        .tok-flag { color: #93c5fd; }
-        .tok-num { color: #fcd34d; }
-        .tok-punct { color: #64748b; }
+        .tok-str {
+            color: #fca5a5;
+        }
+
+        .tok-key {
+            color: #7dd3fc;
+        }
+
+        .tok-flag {
+            color: #93c5fd;
+        }
+
+        .tok-num {
+            color: #fcd34d;
+        }
+
+        .tok-punct {
+            color: #64748b;
+        }
 
         /* ============ RIGHT PANEL ============ */
 
@@ -543,7 +565,9 @@
             transition: all .15s ease;
         }
 
-        .rightside-language-btn button p { margin: 0; }
+        .rightside-language-btn button p {
+            margin: 0;
+        }
 
         .rightside-language-btn button span svg {
             width: 18px;
@@ -854,7 +878,9 @@
             color: var(--nav-soft);
         }
 
-        .authorize-clear-btn:hover { background: var(--bg-soft); }
+        .authorize-clear-btn:hover {
+            background: var(--bg-soft);
+        }
 
         .authorize-save-btn {
             border: 1px solid var(--accent);
@@ -862,7 +888,9 @@
             color: #fff;
         }
 
-        .authorize-save-btn:hover { background: #047857; }
+        .authorize-save-btn:hover {
+            background: #047857;
+        }
 
         /* ============ MOBILE / TABLET TOPBAR + DRAWER ============ */
 
@@ -918,9 +946,15 @@
                 transition: background .15s ease, border-color .15s ease;
             }
 
-            .hamburger-btn:hover { background: #fff; border-color: #cbd5e1; }
+            .hamburger-btn:hover {
+                background: #fff;
+                border-color: #cbd5e1;
+            }
 
-            .hamburger-btn svg { width: 18px; height: 18px; }
+            .hamburger-btn svg {
+                width: 18px;
+                height: 18px;
+            }
 
             .mobile-topbar-title {
                 font-size: 14px;
@@ -974,7 +1008,10 @@
                 color: var(--nav-soft);
             }
 
-            .sidebar-close-btn svg { width: 15px; height: 15px; }
+            .sidebar-close-btn svg {
+                width: 15px;
+                height: 15px;
+            }
 
             .sidebar-backdrop {
                 display: none;
@@ -1018,7 +1055,11 @@
     <section class="omni">
         <div class="mobile-topbar">
             <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Open menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
             </button>
             <span class="mobile-topbar-title">API Reference</span>
         </div>
@@ -1029,7 +1070,10 @@
                 <div class="sidebar-drawer-head">
                     <span>Menu</span>
                     <button class="sidebar-close-btn" id="sidebarCloseBtn" type="button" aria-label="Close menu">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                 </div>
                 <button class="omni_content--input" id="searchOpenBtn" type="button">
@@ -1049,7 +1093,11 @@
                 <div class="omni_content--main-heading">
                     <h2 id="endpointTitle"></h2>
                     <button class="authorize-btn" id="authorizeBtn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                            <path d="m21 2-9.6 9.6"></path>
+                            <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                        </svg>
                         <span>Authorize</span>
                     </button>
                 </div>
@@ -1078,7 +1126,9 @@
 
                 <div class="rightside-request">
                     <button class="try-it-btn" id="tryItBtn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                        </svg>
                         <span>Try it</span>
                     </button>
                     <div class="code-panel" id="requestPanel" hidden>
@@ -1086,9 +1136,14 @@
                             <span id="requestPanelLabel">SHELL REQUEST</span>
                             <div class="code-panel-actions">
                                 <button class="copy-btn" data-copy-target="requestCode" type="button" aria-label="Copy request code">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
                                 </button>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
                             </div>
                         </div>
                         <div class="code-panel-scroll">
@@ -1103,7 +1158,10 @@
                             <span>RESPONSE</span>
                             <div class="code-panel-actions">
                                 <button class="copy-btn" data-copy-target="responseCode" type="button" aria-label="Copy response code">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
                                 </button>
                                 <span class="status-code" id="responseStatus">200 OK</span>
                             </div>
@@ -1181,8 +1239,8 @@
                             id: "wallet-balance",
                             title: "Get Wallet Balance",
                             method: "GET",
-                            path: "/api/v1/balance",
-                            description: "Returns the current wallet balance for the authenticated account.",
+                            path: "/api/v1/user/balance",
+                            description: "Returns available wallet balance across all channels.",
                             headers: [{
                                 name: "Authorization",
                                 type: "string",
@@ -1194,11 +1252,11 @@
                                 currency: "INR"
                             },
                             languages: {
-                                shell: "curl -X GET https://api.example.com/api/v1/balance \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"",
-                                node: "const res = await fetch('https://api.example.com/api/v1/balance', {\n  headers: { Authorization: 'Bearer YOUR_API_KEY' }\n});\nconst data = await res.json();",
-                                ruby: "require 'net/http'\nuri = URI('https://api.example.com/api/v1/balance')\nreq = Net::HTTP::Get.new(uri)\nreq['Authorization'] = 'Bearer YOUR_API_KEY'",
-                                php: "$ch = curl_init('https://api.example.com/api/v1/balance');\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer YOUR_API_KEY']);\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\n$response = curl_exec($ch);",
-                                python: "import requests\nres = requests.get(\n    'https://api.example.com/api/v1/balance',\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/user/balance \\\n  --header 'Authorization: Bearer YOUR_API_KEY'",
+                                node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/user/balance', {\n  headers: { Authorization: 'Bearer YOUR_API_KEY' }\n});\nconst data = await res.json();",
+                                ruby: "require 'net/http'\nuri = URI('https://omni.kingDigitalcpaas.ai/api/v1/user/balance')\nreq = Net::HTTP::Get.new(uri)\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\n\nhttp = Net::HTTP.new(uri.host, uri.port)\nhttp.use_ssl = true\nresponse = http.request(req)\nputs response.read_body",
+                                php: "$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/user/balance');\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer YOUR_API_KEY']);\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\n$response = curl_exec($ch);",
+                                python: "import requests\nres = requests.get(\n    'https://omni.kingDigitalcpaas.ai/api/v1/user/balance',\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
                             }
                         }]
                     },
@@ -1209,55 +1267,323 @@
                                 title: "POST /api/v1/sms/manytomany",
                                 method: "POST",
                                 path: "/api/v1/sms/manytomany",
-                                description: "Send an SMS to multiple recipients."
+                                description: "Send an SMS to multiple recipients.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/sms/manytomany \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer YOUR_API_KEY' \\\n  --data '{\"exampleParam\":\"exampleValue\"}'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/sms/manytomany', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({ exampleParam: 'exampleValue' })\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/manytomany')\nreq = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = { exampleParam: 'exampleValue' }.to_json",
+                                    php: "$data = ['exampleParam' => 'exampleValue'];\n$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/manytomany');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer YOUR_API_KEY']);",
+                                    python: "import requests\nrequests.post(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/manytomany',\n    json={'exampleParam': 'exampleValue'},\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-createtemplate",
                                 title: "POST /api/v1/sms/createtemplate",
                                 method: "POST",
                                 path: "/api/v1/sms/createtemplate",
-                                description: "Create a reusable SMS template."
+                                description: "Create a reusable SMS template.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/sms/createtemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer YOUR_API_KEY' \\\n  --data '{\"exampleParam\":\"exampleValue\"}'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/sms/createtemplate', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({ exampleParam: 'exampleValue' })\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/createtemplate')\nreq = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = { exampleParam: 'exampleValue' }.to_json",
+                                    php: "$data = ['exampleParam' => 'exampleValue'];\n$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/createtemplate');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer YOUR_API_KEY']);",
+                                    python: "import requests\nrequests.post(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/createtemplate',\n    json={'exampleParam': 'exampleValue'},\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-gettemplate",
                                 title: "GET /api/v1/sms/getTemplate",
                                 method: "GET",
                                 path: "/api/v1/sms/getTemplate",
-                                description: "Retrieve an existing SMS template."
+                                description: "Fetch DLT-approved SMS templates by Sender ID and Template Name.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "senderId",
+                                        type: "string",
+                                        required: true,
+                                        description: "DLT-approved sender ID",
+                                        default: "UBSMBD"
+                                    },
+                                    {
+                                        name: "templateName",
+                                        type: "string",
+                                        required: false,
+                                        description: "Name of the template to retrieve",
+                                        default: "WELCOME_OTP"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url 'https://omni.kingDigitalcpaas.ai/api/v1/sms/getTemplate?senderId=UBSMBD&templateName=WELCOME_OTP' \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer YOUR_API_KEY'",
+                                    node: "const params = new URLSearchParams({ senderId: 'UBSMBD', templateName: 'WELCOME_OTP' });\nconst res = await fetch(`https://omni.kingDigitalcpaas.ai/api/v1/sms/getTemplate?${params}`, {\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  }\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/getTemplate?senderId=UBSMBD&templateName=WELCOME_OTP')\nreq = Net::HTTP::Get.new(uri)\nreq['Content-Type'] = 'application/json'\nreq['Authorization'] = 'Bearer YOUR_API_KEY'",
+                                    php: "$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/getTemplate?senderId=UBSMBD&templateName=WELCOME_OTP');\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer YOUR_API_KEY']);\n$response = curl_exec($ch);",
+                                    python: "import requests\nparams = { 'senderId': 'UBSMBD', 'templateName': 'WELCOME_OTP' }\nres = requests.get(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/getTemplate',\n    params=params,\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-createsenderid",
                                 title: "POST /api/v1/sms/createsenderid",
                                 method: "POST",
                                 path: "/api/v1/sms/createsenderid",
-                                description: "Register a new SMS sender ID."
+                                description: "Register a new SMS sender ID.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/sms/createsenderid \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer YOUR_API_KEY' \\\n  --data '{\"exampleParam\":\"exampleValue\"}'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/sms/createsenderid', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({ exampleParam: 'exampleValue' })\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/createsenderid')\nreq = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = { exampleParam: 'exampleValue' }.to_json",
+                                    php: "$data = ['exampleParam' => 'exampleValue'];\n$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/createsenderid');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer YOUR_API_KEY']);",
+                                    python: "import requests\nrequests.post(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/createsenderid',\n    json={'exampleParam': 'exampleValue'},\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-sendsms",
                                 title: "GET /api/v1/sms/sendsms",
                                 method: "GET",
                                 path: "/api/v1/sms/sendsms",
-                                description: "Send a single SMS."
+                                description: "Send single or bulk transactional & promotional SMS via GET query-string API.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "ApiKey",
+                                        type: "string",
+                                        required: true,
+                                        description: "Your account API key"
+                                    },
+                                    {
+                                        name: "Number",
+                                        type: "string",
+                                        required: true,
+                                        description: "Destination mobile number"
+                                    },
+                                    {
+                                        name: "SenderId",
+                                        type: "string",
+                                        required: true,
+                                        description: "DLT-approved sender ID"
+                                    },
+                                    {
+                                        name: "Text",
+                                        type: "string",
+                                        required: true,
+                                        description: "SMS message content"
+                                    },
+                                    {
+                                        name: "DCS",
+                                        type: "int32",
+                                        required: false,
+                                        description: "Data coding scheme",
+                                        default: "0"
+                                    },
+                                    {
+                                        name: "PeId",
+                                        type: "string",
+                                        required: false,
+                                        description: "Principal entity ID (DLT)",
+                                        default: "Ø"
+                                    },
+                                    {
+                                        name: "DLTTemplateId",
+                                        type: "string",
+                                        required: false,
+                                        description: "DLT-approved template ID",
+                                        default: "Ø"
+                                    },
+                                    {
+                                        name: "ChainValue",
+                                        type: "string",
+                                        required: false,
+                                        description: "Chaining reference value",
+                                        default: "Ø"
+                                    },
+                                    {
+                                        name: "MessageId",
+                                        type: "string",
+                                        required: false,
+                                        description: "Custom message identifier",
+                                        default: "Ø"
+                                    },
+                                    {
+                                        name: "FlashSms",
+                                        type: "int32",
+                                        required: false,
+                                        description: "Send as flash SMS (1) or normal (0)",
+                                        default: "0"
+                                    },
+                                    {
+                                        name: "SchedTime",
+                                        type: "string",
+                                        required: false,
+                                        description: "Scheduled send time",
+                                        default: "Ø"
+                                    },
+                                    {
+                                        name: "GroupId",
+                                        type: "string",
+                                        required: false,
+                                        description: "Recipient group ID",
+                                        default: "Ø"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url 'https://omni.kingDigitalcpaas.ai/api/v1/sms/sendsms?ApiKey=YOUR_API_KEY&Number=91XXXXXXXXXX&SenderId=BRAND&Text=Hello' \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer YOUR_API_KEY'",
+                                    node: "const params = new URLSearchParams({ ApiKey: 'YOUR_API_KEY', Number: '91XXXXXXXXXX', SenderId: 'BRAND', Text: 'Hello' });\nconst res = await fetch(`https://omni.kingDigitalcpaas.ai/api/v1/sms/sendsms?${params}`, {\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  }\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/sendsms?ApiKey=YOUR_API_KEY&Number=91XXXXXXXXXX&SenderId=BRAND&Text=Hello')\nreq = Net::HTTP::Get.new(uri)\nreq['Content-Type'] = 'application/json'\nreq['Authorization'] = 'Bearer YOUR_API_KEY'",
+                                    php: "$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/sendsms?ApiKey=YOUR_API_KEY&Number=91XXXXXXXXXX&SenderId=BRAND&Text=Hello');\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer YOUR_API_KEY']);\n$response = curl_exec($ch);",
+                                    python: "import requests\nparams = { 'ApiKey': 'YOUR_API_KEY', 'Number': '91XXXXXXXXXX', 'SenderId': 'BRAND', 'Text': 'Hello' }\nres = requests.get(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/sendsms',\n    params=params,\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-getsenderids",
                                 title: "GET /api/v1/sms/getSenderIds",
                                 method: "GET",
                                 path: "/api/v1/sms/getSenderIds",
-                                description: "List all registered sender IDs."
+                                description: "Fetch list of approved DLT Sender IDs for your account.",
+                                headers: [{
+                                    name: "Authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer token"
+                                }],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/sms/getSenderIds \\\n  --header 'Authorization: Bearer YOUR_API_KEY'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/sms/getSenderIds', {\n  headers: { Authorization: 'Bearer YOUR_API_KEY' }\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/getSenderIds')\nreq = Net::HTTP::Get.new(uri)\nreq['Authorization'] = 'Bearer YOUR_API_KEY'",
+                                    php: "$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/getSenderIds');\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer YOUR_API_KEY']);\n$response = curl_exec($ch);",
+                                    python: "import requests\nres = requests.get(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/getSenderIds',\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-report",
                                 title: "GET /api/v1/sms/report",
                                 method: "GET",
                                 path: "/api/v1/sms/report",
-                                description: "Fetch SMS delivery reports."
+                                description: "Fetch detailed delivery reports and logs for sent SMS campaigns.",
+                                headers: [{
+                                    name: "Authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer token"
+                                }],
+                                queryParams: [{
+                                        name: "FromDate",
+                                        type: "string",
+                                        required: false,
+                                        description: "Start date for the report range"
+                                    },
+                                    {
+                                        name: "ToDate",
+                                        type: "string",
+                                        required: false,
+                                        description: "End date for the report range"
+                                    },
+                                    {
+                                        name: "senderId",
+                                        type: "string",
+                                        required: false,
+                                        description: "Filter by sender ID"
+                                    },
+                                    {
+                                        name: "jobId",
+                                        type: "string",
+                                        required: false,
+                                        description: "Filter by job/campaign ID"
+                                    },
+                                    {
+                                        name: "Page",
+                                        type: "int32",
+                                        required: false,
+                                        description: "Page number for pagination"
+                                    },
+                                    {
+                                        name: "PageSize",
+                                        type: "int32",
+                                        required: false,
+                                        description: "Number of records per page"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url 'https://omni.kingDigitalcpaas.ai/api/v1/sms/report?FromDate=2026-08-01&ToDate=2026-08-31' \\\n  --header 'Authorization: Bearer YOUR_API_KEY'",
+                                    node: "const params = new URLSearchParams({ FromDate: '2026-08-01', ToDate: '2026-08-31' });\nconst res = await fetch(`https://omni.kingDigitalcpaas.ai/api/v1/sms/report?${params}`, {\n  headers: { Authorization: 'Bearer YOUR_API_KEY' }\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/report?FromDate=2026-08-01&ToDate=2026-08-31')\nreq = Net::HTTP::Get.new(uri)\nreq['Authorization'] = 'Bearer YOUR_API_KEY'",
+                                    php: "$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/report?FromDate=2026-08-01&ToDate=2026-08-31');\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer YOUR_API_KEY']);\n$response = curl_exec($ch);",
+                                    python: "import requests\nparams = { 'FromDate': '2026-08-01', 'ToDate': '2026-08-31' }\nres = requests.get(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/report',\n    params=params,\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-send-a-sms",
                                 title: "Send a SMS",
                                 method: "POST",
-                                path: "/api/v1/sms/sendsms",
+                                path: "/v1/smsapis/send",
                                 description: "Sends an SMS through the SMS API.",
                                 headers: [{
                                         name: "Content-Type",
@@ -1273,31 +1599,103 @@
                                     }
                                 ],
                                 body: {
-                                    senderid: "string",
-                                    destination: "string",
-                                    message: "string"
+                                    exampleParam: "exampleValue"
                                 },
                                 languages: {
-                                    shell: "curl -X POST https://api.example.com/api/v1/sms/sendsms \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -d '{\"senderid\":\"BRAND\",\"destination\":\"91XXXXXXXXXX\",\"message\":\"Hello\"}'",
-                                    node: "const res = await fetch('https://api.example.com/api/v1/sms/sendsms', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({ senderid: 'BRAND', destination: '91XXXXXXXXXX', message: 'Hello' })\n});",
-                                    ruby: "uri = URI('https://api.example.com/api/v1/sms/sendsms')\nreq = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = { senderid: 'BRAND', destination: '91XXXXXXXXXX', message: 'Hello' }.to_json",
-                                    php: "$data = ['senderid' => 'BRAND', 'destination' => '91XXXXXXXXXX', 'message' => 'Hello'];\n$ch = curl_init('https://api.example.com/api/v1/sms/sendsms');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));",
-                                    python: "import requests\nrequests.post(\n    'https://api.example.com/api/v1/sms/sendsms',\n    json={'senderid': 'BRAND', 'destination': '91XXXXXXXXXX', 'message': 'Hello'},\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/smsapis/send \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer YOUR_API_KEY' \\\n  --data '{\"exampleParam\":\"exampleValue\"}'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/v1/smsapis/send', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({ exampleParam: 'exampleValue' })\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/v1/smsapis/send')\nreq = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = { exampleParam: 'exampleValue' }.to_json",
+                                    php: "$data = ['exampleParam' => 'exampleValue'];\n$ch = curl_init('https://omni.kingDigitalcpaas.ai/v1/smsapis/send');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Authorization: Bearer YOUR_API_KEY']);",
+                                    python: "import requests\nrequests.post(\n    'https://omni.kingDigitalcpaas.ai/v1/smsapis/send',\n    json={'exampleParam': 'exampleValue'},\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
                                 }
                             },
                             {
                                 id: "sms-send-mt-sms",
                                 title: "Send MT SMS",
                                 method: "POST",
-                                path: "",
-                                description: "Sends a mobile-terminated SMS."
+                                path: "/api/v1/sms/mt",
+                                description: "Send SMS (MT) with detailed JSON payload.",
+                                headers: [{
+                                        name: "authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token in Authorization header"
+                                    },
+                                    {
+                                        name: "content-type",
+                                        type: "string",
+                                        required: true,
+                                        description: "application/json"
+                                    }
+                                ],
+                                body: {
+                                    senderId: "ICPAAS",
+                                    dcs: 0,
+                                    flashSms: 0,
+                                    schedTime: "2026-08-15T10:30:00Z",
+                                    groupId: "PROMO_GRP_01",
+                                    peId: "1201159123456789012",
+                                    text: "Dear {#var1#}, your OTP for login is {#var2#}. Valid for 10 minutes. - ICPAAS",
+                                    dltTemplateId: "1207161123456789012",
+                                    chainValue: "campaign_aug_26",
+                                    messageId: "msg_987654321",
+                                    numbers: ["919876543210", "918765432109"],
+                                    variables: {
+                                        var1: "John",
+                                        var2: "456123"
+                                    }
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/sms/mt \\\n  --header 'authorization: Bearer YOUR_API_KEY' \\\n  --header 'content-type: application/json' \\\n  --data '{\n    \"senderId\": \"ICPAAS\",\n    \"dcs\": 0,\n    \"flashSms\": 0,\n    \"schedTime\": \"2026-08-15T10:30:00Z\",\n    \"groupId\": \"PROMO_GRP_01\",\n    \"peId\": \"1201159123456789012\",\n    \"text\": \"Dear {#var1#}, your OTP for login is {#var2#}. Valid for 10 minutes. - ICPAAS\",\n    \"dltTemplateId\": \"1207161123456789012\",\n    \"chainValue\": \"campaign_aug_26\",\n    \"messageId\": \"msg_987654321\",\n    \"numbers\": [\"919876543210\", \"918765432109\"],\n    \"variables\": { \"var1\": \"John\", \"var2\": \"456123\" }\n  }'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/sms/mt', {\n  method: 'POST',\n  headers: {\n    'content-type': 'application/json',\n    authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({\n    senderId: 'ICPAAS',\n    dcs: 0,\n    flashSms: 0,\n    schedTime: '2026-08-15T10:30:00Z',\n    groupId: 'PROMO_GRP_01',\n    peId: '1201159123456789012',\n    text: 'Dear {#var1#}, your OTP for login is {#var2#}. Valid for 10 minutes. - ICPAAS',\n    dltTemplateId: '1207161123456789012',\n    chainValue: 'campaign_aug_26',\n    messageId: 'msg_987654321',\n    numbers: ['919876543210', '918765432109'],\n    variables: { var1: 'John', var2: '456123' }\n  })\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/mt')\nreq = Net::HTTP::Post.new(uri, 'content-type' => 'application/json')\nreq['authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = {\n  senderId: 'ICPAAS',\n  dcs: 0,\n  flashSms: 0,\n  schedTime: '2026-08-15T10:30:00Z',\n  groupId: 'PROMO_GRP_01',\n  peId: '1201159123456789012',\n  text: 'Dear {#var1#}, your OTP for login is {#var2#}. Valid for 10 minutes. - ICPAAS',\n  dltTemplateId: '1207161123456789012',\n  chainValue: 'campaign_aug_26',\n  messageId: 'msg_987654321',\n  numbers: ['919876543210', '918765432109'],\n  variables: { var1: 'John', var2: '456123' }\n}.to_json",
+                                    php: "$data = [\n    'senderId' => 'ICPAAS',\n    'dcs' => 0,\n    'flashSms' => 0,\n    'schedTime' => '2026-08-15T10:30:00Z',\n    'groupId' => 'PROMO_GRP_01',\n    'peId' => '1201159123456789012',\n    'text' => 'Dear {#var1#}, your OTP for login is {#var2#}. Valid for 10 minutes. - ICPAAS',\n    'dltTemplateId' => '1207161123456789012',\n    'chainValue' => 'campaign_aug_26',\n    'messageId' => 'msg_987654321',\n    'numbers' => ['919876543210', '918765432109'],\n    'variables' => ['var1' => 'John', 'var2' => '456123']\n];\n$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/mt');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['content-type: application/json', 'authorization: Bearer YOUR_API_KEY']);",
+                                    python: "import requests\npayload = {\n    'senderId': 'ICPAAS',\n    'dcs': 0,\n    'flashSms': 0,\n    'schedTime': '2026-08-15T10:30:00Z',\n    'groupId': 'PROMO_GRP_01',\n    'peId': '1201159123456789012',\n    'text': 'Dear {#var1#}, your OTP for login is {#var2#}. Valid for 10 minutes. - ICPAAS',\n    'dltTemplateId': '1207161123456789012',\n    'chainValue': 'campaign_aug_26',\n    'messageId': 'msg_987654321',\n    'numbers': ['919876543210', '918765432109'],\n    'variables': {'var1': 'John', 'var2': '456123'}\n}\nrequests.post(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/mt',\n    json=payload,\n    headers={'authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             },
                             {
                                 id: "sms-moengage-integration",
                                 title: "MoEngage SMS Integration",
                                 method: "POST",
-                                path: "",
-                                description: "Integrate SMS delivery with MoEngage campaigns."
+                                path: "/api/v1/sms/moengage",
+                                description: "Send SMS using Moengage payload.",
+                                headers: [{
+                                        name: "authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token in Authorization header"
+                                    },
+                                    {
+                                        name: "content-type",
+                                        type: "string",
+                                        required: true,
+                                        description: "application/json"
+                                    }
+                                ],
+                                body: {
+                                    senderId: "MOENGG",
+                                    dcs: 0,
+                                    flashSms: 0,
+                                    schedTime: "2026-08-15T11:00:00Z",
+                                    groupId: "MOENGAGE_CAMP_01",
+                                    peId: "1201159987654321098",
+                                    text: "Hi {#var1#}, welcome to Moengage Campaign! Your exclusive code is {#var2#}.",
+                                    dltTemplateId: "1207161987654321098",
+                                    chainValue: "moengage_promo",
+                                    messageId: "mo_123456789",
+                                    numbers: ["919999999999"],
+                                    variables: {
+                                        var1: "Alice",
+                                        var2: "MOEN50"
+                                    }
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/sms/moengage \\\n  --header 'authorization: Bearer YOUR_API_KEY' \\\n  --header 'content-type: application/json' \\\n  --data '{\n    \"senderId\": \"MOENGG\",\n    \"dcs\": 0,\n    \"flashSms\": 0,\n    \"schedTime\": \"2026-08-15T11:00:00Z\",\n    \"groupId\": \"MOENGAGE_CAMP_01\",\n    \"peId\": \"1201159987654321098\",\n    \"text\": \"Hi {#var1#}, welcome to Moengage Campaign! Your exclusive code is {#var2#}.\",\n    \"dltTemplateId\": \"1207161987654321098\",\n    \"chainValue\": \"moengage_promo\",\n    \"messageId\": \"mo_123456789\",\n    \"numbers\": [\"919999999999\"],\n    \"variables\": { \"var1\": \"Alice\", \"var2\": \"MOEN50\" }\n  }'",
+                                    node: "const res = await fetch('https://omni.kingDigitalcpaas.ai/api/v1/sms/moengage', {\n  method: 'POST',\n  headers: {\n    'content-type': 'application/json',\n    authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({\n    senderId: 'MOENGG',\n    dcs: 0,\n    flashSms: 0,\n    schedTime: '2026-08-15T11:00:00Z',\n    groupId: 'MOENGAGE_CAMP_01',\n    peId: '1201159987654321098',\n    text: 'Hi {#var1#}, welcome to Moengage Campaign! Your exclusive code is {#var2#}.',\n    dltTemplateId: '1207161987654321098',\n    chainValue: 'moengage_promo',\n    messageId: 'mo_123456789',\n    numbers: ['919999999999'],\n    variables: { var1: 'Alice', var2: 'MOEN50' }\n  })\n});",
+                                    ruby: "uri = URI('https://omni.kingDigitalcpaas.ai/api/v1/sms/moengage')\nreq = Net::HTTP::Post.new(uri, 'content-type' => 'application/json')\nreq['authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = {\n  senderId: 'MOENGG',\n  dcs: 0,\n  flashSms: 0,\n  schedTime: '2026-08-15T11:00:00Z',\n  groupId: 'MOENGAGE_CAMP_01',\n  peId: '1201159987654321098',\n  text: 'Hi {#var1#}, welcome to Moengage Campaign! Your exclusive code is {#var2#}.',\n  dltTemplateId: '1207161987654321098',\n  chainValue: 'moengage_promo',\n  messageId: 'mo_123456789',\n  numbers: ['919999999999'],\n  variables: { var1: 'Alice', var2: 'MOEN50' }\n}.to_json",
+                                    php: "$data = [\n    'senderId' => 'MOENGG',\n    'dcs' => 0,\n    'flashSms' => 0,\n    'schedTime' => '2026-08-15T11:00:00Z',\n    'groupId' => 'MOENGAGE_CAMP_01',\n    'peId' => '1201159987654321098',\n    'text' => 'Hi {#var1#}, welcome to Moengage Campaign! Your exclusive code is {#var2#}.',\n    'dltTemplateId' => '1207161987654321098',\n    'chainValue' => 'moengage_promo',\n    'messageId' => 'mo_123456789',\n    'numbers' => ['919999999999'],\n    'variables' => ['var1' => 'Alice', 'var2' => 'MOEN50']\n];\n$ch = curl_init('https://omni.kingDigitalcpaas.ai/api/v1/sms/moengage');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));\ncurl_setopt($ch, CURLOPT_HTTPHEADER, ['content-type: application/json', 'authorization: Bearer YOUR_API_KEY']);",
+                                    python: "import requests\npayload = {\n    'senderId': 'MOENGG',\n    'dcs': 0,\n    'flashSms': 0,\n    'schedTime': '2026-08-15T11:00:00Z',\n    'groupId': 'MOENGAGE_CAMP_01',\n    'peId': '1201159987654321098',\n    'text': 'Hi {#var1#}, welcome to Moengage Campaign! Your exclusive code is {#var2#}.',\n    'dltTemplateId': '1207161987654321098',\n    'chainValue': 'moengage_promo',\n    'messageId': 'mo_123456789',\n    'numbers': ['919999999999'],\n    'variables': {'var1': 'Alice', 'var2': 'MOEN50'}\n}\nrequests.post(\n    'https://omni.kingDigitalcpaas.ai/api/v1/sms/moengage',\n    json=payload,\n    headers={'authorization': 'Bearer YOUR_API_KEY'}\n)"
+                                }
                             }
                         ]
                     },
@@ -1308,50 +1706,213 @@
                             title: "GET /api/v1/user/balance",
                             method: "GET",
                             path: "/api/v1/user/balance",
-                            description: "Returns balance details for the current user."
+                            description: "Fetch live user wallet and channel credit balances.",
+                            headers: [{
+                                name: "Authorization",
+                                type: "string",
+                                required: true,
+                                description: "Bearer token"
+                            }],
+                            response: {
+                                balance: 1520.75,
+                                currency: "INR"
+                            },
+                            languages: {
+                                shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/user/balance \\\n  --header 'Authorization: Bearer token' \\",
+                                node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/user/balance',\n  headers: {\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/user/balance\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/user/balance\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/user/balance\"\n\nheaders = {\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                            }
                         }]
                     },
                     {
-                        name: "Send Message",
+                        name: "Template API's",
                         endpoints: [{
-                            id: "send-rcs-message",
-                            title: "Send RCS message",
-                            method: "POST",
-                            path: "/api/v1/Rcs/sendmessage",
-                            description: "Sends an RCS message through the RCS API.",
-                            headers: [{
-                                    name: "Content-Type",
-                                    type: "string",
-                                    required: true,
-                                    description: "Content type of the request"
+                                id: "template-create-rcs",
+                                title: "Create RCS Template",
+                                method: "POST",
+                                path: "/api/v1/rcs/createtemplate",
+                                description: "Creates a new RCS message template. Supported types are TextMessage, RichCard, and Carousel. Use [VarName] inside text fields for variable substitution (e.g. \"Hello [Name], OTP is [OTP]\"). Suggestion types include reply, url_action, dialer_action, calendar, view_location, query_location, and share_location. Provider support varies: Voda supports all suggestion types, while JioCX/JioJBM support only reply, url_action, dialer_action, calendar, and ViewLocationLatLong (ViewLocationQuery and share_location are not supported).",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    botId: "your_bot_id",
+                                    template_data: {
+                                        name: "welcome_text",
+                                        type: "TextMessage",
+                                        textMessage: "Hello [Name], your order [OrderId] is confirmed!",
+                                        suggestions: [{
+                                                suggestionType: "reply",
+                                                text: "Track Order"
+                                            },
+                                            {
+                                                suggestionType: "url_action",
+                                                text: "View Details",
+                                                url: "https://example.com/order/[OrderId]"
+                                            },
+                                            {
+                                                suggestionType: "dialer_action",
+                                                text: "Call Support",
+                                                phoneNumber: "+919876543210"
+                                            },
+                                            {
+                                                suggestionType: "calendar",
+                                                text: "Click here",
+                                                title: "SMPPSMShub Product Demo & Consultation",
+                                                description: "Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.",
+                                                startTime: "2026-07-28T08:45:00.000Z",
+                                                endTime: "2026-07-31T12:30:00.000Z"
+                                            },
+                                            {
+                                                suggestionType: "ViewLocationLatLong",
+                                                text: "Visit Us",
+                                                latitude: 22.3081,
+                                                longitude: 73.1657,
+                                                label: "SMPPSMShub Office"
+                                            },
+                                            {
+                                                suggestionType: "ViewLocationQuery",
+                                                text: "click now",
+                                                query: "Tajmahal"
+                                            },
+                                            {
+                                                suggestionType: "share_location",
+                                                text: "Share My Location"
+                                            }
+                                        ]
+                                    }
                                 },
-                                {
-                                    name: "Authorization",
-                                    type: "string",
-                                    required: true,
-                                    description: "Bearer token"
-                                }
-                            ],
-                            body: {
-                                botid: "string",
-                                templatename: "string",
-                                destination: ["string"],
-                                var: {
-                                    key1: "value1"
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"botId\": \"your_bot_id\",\n    \"template_data\": {\n      \"name\": \"welcome_text\",\n      \"type\": \"TextMessage\",\n      \"textMessage\": \"Hello [Name], your order [OrderId] is confirmed!\",\n      \"suggestions\": [\n        { \"suggestionType\": \"reply\", \"text\": \"Track Order\" },\n        { \"suggestionType\": \"url_action\", \"text\": \"View Details\", \"url\": \"https://example.com/order/[OrderId]\" },\n        { \"suggestionType\": \"dialer_action\", \"text\": \"Call Support\", \"phoneNumber\": \"+919876543210\" },\n        { \"suggestionType\": \"calendar\", \"text\": \"Click here\", \"title\": \"SMPPSMShub Product Demo & Consultation\", \"description\": \"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\", \"startTime\": \"2026-07-28T08:45:00.000Z\", \"endTime\": \"2026-07-31T12:30:00.000Z\" },\n        { \"suggestionType\": \"ViewLocationLatLong\", \"text\": \"Visit Us\", \"latitude\": 22.3081, \"longitude\": 73.1657, \"label\": \"SMPPSMShub Office\" },\n        { \"suggestionType\": \"ViewLocationQuery\", \"text\": \"click now\", \"query\": \"Tajmahal\" },\n        { \"suggestionType\": \"share_location\", \"text\": \"Share My Location\" }\n      ]\n    }\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    botId: 'your_bot_id',\n    template_data: {\n      name: 'welcome_text',\n      type: 'TextMessage',\n      textMessage: 'Hello [Name], your order [OrderId] is confirmed!',\n      suggestions: [\n        { suggestionType: 'reply', text: 'Track Order' },\n        { suggestionType: 'url_action', text: 'View Details', url: 'https://example.com/order/[OrderId]' },\n        { suggestionType: 'dialer_action', text: 'Call Support', phoneNumber: '+919876543210' },\n        { suggestionType: 'calendar', text: 'Click here', title: 'SMPPSMShub Product Demo & Consultation', description: 'Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.', startTime: '2026-07-28T08:45:00.000Z', endTime: '2026-07-31T12:30:00.000Z' },\n        { suggestionType: 'ViewLocationLatLong', text: 'Visit Us', latitude: 22.3081, longitude: 73.1657, label: 'SMPPSMShub Office' },\n        { suggestionType: 'ViewLocationQuery', text: 'click now', query: 'Tajmahal' },\n        { suggestionType: 'share_location', text: 'Share My Location' }\n      ]\n    }\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"botId\\\":\\\"your_bot_id\\\",\\\"template_data\\\":{\\\"name\\\":\\\"welcome_text\\\",\\\"type\\\":\\\"TextMessage\\\",\\\"textMessage\\\":\\\"Hello [Name], your order [OrderId] is confirmed!\\\",\\\"suggestions\\\":[{\\\"suggestionType\\\":\\\"reply\\\",\\\"text\\\":\\\"Track Order\\\"},{\\\"suggestionType\\\":\\\"url_action\\\",\\\"text\\\":\\\"View Details\\\",\\\"url\\\":\\\"https://example.com/order/[OrderId]\\\"},{\\\"suggestionType\\\":\\\"dialer_action\\\",\\\"text\\\":\\\"Call Support\\\",\\\"phoneNumber\\\":\\\"+919876543210\\\"},{\\\"suggestionType\\\":\\\"calendar\\\",\\\"text\\\":\\\"Click here\\\",\\\"title\\\":\\\"SMPPSMShub Product Demo & Consultation\\\",\\\"description\\\":\\\"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\\\",\\\"startTime\\\":\\\"2026-07-28T08:45:00.000Z\\\",\\\"endTime\\\":\\\"2026-07-31T12:30:00.000Z\\\"},{\\\"suggestionType\\\":\\\"ViewLocationLatLong\\\",\\\"text\\\":\\\"Visit Us\\\",\\\"latitude\\\":22.3081,\\\"longitude\\\":73.1657,\\\"label\\\":\\\"SMPPSMShub Office\\\"},{\\\"suggestionType\\\":\\\"ViewLocationQuery\\\",\\\"text\\\":\\\"click now\\\",\\\"query\\\":\\\"Tajmahal\\\"},{\\\"suggestionType\\\":\\\"share_location\\\",\\\"text\\\":\\\"Share My Location\\\"}]}}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => json_encode([\n    \"botId\" => \"your_bot_id\",\n    \"template_data\" => [\n      \"name\" => \"welcome_text\",\n      \"type\" => \"TextMessage\",\n      \"textMessage\" => \"Hello [Name], your order [OrderId] is confirmed!\",\n      \"suggestions\" => [\n        [\"suggestionType\" => \"reply\", \"text\" => \"Track Order\"],\n        [\"suggestionType\" => \"url_action\", \"text\" => \"View Details\", \"url\" => \"https://example.com/order/[OrderId]\"],\n        [\"suggestionType\" => \"dialer_action\", \"text\" => \"Call Support\", \"phoneNumber\" => \"+919876543210\"],\n        [\"suggestionType\" => \"calendar\", \"text\" => \"Click here\", \"title\" => \"SMPPSMShub Product Demo & Consultation\", \"description\" => \"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\", \"startTime\" => \"2026-07-28T08:45:00.000Z\", \"endTime\" => \"2026-07-31T12:30:00.000Z\"],\n        [\"suggestionType\" => \"ViewLocationLatLong\", \"text\" => \"Visit Us\", \"latitude\" => 22.3081, \"longitude\" => 73.1657, \"label\" => \"SMPPSMShub Office\"],\n        [\"suggestionType\" => \"ViewLocationQuery\", \"text\" => \"click now\", \"query\" => \"Tajmahal\"],\n        [\"suggestionType\" => \"share_location\", \"text\" => \"Share My Location\"]\n      ]\n    ]\n  ]),\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate\"\npayload = {\n  \"botId\": \"your_bot_id\",\n  \"template_data\": {\n    \"name\": \"welcome_text\",\n    \"type\": \"TextMessage\",\n    \"textMessage\": \"Hello [Name], your order [OrderId] is confirmed!\",\n    \"suggestions\": [\n      {\"suggestionType\": \"reply\", \"text\": \"Track Order\"},\n      {\"suggestionType\": \"url_action\", \"text\": \"View Details\", \"url\": \"https://example.com/order/[OrderId]\"},\n      {\"suggestionType\": \"dialer_action\", \"text\": \"Call Support\", \"phoneNumber\": \"+919876543210\"},\n      {\"suggestionType\": \"calendar\", \"text\": \"Click here\", \"title\": \"SMPPSMShub Product Demo & Consultation\", \"description\": \"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\", \"startTime\": \"2026-07-28T08:45:00.000Z\", \"endTime\": \"2026-07-31T12:30:00.000Z\"},\n      {\"suggestionType\": \"ViewLocationLatLong\", \"text\": \"Visit Us\", \"latitude\": 22.3081, \"longitude\": 73.1657, \"label\": \"SMPPSMShub Office\"},\n      {\"suggestionType\": \"ViewLocationQuery\", \"text\": \"click now\", \"query\": \"Tajmahal\"},\n      {\"suggestionType\": \"share_location\", \"text\": \"Share My Location\"}\n    ]\n  }\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
                                 }
                             },
-                            response: {
-                                status: "success",
-                                messageid: "string"
+                            {
+                                id: "template-delete-rcs",
+                                title: "Delete Template",
+                                method: "POST",
+                                path: "/api/v1/rcs/deletetemplate",
+                                description: "Deletes an existing RCS template.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "botid",
+                                        type: "string",
+                                        required: false,
+                                        description: "Bot ID that owns the template"
+                                    },
+                                    {
+                                        name: "rcstemplatename",
+                                        type: "string",
+                                        required: false,
+                                        description: "Name of the RCS template to delete"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    exampleParam: 'exampleValue'\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
-                            languages: {
-                                shell: "curl -X POST https://api.example.com/api/v1/Rcs/sendmessage \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -d '{\"botid\":\"string\",\"templatename\":\"string\",\"destination\":[\"string\"],\"var\":{\"key1\":\"value1\"}}'",
-                                node: "const res = await fetch('https://api.example.com/api/v1/Rcs/sendmessage', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    Authorization: 'Bearer YOUR_API_KEY'\n  },\n  body: JSON.stringify({\n    botid: 'string',\n    templatename: 'string',\n    destination: ['string'],\n    var: { key1: 'value1' }\n  })\n});",
-                                ruby: "uri = URI('https://api.example.com/api/v1/Rcs/sendmessage')\nreq = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')\nreq['Authorization'] = 'Bearer YOUR_API_KEY'\nreq.body = {\n  botid: 'string',\n  templatename: 'string',\n  destination: ['string'],\n  var: { key1: 'value1' }\n}.to_json",
-                                php: "$data = [\n    'botid' => 'string',\n    'templatename' => 'string',\n    'destination' => ['string'],\n    'var' => ['key1' => 'value1']\n];\n$ch = curl_init('https://api.example.com/api/v1/Rcs/sendmessage');\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));",
-                                python: "import requests\nrequests.post(\n    'https://api.example.com/api/v1/Rcs/sendmessage',\n    json={\n        'botid': 'string',\n        'templatename': 'string',\n        'destination': ['string'],\n        'var': {'key1': 'value1'}\n    },\n    headers={'Authorization': 'Bearer YOUR_API_KEY'}\n)"
+                            {
+                                id: "template-get-rcs",
+                                title: "Get Template",
+                                method: "GET",
+                                path: "/api/v1/rcs/getTemplate",
+                                description: "Retrieves an RCS template by name or ID.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "botid",
+                                        type: "string",
+                                        required: false,
+                                        description: "Bot ID that owns the template"
+                                    },
+                                    {
+                                        name: "TemplateName",
+                                        type: "string",
+                                        required: false,
+                                        description: "Name of the RCS template to retrieve"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
+                            },
+                            {
+                                id: "template-get-agent",
+                                title: "Get AgentID and AgentName",
+                                method: "GET",
+                                path: "/api/v1/rcs/getBotIds",
+                                description: "Retrieves the agent ID and agent name associated with the account.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             }
-                        }]
+                        ]
                     },
                     {
                         name: "Template API's",
@@ -1722,9 +2283,9 @@
                 while ((m = pattern.exec(code)) !== null) {
                     result += escapeHtml(code.slice(lastIndex, m.index));
                     if (m[1]) {
-                        result += m[2]
-                            ? `<span class="tok-key">${escapeHtml(m[1])}</span>${escapeHtml(m[2])}`
-                            : `<span class="tok-str">${escapeHtml(m[1])}</span>`;
+                        result += m[2] ?
+                            `<span class="tok-key">${escapeHtml(m[1])}</span>${escapeHtml(m[2])}` :
+                            `<span class="tok-str">${escapeHtml(m[1])}</span>`;
                     } else if (m[3]) {
                         result += `<span class="tok-flag">${escapeHtml(m[3])}</span>`;
                     } else if (m[4]) {
@@ -2046,7 +2607,8 @@
                 authToken = apiKeyInput.value.trim();
                 try {
                     window.localStorage.setItem("omniApiToken", authToken);
-                } catch (e) { /* localStorage unavailable — token still works for this session */ }
+                } catch (e) {
+                    /* localStorage unavailable — token still works for this session */ }
                 updateAuthorizeButtonUI();
                 renderCodePanels(findEndpoint(currentEndpointId));
                 closeAuthorize();
@@ -2057,7 +2619,8 @@
                 apiKeyInput.value = "";
                 try {
                     window.localStorage.removeItem("omniApiToken");
-                } catch (e) { /* ignore */ }
+                } catch (e) {
+                    /* ignore */ }
                 updateAuthorizeButtonUI();
                 renderCodePanels(findEndpoint(currentEndpointId));
             });
@@ -2073,7 +2636,7 @@
                 tryBtn.querySelector("span").textContent = "Try it";
             }
 
-            document.getElementById("tryItBtn").addEventListener("click", function () {
+            document.getElementById("tryItBtn").addEventListener("click", function() {
                 const reqPanel = document.getElementById("requestPanel");
                 const resPanel = document.getElementById("responsePanel");
                 const willShow = reqPanel.hidden;
@@ -2091,7 +2654,8 @@
                 ta.select();
                 try {
                     document.execCommand("copy");
-                } catch (e) { /* ignore */ }
+                } catch (e) {
+                    /* ignore */ }
                 document.body.removeChild(ta);
                 if (cb) cb();
             }
