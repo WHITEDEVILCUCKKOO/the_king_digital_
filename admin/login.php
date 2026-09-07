@@ -1,15 +1,18 @@
-<?php
+<!-- email = 'kd@admin.com'; -->
+<!-- password = 'kdadmin@123'; -->
 
-require_once __DIR__ . '/../functions/admin-functions.php';
-require_once __DIR__ . '/../functions/helper.php';
-include __DIR__ . '/../includes/auth.php';
+<?php
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+require_once __DIR__ . '/../functions/admin-functions.php';
+require_once __DIR__ . '/../functions/helper.php';
+require_once __DIR__ . '/../config/config.php';
+
 // Already logged in? Skip straight to the dashboard.
-if (isAdminLogin()) {
+if (isusersLogin()) {
     redirect(BASE_URL . 'admin/index.php');
 }
 
@@ -35,24 +38,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Authentication
     if (empty($errors)) {
 
-        $admin = getAdminByEmail($conn, $email);
+        $users = getusersByEmail($conn, $email);
 
-        if (!$admin) {
+        if (!$users) {
 
             $errors['login'] = 'Invalid email or password.';
-        } elseif ($admin['status'] !== 'Active') {
+        } elseif ($users['status'] !== 'active') {
 
             $errors['login'] = 'Your account is inactive.';
-        } elseif (!password_verify($password, $admin['password'])) {
+        } elseif (!password_verify($password, $users['password'])) {
 
             $errors['login'] = 'Invalid email or password.';
         } else {
 
             session_regenerate_id(true);
 
-            $_SESSION['admin_id'] = $admin['id'];
-            $_SESSION['admin_name'] = $admin['name'];
-            $_SESSION['admin_email'] = $admin['email'];
+            $_SESSION['admin_id'] = $users['id'];
+            $_SESSION['admin_name'] = $users['name'];
+            $_SESSION['admin_email'] = $users['email'];
 
             redirect(BASE_URL . 'admin/index.php');
         }

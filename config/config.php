@@ -23,3 +23,5 @@ try {
 
     die('Database connection failed.');
 }
+
+define("BASE_URL", "http://localhost/the_king_digital_/");

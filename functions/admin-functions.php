@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../config/config.php'; ?>
+<?php //require_once __DIR__ . '/../config/config.php'; ?>
 <?php
 
 /**
@@ -8,9 +8,9 @@
  * @throws InvalidArgumentException
  */
 
-function getAdminByEmail($conn, $email)
+function getusersByEmail($conn, $email)
 {
-    $sql = "SELECT id, name, email, password, role, status, last_login_at FROM admins WHERE email = ? LIMIT 1";
+    $sql = "SELECT id, name, email, password, role, status, last_login_at FROM users WHERE email = ? LIMIT 1";
 
     $stmt = $conn->prepare($sql);
 
@@ -32,9 +32,9 @@ function getAdminByEmail($conn, $email)
  * @param int $id
  * @throws Exception
  */
-function getAdminById($conn, $id)
+function getusersById($conn, $id)
 {
-    $sql = "SELECT id, name, email, role, status, last_login_at, created_at, updated_at FROM admins WHERE id = ? LIMIT 1";
+    $sql = "SELECT id, name, email, role, status, last_login_at, created_at, updated_at FROM users WHERE id = ? LIMIT 1";
 
     $stmt = $conn->prepare($sql);
 
@@ -52,7 +52,7 @@ function getAdminById($conn, $id)
 }
 
 /**
- * Updates an admin's core fields. Pass 'password' as null to leave the
+ * Updates an users's core fields. Pass 'password' as null to leave the
  * existing password untouched.
  *
  * @param mysqli $conn
@@ -61,18 +61,18 @@ function getAdminById($conn, $id)
  * @throws InvalidArgumentException
  * @throws Exception
  */
-function updateAdmin($conn, $id, array $data)
+function updateusers($conn, $id, array $data)
 {
-    $existing = getAdminByEmail($conn, $data['email']);
+    $existing = getusersByEmail($conn, $data['email']);
     if ($existing && (int) $existing['id'] !== (int) $id) {
-        throw new InvalidArgumentException('An admin with this email already exists.');
+        throw new InvalidArgumentException('An users with this email already exists.');
     }
 
     if (!empty($data['password'])) {
         $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
 
         $stmt = $conn->prepare(
-            "UPDATE admins SET name = ?, email = ?, password = ?, role = ?, status = ? WHERE id = ?"
+            "UPDATE users SET name = ?, email = ?, password = ?, role = ?, status = ? WHERE id = ?"
         );
 
         if (!$stmt) {
@@ -90,7 +90,7 @@ function updateAdmin($conn, $id, array $data)
         );
     } else {
         $stmt = $conn->prepare(
-            "UPDATE admins SET name = ?, email = ?, role = ?, status = ? WHERE id = ?"
+            "UPDATE users SET name = ?, email = ?, role = ?, status = ? WHERE id = ?"
         );
 
         if (!$stmt) {
@@ -115,9 +115,9 @@ function updateAdmin($conn, $id, array $data)
  * @param int $id
  * @throws Exception
  */
-function deleteAdmin($conn, $id)
+function deleteusers($conn, $id)
 {
-    $stmt = $conn->prepare("DELETE FROM admins WHERE id = ?");
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
 
     if (!$stmt) {
         throw new Exception("Error preparing statement: " . mysqli_error($conn));
@@ -128,12 +128,12 @@ function deleteAdmin($conn, $id)
     $stmt->execute();
 }
 
-function isAdminLogin()
+function isusersLogin()
 {
     return isset($_SESSION['admin_id']);
 }
 
-function logoutAdmin()
+function logoutusers()
 {
     unset(
         $_SESSION['admin_id'],
