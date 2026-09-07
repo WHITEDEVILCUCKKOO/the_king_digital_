@@ -3,12 +3,9 @@
 require_once __DIR__ . '/../functions/admin-functions.php';
 require_once __DIR__ . '/../functions/helper.php';
 include __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../config/config.php';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-logoutAdmin();
+logoutusers();
 
 session_destroy();
 

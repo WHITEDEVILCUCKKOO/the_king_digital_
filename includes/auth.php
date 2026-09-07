@@ -1,14 +1,16 @@
 <?php
 
-require_once __DIR__ . '/../functions/admin-functions.php';
-require_once __DIR__ . '/../functions/helper.php';
-
-define("SITE_NAME", "King Digital");
-define("BASE_URL", "http://localhost/the_king_digital_/");
+require_once __DIR__ . '/../config/config.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (!isAdminLogin()) {
+
+require_once __DIR__ . '/../functions/admin-functions.php';
+require_once __DIR__ . '/../functions/helper.php';
+
+define("SITE_NAME", "King Digital");
+
+if (!isusersLogin()) {
     redirect(BASE_URL . 'admin/login.php');
 }
