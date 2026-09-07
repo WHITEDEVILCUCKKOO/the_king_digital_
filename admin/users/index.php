@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 
+$flash = getFlashMessage();
+
 /**
  * Fetch all admins, most recently created first.
  *
@@ -39,6 +41,12 @@ $created = isset($_GET['created']) && $_GET['created'] === '1';
 $updated = isset($_GET['updated']) && $_GET['updated'] === '1';
 $csrfToken = generateCsrfToken();
 ?>
+
+<?php if ($flash): ?>
+    <div class="alert <?= htmlspecialchars($flash['type'], ENT_QUOTES, 'UTF-8'); ?>">
+        <?= htmlspecialchars($flash['message'], ENT_QUOTES, 'UTF-8'); ?>
+    </div>
+<?php endif; ?>
 
 <style>
     .users-wrap {
