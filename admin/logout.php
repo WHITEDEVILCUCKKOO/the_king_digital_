@@ -9,4 +9,4 @@ logoutusers();
 
 session_destroy();
 
-redirect(BASE_URL . 'admin/login.php');
+redirect(BASE_URL . '');
