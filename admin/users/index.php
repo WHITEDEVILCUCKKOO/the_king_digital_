@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
+require_once __DIR__ . '/../../functions/csrf.php';
 
 /**
  * Fetch all admins, most recently created first.
@@ -36,6 +37,7 @@ try {
 $deleted = isset($_GET['deleted']) && $_GET['deleted'] === '1';
 $created = isset($_GET['created']) && $_GET['created'] === '1';
 $updated = isset($_GET['updated']) && $_GET['updated'] === '1';
+$csrfToken = generateCsrfToken();
 ?>
 
 <style>
@@ -210,6 +212,7 @@ $updated = isset($_GET['updated']) && $_GET['updated'] === '1';
                             <a href="edit.php?id=<?= (int) $admin['id'] ?>" class="btn btn-edit btn-sm">Edit</a>
                             <?php if ((int) $admin['id'] !== (int) ($_SESSION['admin_id'] ?? 0)): ?>
                                 <form method="POST" action="delete.php" onsubmit="return confirm('Delete this user? This cannot be undone.');">
+                                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
                                     <input type="hidden" name="id" value="<?= (int) $admin['id'] ?>">
                                     <button type="submit" class="btn btn-delete btn-sm">Delete</button>
                                 </form>
