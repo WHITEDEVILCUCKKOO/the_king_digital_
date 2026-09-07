@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
+require_once __DIR__ . '/../../functions/csrf.php';
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 if ($id <= 0) {
@@ -14,77 +15,81 @@ if ($admin === null) {
 
 $errors = [];
 $success = false;
-
+$csrfToken = generateCsrfToken();
 $name = $admin['name'];
 $email = $admin['email'];
 $role = $admin['role'];
 $status = $admin['status'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $csrfToken = $_POST['csrf_token'] ?? '';
+    if (!verifyCsrfToken($csrfToken)) {
+        $errors[] = 'Invalid request. Please try again.';
+    } else {
+        $name = trim($_POST['name'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $password = $_POST['password'] ?? '';
+        $confirmPassword = $_POST['confirm_password'] ?? '';
+        $role = $_POST['role'] ?? 'staff';
+        $status = $_POST['status'] ?? 'Active';
 
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $confirmPassword = $_POST['confirm_password'] ?? '';
-    $role = $_POST['role'] ?? 'staff';
-    $status = $_POST['status'] ?? 'Active';
+        $validRoles = ['super_admin', 'admin', 'staff'];
+        $validStatuses = ['Active', 'Inactive'];
 
-    $validRoles = ['super_admin', 'admin', 'staff'];
-    $validStatuses = ['Active', 'Inactive'];
-
-    if ($name === '') {
-        $errors['name'] = 'Name is required.';
-    }
-
-    if ($email === '') {
-        $errors['email'] = 'Email is required.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Enter a valid email address.';
-    }
-
-    // Password is optional here: leave both fields blank to keep the
-    // existing password.
-    if ($password !== '' || $confirmPassword !== '') {
-        if (strlen($password) < 8) {
-            $errors['password'] = 'Password must be at least 8 characters.';
-        } elseif ($password !== $confirmPassword) {
-            $errors['confirm_password'] = 'Passwords do not match.';
+        if ($name === '') {
+            $errors['name'] = 'Name is required.';
         }
-    }
 
-    if (!in_array($role, $validRoles, true)) {
-        $errors['role'] = 'Select a valid role.';
-    }
+        if ($email === '') {
+            $errors['email'] = 'Email is required.';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = 'Enter a valid email address.';
+        }
 
-    if (!in_array($status, $validStatuses, true)) {
-        $errors['status'] = 'Select a valid status.';
-    }
+        // Password is optional here: leave both fields blank to keep the
+        // existing password.
+        if ($password !== '' || $confirmPassword !== '') {
+            if (strlen($password) < 8) {
+                $errors['password'] = 'Password must be at least 8 characters.';
+            } elseif ($password !== $confirmPassword) {
+                $errors['confirm_password'] = 'Passwords do not match.';
+            }
+        }
 
-    // Don't let an admin lock themselves out by deactivating their own account.
-    if ((int) $_SESSION['admin_id'] === (int) $id && $status !== 'Active') {
-        $errors['status'] = 'You cannot deactivate your own account.';
-    }
+        if (!in_array($role, $validRoles, true)) {
+            $errors['role'] = 'Select a valid role.';
+        }
 
-    if (empty($errors)) {
-        try {
-            updateusers($conn, $id, [
-                'name' => $name,
-                'email' => $email,
-                'role' => $role,
-                'status' => $status,
-                'password' => $password !== '' ? $password : null,
-            ]);
+        if (!in_array($status, $validStatuses, true)) {
+            $errors['status'] = 'Select a valid status.';
+        }
 
-            $success = true;
-            $admin = getusersById($conn, $id);
-            $name = $admin['name'];
-            $email = $admin['email'];
-            $role = $admin['role'];
-            $status = $admin['status'];
-        } catch (InvalidArgumentException $e) {
-            $errors['email'] = $e->getMessage();
-        } catch (Exception $e) {
-            $errors['general'] = 'Something went wrong while saving the user.';
+        // Don't let an admin lock themselves out by deactivating their own account.
+        if ((int) $_SESSION['admin_id'] === (int) $id && $status !== 'Active') {
+            $errors['status'] = 'You cannot deactivate your own account.';
+        }
+
+        if (empty($errors)) {
+            try {
+                updateusers($conn, $id, [
+                    'name' => $name,
+                    'email' => $email,
+                    'role' => $role,
+                    'status' => $status,
+                    'password' => $password !== '' ? $password : null,
+                ]);
+
+                $success = true;
+                $admin = getusersById($conn, $id);
+                $name = $admin['name'];
+                $email = $admin['email'];
+                $role = $admin['role'];
+                $status = $admin['status'];
+            } catch (InvalidArgumentException $e) {
+                $errors['email'] = $e->getMessage();
+            } catch (Exception $e) {
+                $errors['general'] = 'Something went wrong while saving the user.';
+            }
         }
     }
 }
@@ -101,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php endif; ?>
 
 <form method="post" action="">
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
 
     <label for="name">Name</label>
     <input

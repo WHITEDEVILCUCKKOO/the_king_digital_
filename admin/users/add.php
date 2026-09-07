@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
+require_once __DIR__ . '/../../functions/csrf.php';
 
 $errors = [];
 $success = false;
@@ -9,76 +10,81 @@ $name = '';
 $email = '';
 $role = 'staff';
 $status = 'active';
+$csrfToken = generateCsrfToken();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $csrfToken = $_POST['csrf_token'] ?? '';
+    if (!verifyCsrfToken($csrfToken)) {
+        $errors[] = 'Invalid request. Please try again.';
+    } else {
+        $name = trim($_POST['name'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $password = $_POST['password'] ?? '';
+        $confirmPassword = $_POST['confirm_password'] ?? '';
+        $role = $_POST['role'] ?? 'staff';
+        $status = $_POST['status'] ?? 'active';
 
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $confirmPassword = $_POST['confirm_password'] ?? '';
-    $role = $_POST['role'] ?? 'staff';
-    $status = $_POST['status'] ?? 'active';
+        $validRoles = ['super_admin', 'admin', 'staff'];
+        $validStatuses = ['active', 'inactive'];
 
-    $validRoles = ['super_admin', 'admin', 'staff'];
-    $validStatuses = ['active', 'inactive'];
+        if ($name === '') {
+            $errors['name'] = 'Name is required.';
+        }
 
-    if ($name === '') {
-        $errors['name'] = 'Name is required.';
-    }
+        if ($email === '') {
+            $errors['email'] = 'Email is required.';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = 'Enter a valid email address.';
+        } elseif (getusersByEmail($conn, $email)) {
+            $errors['email'] = 'An admin with this email already exists.';
+        }
 
-    if ($email === '') {
-        $errors['email'] = 'Email is required.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Enter a valid email address.';
-    } elseif (getusersByEmail($conn, $email)) {
-        $errors['email'] = 'An admin with this email already exists.';
-    }
+        if ($password === '') {
+            $errors['password'] = 'Password is required.';
+        } elseif (strlen($password) < 8) {
+            $errors['password'] = 'Password must be at least 8 characters.';
+        } elseif ($password !== $confirmPassword) {
+            $errors['confirm_password'] = 'Passwords do not match.';
+        }
 
-    if ($password === '') {
-        $errors['password'] = 'Password is required.';
-    } elseif (strlen($password) < 8) {
-        $errors['password'] = 'Password must be at least 8 characters.';
-    } elseif ($password !== $confirmPassword) {
-        $errors['confirm_password'] = 'Passwords do not match.';
-    }
+        if (!in_array($role, $validRoles, true)) {
+            $errors['role'] = 'Select a valid role.';
+        }
 
-    if (!in_array($role, $validRoles, true)) {
-        $errors['role'] = 'Select a valid role.';
-    }
+        if (!in_array($status, $validStatuses, true)) {
+            $errors['status'] = 'Select a valid status.';
+        }
 
-    if (!in_array($status, $validStatuses, true)) {
-        $errors['status'] = 'Select a valid status.';
-    }
+        if (empty($errors)) {
 
-    if (empty($errors)) {
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $stmt = $conn->prepare(
-            "INSERT INTO users (name, email, password, role, status)
+            $stmt = $conn->prepare(
+                "INSERT INTO users (name, email, password, role, status)
              VALUES (?, ?, ?, ?, ?)"
-        );
+            );
 
-        if (!$stmt) {
-            $errors['general'] = 'Something went wrong while saving the admin.';
-        } else {
+            if (!$stmt) {
+                $errors['general'] = 'Something went wrong while saving the admin.';
+            } else {
 
-            $stmt->bind_param('sssss', $name, $email, $hashedPassword, $role, $status);
+                $stmt->bind_param('sssss', $name, $email, $hashedPassword, $role, $status);
 
-            try {
-                $stmt->execute();
-                $success = true;
+                try {
+                    $stmt->execute();
+                    $success = true;
 
-                // Reset the form after a successful save.
-                $name = '';
-                $email = '';
-                $role = 'staff';
-                $status = 'active';
-            } catch (mysqli_sql_exception $e) {
-                if ($e->getCode() === 1062) {
-                    $errors['email'] = 'An admin with this email already exists.';
-                } else {
-                    $errors['general'] = 'Something went wrong while saving the admin.';
+                    // Reset the form after a successful save.
+                    $name = '';
+                    $email = '';
+                    $role = 'staff';
+                    $status = 'active';
+                } catch (mysqli_sql_exception $e) {
+                    if ($e->getCode() === 1062) {
+                        $errors['email'] = 'An admin with this email already exists.';
+                    } else {
+                        $errors['general'] = 'Something went wrong while saving the admin.';
+                    }
                 }
             }
         }
@@ -95,6 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php endif; ?>
 
 <form method="post" action="">
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
 
     <label for="name">Name</label>
     <input
