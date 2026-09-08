@@ -1920,29 +1920,185 @@
                                 id: "template-create-rcs",
                                 title: "Create RCS Template",
                                 method: "POST",
-                                path: "",
-                                description: "Creates a new RCS message template."
+                                path: "/api/v1/rcs/createtemplate",
+                                description: "Creates a new RCS message template. Supported types are TextMessage, RichCard, and Carousel. Use [VarName] inside text fields for variable substitution (e.g. \"Hello [Name], OTP is [OTP]\"). Suggestion types include reply, url_action, dialer_action, calendar, view_location, query_location, and share_location. Provider support varies: Voda supports all suggestion types, while JioCX/JioJBM support only reply, url_action, dialer_action, calendar, and ViewLocationLatLong (ViewLocationQuery and share_location are not supported).",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    botId: "your_bot_id",
+                                    template_data: {
+                                        name: "welcome_text",
+                                        type: "TextMessage",
+                                        textMessage: "Hello [Name], your order [OrderId] is confirmed!",
+                                        suggestions: [{
+                                                suggestionType: "reply",
+                                                text: "Track Order"
+                                            },
+                                            {
+                                                suggestionType: "url_action",
+                                                text: "View Details",
+                                                url: "https://example.com/order/[OrderId]"
+                                            },
+                                            {
+                                                suggestionType: "dialer_action",
+                                                text: "Call Support",
+                                                phoneNumber: "+919876543210"
+                                            },
+                                            {
+                                                suggestionType: "calendar",
+                                                text: "Click here",
+                                                title: "SMPPSMShub Product Demo & Consultation",
+                                                description: "Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.",
+                                                startTime: "2026-07-28T08:45:00.000Z",
+                                                endTime: "2026-07-31T12:30:00.000Z"
+                                            },
+                                            {
+                                                suggestionType: "ViewLocationLatLong",
+                                                text: "Visit Us",
+                                                latitude: 22.3081,
+                                                longitude: 73.1657,
+                                                label: "SMPPSMShub Office"
+                                            },
+                                            {
+                                                suggestionType: "ViewLocationQuery",
+                                                text: "click now",
+                                                query: "Tajmahal"
+                                            },
+                                            {
+                                                suggestionType: "share_location",
+                                                text: "Share My Location"
+                                            }
+                                        ]
+                                    }
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"botId\": \"your_bot_id\",\n    \"template_data\": {\n      \"name\": \"welcome_text\",\n      \"type\": \"TextMessage\",\n      \"textMessage\": \"Hello [Name], your order [OrderId] is confirmed!\",\n      \"suggestions\": [\n        { \"suggestionType\": \"reply\", \"text\": \"Track Order\" },\n        { \"suggestionType\": \"url_action\", \"text\": \"View Details\", \"url\": \"https://example.com/order/[OrderId]\" },\n        { \"suggestionType\": \"dialer_action\", \"text\": \"Call Support\", \"phoneNumber\": \"+919876543210\" },\n        { \"suggestionType\": \"calendar\", \"text\": \"Click here\", \"title\": \"SMPPSMShub Product Demo & Consultation\", \"description\": \"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\", \"startTime\": \"2026-07-28T08:45:00.000Z\", \"endTime\": \"2026-07-31T12:30:00.000Z\" },\n        { \"suggestionType\": \"ViewLocationLatLong\", \"text\": \"Visit Us\", \"latitude\": 22.3081, \"longitude\": 73.1657, \"label\": \"SMPPSMShub Office\" },\n        { \"suggestionType\": \"ViewLocationQuery\", \"text\": \"click now\", \"query\": \"Tajmahal\" },\n        { \"suggestionType\": \"share_location\", \"text\": \"Share My Location\" }\n      ]\n    }\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    botId: 'your_bot_id',\n    template_data: {\n      name: 'welcome_text',\n      type: 'TextMessage',\n      textMessage: 'Hello [Name], your order [OrderId] is confirmed!',\n      suggestions: [\n        { suggestionType: 'reply', text: 'Track Order' },\n        { suggestionType: 'url_action', text: 'View Details', url: 'https://example.com/order/[OrderId]' },\n        { suggestionType: 'dialer_action', text: 'Call Support', phoneNumber: '+919876543210' },\n        { suggestionType: 'calendar', text: 'Click here', title: 'SMPPSMShub Product Demo & Consultation', description: 'Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.', startTime: '2026-07-28T08:45:00.000Z', endTime: '2026-07-31T12:30:00.000Z' },\n        { suggestionType: 'ViewLocationLatLong', text: 'Visit Us', latitude: 22.3081, longitude: 73.1657, label: 'SMPPSMShub Office' },\n        { suggestionType: 'ViewLocationQuery', text: 'click now', query: 'Tajmahal' },\n        { suggestionType: 'share_location', text: 'Share My Location' }\n      ]\n    }\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"botId\\\":\\\"your_bot_id\\\",\\\"template_data\\\":{\\\"name\\\":\\\"welcome_text\\\",\\\"type\\\":\\\"TextMessage\\\",\\\"textMessage\\\":\\\"Hello [Name], your order [OrderId] is confirmed!\\\",\\\"suggestions\\\":[{\\\"suggestionType\\\":\\\"reply\\\",\\\"text\\\":\\\"Track Order\\\"},{\\\"suggestionType\\\":\\\"url_action\\\",\\\"text\\\":\\\"View Details\\\",\\\"url\\\":\\\"https://example.com/order/[OrderId]\\\"},{\\\"suggestionType\\\":\\\"dialer_action\\\",\\\"text\\\":\\\"Call Support\\\",\\\"phoneNumber\\\":\\\"+919876543210\\\"},{\\\"suggestionType\\\":\\\"calendar\\\",\\\"text\\\":\\\"Click here\\\",\\\"title\\\":\\\"SMPPSMShub Product Demo & Consultation\\\",\\\"description\\\":\\\"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\\\",\\\"startTime\\\":\\\"2026-07-28T08:45:00.000Z\\\",\\\"endTime\\\":\\\"2026-07-31T12:30:00.000Z\\\"},{\\\"suggestionType\\\":\\\"ViewLocationLatLong\\\",\\\"text\\\":\\\"Visit Us\\\",\\\"latitude\\\":22.3081,\\\"longitude\\\":73.1657,\\\"label\\\":\\\"SMPPSMShub Office\\\"},{\\\"suggestionType\\\":\\\"ViewLocationQuery\\\",\\\"text\\\":\\\"click now\\\",\\\"query\\\":\\\"Tajmahal\\\"},{\\\"suggestionType\\\":\\\"share_location\\\",\\\"text\\\":\\\"Share My Location\\\"}]}}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => json_encode([\n    \"botId\" => \"your_bot_id\",\n    \"template_data\" => [\n      \"name\" => \"welcome_text\",\n      \"type\" => \"TextMessage\",\n      \"textMessage\" => \"Hello [Name], your order [OrderId] is confirmed!\",\n      \"suggestions\" => [\n        [\"suggestionType\" => \"reply\", \"text\" => \"Track Order\"],\n        [\"suggestionType\" => \"url_action\", \"text\" => \"View Details\", \"url\" => \"https://example.com/order/[OrderId]\"],\n        [\"suggestionType\" => \"dialer_action\", \"text\" => \"Call Support\", \"phoneNumber\" => \"+919876543210\"],\n        [\"suggestionType\" => \"calendar\", \"text\" => \"Click here\", \"title\" => \"SMPPSMShub Product Demo & Consultation\", \"description\" => \"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\", \"startTime\" => \"2026-07-28T08:45:00.000Z\", \"endTime\" => \"2026-07-31T12:30:00.000Z\"],\n        [\"suggestionType\" => \"ViewLocationLatLong\", \"text\" => \"Visit Us\", \"latitude\" => 22.3081, \"longitude\" => 73.1657, \"label\" => \"SMPPSMShub Office\"],\n        [\"suggestionType\" => \"ViewLocationQuery\", \"text\" => \"click now\", \"query\" => \"Tajmahal\"],\n        [\"suggestionType\" => \"share_location\", \"text\" => \"Share My Location\"]\n      ]\n    ]\n  ]),\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/createtemplate\"\npayload = {\n  \"botId\": \"your_bot_id\",\n  \"template_data\": {\n    \"name\": \"welcome_text\",\n    \"type\": \"TextMessage\",\n    \"textMessage\": \"Hello [Name], your order [OrderId] is confirmed!\",\n    \"suggestions\": [\n      {\"suggestionType\": \"reply\", \"text\": \"Track Order\"},\n      {\"suggestionType\": \"url_action\", \"text\": \"View Details\", \"url\": \"https://example.com/order/[OrderId]\"},\n      {\"suggestionType\": \"dialer_action\", \"text\": \"Call Support\", \"phoneNumber\": \"+919876543210\"},\n      {\"suggestionType\": \"calendar\", \"text\": \"Click here\", \"title\": \"SMPPSMShub Product Demo & Consultation\", \"description\": \"Join a live demo to explore Bulk SMS, SMPP Gateway, WhatsApp, Voice, IVR, and messaging solutions.\", \"startTime\": \"2026-07-28T08:45:00.000Z\", \"endTime\": \"2026-07-31T12:30:00.000Z\"},\n      {\"suggestionType\": \"ViewLocationLatLong\", \"text\": \"Visit Us\", \"latitude\": 22.3081, \"longitude\": 73.1657, \"label\": \"SMPPSMShub Office\"},\n      {\"suggestionType\": \"ViewLocationQuery\", \"text\": \"click now\", \"query\": \"Tajmahal\"},\n      {\"suggestionType\": \"share_location\", \"text\": \"Share My Location\"}\n    ]\n  }\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "template-delete-rcs",
                                 title: "Delete Template",
                                 method: "POST",
-                                path: "",
-                                description: "Deletes an existing RCS template."
+                                path: "/api/v1/rcs/deletetemplate",
+                                description: "Deletes an existing RCS template.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "botid",
+                                        type: "string",
+                                        required: false,
+                                        description: "Bot ID that owns the template"
+                                    },
+                                    {
+                                        name: "rcstemplatename",
+                                        type: "string",
+                                        required: false,
+                                        description: "Name of the RCS template to delete"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    exampleParam: 'exampleValue'\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/deletetemplate\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "template-get-rcs",
                                 title: "Get Template",
                                 method: "GET",
-                                path: "",
-                                description: "Retrieves an RCS template by name or ID."
+                                path: "/api/v1/rcs/getTemplate",
+                                description: "Retrieves an RCS template by name or ID.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "botid",
+                                        type: "string",
+                                        required: false,
+                                        description: "Bot ID that owns the template"
+                                    },
+                                    {
+                                        name: "TemplateName",
+                                        type: "string",
+                                        required: false,
+                                        description: "Name of the RCS template to retrieve"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getTemplate\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "template-get-agent",
                                 title: "Get AgentID and AgentName",
                                 method: "GET",
-                                path: "",
-                                description: "Retrieves the agent ID and agent name associated with the account."
+                                path: "/api/v1/rcs/getBotIds",
+                                description: "Retrieves the agent ID and agent name associated with the account.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/rcs/getBotIds\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -1952,8 +2108,42 @@
                             id: "rcs-send-message",
                             title: "Send a RCS message",
                             method: "POST",
-                            path: "/api/v1/Rcs/sendmessage",
-                            description: "Sends an RCS message through the RCS API."
+                            path: "/api/v1/send",
+                            description: "Sends a RCS Message via the single sending API. Set channel to RCSMessage.",
+                            headers: [{
+                                    name: "Content-Type",
+                                    type: "string",
+                                    required: true,
+                                    description: "Content type of the request"
+                                },
+                                {
+                                    name: "Authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer token"
+                                }
+                            ],
+                            body: {
+                                channel: "RCSMessage",
+                                to: ["919999999999"],
+                                from: "your_rcs_agent_id",
+                                content: {
+                                    data: {
+                                        templatename: "Sample_Template"
+                                    },
+                                    params: {
+                                        otp: "123456",
+                                        bank: "BrandX"
+                                    }
+                                }
+                            },
+                            languages: {
+                                shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/send \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"channel\": \"RCSMessage\",\n    \"to\": [\n      \"919999999999\"\n    ],\n    \"from\": \"your_rcs_agent_id\",\n    \"content\": {\n      \"data\": {\n        \"templatename\": \"Sample_Template\"\n      },\n      \"params\": {\n        \"otp\": \"123456\",\n        \"bank\": \"BrandX\"\n      }\n    }\n  }'",
+                                node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/send',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"channel\": \"RCSMessage\",\n    \"to\": [\n      \"919999999999\"\n    ],\n    \"from\": \"your_rcs_agent_id\",\n    \"content\": {\n      \"data\": {\n        \"templatename\": \"Sample_Template\"\n      },\n      \"params\": {\n        \"otp\": \"123456\",\n        \"bank\": \"BrandX\"\n      }\n    }\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/send\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"channel\\\":\\\"RCSMessage\\\",\\\"to\\\":[\\\"919999999999\\\"],\\\"from\\\":\\\"your_rcs_agent_id\\\",\\\"content\\\":{\\\"data\\\":{\\\"templatename\\\":\\\"Sample_Template\\\"},\\\"params\\\":{\\\"otp\\\":\\\"123456\\\",\\\"bank\\\":\\\"BrandX\\\"}}}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/send\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"channel\\\":\\\"RCSMessage\\\",\\\"to\\\":[\\\"919999999999\\\"],\\\"from\\\":\\\"your_rcs_agent_id\\\",\\\"content\\\":{\\\"data\\\":{\\\"templatename\\\":\\\"Sample_Template\\\"},\\\"params\\\":{\\\"otp\\\":\\\"123456\\\",\\\"bank\\\":\\\"BrandX\\\"}}}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/send\"\npayload = {\n  \"channel\": \"RCSMessage\",\n  \"to\": [\n    \"919999999999\"\n  ],\n  \"from\": \"your_rcs_agent_id\",\n  \"content\": {\n    \"data\": {\n      \"templatename\": \"Sample_Template\"\n    },\n    \"params\": {\n      \"otp\": \"123456\",\n      \"bank\": \"BrandX\"\n    }\n  }\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                            }
                         }]
                     },
                     {
@@ -1962,57 +2152,268 @@
                                 id: "wa-webhook",
                                 title: "Webhook",
                                 method: "POST",
-                                path: "",
-                                description: "Receives inbound WhatsApp delivery and status events."
+                                path: "/v1/whatsappapi/webhook",
+                                description: "Receives inbound WhatsApp delivery and status events.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/webhook \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/webhook',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/webhook\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/webhook\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/webhook\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-get-templates",
                                 title: "Get Templates",
                                 method: "GET",
-                                path: "",
-                                description: "Lists all WhatsApp message templates."
+                                path: "/v1/whatsappapi/tpl",
+                                description: "Lists all WhatsApp message templates.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "limit",
+                                        type: "integer",
+                                        required: false,
+                                        description: "Maximum number of templates to return"
+                                    },
+                                    {
+                                        name: "after",
+                                        type: "string",
+                                        required: false,
+                                        description: "Pagination cursor to fetch the next page"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-create-template",
                                 title: "Create Template",
                                 method: "POST",
-                                path: "",
-                                description: "Creates a new WhatsApp message template."
+                                path: "/v1/whatsappapi/tpl",
+                                description: "Creates a new WhatsApp message template.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    name: "string",
+                                    category: "string",
+                                    allow_category_change: true,
+                                    language: "string",
+                                    library_template_name: "string",
+                                    LIBRARY_TEMPLATE_BUTTON_INPUTS: ["any"],
+                                    components: ["any"]
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"name\": \"string\",\n    \"category\": \"string\",\n    \"allow_category_change\": true,\n    \"language\": \"string\",\n    \"library_template_name\": \"string\",\n    \"LIBRARY_TEMPLATE_BUTTON_INPUTS\": [\n      \"any\"\n    ],\n    \"components\": [\n      \"any\"\n    ]\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"name\": \"string\",\n    \"category\": \"string\",\n    \"allow_category_change\": true,\n    \"language\": \"string\",\n    \"library_template_name\": \"string\",\n    \"LIBRARY_TEMPLATE_BUTTON_INPUTS\": [\n      \"any\"\n    ],\n    \"components\": [\n      \"any\"\n    ]\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"name\\\":\\\"string\\\",\\\"category\\\":\\\"string\\\",\\\"allow_category_change\\\":true,\\\"language\\\":\\\"string\\\",\\\"library_template_name\\\":\\\"string\\\",\\\"LIBRARY_TEMPLATE_BUTTON_INPUTS\\\":[\\\"any\\\"],\\\"components\\\":[\\\"any\\\"]}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"name\\\":\\\"string\\\",\\\"category\\\":\\\"string\\\",\\\"allow_category_change\\\":true,\\\"language\\\":\\\"string\\\",\\\"library_template_name\\\":\\\"string\\\",\\\"LIBRARY_TEMPLATE_BUTTON_INPUTS\\\":[\\\"any\\\"],\\\"components\\\":[\\\"any\\\"]}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\"\npayload = {\n  \"name\": \"string\",\n  \"category\": \"string\",\n  \"allow_category_change\": true,\n  \"language\": \"string\",\n  \"library_template_name\": \"string\",\n  \"LIBRARY_TEMPLATE_BUTTON_INPUTS\": [\n    \"any\"\n  ],\n  \"components\": [\n    \"any\"\n  ]\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-delete-template",
                                 title: "Delete Template",
                                 method: "DELETE",
-                                path: "",
-                                description: "Deletes an existing WhatsApp message template."
+                                path: "/v1/whatsappapi/tpl",
+                                description: "Deletes an existing WhatsApp message template.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "hsm_id",
+                                        type: "integer",
+                                        required: true,
+                                        description: "ID of the template to delete"
+                                    },
+                                    {
+                                        name: "name",
+                                        type: "string",
+                                        required: true,
+                                        description: "Name of the template to delete"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request DELETE \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'DELETE',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Delete.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"DELETE\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"DELETE\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-get-template-media",
                                 title: "Get Template or Media By ID",
                                 method: "GET",
-                                path: "",
-                                description: "Retrieves a template or media asset by its ID."
+                                path: "/v1/whatsappapi/id",
+                                description: "Retrieves a template or media asset by its ID.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                queryParams: [{
+                                    name: "phone_number_id",
+                                    type: "string",
+                                    required: false,
+                                    description: "Phone number ID to look up the template or media for"
+                                }],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/id \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/id',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/id\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/id\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/id\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-edit-template",
                                 title: "Edit Template",
                                 method: "POST",
-                                path: "",
-                                description: "Edits an existing WhatsApp message template."
+                                path: "/v1/whatsappapi/tpl",
+                                description: "Edits an existing WhatsApp message template.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    name: "string",
+                                    category: "string",
+                                    allow_category_change: true,
+                                    language: "string",
+                                    library_template_name: "string",
+                                    LIBRARY_TEMPLATE_BUTTON_INPUTS: ["any"],
+                                    components: ["any"]
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"name\": \"string\",\n    \"category\": \"string\",\n    \"allow_category_change\": true,\n    \"language\": \"string\",\n    \"library_template_name\": \"string\",\n    \"LIBRARY_TEMPLATE_BUTTON_INPUTS\": [\n      \"any\"\n    ],\n    \"components\": [\n      \"any\"\n    ]\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"name\": \"string\",\n    \"category\": \"string\",\n    \"allow_category_change\": true,\n    \"language\": \"string\",\n    \"library_template_name\": \"string\",\n    \"LIBRARY_TEMPLATE_BUTTON_INPUTS\": [\n      \"any\"\n    ],\n    \"components\": [\n      \"any\"\n    ]\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"name\\\":\\\"string\\\",\\\"category\\\":\\\"string\\\",\\\"allow_category_change\\\":true,\\\"language\\\":\\\"string\\\",\\\"library_template_name\\\":\\\"string\\\",\\\"LIBRARY_TEMPLATE_BUTTON_INPUTS\\\":[\\\"any\\\"],\\\"components\\\":[\\\"any\\\"]}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"name\\\":\\\"string\\\",\\\"category\\\":\\\"string\\\",\\\"allow_category_change\\\":true,\\\"language\\\":\\\"string\\\",\\\"library_template_name\\\":\\\"string\\\",\\\"LIBRARY_TEMPLATE_BUTTON_INPUTS\\\":[\\\"any\\\"],\\\"components\\\":[\\\"any\\\"]}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\"\npayload = {\n  \"name\": \"string\",\n  \"category\": \"string\",\n  \"allow_category_change\": true,\n  \"language\": \"string\",\n  \"library_template_name\": \"string\",\n  \"LIBRARY_TEMPLATE_BUTTON_INPUTS\": [\n    \"any\"\n  ],\n  \"components\": [\n    \"any\"\n  ]\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-send-message",
                                 title: "Send WhatsApp Message",
                                 method: "POST",
-                                path: "",
-                                description: "Sends a WhatsApp message to a recipient."
+                                path: "/v1/whatsappapi/send",
+                                description: "Sends a WhatsApp message to a recipient.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {},
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/send \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {}'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/send',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {}\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/send\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/send\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/send\"\npayload = {}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "wa-get-channels",
                                 title: "Get Channels",
                                 method: "GET",
-                                path: "",
-                                description: "Lists WhatsApp business channels connected to the account."
+                                path: "/v1/whatsappapi/channels",
+                                description: "Lists WhatsApp business channels connected to the account.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/channels \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/channels',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/channels\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/channels\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/channels\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -2022,8 +2423,28 @@
                             id: "wa-media-upload",
                             title: "Upload WhatsApp Media",
                             method: "POST",
-                            path: "",
-                            description: "Uploads a media asset for use in WhatsApp messages."
+                            path: "/v1/whatsappmediaapi/media",
+                            description: "Uploads a media asset for use in WhatsApp messages.",
+                            headers: [{
+                                    name: "Content-Type",
+                                    type: "string",
+                                    required: true,
+                                    description: "Content type of the request"
+                                },
+                                {
+                                    name: "Authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer token"
+                                }
+                            ],
+                            languages: {
+                                shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappmediaapi/media \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappmediaapi/media',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappmediaapi/media\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappmediaapi/media\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappmediaapi/media\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
+                            }
                         }]
                     },
                     {
@@ -2032,36 +2453,148 @@
                                 id: "voice-outbound-call",
                                 title: "Make a new outbound voice call",
                                 method: "POST",
-                                path: "",
-                                description: "Initiates a new outbound voice call."
+                                path: "/v1/voiceapis/call",
+                                description: "Initiates a new outbound voice call.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/voiceapis/call \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/voiceapis/call',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/voiceapis/call\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/call\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/call\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "voice-upload-file",
                                 title: "Upload Voice File",
                                 method: "POST",
-                                path: "",
-                                description: "Uploads an audio file for use in voice calls."
+                                path: "/v1/voiceapis/upload",
+                                description: "Uploads an audio file for use in voice calls.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/voiceapis/upload \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/voiceapis/upload',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/voiceapis/upload\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/upload\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/upload\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "voice-upload-status",
                                 title: "Get Uploaded Voice File Status",
                                 method: "GET",
-                                path: "",
-                                description: "Checks the processing status of an uploaded voice file."
+                                path: "/v1/voiceapis/status",
+                                description: "Checks the processing status of an uploaded voice file.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/v1/voiceapis/status \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/voiceapis/status',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/voiceapis/status\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/status\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/status\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "voice-delivery-report",
                                 title: "Get voice delivery report",
                                 method: "POST",
-                                path: "",
-                                description: "Retrieves the delivery report for a voice call."
+                                path: "/v1/voiceapis/report",
+                                description: "Retrieves the delivery report for a voice call.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/voiceapis/report \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/voiceapis/report',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/voiceapis/report\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/report\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/report\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "voice-send-message",
                                 title: "Send a voice message",
                                 method: "POST",
-                                path: "",
-                                description: "Sends a pre-recorded voice message."
+                                path: "/v1/voiceapis/send",
+                                description: "Sends a pre-recorded voice message.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/voiceapis/send \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/voiceapis/send',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/voiceapis/send\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/send\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/voiceapis/send\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -2072,7 +2605,30 @@
                             title: "POST /api/v1/Ivr/Inbound/getivrreports",
                             method: "POST",
                             path: "/api/v1/Ivr/Inbound/getivrreports",
-                            description: "Fetches inbound IVR call reports."
+                            description: "Fetches inbound IVR call reports.",
+                            headers: [{
+                                    name: "Content-Type",
+                                    type: "string",
+                                    required: true,
+                                    description: "Content type of the request"
+                                },
+                                {
+                                    name: "Authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer token"
+                                }
+                            ],
+                            body: {
+                                exampleParam: "exampleValue"
+                            },
+                            languages: {
+                                shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/Ivr/Inbound/getivrreports \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/Ivr/Inbound/getivrreports',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/Ivr/Inbound/getivrreports\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/Ivr/Inbound/getivrreports\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/Ivr/Inbound/getivrreports\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                            }
                         }]
                     },
                     {
@@ -2081,15 +2637,61 @@
                                 id: "tts-outbound-call",
                                 title: "Make a new outbound voice call",
                                 method: "POST",
-                                path: "",
-                                description: "Initiates a new outbound text-to-speech call."
+                                path: "/v1/ttsapis/call",
+                                description: "Initiates a new outbound text-to-speech call.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/ttsapis/call \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/ttsapis/call',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/ttsapis/call\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/ttsapis/call\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/ttsapis/call\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "tts-send",
                                 title: "Send a text to speech",
                                 method: "POST",
-                                path: "",
-                                description: "Converts text to speech and delivers it as a call."
+                                path: "/v1/ttsapis/send",
+                                description: "Converts text to speech and delivers it as a call.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/ttsapis/send \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/ttsapis/send',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/ttsapis/send\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/ttsapis/send\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/ttsapis/send\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -2099,15 +2701,61 @@
                                 id: "ctc-outbound-call",
                                 title: "Make a new outbound CTC call",
                                 method: "POST",
-                                path: "",
-                                description: "Initiates a new outbound click-to-call session."
+                                path: "/v1/ctcapis/call",
+                                description: "Initiates a new outbound click-to-call session.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/ctcapis/call \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/ctcapis/call',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/ctcapis/call\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/ctcapis/call\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/ctcapis/call\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "ctc-click-to-call",
                                 title: "Send a click to call",
                                 method: "POST",
-                                path: "",
-                                description: "Triggers a click-to-call connection between two numbers."
+                                path: "/v1/ctcapis/send",
+                                description: "Triggers a click-to-call connection between two numbers.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                body: {
+                                    exampleParam: "exampleValue"
+                                },
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/v1/ctcapis/send \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\\n  --data '\n  {\n    \"exampleParam\": \"exampleValue\"\n  }'",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/ctcapis/send',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  data: {\n    \"exampleParam\": \"exampleValue\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/ctcapis/send\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\nrequest.body = \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/ctcapis/send\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  CURLOPT_POSTFIELDS => \"{\\\"exampleParam\\\":\\\"exampleValue\\\"}\",\n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/ctcapis/send\"\npayload = {\n  \"exampleParam\": \"exampleValue\"\n}\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers, json=payload)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -2117,8 +2765,54 @@
                             id: "wa2-get-templates",
                             title: "Get Templates",
                             method: "GET",
-                            path: "",
-                            description: "Lists WhatsApp templates available under this integration."
+                            path: "/v1/whatsappapi/tpl",
+                            description: "Fetch WhatsApp templates with pagination and date filters.",
+                            headers: [{
+                                name: "authorization",
+                                type: "string",
+                                required: true,
+                                description: "Bearer Token in Authorization header"
+                            }],
+                            queryParams: [{
+                                    name: "page",
+                                    type: "int32",
+                                    required: false,
+                                    description: "Page number for pagination",
+                                    default: "1"
+                                },
+                                {
+                                    name: "limit",
+                                    type: "int32",
+                                    required: false,
+                                    description: "Number of records per page",
+                                    default: "50"
+                                },
+                                {
+                                    name: "start_date",
+                                    type: "string",
+                                    required: false,
+                                    description: "Filter templates from this date"
+                                },
+                                {
+                                    name: "end_date",
+                                    type: "string",
+                                    required: false,
+                                    description: "Filter templates up to this date"
+                                },
+                                {
+                                    name: "template_name",
+                                    type: "string",
+                                    required: false,
+                                    description: "Filter by template name"
+                                }
+                            ],
+                            languages: {
+                                shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl \\\n  --header 'authorization: Bearer token' \\",
+                                node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl',\n  headers: {\n    \"authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/v1/whatsappapi/tpl\"\n\nheaders = {\n  \"authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                            }
                         }]
                     },
                     {
@@ -2127,22 +2821,120 @@
                                 id: "meta-get-templates",
                                 title: "Get templates",
                                 method: "GET",
-                                path: "",
-                                description: "Lists Meta/MoEngage-synced templates."
+                                path: "/api/v1/meta/templates",
+                                description: "Returns paginated WhatsApp templates from local DB.",
+                                headers: [{
+                                        name: "accept",
+                                        type: "string",
+                                        required: true,
+                                        description: "application/json"
+                                    },
+                                    {
+                                        name: "authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer Token in Authorization header"
+                                    }
+                                ],
+                                queryParams: [{
+                                        name: "page",
+                                        type: "integer",
+                                        required: false,
+                                        description: "Page number for pagination",
+                                        default: "1"
+                                    },
+                                    {
+                                        name: "limit",
+                                        type: "integer",
+                                        required: false,
+                                        description: "Number of records per page",
+                                        default: "50"
+                                    },
+                                    {
+                                        name: "start_date",
+                                        type: "string",
+                                        required: false,
+                                        description: "Filter templates from this date"
+                                    },
+                                    {
+                                        name: "end_date",
+                                        type: "string",
+                                        required: false,
+                                        description: "Filter templates up to this date"
+                                    },
+                                    {
+                                        name: "template_name",
+                                        type: "string",
+                                        required: false,
+                                        description: "Filter by template name"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/meta/templates \\\n  --header 'accept: application/json' \\\n  --header 'authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/meta/templates',\n  headers: {\n    \"accept\": \"application/json\",\n    \"authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"accept\"] = 'application/json'\nrequest[\"authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"accept: application/json\",\n    \"authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates\"\n\nheaders = {\n  \"accept\": \"application/json\",\n  \"authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "meta-get-template-by-id",
                                 title: "GET /api/v1/meta/templates/{templateId}",
                                 method: "GET",
                                 path: "/api/v1/meta/templates/{templateId}",
-                                description: "Retrieves a single Meta template by its ID."
+                                description: "Fetch a specific template by its ID.",
+                                headers: [{
+                                    name: "authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer Token in Authorization header"
+                                }],
+                                pathParams: [{
+                                    name: "templateId",
+                                    type: "string",
+                                    required: true,
+                                    description: "ID of the template to retrieve"
+                                }],
+                                languages: {
+                                    shell: "curl --request GET \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/%7BtemplateId%7D \\\n  --header 'authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'GET',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/%7BtemplateId%7D',\n  headers: {\n    \"authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/%7BtemplateId%7D\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/%7BtemplateId%7D\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"GET\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/%7BtemplateId%7D\"\n\nheaders = {\n  \"authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "meta-sync-templates",
                                 title: "POST /api/v1/meta/templates/sync",
                                 method: "POST",
                                 path: "/api/v1/meta/templates/sync",
-                                description: "Syncs templates from Meta into the platform."
+                                description: "Syncs templates between Moengage/Meta and the local DB.",
+                                headers: [{
+                                    name: "authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer Token in Authorization header"
+                                }],
+                                queryParams: [{
+                                        name: "startDate",
+                                        type: "string",
+                                        required: false,
+                                        description: "Start date to filter the sync range"
+                                    },
+                                    {
+                                        name: "endDate",
+                                        type: "string",
+                                        required: false,
+                                        description: "End date to filter the sync range"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/sync \\\n  --header 'authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/sync',\n  headers: {\n    \"authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/sync\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/sync\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/meta/templates/sync\"\n\nheaders = {\n  \"authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -2153,14 +2945,54 @@
                                 title: "POST /api/v1/meta/moengage",
                                 method: "POST",
                                 path: "/api/v1/meta/moengage",
-                                description: "Sends a WhatsApp message triggered from MoEngage."
+                                description: "Sends a WhatsApp message triggered from MoEngage.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/meta/moengage \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/meta/moengage',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/meta/moengage\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/meta/moengage\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/meta/moengage\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             },
                             {
                                 id: "webengage-wa",
                                 title: "POST /api/v1/meta/webengage",
                                 method: "POST",
                                 path: "/api/v1/meta/webengage",
-                                description: "Sends a WhatsApp message triggered from WebEngage."
+                                description: "Sends a WhatsApp message triggered from WebEngage.",
+                                headers: [{
+                                        name: "Content-Type",
+                                        type: "string",
+                                        required: true,
+                                        description: "Content type of the request"
+                                    },
+                                    {
+                                        name: "Authorization",
+                                        type: "string",
+                                        required: true,
+                                        description: "Bearer token"
+                                    }
+                                ],
+                                languages: {
+                                    shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/meta/webengage \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                    node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/meta/webengage',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                    ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/meta/webengage\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                    php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/meta/webengage\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                    python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/meta/webengage\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
+                                }
                             }
                         ]
                     },
@@ -2171,7 +3003,27 @@
                             title: "POST /api/v1/meta/clevertap",
                             method: "POST",
                             path: "/api/v1/meta/clevertap",
-                            description: "Sends a WhatsApp message triggered from CleverTap."
+                            description: "Sends a WhatsApp message triggered from CleverTap.",
+                            headers: [{
+                                    name: "Content-Type",
+                                    type: "string",
+                                    required: true,
+                                    description: "Content type of the request"
+                                },
+                                {
+                                    name: "Authorization",
+                                    type: "string",
+                                    required: true,
+                                    description: "Bearer token"
+                                }
+                            ],
+                            languages: {
+                                shell: "curl --request POST \\\n  --url https://omni.kingDigitalcpaas.ai/api/v1/meta/clevertap \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer token' \\",
+                                node: "const axios = require('axios');\n\nconst options = {\n  method: 'POST',\n  url: 'https://omni.kingDigitalcpaas.ai/api/v1/meta/clevertap',\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  }\n};\n\naxios.request(options).then(function (response) {\n  console.log(response.data);\n}).catch(function (error) {\n  console.error(error);\n});",
+                                ruby: "require 'uri'\nrequire 'net/http'\n\nurl = URI(\"https://omni.kingDigitalcpaas.ai/api/v1/meta/clevertap\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"Content-Type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer token'\n\n\nresponse = http.request(request)\nputs response.read_body",
+                                php: "$curl = curl_init();\n\ncurl_setopt_array($curl, [\n  CURLOPT_URL => \"https://omni.kingDigitalcpaas.ai/api/v1/meta/clevertap\",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_ENCODING => \"\",\n  CURLOPT_MAXREDIRS => 10,\n  CURLOPT_TIMEOUT => 30,\n  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n  CURLOPT_CUSTOMREQUEST => \"POST\",\n  \n  CURLOPT_HTTPHEADER => [\n    \"Content-Type: application/json\",\n    \"Authorization: Bearer token\"\n  ],\n]);\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo \"cURL Error #:\" . $err;\n} else {\n  echo $response;\n}",
+                                python: "import requests\n\nurl = \"https://omni.kingDigitalcpaas.ai/api/v1/meta/clevertap\"\n\nheaders = {\n  \"Content-Type\": \"application/json\",\n  \"Authorization\": \"Bearer token\"\n}\n\nresponse = requests.request(\"POST\", url, headers=headers)\n\nprint(response.text)"
+                            }
                         }]
                     }
                 ]
@@ -2608,7 +3460,8 @@
                 try {
                     window.localStorage.setItem("omniApiToken", authToken);
                 } catch (e) {
-                    /* localStorage unavailable — token still works for this session */ }
+                    /* localStorage unavailable — token still works for this session */
+                }
                 updateAuthorizeButtonUI();
                 renderCodePanels(findEndpoint(currentEndpointId));
                 closeAuthorize();
@@ -2620,7 +3473,8 @@
                 try {
                     window.localStorage.removeItem("omniApiToken");
                 } catch (e) {
-                    /* ignore */ }
+                    /* ignore */
+                }
                 updateAuthorizeButtonUI();
                 renderCodePanels(findEndpoint(currentEndpointId));
             });
@@ -2655,7 +3509,8 @@
                 try {
                     document.execCommand("copy");
                 } catch (e) {
-                    /* ignore */ }
+                    /* ignore */
+                }
                 document.body.removeChild(ta);
                 if (cb) cb();
             }
