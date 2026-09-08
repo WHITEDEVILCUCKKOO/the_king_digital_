@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 
+requireAdmin();
+
 $flash = getFlashMessage();
 
 /**
@@ -209,7 +211,7 @@ $csrfToken = generateCsrfToken();
                         <td><?= htmlspecialchars($admin['email']) ?></td>
                         <td><?= htmlspecialchars(ucwords(str_replace('_', ' ', $admin['role']))) ?></td>
                         <td>
-                            <span class="badge <?= $admin['status'] === 'Active' ? 'badge-active' : 'badge-inactive' ?>">
+                            <span class="badge <?= $admin['status'] === 'active' ? 'badge-active' : 'badge-inactive' ?>">
                                 <?= htmlspecialchars($admin['status']) ?>
                             </span>
                         </td>

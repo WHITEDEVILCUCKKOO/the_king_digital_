@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 
+requireAdmin();
+
 $errors = [];
 $success = false;
 
@@ -24,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $role = $_POST['role'] ?? 'staff';
         $status = $_POST['status'] ?? 'active';
 
-        $validRoles = ['super_admin', 'admin', 'staff'];
+        $validRoles = ['admin', 'staff'];
         $validStatuses = ['active', 'inactive'];
 
         if ($name === '') {

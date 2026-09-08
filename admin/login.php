@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_id'] = $users['id'];
             $_SESSION['admin_name'] = $users['name'];
             $_SESSION['admin_email'] = $users['email'];
+            $_SESSION['admin_role'] = $users['role'];
 
             redirect(BASE_URL . 'admin/index.php');
         }

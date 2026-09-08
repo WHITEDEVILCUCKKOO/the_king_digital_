@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 
+requireAdmin();
+
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 if ($id <= 0) {
     die('Invalid user id.');
@@ -31,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = $_POST['password'] ?? '';
         $confirmPassword = $_POST['confirm_password'] ?? '';
         $role = $_POST['role'] ?? 'staff';
-        $status = $_POST['status'] ?? 'Active';
+        $status = $_POST['status'] ?? 'active';
 
-        $validRoles = ['super_admin', 'admin', 'staff'];
-        $validStatuses = ['Active', 'Inactive'];
+        $validRoles = ['admin', 'staff'];
+        $validStatuses = ['active', 'inactive'];
 
         if ($name === '') {
             $errors['name'] = 'Name is required.';
@@ -65,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Don't let an admin lock themselves out by deactivating their own account.
-        if ((int) $_SESSION['admin_id'] === (int) $id && $status !== 'Active') {
+        if ((int) $_SESSION['admin_id'] === (int) $id && $status !== 'active') {
             $errors['status'] = 'You cannot deactivate your own account.';
         }
 
@@ -160,8 +162,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <label for="status">Status</label>
     <select id="status" name="status">
-        <option value="Active" <?= $status === 'Active' ? 'selected' : '' ?>>Active</option>
-        <option value="Inactive" <?= $status === 'Inactive' ? 'selected' : '' ?>>Inactive</option>
+        <option value="active" <?= $status === 'active' ? 'selected' : '' ?>>Active</option>
+        <option value="inactive" <?= $status === 'inactive' ? 'selected' : '' ?>>Inactive</option>
     </select>
     <?php if (!empty($errors['status'])): ?>
         <p class="field-error"><?= htmlspecialchars($errors['status']) ?></p>
