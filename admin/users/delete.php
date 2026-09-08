@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 
+requireAdmin();
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: add.php');
     exit;

@@ -4,6 +4,7 @@
         --studio-orange-dark: #E95508;
         --studio-orange-soft: #FFF0E8;
         --studio-blue: #3B7DDB;
+        --studio-black: #000
         --studio-blue-soft: #EAF2FE;
         --studio-purple: #8B5CF6;
         --studio-purple-soft: #F3EEFF;
@@ -81,8 +82,8 @@
         height: 200px;
         transform: translateX(-50%);
         background: radial-gradient(ellipse at center,
-            rgba(255, 107, 26, 0.08) 0%,
-            rgba(255, 107, 26, 0) 70%);
+                rgba(255, 107, 26, 0.08) 0%,
+                rgba(255, 107, 26, 0) 70%);
         pointer-events: none;
         z-index: -1;
     }
@@ -128,16 +129,8 @@
 
     .studio-services__grid {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-    }
-
-    .studio-services__card {
-        grid-column: span 2;
-    }
-
-    .studio-services__card:nth-child(5) {
-        grid-column: 2 / span 2;
     }
 
     /* ---------- Card ---------- */
@@ -176,6 +169,10 @@
 
     .studio-services__card:has(.studio-services__icon--orange)::before {
         background: linear-gradient(90deg, var(--studio-orange-dark), var(--studio-orange));
+    }
+
+    .studio-services__card:has(.studio-services__icon--black)::before {
+        background: linear-gradient(90deg, var(--studio-black), #0a0a0a);
     }
 
     .studio-services__card:has(.studio-services__icon--blue)::before {
@@ -426,6 +423,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
         .studio-services__card,
         .studio-services__icon,
         .studio-services__link svg {
@@ -456,6 +454,29 @@
                 </span>
                 <h3 class="studio-services__card-title">Podcast Services</h3>
                 <p class="studio-services__description">End-to-end podcast production including recording, editing, mixing and publishing for all major platforms.</p>
+                <span class="studio-services__link">
+                    Learn More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+
+            <a class="studio-services__card" href="#">
+                <span class="studio-services__icon studio-services__icon--black">
+                    <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 548.29 548.291" xml:space="preserve">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <path d="M486.205,196.116h-13.166V132.59c0-0.399-0.062-0.795-0.109-1.2c-0.021-2.52-0.828-4.997-2.556-6.96L364.656,3.677 c-0.031-0.031-0.064-0.044-0.085-0.075c-0.629-0.704-1.364-1.29-2.141-1.796c-0.231-0.154-0.462-0.283-0.704-0.419 c-0.672-0.365-1.386-0.672-2.121-0.893c-0.199-0.052-0.377-0.134-0.576-0.186C358.229,0.118,357.4,0,356.562,0H96.757 C84.893,0,75.256,9.649,75.256,21.502v174.613H62.093c-16.972,0-30.733,13.756-30.733,30.733v159.812 c0,16.961,13.761,30.731,30.733,30.731h13.163V526.79c0,11.854,9.637,21.501,21.501,21.501h354.777 c11.853,0,21.502-9.647,21.502-21.501V417.392H486.2c16.966,0,30.729-13.771,30.729-30.731V226.849 C516.93,209.872,503.177,196.116,486.205,196.116z M451.534,520.962H96.757v-103.57h354.777V520.962z M158.811,382.609 l50.184-164.228h48.722l50.927,164.228h-39.947l-12.682-42.158h-47.02l-11.695,42.158H158.811z M330.566,382.609V218.381h37.292 v164.228H330.566z M451.534,196.116H96.757V21.502h249.053v110.006c0,5.943,4.818,10.751,10.751,10.751h94.973V196.116z"></path>
+                                <path d="M240.426,277.832c-2.919-9.744-5.843-21.93-8.284-31.676h-0.488c-2.431,9.746-4.872,22.174-7.549,31.676l-9.745,34.846 h36.305L240.426,277.832z"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+                <h3 class="studio-services__card-title">AI video Services</h3>
+                <p class="studio-services__description">turns text prompts, scripts, or simple ideas into fully generated videos with scripts, voiceovers, visuals, and music.</p>
                 <span class="studio-services__link">
                     Learn More
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

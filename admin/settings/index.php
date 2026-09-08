@@ -6,6 +6,8 @@ require_once __DIR__ . '/../../functions/settings.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 require_once __DIR__ . '/../../includes/auth.php';
 
+requireAdmin();
+
 $settings = getSettings($conn);
 
 $reservedKeysByGroup = [

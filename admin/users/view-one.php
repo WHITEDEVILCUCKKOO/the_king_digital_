@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../functions/admin-functions.php';
 require_once __DIR__ . '/../../functions/csrf.php';
 
+requireAdmin();
+
 $csrfToken = generateCsrfToken();
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
@@ -15,7 +17,7 @@ if ($admin === null) {
     die('User not found.');
 }
 
-$statusClass = $admin['status'] === 'Active' ? 'badge-active' : 'badge-inactive';
+$statusClass = $admin['status'] === 'active' ? 'badge-active' : 'badge-inactive';
 ?>
 
 <style>
