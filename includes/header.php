@@ -62,8 +62,8 @@
                         <div class="has-dd">
                             <a href="#" class="botom_link_78">Services</a>
                             <div class="dd">
-                                <a href="promotional-sms.php">
-                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i  style="font-size: 18px;"  class="fas fa-comment-sms"></i></span>Promotional SMS
+                                <a href="service-bluk-sms.php">
+                                    <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i  style="font-size: 18px;"  class="fas fa-comment-sms"></i></span>Bluk SMS
                                 </a>
                                 <a href="service-whatsAppApi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i  style="font-size: 18px;"  class="fab fa-whatsapp"></i></span>WhatsApp API
@@ -184,7 +184,7 @@
 
 
                 <div class="mob-nav-sep">Services</div>
-                <a href="promotional-sms.php">Promotional SMS</a>
+                <a href="service-bluk-sms.php">Bluk SMS</a>
                 <a href="service-whatsAppApi.php">WhatsApp Business API</a>
                 <a href="web-design.php">Website Design</a>
                 <a href="seo-service.php">SEO Services</a>

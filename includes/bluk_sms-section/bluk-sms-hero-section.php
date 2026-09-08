@@ -445,23 +445,25 @@
         <div class="bluk_set">
 
             <div class="bluk-buage">
-                <p>Enterprise Bulk SMS Gateways</p>
+                <p>Bulk SMS Provider in Delhi</p>
             </div>
             <div class="bluk-titial">
-                <h1>Bulk SMS Solutions for <em> Every Business Need </em></h1>
+                <h1>Bulk SMS Service  <em> Provider in Delhi </em></h1>
             </div>
 
             <p class="tital_pera">
-                Enterprise Bulk SMS Gateway
-                Bulk SMS Solutions for <em> Every Business Need
-                Send millions</em> of transactional <em> SMS , OTP </em>, and promotional messages instantly with <em>98.9% delivery rate.  </em> DLT compliant, fast, and <em>trusted by  10,000+ businesses. </em></p>
+                In a world where emails get buried and ad budgets burn fast without guaranteed returns, text messaging remains the single most effective way to grab immediate attention. Over 70% of text messages are opened within three minutes of delivery making SMS the ultimate channel for urgent alerts, flash offers, and seamless customer communications.
+            </p>
+            <p class="tital_pera">
+                At <em>Kings Digital </em> , we operate as a premier  <em> Bulk SMS Service Provider in Delhi </em>, delivering a high-speed, enterprise-grade messaging infrastructure designed to help your business reach thousands of customers instantly. Whether you run a bustling retail outlet in Lajpat Nagar, manage property leads across Dwarka, or coordinate corporate logistics in Cyber City, our platform turns direct mobile communication into measurable revenue growth all with 100% TRAI DLT compliance.
+</p>
 
 
             <div class="bluk_tags_hero">
-                <span> <em>✓</em> DLT Compliant </span>
-                <span> <em>✓</em> 98.9% Delivery </span>
-                <span> <em>✓</em> Sub-3s OTP SMS </span>
-                <span> <em>✓</em> REST API + Webhooks </span>
+                <span> <em>✓</em> Bulk SMS </span>
+                <span> <em>✓</em> Promotional SMS </span>
+                <span> <em>✓</em> Transactional SMS </span>
+                <span> <em>✓</em> OTP SMS </span>
 
             </div>
 
@@ -572,6 +574,36 @@
                             <p>+917894561231</p>
                         </div>
                         <span>1m ago</span>
+                    </div>
+                </div>
+                <div class="fourth-box_for-hero_sole your-box-up-and_down-animation">
+                    <div class="gar_card_788">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 text-green-500 flex-shrink-0">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <path d="m9 11 3 3L22 4"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h6>Order confirmation SMS</h6>
+                            <p>+917894563231</p>
+                        </div>
+                        <span>2m ago</span>
+                    </div>
+                </div>
+                <div class="fourth-box_for-hero_sole your-box-up-and_down-animation">
+                    <div class="gar_card_788">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 text-green-500 flex-shrink-0">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <path d="m9 11 3 3L22 4"></path>
+                            </svg>
+                        </span>
+                        <div>
+                            <h6>Order confirmation SMS</h6>
+                            <p>+917894578231</p>
+                        </div>
+                        <span>2m ago</span>
                     </div>
                 </div>
 
