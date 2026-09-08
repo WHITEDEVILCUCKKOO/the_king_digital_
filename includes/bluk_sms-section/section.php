@@ -1,547 +1,429 @@
 <style>
-    #kdSmsComparison {
-        --kd-red: #b61f29;
-        --kd-red-dark: #991923;
-        --kd-red-light: #f8eeee;
-
-        --kd-green: #247d67;
-        --kd-green-dark: #176653;
-        --kd-green-light: #edf7f3;
-
-        --kd-navy: #050505;
-        --kd-text: #657284;
-        --kd-light-text: #8993a0;
-
-        --kd-border: #e3e8ed;
+    #kdFaqSection {
+        --kd-primary: #0B5CFF;
+        --kd-primary-dark: #193798;
+        --kd-navy: #263347;
+        --kd-text: #667085;
+        --kd-border: #e6e9ed;
         --kd-white: #ffffff;
 
         position: relative;
         width: 100%;
+
+        padding: 65px 20px;
+
         overflow: hidden;
 
-        padding: 55px 20px;
-
-
-        /* background: #7b7b7b1a; */
+        background-color: #fff;
         /* background:
-      radial-gradient(circle at 8% 20%, rgba(182, 31, 41, .04), transparent 22%),
-      radial-gradient(circle at 92% 75%, rgba(36, 125, 103, .045), transparent 24%),
-      linear-gradient(135deg, #ffffff 0%, #fafbfc 50%, #ffffff 100%); */
-
-        /* font-family: Inter, Arial, Helvetica, sans-serif; */
+            radial-gradient(circle at 8% 12%,
+                rgba(182, 31, 41, .045) 0,
+                transparent 24%),
+            radial-gradient(circle at 92% 88%,
+                rgba(182, 31, 41, .035) 0,
+                transparent 22%),
+            linear-gradient(135deg,
+                #ffffff 0%,
+                #fafbfc 50%,
+                #ffffff 100%); */
     }
 
 
-
-    #kdSmsComparison .kd-sms-comparison-container {
+    #kdFaqSection .kd-faq-container {
         width: 100%;
-        max-width: 1280px;
+        max-width: 900px;
+
         margin: 0 auto;
     }
 
 
+    #kdFaqSection .kd-faq-header {
+        max-width: 720px;
 
-    #kdSmsComparison .kd-sms-comparison-badge {
-        width: fit-content;
+        margin: 0 auto 35px;
 
-        display: flex;
-        align-items: center;
-        gap: 9px;
-
-        margin: 0 auto 18px;
-        padding: 8px 17px;
-
-        border: 1px solid rgba(182, 31, 41, .18);
-        border-radius: 50px;
-
-        /* background: rgba(182, 31, 41, .04); */
-        color: var(--kd-red);
-
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: .9px;
-        text-transform: uppercase;
-    }
-
-    #kdSmsComparison .kd-sms-comparison-badge span {
-        width: 7px;
-        height: 7px;
-
-        border-radius: 50%;
-        background: var(--kd-red);
-    }
-
-
-    #kdSmsComparison .kd-sms-comparison-heading {
-        max-width: 850px;
-        margin: 0 auto 42px;
         text-align: center;
     }
 
-    #kdSmsComparison .kd-sms-comparison-heading h2 {
+
+    #kdFaqSection .kd-faq-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 9px;
+
+        padding: 8px 15px;
+
+        margin-bottom: 17px;
+
+        border: 1px solid rgba(31, 59, 182, 0.14);
+        border-radius: 50px;
+
+        color: #0B5CFF;
+        background: rgba(31, 41, 182, 0.04);
+
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+    }
+
+
+    #kdFaqSection .kd-faq-badge-dot {
+        position: relative;
+
+        width: 7px;
+        height: 7px;
+
+        flex: 0 0 7px;
+
+        border-radius: 50%;
+
+        background: #0B5CFF;
+
+        animation: kdFaqDotBlink 1.5s ease-in-out infinite;
+    }
+
+
+    #kdFaqSection .kd-faq-badge-dot::before {
+        content: "";
+
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+
+        background: rgba(31, 79, 182, 0.25);
+
+        transform: translate(-50%, -50%);
+
+        animation: kdFaqDotPulse 1.5s ease-out infinite;
+    }
+
+
+    @keyframes kdFaqDotBlink {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: .35;
+            transform: scale(.7);
+        }
+
+    }
+
+
+    @keyframes kdFaqDotPulse {
+
+        0% {
+            width: 7px;
+            height: 7px;
+
+            opacity: .7;
+        }
+
+        70% {
+            width: 22px;
+            height: 22px;
+
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+    }
+
+
+    #kdFaqSection .kd-faq-header h2 {
         margin: 0;
 
-        color: var(--kd-navy);
+        color: black;
 
-        font-size:   44px;
-        line-height: 1.18;
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1.2;
 
         font-weight: 800;
-        letter-spacing: -1.5px;
+
+        letter-spacing: -1.2px;
     }
 
-    #kdSmsComparison .kd-sms-comparison-heading h2 span {
+
+    #kdFaqSection .kd-faq-header h2 span {
         color: #0B5CFF;
-        text-transform: lowercase;
     }
 
-    #kdSmsComparison .kd-sms-comparison-heading h2 strong {
-        display: block;
-        margin-top: 3px;
-
-        color: #0B5CFF;
-        font: inherit;
-        font-weight: 800;
-    }
-
-    #kdSmsComparison .kd-sms-comparison-heading p {
-        max-width: 720px;
+    #kdFaqSection .kd-faq-header p {
+        max-width: 650px;
 
         margin: 16px auto 0;
 
         color: var(--kd-text);
 
-        font-size: 15px;
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.8;
     }
 
 
-
-    #kdSmsComparison .kd-sms-comparison-wrapper {
-        position: relative;
-
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 54px minmax(0, 1fr);
-        align-items: center;
-
-        gap: 0;
-    }
-
-
-
-    #kdSmsComparison .kd-sms-comparison-card {
-        min-width: 0;
-
-        padding: 28px;
-
-        border-radius: 20px;
-
-        background: rgba(255, 255, 255, .92);
-
-        transition: border-color .25s ease, box-shadow .25s ease;
-    }
-
-    #kdSmsComparison .kd-sms-without-card {
-        border: 1px solid rgba(182, 31, 41, .18);
-
-        box-shadow: 0 15px 40px rgba(182, 31, 41, .055);
-    }
-
-    #kdSmsComparison .kd-sms-with-card {
-        border: 1px solid rgba(36, 125, 103, .2);
-
-        box-shadow: 0 15px 40px rgba(36, 125, 103, .06);
-    }
-
-
-
-    #kdSmsComparison .kd-sms-card-top {
+    #kdFaqSection .kd-faq-list {
         display: flex;
-        align-items: center;
+        flex-direction: column;
 
-        gap: 15px;
-    }
-
-    #kdSmsComparison .kd-sms-card-main-icon {
-        width: 57px;
-        height: 57px;
-
-        flex: 0 0 57px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 16px;
-
-        color: #ffffff;
-
-        font-size: 29px;
-        font-weight: 500;
-    }
-
-    #kdSmsComparison .kd-sms-without-icon {
-        background: linear-gradient(135deg, #c42d35, #a71821);
-
-        box-shadow: 0 10px 22px rgba(182, 31, 41, .16);
-    }
-
-    #kdSmsComparison .kd-sms-with-icon {
-        background: linear-gradient(135deg, #328b74, #1b6b58);
-
-        box-shadow: 0 10px 22px rgba(36, 125, 103, .16);
-    }
-
-    #kdSmsComparison .kd-sms-card-label {
-        display: block;
-
-        margin-bottom: 5px;
-
-        color: var(--kd-red);
-
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    #kdSmsComparison .kd-sms-with-label {
-        color: var(--kd-green);
-    }
-
-    #kdSmsComparison .kd-sms-card-top h3 {
-        margin: 0;
-
-        color: var(--kd-navy);
-
-        font-size: 19px;
-        line-height: 1.35;
-        font-weight: 750;
-    }
-
-    #kdSmsComparison .kd-sms-card-divider {
-        width: 100%;
-        height: 1px;
-
-        margin: 23px 0 20px;
-
-        background: var(--kd-border);
+        gap: 11px;
     }
 
 
+    #kdFaqSection .kd-faq-item {
+        overflow: hidden;
 
-    #kdSmsComparison .kd-sms-solution-point {
-        display: flex;
-        align-items: flex-start;
+        border: 1px solid var(--kd-border);
+        border-radius: 12px;
 
-        gap: 14px;
+        background: var(--kd-white);
 
-        cursor: default;
-    }
-
-
-    /* NUMBER CIRCLE */
-
-    #kdSmsComparison .kd-sms-solution-number {
-        width: 39px;
-        height: 39px;
-
-        flex: 0 0 39px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        color: var(--kd-red);
-
-        background: var(--kd-red-light);
-
-        font-size: 11px;
-        font-weight: 800;
+        box-shadow: 0 7px 20px rgba(35, 45, 58, .035);
 
         transition:
-            background .22s ease,
-            color .22s ease,
-            box-shadow .22s ease;
+            border-color .25s ease,
+            box-shadow .25s ease;
     }
 
 
-    /* LEFT SIDE HOVER - ONLY NUMBER */
+    #kdFaqSection .kd-faq-item.active {
+        border-color: rgba(31, 54, 182, 0.25);
 
-    #kdSmsComparison .kd-sms-without-point:hover .kd-sms-solution-number {
-        color: #ffffff;
-        background: var(--kd-red-dark);
-
-        box-shadow: 0 7px 17px rgba(153, 25, 35, .2);
+        box-shadow: 0 12px 28px rgba(35, 45, 58, .06);
     }
 
 
-    /* RIGHT SIDE DEFAULT NUMBER */
+    #kdFaqSection .kd-faq-question {
+        width: 100%;
+        min-height: 65px;
 
-    #kdSmsComparison .kd-sms-with-point .kd-sms-solution-number {
-        color: var(--kd-green);
-        background: var(--kd-green-light);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+
+        padding: 15px 22px;
+
+        border: 0;
+
+        color: var(--kd-navy);
+        background: transparent;
+
+        cursor: pointer;
+
+        text-align: left;
+
+        font-family: inherit;
+
+        transition:
+            color .25s ease,
+            background .25s ease;
     }
 
 
-    /* RIGHT SIDE HOVER - ONLY NUMBER */
-
-    #kdSmsComparison .kd-sms-with-point:hover .kd-sms-solution-number {
-        color: #ffffff;
-        background: var(--kd-green-dark);
-
-        box-shadow: 0 7px 17px rgba(23, 102, 83, .2);
+    #kdFaqSection .kd-faq-question:hover {
+        color: var(--kd-primary);
     }
 
 
+    #kdFaqSection .kd-faq-item.active .kd-faq-question {
+        color: var(--kd-primary);
 
-    #kdSmsComparison .kd-sms-solution-content {
-        padding-top: 1px;
+        background: linear-gradient(90deg,
+                rgba(182, 31, 41, .04),
+                rgba(255, 255, 255, 0));
     }
 
-    #kdSmsComparison .kd-sms-solution-content h4 {
-        margin: 0 0 5px;
 
-        color: #394657;
+    #kdFaqSection .kd-faq-question-text {
+        flex: 1;
 
         font-size: 15px;
-        line-height: 1.4;
+        line-height: 1.5;
+
         font-weight: 700;
     }
 
-    #kdSmsComparison .kd-sms-solution-content p {
-        margin: 0;
 
-        color: var(--kd-light-text);
-
-        font-size: 12px;
-        line-height: 1.55;
-    }
-
-
-    #kdSmsComparison .kd-sms-point-arrow {
-        width: 39px;
-
-        margin: 3px 0 3px;
-
-        padding-left: 13px;
-
-        color: var(--kd-red);
-
-        font-size: 23px;
-        line-height: 1;
-    }
-
-    #kdSmsComparison .kd-sms-with-arrow {
-        color: var(--kd-green);
-    }
-
-
-    #kdSmsComparison .kd-sms-card-result {
-        display: flex;
-        align-items: center;
-
-        gap: 13px;
-
-        margin-top: 22px;
-        padding: 15px 16px;
-
-        border-radius: 14px;
-    }
-
-    #kdSmsComparison .kd-sms-without-result {
-        background: linear-gradient(90deg,
-                rgba(182, 31, 41, .08),
-                rgba(182, 31, 41, .035));
-    }
-
-    #kdSmsComparison .kd-sms-with-result {
-        background: linear-gradient(90deg,
-                rgba(36, 125, 103, .1),
-                rgba(36, 125, 103, .04));
-    }
-
-    #kdSmsComparison .kd-sms-result-icon {
-        width: 36px;
-        height: 36px;
-
-        flex: 0 0 36px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        color: #ffffff;
-
-        font-size: 17px;
-        font-weight: 800;
-    }
-
-    #kdSmsComparison .kd-sms-without-result .kd-sms-result-icon {
-        background: var(--kd-red);
-    }
-
-    #kdSmsComparison .kd-sms-with-result .kd-sms-result-icon {
-        background: var(--kd-green);
-    }
-
-    #kdSmsComparison .kd-sms-card-result strong {
-        display: block;
-
-        margin-bottom: 3px;
-
-        color: #354152;
-
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    #kdSmsComparison .kd-sms-card-result span {
-        display: block;
-
-        color: var(--kd-text);
-
-        font-size: 11px;
-        line-height: 1.45;
-    }
-
-
-
-    #kdSmsComparison .kd-sms-vs-wrapper {
+    #kdFaqSection .kd-faq-icon {
         position: relative;
-        z-index: 5;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        width: 30px;
+        height: 30px;
 
-    #kdSmsComparison .kd-sms-vs-circle {
-        width: 54px;
-        height: 54px;
+        flex: 0 0 30px;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
-        border: 1px solid #dbe2e8;
+        border: 1px solid #e3e7eb;
         border-radius: 50%;
 
         background: #ffffff;
 
-        box-shadow: 0 8px 24px rgba(36, 50, 71, .09);
+        transition:
+            background .25s ease,
+            border-color .25s ease;
     }
 
-    #kdSmsComparison .kd-sms-vs-circle span {
-        color: var(--kd-navy);
 
-        font-size: 14px;
-        font-weight: 800;
+    #kdFaqSection .kd-faq-icon-horizontal,
+    #kdFaqSection .kd-faq-icon-vertical {
+        position: absolute;
+
+        width: 11px;
+        height: 2px;
+
+        border-radius: 5px;
+
+        background: #667085;
+
+        transition:
+            opacity .25s ease,
+            background .25s ease;
     }
 
+
+    #kdFaqSection .kd-faq-icon-vertical {
+        transform: rotate(90deg);
+    }
+
+
+    #kdFaqSection .kd-faq-item.active .kd-faq-icon {
+        border-color: var(--kd-primary);
+
+        background: var(--kd-primary);
+    }
+
+
+    #kdFaqSection .kd-faq-item.active .kd-faq-icon-horizontal,
+    #kdFaqSection .kd-faq-item.active .kd-faq-icon-vertical {
+        background: #ffffff;
+    }
+
+
+    #kdFaqSection .kd-faq-item.active .kd-faq-icon-vertical {
+        opacity: 0;
+    }
+
+    #kdFaqSection .kd-faq-answer {
+        display: grid;
+
+        grid-template-rows: 0fr;
+
+        opacity: 0;
+
+        transition:
+            grid-template-rows .4s ease,
+            opacity .3s ease;
+    }
+
+
+    #kdFaqSection .kd-faq-answer-inner {
+        min-height: 0;
+
+        overflow: hidden;
+    }
+
+
+    #kdFaqSection .kd-faq-item.active .kd-faq-answer {
+        grid-template-rows: 1fr;
+
+        opacity: 1;
+    }
+
+    #kdFaqSection .kd-faq-answer p {
+        margin: 0;
+
+        padding: 16px 55px 16px 22px;
+
+        border-top: 1px solid #edf0f3;
+
+        color: var(--kd-text);
+
+        font-size: 13px;
+        line-height: 1.8;
+    }
 
 
     @media (max-width: 1024px) {
 
-        #kdSmsComparison {
-            padding: 50px 20px;
-        }
-
-        #kdSmsComparison .kd-sms-comparison-card {
-            padding: 23px 20px;
-        }
-
-        #kdSmsComparison .kd-sms-card-top h3 {
-            font-size: 17px;
+        #kdFaqSection {
+            padding: 55px 20px;
         }
 
     }
 
-
-
     @media (max-width: 767px) {
 
-        #kdSmsComparison {
-            padding: 42px 15px;
+        #kdFaqSection {
+            padding: 48px 14px;
         }
 
-        #kdSmsComparison .kd-sms-comparison-badge {
-            margin-bottom: 14px;
 
-            font-size: 9px;
+        #kdFaqSection .kd-faq-header {
+            margin-bottom: 28px;
         }
 
-        #kdSmsComparison .kd-sms-comparison-heading {
-            margin-bottom: 30px;
-        }
 
-        #kdSmsComparison .kd-sms-comparison-heading h2 {
+        #kdFaqSection .kd-faq-header h2 {
             font-size: 30px;
-            letter-spacing: -1px;
+
+            letter-spacing: -.8px;
         }
 
-        #kdSmsComparison .kd-sms-comparison-heading p {
+
+        #kdFaqSection .kd-faq-header p {
             margin-top: 13px;
 
             font-size: 13px;
+            line-height: 1.7;
         }
 
-        #kdSmsComparison .kd-sms-comparison-wrapper {
-            grid-template-columns: 1fr;
 
-            gap: 20px;
+        #kdFaqSection .kd-faq-question {
+            min-height: 60px;
+
+            gap: 14px;
+
+            padding: 13px 15px;
         }
 
-        #kdSmsComparison .kd-sms-vs-wrapper {
-            order: 2;
 
-            height: 18px;
-        }
-
-        #kdSmsComparison .kd-sms-without-card {
-            order: 1;
-        }
-
-        #kdSmsComparison .kd-sms-with-card {
-            order: 3;
-        }
-
-        #kdSmsComparison .kd-sms-vs-circle {
-            width: 50px;
-            height: 50px;
-        }
-
-        #kdSmsComparison .kd-sms-comparison-card {
-            padding: 22px 17px;
-
-            border-radius: 17px;
-        }
-
-        #kdSmsComparison .kd-sms-card-main-icon {
-            width: 48px;
-            height: 48px;
-
-            flex-basis: 48px;
-
-            border-radius: 14px;
-
-            font-size: 24px;
-        }
-
-        #kdSmsComparison .kd-sms-card-top h3 {
-            font-size: 16px;
-        }
-
-        #kdSmsComparison .kd-sms-solution-content h4 {
+        #kdFaqSection .kd-faq-question-text {
             font-size: 13px;
         }
 
-        #kdSmsComparison .kd-sms-solution-content p {
-            font-size: 11px;
+
+        #kdFaqSection .kd-faq-icon {
+            width: 27px;
+            height: 27px;
+
+            flex-basis: 27px;
+        }
+
+
+        #kdFaqSection .kd-faq-answer p {
+            padding: 15px 17px 15px 17px;
+
+            font-size: 12px;
+            line-height: 1.75;
         }
 
     }
@@ -549,251 +431,338 @@
 
     @media (max-width: 480px) {
 
-        #kdSmsComparison {
-            padding: 38px 11px;
+        #kdFaqSection {
+            padding: 42px 12px;
         }
 
-        #kdSmsComparison .kd-sms-comparison-heading h2 {
-            font-size: 27px;
-        }
 
-        #kdSmsComparison .kd-sms-comparison-heading h2 strong {
-            margin-top: 1px;
-        }
+        #kdFaqSection .kd-faq-badge {
+            padding: 7px 11px;
 
-        #kdSmsComparison .kd-sms-comparison-card {
-            padding: 19px 14px;
-        }
-
-        #kdSmsComparison .kd-sms-card-label {
             font-size: 9px;
         }
 
-        #kdSmsComparison .kd-sms-card-top {
-            gap: 11px;
+
+        #kdFaqSection .kd-faq-header h2 {
+            font-size: 27px;
         }
 
-        #kdSmsComparison .kd-sms-solution-point {
-            gap: 11px;
+
+        #kdFaqSection .kd-faq-header p {
+            font-size: 12px;
         }
 
-        #kdSmsComparison .kd-sms-solution-number {
-            width: 36px;
-            height: 36px;
 
-            flex-basis: 36px;
-
-            font-size: 10px;
+        #kdFaqSection .kd-faq-list {
+            gap: 9px;
         }
 
-        #kdSmsComparison .kd-sms-point-arrow {
-            width: 36px;
 
-            padding-left: 11px;
-
-            font-size: 20px;
+        #kdFaqSection .kd-faq-item {
+            border-radius: 10px;
         }
 
-        #kdSmsComparison .kd-sms-card-result {
-            padding: 13px 12px;
+
+        #kdFaqSection .kd-faq-question {
+            min-height: 58px;
+
+            padding: 12px 13px;
+        }
+
+
+        #kdFaqSection .kd-faq-question-text {
+            font-size: 12px;
+        }
+
+
+        #kdFaqSection .kd-faq-answer p {
+            padding: 14px 14px 14px 14px;
+
+            font-size: 11px;
+            line-height: 1.7;
         }
 
     }
 </style>
-<section class="kd-sms-comparison-section" id="kdSmsComparison">
+<section class="kd-faq-section" id="kdFaqSection">
 
-    <div class="kd-sms-comparison-container">
+    <div class="kd-faq-container">
 
-        <!-- SECTION BADGE -->
-        <div class="kd-sms-comparison-badge" style="display: none;">
-            <span></span>
-            Smarter Business Communication
-        </div>
+        <!-- =====================================================
+    SECTION HEADER
+    ====================================================== -->
+        <div class="kd-faq-header">
 
-        <!-- HEADING -->
-        <div class="kd-sms-comparison-heading">
-            <h2>What Is the Difference Between Transactional <span>and</span>
-                <strong>Promotional Bulk SMS?</strong>
+            <div class="kd-faq-badge">
+                <span class="kd-faq-badge-dot"></span>
+                <span>Frequently Asked Questions</span>
+            </div>
+
+            <h2>
+                Questions About Our
+                <span>Promotional SMS Service?</span>
             </h2>
 
-            <p style="display: none;">
-                See how Promotional SMS helps businesses save time, reach more customers
-                and manage campaigns more efficiently.
+            <p>
+                Find answers to common questions about Promotional SMS campaigns,
+                message delivery, campaign management and how King Digital can help
+                your business connect with more customers.
             </p>
+
         </div>
 
 
-        <!-- COMPARISON WRAPPER -->
-        <div class="kd-sms-comparison-wrapper">
+        <!-- =====================================================
+    FAQ LIST
+    ====================================================== -->
+        <div class="kd-faq-list">
 
-            <!-- LEFT CARD -->
-            <div class="kd-sms-comparison-card kd-sms-without-card">
 
-                <div class="kd-sms-card-top">
-                    <div class="kd-sms-card-main-icon kd-sms-without-icon">×</div>
+            <!-- FAQ 1 -->
+            <div class="kd-faq-item">
 
-                    <div>
-                        <span class="kd-sms-card-label" >Without Promotional SMS</span>
-                        <h3>How Does Transactional Bulk SMS Work for Business Operations?
-</h3>
+                <button class="kd-faq-question" type="button" aria-expanded="false">
+
+                    <span class="kd-faq-question-text">
+                        What is the difference between Promotional and Transactional SMS?
+                    </span>
+
+                    <span class="kd-faq-icon" aria-hidden="true">
+                        <span class="kd-faq-icon-horizontal"></span>
+                        <span class="kd-faq-icon-vertical"></span>
+                    </span>
+
+                </button>
+
+                <div class="kd-faq-answer">
+
+                    <div class="kd-faq-answer-inner">
+                        <p>
+                            Promotional SMS refers to messages containing some marketing related information on offers, sales updates, and discounts only for the Non-DND numbers between the hours of 10 AM and 9 PM. Transactional SMS relates to important non-marketing alerts such as OTPs, reminders of appointments, and other messages relating to the user’s account sent at any time of the day or night to all numbers irrespective of whether they are registered in the DND list or not.
+
+                        </p>
                     </div>
-                </div>
 
-                <div class="kd-sms-card-divider"></div>
-
-
-                <!-- POINT 1 -->
-                <div class="kd-sms-solution-point kd-sms-without-point">
-                    <div class="kd-sms-solution-number">01</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Contact Customers Individually</h4>
-                        <p>Reach customers one at a time through manual communication.</p>
-                    </div>
-                </div>
-
-                <div class="kd-sms-point-arrow">↓</div>
-
-
-                <!-- POINT 2 -->
-                <div class="kd-sms-solution-point kd-sms-without-point">
-                    <div class="kd-sms-solution-number">02</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>More Time &amp; Effort</h4>
-                        <p>Managing large customer lists becomes slow and difficult.</p>
-                    </div>
-                </div>
-
-                <div class="kd-sms-point-arrow">↓</div>
-
-
-                <!-- POINT 3 -->
-                <div class="kd-sms-solution-point kd-sms-without-point">
-                    <div class="kd-sms-solution-number">03</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Limited Customer Reach</h4>
-                        <p>Your campaign reaches fewer people with inconsistent results.</p>
-                    </div>
-                </div>
-
-                <div class="kd-sms-point-arrow">↓</div>
-
-
-                <!-- POINT 4 -->
-                <div class="kd-sms-solution-point kd-sms-without-point">
-                    <div class="kd-sms-solution-number">04</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Hard to Track Results</h4>
-                        <p>It becomes difficult to measure campaign performance clearly.</p>
-                    </div>
-                </div>
-
-
-                <!-- RESULT -->
-                <div class="kd-sms-card-result kd-sms-without-result">
-                    <div class="kd-sms-result-icon">!</div>
-
-                    <div>
-                        <strong>Lower Reach &amp; More Effort</strong>
-                        <span>Slower communication and limited campaign efficiency.</span>
-                    </div>
                 </div>
 
             </div>
 
 
-            <!-- CENTER VS -->
-            <div class="kd-sms-vs-wrapper">
-                <div class="kd-sms-vs-circle">
-                    <span>VS</span>
+            <!-- FAQ 2 -->
+            <div class="kd-faq-item">
+
+                <button class="kd-faq-question" type="button" aria-expanded="false">
+
+                    <span class="kd-faq-question-text">
+                        Why is DLT Registration mandatory for sending Bulk SMS in Delhi?
+                    </span>
+
+                    <span class="kd-faq-icon" aria-hidden="true">
+                        <span class="kd-faq-icon-horizontal"></span>
+                        <span class="kd-faq-icon-vertical"></span>
+                    </span>
+
+                </button>
+
+                <div class="kd-faq-answer">
+
+                    <div class="kd-faq-answer-inner">
+                        <p>
+                            To combat spam and unauthorized commercial communications TRAI has introduced registration for Distributed Ledger Technology (DLT). Any organization that uses business messaging services in India has to register its business name, its Sender ID, and the message templates on the operator portal before sending messages.
+
+                        </p>
+                    </div>
+
                 </div>
+
             </div>
 
 
-            <!-- RIGHT CARD -->
-            <div class="kd-sms-comparison-card kd-sms-with-card">
+            <!-- FAQ 3 -->
+            <div class="kd-faq-item">
 
-                <div class="kd-sms-card-top">
-                    <div class="kd-sms-card-main-icon kd-sms-with-icon">✓</div>
+                <button class="kd-faq-question" type="button" aria-expanded="false">
 
-                    <div>
-                        <span class="kd-sms-card-label kd-sms-with-label">
-                            With Promotional SMS
-                        </span>
-                        <h3>Fast &amp; Scalable Communication</h3>
+                    <span class="kd-faq-question-text">
+                        How long does it take to activate a Bulk SMS account with Kings Digital?
+
+                    </span>
+
+                    <span class="kd-faq-icon" aria-hidden="true">
+                        <span class="kd-faq-icon-horizontal"></span>
+                        <span class="kd-faq-icon-vertical"></span>
+                    </span>
+
+                </button>
+
+                <div class="kd-faq-answer">
+
+                    <div class="kd-faq-answer-inner">
+                        <p>
+
+                            Once your DLT Entity ID, Sender ID, and Content Templates are approved on the operator portal, your Kings Digital panel can be configured and activated immediately for live messaging.
+
+                        </p>
                     </div>
-                </div>
 
-                <div class="kd-sms-card-divider"></div>
-
-
-                <!-- POINT 1 -->
-                <div class="kd-sms-solution-point kd-sms-with-point">
-                    <div class="kd-sms-solution-number">01</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Create One SMS Campaign</h4>
-                        <p>Prepare your promotional message from one simple platform.</p>
-                    </div>
-                </div>
-
-                <div class="kd-sms-point-arrow kd-sms-with-arrow">↓</div>
-
-
-                <!-- POINT 2 -->
-                <div class="kd-sms-solution-point kd-sms-with-point">
-                    <div class="kd-sms-solution-number">02</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Reach Thousands of Customers</h4>
-                        <p>Send promotional messages to a large audience instantly.</p>
-                    </div>
-                </div>
-
-                <div class="kd-sms-point-arrow kd-sms-with-arrow">↓</div>
-
-
-                <!-- POINT 3 -->
-                <div class="kd-sms-solution-point kd-sms-with-point">
-                    <div class="kd-sms-solution-number">03</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Fast Customer Engagement</h4>
-                        <p>Promote offers, discounts and updates with better reach.</p>
-                    </div>
-                </div>
-
-                <div class="kd-sms-point-arrow kd-sms-with-arrow">↓</div>
-
-
-                <!-- POINT 4 -->
-                <div class="kd-sms-solution-point kd-sms-with-point">
-                    <div class="kd-sms-solution-number">04</div>
-
-                    <div class="kd-sms-solution-content">
-                        <h4>Monitor Campaign Performance</h4>
-                        <p>Track delivery and improve future communication strategies.</p>
-                    </div>
-                </div>
-
-
-                <!-- RESULT -->
-                <div class="kd-sms-card-result kd-sms-with-result">
-                    <div class="kd-sms-result-icon">✓</div>
-
-                    <div>
-                        <strong>Higher Reach &amp; Better Results</strong>
-                        <span>Faster campaigns with smarter customer communication.</span>
-                    </div>
                 </div>
 
             </div>
+
+
+            <!-- FAQ 4 -->
+            <div class="kd-faq-item">
+
+                <button class="kd-faq-question" type="button" aria-expanded="false">
+
+                    <span class="kd-faq-question-text">
+                       Can I integrate the SMS Gateway with custom corporate CRM software?
+
+                    </span>
+
+                    <span class="kd-faq-icon" aria-hidden="true">
+                        <span class="kd-faq-icon-horizontal"></span>
+                        <span class="kd-faq-icon-vertical"></span>
+                    </span>
+
+                </button>
+
+                <div class="kd-faq-answer">
+
+                    <div class="kd-faq-answer-inner">
+                        <p>
+                           Yes. Kings Digital provides developer-friendly REST APIs, HTTP protocols, and SMPP connections that integrate smoothly with custom CRMs, ERPs, e-commerce storefronts, and mobile applications.
+
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 5 -->
+            <div class="kd-faq-item">
+
+                <button class="kd-faq-question" type="button" aria-expanded="false">
+
+                    <span class="kd-faq-question-text">
+                        What happens if a recipient's phone is switched off during a campaign dispatch?
+
+                    </span>
+
+                    <span class="kd-faq-icon" aria-hidden="true">
+                        <span class="kd-faq-icon-horizontal"></span>
+                        <span class="kd-faq-icon-vertical"></span>
+                    </span>
+
+                </button>
+
+                <div class="kd-faq-answer">
+
+                    <div class="kd-faq-answer-inner">
+                        <p>
+                            The device will receive its delivery again based on the standard validity period given by the carrier, which usually lasts 24 hours. The status of the delivered message will be logged in your delivery report after you switch on the device.
+
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 6 -->
+            <div class="kd-faq-item">
+
+                <button class="kd-faq-question" type="button" aria-expanded="false">
+
+                    <span class="kd-faq-question-text">
+                        How are dynamic variables used within DLT-approved templates?
+
+                    </span>
+
+                    <span class="kd-faq-icon" aria-hidden="true">
+                        <span class="kd-faq-icon-horizontal"></span>
+                        <span class="kd-faq-icon-vertical"></span>
+                    </span>
+
+                </button>
+
+                <div class="kd-faq-answer">
+
+                    <div class="kd-faq-answer-inner">
+                        <p>
+                            Dynamic variables can be used as placeholders in a fixed message template, so you would be able to automatically add personalized information such as the name of the client, the invoice number, date, or the unique verification code in each message.
+
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
     </div>
 
 </section>
+<script>
+    (function() {
+
+        const faqSection = document.getElementById("kdFaqSection");
+
+        if (!faqSection) return;
+
+
+        const faqItems = faqSection.querySelectorAll(".kd-faq-item");
+
+
+        faqItems.forEach(function(item) {
+
+            const question = item.querySelector(".kd-faq-question");
+
+
+            question.addEventListener("click", function() {
+
+                const isCurrentlyOpen =
+                    item.classList.contains("active");
+
+
+                /* CLOSE ALL OPEN FAQ */
+
+                faqItems.forEach(function(faqItem) {
+
+                    faqItem.classList.remove("active");
+
+                    const faqButton =
+                        faqItem.querySelector(".kd-faq-question");
+
+                    faqButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+
+                /* CLICKED CLOSED FAQ OPEN HOGA */
+
+                if (!isCurrentlyOpen) {
+
+                    item.classList.add("active");
+
+                    question.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                }
+
+            });
+
+        });
+
+    })();
+</script>

@@ -1,6 +1,6 @@
 <style>
   .qind-wrap {
-    background: #f1f1f1;
+    background: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     padding: 80px 20px;
   }

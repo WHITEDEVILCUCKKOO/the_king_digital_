@@ -14,7 +14,7 @@
 
     .tp-section{
     /* font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif; */
-    background:var(--bg-soft_123);
+    background:#fff;
     padding:80px 20px;
     overflow:hidden;
     position:relative;
@@ -221,10 +221,15 @@
 </style>
 
 <section class="tp-section">
+
+<div class="decor-hero-glow"></div>
+    <div class="decor-hero-grid1"></div>
+
+    
   <div class="tp-wrap">
  
     <div class="tp-header">
-      <h2>Transactional <span>vs</span> Promotional Bulk SMS</h2>
+      <h2>Transactional vs Promotional <span> Bulk SMS </span></h2>
     </div>
  
     <div class="tp-grid">

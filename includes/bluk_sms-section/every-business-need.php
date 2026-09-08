@@ -1,6 +1,7 @@
 <style>
     .qsms-wrap {
-        background: linear-gradient(135deg, #f4f7fd 0%, #eef1fb00 45%, #f1f0fb00 100%);
+        background: #F1F1F1;
+        /* background: linear-gradient(135deg, #f4f7fd 0%, #eef1fb00 45%, #f1f0fb00 100%); */
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         padding: 80px 20px;
     }

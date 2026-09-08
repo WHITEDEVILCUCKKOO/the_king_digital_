@@ -1,6 +1,6 @@
 <style>
   .qscale-wrap {
-    background: #ffffff;
+    background: #F1F1F1;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     padding: 90px 20px;
   }
@@ -372,8 +372,8 @@
   <div class="qscale-inner">
 
     <div class="qscale-left">
-      <h2 class="qscale-title">Scale Your Reach with<span class="qscale-title-accent">Bulk SMS Precision</span></h2>
-      <p class="qscale-desc">Experience high-volume messaging that doesn't compromise on speed or reliability. Our enterprise-grade gateway ensures your time-sensitive alerts and marketing campaigns reach their destination in seconds.</p>
+      <h2 class="qscale-title">Strategic Advantages<span class="qscale-title-accent"> Kings Digital Delivers</span></h2>
+      <p class="qscale-desc">Choosing the ideal Bulk SMS provider in Delhi can help your firm get great benefits not only in the market competition.</p>
 
       <div class="qscale-features" id="qscaleFeatures">
 
@@ -385,8 +385,8 @@
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
           </div>
-          <h3 class="qscale-feature-title">Global Coverage</h3>
-          <p class="qscale-feature-desc">Reach customers in over 190 countries with direct carrier connections.</p>
+          <h3 class="qscale-feature-title">Direct Connections with Carrier</h3>
+          <p class="qscale-feature-desc"> This implies fewer handovers along with and therefore low transmission time by employing direct interconnections with the leading telecommunication operators.</p>
         </div>
 
         <div class="qscale-feature">
@@ -395,8 +395,8 @@
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
-          <h3 class="qscale-feature-title">OTP Specialized</h3>
-          <p class="qscale-feature-desc">Prioritized routing for ultra-fast OTP and 2FA authentication.</p>
+          <h3 class="qscale-feature-title">Metrics Transparency</h3>
+          <p class="qscale-feature-desc"> The ability to track the performance in real time without having to pay for messages that could not be delivered.</p>
         </div>
 
         <div class="qscale-feature">
@@ -407,8 +407,8 @@
               <line x1="6" y1="20" x2="6" y2="14" />
             </svg>
           </div>
-          <h3 class="qscale-feature-title">Real-Time Insights</h3>
-          <p class="qscale-feature-desc">Track every message with detailed delivery reports and analytics.</p>
+          <h3 class="qscale-feature-title">Scalable Infrastructure</h3>
+          <p class="qscale-feature-desc">A possibility for any telecommunications device to increase its capacity without limits starting from small local businesses up to the huge companies that perform millions of transactions daily.</p>
         </div>
 
         <div class="qscale-feature">
@@ -418,8 +418,8 @@
               <polyline points="9 12 11 14 15 10" />
             </svg>
           </div>
-          <h3 class="qscale-feature-title">DLT Assistance</h3>
-          <p class="qscale-feature-desc">Complete support for DLT registration and template management.</p>
+          <h3 class="qscale-feature-title">Round-the-Clock Expert Help</h3>
+          <p class="qscale-feature-desc">Continuous technical support in DLT registration, API configuration, route choice and message template compliance.</p>
         </div>
 
       </div>

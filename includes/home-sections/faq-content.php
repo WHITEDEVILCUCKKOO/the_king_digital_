@@ -183,7 +183,7 @@
 
     .faq-wrap {
         display: grid;
-        grid-template-columns: 1.4fr 1fr;
+        grid-template-columns: 1fr 1.4fr;
         gap: 56px;
         align-items: start;
         margin-top: 52px
@@ -247,7 +247,7 @@
     .faq-cta-box {
         background: var(--blue);
         border-radius: 20px;
-        padding: 32px;
+        padding: 57px 43px;
         text-align: center;
         color: #fff;
         position: sticky;
@@ -255,7 +255,7 @@
     }
 
     .faq-cta-box h3 {
-        font-size: 22px;
+        font-size: 44px;
         font-weight: 800;
         color: #fff;
         margin-bottom: 10px
@@ -947,75 +947,23 @@
                 </div>
             </div>
 
-            <div class="contact-form reveal">
-                <div class="cf-title">Send us a message</div>
-                <div class="cf-sub">We'll get back to you within 2 hours on business days.</div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Your Name *</label>
-                        <input  type="text" placeholder="Rajesh Sharma" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Mobile Number *</label>
-                        <input type="tel" placeholder="+91 98765 43210" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="rajesh@company.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Company Name</label>
-                        <input type="text" placeholder="Your Company Pvt. Ltd.">
+            <div class="faq-cta-box reveal visible">
+                <h3>Still have questions?</h3>
+                <p>Our team is here to help. Get a free 30-minute consultation with our digital expert — no pressure, no obligation.</p>
+                <a href="contact.php" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Us a Message
+                </a>
+                <div class="faq-cta-or">— or —</div>
+                <a href="tel:+919211339966" class="btn btn-white">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)">
+                    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px">ALSO REACH US ON</div>
+                    <div style="display:flex;gap:10px;justify-content:center">
+                        <a href="https://wa.me/919211339966" style="background: rgb(81 131 38);border-radius: 7px;padding: 8px 14px;color: #fff;font-size: 16px;font-weight: 600;display: flex;align-items: center;"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp</a>
+                        <a href="https://kingdigital.in/online-meeting.php" style="background:rgba(255,255,255,.1);border-radius:7px;padding:8px 14px;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;gap:6px"><i class="fas fa-video"></i> Meet Online</a>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Service Required *</label>
-                    <select>
-                        <option value="">— Select a service —</option>
-                        <option>Bulk SMS Services</option>
-                        <option>WhatsApp Business API</option>
-                        <option>Website Design & Development</option>
-                        <option>SEO / SMO / PPC</option>
-                        <option>IVR / Toll Free / Miss Call</option>
-                        <option>Email Marketing</option>
-                        <option>Hosting & Cloud Servers</option>
-                        <option>Video / Audio Production</option>
-                        <option>Digital Marketing Academy</option>
-                        <option>Other / Multiple Services</option>
-                    </select>
-                </div>
-                <!-- <div class="form-group">
-                    <label>Your Message</label>
-                    <textarea
-                        placeholder="Tell us about your project — goals, timeline, budget, or any questions you have..."></textarea>
-                </div> -->
-                <button class="btn btn-primary  " style="display: none;">
-                    Send Message — We'll Reply in 2 Hours
-                    <!-- <div class="submit_btn_animtion">
-                        <i class="fa-solid fa-paper-plane sesa885" ></i>
-                    </div> -->
-                </button>
-
-                <button type="submit" class="from_btn_submit" onclick="submit_btn_form()">
-                    <div class="svg-wrapper-1">
-                        <div class="svg-wrapper">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                width="24"
-                                height="24">
-                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                <path
-                                    fill="currentColor"
-                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <span style="padding-right: 5px;">Send Message — We'll Reply in 2 Hours</span>
-                </button>
-
             </div>
 
         </div>
