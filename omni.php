@@ -18,19 +18,16 @@
             --auth: #6b7280;
             --radius: 8px;
             --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 8px rgba(15, 23, 42, 0.04);
-            --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
         }
 
         .omni {
-            font-family: var(--sans);
             color: var(--nav);
             background: var(--bg);
         }
 
         .omni_content {
             display: grid;
-            grid-template-columns: 272px minmax(0, 1fr) 380px;
+            grid-template-columns: 320px minmax(0, 1fr) 380px;
             max-width: 1440px;
             margin: 0 auto;
             min-height: 100vh;
@@ -60,7 +57,6 @@
             cursor: pointer;
             margin-bottom: 18px;
             transition: border-color .15s ease, background .15s ease;
-            font-family: inherit;
         }
 
         .omni_content--input:hover {
@@ -91,7 +87,262 @@
             border: 1px solid var(--border);
             border-radius: 4px;
             padding: 1px 5px;
+        }
+
+        /* ============ AUTH PANEL ============ */
+        .auth-panel {
+            display: none;
+        }
+
+        .auth-panel.active {
+            display: block;
+        }
+
+        .auth-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .auth-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .auth-header-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent);
+        }
+
+        .auth-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 4px;
+            color: var(--nav);
+        }
+
+        .auth-header p {
+            font-size: 13px;
+            color: var(--nav-soft);
+            margin: 0;
+        }
+
+        .auth-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 16px;
+            background: #fff;
+        }
+
+        .auth-field+.auth-field {
+            margin-top: 22px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .auth-field-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .auth-field-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .auth-field-title svg {
+            width: 16px;
+            height: 16px;
+            color: #d97706;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .auth-field-title.blue svg {
+            color: var(--get);
+        }
+
+        .auth-field-title div strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--nav);
+        }
+
+        .auth-field-title div span {
+            font-size: 12.5px;
+            color: var(--nav-soft);
+        }
+
+        .auth-current-pill {
             font-family: var(--mono);
+            font-size: 11.5px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 3px 10px;
+            white-space: nowrap;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .auth-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .auth-row input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            font-size: 13px;
+            outline: none;
+            color: var(--nav);
+        }
+
+        .auth-row input[type="text"]:focus {
+            border-color: var(--accent);
+        }
+
+        .auth-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 9px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background .15s ease;
+        }
+
+        .auth-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .auth-btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .auth-btn-primary:hover {
+            background: #047857;
+        }
+
+        .auth-btn-secondary {
+            background: var(--get);
+            color: #fff;
+        }
+
+        .auth-btn-secondary:hover {
+            background: #0369a1;
+        }
+
+        .auth-btn-outline {
+            background: #fff;
+            border: 1px solid var(--border);
+            color: var(--nav-soft);
+        }
+
+        .auth-btn-outline:hover {
+            background: var(--bg-soft);
+        }
+
+        .auth-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .auth-info-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .auth-info-card-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .auth-info-card-head svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        .auth-info-card-head.green svg {
+            color: var(--accent);
+        }
+
+        .auth-info-card-head.blue svg {
+            color: var(--get);
+        }
+
+        .auth-info-card-head strong {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--nav);
+        }
+
+        .auth-info-card p {
+            font-size: 12.5px;
+            color: var(--nav-soft);
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        .auth-saved-toast {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity .2s ease;
+            white-space: nowrap;
+        }
+
+        .auth-saved-toast.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 640px) {
+            .auth-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-field-head {
+                flex-direction: column;
+            }
+
+            .auth-current-pill {
+                align-self: flex-start;
+            }
         }
 
         .sidebar-eyebrow {
@@ -114,22 +365,22 @@
             justify-content: space-between;
             background: transparent;
             border: none;
-            font-family: inherit;
-            font-size: 12.5px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--nav);
-            padding: 8px 8px;
+            padding: 10px 12px;
             cursor: pointer;
             border-radius: 6px;
         }
 
         .sidebar-group-head:hover {
             color: var(--accent);
+            background: var(--bg-soft);
         }
 
         .sidebar-group-head svg {
-            width: 11px;
-            height: 11px;
+            width: 12px;
+            height: 12px;
             transition: transform .15s ease;
             flex-shrink: 0;
         }
@@ -153,11 +404,10 @@
             width: 100%;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-align: left;
             border: none;
             background: transparent;
-            font-family: inherit;
             font-size: 13px;
             font-weight: 500;
             color: var(--nav-soft);
@@ -184,7 +434,7 @@
 
         .method-badge {
             flex-shrink: 0;
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 700;
             letter-spacing: .02em;
             color: #fff;
@@ -243,7 +493,7 @@
         }
 
         .omni_content--main-heading h2 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             margin: 0 0 10px;
             letter-spacing: -.01em;
@@ -257,7 +507,6 @@
             border: 1px solid #a7f3d0;
             background: var(--accent-soft);
             color: var(--accent);
-            font-family: inherit;
             font-size: 13px;
             font-weight: 600;
             padding: 8px 16px;
@@ -295,7 +544,6 @@
         }
 
         .endpoint-path {
-            font-family: var(--mono);
             font-size: 13.5px;
             background: var(--bg-soft);
             border: 1px solid var(--border);
@@ -368,7 +616,6 @@
         }
 
         .prop-name {
-            font-family: var(--mono);
             font-weight: 600;
             color: var(--nav);
         }
@@ -380,7 +627,6 @@
 
         .prop-type {
             color: var(--accent);
-            font-family: var(--mono);
             font-size: 12px;
         }
 
@@ -393,7 +639,6 @@
             color: #e2e8f0;
             padding: 14px 16px;
             border-radius: var(--radius);
-            font-family: var(--mono);
             font-size: 12.5px;
             line-height: 1.6;
             overflow-x: auto;
@@ -466,35 +711,6 @@
             display: none;
         }
 
-        .try-it-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 7px;
-            width: 100%;
-            border: 1px dashed #a7f3d0;
-            background: var(--accent-soft);
-            color: var(--accent);
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 700;
-            padding: 12px;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-bottom: 14px;
-            transition: background .15s ease, border-color .15s ease;
-        }
-
-        .try-it-btn:hover {
-            background: #d1fae5;
-            border-color: var(--accent);
-        }
-
-        .try-it-btn svg {
-            width: 13px;
-            height: 13px;
-        }
-
         .code-panel pre.code-block {
             border-radius: 0;
         }
@@ -561,7 +777,6 @@
             font-weight: 600;
             color: var(--nav-soft);
             cursor: pointer;
-            font-family: inherit;
             transition: all .15s ease;
         }
 
@@ -603,7 +818,6 @@
         }
 
         .status-code {
-            font-family: var(--mono);
             font-size: 11px;
             background: var(--accent-soft);
             color: var(--accent);
@@ -677,7 +891,6 @@
             border: none;
             outline: none;
             font-size: 15px;
-            font-family: inherit;
             color: var(--nav);
         }
 
@@ -710,7 +923,6 @@
             padding: 9px 10px;
             border-radius: 8px;
             cursor: pointer;
-            font-family: inherit;
         }
 
         .search-result-item:hover,
@@ -754,7 +966,6 @@
         }
 
         .search-modal-foot kbd {
-            font-family: var(--mono);
             background: var(--bg-soft);
             border: 1px solid var(--border);
             border-radius: 4px;
@@ -831,7 +1042,6 @@
             border-radius: 8px;
             padding: 9px 11px;
             font-size: 13.5px;
-            font-family: var(--mono);
             outline: none;
             color: var(--nav);
         }
@@ -848,7 +1058,6 @@
         }
 
         .authorize-hint code {
-            font-family: var(--mono);
             background: var(--bg-soft);
             border-radius: 4px;
             padding: 1px 4px;
@@ -864,7 +1073,6 @@
 
         .authorize-clear-btn,
         .authorize-save-btn {
-            font-family: inherit;
             font-size: 12.5px;
             font-weight: 600;
             padding: 8px 16px;
@@ -1086,7 +1294,7 @@
                     <span class="kbd-hint">/</span>
                 </button>
 
-                <div id="sidebarGroups"><!-- rendered by renderSidebar() --></div>
+                <div id="sidebarGroups"></div>
             </div>
 
             <div class="omni_content--main" id="mainContent">
@@ -1104,17 +1312,105 @@
                 <div class="endpoint-meta" id="endpointMeta"></div>
                 <p class="endpoint-desc" id="endpointDesc"></p>
 
-                <div class="doc-section">
+                <div class="auth-panel" id="authPanel">
+                    <div class="auth-header">
+                        <div class="auth-header-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                                <path d="m21 2-9.6 9.6"></path>
+                                <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2>Global API Authentication</h2>
+                            <p>Set your Bearer Token once here to apply it across all API endpoints.</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-card">
+                        <div class="auth-field">
+                            <div class="auth-field-head">
+                                <div class="auth-field-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="m9 12 2 2 4-4"></path>
+                                    </svg>
+                                    <div>
+                                        <strong>HTTP Bearer Token</strong>
+                                        <span>Authorization header injected into all API calls</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="auth-row">
+                                <input type="text" id="authTokenInput" placeholder="Enter Bearer Token (e.g. 84bc8ce6-bab7-430a...)" autocomplete="off">
+                                <button type="button" class="auth-btn auth-btn-primary" id="authSaveTokenBtn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                                        <path d="m21 2-9.6 9.6"></path>
+                                        <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                                    </svg>
+                                    <span>Save &amp; Apply</span>
+                                </button>
+                                <span class="auth-saved-toast" id="authTokenToast">Saved!</span>
+                            </div>
+                        </div>
+
+                        <div class="auth-field">
+                            <div class="auth-field-head">
+                                <div class="auth-field-title blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                    <div>
+                                        <strong>API Base Server URL</strong>
+                                        <span>Custom base server host saved in localStorage for all endpoints &amp; code snippets</span>
+                                    </div>
+                                </div>
+                                <span class="auth-current-pill" id="authCurrentUrlPill"></span>
+                            </div>
+                            <div class="auth-row">
+                                <input type="text" id="authBaseUrlInput" placeholder="https://omni.kingDigitalcpaas.ai" autocomplete="off">
+                                <button type="button" class="auth-btn auth-btn-secondary" id="authSaveUrlBtn">Update Server URL</button>
+                                <button type="button" class="auth-btn auth-btn-outline" id="authResetUrlBtn">Reset Default</button>
+                                <span class="auth-saved-toast" id="authUrlToast">Saved!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auth-info-grid">
+                        <div class="auth-info-card">
+                            <div class="auth-info-card-head green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <strong>Auto-Injected in Headers &amp; URLs</strong>
+                            </div>
+                            <p>Bearer tokens and custom API Server Base URLs are persisted in localStorage and applied globally to all requests.</p>
+                        </div>
+                        <div class="auth-info-card">
+                            <div class="auth-info-card-head blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg>
+                                <strong>Reflected in Code Snippets</strong>
+                            </div>
+                            <p>cURL, Node.js, Python, PHP, and Ruby code generators instantly reflect your custom server domain and authorization keys.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc-section" id="headersDocSection">
                     <h3>Headers</h3>
                     <div id="headersSection"></div>
                 </div>
 
-                <div class="doc-section">
+                <div class="doc-section" id="bodyDocSection">
                     <h3>Request Body</h3>
                     <div id="bodySection"></div>
                 </div>
 
-                <div class="doc-section">
+                <div class="doc-section" id="responseDocSection">
                     <h3>Response</h3>
                     <div id="responseMainSection"></div>
                 </div>
@@ -1125,13 +1421,7 @@
                 <div class="rightside-language-btn" id="languageButtons"><!-- rendered by renderLanguageButtons() --></div>
 
                 <div class="rightside-request">
-                    <button class="try-it-btn" id="tryItBtn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                        </svg>
-                        <span>Try it</span>
-                    </button>
-                    <div class="code-panel" id="requestPanel" hidden>
+                    <div class="code-panel" id="requestPanel">
                         <div class="code-panel-head">
                             <span id="requestPanelLabel">SHELL REQUEST</span>
                             <div class="code-panel-actions">
@@ -1152,8 +1442,8 @@
                     </div>
                 </div>
 
-                <div class="right-response">
-                    <div class="code-panel" id="responsePanel" hidden>
+                <div class="right-response" id="responseWrapper">
+                    <div class="code-panel" id="responsePanel">
                         <div class="code-panel-head">
                             <span>RESPONSE</span>
                             <div class="code-panel-actions">
@@ -1219,7 +1509,13 @@
             /* =========================================================
                1. DATA — single source of truth for the whole doc page
                ========================================================= */
-            const BASE_URL = "https://omni.icpaas.ai";
+            const DEFAULT_BASE_URL = "https://omni.kingDigitalcpaas.ai";
+            let baseServerUrl = "";
+            try {
+                baseServerUrl = window.localStorage.getItem("omniApiBaseUrl") || DEFAULT_BASE_URL;
+            } catch (e) {
+                baseServerUrl = DEFAULT_BASE_URL;
+            }
 
             const apiData = {
                 categories: [{
@@ -3213,40 +3509,49 @@
                ========================================================= */
             function renderHeaders(headers) {
                 const el = document.getElementById("headersSection");
+                const section = document.getElementById("headersDocSection");
                 if (!headers || headers.length === 0) {
-                    el.innerHTML = `<div class="doc-empty">No headers required for this endpoint.</div>`;
+                    section.style.display = "none";
+                    el.innerHTML = "";
                     return;
                 }
+                section.style.display = "";
                 const rows = headers.map((h) => `
-            <tr>
-                <td class="prop-name">${escapeHtml(h.name)}${h.required ? '<span class="prop-required">*</span>' : ""}</td>
-                <td class="prop-type">${escapeHtml(h.type || "string")}</td>
-                <td class="prop-desc">${escapeHtml(h.description || "")}</td>
-            </tr>`).join("");
+                    <tr>
+                        <td class="prop-name">${escapeHtml(h.name)}${h.required ? '<span class="prop-required">*</span>' : ""}</td>
+                        <td class="prop-type">${escapeHtml(h.type || "string")}</td>
+                        <td class="prop-desc">${escapeHtml(h.description || "")}</td>
+                    </tr>`).join("");
                 el.innerHTML = `
-            <div class="table-scroll">
-                <table class="props-table">
-                    <thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead>
-                    <tbody>${rows}</tbody>
-                </table>
-            </div>`;
+                    <div class="table-scroll">
+                        <table class="props-table">
+                            <thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead>
+                            <tbody>${rows}</tbody>
+                        </table>
+                    </div>`;
             }
 
             function renderBody(body) {
                 const el = document.getElementById("bodySection");
+                const section = document.getElementById("bodyDocSection");
                 if (body === undefined || body === null) {
-                    el.innerHTML = `<div class="doc-empty">This endpoint does not accept a request body.</div>`;
+                    section.style.display = "none";
+                    el.innerHTML = "";
                     return;
                 }
+                section.style.display = "";
                 el.innerHTML = `<pre class="code-block">${escapeHtml(jsonToPretty(body))}</pre>`;
             }
 
             function renderResponseMain(response) {
                 const el = document.getElementById("responseMainSection");
+                const section = document.getElementById("responseDocSection");
                 if (response === undefined || response === null) {
-                    el.innerHTML = `<div class="doc-empty">No sample response has been documented yet.</div>`;
+                    section.style.display = "none";
+                    el.innerHTML = "";
                     return;
                 }
+                section.style.display = "";
                 el.innerHTML = `<pre class="code-block">${escapeHtml(jsonToPretty(response))}</pre>`;
             }
 
@@ -3281,25 +3586,91 @@
                 const resEl = document.getElementById("responseCode");
                 const statusEl = document.getElementById("responseStatus");
                 const labelEl = document.getElementById("requestPanelLabel");
+                const responseWrapper = document.getElementById("responseWrapper");
 
                 const langMeta = LANGUAGES.find((l) => l.key === currentLanguage);
                 labelEl.textContent = `${(langMeta ? langMeta.label : currentLanguage).toUpperCase()} REQUEST`;
 
                 let langCode = endpoint && endpoint.languages ? endpoint.languages[currentLanguage] : null;
-                if (langCode && authToken) {
-                    langCode = langCode.split("YOUR_API_KEY").join(authToken);
+                if (langCode) {
+                    if (authToken) {
+                        langCode = langCode.split("YOUR_API_KEY").join(authToken);
+                    }
+                    if (baseServerUrl !== DEFAULT_BASE_URL) {
+                        langCode = langCode.split(DEFAULT_BASE_URL).join(baseServerUrl);
+                    }
                 }
-                reqEl.innerHTML = langCode ? highlightCode(langCode) : "// No code example available for this language yet.";
+
+                reqEl.innerHTML = langCode ?
+                    highlightCode(langCode) :
+                    `<span style="color:#94a3b8">No ${langMeta ? langMeta.label : currentLanguage} example available for this endpoint.</span>`;
 
                 if (endpoint && endpoint.response !== undefined) {
                     resEl.innerHTML = highlightCode(jsonToPretty(endpoint.response));
                     statusEl.textContent = "200 OK";
                     statusEl.style.display = "";
+                    responseWrapper.style.display = "";
                 } else {
-                    resEl.textContent = "// No sample response documented yet.";
-                    statusEl.style.display = "none";
+                    responseWrapper.style.display = "none";
                 }
             }
+
+
+            function updateAuthCurrentUrlPill() {
+                const pill = document.getElementById("authCurrentUrlPill");
+                if (pill) pill.textContent = baseServerUrl;
+            }
+
+            function flashToast(id) {
+                const el = document.getElementById(id);
+                if (!el) return;
+                el.classList.add("show");
+                clearTimeout(el._hideTimer);
+                el._hideTimer = setTimeout(() => el.classList.remove("show"), 1600);
+            }
+
+            function renderAuthPanel() {
+                document.getElementById("authTokenInput").value = authToken;
+                document.getElementById("authBaseUrlInput").value = baseServerUrl;
+                updateAuthCurrentUrlPill();
+            }
+
+            document.getElementById("authSaveTokenBtn").addEventListener("click", () => {
+                authToken = document.getElementById("authTokenInput").value.trim();
+                try {
+                    window.localStorage.setItem("omniApiToken", authToken);
+                } catch (e) {
+                    /* ignore */
+                }
+                updateAuthorizeButtonUI();
+                flashToast("authTokenToast");
+            });
+
+            document.getElementById("authSaveUrlBtn").addEventListener("click", () => {
+                const val = document.getElementById("authBaseUrlInput").value.trim().replace(/\/+$/, "");
+                baseServerUrl = val || DEFAULT_BASE_URL;
+                try {
+                    window.localStorage.setItem("omniApiBaseUrl", baseServerUrl);
+                } catch (e) {
+                    /* ignore */
+                }
+                updateAuthCurrentUrlPill();
+                flashToast("authUrlToast");
+                if (currentEndpointId) loadEndpoint(currentEndpointId, true);
+            });
+
+            document.getElementById("authResetUrlBtn").addEventListener("click", () => {
+                baseServerUrl = DEFAULT_BASE_URL;
+                document.getElementById("authBaseUrlInput").value = DEFAULT_BASE_URL;
+                try {
+                    window.localStorage.removeItem("omniApiBaseUrl");
+                } catch (e) {
+                    /* ignore */
+                }
+                updateAuthCurrentUrlPill();
+                flashToast("authUrlToast");
+                if (currentEndpointId) loadEndpoint(currentEndpointId, true);
+            });
 
             /* =========================================================
                7. loadEndpoint — the core render function
@@ -3309,6 +3680,25 @@
                 if (!endpoint) return;
 
                 currentEndpointId = endpointId;
+
+                const isAuthEndpoint = endpoint.method === "AUTH";
+                const authPanel = document.getElementById("authPanel");
+
+                authPanel.classList.toggle("active", isAuthEndpoint);
+                document.getElementById("endpointMeta").style.display = isAuthEndpoint ? "none" : "";
+                document.getElementById("endpointDesc").style.display = isAuthEndpoint ? "none" : "";
+                document.getElementById("headersDocSection").style.display = isAuthEndpoint ? "none" : "";
+                document.getElementById("bodyDocSection").style.display = isAuthEndpoint ? "none" : "";
+                document.getElementById("responseDocSection").style.display = isAuthEndpoint ? "none" : "";
+                document.getElementById("languageButtons").parentElement.style.display = isAuthEndpoint ? "none" : "";
+                document.getElementById("responseWrapper").style.display = isAuthEndpoint ? "none" : "";
+
+                if (isAuthEndpoint) {
+                    document.getElementById("endpointTitle").textContent = "";
+                    renderAuthPanel();
+                    return;
+                }
+
                 currentLanguage = "shell";
 
                 document.getElementById("endpointTitle").textContent = endpoint.title;
@@ -3321,7 +3711,7 @@
                 if (endpoint.method === "AUTH") {
                     metaEl.innerHTML = `<span class="method-badge ${methodClass(endpoint.method)}">AUTH</span>`;
                 } else {
-                    const fullUrl = endpoint.path ? `${BASE_URL}${endpoint.path}` : "";
+                    const fullUrl = endpoint.path ? `${baseServerUrl}${endpoint.path}` : "";
                     metaEl.innerHTML = `
                 <span class="method-badge ${methodClass(endpoint.method)}">${escapeHtml(methodBadgeText(endpoint.method))}</span>
                 ${fullUrl ? `<code class="endpoint-path">${escapeHtml(fullUrl)}</code>` : `<code class="endpoint-path">Path not documented yet</code>`}
@@ -3335,7 +3725,6 @@
                 renderResponseMain(endpoint.response);
                 renderLanguageButtons();
                 renderCodePanels(endpoint);
-                resetTryIt();
                 updateActiveSidebarItem();
 
                 // collapse mobile/tablet sidebar drawer after selection
@@ -3477,26 +3866,6 @@
                 }
                 updateAuthorizeButtonUI();
                 renderCodePanels(findEndpoint(currentEndpointId));
-            });
-
-            /* =========================================================
-               8.6 TRY IT + COPY TO CLIPBOARD
-               ========================================================= */
-            function resetTryIt() {
-                document.getElementById("requestPanel").hidden = true;
-                document.getElementById("responsePanel").hidden = true;
-                const tryBtn = document.getElementById("tryItBtn");
-                tryBtn.hidden = false;
-                tryBtn.querySelector("span").textContent = "Try it";
-            }
-
-            document.getElementById("tryItBtn").addEventListener("click", function() {
-                const reqPanel = document.getElementById("requestPanel");
-                const resPanel = document.getElementById("responsePanel");
-                const willShow = reqPanel.hidden;
-                reqPanel.hidden = !willShow;
-                resPanel.hidden = !willShow;
-                this.querySelector("span").textContent = willShow ? "Hide" : "Try it";
             });
 
             function fallbackCopy(text, cb) {
