@@ -43,7 +43,7 @@
         width: 180px;
         height: 180px;
 
-        right: -80px;
+        right: 80px;
         bottom: 40px;
 
         border-radius: 50%;
