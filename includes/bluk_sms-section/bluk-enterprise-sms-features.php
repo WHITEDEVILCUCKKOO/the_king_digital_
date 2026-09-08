@@ -42,7 +42,7 @@
     margin-bottom: 20px;
   }
 
-  .asdihas7121we em{
+  .asdihas7121we em {
     background: linear-gradient(to bottom, #0A5CFF 0%, #0A5CFF 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -406,11 +406,12 @@
         <path d="M22 2L11 13" />
         <path d="M22 2l-7 20-4-9-9-4 20-7z" />
       </svg>
-      Enterprise SMS Features
+      Your Business Use Bulk SMS
     </div>
 
-    <h1 class="asdihas7121we">Power Your <em>Business with Bulk SMS</em></h1>
-    <p class="subtitle">Industry-leading bulk SMS gateway built for scale, fast delivery, DLT compliance, and enterprise reliability</p>
+    <h1 class="asdihas7121we">Why Should Your Business Use <em> Bulk SMS Services in Delhi?</em></h1>
+    <p class="subtitle">Deploying a targeted campaign through an established Bulk SMS Provider in Delhi gives organizations a reliable tool to cut through digital noise and connect with users directly on their mobile devices.
+    </p>
 
     <div class="grid">
       <div class="card1298he">
@@ -419,8 +420,9 @@
             <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
           </svg>
         </div>
-        <h3>Lightning Fast Delivery</h3>
-        <p>Send millions of bulk SMS in seconds with 98.9% delivery rate and sub-3s OTP delivery</p>
+        <h3>Immediate Availability</h3>
+        <p>SMS messages have a high open rate of about more than 90%. Most people read the messages immediately within three minutes of getting them.
+        </p>
       </div>
 
       <div class="card1298he">
@@ -430,8 +432,8 @@
             <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" />
           </svg>
         </div>
-        <h3>Global Reach</h3>
-        <p>Connect with customers in 195+ countries — trusted international SMS gateway</p>
+        <h3>Direct Results</h3>
+        <p>Short and easy-to-understand messages will motivate people to respond to flash sales, event registrations, and urgent notifications immediately.</p>
       </div>
 
       <div class="card1298he">
@@ -440,8 +442,8 @@
             <path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z" />
           </svg>
         </div>
-        <h3>DLT Compliant &amp; Secure</h3>
-        <p>End-to-end encryption, TRAI DLT registration, GDPR &amp; CCPA compliant SMS platform</p>
+        <h3>Targeting the Audience</h3>
+        <p>With the help of localized incentives and geo-targeted texts, it is possible to communicate with different demographic groups in Delhi NCR.</p>
       </div>
 
       <div class="card1298he">
@@ -452,8 +454,9 @@
             <circle cx="12" cy="12" r="1" />
           </svg>
         </div>
-        <h3>Smart Routing</h3>
-        <p>Intelligent carrier selection for best bulk SMS delivery and lowest latency</p>
+        <h3>Reduced Costs</h3>
+        <p>Extend outreach to hundreds of thousands of contacts in a much more economical manner than traditional advertising.
+        </p>
       </div>
 
       <div class="card1298he">
@@ -465,11 +468,12 @@
             <rect x="17" y="5" width="3" height="13" />
           </svg>
         </div>
-        <h3>Real-Time Analytics</h3>
-        <p>Live DLR tracking, delivery reports, and campaign analytics dashboard</p>
+        <h3>Efficient Spending</h3>
+        <p>Pay-per-message communications guarantee that marketing expenses meet outreach performance standards.
+        </p>
       </div>
 
-      <div class="card1298he">
+      <div class="card1298he" style="display: none;">
         <div class="icon pink">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M8 6l-6 6 6 6M16 6l6 6-6 6" />

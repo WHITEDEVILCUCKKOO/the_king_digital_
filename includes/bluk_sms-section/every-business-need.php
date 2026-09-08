@@ -1,6 +1,6 @@
 <style>
     .qsms-wrap {
-        background:linear-gradient(135deg, #f4f7fd 0%, #eef1fb00 45%, #f1f0fb00 100%);
+        background: linear-gradient(135deg, #f4f7fd 0%, #eef1fb00 45%, #f1f0fb00 100%);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         padding: 80px 20px;
     }
@@ -448,43 +448,46 @@
     }
 
     .decor-hero-glow1 {
-    position: absolute;
-    top: -180px;
-    left: -160px;
-    width: 480px;
-    height: 480px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
-    opacity: .18;
-    filter: blur(60px);
-    z-index: 0;
-    pointer-events: none;
-    animation: hero-glow-drift 12s ease-in-out infinite;
-}
+        position: absolute;
+        top: -180px;
+        left: -160px;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+        opacity: .18;
+        filter: blur(60px);
+        z-index: 0;
+        pointer-events: none;
+        animation: hero-glow-drift 12s ease-in-out infinite;
+    }
+
     .decor-hero-glow {
-    position: absolute;
-    bottom: -180px;
-    right: -160px;
-    width: 480px;
-    height: 480px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
-    opacity: .18;
-    filter: blur(60px);
-    z-index: 0;
-    pointer-events: none;
-    animation: hero-glow-drift 12s ease-in-out infinite;
-}
+        position: absolute;
+        bottom: -180px;
+        right: -160px;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+        opacity: .18;
+        filter: blur(60px);
+        z-index: 0;
+        pointer-events: none;
+        animation: hero-glow-drift 12s ease-in-out infinite;
+    }
 
-@keyframes hero-glow-drift {
-    0%, 100% {
-    transform: translate(0, 0) scale(1);
-}
+    @keyframes hero-glow-drift {
 
-50% {
-    transform: translate(30px, 20px) scale(1.08);
-}
-}
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+            transform: translate(30px, 20px) scale(1.08);
+        }
+    }
 </style>
 
 
@@ -505,8 +508,8 @@
             <button class="qsms-tab-btn qsms-tab-active" data-tab="transactional">Transactional SMS</button>
             <button class="qsms-tab-btn" data-tab="promotional">Promotional SMS</button>
             <button class="qsms-tab-btn" data-tab="otp">OTP SMS</button>
-            <button class="qsms-tab-btn" data-tab="alerts">Alerts SMS</button>
-            <button class="qsms-tab-btn" data-tab="campaigns">Campaigns SMS</button>
+            <button class="qsms-tab-btn" data-tab="alerts">Voice SMS & OBD</button>
+            <button class="qsms-tab-btn" data-tab="campaigns">Industry Solutions</button>
         </div>
 
         <div class="qsms-panels" id="qsmsPanels">
@@ -522,8 +525,8 @@
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Order confirmations</h3>
-                        <p class="qsms-card12-desc">Send instant purchase and booking confirmation via our secure SMS api.</p>
+                        <h3 class="qsms-card12-title">Worldwide Reach</h3>
+                        <p class="qsms-card12-desc">Continuous delivery services to all customers, whether signed up for DND or not.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-indigo"></div>
@@ -532,8 +535,8 @@
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Shipping notifications</h3>
-                        <p class="qsms-card12-desc">Deliver real-time tracking and delivery status updates to users fast.</p>
+                        <h3 class="qsms-card12-title">Ultra-Low Latency</h3>
+                        <p class="qsms-card12-desc">Fast routing for urgent information like OTPs, alerts and other critical notifications.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-blue"></div>
@@ -542,8 +545,8 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Payment alerts</h3>
-                        <p class="qsms-card12-desc">Ensure instant transaction confirmations via our trusted SMS gateways.</p>
+                        <h3 class="qsms-card12-title">Simple API Connectivity</h3>
+                        <p class="qsms-card12-desc">Connect your SMS service with business management systems, billing software and e-commerce services.</p>
                     </div>
                 </div>
             </div>
@@ -559,8 +562,8 @@
                                 <polyline points="17 6 23 6 23 12" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Sales campaigns</h3>
-                        <p class="qsms-card12-desc">Launch targeted promotional SMS offers and high-converting campaigns.</p>
+                        <h3 class="qsms-card12-title">Targeted Delivery</h3>
+                        <p class="qsms-card12-desc">Reach customers with bulk messages for new arrivals, seasonal deals and new launches.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-purple"></div>
@@ -571,8 +574,8 @@
                                 <circle cx="12" cy="12" r="2" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Product launches</h3>
-                        <p class="qsms-card12-desc">Announce new products and services quickly via bulk SMS broadcasting.</p>
+                        <h3 class="qsms-card12-title">Web UI Control</h3>
+                        <p class="qsms-card12-desc">Schedule campaigns easily from a user-friendly dashboard with customer list segmentation.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-purple"></div>
@@ -584,8 +587,8 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Event invitations</h3>
-                        <p class="qsms-card12-desc">Drive higher attendance with highly targeted SMS marketing invites...</p>
+                        <h3 class="qsms-card12-title">Trackable Links</h3>
+                        <p class="qsms-card12-desc">Use URL shorteners to monitor customer engagement with your marketing messages.</p>
                     </div>
                 </div>
             </div>
@@ -600,8 +603,8 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Login verification</h3>
-                        <p class="qsms-card12-desc">Secure OTP SMS for user authentication with sub-3 second deliveries.</p>
+                        <h3 class="qsms-card12-title">Real-Time Authentication</h3>
+                        <p class="qsms-card12-desc">Send important authentication codes to customers instantly.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-teal"></div>
@@ -611,8 +614,8 @@
                                 <polyline points="22 4 12 14.01 9 11.01" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Transaction verification</h3>
-                        <p class="qsms-card12-desc">Ensure payment and transfer authentication via fast reliable OTP SMS.</p>
+                        <h3 class="qsms-card12-title">Fast & Reliable Delivery</h3>
+                        <p class="qsms-card12-desc">Deliver urgent OTPs with ultra-low latency for secure verification.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-cyan"></div>
@@ -624,13 +627,13 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Registration codes</h3>
-                        <p class="qsms-card12-desc">New account OTP verification with guaranteed global network delivery.</p>
+                        <h3 class="qsms-card12-title">Business Integration</h3>
+                        <p class="qsms-card12-desc">Connect OTP messaging with your existing business systems through REST API connectivity.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Alerts SMS -->
+            <!-- Voice SMS & OBD -->
             <div class="qsms-panel" data-panel="alerts">
                 <div class="qsms-card12s">
                     <div class="qsms-card12 btn-789_card_sole">
@@ -641,8 +644,8 @@
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Appointment reminders</h3>
-                        <p class="qsms-card12-desc">Reduce no-shows significantly with timely SMS alerts and reminders...</p>
+                        <h3 class="qsms-card12-title">Geographically-Based Messaging</h3>
+                        <p class="qsms-card12-desc">Use pre-recorded voice messages in regional languages to reach different audiences.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-red"></div>
@@ -651,8 +654,8 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Security notifications</h3>
-                        <p class="qsms-card12-desc">Provide fraud detection and critical account security SMS alerts now.</p>
+                        <h3 class="qsms-card12-title">Reciprocal Communication</h3>
+                        <p class="qsms-card12-desc">Use DTMF-enabled keypad interaction to collect instant feedback from your audience.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-amber"></div>
@@ -661,13 +664,13 @@
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Balance updates</h3>
-                        <p class="qsms-card12-desc">Automate account balance and credit limit SMS notifications instantly</p>
+                        <h3 class="qsms-card12-title">Automated Voice Messaging</h3>
+                        <p class="qsms-card12-desc">Deliver localized voice messages automatically to your target customers.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Campaigns SMS -->
+            <!-- Industry Solutions -->
             <div class="qsms-panel" data-panel="campaigns">
                 <div class="qsms-card12s">
                     <div class="qsms-card12 btn-789_card_sole">
@@ -678,8 +681,8 @@
                                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Mass messaging</h3>
-                        <p class="qsms-card12-desc">Reach millions of customers via bulk SMS campaigns in minutes today.</p>
+                        <h3 class="qsms-card12-title">Retail & E-Commerce</h3>
+                        <p class="qsms-card12-desc">Seasonal sales, shipping updates, delivery tracking and cart abandonment reminders.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-purple"></div>
@@ -690,8 +693,8 @@
                                 <circle cx="12" cy="12" r="2" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Personalized campaigns</h3>
-                        <p class="qsms-card12-desc">Send dynamic SMS content with advanced merge tags and personalization</p>
+                        <h3 class="qsms-card12-title">Real Estate & Property</h3>
+                        <p class="qsms-card12-desc">Property launches, site visit updates, appointment reminders and broker communication.</p>
                     </div>
                     <div class="qsms-card12 btn-789_card_sole">
                         <div class="qsms-card12-blob qsms-blob-purple"></div>
@@ -701,8 +704,47 @@
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
-                        <h3 class="qsms-card12-title">Scheduled messages</h3>
-                        <p class="qsms-card12-desc">Optimize bulk SMS delivery times for maximum engagement and results.</p>
+                        <h3 class="qsms-card12-title">Education & EdTech</h3>
+                        <p class="qsms-card12-desc">Admissions, exam schedules, results, fee deadlines and attendance notifications.</p>
+                    </div>
+                    <div class="qsms-card12 btn-789_card_sole">
+                        <div class="qsms-card12-blob qsms-blob-purple"></div>
+                        <div class="qsms-icon qsms-grad-purple">
+                            <svg viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fffcfc">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <style type="text/css">
+                                        .st0 {
+                                            fill: #fff;
+                                        }
+
+                                        .st1 {
+                                            fill: #fff;
+                                        }
+                                    </style>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <polygon class="st1" points="288.6,176.6 223.4,176.6 223.4,219.9 180.1,219.9 180.1,285.2 223.4,285.2 223.4,328.5 288.6,328.5 288.6,285.2 332,285.2 332,219.9 288.6,219.9 "></polygon>
+                                            </g>
+                                            <path class="st0" d="M441.2,114.2c-6.3,1.4-12.8,2.1-19.5,2.1c-48.4,0-87.7-38.6-87.7-86.3H177.9c0,47.6-39.3,86.3-87.7,86.3 c-6.7,0-13.2-0.7-19.5-2.1C13.9,354,256,482,256,482S498.1,354,441.2,114.2z M339.5,361.8c-30.5,35.4-63.4,59.9-83.4,73.2 c-20.5-13.6-54.4-38.9-85.1-75c-41.7-49.1-64.5-102-68.1-157.9h30.5c3.9,0,7-3.1,7-7c0-3.9-3.1-7-7-7h-31 c-0.1-10.7,0.5-21.4,1.8-32.3c50.2-5.4,91.8-39.6,107.3-85.6h89.1c15.6,45.9,57.2,80.2,107.3,85.6 C416.6,229.7,393.7,298.9,339.5,361.8z"></path>
+                                            <path class="st0" d="M159.9,192.3c-0.2-0.4-0.4-0.8-0.6-1.2c-0.3-0.4-0.6-0.7-0.9-1.1c-0.3-0.3-0.7-0.6-1.1-0.9 c-0.4-0.3-0.8-0.5-1.2-0.6c-0.4-0.2-0.9-0.3-1.3-0.4c-0.9-0.2-1.8-0.2-2.7,0c-0.4,0.1-0.9,0.2-1.3,0.4c-0.4,0.2-0.8,0.4-1.2,0.6 c-0.4,0.3-0.7,0.6-1.1,0.9c-0.3,0.3-0.6,0.7-0.9,1.1c-0.3,0.4-0.5,0.8-0.7,1.2c-0.2,0.4-0.3,0.9-0.4,1.3c-0.1,0.5-0.1,0.9-0.1,1.4 c0,1.8,0.7,3.6,2.1,4.9c0.3,0.3,0.7,0.6,1.1,0.9s0.8,0.5,1.2,0.7c0.4,0.2,0.9,0.3,1.3,0.4c0.4,0.1,0.9,0.1,1.4,0.1 c0.5,0,0.9,0,1.4-0.1c0.4-0.1,0.9-0.2,1.3-0.4c0.4-0.2,0.8-0.4,1.2-0.7c0.4-0.3,0.7-0.5,1.1-0.9c1.3-1.3,2-3.1,2-4.9 c0-0.4,0-0.9-0.1-1.4C160.2,193.2,160,192.8,159.9,192.3z"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="qsms-card12-title">Healthcare & Diagnostics</h3>
+                        <p class="qsms-card12-desc">Appointment reminders, report links, vaccination reminders and health updates.</p>
+                    </div>
+                    <div class="qsms-card12 btn-789_card_sole">
+                        <div class="qsms-card12-blob qsms-blob-purple"></div>
+                        <div class="qsms-icon qsms-grad-purple">
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M335.9 84.2C326.1 78.6 314 78.6 304.1 84.2L80.1 212.2C67.5 219.4 61.3 234.2 65 248.2C68.7 262.2 81.5 272 96 272L128 272L128 480L128 480L76.8 518.4C68.7 524.4 64 533.9 64 544C64 561.7 78.3 576 96 576L544 576C561.7 576 576 561.7 576 544C576 533.9 571.3 524.4 563.2 518.4L512 480L512 272L544 272C558.5 272 571.2 262.2 574.9 248.2C578.6 234.2 572.4 219.4 559.8 212.2L335.8 84.2zM464 272L464 480L400 480L400 272L464 272zM352 272L352 480L288 480L288 272L352 272zM240 272L240 480L176 480L176 272L240 272zM320 160C337.7 160 352 174.3 352 192C352 209.7 337.7 224 320 224C302.3 224 288 209.7 288 192C288 174.3 302.3 160 320 160z"/></svg>
+                        </div>
+                        <h3 class="qsms-card12-title">BFSI</h3>
+                        <p class="qsms-card12-desc">OTP verification, transaction alerts, premium renewals, loan updates and EMI reminders.</p>
                     </div>
                 </div>
             </div>
