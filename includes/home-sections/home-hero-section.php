@@ -1048,7 +1048,7 @@
     <!-- <canvas class="home-hero-water" id="homeHeroWater"></canvas> -->
     <div class="home-hero-section_conetent">
         <div class="home-hero-section_info">
-            <div class="home-hero-section_badge">
+            <div class="home-hero-section_badge" style="display: none;">
                 <div class="home-hero-section_badge-google">
                     <span class="home-hero-section_badge-google-icon">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Icon">

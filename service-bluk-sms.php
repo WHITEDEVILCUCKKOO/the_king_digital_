@@ -25,6 +25,7 @@
     <?php require_once __DIR__ . '/includes/bluk_sms-section/scale-your-reach-with-bulk-sms-precision-section.php' ?>
     
     <!-- Section last 7 ( Start Sending Bulk SMS Today ) -->
+    <?php require_once __DIR__ . '/includes/bluk_sms-section/section_steps.php' ?>
     <?//php require_once __DIR__ . '/includes/bluk_sms-section/start-sending-bulk-sms-today-section.php' ?>
     
     <!-- Section 8 ( Powering Indrstry Leaders ) -->

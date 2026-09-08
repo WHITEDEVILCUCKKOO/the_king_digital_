@@ -461,13 +461,7 @@
       <p class="sub">From the first message to a complete digital ecosystem — King Digital delivers everything you need to grow your business online.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card reveal">
-        <a href="/website-designing-company-india.html" class="svc-link"><i class="fas fa-arrow-right"></i></a>
-        <div class="svc-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></div>
-        <div class="svc-name">Website Design & Development</div>
-        <div class="svc-desc">Mobile-first, SEO-ready websites designed to convert visitors into leads. E-commerce, portals, landing pages, and custom web apps.</div>
-        <div class="svc-tags"><span class="stag">Static Sites</span><span class="stag">E-Commerce</span><span class="stag">Portals</span><span class="stag">Mobile Apps</span></div>
-      </div>
+
       <div class="svc-card reveal">
         <a href="service-bluk-sms.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></div>
@@ -483,40 +477,54 @@
         <div class="svc-tags"><span class="stag">WABA Signup</span><span class="stag">Chatbot</span><span class="stag">Automation</span></div>
       </div>
       <div class="svc-card reveal">
+        <a href="/email-marketing-company-india.html" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <div class="svc-ico" style="background:#F5F3FF;color:#7C3AED"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="svc-name">RCS Services</div>
+        <div class="svc-desc">High-deliverability email campaigns with beautiful templates, segmentation, automation drips, and real-time open/click analytics.</div>
+        <div class="svc-tags"><span class="stag">Campaigns</span><span class="stag">Automation</span><span class="stag">Analytics</span></div>
+      </div>
+      <div class="svc-card reveal">
         <a href="service-ivr.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FEF3C7;color:#D97706"><i class="fas fa-phone-volume"></i></div>
         <div class="svc-name">IVR, Voice & Telecom</div>
         <div class="svc-desc">Hosted IVR, toll-free numbers, missed call alerts, OBD voice broadcasting, virtual numbers, and cloud telephony for businesses.</div>
         <div class="svc-tags"><span class="stag">IVR</span><span class="stag">Toll Free</span><span class="stag">Miss Call</span><span class="stag">Shortcode</span></div>
       </div>
+
       <div class="svc-card reveal">
         <a href="/seo-service-company-in-delhi.html" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#EFF6FF;color:#2563EB"><i class="fas fa-magnifying-glass-chart"></i></div>
-        <div class="svc-name">SEO & Digital Marketing</div>
+        <div class="svc-name">Ai with Digital Marketing</div>
         <div class="svc-desc">Rank on page 1 of Google. Full SEO, PPC, Google Ads, social media marketing (SMO), and ORM services for sustained online growth.</div>
         <div class="svc-tags"><span class="stag">SEO</span><span class="stag">PPC / SEM</span><span class="stag">SMO</span><span class="stag">ORM</span></div>
       </div>
       <div class="svc-card reveal">
-        <a href="/email-marketing-company-india.html" class="svc-link"><i class="fas fa-arrow-right"></i></a>
-        <div class="svc-ico" style="background:#F5F3FF;color:#7C3AED"><i class="fas fa-envelope-open-text"></i></div>
-        <div class="svc-name">Bulk Email Marketing</div>
-        <div class="svc-desc">High-deliverability email campaigns with beautiful templates, segmentation, automation drips, and real-time open/click analytics.</div>
-        <div class="svc-tags"><span class="stag">Campaigns</span><span class="stag">Automation</span><span class="stag">Analytics</span></div>
-      </div>
-      <div class="svc-card reveal">
-        <a href="https://www.kingcloud.in/" class="svc-link"><i class="fas fa-arrow-right"></i></a>
-        <div class="svc-ico" style="background:#F0FDF4;color:#16A34A"><i class="fas fa-server"></i></div>
-        <div class="svc-name">Hosting & Cloud Servers</div>
-        <div class="svc-desc">Shared, reseller, VPS, dedicated, and cloud servers with 99.9% uptime SLA. Free domain registration and SSL included.</div>
-        <div class="svc-tags"><span class="stag">Shared</span><span class="stag">VPS</span><span class="stag">Dedicated</span><span class="stag">Cloud</span></div>
-      </div>
-      <div class="svc-card reveal">
         <a href="https://kingdigitalstudio.in/" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FFF1F2;color:#E11D48"><i class="fas fa-video"></i></div>
-        <div class="svc-name">Video & Audio Production</div>
+        <div class="svc-name">Video Production</div>
         <div class="svc-desc">Corporate videos, explainer animations, professional voice-overs in Hindi & English, podcast production, and audio branding.</div>
         <div class="svc-tags"><span class="stag">Video</span><span class="stag">Voice Over</span><span class="stag">Podcast</span><span class="stag">Audio</span></div>
       </div>
+       <div class="svc-card reveal">
+        <a href="https://www.kingcloud.in/" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <div class="svc-ico" style="background:#F0FDF4;color:#16A34A"><i class="fa-solid fa-podcast"></i></div>
+        <div class="svc-name">Podcast Studio </div>
+        <div class="svc-desc">Professional podcast studio solutions with high-quality audio, video recording, and reliable cloud infrastructure for seamless content creation.</div>
+        <div class="svc-tags"><span class="stag">Video Podcasting</span><span class="stag">Studio Setup</span><span class="stag">Audio Recording</span><span class="stag">Cloud Storage</span></div>
+      </div>
+
+      <div class="svc-card reveal">
+        <a href="/website-designing-company-india.html" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <div class="svc-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fas fa-globe"></i></div>
+        <div class="svc-name">Website Design & Cloud Servers</div>
+        <div class="svc-desc">Mobile-first, SEO-ready websites designed to convert visitors into leads. E-commerce, portals, landing pages, and custom web apps.
+          Shared, reseller, VPS, dedicated, and cloud servers with 99.9% uptime SLA. Free domain registration and SSL included.
+        </div>
+        <div class="svc-tags"><span class="stag">Static Sites</span><span class="stag">E-Commerce</span><span class="stag">VPS</span><span class="stag">Cloud</span></div>
+      </div>
+
+     
+
     </div>
   </div>
 </section>
