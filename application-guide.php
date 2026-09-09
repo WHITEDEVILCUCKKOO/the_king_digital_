@@ -808,7 +808,7 @@
 
         .all_drive_box:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 0 0 #666;
+               box-shadow: 0 0px 13px 2px #00000059;
         }
 
         .qunike-table-container {
@@ -1239,6 +1239,28 @@
         }
 
         /* Sub links  */
+
+        .auto_margin_notwa h2 {
+            width: 80%;
+            font-size: 40px;
+            margin: auto;
+        }
+
+        .auto_margin_notwa p {
+            font-size: 14px;
+            width: 80%;
+            margin: auto;
+            color: #666666;
+        }
+
+        .line_rola span {
+            left: -10px !important;
+
+            font-weight: 700;
+
+        }
+
+
         /* sms  */
         .sole78m {
             display: flex;
@@ -1310,6 +1332,18 @@
         .sub_links_of_show_box {
             display: block;
         }
+
+        .step_impear {
+            margin: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .25s ease;
+        }
+        .step_impear:hover {
+            transition: .25s ease;
+            transform: scale(1.02);
+                box-shadow: 0 0px 13px 2px #00000059;
+        }
     </style>
 
     <section class="application_section">
@@ -1364,16 +1398,17 @@
                     <!-- sms sub link -->
                     <div class="sub_links_of_allawn" id="sms_sub_box" data-set="sms-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-1">SMS Dashbord</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-2">Create SMS Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-3">Manage Sender ID</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-4">Manage Template</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-5">My Routes</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-6">Contact Manager</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-7">Manage Group</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-8">Blacklist Numbers</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-9">SMS Reports</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-10">SMS API Integration</li>
+                            <li class="sole78m" id="contect__1" onclick="link_sole_action(this)" data-set="contect-1">SMS Dashbord</li>
+                            <li class="sole78m" id="contect__2" onclick="link_sole_action(this)" data-set="contect-2">Create SMS Campaign</li>
+                            <li class="sole78m" id="contect__3" onclick="link_sole_action(this)" data-set="contect-3">Tiny Campaign( Smart URL )</li>
+                            <li class="sole78m" id="contect__4" onclick="link_sole_action(this)" data-set="contect-4">Manage Sender ID</li>
+                            <li class="sole78m" id="contect__5" onclick="link_sole_action(this)" data-set="contect-5">Manage Template</li>
+                            <li class="sole78m" id="contect__6" onclick="link_sole_action(this)" data-set="contect-6">My Routes</li>
+                            <li class="sole78m" id="contect__7" onclick="link_sole_action(this)" data-set="contect-7">Contact Manager</li>
+                            <li class="sole78m" id="contect__8" onclick="link_sole_action(this)" data-set="contect-8">Manage Group</li>
+                            <li class="sole78m" id="contect__9" onclick="link_sole_action(this)" data-set="contect-9">Blacklist Numbers</li>
+                            <li class="sole78m" id="contect__10" onclick="link_sole_action(this)" data-set="contect-10">SMS Reports</li>
+                            <li class="sole78m" id="contect__11" onclick="link_sole_action(this)" data-set="contect-11">SMS API Integration</li>
                         </ul>
                     </div>
 
@@ -1387,14 +1422,14 @@
                     <!-- Rcs sub link -->
                     <div class="sub_links_of_allawn" id="rcs_sub_box" data-set="rcs-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-11">RCS Dashbord</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-12">RCS Agent</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-13">Templates</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-14">Create Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-15">Manage Group</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-16">Blacklist Numbers</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-17">RCS Reports</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-18">Chatbot Automation</li>
+                            <li class="sole78m" id="contect__12" onclick="link_sole_action(this)" data-set="contect-12">RCS Dashbord</li>
+                            <li class="sole78m" id="contect__13" onclick="link_sole_action(this)" data-set="contect-13">RCS Agent</li>
+                            <li class="sole78m" id="contect__14" onclick="link_sole_action(this)" data-set="contect-14">Templates</li>
+                            <li class="sole78m" id="contect__15" onclick="link_sole_action(this)" data-set="contect-15">Create Campaign</li>
+                            <li class="sole78m" id="contect__16" onclick="link_sole_action(this)" data-set="contect-16">Manage Group</li>
+                            <li class="sole78m" id="contect__17" onclick="link_sole_action(this)" data-set="contect-17">Blacklist Numbers</li>
+                            <li class="sole78m" id="contect__18" onclick="link_sole_action(this)" data-set="contect-18">RCS Reports</li>
+                            <li class="sole78m" id="contect__19" onclick="link_sole_action(this)" data-set="contect-19">Chatbot Automation</li>
                         </ul>
                     </div>
 
@@ -1408,15 +1443,15 @@
                     <!-- whatsapp sub link -->
                     <div class="sub_links_of_allawn" id="whatsapp_sub_box" data-set="whatsapp-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-19">WhatsApp Onboarding</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-20">Dashbord</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-21">Templates</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-22">Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-23">Reports</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-24">Agent</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-25">Chatbot Builder</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-26">Payment</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-27">Catalogue</li>
+                            <li class="sole78m" id="contect__20" onclick="link_sole_action(this)" data-set="contect-20">WhatsApp Onboarding</li>
+                            <li class="sole78m" id="contect__21" onclick="link_sole_action(this)" data-set="contect-21">Dashbord</li>
+                            <li class="sole78m" id="contect__22" onclick="link_sole_action(this)" data-set="contect-22">Templates</li>
+                            <li class="sole78m" id="contect__23" onclick="link_sole_action(this)" data-set="contect-23">Campaign</li>
+                            <li class="sole78m" id="contect__24" onclick="link_sole_action(this)" data-set="contect-24">Reports</li>
+                            <li class="sole78m" id="contect__25" onclick="link_sole_action(this)" data-set="contect-25">Agent</li>
+                            <li class="sole78m" id="contect__26" onclick="link_sole_action(this)" data-set="contect-26">Chatbot Builder</li>
+                            <li class="sole78m" id="contect__27" onclick="link_sole_action(this)" data-set="contect-27">Payment</li>
+                            <li class="sole78m" id="contect__28" onclick="link_sole_action(this)" data-set="contect-28">Catalogue</li>
                         </ul>
                     </div>
 
@@ -1433,14 +1468,14 @@
                     <!-- voice sub link -->
                     <div class="sub_links_of_allawn" id="voice_sub_box" data-set="voice-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-28">Voice Dashbord</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-29">Voice Files</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-30">Components</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-31">Voice Campaign Management</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-32">Agent Monitoring</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-33">Report</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-34">Manage Agents</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-35">Manage Remarks</li>
+                            <li class="sole78m" id="contect__29" onclick="link_sole_action(this)" data-set="contect-29">Voice Dashbord</li>
+                            <li class="sole78m" id="contect__30" onclick="link_sole_action(this)" data-set="contect-30">Voice Files</li>
+                            <li class="sole78m" id="contect__31" onclick="link_sole_action(this)" data-set="contect-31">Components</li>
+                            <li class="sole78m" id="contect__32" onclick="link_sole_action(this)" data-set="contect-32">Voice Campaign Management</li>
+                            <li class="sole78m" id="contect__33" onclick="link_sole_action(this)" data-set="contect-33">Agent Monitoring</li>
+                            <li class="sole78m" id="contect__34" onclick="link_sole_action(this)" data-set="contect-34">Report</li>
+                            <li class="sole78m" id="contect__35" onclick="link_sole_action(this)" data-set="contect-35">Manage Agents</li>
+                            <li class="sole78m" id="contect__36" onclick="link_sole_action(this)" data-set="contect-36">Manage Remarks</li>
                         </ul>
                     </div>
 
@@ -1454,13 +1489,13 @@
                     <!-- IVR / Campaign -->
                     <div class="sub_links_of_allawn" id="ivr_sub_box" data-set="ivr-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-36">Dashboard</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-37">Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-38">Voice Files</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-39">Components</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-40">Manage Agent</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-41">Manage Remarks</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-42">Report</li>
+                            <li class="sole78m" id="contect__37" onclick="link_sole_action(this)" data-set="contect-37">Dashboard</li>
+                            <li class="sole78m" id="contect__38" onclick="link_sole_action(this)" data-set="contect-38">Campaign</li>
+                            <li class="sole78m" id="contect__39" onclick="link_sole_action(this)" data-set="contect-39">Voice Files</li>
+                            <li class="sole78m" id="contect__40" onclick="link_sole_action(this)" data-set="contect-40">Components</li>
+                            <li class="sole78m" id="contect__41" onclick="link_sole_action(this)" data-set="contect-41">Manage Agent</li>
+                            <li class="sole78m" id="contect__42" onclick="link_sole_action(this)" data-set="contect-42">Manage Remarks</li>
+                            <li class="sole78m" id="contect__43" onclick="link_sole_action(this)" data-set="contect-43">Report</li>
                         </ul>
                     </div>
 
@@ -1476,12 +1511,12 @@
                     <!-- Click To Call -->
                     <div class="sub_links_of_allawn" id="click_to_call_sub_box" data-set="click_to_call-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-43">Dashboard</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-44">Manage Agent</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-45">Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-46">Agent Monitoring</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-47">Manage Remarks</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-48">Report</li>
+                            <li class="sole78m" id="contect__44" onclick="link_sole_action(this)" data-set="contect-44">Dashboard</li>
+                            <li class="sole78m" id="contect__45" onclick="link_sole_action(this)" data-set="contect-45">Manage Agent</li>
+                            <li class="sole78m" id="contect__46" onclick="link_sole_action(this)" data-set="contect-46">Campaign</li>
+                            <li class="sole78m" id="contect__47" onclick="link_sole_action(this)" data-set="contect-47">Agent Monitoring</li>
+                            <li class="sole78m" id="contect__48" onclick="link_sole_action(this)" data-set="contect-48">Manage Remarks</li>
+                            <li class="sole78m" id="contect__49" onclick="link_sole_action(this)" data-set="contect-49">Report</li>
                         </ul>
                     </div>
 
@@ -1495,12 +1530,12 @@
                     <!-- Text To Speech -->
                     <div class="sub_links_of_allawn" id="text_to_speech_sub_box" data-set="text_to_speech-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-49">Dashboard</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-50">Voice Files</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-51">Manage TTS Template</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-52">Create Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-53">Report</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-54">Manage Remarks</li>
+                            <li class="sole78m" id="contect__50" onclick="link_sole_action(this)" data-set="contect-50">Dashboard</li>
+                            <li class="sole78m" id="contect__51" onclick="link_sole_action(this)" data-set="contect-51">Voice Files</li>
+                            <li class="sole78m" id="contect__52" onclick="link_sole_action(this)" data-set="contect-52">Manage TTS Template</li>
+                            <li class="sole78m" id="contect__53" onclick="link_sole_action(this)" data-set="contect-53">Create Campaign</li>
+                            <li class="sole78m" id="contect__54" onclick="link_sole_action(this)" data-set="contect-54">Report</li>
+                            <li class="sole78m" id="contect__55" onclick="link_sole_action(this)" data-set="contect-55">Manage Remarks</li>
                         </ul>
                     </div>
 
@@ -1515,9 +1550,9 @@
                     <!-- AI Agent -->
                     <div class="sub_links_of_allawn" id="ai_agent_sub_box" data-set="ai_agent-sub">
                         <ul>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-55">Dashboard</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-56">AI Agent Campaign</li>
-                            <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-57">Report</li>
+                            <li class="sole78m" id="contect__56" onclick="link_sole_action(this)" data-set="contect-56">Dashboard</li>
+                            <li class="sole78m" id="contect__57" onclick="link_sole_action(this)" data-set="contect-57">AI Agent Campaign</li>
+                            <li class="sole78m" id="contect__58" onclick="link_sole_action(this)" data-set="contect-58">Report</li>
                         </ul>
                     </div>
 
@@ -1538,8 +1573,8 @@
                 <!-- Journeys -->
                 <div class="sub_links_of_allawn" id="journeys_sub_box" data-set="journeys-sub">
                     <ul>
-                        <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-58">Journey Campaign</li>
-                        <li class="sole78m" onclick="link_sole_action(this)" data-set="contect-59">Journey Reports</li>
+                        <li class="sole78m" id="contect__59" onclick="link_sole_action(this)" data-set="contect-59">Journey Campaign</li>
+                        <li class="sole78m" id="contect__60" onclick="link_sole_action(this)" data-set="contect-60">Journey Reports</li>
                     </ul>
                 </div>
 
@@ -1561,7 +1596,7 @@
         <section class="right_section_1 widh_wmob">
 
             <!-- section 1 overview -->
-            <section id="overview_contect_box" class="section_sub_with all_sejmca8974 show_active">
+            <section id="overview_contect_box" class="section_sub_with all_sejmca8974 ">
 
                 <div class="overview_hero">
                     <h3 class="htaw85">Omni Portal</h3>
@@ -1944,7 +1979,7 @@
 
                 <div class="all_drive_box">
                     <span class="img_box">
-                        <img src="assets/appliction_imgs/login_section_img.png" alt="">
+                        <img src="assets/appliction_imgs/login/login_section_img.png" alt="">
                     </span>
                 </div>
 
@@ -2117,14 +2152,14 @@
 
                 <div class="all_drive_box">
                     <span class="img_box">
-                        <img src="assets/appliction_imgs/dashboard-page1.png" alt="">
+                        <img src="assets/appliction_imgs/dashboard/dashboard-page1.png" alt="">
                     </span>
                 </div>
 
 
                 <div class="all_drive_box">
                     <span class="img_box">
-                        <img src="assets/appliction_imgs/dashboard-page2.png" alt="">
+                        <img src="assets/appliction_imgs/dashboard/dashboard-page2.png" alt="">
                     </span>
                 </div>
 
@@ -2650,9 +2685,9 @@
                     </a>
 
                     <!-- Right Button (Next) -->
-                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('rcs_btn_124').click();">
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__1').click(); document.getElementById('sms_btn_124').classList.add('active'); ">
                         <span class="ghost-ink">NEXT →</span>
-                        <span class="solid-ink">RCS</span>
+                        <span class="solid-ink">SMS Dashbord</span>
                     </a>
 
                 </div>
@@ -4494,298 +4529,1146 @@
 
 
             <!-- sublink box 1 -->
-            <section id="contect_1_contect_box" class="section_sub_with all_sejmca8974 ">
-                1
+            <section id="contect_1_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Dashboard
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>SMS Analytics</h4>
+                </div>
+
+                <h2>SMS Dashboard</h2>
+
+                <p>The SMS Dashboard provides a summary of SMS campaign performance, message delivery statistics, and status-wise analytics.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_1/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delivery Analytics
+                    </span>
+                </div>
+
+                <p style="margin-top: 30px;">The dashboard displays a graphical representation of SMS delivery performance over a selected period.</p>
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style: disc;padding-left: 20px;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Delivered Messages</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Failed Messages</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Message Statistics
+                    </span>
+                </div>
+
+                <p style="margin-top: 30px;">The dashboard provides a quick summary of SMS activity.</p>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th>METRIC</th>
+                                <th>DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Today Sent</td>
+                                <td>Total SMS messages sent today</td>
+                            </tr>
+                            <tr>
+                                <td>Delivered</td>
+                                <td>Successfully delivered messages</td>
+                            </tr>
+                            <tr>
+                                <td>Undelivered</td>
+                                <td>Messages not delivered</td>
+                            </tr>
+
+                            <tr>
+                                <td>Failed</td>
+                                <td>Messages that failed during processing</td>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Status Wise Count
+                    </span>
+                </div>
+
+                <p style="margin-top: 20px;color: #000000;">The Status Wise Count section displays message status distribution.</p>
+
+                <!-- no icon box  -->
+                <div class="void-horizon" style="margin: 0 auto;">
+                    <!-- Grid Layout -->
+                    <div class="cyber-grid-array">
+
+                        <!-- Row 1 Items -->
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Delivered</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Expired</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Rejected</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Undelivered</span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Benefits
+                    </span>
+                </div>
+
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Monitor Campaign Performance</h3>
+                            <p class="om-step-detail">rack campaign activity from a single dashboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Track Delivery Success Rates</h3>
+                            <p class="om-step-detail">Measure successful message delivery.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Identify Failed Messages</h3>
+                            <p class="om-step-detail">Quickly identify failed or undelivered SMS.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Analyze Messaging Trends</h3>
+                            <p class="om-step-detail">Review SMS performance trends over time.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07  ;">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">
+                                Users can quickly review SMS campaign activity and delivery performance from a single dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <!-- <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Plugins
+                    </span> -->
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('sms_btn_124').click();">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">SMS</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">Create Campaign</span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 2 -->
-            <section id="contect_2_contect_box" class="section_sub_with all_sejmca8974">
-                2
+            <section id="contect_2_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Create Campaign
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>SMS Campaign</h4>
+                </div>
+
+                <h2>Create SMS Campaign</h2>
+
+                <p>The SMS Dashboard provides a summary of SMS campaign performance, message delivery statistics, and status-wise analytics.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_2/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_2/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Campaign Details
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th>FIELD</th>
+                                <th>DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Campaign Name</td>
+                                <td>User-defined name for the campaign. Auto-filled with timestamp.</td>
+                            </tr>
+                            <tr>
+                                <td>Route</td>
+                                <td>Message delivery route — select from available routing options.</td>
+                            </tr>
+                            <tr>
+                                <td>Sender ID</td>
+                                <td>Sender identity displayed to recipients (6–8 character alpha code).</td>
+                            </tr>
+
+                            <tr>
+                                <td>Language</td>
+                                <td>Preferred language for the message content (e.g. English).</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>DLT Template ID</td>
+                                <td>Government-approved Distributed Ledger Technology template identifier.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Select Template</td>
+                                <td>Choose a predefined SMS template. Message text auto-fills from selection.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Message Text</td>
+                                <td>SMS content to be delivered. Shows Length, MaxLength, Segments, Chars Left.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Numbers</td>
+                                <td>Recipient mobile numbers — up to 5,000 comma-separated entries.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Steps to Create a Campaign
+                    </span>
+                </div>
+
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Campaign Name</h3>
+                            <p class="om-step-detail">rack campaign activity from a single dashboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Route & Sender ID</h3>
+                            <p class="om-step-detail">Measure successful message delivery.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Template</h3>
+                            <p class="om-step-detail">Quickly identify failed or undelivered SMS.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Recipients</h3>
+                            <p class="om-step-detail">Review SMS performance trends over time.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Send Now</h3>
+                            <p class="om-step-detail">Campaign is submitted for processing and delivery to all selected recipients.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__1').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">Sms Dashbord</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__3').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">Tirny Campaign</span>
+                    </a>
+
+                </div>
+
+
             </section>
 
             <!-- sublink box 3 -->
-            <section id="contect_3_contect_box" class="section_sub_with all_sejmca8974">
-                3
+            <section id="contect_3_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa show_active">
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Tiny Campaign
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>SMS Campaign</h4>
+                </div>
+
+                <h2>Tiny Campaign (Smart URL)</h2>
+
+                <p>The Tiny Campaign feature is used when a URL is very long. Instead of sending the complete URL in the SMS message, the system generates a Smart URL (short URL), making messages cleaner, easier to read, and trackable.</p>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Purpose
+                    </span>
+                </div>
+
+                <!--notification green-->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;display:none; ">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">
+                                Tiny Campaign reduces SMS length, improves readability, and provides click tracking using Smart URLs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 1: Create Smart URL
+                    </span>
+                </div>
+
+                <p style="margin-top: 30px;">Navigation: <b>HomeHome → Utilities → Tiny URL</b></p>
+
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Tiny URL</h3>
+                            <p class="om-step-detail">Navigate to Tiny URL under Utilities.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_1.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Create Smart URL</h3>
+                            <p class="om-step-detail">Click New Smart URL.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_2.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Configure Smart URL</h3>
+                            <p class="om-step-detail">Enter URL details and Smart URL settings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Generate URL</h3>
+                            <p class="om-step-detail">Paste the long URL and click Generate.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_3.png" alt="">
+                        </span>
+                    </div>
+                    
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_4.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Smart URL</h3>
+                            <p class="om-step-detail">Verify generated Smart URL and click Save.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_5.png" alt="">
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Smart URL Fields
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th>FIELD</th>
+                                <th>DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>Website or campaign name</td>
+                            </tr>
+                            <tr>
+                                <td>Domain Name</td>
+                                <td>Select the domain created earlier</td>
+                            </tr>
+                            <tr>
+                                <td>URL Type</td>
+                                <td>Static or Dynamic</td>
+                            </tr>
+
+                            <tr>
+                                <td>Tiny URL Name</td>
+                                <td>Custom short URL name</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Expiry Date</td>
+                                <td>Expiration date of Smart URL</td>
+                            </tr>
+
+                            <tr>
+                                <td>Web Address</td>
+                                <td>Paste the long URL</td>
+                            </tr>
+
+                           
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 2: Use Smart URL in SMS Campaign
+                    </span>
+                </div>
+
+                <p style="margin-top: 30px;">Navigation: <b>Campaign  → SMS Campaign</b></p>
+
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Campaign Page</h3>
+                            <p class="om-step-detail">Open the SMS Campaign page.</p>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enable Tiny Campaign</h3>
+                            <p class="om-step-detail">Enable the Tiny Campaign option.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_6.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Insert Link</h3>
+                            <p class="om-step-detail">Click Insert Link below the Message Text area.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_7.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Smart URL</h3>
+                            <p class="om-step-detail">A popup window will display all available Smart URLs. Select the required Smart URL.</p>
+                        </div>
+                    </div>
+
+                   
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Insert URL into Message</h3>
+                            <p class="om-step-detail">The selected Smart URL will automatically be inserted into the message.</p>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+
+                <!--notification yellow -->
+                <div class="hdah651" style="margin-top: 10px;">
+                    <div class="om-step-card" style="border-left: 8px solid #a76e04; background: #fdf3e7;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;display:none; ">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #967331;">
+                                If Tiny Campaign is not enabled, the Insert Link option will not be available.</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 3: Select SMS Template
+                    </span>
+                </div>
+
+                
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Sender ID</h3>
+                            <p class="om-step-detail">Select the required Sender ID.</p>
+                        </div>
+                    </div>
+
+                     <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_8.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Select Template</h3>
+                            <p class="om-step-detail">Click Select Template.</p>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open DLT Template Window</h3>
+                            <p class="om-step-detail">The Select DLT Template window will open.</p>
+                        </div>
+                    </div>
+
+                   
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Choose Template</h3>
+                            <p class="om-step-detail">Select the required DLT-approved template.</p>
+                        </div>
+                    </div>
+
+                   
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Confirm Selection</h3>
+                            <p class="om-step-detail">Click to confirm the selected template.</p>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 4: Replace the Numeric Placeholder
+                    </span>
+                </div>
+
+                
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Locate Placeholder</h3>
+                            <p class="om-step-detail">Locate the {#numeric#} placeholder in the SMS template.</p>
+                        </div>
+                    </div>
+
+                     <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_9.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Replace Placeholder</h3>
+                            <p class="om-step-detail">Replace the placeholder with the generated Smart URL.</p>
+                        </div>
+                    </div>
+
+                      <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_3/img_10.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Verify Preview</h3>
+                            <p class="om-step-detail">The SMS preview will immediately reflect the updated message.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Final Result
+                    </span>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Final Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">
+                                The recipient receives a message containing a Smart URL instead of a long URL. This reduces SMS length, improves readability, and provides click tracking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">Create Campaign</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__4').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">Manage Sender ID</span>
+                    </a>
+
+                </div>
+
+
+
             </section>
 
             <!-- sublink box 4 -->
-            <section id="contect_4_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_4_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 4
             </section>
 
             <!-- sublink box 5 -->
-            <section id="contect_5_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_5_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 5
             </section>
 
             <!-- sublink box 6 -->
-            <section id="contect_6_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_6_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 6
             </section>
 
             <!-- sublink box 7 -->
-            <section id="contect_7_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_7_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 7
             </section>
 
             <!-- sublink box 8 -->
-            <section id="contect_8_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_8_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 8
             </section>
 
             <!-- sublink box 9 -->
-            <section id="contect_9_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_9_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 9
             </section>
 
             <!-- sublink box 10 -->
-            <section id="contect_10_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_10_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 10
             </section>
 
             <!-- sublink box 11 -->
-            <section id="contect_11_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_11_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 11
             </section>
 
             <!-- sublink box 12 -->
-            <section id="contect_12_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_12_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 12
             </section>
 
             <!-- sublink box 13 -->
-            <section id="contect_13_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_13_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 13
             </section>
 
             <!-- sublink box 14 -->
-            <section id="contect_14_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_14_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 14
             </section>
 
             <!-- sublink box 15 -->
-            <section id="contect_15_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_15_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 15
             </section>
 
             <!-- sublink box 16 -->
-            <section id="contect_16_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_16_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 16
             </section>
 
             <!-- sublink box 17 -->
-            <section id="contect_17_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_17_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 17
             </section>
 
             <!-- sublink box 18 -->
-            <section id="contect_18_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_18_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 18
             </section>
 
             <!-- sublink box 19 -->
-            <section id="contect_19_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_19_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 19
             </section>
 
             <!-- sublink box 20 -->
-            <section id="contect_20_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_20_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 20
             </section>
 
             <!-- sublink box 21 -->
-            <section id="contect_21_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_21_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 21
             </section>
 
             <!-- sublink box 22 -->
-            <section id="contect_22_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_22_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 22
             </section>
 
             <!-- sublink box 23 -->
-            <section id="contect_23_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_23_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 23
             </section>
 
             <!-- sublink box 24 -->
-            <section id="contect_24_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_24_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 24
             </section>
 
             <!-- sublink box 25 -->
-            <section id="contect_25_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_25_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 25
             </section>
 
             <!-- sublink box 26 -->
-            <section id="contect_26_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_26_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 26
             </section>
 
             <!-- sublink box 27 -->
-            <section id="contect_27_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_27_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 27
             </section>
 
             <!-- sublink box 28 -->
-            <section id="contect_28_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_28_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 28
             </section>
 
             <!-- sublink box 29 -->
-            <section id="contect_29_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_29_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 29
             </section>
 
             <!-- sublink box 30 -->
-            <section id="contect_30_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_30_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 30
             </section>
 
             <!-- sublink box 31 -->
-            <section id="contect_31_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_31_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 31
             </section>
 
             <!-- sublink box 32 -->
-            <section id="contect_32_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_32_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 32
             </section>
 
             <!-- sublink box 33 -->
-            <section id="contect_33_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_33_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 33
             </section>
 
             <!-- sublink box 34 -->
-            <section id="contect_34_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_34_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 34
             </section>
 
             <!-- sublink box 35 -->
-            <section id="contect_35_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_35_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 35
             </section>
 
             <!-- sublink box 36 -->
-            <section id="contect_36_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_36_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 36
             </section>
 
             <!-- sublink box 37 -->
-            <section id="contect_37_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_37_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 37
             </section>
 
             <!-- sublink box 38 -->
-            <section id="contect_38_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_38_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 38
             </section>
 
             <!-- sublink box 39 -->
-            <section id="contect_39_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_39_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 39
             </section>
 
             <!-- sublink box 40 -->
-            <section id="contect_40_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_40_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 40
             </section>
 
             <!-- sublink box 41 -->
-            <section id="contect_41_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_41_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 41
             </section>
 
             <!-- sublink box 42 -->
-            <section id="contect_42_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_42_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 42
             </section>
 
             <!-- sublink box 43 -->
-            <section id="contect_43_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_43_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 43
             </section>
 
             <!-- sublink box 44 -->
-            <section id="contect_44_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_44_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 44
             </section>
 
             <!-- sublink box 45 -->
-            <section id="contect_45_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_45_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 45
             </section>
 
             <!-- sublink box 46 -->
-            <section id="contect_46_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_46_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 46
             </section>
 
             <!-- sublink box 47 -->
-            <section id="contect_47_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_47_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 47
             </section>
 
             <!-- sublink box 48 -->
-            <section id="contect_48_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_48_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 48
             </section>
 
             <!-- sublink box 49 -->
-            <section id="contect_49_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_49_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 49
             </section>
 
             <!-- sublink box 50 -->
-            <section id="contect_50_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_50_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 50
             </section>
 
             <!-- sublink box 51 -->
-            <section id="contect_51_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_51_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 51
             </section>
 
             <!-- sublink box 52 -->
-            <section id="contect_52_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_52_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 52
             </section>
 
             <!-- sublink box 53 -->
-            <section id="contect_53_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_53_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 53
             </section>
 
             <!-- sublink box 54 -->
-            <section id="contect_54_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_54_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 54
             </section>
 
             <!-- sublink box 55 -->
-            <section id="contect_55_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_55_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 55
             </section>
 
             <!-- sublink box 56 -->
-            <section id="contect_56_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_56_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 56
             </section>
 
             <!-- sublink box 57 -->
-            <section id="contect_57_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_57_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 57
             </section>
 
             <!-- sublink box 58 -->
-            <section id="contect_58_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_58_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 58
             </section>
 
             <!-- sublink box 59 -->
-            <section id="contect_59_contect_box" class="section_sub_with all_sejmca8974">
+            <section id="contect_59_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 59
+            </section>
+
+            <!-- sublink box 60 -->
+            <section id="contect_60_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
+                60
             </section>
 
 
@@ -4870,9 +5753,128 @@
                 icon.classList.add('svg_icon_color-active');
             }
 
+            // all sub btn 
+            let contect__1 = document.getElementById("contect__1");
+            let contect__2 = document.getElementById("contect__2");
+            let contect__3 = document.getElementById("contect__3");
+            let contect__4 = document.getElementById("contect__4");
+            let contect__5 = document.getElementById("contect__5");
+            let contect__6 = document.getElementById("contect__6");
+            let contect__7 = document.getElementById("contect__7");
+            let contect__8 = document.getElementById("contect__8");
+            let contect__9 = document.getElementById("contect__9");
+            let contect__10 = document.getElementById("contect__10");
+            let contect__11 = document.getElementById("contect__11");
+            let contect__12 = document.getElementById("contect__12");
+            let contect__13 = document.getElementById("contect__13");
+            let contect__14 = document.getElementById("contect__14");
+            let contect__15 = document.getElementById("contect__15");
+            let contect__16 = document.getElementById("contect__16");
+            let contect__17 = document.getElementById("contect__17");
+            let contect__18 = document.getElementById("contect__18");
+            let contect__19 = document.getElementById("contect__19");
+            let contect__20 = document.getElementById("contect__20");
+            let contect__21 = document.getElementById("contect__21");
+            let contect__22 = document.getElementById("contect__22");
+            let contect__23 = document.getElementById("contect__23");
+            let contect__24 = document.getElementById("contect__24");
+            let contect__25 = document.getElementById("contect__25");
+            let contect__26 = document.getElementById("contect__26");
+            let contect__27 = document.getElementById("contect__27");
+            let contect__28 = document.getElementById("contect__28");
+            let contect__29 = document.getElementById("contect__29");
+            let contect__30 = document.getElementById("contect__30");
+            let contect__31 = document.getElementById("contect__31");
+            let contect__32 = document.getElementById("contect__32");
+            let contect__33 = document.getElementById("contect__33");
+            let contect__34 = document.getElementById("contect__34");
+            let contect__35 = document.getElementById("contect__35");
+            let contect__36 = document.getElementById("contect__36");
+            let contect__37 = document.getElementById("contect__37");
+            let contect__38 = document.getElementById("contect__38");
+            let contect__39 = document.getElementById("contect__39");
+            let contect__40 = document.getElementById("contect__40");
+            let contect__41 = document.getElementById("contect__41");
+            let contect__42 = document.getElementById("contect__42");
+            let contect__43 = document.getElementById("contect__43");
+            let contect__44 = document.getElementById("contect__44");
+            let contect__45 = document.getElementById("contect__45");
+            let contect__46 = document.getElementById("contect__46");
+            let contect__47 = document.getElementById("contect__47");
+            let contect__48 = document.getElementById("contect__48");
+            let contect__49 = document.getElementById("contect__49");
+            let contect__50 = document.getElementById("contect__50");
+            let contect__51 = document.getElementById("contect__51");
+            let contect__52 = document.getElementById("contect__52");
+            let contect__53 = document.getElementById("contect__53");
+            let contect__54 = document.getElementById("contect__54");
+            let contect__55 = document.getElementById("contect__55");
+            let contect__56 = document.getElementById("contect__56");
+            let contect__57 = document.getElementById("contect__57");
+            let contect__58 = document.getElementById("contect__58");
+            let contect__59 = document.getElementById("contect__59");
+            let contect__60 = document.getElementById("contect__60");
 
-
-
+            contect__1.classList.remove("active");
+            contect__2.classList.remove("active");
+            contect__3.classList.remove("active");
+            contect__4.classList.remove("active");
+            contect__5.classList.remove("active");
+            contect__6.classList.remove("active");
+            contect__7.classList.remove("active");
+            contect__8.classList.remove("active");
+            contect__9.classList.remove("active");
+            contect__10.classList.remove("active");
+            contect__11.classList.remove("active");
+            contect__12.classList.remove("active");
+            contect__13.classList.remove("active");
+            contect__14.classList.remove("active");
+            contect__15.classList.remove("active");
+            contect__16.classList.remove("active");
+            contect__17.classList.remove("active");
+            contect__18.classList.remove("active");
+            contect__19.classList.remove("active");
+            contect__20.classList.remove("active");
+            contect__21.classList.remove("active");
+            contect__22.classList.remove("active");
+            contect__23.classList.remove("active");
+            contect__24.classList.remove("active");
+            contect__25.classList.remove("active");
+            contect__26.classList.remove("active");
+            contect__27.classList.remove("active");
+            contect__28.classList.remove("active");
+            contect__29.classList.remove("active");
+            contect__30.classList.remove("active");
+            contect__31.classList.remove("active");
+            contect__32.classList.remove("active");
+            contect__33.classList.remove("active");
+            contect__34.classList.remove("active");
+            contect__35.classList.remove("active");
+            contect__36.classList.remove("active");
+            contect__37.classList.remove("active");
+            contect__38.classList.remove("active");
+            contect__39.classList.remove("active");
+            contect__40.classList.remove("active");
+            contect__41.classList.remove("active");
+            contect__42.classList.remove("active");
+            contect__43.classList.remove("active");
+            contect__44.classList.remove("active");
+            contect__45.classList.remove("active");
+            contect__46.classList.remove("active");
+            contect__47.classList.remove("active");
+            contect__48.classList.remove("active");
+            contect__49.classList.remove("active");
+            contect__50.classList.remove("active");
+            contect__51.classList.remove("active");
+            contect__52.classList.remove("active");
+            contect__53.classList.remove("active");
+            contect__54.classList.remove("active");
+            contect__55.classList.remove("active");
+            contect__56.classList.remove("active");
+            contect__57.classList.remove("active");
+            contect__58.classList.remove("active");
+            contect__59.classList.remove("active");
+            contect__60.classList.remove("active");
             // all sub boxs 
             let contect_box_1 = document.getElementById("contect_1_contect_box");
             let contect_box_2 = document.getElementById("contect_2_contect_box");
@@ -4933,6 +5935,7 @@
             let contect_box_57 = document.getElementById("contect_57_contect_box");
             let contect_box_58 = document.getElementById("contect_58_contect_box");
             let contect_box_59 = document.getElementById("contect_59_contect_box");
+            let contect_box_60 = document.getElementById("contect_60_contect_box");
 
 
             contect_box_1.classList.remove("show_active");
@@ -4994,7 +5997,7 @@
             contect_box_57.classList.remove("show_active");
             contect_box_58.classList.remove("show_active");
             contect_box_59.classList.remove("show_active");
-
+            contect_box_60.classList.remove("show_active");
 
             // set defulte none on all box 
             overview_box_show.classList.remove("show_active")
@@ -5225,6 +6228,7 @@
             let contect_box_57 = document.getElementById("contect_57_contect_box");
             let contect_box_58 = document.getElementById("contect_58_contect_box");
             let contect_box_59 = document.getElementById("contect_59_contect_box");
+            let contect_box_60 = document.getElementById("contect_60_contect_box");
 
 
             contect_box_1.classList.remove("show_active");
@@ -5286,7 +6290,7 @@
             contect_box_57.classList.remove("show_active");
             contect_box_58.classList.remove("show_active");
             contect_box_59.classList.remove("show_active");
-
+            contect_box_60.classList.remove("show_active");
 
             let overview_box_show = document.getElementById("overview_contect_box");
             let login_contect_box = document.getElementById("login_contect_box");
@@ -5374,6 +6378,7 @@
             contect_box_57.classList.remove("show_active");
             contect_box_58.classList.remove("show_active");
             contect_box_59.classList.remove("show_active");
+            contect_box_60.classList.remove("show_active");
 
 
 
@@ -5613,6 +6618,10 @@
             if (box_id === "contect-59") {
                 contect_box_59.classList.toggle("show_active");
             }
+
+                if (box_id === "contect-60") {
+                    contect_box_60.classList.toggle("show_active");
+                }
 
         }
 
