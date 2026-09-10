@@ -1,128 +1,143 @@
 <style>
     .cta-section {
-        --cta-orange: #FF6B1A;
-        --cta-orange-dark: #E95508;
-        --cta-dark: #100B22;
-        --cta-dark-2: #1B1338;
-        --cta-text-muted: #B7BAD1;
-        --cta-orange-soft: #FFF0E8;
+        --ink: #1B1613;
+        --ink-soft: #241E19;
+        --ink-line: rgba(243, 236, 223, 0.13);
+        --paper: #F3ECDF;
+        --paper-dim: #B9AF9E;
+        --copper: #D3701F;
+        --copper-light: #E68A3E;
+        --meter-green: #7FB86B;
+        --radius-sm: 3px;
+        --radius-md: 4px;
 
-        background: var(--cta-orange-soft);
-        padding: 56px 0;
+        position: relative;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 64px 0 88px;
+        font-family: 'Inter', sans-serif;
         overflow: hidden;
     }
 
     .cta-section::before {
         content: "";
-
         position: absolute;
         inset: 0;
-
-        background:
-            repeating-linear-gradient(135deg,
-                rgba(255, 255, 255, 0.025) 0,
-                rgba(255, 255, 255, 0.025) 1px,
-                transparent 1px,
-                transparent 9px);
-
+        background-image: radial-gradient(rgba(243, 236, 223, 0.035) 1px, transparent 1px);
+        background-size: 4px 4px;
         pointer-events: none;
     }
 
     .cta-container {
-        max-width: 1160px;
+        position: relative;
+        z-index: 1;
+        max-width: 1180px;
         margin-inline: auto;
         padding-inline: 24px;
     }
 
-    .cta-banner {
+    .cta-panel {
         position: relative;
-        overflow: hidden;
-        border-radius: 26px;
-        background:
-            radial-gradient(circle at 78% 25%, rgba(139, 92, 246, 0.20), transparent 45%),
-            linear-gradient(120deg, var(--cta-dark) 0%, var(--cta-dark-2) 60%, var(--cta-dark) 100%);
-        padding: 40px 48px;
+        border: 1px solid var(--ink-line);
+        background: var(--ink-soft);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 40px;
-        box-shadow: 0 24px 50px rgba(16, 11, 34, 0.28);
-    }
-
-    /* Subtle diagonal line texture on the right side */
-    .cta-banner::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background-image: repeating-linear-gradient(115deg,
-                rgba(255, 255, 255, 0.05) 0px,
-                rgba(255, 255, 255, 0.05) 1px,
-                transparent 1px,
-                transparent 14px);
-        -webkit-mask-image: linear-gradient(90deg, transparent 35%, #000 100%);
-        mask-image: linear-gradient(90deg, transparent 35%, #000 100%);
-        pointer-events: none;
+        gap: 48px;
+        padding: 48px 52px;
     }
 
     /* ---------- Text ---------- */
 
     .cta-text {
-        position: relative;
-        z-index: 1;
-        max-width: 460px;
+        max-width: 440px;
+    }
+
+    .cta-plate {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--copper);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .cta-plate::before {
+        content: "";
+        width: 18px;
+        height: 1px;
+        background: var(--copper);
+        display: inline-block;
     }
 
     .cta-heading {
-        font-size: clamp(22px, 2.6vw, 28px);
-        line-height: 1.25;
+        font-family: 'Big Shoulders Display', sans-serif;
         font-weight: 800;
-        color: #FFFFFF;
-        margin-bottom: 10px;
-    }
-
-    .cta-heading .accent {
-        color: var(--cta-orange);
+        font-size: clamp(26px, 3vw, 36px);
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        color: var(--paper);
+        margin-bottom: 14px;
     }
 
     .cta-subtitle {
-        font-size: 13px;
-        line-height: 1.6;
-        color: var(--cta-text-muted);
-        max-width: 380px;
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: var(--paper-dim);
+        max-width: 40ch;
     }
 
     /* ---------- Action ---------- */
 
     .cta-action {
-        position: relative;
-        z-index: 1;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
+        align-items: flex-end;
+        gap: 20px;
         flex: none;
+    }
+
+    .cta-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.03em;
+        color: var(--paper-dim);
+    }
+
+    .cta-status_dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--meter-green);
+        box-shadow: 0 0 6px rgba(127, 184, 107, 0.7);
     }
 
     .cta-btn {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 15px 26px;
-        border-radius: 999px;
-        background: linear-gradient(120deg, var(--cta-orange) 0%, var(--cta-orange-dark) 100%);
-        color: #FFFFFF;
-        font-size: 14px;
+        padding: 17px 30px;
+        border-radius: var(--radius-md);
+        background: var(--copper);
+        color: var(--ink);
+        font-size: 15px;
         font-weight: 700;
         text-decoration: none;
         white-space: nowrap;
-        box-shadow: 0 12px 26px rgba(255, 107, 26, 0.32);
-        transition: transform 260ms ease, box-shadow 260ms ease;
+        transition: background 220ms ease, transform 220ms ease;
     }
 
     .cta-btn:hover {
+        background: var(--copper-light);
         transform: translateY(-2px);
-        box-shadow: 0 16px 34px rgba(255, 107, 26, 0.4);
+    }
+
+    .cta-btn:active {
+        transform: translateY(0);
     }
 
     .cta-btn svg {
@@ -135,41 +150,34 @@
         transform: translateX(3px);
     }
 
-    .cta-badges {
+    .cta-specs {
         display: flex;
         align-items: center;
-        gap: 18px;
-        flex-wrap: wrap;
+        gap: 16px;
     }
 
-    .cta-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--cta-text-muted);
+    .cta-specs span {
+        font-size: 12px;
+        color: var(--paper-dim);
         white-space: nowrap;
     }
 
-    .cta-badge svg {
-        width: 13px;
-        height: 13px;
-        color: var(--cta-orange);
-        flex: none;
+    .cta-specs .divider {
+        width: 1px;
+        height: 14px;
+        background: var(--ink-line);
     }
 
     /* ---------- Responsive ---------- */
 
-    @media (max-width: 860px) {
-        .cta-banner {
+    @media (max-width: 780px) {
+        .cta-panel {
             flex-direction: column;
             align-items: flex-start;
-            padding: 32px 28px;
+            padding: 36px 28px;
         }
 
-        .cta-text,
-        .cta-action {
+        .cta-text {
             max-width: 100%;
         }
 
@@ -178,64 +186,61 @@
             width: 100%;
         }
 
-        .cta-banner::before {
-            -webkit-mask-image: linear-gradient(180deg, transparent 30%, #000 100%);
-            mask-image: linear-gradient(180deg, transparent 30%, #000 100%);
+        .cta-btn {
+            width: 100%;
+            justify-content: center;
         }
     }
 
     @media (max-width: 480px) {
         .cta-section {
-            padding: 40px 0;
+            padding: 48px 0 64px;
         }
 
-        .cta-banner {
+        .cta-panel {
             padding: 28px 20px;
-            border-radius: 20px;
         }
 
-        .cta-btn {
-            width: 100%;
-            justify-content: center;
+        .cta-specs {
+            flex-wrap: wrap;
+            row-gap: 8px;
         }
+    }
 
-        .cta-badges {
-            gap: 14px;
+    @media (prefers-reduced-motion: reduce) {
+
+        .cta-btn,
+        .cta-btn svg {
+            transition: none;
         }
     }
 </style>
 
 <section class="cta-section">
     <div class="cta-container">
-        <div class="cta-banner">
+        <div class="cta-panel">
 
             <div class="cta-text">
-                <h2 class="cta-heading">Ready to Create Something <span class="accent">Amazing?</span></h2>
-                <p class="cta-subtitle">Let's bring your vision to life with our creative expertise and professional studio.</p>
+                <p class="cta-plate">Get started</p>
+                <h2 class="cta-heading">Let's get your next session booked.</h2>
+                <p class="cta-subtitle">Tell us what you're making and we'll match you with the room, the gear, and the crew it needs.</p>
             </div>
 
             <div class="cta-action">
+                <span class="cta-status">
+                    <span class="cta-status_dot"></span>
+                    Studio open for booking
+                </span>
                 <a class="cta-btn" href="#contact">
-                    Book a Free Consultation
+                    Book a session
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
                 </a>
-                <div class="cta-badges">
-                    <span class="cta-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M9 12.5l2 2 4-4.5" />
-                        </svg>
-                        Quick Response
-                    </span>
-                    <span class="cta-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M9 12.5l2 2 4-4.5" />
-                        </svg>
-                        No Hidden Charges
-                    </span>
+                <div class="cta-specs">
+                    <span>Replies within a day</span>
+                    <span class="divider"></span>
+                    <span>No hidden costs</span>
                 </div>
             </div>
 

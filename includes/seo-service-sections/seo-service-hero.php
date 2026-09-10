@@ -773,7 +773,7 @@
                 KingDigital delivers performance-focused SEO solutions that help brands grow faster and drive targeted traffic. Partner with an affordable SEO company that turns strategy into success.
             </p>
 
-            <a href="#" class="seo-hero_content--cta">Start Conquering <span>➜</span></a>
+            <a href="contact.php" class="seo-hero_content--cta">Start Conquering <span>➜</span></a>
         </div>
         <div class="seo-hero_content--visual">
             <img src="assets/images/seo1.png" alt="#">

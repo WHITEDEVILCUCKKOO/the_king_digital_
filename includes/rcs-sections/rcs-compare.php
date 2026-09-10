@@ -222,7 +222,7 @@ COMPLETE FINAL | ELEMENTOR HTML WIDGET COMPATIBLE
 
                 </div>
 
-                <a href="#contact" class="kd-rcs-comparison__button">
+                <a href="contact.php" class="kd-rcs-comparison__button">
                     Get Started
                     <span>→</span>
                 </a>

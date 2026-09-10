@@ -1,117 +1,86 @@
 <style>
     .fp-section {
-        --fp-orange: #FF6B1A;
-        --fp-orange-soft: #FFF0E8;
-        --fp-red-soft: #FDECEC;
-        --fp-blue-soft: #EAF2FE;
-        --fp-purple-soft: #F3EfFF;
-        --fp-green-soft: #E9F8EF;
-        --fp-orange-soft: #FFF0E8;
-        --fp-ink: #14213D;
-        --fp-muted: #6B7686;
-        --fp-border: #ECEEF2;
+        --ink: #1B1613;
+        --ink-soft: #241E19;
+        --ink-line: rgba(243, 236, 223, 0.13);
+        --paper: #F3ECDF;
+        --paper-dim: #B9AF9E;
+        --copper: #D3701F;
+        --meter-red: #D8503F;
+        --radius-sm: 3px;
+        --radius-md: 4px;
 
-        background: var(--fp-purple-soft);
-        padding: 68px 0;
         position: relative;
-        z-index: 2;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 88px 0 96px;
+        font-family: 'Inter', sans-serif;
         overflow: hidden;
     }
 
-    /* Graph-paper texture, faded toward the edges so it reads as an
-       ambient backdrop rather than a hard-edged tile */
     .fp-section::before {
         content: "";
-
         position: absolute;
         inset: 0;
-        z-index: 0;
-
-        background-image:
-            linear-gradient(rgba(99, 102, 241, 0.03) 1px,
-                transparent 1px),
-            linear-gradient(90deg,
-                rgba(99, 102, 241, 0.03) 1px,
-                transparent 1px);
-
-        background-size: 36px 36px;
-
-        -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, #000 45%, transparent 90%);
-        mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, #000 45%, transparent 90%);
-
+        background-image: radial-gradient(rgba(243, 236, 223, 0.035) 1px, transparent 1px);
+        background-size: 4px 4px;
         pointer-events: none;
-    }
-
-    /* Warm accent glows to offset the cool purple wash */
-    .fp-section::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        background:
-            radial-gradient(circle, rgba(255, 107, 26, 0.07) 0%, rgba(255, 107, 26, 0) 70%) calc(100% + 100px) -80px / 320px 320px no-repeat,
-            radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0) 70%) -100px calc(100% + 60px) / 300px 300px no-repeat;
     }
 
     .fp-container {
-        max-width: 1160px;
-        margin-inline: auto;
-        padding-inline: 24px;
         position: relative;
         z-index: 1;
+        max-width: 1180px;
+        margin-inline: auto;
+        padding-inline: 24px;
     }
 
     /* ---------- Header ---------- */
 
     .fp-header {
-        position: relative;
-        text-align: center;
-        margin-bottom: 40px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 44px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--ink-line);
     }
 
-    .fp-header::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: -24px;
-        width: 320px;
-        height: 160px;
-        transform: translateX(-50%);
-        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 72%);
-        pointer-events: none;
-        z-index: -1;
-    }
-
-    .fp-eyebrow {
-        display: inline-flex;
+    .fp-plate {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--copper);
+        display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--fp-orange);
-        margin-bottom: 8px;
+        margin-bottom: 14px;
     }
 
-    .fp-eyebrow::before,
-    .fp-eyebrow::after {
+    .fp-plate::before {
         content: "";
-        width: 14px;
-        height: 1.5px;
-        border-radius: 2px;
-        background: linear-gradient(90deg, transparent, var(--fp-orange));
-    }
-
-    .fp-eyebrow::after {
-        background: linear-gradient(90deg, var(--fp-orange), transparent);
+        width: 18px;
+        height: 1px;
+        background: var(--copper);
+        display: inline-block;
     }
 
     .fp-title {
-        font-size: clamp(24px, 3vw, 30px);
+        font-family: 'Big Shoulders Display', sans-serif;
         font-weight: 800;
-        color: var(--fp-ink);
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: var(--paper);
+        max-width: 15ch;
+    }
+
+    .fp-subtitle {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: var(--paper-dim);
+        max-width: 30ch;
+        text-align: right;
     }
 
     /* ---------- Grid ---------- */
@@ -119,118 +88,141 @@
     .fp-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 18px;
-        margin-bottom: 36px;
+        gap: 22px;
+        margin-bottom: 40px;
     }
 
     .fp-card {
         display: block;
-        transition: transform 300ms ease;
     }
 
-    .fp-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .fp-card__thumb {
+    /* Monitor bezel */
+    .fp-monitor {
         position: relative;
-        aspect-ratio: 4 / 3.3;
-        border-radius: 14px;
-        overflow: hidden;
+        aspect-ratio: 4 / 3.2;
+        background: var(--ink-soft);
+        border: 1px solid var(--ink-line);
+        padding: 8px 8px 0;
         margin-bottom: 12px;
-        background: linear-gradient(145deg, #E9ECF4 0%, var(--fp-border) 100%);
-        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 10px 26px rgba(20, 33, 61, 0.10);
-        transition: box-shadow 300ms ease;
+        transition: border-color 240ms ease;
     }
 
-    .fp-card:hover .fp-card__thumb {
-        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 16px 34px rgba(20, 33, 61, 0.16);
+    .fp-card:hover .fp-monitor {
+        border-color: var(--copper);
     }
 
-    .fp-card__thumb video {
+    .fp-monitor__screen {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 8px);
+        overflow: hidden;
+        background: #000;
+    }
+
+    .fp-monitor__screen video {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-        background: #000;
         transition: transform 400ms ease;
     }
 
-    .fp-card__thumb:not(.is-playing):hover video {
-        transform: scale(1.06);
+    .fp-monitor__screen:not(.is-playing):hover video {
+        transform: scale(1.05);
     }
 
-    /* Gentle vignette so the play button always has contrast,
-       whatever the poster image looks like */
-    .fp-card__thumb::after {
+    .fp-monitor__screen::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, rgba(20, 33, 61, 0) 55%, rgba(20, 33, 61, 0.18) 100%);
+        background: linear-gradient(180deg, rgba(27, 22, 19, 0) 55%, rgba(27, 22, 19, 0.5) 100%);
         pointer-events: none;
-        transition: opacity 280ms ease;
+        transition: opacity 240ms ease;
     }
 
-    .fp-card__thumb.is-playing::after {
+    .fp-monitor__screen.is-playing::after {
         opacity: 0;
     }
 
-    .fp-card__play {
+    /* Tally light — glows red only while this monitor is live */
+    .fp-monitor__tally {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 2;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--meter-red);
+        opacity: 0.25;
+        transition: opacity 240ms ease, box-shadow 240ms ease;
+    }
+
+    .fp-monitor__screen.is-playing~.fp-monitor__tally {
+        opacity: 1;
+    }
+
+    .fp-monitor__play {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.92);
+        width: 38px;
+        height: 38px;
+        border-radius: var(--radius-sm);
+        background: rgba(243, 236, 223, 0.92);
         border: none;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 8px 20px rgba(20, 33, 61, 0.22);
-        transition: transform 280ms ease, background 280ms ease, opacity 200ms ease, box-shadow 280ms ease;
+        z-index: 2;
+        transition: transform 220ms ease, background 220ms ease, opacity 200ms ease;
     }
 
-    .fp-card__play svg {
-        width: 15px;
-        height: 15px;
-        color: var(--fp-ink);
+    .fp-monitor__play svg {
+        width: 13px;
+        height: 13px;
+        color: var(--ink);
         margin-left: 2px;
     }
 
-    .fp-card__thumb:hover .fp-card__play {
-        transform: translate(-50%, -50%) scale(1.1);
-        background: var(--fp-orange);
-        box-shadow: 0 8px 20px rgba(255, 107, 26, 0.35), 0 0 0 8px rgba(255, 107, 26, 0.14);
+    .fp-monitor__screen:hover~.fp-monitor__play,
+    .fp-monitor:hover .fp-monitor__play {
+        background: var(--copper);
     }
 
-    .fp-card__thumb:hover .fp-card__play svg {
-        color: #FFFFFF;
+    .fp-monitor:hover .fp-monitor__play svg {
+        color: var(--paper);
     }
 
-    /* Once playback starts, native video controls take over */
-    .fp-card__thumb.is-playing .fp-card__play {
+    .fp-monitor__screen.is-playing+.fp-monitor__play {
         opacity: 0;
         pointer-events: none;
     }
 
+    .fp-card__num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10.5px;
+        color: var(--paper-dim);
+        letter-spacing: 0.03em;
+        margin-bottom: 6px;
+    }
+
     .fp-card__title {
-        font-size: 13.5px;
-        font-weight: 700;
-        color: var(--fp-ink);
-        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--paper);
         margin-bottom: 4px;
     }
 
     .fp-card__meta {
-        font-size: 10.5px;
-        color: var(--fp-muted);
-        text-align: center;
+        font-size: 11.5px;
+        line-height: 1.5;
+        color: var(--paper-dim);
     }
 
-    /* ---------- View all button ---------- */
+    /* ---------- CTA ---------- */
 
     .fp-cta {
         display: flex;
@@ -240,17 +232,15 @@
     .fp-cta a {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        padding: 13px 26px;
-        border-radius: 999px;
-        border: 1.5px solid var(--fp-orange);
-        background: rgba(255, 255, 255, 0.5);
-        color: var(--fp-orange);
-        font-size: 13px;
-        font-weight: 700;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--ink-line);
+        color: var(--paper);
+        font-size: 14.5px;
+        font-weight: 600;
         text-decoration: none;
-        box-shadow: 0 4px 14px rgba(255, 107, 26, 0.12);
-        transition: background 260ms ease, color 260ms ease, transform 260ms ease, box-shadow 260ms ease;
+        transition: border-color 220ms ease, color 220ms ease;
     }
 
     .fp-cta a svg {
@@ -260,10 +250,8 @@
     }
 
     .fp-cta a:hover {
-        background: var(--fp-orange);
-        color: #FFFFFF;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 24px rgba(255, 107, 26, 0.28);
+        border-color: var(--copper);
+        color: var(--copper);
     }
 
     .fp-cta a:hover svg {
@@ -275,13 +263,21 @@
     @media (max-width: 980px) {
         .fp-grid {
             grid-template-columns: repeat(3, 1fr);
-            row-gap: 28px;
+        }
+
+        .fp-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .fp-subtitle {
+            text-align: left;
         }
     }
 
     @media (max-width: 560px) {
         .fp-section {
-            padding: 48px 0;
+            padding: 64px 0 72px;
         }
 
         .fp-header {
@@ -291,23 +287,19 @@
         .fp-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 14px;
-            row-gap: 24px;
         }
 
         .fp-card__title {
-            font-size: 12.5px;
-        }
-
-        .fp-card:hover {
-            transform: none;
+            font-size: 13px;
         }
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .fp-card,
-        .fp-card__thumb,
-        .fp-card__thumb video,
-        .fp-card__play,
+
+        .fp-monitor,
+        .fp-monitor__screen video,
+        .fp-monitor__play,
+        .fp-monitor__tally,
         .fp-cta a {
             transition: none;
         }
@@ -318,92 +310,115 @@
     <div class="fp-container">
 
         <div class="fp-header">
-            <span class="fp-eyebrow">Our Work</span>
-            <h2 class="fp-title">Featured Projects</h2>
+            <div>
+                <p class="fp-plate">Screening room</p>
+                <h2 class="fp-title">Recent work, reel by reel.</h2>
+            </div>
+            <p class="fp-subtitle">A few sessions pulled straight from the monitors.</p>
         </div>
 
         <div class="fp-grid">
 
             <div class="fp-card">
-                <div class="fp-card__thumb">
-                    <video class="fp-card__video" poster="assets/images/project-podcast-poster.jpg" playsinline preload="metadata">
-                        <source src="assets/videos/project-podcast.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="fp-card__play" aria-label="Play Podcast Production video">
+                <div class="fp-monitor">
+                    <div class="fp-monitor__screen fp-card__video-wrap">
+                        <video class="fp-card__video" poster="assets/images/project-podcast-poster.jpg" playsinline preload="metadata">
+                            <source src="assets/videos/project-podcast.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="fp-monitor__tally"></span>
+                    <button type="button" class="fp-monitor__play" aria-label="Play Podcast Production video">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7Z" />
                         </svg>
                     </button>
                 </div>
-                <h3 class="fp-card__title">Podcast Production</h3>
-                <p class="fp-card__meta">Recording • Editing • Publishing</p>
+                <p class="fp-card__num">REEL.01</p>
+                <h3 class="fp-card__title">Podcast production</h3>
+                <p class="fp-card__meta">A weekly show recorded, edited, and shipped to every platform.</p>
             </div>
 
             <div class="fp-card">
-                <div class="fp-card__thumb">
-                    <video class="fp-card__video" poster="assets/images/project-video-ads-poster.jpg" playsinline preload="metadata">
-                        <source src="assets/videos/project-video-ads.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="fp-card__play" aria-label="Play Video Ads video">
+                <div class="fp-monitor">
+                    <div class="fp-monitor__screen fp-card__video-wrap">
+                        <video class="fp-card__video" poster="assets/images/project-video-ads-poster.jpg" playsinline preload="metadata">
+                            <source src="assets/videos/project-video-ads.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="fp-monitor__tally"></span>
+                    <button type="button" class="fp-monitor__play" aria-label="Play Video Ads video">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7Z" />
                         </svg>
                     </button>
                 </div>
-                <h3 class="fp-card__title">Video Ads</h3>
-                <p class="fp-card__meta">Shoot • Edit • Color Grade</p>
+                <p class="fp-card__num">REEL.02</p>
+                <h3 class="fp-card__title">Video ads</h3>
+                <p class="fp-card__meta">Shot, cut, and graded for a launch campaign across three platforms.</p>
             </div>
 
             <div class="fp-card">
-                <div class="fp-card__thumb">
-                    <video class="fp-card__video" poster="assets/images/project-animation-poster.jpg" playsinline preload="metadata">
-                        <source src="assets/videos/project-animation.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="fp-card__play" aria-label="Play Animation video">
+                <div class="fp-monitor">
+                    <div class="fp-monitor__screen fp-card__video-wrap">
+                        <video class="fp-card__video" poster="assets/images/project-animation-poster.jpg" playsinline preload="metadata">
+                            <source src="assets/videos/project-animation.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="fp-monitor__tally"></span>
+                    <button type="button" class="fp-monitor__play" aria-label="Play Animation video">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7Z" />
                         </svg>
                     </button>
                 </div>
+                <p class="fp-card__num">REEL.03</p>
                 <h3 class="fp-card__title">Animation</h3>
-                <p class="fp-card__meta">2D / 3D • Motion Graphics</p>
+                <p class="fp-card__meta">2D and 3D motion graphics built to carry a product story.</p>
             </div>
 
             <div class="fp-card">
-                <div class="fp-card__thumb">
-                    <video class="fp-card__video" poster="assets/images/project-voiceover-poster.jpg" playsinline preload="metadata">
-                        <source src="assets/videos/project-voiceover.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="fp-card__play" aria-label="Play Voice Over video">
+                <div class="fp-monitor">
+                    <div class="fp-monitor__screen fp-card__video-wrap">
+                        <video class="fp-card__video" poster="assets/images/project-voiceover-poster.jpg" playsinline preload="metadata">
+                            <source src="assets/videos/project-voiceover.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="fp-monitor__tally"></span>
+                    <button type="button" class="fp-monitor__play" aria-label="Play Voice Over video">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7Z" />
                         </svg>
                     </button>
                 </div>
-                <h3 class="fp-card__title">Voice Over</h3>
-                <p class="fp-card__meta">Ads • Explainers • IVR</p>
+                <p class="fp-card__num">REEL.04</p>
+                <h3 class="fp-card__title">Voice-over</h3>
+                <p class="fp-card__meta">Ads, explainers, and IVR lines voiced clean in a treated booth.</p>
             </div>
 
             <div class="fp-card">
-                <div class="fp-card__thumb">
-                    <video class="fp-card__video" poster="assets/images/project-voice-recording-poster.jpg" playsinline preload="metadata">
-                        <source src="assets/videos/project-voice-recording.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="fp-card__play" aria-label="Play Voice Recording video">
+                <div class="fp-monitor">
+                    <div class="fp-monitor__screen fp-card__video-wrap">
+                        <video class="fp-card__video" poster="assets/images/project-voice-recording-poster.jpg" playsinline preload="metadata">
+                            <source src="assets/videos/project-voice-recording.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="fp-monitor__tally"></span>
+                    <button type="button" class="fp-monitor__play" aria-label="Play Voice Recording video">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7Z" />
                         </svg>
                     </button>
                 </div>
-                <h3 class="fp-card__title">Voice Recording</h3>
-                <p class="fp-card__meta">Studio • Dubbing • Narration</p>
+                <p class="fp-card__num">REEL.05</p>
+                <h3 class="fp-card__title">Voice recording</h3>
+                <p class="fp-card__meta">Studio narration and dubbing recorded for a training series.</p>
             </div>
 
         </div>
 
         <div class="fp-cta">
             <a href="#">
-                View All Projects
+                View all projects
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
@@ -415,37 +430,36 @@
 
 <script>
     (function() {
-        const thumbs = document.querySelectorAll(".fp-card__thumb");
+        const monitors = document.querySelectorAll(".fp-monitor");
 
-        thumbs.forEach(function(thumb) {
-            const video = thumb.querySelector(".fp-card__video");
-            const button = thumb.querySelector(".fp-card__play");
-            if (!video || !button) return;
+        monitors.forEach(function(monitor) {
+            const screen = monitor.querySelector(".fp-monitor__screen");
+            const video = monitor.querySelector(".fp-card__video");
+            const button = monitor.querySelector(".fp-monitor__play");
+            if (!screen || !video || !button) return;
 
             button.addEventListener("click", function() {
-                // Pause any other video already playing in the grid.
-                thumbs.forEach(function(otherThumb) {
-                    if (otherThumb === thumb) return;
-                    const otherVideo = otherThumb.querySelector(".fp-card__video");
+                monitors.forEach(function(otherMonitor) {
+                    if (otherMonitor === monitor) return;
+                    const otherVideo = otherMonitor.querySelector(".fp-card__video");
+                    const otherScreen = otherMonitor.querySelector(".fp-monitor__screen");
                     if (otherVideo && !otherVideo.paused) {
                         otherVideo.pause();
-                        otherThumb.classList.remove("is-playing");
+                        otherScreen.classList.remove("is-playing");
                     }
                 });
 
-                // Hand off to native controls for a full watch experience
-                // (seek, pause, volume, fullscreen) once playback starts.
                 video.setAttribute("controls", "");
                 video.play();
-                thumb.classList.add("is-playing");
+                screen.classList.add("is-playing");
             });
 
             video.addEventListener("pause", function() {
-                thumb.classList.remove("is-playing");
+                screen.classList.remove("is-playing");
             });
 
             video.addEventListener("play", function() {
-                thumb.classList.add("is-playing");
+                screen.classList.add("is-playing");
             });
         });
     })();

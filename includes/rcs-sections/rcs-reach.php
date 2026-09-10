@@ -76,7 +76,7 @@
             </div>
 
             <div class="kd-rcs-reach-actions">
-                <a href="#contact" class="kd-rcs-btn kd-rcs-btn-primary">
+                <a href="contact.php" class="kd-rcs-btn kd-rcs-btn-primary">
                     Get Started with RCS
                     <span>→</span>
                 </a>

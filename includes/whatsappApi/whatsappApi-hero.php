@@ -759,7 +759,7 @@
                 <span class="hero-accent">Business API</span>
             </h1>
             <p>The absolute standard for enterprise communication. Build trust with a verified identity, automate sales with native forms, and scale support with AI.</p>
-            <a href="#">
+            <a href="contact.php">
                 <span>
                     <svg width="64px" height="64px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
