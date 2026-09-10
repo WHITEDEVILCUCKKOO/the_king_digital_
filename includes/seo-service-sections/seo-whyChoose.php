@@ -1,20 +1,4 @@
-<style>
-    /* Only reset used here — nothing from your theme is present.
-     If sticky works on THIS page, the bug is 100% something in
-     your theme/page-builder wrapper, not this section's CSS. */
-    /* html, body { margin: 0; padding: 0; } */
-    /* body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; } */
-    /* .debug-spacer {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: repeating-linear-gradient(45deg, #f1f5f9, #f1f5f9 10px, #e2e8f0 10px, #e2e8f0 20px);
-    color: #475569;
-    font-size: 14px;
-    font-weight: 600;
-  } */
-</style>
+
 
 <!-- ============================================================= -->
 <!-- EVERYTHING BELOW THIS LINE IS YOUR SECTION, UNCHANGED          -->
@@ -466,7 +450,7 @@
                 <span class="seo-why_label">WHY KING DIGITAL</span>
                 <h2 class="seo-why_heading">SEO Built Around <span>Measurable Growth.</span></h2>
                 <p class="seo-why_description">We combine technical SEO, content strategy, search intent, and continuous optimization to build sustainable organic visibility that supports real business growth.</p>
-                <a href="/contact" class="seo-why_cta">
+                <a href="contact.php" class="seo-why_cta">
                     Start Growing
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12" />

@@ -1,1084 +1,475 @@
 <style>
     :root {
-
-        /* =========================================================
-       BRAND / PRIMARY
-        ========================================================= */
-
-        --video-primary: #FF6B1A;
-        --video-primary-light: #FF8A45;
-        --video-primary-dark: #E95508;
-
-        --video-secondary: #111A33;
-        --video-secondary-light: #1C2948;
-        --video-secondary-dark: #080E21;
-
-
-        /* =========================================================
-       BACKGROUNDS
-        ========================================================= */
-
-        --video-bg: #FFFFFF;
-        --video-bg-soft: #f1e7df;
-        --video-bg-muted: #e0eaf7;
-
-        --video-bg-dark: #111A33;
-        --video-bg-dark-soft: #18223D;
-
-
-        /* =========================================================
-       TEXT
-        ========================================================= */
-
-        --video-text: #14213D;
-        --video-text-secondary: #52627A;
-        --video-text-muted: #8290A3;
-
-        --video-text-light: #FFFFFF;
-        --video-text-light-secondary: #C7CFDC;
-
-
-        /* =========================================================
-       BORDERS
-        ========================================================= */
-
-        --video-border: #E4E8EE;
-        --video-border-light: #EDF0F4;
-        --video-border-dark: #303A52;
-
-
-        /* =========================================================
-       ORANGE GRADIENTS
-        ========================================================= */
-
-        --video-gradient-primary:
-            linear-gradient(135deg,
-                #E95508 0%,
-                #FF6B1A 55%,
-                #FF8A45 100%);
-
-
-        --video-gradient-orange-soft:
-            linear-gradient(135deg,
-                #FFF1E8 0%,
-                #FFE4D3 100%);
-
-
-        /* =========================================================
-       DARK CTA GRADIENT
-        ========================================================= */
-
-        --video-gradient-dark:
-            linear-gradient(135deg,
-                #080E21 0%,
-                #111A33 55%,
-                #1C2948 100%);
-
-
-        /* =========================================================
-       HERO OVERLAY
-        ========================================================= */
-
-        --video-gradient-hero:
-            linear-gradient(90deg,
-                rgba(255, 255, 255, 0.98) 0%,
-                rgba(255, 255, 255, 0.94) 35%,
-                rgba(255, 255, 255, 0.30) 65%,
-                rgba(255, 255, 255, 0) 100%);
-
-
-        /* =========================================================
-       SOFT GLOWS
-        ========================================================= */
-
-        --video-glow-orange:
-            radial-gradient(circle,
-                rgba(255, 107, 26, 0.16) 0%,
-                rgba(255, 107, 26, 0) 70%);
-
-
-        --video-glow-blue:
-            radial-gradient(circle,
-                rgba(66, 133, 244, 0.12) 0%,
-                rgba(66, 133, 244, 0) 70%);
-
-
-        --video-glow-purple:
-            radial-gradient(circle,
-                rgba(139, 92, 246, 0.12) 0%,
-                rgba(139, 92, 246, 0) 70%);
-
-
-        /* =========================================================
-       SERVICE ACCENT COLORS
-       Used for individual service cards/icons
-        ========================================================= */
-
-        --service-orange: #FF6B1A;
-        --service-orange-soft: #FFF0E8;
-
-        --service-blue: #4285F4;
-        --service-blue-soft: #EDF4FF;
-
-        --service-purple: #8B5CF6;
-        --service-purple-soft: #F3EEFF;
-
-        --service-green: #22C55E;
-        --service-green-soft: #ECFDF3;
-
-        --service-pink: #EC4899;
-        --service-pink-soft: #FDF0F7;
-
-
-        /* =========================================================
-       STATUS / UI COLORS
-        ========================================================= */
-
-        --video-success: #22C55E;
-        --video-warning: #F59E0B;
-        --video-danger: #EF4444;
-        --video-info: #4285F4;
-
-
-        /* =========================================================
-       SHADOWS
-        ========================================================= */
-
-        --video-shadow-sm:
-            0 3px 10px rgba(17, 26, 51, 0.06);
-
-        --video-shadow-md:
-            0 8px 24px rgba(17, 26, 51, 0.09);
-
-        --video-shadow-lg:
-            0 16px 40px rgba(17, 26, 51, 0.12);
-
-        --video-shadow-orange:
-            0 10px 28px rgba(255, 107, 26, 0.20);
-
-
-        /* =========================================================
-       RADIUS
-        ========================================================= */
-
-        --video-radius-sm: 8px;
-        --video-radius-md: 12px;
-        --video-radius-lg: 18px;
-        --video-radius-xl: 24px;
-        --video-radius-2xl: 32px;
-
-        --video-radius-pill: 999px;
-
-
-        /* =========================================================
-       SPACING
-        ========================================================= */
-
-        --video-space-xs: 4px;
-        --video-space-sm: 8px;
-        --video-space-md: 16px;
-        --video-space-lg: 24px;
-        --video-space-xl: 32px;
-        --video-space-2xl: 48px;
-        --video-space-3xl: 64px;
-        --video-space-4xl: 96px;
-
-
-        /* =========================================================
-       TRANSITIONS
-        ========================================================= */
-
-        --video-transition-fast: 150ms ease;
-        --video-transition-normal: 250ms ease;
-        --video-transition-slow: 400ms ease;
-
-
-        /* =========================================================
-       FONT SIZES
-        ========================================================= */
-
-        --video-text-xs: 11px;
-        --video-text-sm: 13px;
-        --video-text-md: 15px;
-        --video-text-lg: 18px;
-
-        --video-heading-sm: 24px;
-        --video-heading-md: 32px;
-        --video-heading-lg: 48px;
-        --video-heading-xl: 64px;
-
-
-        /* =========================================================
-       CONTAINER
-        ========================================================= */
-
-        --video-container: 1280px;
-
+        --ink: #1B1613;
+        --ink-soft: #241E19;
+        --ink-line: rgba(243, 236, 223, 0.13);
+        --paper: #F3ECDF;
+        --paper-dim: #B9AF9E;
+        --copper: #D3701F;
+        --copper-dim: rgba(211, 112, 31, 0.18);
+        --meter-green: #7FB86B;
+        --meter-amber: #E8A23C;
+        --meter-red: #D8503F;
+        --radius-sm: 3px;
+        --radius-md: 4px;
     }
 
     /* =========================================================
-       HERO SHELL
+       SHELL
     ========================================================= */
 
-    .va-hero {
+    .st-hero {
         position: relative;
-        /* layered soft brand-color glows over the original base tone */
-        background:
-            radial-gradient(circle at 12% 15%, rgba(255, 107, 26, 0.05) 0%, rgba(255, 107, 26, 0) 55%),
-            radial-gradient(circle at 88% 85%, rgba(255, 138, 69, 0.06) 0%, rgba(255, 138, 69, 0) 55%),
-            var(--video-bg-soft);
+        background: var(--ink);
+        color: var(--paper);
         overflow: hidden;
     }
 
-    /* ========================================
-   HERO DECORATION
-======================================== */
-
-    .va-hero::before {
-        content: "";
-        position: absolute;
-
-        width: 320px;
-        height: 320px;
-
-        top: -140px;
-        right: -100px;
-
-        background: rgba(255, 112, 40, 0.07);
-        border-radius: 50%;
-
-        filter: blur(10px);
-        pointer-events: none;
-        animation: vaDrift 13s ease-in-out infinite;
-        will-change: transform;
-    }
-
-    .va-hero::after {
-        content: "";
-        position: absolute;
-
-        width: 220px;
-        height: 220px;
-
-        bottom: -100px;
-        left: -80px;
-
-        background: rgba(255, 177, 90, 0.08);
-        border-radius: 50%;
-
-        filter: blur(12px);
-        pointer-events: none;
-        animation: vaDrift 16s ease-in-out infinite reverse;
-        will-change: transform;
-    }
-
-    @keyframes vaDrift {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(18px, 14px); }
-    }
-
-    .va-hero_content {
-        position: relative;
-        max-width: var(--video-container);
-        margin: 0 auto;
-        min-height: 600px;
-        padding: 0 64px;
-    }
-
-    /* Faint dot-grid texture — sits behind the slides, adds premium studio-grid feel */
-    .va-hero_content::before {
+    .st-hero::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(rgba(20, 33, 61, 0.07) 1px, transparent 1px);
-        background-size: 28px 28px;
-        opacity: 0.45;
-        z-index: 0;
+        background-image: radial-gradient(rgba(243, 236, 223, 0.035) 1px, transparent 1px);
+        background-size: 4px 4px;
         pointer-events: none;
+    }
+
+    .st-hero_grid {
+        position: relative;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 56px 48px 64px;
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 64px;
+        align-items: center;
+        min-height: 560px;
     }
 
     /* =========================================================
-       SLIDES
-       Stacked in normal flow; only .is-active is shown, so the
-       section height always tracks whichever slide is visible.
+       TOP STRIP — session readout
     ========================================================= */
 
-    .va-hero_content-slide1,
-    .va-hero_content-slide2,
-    .va-hero_content-slide3 {
-        display: none;
-        grid-template-columns: 1.05fr 0.95fr;
-        align-items: center;
-        gap: 48px;
-        min-height: 600px;
-    }
-
-    .va-hero_content-slide1.is-active,
-    .va-hero_content-slide2.is-active,
-    .va-hero_content-slide3.is-active {
-        display: grid;
-        position: relative;
-        z-index: 1;
-        animation: vaSlideIn 0.6s ease both;
-    }
-
-    @keyframes vaSlideIn {
-        from {
-            opacity: 0;
-            transform: translateY(14px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* ---------- Text column ---------- */
-
-    .va-hero_content--text {
-        position: relative;
-        z-index: 2;
-        max-width: 560px;
-        /* padding: var(--video-space-4xl) 0; */
-    }
-
-    .va-hero_content--text-eyebrow {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        width: fit-content;
-        font-size: var(--video-text-xs);
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--video-primary);
-        margin-bottom: var(--video-space-lg);
-        padding: 7px 16px 7px 12px;
-        border-radius: var(--video-radius-pill);
-        background: rgba(255, 107, 26, 0.08);
-        border: 1px solid rgba(255, 107, 26, 0.18);
-    }
-
-    .va-hero_content--text-eyebrow span {
-        position: relative;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--video-gradient-primary);
-        flex: none;
-    }
-
-    .va-hero_content--text-eyebrow span::after {
-        content: "";
+    .st-session {
         position: absolute;
-        inset: -4px;
-        border-radius: 50%;
-        background: rgba(255, 107, 26, 0.35);
-        animation: vaPulse 2.2s ease-out infinite;
-    }
-
-    @keyframes vaPulse {
-        0% { transform: scale(0.6); opacity: 0.9; }
-        70% { transform: scale(2); opacity: 0; }
-        100% { opacity: 0; }
-    }
-
-    .va-hero_content--text--heading {
-        font-size: clamp(34px, 4vw, var(--video-heading-xl));
-        line-height: 1.06;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: var(--video-text);
-        margin-bottom: var(--video-space-lg);
-    }
-
-    .va-hero_content--text--heading .row {
-        display: block;
-    }
-
-    .va-hero_content--text--heading .row.accent {
-        position: relative;
-        display: inline-block;
-        color: var(--video-primary);
-    }
-
-    .va-hero_content--text--heading .row.accent::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -8px;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 5px;
-        border-radius: 3px;
-        background: var(--video-gradient-primary);
-        opacity: 0.85;
-    }
-
-    .va-hero_content--text-para {
-        font-size: var(--video-text-lg);
-        line-height: 1.7;
-        color: var(--video-text-secondary);
-        max-width: 460px;
-        margin-bottom: var(--video-space-xl);
-    }
-
-    /* ---------- CTA buttons ---------- */
-
-    .va-hero_content--text-cta {
+        top: 32px;
+        left: 48px;
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: var(--video-space-md);
-        margin-bottom: var(--video-space-2xl);
-    }
-
-    .va-hero_content--text-cta a {
-        display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 15px 26px;
-        border-radius: var(--video-radius-pill);
-        font-size: var(--video-text-md);
-        font-weight: 700;
-        text-decoration: none;
-        transition: transform var(--video-transition-normal), box-shadow var(--video-transition-normal), background var(--video-transition-normal);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        color: var(--paper-dim);
     }
 
-    /* First CTA — primary, orange */
-    .va-hero_content--text-cta a:first-child {
-        position: relative;
-        overflow: hidden;
-        background: var(--video-gradient-primary);
-        color: var(--video-text-light);
-        box-shadow: var(--video-shadow-orange);
-    }
-
-    .va-hero_content--text-cta a:first-child::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -60%;
-        width: 40%;
-        height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-        transform: skewX(-20deg);
-        transition: left 0.6s ease;
-        pointer-events: none;
-    }
-
-    .va-hero_content--text-cta a:first-child:hover::before {
-        left: 130%;
-    }
-
-    .va-hero_content--text-cta a:first-child:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 34px rgba(255, 107, 26, 0.28);
-    }
-
-    .va-hero_content--text-cta a:first-child span {
-        width: 16px;
-        height: 16px;
-        flex: none;
-        position: relative;
-    }
-
-    .va-hero_content--text-cta a:first-child span::before,
-    .va-hero_content--text-cta a:first-child span::after {
-        content: "";
-        position: absolute;
-        background: currentColor;
-    }
-
-    .va-hero_content--text-cta a:first-child span::before {
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        transform: translateY(-50%);
-    }
-
-    .va-hero_content--text-cta a:first-child span::after {
-        top: 50%;
-        right: 0;
+    .st-session_dot {
         width: 7px;
         height: 7px;
-        border-top: 2px solid currentColor;
-        border-right: 2px solid currentColor;
-        background: none;
-        transform: translateY(-50%) rotate(45deg);
-    }
-
-    /* Second CTA — outline */
-    .va-hero_content--text-cta a:last-child {
-        background: var(--video-bg);
-        color: var(--video-text);
-        border: 1.5px solid var(--video-border);
-    }
-
-    .va-hero_content--text-cta a:last-child:hover {
-        transform: translateY(-2px);
-        border-color: var(--video-primary);
-        color: var(--video-primary-dark);
-        box-shadow: var(--video-shadow-sm);
-    }
-
-    .va-hero_content--text-cta a:last-child span {
-        width: 15px;
-        height: 15px;
-        flex: none;
-        border: 2px solid currentColor;
-        border-radius: 3px;
-        position: relative;
-    }
-
-    .va-hero_content--text-cta a:last-child span::before {
-        content: "";
-        position: absolute;
-        top: -4px;
-        left: 2px;
-        width: 2px;
-        height: 4px;
-        background: currentColor;
-        box-shadow: 6px 0 0 currentColor;
-    }
-
-    /* ---------- Trust / feature strip (kept minimal; empty by default) ---------- */
-
-    .va-hero_content--text-features {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        min-height: 1px;
-    }
-
-    .va-hero_content--text-features span:empty,
-    .va-hero_content--text-features p:empty {
-        display: none;
-    }
-
-    /* ---------- Visual column ---------- */
-
-    .va-hero_content--visual {
-        position: relative;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    /* Soft halo glow that bleeds beyond the image edges */
-    .va-hero_content--visual::before {
-        content: "";
-        position: absolute;
-        inset: -32px;
-        background: var(--video-glow-orange);
-        filter: blur(4px);
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    /* Floating "lens" accent badge, echoes the video/camera theme */
-    /* .va-hero_content--visual::after {
-        content: "";
-        position: absolute;
-        left: -16px;
-        bottom: 34px;
-        width: 54px;
-        height: 54px;
         border-radius: 50%;
-        background:
-            radial-gradient(circle at 35% 32%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.15) 30%, transparent 31%),
-            var(--video-gradient-primary);
-        box-shadow: var(--video-shadow-orange);
-        z-index: 2;
-        pointer-events: none;
-        animation: vaFloat 4.5s ease-in-out infinite;
-        will-change: transform;
-    } */
-
-    @keyframes vaFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-9px); }
+        background: var(--meter-red);
+        animation: stRecPulse 1.6s ease-in-out infinite;
+        flex: none;
     }
 
-    .va-hero_content--visual-image {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        aspect-ratio: 4 / 3.1;
-        border-radius: var(--video-radius-2xl);
-        overflow: hidden;
-        box-shadow: var(--video-shadow-lg), 0 22px 44px -14px rgba(255, 107, 26, 0.18);
-        outline: 2px dashed rgba(255, 107, 26, 0.28);
-        outline-offset: 10px;
-        transition: outline-color var(--video-transition-normal);
+    @keyframes stRecPulse {
+
+        0%,
+        100% {
+            opacity: 1;
+            box-shadow: 0 0 0 0 rgba(216, 80, 63, 0.5);
+        }
+
+        50% {
+            opacity: 0.45;
+            box-shadow: 0 0 0 5px rgba(216, 80, 63, 0);
+        }
     }
 
-    .va-hero_content--visual-image:hover {
-        outline-color: rgba(255, 107, 26, 0.45);
+    .st-session_label {
+        color: var(--meter-red);
+        font-weight: 600;
     }
 
-    .va-hero_content--visual-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.7s ease;
-    }
-
-    /* .va-hero_content--visual-image:hover img {
-        transform: scale(1.04);
-    } */
-
-    /* Fade the photo into the text column, like the reference */
-    .va-hero_content--visual-image::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg,
-                var(--video-bg-soft) 0%,
-                rgba(241, 231, 223, 0.35) 18%,
-                rgba(241, 231, 223, 0) 42%);
-        pointer-events: none;
-    }
-
-    /* Subtle glass-shine corner accent */
-    .va-hero_content--visual-image::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 70%);
-        pointer-events: none;
+    .st-session_time {
+        color: var(--paper);
+        font-weight: 600;
     }
 
     /* =========================================================
-       SLIDE CONTROLS
-       Positioned independently of the grid so the arrows can sit
-       on the section edges and the counter under the text column.
+       LEFT — copy column
     ========================================================= */
 
-    .va-hero_content-slide-control {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 3;
+    .st-copy {
+        padding-top: 16px;
+        max-width: 700px;
     }
 
-    .va-hero_content-slide-control-btn {
-        position: absolute;
-        inset: 0;
+    .st-copy_inner {
+        transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    .st-copy_inner.is-leaving {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    .st-copy_tag {
+        font-size: 12px;
+        color: var(--copper);
+        margin: 0 0 16px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 8px;
     }
 
-    .va-hero_content-slide-control-btn button {
-        pointer-events: auto;
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        border: 1px solid rgba(20, 33, 61, 0.10);
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(6px);
-        color: var(--video-text);
-        font-size: 18px;
-        font-weight: 700;
+    .st-copy_tag::before {
+        content: "";
+        width: 18px;
+        height: 1px;
+        background: var(--copper);
+        display: inline-block;
+    }
+
+    .st-copy h1 {
+        font-weight: 800;
+        font-size: clamp(38px, 4.6vw, 54px);
+        line-height: 1.02;
+        letter-spacing: -0.01em;
+        margin: 0 0 22px;
+        color: var(--paper);
+    }
+
+    .st-copy p {
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--paper-dim);
+        max-width: 46ch;
+        margin: 0 0 34px;
+    }
+
+    .st-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .st-cta a {
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: var(--radius-md);
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .st-cta a.primary {
+        background: var(--copper);
+        color: #1B1613;
+    }
+
+    .st-cta a.primary:hover {
+        background: #E68A3E;
+    }
+
+    .st-cta a.secondary {
+        border: 1px solid var(--ink-line);
+        color: var(--paper);
+    }
+
+    .st-cta a.secondary:hover {
+        border-color: var(--paper-dim);
+    }
+
+    /* =========================================================
+       RIGHT — console panel
+    ========================================================= */
+
+    .st-console {
+        border: 1px solid var(--ink-line);
+        background: var(--ink-soft);
+        padding: 6px;
+    }
+
+    .st-channel {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--ink-line);
+        padding: 18px 16px;
         cursor: pointer;
-        box-shadow: var(--video-shadow-md);
-        transition: background var(--video-transition-normal), color var(--video-transition-normal), transform var(--video-transition-normal), box-shadow var(--video-transition-normal);
+        font-family: inherit;
+        color: inherit;
+        position: relative;
+        transition: background 0.2s ease;
     }
 
-    .va-hero_content-slide-control-btn button:hover {
-        background: var(--video-gradient-primary);
-        color: var(--video-text-light);
-        transform: scale(1.06);
-        box-shadow: var(--video-shadow-orange);
+    .st-channel:last-child {
+        border-bottom: none;
     }
 
-    /* Half the button hangs off the section edge */
-    .va-hero_content-slide-control-btn button:first-child {
-        margin-left: -26px;
+    .st-channel:hover {
+        background: rgba(243, 236, 223, 0.03);
     }
 
-    .va-hero_content-slide-control-btn button:last-child {
-        margin-right: -26px;
+    .st-channel.is-active {
+        background: var(--copper-dim);
     }
 
-    .va-hero_content-slide-control-pignation {
-        pointer-events: auto;
+    .st-channel.is-active::before {
+        content: "";
         position: absolute;
-        left: 64px;
-        bottom: 40px;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--copper);
+    }
+
+    .st-channel_head {
         display: flex;
         align-items: baseline;
-        gap: 8px;
-        font-size: var(--video-text-sm);
-        font-weight: 700;
-        color: var(--video-text-muted);
-        padding: 7px 16px;
-        border-radius: var(--video-radius-pill);
-        background: rgba(255, 255, 255, 0.65);
-        backdrop-filter: blur(6px);
-        border: 1px solid rgba(20, 33, 61, 0.06);
-        box-shadow: var(--video-shadow-sm);
+        justify-content: space-between;
+        margin-bottom: 10px;
     }
 
-    .va-hero_content-slide-control-pignation .va-pg-current {
-        font-size: 15px;
-        color: var(--video-text);
+    .st-channel_num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--paper-dim);
+        letter-spacing: 0.04em;
     }
 
-    .va-hero_content-slide-control-pignation .va-pg-sep {
-        display: inline-block;
-        width: 14px;
-        height: 2px;
-        border-radius: 2px;
-        background: var(--video-gradient-primary);
-        color: transparent;
-        overflow: hidden;
+    .st-channel.is-active .st-channel_num {
+        color: var(--copper);
+    }
+
+    .st-channel_name {
+        font-family: 'Inter', sans-serif;
+        font-size: 14.5px;
+        font-weight: 600;
+        color: var(--paper);
+    }
+
+    .st-meter {
+        display: flex;
+        gap: 2px;
+        height: 14px;
+        align-items: flex-end;
+    }
+
+    .st-meter_seg {
+        flex: 1;
+        height: 100%;
+        border-radius: 1px;
+        background: rgba(243, 236, 223, 0.08);
+        transition: background 0.25s ease, opacity 0.25s ease;
+    }
+
+    .st-meter_seg.lit-green {
+        background: var(--meter-green);
+    }
+
+    .st-meter_seg.lit-amber {
+        background: var(--meter-amber);
+    }
+
+    .st-meter_seg.lit-red {
+        background: var(--meter-red);
+    }
+
+    .st-meter_seg.dim {
+        opacity: 0.35;
     }
 
     /* =========================================================
        RESPONSIVE
     ========================================================= */
 
-    @media (max-width: 1100px) {
-        .va-hero_content {
-            padding: 0 40px;
-        }
-
-        .va-hero_content-slide1,
-        .va-hero_content-slide2,
-        .va-hero_content-slide3 {
-            gap: 32px;
-        }
-
-        .va-hero_content--text--heading {
-            font-size: clamp(30px, 5vw, 52px);
-        }
-    }
-
     @media (max-width: 900px) {
-        .va-hero_content {
-            min-height: 0;
-            padding: 88px 24px 60px;
-        }
-
-        .va-hero_content-slide1,
-        .va-hero_content-slide2,
-        .va-hero_content-slide3 {
+        .st-hero_grid {
             grid-template-columns: 1fr;
-            min-height: 0;
-            gap: 32px;
+            padding: 96px 24px 40px;
+            gap: 36px;
         }
 
-        .va-hero_content--text {
+        .st-session {
+            left: 24px;
+        }
+
+        .st-copy {
+            padding-top: 0;
             max-width: 100%;
-            padding: 0;
-            order: 1;
-            text-align: center;
         }
 
-        .va-hero_content--text-eyebrow,
-        .va-hero_content--text-cta {
-            justify-content: center;
-        }
-
-        .va-hero_content--text-eyebrow {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .va-hero_content--text--heading .row.accent::after {
-            left: 50%;
-        }
-
-        .va-hero_content--text-para {
+        .st-copy h1 {
             max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .va-hero_content--visual {
-            order: 0;
-        }
-
-        .va-hero_content--visual-image {
-            aspect-ratio: 16 / 10;
-            outline-offset: 8px;
-        }
-
-        .va-hero_content--visual-image::before {
-            background: linear-gradient(180deg,
-                    var(--video-bg-soft) 0%,
-                    rgba(241, 231, 223, 0) 35%);
-        }
-
-        .va-hero_content--visual::after {
-            width: 46px;
-            height: 46px;
-            left: -10px;
-            bottom: 18px;
-        }
-
-        .va-hero_content-slide-control-btn {
-            top: auto;
-            bottom: 16px;
-            inset: auto 24px 16px 24px;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .va-hero_content-slide-control-btn button:first-child,
-        .va-hero_content-slide-control-btn button:last-child {
-            margin: 0;
-        }
-
-        .va-hero_content-slide-control-pignation {
-            left: 50%;
-            bottom: 78px;
-            transform: translateX(-50%);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .va-hero_content {
-            padding: 76px 18px 130px;
-        }
-
-        .va-hero_content--text--heading {
-            font-size: clamp(28px, 9vw, 38px);
-        }
-
-        .va-hero_content--text-para {
-            font-size: var(--video-text-md);
-        }
-
-        .va-hero_content--text-cta a {
-            padding: 13px 20px;
-            font-size: var(--video-text-sm);
-        }
-
-        .va-hero_content--visual::after {
-            width: 38px;
-            height: 38px;
-            left: -8px;
-            bottom: 12px;
-        }
-
-        .va-hero_content--visual-image {
-            outline-offset: 6px;
+        .st-console {
+            order: 2;
         }
     }
 
     @media (prefers-reduced-motion: reduce) {
-
-        .va-hero_content-slide1.is-active,
-        .va-hero_content-slide2.is-active,
-        .va-hero_content-slide3.is-active {
+        .st-session_dot {
             animation: none;
         }
 
-        .va-hero::before,
-        .va-hero::after,
-        .va-hero_content--visual::after,
-        .va-hero_content--text-eyebrow span::after {
-            animation: none;
+        .st-copy_inner {
+            transition: none;
         }
     }
 </style>
 
-<section class="va-hero">
-    <div class="va-hero_content" id="vaHeroContent">
-        <div class="va-hero_content-slide1">
-            <div class="va-hero_content--text">
-                <p class="va-hero_content--text-eyebrow">
-                    <span></span>
-                    Audio & Video Production Studio
-                </p>
-                <h1 class="va-hero_content--text--heading">
-                    <span class="row">CREATE.</span>
-                    <span class="row">RECORD.</span>
-                    <span class="row accent">INSPIRE.</span>
-                </h1>
-                <p class="va-hero_content--text-para">
-                    From podcasts and interviews to branded audio content, we provide the studio, equipment, and production expertise to bring your ideas to life.
-                </p>
-                <div class="va-hero_content--text-cta">
-                    <a href="contect.php"><span></span>Book Studio</a>
-                    <a href="#va-service"><span></span>Check Other Services</a>
-                </div>
-                <div class="va-hero_content--text-features">
-                    <span></span>
-                    <p></p>
-                </div>
-            </div>
-            <div class="va-hero_content--visual">
-                <div class="va-hero_content--visual-image">
-                    <img src="assets/images/va-slide1.png" alt="Podcast recording studio with professional microphone">
+
+<section class="st-hero">
+    <div class="st-session">
+        <span class="st-session_dot"></span>
+        <span class="st-session_label">REC</span>
+        <span class="st-session_time" id="stSessionTime">00:00:00</span>
+    </div>
+
+    <div class="st-hero_grid">
+        <div class="st-copy">
+            <div class="st-copy_inner" id="stCopyInner">
+                <p class="st-copy_tag">Audio &amp; video production studio</p>
+                <h1 id="stHeadline">Record the conversation that gets people talking.</h1>
+                <p id="stParagraph">Bring your podcast to life with a proper studio behind it — treated room, broadcast mics, and an engineer who knows how to make two people talking sound like something worth hearing.</p>
+                <div class="st-cta">
+                    <a href="contact.php" class="primary">Book the studio</a>
+                    <a href="#va-service" class="secondary">See all services</a>
                 </div>
             </div>
         </div>
-        <div class="va-hero_content-slide2">
-            <div class="va-hero_content--text">
-                <p class="va-hero_content--text-eyebrow">
-                    <span></span>
-                    Audio & Video Production Studio
-                </p>
-                <h1 class="va-hero_content--text--heading">
-                    <span class="row">SHOOT.</span>
-                    <span class="row">EDIT.</span>
-                    <span class="row accent">DELIVER.</span>
-                </h1>
-                <p class="va-hero_content--text-para">
-                    From promotional videos to social media campaigns, create professional visual content with our production setup and creative team.
-                </p>
-                <div class="va-hero_content--text-cta">
-                    <a href="contect.php"><span></span>Book Studio</a>
-                    <a href="#va-service"><span></span>Check Other Services</a>
-                </div>
-                <div class="va-hero_content--text-features">
-                    <span></span>
-                    <p></p>
-                </div>
-            </div>
-            <div class="va-hero_content--visual">
-                <div class="va-hero_content--visual-image">
-                    <img src="assets/images/va-slide2.png" alt="Video production camera setup on set">
-                </div>
-            </div>
-        </div>
-        <div class="va-hero_content-slide3">
-            <div class="va-hero_content--text">
-                <p class="va-hero_content--text-eyebrow">
-                    <span></span>
-                    Audio & Video Production Studio
-                </p>
-                <h1 class="va-hero_content--text--heading">
-                    <span class="row">SPEAK.</span>
-                    <span class="row">CONNECT.</span>
-                    <span class="row accent">ENGAGE.</span>
-                </h1>
-                <p class="va-hero_content--text-para">
-                    Professional voice recording, voice-over production, dubbing, and multilingual audio for brands that need to be heard clearly.
-                </p>
-                <div class="va-hero_content--text-cta">
-                    <a href="contect.php"><span></span>Book Studio</a>
-                    <a href="#va-service"><span></span>Check Other Services</a>
-                </div>
-                <div class="va-hero_content--text-features">
-                    <span></span>
-                    <p></p>
-                </div>
-            </div>
-            <div class="va-hero_content--visual">
-                <div class="va-hero_content--visual-image">
-                    <img src="assets/images/va-slide3.png" alt="Voice-over artist recording in booth">
-                </div>
-            </div>
-        </div>
-        <div class="va-hero_content-slide-control">
-            <div class="va-hero_content-slide-control-btn">
-                <button type="button" aria-label="Previous slide">&lt;</button>
-                <button type="button" aria-label="Next slide">&gt;</button>
-            </div>
-            <div class="va-hero_content-slide-control-pignation"></div>
+
+        <div class="st-console" id="stConsole">
+            <!-- channel strips injected by JS -->
         </div>
     </div>
 </section>
 
 <script>
     (function() {
-        const root = document.getElementById("vaHeroContent");
-        if (!root) return;
 
-        const slides = [
-            root.querySelector(".va-hero_content-slide1"),
-            root.querySelector(".va-hero_content-slide2"),
-            root.querySelector(".va-hero_content-slide3")
-        ].filter(Boolean);
-
-        if (!slides.length) return;
-
-        const prevBtn = root.querySelector(".va-hero_content-slide-control-btn button:first-child");
-        const nextBtn = root.querySelector(".va-hero_content-slide-control-btn button:last-child");
-        const pagination = root.querySelector(".va-hero_content-slide-control-pignation");
-
-        let current = 0;
-        let autoplayTimer = null;
-        const AUTOPLAY_DELAY = 6000;
-
-        function pad(n) {
-            return String(n + 1).padStart(2, "0");
-        }
-
-        function renderPagination() {
-            if (!pagination) return;
-            pagination.innerHTML =
-                '<span class="va-pg-current">' + pad(current) + '</span>' +
-                '<span class="va-pg-sep">—</span>' +
-                '<span class="va-pg-total">' + pad(slides.length - 1) + '</span>';
-        }
-
-        function goTo(index) {
-            slides[current].classList.remove("is-active");
-            current = (index + slides.length) % slides.length;
-            slides[current].classList.add("is-active");
-            renderPagination();
-        }
-
-        function next() {
-            goTo(current + 1);
-        }
-
-        function prev() {
-            goTo(current - 1);
-        }
-
-        function startAutoplay() {
-            stopAutoplay();
-            autoplayTimer = setInterval(next, AUTOPLAY_DELAY);
-        }
-
-        function stopAutoplay() {
-            if (autoplayTimer) {
-                clearInterval(autoplayTimer);
-                autoplayTimer = null;
+        const channels = [{
+                num: "CH.01",
+                name: "Podcast",
+                headline: "Record the conversation that gets people talking.",
+                paragraph: "Bring your podcast to life with a proper studio behind it — treated room, broadcast mics, and an engineer who knows how to make two people talking sound like something worth hearing.",
+                level: 14
+            },
+            {
+                num: "CH.02",
+                name: "Video",
+                headline: "Shoot and cut video people actually finish watching.",
+                paragraph: "From promos to social campaigns, we bring the camera, lighting, and edit team so the final cut looks like it cost more than it did.",
+                level: 11
+            },
+            {
+                num: "CH.03",
+                name: "Voice-over",
+                headline: "Give your brand a voice worth listening to.",
+                paragraph: "Voice-over, dubbing, and multilingual audio recorded clean in a treated booth, so the words carry the brand instead of fighting the room.",
+                level: 9
             }
+        ];
+
+        const SEGMENTS = 16;
+        const consoleEl = document.getElementById("stConsole");
+        const copyInner = document.getElementById("stCopyInner");
+        const headlineEl = document.getElementById("stHeadline");
+        const paragraphEl = document.getElementById("stParagraph");
+
+        let active = 0;
+        let meterTimer = null;
+
+        function segmentClass(i) {
+            if (i < 10) return "lit-green";
+            if (i < 14) return "lit-amber";
+            return "lit-red";
         }
 
-        if (nextBtn) {
-            nextBtn.addEventListener("click", function() {
-                next();
-                startAutoplay();
+        function buildMeter(level, isActive) {
+            let html = "";
+            for (let i = 0; i < SEGMENTS; i++) {
+                const lit = i < level;
+                const cls = lit ? segmentClass(i) : "";
+                const dim = lit && !isActive ? " dim" : "";
+                html += '<span class="st-meter_seg ' + cls + dim + '"></span>';
+            }
+            return html;
+        }
+
+        function render() {
+            consoleEl.innerHTML = channels.map(function(ch, i) {
+                const isActive = i === active;
+                return (
+                    '<button type="button" class="st-channel' + (isActive ? " is-active" : "") + '" data-index="' + i + '">' +
+                    '<span class="st-channel_head">' +
+                    '<span class="st-channel_num">' + ch.num + '</span>' +
+                    '<span class="st-channel_name">' + ch.name + '</span>' +
+                    '</span>' +
+                    '<span class="st-meter" data-meter="' + i + '">' + buildMeter(ch.level, isActive) + '</span>' +
+                    '</button>'
+                );
+            }).join("");
+
+            Array.prototype.forEach.call(consoleEl.querySelectorAll(".st-channel"), function(btn) {
+                btn.addEventListener("click", function() {
+                    switchTo(parseInt(btn.getAttribute("data-index"), 10));
+                });
             });
         }
 
-        if (prevBtn) {
-            prevBtn.addEventListener("click", function() {
-                prev();
-                startAutoplay();
-            });
+        function switchTo(index) {
+            if (index === active) return;
+            active = index;
+
+            copyInner.classList.add("is-leaving");
+            setTimeout(function() {
+                headlineEl.textContent = channels[active].headline;
+                paragraphEl.textContent = channels[active].paragraph;
+                copyInner.classList.remove("is-leaving");
+            }, 180);
+
+            render();
         }
 
-        root.addEventListener("mouseenter", stopAutoplay);
-        root.addEventListener("mouseleave", startAutoplay);
-
-        // Initial state
-        slides.forEach(function(slide) {
-            slide.classList.remove("is-active");
-        });
-        slides[0].classList.add("is-active");
-        renderPagination();
+        function jitterActiveMeter() {
+            const meterEl = consoleEl.querySelector('[data-meter="' + active + '"]');
+            if (!meterEl) return;
+            const base = channels[active].level;
+            const level = Math.max(6, Math.min(SEGMENTS - 1, base + Math.round((Math.random() - 0.5) * 4)));
+            meterEl.innerHTML = buildMeter(level, true);
+        }
 
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (!prefersReducedMotion) {
-            startAutoplay();
+            meterTimer = setInterval(jitterActiveMeter, 900);
         }
+
+        // session timecode
+        const timeEl = document.getElementById("stSessionTime");
+        let seconds = 0;
+
+        function pad(n) {
+            return String(n).padStart(2, "0");
+        }
+
+        function tick() {
+            seconds++;
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = seconds % 60;
+            timeEl.textContent = pad(h) + ":" + pad(m) + ":" + pad(s);
+        }
+        if (!prefersReducedMotion) {
+            setInterval(tick, 1000);
+        }
+
+        render();
     })();
 </script>

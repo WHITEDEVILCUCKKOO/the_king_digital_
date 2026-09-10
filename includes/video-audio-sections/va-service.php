@@ -1,599 +1,503 @@
 <style>
-    .studio-services {
-        --studio-orange: #FF6B1A;
-        --studio-orange-dark: #E95508;
-        --studio-orange-soft: #FFF0E8;
-        --studio-blue: #3B7DDB;
-        --studio-black: #000
-        --studio-blue-soft: #EAF2FE;
-        --studio-purple: #8B5CF6;
-        --studio-purple-soft: #F3EEFF;
-        --studio-green: #22A65A;
-        --studio-green-soft: #E9F8EF;
-        --studio-red: #E24B4B;
-        --studio-red-soft: #FDECEC;
-        --studio-yellow: #D69A1F;
-        --studio-yellow-soft: #FDF3E1;
-
-        --studio-ink: #14213D;
-        --studio-muted: #6B7686;
-        --studio-border: #ECEEF2;
-        --studio-shadow: 0 6px 18px rgba(20, 33, 61, 0.06);
-        --studio-shadow-hover: 0 14px 30px rgba(20, 33, 61, 0.10);
+    .rack-services {
+        --ink: #1B1613;
+        --ink-soft: #241E19;
+        --ink-line: rgba(243, 236, 223, 0.13);
+        --paper: #F3ECDF;
+        --paper-dim: #B9AF9E;
+        --copper: #D3701F;
+        --copper-dim: rgba(211, 112, 31, 0.18);
+        --meter-green: #7FB86B;
+        --meter-red: #D8503F;
 
         position: relative;
-        background:
-            radial-gradient(circle at 8% 20%,
-                rgba(59, 130, 246, 0.08),
-                transparent 25%),
-            radial-gradient(circle at 92% 75%,
-                rgba(37, 211, 102, 0.045),
-                transparent 25%),
-            #eef5ff;
-        padding: 72px 0;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 88px 0 96px;
+        font-family: 'Inter', sans-serif;
         overflow: hidden;
     }
 
-    .studio-services::after {
+    .rack-services::before {
         content: "";
-
         position: absolute;
-
-        width: 120px;
-        height: 120px;
-
-        right: 25px;
-        bottom: 60px;
-
-        background-image: radial-gradient(rgba(255, 102, 40, 0.25) 1px,
-                transparent 1px);
-
-        background-size: 8px 8px;
-
-        opacity: 0.45;
-
+        inset: 0;
+        background-image: radial-gradient(rgba(243, 236, 223, 0.035) 1px, transparent 1px);
+        background-size: 4px 4px;
         pointer-events: none;
     }
 
-    .studio-services__container {
+    .rack-services__container {
         position: relative;
         z-index: 2;
-        max-width: 1100px;
+        max-width: 1180px;
         margin-inline: auto;
         padding-inline: 24px;
     }
 
     /* ---------- Header ---------- */
 
-    .studio-services__header {
-        position: relative;
-        text-align: center;
-        max-width: 560px;
-        margin: 0 auto 36px;
+    .rack-services__header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 44px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--ink-line);
     }
 
-    /* Soft spotlight glow sitting behind the heading */
-    .studio-services__header::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: -30px;
-        width: 380px;
-        height: 200px;
-        transform: translateX(-50%);
-        background: radial-gradient(ellipse at center,
-                rgba(255, 107, 26, 0.08) 0%,
-                rgba(255, 107, 26, 0) 70%);
-        pointer-events: none;
-        z-index: -1;
-    }
-
-    .studio-services__eyebrow {
-        display: inline-flex;
+    .rack-services__plate {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--copper);
+        display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--studio-orange);
-        margin-bottom: 8px;
+        margin-bottom: 14px;
     }
 
-    .studio-services__eyebrow::before,
-    .studio-services__eyebrow::after {
+    .rack-services__plate::before {
         content: "";
-        width: 14px;
-        height: 1.5px;
-        background: linear-gradient(90deg, transparent, var(--studio-orange));
-        border-radius: 2px;
+        width: 18px;
+        height: 1px;
+        background: var(--copper);
+        display: inline-block;
     }
 
-    .studio-services__eyebrow::after {
-        background: linear-gradient(90deg, var(--studio-orange), transparent);
-    }
-
-    .studio-services__title {
-        font-size: clamp(24px, 3vw, 30px);
-        line-height: 1.2;
+    .rack-services__title {
+        font-family: 'Big Shoulders Display', sans-serif;
         font-weight: 800;
-        color: var(--studio-ink);
-        margin-bottom: 8px;
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        color: var(--paper);
+        max-width: 14ch;
     }
 
-    .studio-services__subtitle {
-        font-size: 13.5px;
-        line-height: 1.6;
-        color: var(--studio-muted);
+    .rack-services__subtitle {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: var(--paper-dim);
+        max-width: 30ch;
+        text-align: right;
     }
 
-    .studio-services__grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
+    /* ---------- Rack frame ---------- */
 
-    /* ---------- Card ---------- */
-
-    .studio-services__card {
-        display: flex;
-        flex-direction: column;
+    .rack-services__frame {
         position: relative;
-        background: #FFFFFF;
-        border: 1px solid var(--studio-border);
-        border-radius: 12px;
-        box-shadow: var(--studio-shadow);
-        padding: 24px 20px 22px;
-        text-decoration: none;
-        overflow: hidden;
-        transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease, background 280ms ease;
+        border: 1px solid var(--ink-line);
+        padding: 2px 22px;
     }
 
-    /* Top accent bar — neutral by default, tinted to match each
-       card's icon color when the browser supports :has() */
-    .studio-services__card::before {
+    .rack-services__frame::before,
+    .rack-services__frame::after {
         content: "";
         position: absolute;
         top: 0;
+        bottom: 0;
+        width: 22px;
+        background-image: radial-gradient(circle, var(--ink-line) 1.5px, transparent 1.5px);
+        background-size: 100% 26px;
+        background-position: center top;
+    }
+
+    .rack-services__frame::before {
         left: 0;
+    }
+
+    .rack-services__frame::after {
         right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--studio-orange), var(--studio-blue));
-        transform: translateY(-100%);
-        transition: transform 280ms ease;
     }
 
-    .studio-services__card:hover::before {
-        transform: translateY(0);
+    .rack-services__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    .studio-services__card:has(.studio-services__icon--orange)::before {
-        background: linear-gradient(90deg, var(--studio-orange-dark), var(--studio-orange));
+    /* ---------- Module card ---------- */
+
+    .rack-services__card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 26px 22px 24px;
+        text-decoration: none;
+        color: inherit;
+        border-right: 1px solid var(--ink-line);
+        border-bottom: 1px solid var(--ink-line);
+        transition: background 240ms ease;
     }
 
-    .studio-services__card:has(.studio-services__icon--black)::before {
-        background: linear-gradient(90deg, var(--studio-black), #0a0a0a);
+    .rack-services__grid .rack-services__card:nth-child(4n) {
+        border-right: none;
     }
 
-    .studio-services__card:has(.studio-services__icon--blue)::before {
-        background: linear-gradient(90deg, var(--studio-blue), #6FA3E8);
+    .rack-services__grid .rack-services__card:nth-last-child(-n+4) {
+        border-bottom: none;
     }
 
-    .studio-services__card:has(.studio-services__icon--purple)::before {
-        background: linear-gradient(90deg, var(--studio-purple), #B49CF9);
+    .rack-services__card:hover {
+        background: var(--ink-soft);
     }
 
-    .studio-services__card:has(.studio-services__icon--green)::before {
-        background: linear-gradient(90deg, var(--studio-green), #57C583);
+    .rack-services__card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
-    .studio-services__card:has(.studio-services__icon--red)::before {
-        background: linear-gradient(90deg, var(--studio-red), #EC7A7A);
+    .rack-services__num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--paper-dim);
+        letter-spacing: 0.04em;
+        transition: color 240ms ease;
     }
 
-    .studio-services__card:has(.studio-services__icon--yellow)::before {
-        background: linear-gradient(90deg, var(--studio-yellow), #E8BC5E);
+    .rack-services__card:hover .rack-services__num {
+        color: var(--copper);
     }
 
-    .studio-services__card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--studio-shadow-hover);
-        background: var(--studio-ink);
-        border-color: var(--studio-ink);
-    }
-
-    .studio-services__icon {
-        width: 42px;
-        height: 42px;
+    .rack-services__led {
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
+        background: var(--meter-green);
+        opacity: 0.55;
+        transition: opacity 240ms ease, box-shadow 240ms ease;
+    }
+
+    .rack-services__card:hover .rack-services__led {
+        opacity: 1;
+        box-shadow: 0 0 6px rgba(127, 184, 107, 0.7);
+    }
+
+    .rack-services__port {
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--ink-line);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 14px;
-        position: relative;
-        box-shadow: 0 0 0 5px rgba(20, 33, 61, 0.025);
-        transition: transform 280ms ease, box-shadow 280ms ease;
+        margin-bottom: 18px;
+        color: var(--paper-dim);
+        transition: border-color 240ms ease, color 240ms ease;
     }
 
-    .studio-services__card:hover .studio-services__icon {
-        transform: scale(1.06);
-        background: rgba(255, 255, 255, 0.14);
-        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1);
+    .rack-services__card:hover .rack-services__port {
+        border-color: var(--copper);
+        color: var(--copper);
     }
 
-    .studio-services__icon svg {
-        width: 19px;
-        height: 19px;
+    .rack-services__port svg {
+        width: 20px;
+        height: 20px;
     }
 
-    .studio-services__icon--orange {
-        background: var(--studio-orange-soft);
-        color: var(--studio-orange);
-    }
-
-    .studio-services__icon--blue {
-        background: var(--studio-blue-soft);
-        color: var(--studio-blue);
-    }
-
-    .studio-services__icon--purple {
-        background: var(--studio-purple-soft);
-        color: var(--studio-purple);
-    }
-
-    .studio-services__icon--green {
-        background: var(--studio-green-soft);
-        color: var(--studio-green);
-    }
-
-    .studio-services__icon--red {
-        background: var(--studio-red-soft);
-        color: var(--studio-red);
-    }
-
-    .studio-services__icon--yellow {
-        background: var(--studio-yellow-soft);
-        color: var(--studio-yellow);
-    }
-
-    .studio-services__card-title {
-        font-size: 14.5px;
-        font-weight: 700;
-        color: var(--studio-ink);
+    .rack-services__card-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--paper);
         margin-bottom: 8px;
-        transition: color 280ms ease;
     }
 
-    .studio-services__card:hover .studio-services__card-title {
-        color: #FFFFFF;
-    }
-
-    .studio-services__description {
-        font-size: 10.5px;
+    .rack-services__description {
+        font-size: 12.5px;
         line-height: 1.6;
-        color: var(--studio-muted);
-        margin-bottom: 16px;
+        color: var(--paper-dim);
         flex: 1;
-        transition: color 280ms ease;
+        margin-bottom: 18px;
     }
 
-    .studio-services__card:hover .studio-services__description {
-        color: rgba(255, 255, 255, 0.72);
-    }
-
-    .studio-services__link {
+    .rack-services__link {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
+        font-family: 'IBM Plex Mono', monospace;
         font-size: 11px;
-        font-weight: 600;
-        color: var(--studio-orange);
-        text-decoration: none;
+        letter-spacing: 0.03em;
+        color: var(--copper);
         width: fit-content;
-        transition: color 280ms ease;
     }
 
-    .studio-services__link svg {
+    .rack-services__link svg {
         width: 12px;
         height: 12px;
         transition: transform 220ms ease;
     }
 
-    .studio-services__card:hover .studio-services__link {
-        color: #FFA35E;
-    }
-
-    .studio-services__card:hover .studio-services__link svg {
+    .rack-services__card:hover .rack-services__link svg {
         transform: translateX(3px);
-    }
-
-    /* ---------- Decorative elements ---------- */
-
-    .studio-services__decor {
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .studio-services__decor--blob {
-        left: -60px;
-        bottom: -70px;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(59, 125, 219, 0.06) 0%, rgba(59, 125, 219, 0) 70%);
-    }
-
-    /* Balancing glow, top-right, echoing the palette used in the cards */
-    .studio-services__decor--blob-top {
-        right: -80px;
-        top: -90px;
-        width: 260px;
-        height: 260px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(139, 92, 246, 0.055) 0%, rgba(139, 92, 246, 0) 70%);
-    }
-
-    .studio-services__decor--dots {
-        right: 0;
-        top: 46%;
-        width: 130px;
-        height: 130px;
-        background-image: radial-gradient(circle, rgba(255, 107, 26, 0.45) 1.4px, transparent 1.4px);
-        background-size: 13px 13px;
-        -webkit-mask-image: radial-gradient(circle at 70% 30%, #000 0%, #000 35%, transparent 72%);
-        mask-image: radial-gradient(circle at 70% 30%, #000 0%, #000 35%, transparent 72%);
-        opacity: 0.7;
     }
 
     /* ---------- Responsive ---------- */
 
-    @media (max-width: 900px) {
-        .studio-services {
-            padding: 56px 0;
+    @media (max-width: 980px) {
+        .rack-services__grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        .studio-services__grid {
-            grid-template-columns: repeat(6, 1fr);
+        .rack-services__grid .rack-services__card:nth-child(4n) {
+            border-right: 1px solid var(--ink-line);
         }
 
-        .studio-services__card {
-            grid-column: span 2;
+        .rack-services__grid .rack-services__card:nth-child(2n) {
+            border-right: none;
         }
 
-        .studio-services__card:nth-child(5) {
-            grid-column: span 2;
+        .rack-services__grid .rack-services__card:nth-last-child(-n+4) {
+            border-bottom: 1px solid var(--ink-line);
         }
 
-        /* 3 + 3 + 1: center the last card on its own row */
-        .studio-services__card:nth-child(7) {
-            grid-column: 3 / span 2;
+        .rack-services__grid .rack-services__card:nth-last-child(-n+2) {
+            border-bottom: none;
         }
 
-        .studio-services__decor--dots {
-            width: 100px;
-            height: 100px;
+        .rack-services__header {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        .studio-services__decor--blob-top {
-            width: 200px;
-            height: 200px;
-            right: -70px;
-            top: -70px;
+        .rack-services__subtitle {
+            text-align: left;
         }
     }
 
-    @media (max-width: 640px) {
-        .studio-services {
-            padding: 48px 0;
+    @media (max-width: 620px) {
+        .rack-services {
+            padding: 64px 0 72px;
         }
 
-        .studio-services__header {
-            margin-bottom: 28px;
+        .rack-services__frame {
+            padding: 2px 16px;
         }
 
-        .studio-services__grid {
+        .rack-services__frame::before,
+        .rack-services__frame::after {
+            width: 14px;
+        }
+
+        .rack-services__grid {
             grid-template-columns: 1fr;
-            gap: 16px;
         }
 
-        .studio-services__card,
-        .studio-services__card:nth-child(5),
-        .studio-services__card:nth-child(7) {
-            grid-column: 1 / -1;
+        .rack-services__grid .rack-services__card:nth-child(2n) {
+            border-right: none;
         }
 
-        .studio-services__decor--dots {
-            display: none;
+        .rack-services__grid .rack-services__card:nth-last-child(-n+2) {
+            border-bottom: 1px solid var(--ink-line);
         }
 
-        .studio-services__decor--blob {
-            width: 160px;
-            height: 160px;
-            left: -50px;
-            bottom: -50px;
-        }
-
-        .studio-services__decor--blob-top {
-            width: 150px;
-            height: 150px;
-            right: -50px;
-            top: -50px;
+        .rack-services__grid .rack-services__card:last-child {
+            border-bottom: none;
         }
     }
 
     @media (prefers-reduced-motion: reduce) {
 
-        .studio-services__card,
-        .studio-services__icon,
-        .studio-services__link svg {
+        .rack-services__card,
+        .rack-services__num,
+        .rack-services__led,
+        .rack-services__port,
+        .rack-services__link svg {
             transition: none;
         }
     }
 </style>
 
-<section class="studio-services">
-    <div class="studio-services__container">
+<section class="rack-services">
+    <div class="rack-services__container">
 
-        <div class="studio-services__header">
-            <span class="studio-services__eyebrow">What We Do</span>
-            <h2 class="studio-services__title">Our Studio Services</h2>
-            <p class="studio-services__subtitle">Everything you need for professional audio and video production under one roof.</p>
+        <div class="rack-services__header">
+            <div>
+                <p class="rack-services__plate">Service rack</p>
+                <h2 class="rack-services__title">Eight rooms, one studio.</h2>
+            </div>
+            <p class="rack-services__subtitle">Everything you need for professional audio and video production, under one roof.</p>
         </div>
 
-        <div class="studio-services__grid">
+        <div class="rack-services__frame">
+            <div class="rack-services__grid">
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--orange">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="2" width="6" height="12" rx="3" />
-                        <path d="M5 10a7 7 0 0 0 14 0" />
-                        <path d="M12 17v4" />
-                        <path d="M9 21h6" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Podcast Services</h3>
-                <p class="studio-services__description">End-to-end podcast production including recording, editing, mixing and publishing for all major platforms.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.01</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="2" width="6" height="12" rx="3" />
+                            <path d="M5 10a7 7 0 0 0 14 0" />
+                            <path d="M12 17v4" />
+                            <path d="M9 21h6" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Podcast production</h3>
+                    <p class="rack-services__description">Recording, editing, mixing, and delivery-ready files for every major platform.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--black">
-                    <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 548.29 548.291" xml:space="preserve">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <g>
-                                <path d="M486.205,196.116h-13.166V132.59c0-0.399-0.062-0.795-0.109-1.2c-0.021-2.52-0.828-4.997-2.556-6.96L364.656,3.677 c-0.031-0.031-0.064-0.044-0.085-0.075c-0.629-0.704-1.364-1.29-2.141-1.796c-0.231-0.154-0.462-0.283-0.704-0.419 c-0.672-0.365-1.386-0.672-2.121-0.893c-0.199-0.052-0.377-0.134-0.576-0.186C358.229,0.118,357.4,0,356.562,0H96.757 C84.893,0,75.256,9.649,75.256,21.502v174.613H62.093c-16.972,0-30.733,13.756-30.733,30.733v159.812 c0,16.961,13.761,30.731,30.733,30.731h13.163V526.79c0,11.854,9.637,21.501,21.501,21.501h354.777 c11.853,0,21.502-9.647,21.502-21.501V417.392H486.2c16.966,0,30.729-13.771,30.729-30.731V226.849 C516.93,209.872,503.177,196.116,486.205,196.116z M451.534,520.962H96.757v-103.57h354.777V520.962z M158.811,382.609 l50.184-164.228h48.722l50.927,164.228h-39.947l-12.682-42.158h-47.02l-11.695,42.158H158.811z M330.566,382.609V218.381h37.292 v164.228H330.566z M451.534,196.116H96.757V21.502h249.053v110.006c0,5.943,4.818,10.751,10.751,10.751h94.973V196.116z"></path>
-                                <path d="M240.426,277.832c-2.919-9.744-5.843-21.93-8.284-31.676h-0.488c-2.431,9.746-4.872,22.174-7.549,31.676l-9.745,34.846 h36.305L240.426,277.832z"></path>
-                            </g>
-                        </g>
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">AI video Services</h3>
-                <p class="studio-services__description">turns text prompts, scripts, or simple ideas into fully generated videos with scripts, voiceovers, visuals, and music.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.02</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v4M12 17v4M3 12h4M17 12h4" />
+                            <path d="M7.5 7.5l2 2M14.5 14.5l2 2M16.5 7.5l-2 2M9.5 14.5l-2 2" />
+                            <circle cx="12" cy="12" r="2.2" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">AI video production</h3>
+                    <p class="rack-services__description">Scripts, voiceover, visuals, and music generated from a single prompt.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 8h3l2-2h6l2 2h3v11H4z" />
-                        <circle cx="12" cy="13" r="3.4" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Studio on Rent</h3>
-                <p class="studio-services__description">Rent our premium studio space equipped with professional gear for your shoots, podcasts and interviews.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.03</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 8h3l2-2h6l2 2h3v11H4z" />
+                            <circle cx="12" cy="13" r="3.4" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Studio rental</h3>
+                    <p class="rack-services__description">Book the room, mics, and lighting rig for your own shoot or session.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--purple">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="4.5" width="18" height="15" rx="2" />
-                        <path d="M3 9h18M3 15h18M8 4.5v15M16 4.5v15" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Video Animation</h3>
-                <p class="studio-services__description">Engaging 2D/3D animation and motion graphics to make your brand story come alive.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.04</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4.5" width="18" height="15" rx="1" />
+                            <path d="M3 9h18M3 15h18M8 4.5v15M16 4.5v15" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Video animation</h3>
+                    <p class="rack-services__description">2D and 3D motion graphics that carry your story past a static screen.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--green">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="6.5" width="12" height="11" rx="2" />
-                        <path d="M15 10.2 21 7v10l-6-3.2Z" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Video Ads Shoot</h3>
-                <p class="studio-services__description">High-quality video ads that capture attention and deliver results across all digital platforms.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.05</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="6.5" width="12" height="11" rx="1" />
+                            <path d="M15 10.2 21 7v10l-6-3.2Z" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Video ad production</h3>
+                    <p class="rack-services__description">Ads shot and cut for the platforms your audience actually watches.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--red">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="2" width="6" height="12" rx="3" />
-                        <path d="M5 10a7 7 0 0 0 14 0" />
-                        <path d="M12 17v4" />
-                        <path d="M9 21h6" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Voice Over Recording</h3>
-                <p class="studio-services__description">Professional voice overs for ads, explainers, IVR, e-learning and corporate videos.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.06</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="2" width="6" height="12" rx="3" />
+                            <path d="M5 10a7 7 0 0 0 14 0" />
+                            <path d="M12 17v4" />
+                            <path d="M9 21h6" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Voice-over recording</h3>
+                    <p class="rack-services__description">Ads, explainers, e-learning, and IVR voiced clean in a treated booth.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--yellow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14.5 4.5 19 9l-9.5 9.5H5V14Z" />
-                        <path d="M13 6l4.5 4.5" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Scriptwriting & Translation</h3>
-                <p class="studio-services__description">Creative scriptwriting and accurate translation to connect with your audience in any language.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.07</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 4.5 19 9l-9.5 9.5H5V14Z" />
+                            <path d="M13 6l4.5 4.5" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Scriptwriting &amp; translation</h3>
+                    <p class="rack-services__description">Scripts written and translated so the words land in any language.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
-            <a class="studio-services__card" href="#">
-                <span class="studio-services__icon studio-services__icon--blue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
-                        <rect x="3" y="14" width="5" height="6" rx="2" />
-                        <rect x="16" y="14" width="5" height="6" rx="2" />
-                    </svg>
-                </span>
-                <h3 class="studio-services__card-title">Voice Recording Studio</h3>
-                <p class="studio-services__description">Soundproof studio with industry-standard equipment for crystal clear voice recordings.</p>
-                <span class="studio-services__link">
-                    Learn More
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
+                <a class="rack-services__card" href="#">
+                    <span class="rack-services__card-head">
+                        <span class="rack-services__num">CH.08</span>
+                        <span class="rack-services__led"></span>
+                    </span>
+                    <span class="rack-services__port">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+                            <rect x="3" y="14" width="5" height="6" rx="2" />
+                            <rect x="16" y="14" width="5" height="6" rx="2" />
+                        </svg>
+                    </span>
+                    <h3 class="rack-services__card-title">Voice recording studio</h3>
+                    <p class="rack-services__description">A soundproofed room built for nothing but clear, consistent voice.</p>
+                    <span class="rack-services__link">
+                        Learn more
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </a>
 
+            </div>
         </div>
     </div>
-
-    <span class="studio-services__decor studio-services__decor--blob"></span>
-    <span class="studio-services__decor studio-services__decor--blob-top"></span>
-    <span class="studio-services__decor studio-services__decor--dots"></span>
 </section>

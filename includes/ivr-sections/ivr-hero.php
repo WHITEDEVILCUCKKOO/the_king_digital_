@@ -393,8 +393,8 @@
             <h1>Power Every Conversation With Intelligent Voice Communication</h1>
             <p>Automate calls, connect customers, and streamline communication with powerful IVR, toll-free, missed-call, OBD voice and shortcode solutions.</p>
             <div class="ivr-hero_content--cta">
-                <a href="#" class="ivr-hero_content--cta-btn-one">Get Started</a>
-                <a href="#" class="ivr-hero_content--cta-btn-two">Explore More</a>
+                <a href="contact.php" class="ivr-hero_content--cta-btn-one">Get Started</a>
+                <a href="#products" class="ivr-hero_content--cta-btn-two">Explore More</a>
             </div>
         </div>
         <div class="ivr-hero_content-visual">

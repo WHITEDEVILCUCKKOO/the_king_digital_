@@ -3,7 +3,7 @@
      COMPLETE FEATURE SECTION
 ========================================================= -->
 
-<section class="kd-rcs-features-section">
+<section class="kd-rcs-features-section" id="features">
 
     <div class="kd-rcs-features-container">
 
