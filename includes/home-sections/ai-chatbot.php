@@ -69,7 +69,7 @@
        ============================================================ */
     .chatbot_section {
         background: var(--color-bg);
-        padding: 20px 24px;
+        padding: 30px 24px 60px;
         position: relative;
         font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
         overflow: hidden;
@@ -103,15 +103,17 @@
     .chatbot_intro {
         position: relative;
         z-index: 1;
-        max-width: 680px;
+        display: flex;
         margin: 0 auto 56px;
         text-align: center;
     }
 
     .chatbot_section h1 {
+        flex: 1;
+        text-align: left;
         max-width: 620px;
         margin: 0 auto 14px;
-        font-size: clamp(28px, 4vw, 42px);
+        font-size: clamp(28px, 4vw, 46px);
         line-height: 1.18;
         font-weight: 800;
         color: var(--color-text);
@@ -119,6 +121,10 @@
 
     .chatbot_subtitle {
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         max-width: 52ch;
         font-size: 15.5px;
         line-height: 1.7;
@@ -147,9 +153,9 @@
 
     .chatbot_feature-item {
         display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 18px;
+        align-items: center;
+        gap: 14px;
+        padding: 10px;
         border-radius: var(--radius-lg);
         border: 1px solid transparent;
         transition: border-color var(--transition-normal), background var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
@@ -193,17 +199,17 @@
 
     .chatbot_feature-title {
         margin: 0 0 6px;
-        font-size: 16.5px;
-        font-weight: 700;
+        font-size: 14px;
+        font-weight: 800;
         color: var(--color-text);
     }
 
     .chatbot_feature-para {
         margin: 0;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 1.65;
         color: var(--color-text-secondary);
-        max-width: 46ch;
+        /* max-width: 46ch; */
     }
 
     /* ---------- Left: metrics card ---------- */
@@ -266,7 +272,7 @@
     }
 
     .chatbot_report-bar {
-        height: 5px;
+        height: 8px;
         border-radius: var(--radius-full);
         background: rgba(255, 255, 255, 0.08);
         overflow: hidden;
@@ -278,7 +284,7 @@
         border-radius: var(--radius-full);
         background: var(--gradient-primary);
         width: 0;
-        animation: bar-fill 1.4s ease-in-out infinite alternate;
+        animation: bar-fill 2s ease-in-out infinite alternate;
         animation-delay: 0.4s;
     }
 
@@ -300,6 +306,20 @@
         to {
             width: var(--bar-width);
         }
+    }
+
+    .chatbot_cta {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px 20px;
+    margin-top: 12px;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--color-primary);
+    color: #fff;
     }
 
     /* ---------- Right: visual ---------- */
@@ -378,7 +398,7 @@
         font-weight: 700;
     }
 
-    .chatbot_visual-card .loader {
+    .chatbot_visual-card .chatbot_loader {
         position: relative;
         width: 100px;
         height: 100px;
@@ -609,7 +629,7 @@
         }
     }
 
-    .loader {
+    .chatbot_loader {
         --color-one: #D6E8FF;
         --color-two: #8BB9F7;
         --color-three: #4F8FEF;
@@ -626,7 +646,7 @@
         animation: colorize calc(var(--time-animation) * 3) ease-in-out infinite;
     }
 
-    .loader::before {
+    .chatbot_loader::before {
         content: "";
         position: absolute;
         top: 0;
@@ -642,7 +662,7 @@
             inset 0 -10px 10px 0 var(--color-four);
     }
 
-    .loader .box {
+    .chatbot_loader .box {
         width: 100px;
         height: 100px;
         background: linear-gradient(180deg,
@@ -652,52 +672,52 @@
         -webkit-mask: url(#clipping);
     }
 
-    .loader svg {
+    .chatbot_loader svg {
         position: absolute;
     }
 
-    .loader svg #clipping {
+    .chatbot_loader svg #clipping {
         filter: contrast(15);
         animation: roundness calc(var(--time-animation) / 2) linear infinite;
     }
 
-    .loader svg #clipping polygon {
+    .chatbot_loader svg #clipping polygon {
         filter: blur(7px);
     }
 
-    .loader svg #clipping polygon:nth-child(1) {
+    .chatbot_loader svg #clipping polygon:nth-child(1) {
         transform-origin: 75% 25%;
         transform: rotate(90deg);
     }
 
-    .loader svg #clipping polygon:nth-child(2) {
+    .chatbot_loader svg #clipping polygon:nth-child(2) {
         transform-origin: 50% 50%;
         animation: rotation var(--time-animation) linear infinite reverse;
     }
 
-    .loader svg #clipping polygon:nth-child(3) {
+    .chatbot_loader svg #clipping polygon:nth-child(3) {
         transform-origin: 50% 60%;
         animation: rotation var(--time-animation) linear infinite;
         animation-delay: calc(var(--time-animation) / -3);
     }
 
-    .loader svg #clipping polygon:nth-child(4) {
+    .chatbot_loader svg #clipping polygon:nth-child(4) {
         transform-origin: 40% 40%;
         animation: rotation var(--time-animation) linear infinite reverse;
     }
 
-    .loader svg #clipping polygon:nth-child(5) {
+    .chatbot_loader svg #clipping polygon:nth-child(5) {
         transform-origin: 40% 40%;
         animation: rotation var(--time-animation) linear infinite reverse;
         animation-delay: calc(var(--time-animation) / -2);
     }
 
-    .loader svg #clipping polygon:nth-child(6) {
+    .chatbot_loader svg #clipping polygon:nth-child(6) {
         transform-origin: 60% 40%;
         animation: rotation var(--time-animation) linear infinite;
     }
 
-    .loader svg #clipping polygon:nth-child(7) {
+    .chatbot_loader svg #clipping polygon:nth-child(7) {
         transform-origin: 60% 40%;
         animation: rotation var(--time-animation) linear infinite;
         animation-delay: calc(var(--time-animation) / -1.5);
@@ -769,6 +789,7 @@
         <h1>How AI Chatbot Works for the Businesses</h1>
         <p class="chatbot_subtitle">
             One conversational layer, deployed everywhere your customers already are — trained on your own knowledge base and live in minutes.
+            <a href="omni.php" class="chatbot_cta">Know More about!</a>
         </p>
     </div>
 
@@ -849,7 +870,7 @@
             <div class="chatbot_visual-card">
                 <span class="chatbot_visual-status">Online</span>
                 <h2 class="chatbot_visual-card-heading"></h2>
-                <div class="loader">
+                <div class="chatbot_loader">
                     <svg width="100" height="100" viewBox="0 0 100 100">
                         <defs>
                             <mask id="clipping">
