@@ -277,7 +277,7 @@
 
     .home-hero-section_title {
         margin: 0 0 18px;
-        font-size: 58px;
+        font-size: 56px;
         line-height: 1.18;
         font-weight: bolder;
         color: var(--color-text-light);
@@ -286,6 +286,7 @@
     }
 
     .home-hero-section_title span {
+        font-size: 62px;
         background: var(--gradient-brand);
         -webkit-background-clip: text;
         background-clip: text;
@@ -335,24 +336,24 @@
     .home-hero-section_cta-section {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 20px;
     }
 
     .home-hero-section_cta-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 13px 26px;
+        padding: 16px 40px;
         border-radius: 999px;
-        font-size: 14px;
-        font-weight: 700;
+        font-size: 20px;
+        font-weight: 800;
         text-decoration: none;
         transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
     }
 
     a.home-hero-section_cta-button:first-of-type {
         background: #ffffff;
-        color: var(--color-primary);
+        color: var(--color-text);
     }
 
     a.home-hero-section_cta-button:first-of-type:hover {
@@ -523,7 +524,7 @@
     }
 
     /* From Uiverse.io by andrew-manzyk */
-    .loader {
+    /* .loader {
         --color-one: #D6E8FF;
         --color-two: #8BB9F7;
         --color-three: #4F8FEF;
@@ -531,7 +532,6 @@
         --color-five: #123A7A;
         --time-animation: 5s;
         --size: 1;
-        /* You can change the size */
         position: relative;
         border-radius: 50%;
         transform: scale(var(--size));
@@ -674,7 +674,156 @@
         100% {
             filter: hue-rotate(-10deg);
         }
+    } */
+
+    /* From Uiverse.io by KSAplay */
+    .loader {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+
+    .simple-text {
+        position: absolute;
+        top: -100px;
+        color: white;
+        width: 200px;
+        text-align: center;
+    }
+
+    .cube {
+        position: absolute;
+        width: 40px;
+        transform-style: preserve-3d;
+        transform: rotateX(-30deg) rotateY(45deg);
+        transition: 300ms ease;
+        cursor: pointer;
+        animation: rotateCube 10s infinite linear;
+    }
+
+    /* change the distance between cubes with translateX */
+    .cube-front,
+    .cube-back {
+        transform: translateX(40px) translateZ(-20px);
+        animation: none;
+    }
+
+    /* change the distance between cubes with translateZ */
+    .cube-top,
+    .cube-bottom {
+        transform: translateZ(20px);
+        animation: none;
+    }
+
+    /* change the distance between cubes with translateX */
+    .cube-left,
+    .cube-right {
+        transform: translateX(40px) translateZ(-20px);
+        animation: none;
+    }
+
+    .face {
+        position: absolute;
+        transform-style: preserve-3d;
+        width: 40px;
+        height: 40px;
+
+        background: rgb(145, 88, 47);
+
+        background: radial-gradient(circle,
+                rgb(126, 61, 8) 0%,
+                rgb(248, 99, 0) 100%);
+    }
+
+    .front {
+        transform: rotateY(0deg) translateZ(20px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(20px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(20px);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ(20px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(20px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(20px);
+    }
+
+    .cube-back:hover .face,
+    .cube-front:hover .face,
+    .cube-top:hover .face,
+    .cube-bottom:hover .face,
+    .cube-left:hover .face,
+    .cube-right:hover .face {
+        background: rgb(255, 255, 255);
+
+        background: radial-gradient(circle,
+                #fff7ed 0%,
+                #fed7aa 45%,
+                #fb923c 100%);
+
+        filter:
+            drop-shadow(0px 0px 5px #fff7ed) drop-shadow(0px 0px 15px #fb923c) drop-shadow(0px 0px 30px rgba(249, 115, 22, 0.9));
+    }
+
+    .cube:active {
+        transform: translateX(0px) translateZ(-20px);
+    }
+
+    .cube-back:active .face,
+    .cube-front:active .face,
+    .cube-top:active .face,
+    .cube-bottom:active .face,
+    .cube-left:active .face,
+    .cube-right:active .face {
+        background: rgb(255, 255, 255);
+
+        background: radial-gradient(circle,
+                #fff7ed 0%,
+                #fed7aa 45%,
+                #fb923c 100%);
+
+        filter:
+            drop-shadow(0px 0px 5px #fff7ed) drop-shadow(0px 0px 15px #fb923c) drop-shadow(0px 0px 30px rgba(249, 115, 22, 0.9));
+    }
+
+    .middle {
+        background: transparent;
+    }
+
+    @keyframes rotateCube {
+        0% {
+            transform: rotateX(-30deg) rotateY(45deg);
+        }
+
+        25% {
+            transform: rotateX(-10deg) rotateY(135deg);
+        }
+
+        50% {
+            transform: rotateX(30deg) rotateY(225deg);
+        }
+
+        75% {
+            transform: rotateX(10deg) rotateY(315deg);
+        }
+
+        100% {
+            transform: rotateX(-30deg) rotateY(405deg);
+        }
+    }
+
 
     /* ---- central glass AI orb ---- */
     .ai-assistant-circle {
@@ -1070,7 +1219,7 @@
                 Deploy official WhatsApp Business API, A2P bulk SMS, IVR, and AI voice bots on your own server — or use our secure cloud communications platform.
             </p>
             <div class="home-hero-section_cta-section">
-                <a href="#contact" class="home-hero-section_cta-button">Get Started</a>
+                <a href="contact.php" class="home-hero-section_cta-button">Get Started</a>
                 <a href="#services" class="home-hero-section_cta-button">Explore Services</a>
             </div>
         </div>
@@ -1083,7 +1232,7 @@
                     <span></span>
                     <span></span>
                     <!-- From Uiverse.io by andrew-manzyk -->
-                    <div class="loader">
+                    <!-- <div class="loader">
                         <svg width="100" height="100" viewBox="0 0 100 100">
                             <defs>
                                 <mask id="clipping">
@@ -1098,7 +1247,74 @@
                             </defs>
                         </svg>
                         <div class="box"></div>
+                    </div> -->
+
+                    <!-- From Uiverse.io by KSAplay -->
+                    <div class="loader">
+                        <div class="cube">
+                            <div class="face middle front">
+                                <div class="cube cube-front">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
+                            <div class="face middle back">
+                                <div class="cube cube-back">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
+                            <div class="face middle left">
+                                <div class="cube cube-left">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
+                            <div class="face middle right">
+                                <div class="cube cube-right">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
+                            <div class="face middle top">
+                                <div class="cube cube-top">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
+                            <div class="face middle bottom">
+                                <div class="cube cube-bottom">
+                                    <div class="face front"></div>
+                                    <div class="face back"></div>
+                                    <div class="face left"></div>
+                                    <div class="face right"></div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
 
                 </div>
                 <p>Select an agent, then Talk With AI</p>
