@@ -732,8 +732,8 @@
         background: rgb(145, 88, 47);
 
         background: radial-gradient(circle,
-                rgb(126, 61, 8) 0%,
-                rgb(248, 99, 0) 100%);
+                rgba(224, 101, 0, 0.89) 0%,
+                rgb(196, 78, 0) 100%);
     }
 
     .front {
