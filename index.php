@@ -21,7 +21,7 @@ require_once __DIR__ . '/includes/header.php';
     <?php require_once __DIR__ . '/includes/home-sections/our-services.php'; ?>
 
     <!-- section  ( Our Servers ) -->
-    <?php require_once __DIR__ . '/includes/home-sections/ai-deshboard.php'; ?>
+    <?php require_once __DIR__ . '/includes/home-sections/ai-chatbot.php'; ?>
 
     <!-- section 8 ( Process ) -->
     <?php require_once __DIR__ . '/includes/home-sections/process-section.php'; ?>
