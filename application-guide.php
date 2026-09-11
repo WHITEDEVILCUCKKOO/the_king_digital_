@@ -5681,6 +5681,26 @@
         let close_linw969 = document.getElementById("close_linw969");
         let haw_linw969 = document.getElementById("haw_linw969");
 
+        // if koi btn pa click kar to ya chale ga 
+            haamer_id_btn.addEventListener("click", () => {
+
+                dash_box_slie.classList.toggle("dashbord_revile_gl");
+                haamer_id_btn.classList.toggle("haamer_btn_nikw5");
+
+                if (haamer_id_btn.classList.contains("haamer_btn_nikw5")) {
+
+                    close_linw969.style.display = "flex";
+                    haw_linw969.style.display = "none";
+
+                } else {
+
+                    close_linw969.style.display = "none";
+                    haw_linw969.style.display = "flex";
+
+                }
+
+            });
+
         function show_this_box(el) {
 
             let overview_box_show = document.getElementById("overview_contect_box");
