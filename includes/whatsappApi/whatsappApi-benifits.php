@@ -215,7 +215,7 @@
     .whatsappApi-benifit {
         position: relative;
         background: var(--color-bg-soft);
-        padding: 100px 40px;
+        padding: 60px 40px;
         overflow: hidden;
         font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -359,7 +359,7 @@
 
 <section class="whatsappApi-benifit">
     <div class="whatsappApi-benifit_content-heading">
-        <h1 class="benifit-heading">Benefits of WhatsApp Business API for businesses</h1>
+        <h1 class="benifit-heading">Why Upgrade to the Official Business WhatsApp Solution?</h1>
         <p>Here's why businesses prefer WhatsApp API over traditional channels</p>
     </div>
     <div class="benifit-card-grid">
@@ -380,8 +380,8 @@
                     </g>
                 </svg>
             </span>
-            <h2>Reach Customers Where They Are most active</h2>
-            <p>With 2.8 billion+ active users, WhatsApp is where your customers are most active. Be there, engage, and convert.</p>
+            <h2>Interactive Conversational Flow</h2>
+            <p>The platform is not limited to plain messaging anymore, as the usage of various quick-response buttons, direct call actions, menus, and rich in chat catalogs allows clients to make decisions quicker.</p>
         </div>
         <div class="benifit-cards">
             <span>
@@ -483,8 +483,9 @@
                     </g>
                 </svg>
             </span>
-            <h2>Grow your Revenue by 45-60%</h2>
-            <p>Build an entire conversion focused funnel right on WhatsApp - from running ads, to collecting payments</p>
+            <h2>Instant Engagement</h2>
+            <p>The WhatsApp messaging service guarantees a more than 90% open rate for delivered messages and the majority of messages can be expected to be read within a few minutes compared to traditional email marketing, which falls behind regular banner ads.
+            </p>
         </div>
         <div class="benifit-cards">
             <span>
@@ -525,8 +526,8 @@
                     </g>
                 </svg>
             </span>
-            <h2>Build a Strong Brand Identity</h2>
-            <p>Establish a Strong Brand Identity by getting the esteemed WhatsApp Blue tick for free with AiSensy</p>
+            <h2>Multi-Device Support</h2>
+            <p>There is no need to be dependent on a single mobile phone anymore, as various operational team members can log in at the same time and work in a single unified inbox.</p>
         </div>
         <div class="benifit-cards">
             <span>
@@ -544,8 +545,8 @@
                     </g>
                 </svg>
             </span>
-            <h2>Highly Cost-effective</h2>
-            <p>Businesses have achieved up to 150X ROI doing WhatsApp Marketing with AiSensy. Not only is it cost-effective, it's like hitting the jackpot.</p>
+            <h2>No Hardware Dependencies</h2>
+            <p>Monitor performance or configure logic and view analytics from the cloud without worrying about machines buttoned under your desk.</p>
         </div>
         <div class="benifit-cards">
             <span>
@@ -557,8 +558,8 @@
                     </g>
                 </svg>
             </span>
-            <h2>Offer Unmatched Customer Support</h2>
-            <p>Resolve hundreds of queries in real-time via multi-agent live chat - scale your customer satisfaction (CSAT)</p>
+            <h2>Privacy and Verification Assured</h2>
+            <p>Gain instant brownie points with your audience with verified businesses with Meta's Green Tick stamp of approval and templates that save you from any legal troubles.</p>
         </div>
         <div class="benifit-cards">
             <span>
@@ -578,8 +579,8 @@
                     </g>
                 </svg>
             </span>
-            <h2>Secure, Verified & Officially Approved by Meta</h2>
-            <p>WhatsApp Business API is created & approved by Meta for businesses, to grow businesses with the power of WhatsApp!</p>
+            <h2>Uninterrupted Service Assurance</h2>
+            <p>With the help of the world's most sophisticated cloud technology, we guarantee highly available APIs to power your workflows and notifications.</p>
         </div>
     </div>
 </section>

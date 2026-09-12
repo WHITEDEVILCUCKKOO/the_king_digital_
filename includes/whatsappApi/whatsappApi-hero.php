@@ -758,7 +758,11 @@
             <h1>Official WhatsApp<br>
                 <span class="hero-accent">Business API</span>
             </h1>
-            <p>The absolute standard for enterprise communication. Build trust with a verified identity, automate sales with native forms, and scale support with AI.</p>
+            <p><strong>Stop losing high-intent leads to buried emails and unread text messages.</strong> Today’s customers don't just prefer chat they demand real-time, two-way conversations on the app they open dozens of times a day.
+                <br>
+                <strong>The official business whatsapp solution</strong> fixes this by turning WhatsApp into your most powerful sales, support, and automation engine, allowing you to handle thousands of concurrent conversations without adding operational complexity.
+
+            </p>
             <a href="contact.php">
                 <span>
                     <svg width="64px" height="64px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
