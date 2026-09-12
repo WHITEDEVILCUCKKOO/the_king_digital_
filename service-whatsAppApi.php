@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/includes/header.php' ?>
 
-<main style="overflow: hidden;">
+<main style="overflow: hidden; font-family:'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif">
     <?php require_once __DIR__ . '/includes/whatsappApi/whatsappApi-hero.php' ?>
     <?php require_once __DIR__ . '/includes/whatsappApi/whatsappApi-benifits.php' ?>
     <?php require_once __DIR__ . '/includes/whatsappApi/whatsappApi-phase1.php' ?>
