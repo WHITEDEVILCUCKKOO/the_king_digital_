@@ -97,10 +97,10 @@
         font-weight: 800;
 
     }
-    
-    .bluk-titial em{
+
+    .bluk-titial em {
         background: linear-gradient(to bottom, #0A5CFF 0%, #0A5CFF 70%);
-    
+
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -138,20 +138,22 @@
         border-radius: 999px;
         color: #0B5CFF;
     }
+
     .bluk_tags_hero span em {
         font-weight: bolder;
-    font-size: 15px;
-    margin-right: 5px;
+        font-size: 15px;
+        margin-right: 5px;
     }
 
     .bluk-trial_mess {
         margin-top: 20px;
         background: linear-gradient(134deg, #0B5CFF 0%, #1b2436f2 100%);
         color: #e5edff;
-        padding: 8px 15px;
+        padding: 9px 27px;
         border-radius: 999px;
         transition: .25s ease;
-        font-size: 14px;
+        font-size: 20px;
+        font-weight: 600;
 
     }
 
@@ -448,15 +450,15 @@
                 <p>Bulk SMS Provider in Delhi</p>
             </div>
             <div class="bluk-titial">
-                <h1>Bulk SMS Service  <em> Provider in Delhi </em></h1>
+                <h1>Bulk SMS Service <em> Provider in Delhi </em></h1>
             </div>
 
             <p class="tital_pera">
                 In a world where emails get buried and ad budgets burn fast without guaranteed returns, text messaging remains the single most effective way to grab immediate attention. Over 70% of text messages are opened within three minutes of delivery making SMS the ultimate channel for urgent alerts, flash offers, and seamless customer communications.
             </p>
             <p class="tital_pera">
-                At <em>Kings Digital </em> , we operate as a premier  <em> Bulk SMS Service Provider in Delhi </em>, delivering a high-speed, enterprise-grade messaging infrastructure designed to help your business reach thousands of customers instantly. Whether you run a bustling retail outlet in Lajpat Nagar, manage property leads across Dwarka, or coordinate corporate logistics in Cyber City, our platform turns direct mobile communication into measurable revenue growth all with 100% TRAI DLT compliance.
-</p>
+                At <em>Kings Digital </em> , we operate as a premier <em> Bulk SMS Service Provider in Delhi </em>, delivering a high-speed, enterprise-grade messaging infrastructure designed to help your business reach thousands of customers instantly. Whether you run a bustling retail outlet in Lajpat Nagar, manage property leads across Dwarka, or coordinate corporate logistics in Cyber City, our platform turns direct mobile communication into measurable revenue growth all with 100% TRAI DLT compliance.
+            </p>
 
 
             <div class="bluk_tags_hero">
