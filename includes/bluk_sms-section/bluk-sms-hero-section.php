@@ -130,18 +130,28 @@
     }
 
     .bluk_tags_hero span {
-        font-size: 11px;
+        font-size: 12px;
         background-color: #fbfcffb0;
         width: max-content;
         padding: 5px 10px;
         border: 1px solid #13409b52;
         border-radius: 999px;
         color: #0B5CFF;
+        font-weight: 600;
+        transition: .25s ease;
     }
+
+    .bluk_tags_hero span:hover {
+        transform: translateY(-5px);
+        transition: .25s ease;
+        background: #0B5CFF;
+        color: white;
+    }
+
 
     .bluk_tags_hero span em {
         font-weight: bolder;
-        font-size: 15px;
+        font-size: 18px;
         margin-right: 5px;
     }
 
