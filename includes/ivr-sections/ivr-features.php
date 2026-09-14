@@ -65,30 +65,34 @@
         --ivr-transition-slow: 0.6s ease;
     }
 
-    /* //////////////////////////////////// Products Section Start ///////////////////////////////////// */
+    /* //////////////////////////////////// Key Features Section Start ///////////////////////////////////// */
+    /* Self-contained: this block carries its own copy of the card-grid styling
+       (same design language as the Products section) so it renders correctly
+       even if included on a page by itself. If :root is already declared
+       elsewhere on the page, this duplicate declaration is harmless. */
 
-    .ivr-products {
+    .ivr-features {
         position: relative;
         overflow: hidden;
-        padding: 88px 80px;
+        padding: 40px 80px;
         background: var(--ivr-bg);
         font-family: "Segoe UI", Roboto, sans-serif;
     }
 
-    .ivr-product_content {
+    .ivr-features_content {
         position: relative;
         z-index: 1;
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    .ivr-product_content--heading {
+    .ivr-features_content--heading {
         text-align: center;
         max-width: 680px;
         margin: 0 auto 12px;
     }
 
-    .ivr-product_content--heading h1 {
+    .ivr-features_content--heading h1 {
         font-size: clamp(28px, 3.6vw, 42px);
         line-height: 1.2;
         font-weight: 800;
@@ -97,21 +101,28 @@
         margin: 0;
     }
 
-    .ivr-product_content--heading h1 span {
+    .ivr-features_content--heading h1 span {
         background: var(--ivr-gradient-ai);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    .ivr-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-        gap: 18px;
-        margin-top: 52px
+    .ivr-features_content--heading p {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--ivr-text-secondary);
     }
 
-    .ivr-card {
+    .ivr-feat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 52px;
+    }
+
+    .ivr-feat-card {
         background: var(--ivr-card);
         border: 1.5px solid var(--ivr-border);
         border-radius: var(--ivr-radius-lg);
@@ -119,10 +130,10 @@
         position: relative;
         overflow: hidden;
         cursor: pointer;
-        transition: var(--ivr-transition)
+        transition: var(--ivr-transition);
     }
 
-    .ivr-card::after {
+    .ivr-feat-card::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -132,21 +143,21 @@
         background: var(--ivr-gold);
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform .25s ease
+        transition: transform .25s ease;
     }
 
-    .ivr-card:hover {
+    .ivr-feat-card:hover {
         border-color: rgba(37, 99, 235, .25);
         box-shadow: var(--ivr-shadow-lg);
-        transform: translateY(-4px)
+        transform: translateY(-4px);
     }
 
-    .ivr-card:hover::after {
+    .ivr-feat-card:hover::after {
         transition: 1s ease;
-        transform: scaleX(1)
+        transform: scaleX(1);
     }
 
-    .ivr-ico {
+    .ivr-feat-ico {
         width: 50px;
         height: 50px;
         border-radius: 12px;
@@ -154,17 +165,19 @@
         align-items: center;
         justify-content: center;
         font-size: 21px;
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        background: #EEF2FF;
+        color: #4F46E5;
     }
 
-    .ivr-name {
+    .ivr-feat-name {
         font-size: 17px;
         font-weight: 700;
         margin-bottom: 9px;
         color: var(--ivr-text-primary);
     }
 
-    .ivr-desc {
+    .ivr-feat-desc {
         font-size: 14px;
         color: var(--ivr-text-secondary);
         line-height: 1.75;
@@ -177,23 +190,23 @@
         text-overflow: ellipsis;
     }
 
-    .ivr-tags {
+    .ivr-feat-tags {
         display: flex;
         gap: 6px;
-        flex-wrap: wrap
+        flex-wrap: wrap;
     }
 
-    .stag {
+    .ivr-feat-tags .stag {
         font-size: 11px;
         font-weight: 600;
         color: var(--ivr-text-muted);
         background: var(--ivr-bg);
         padding: 3px 10px;
         border-radius: 20px;
-        border: 1px solid var(--ivr-border)
+        border: 1px solid var(--ivr-border);
     }
 
-    .ivr-link {
+    .ivr-feat-link {
         position: absolute;
         top: 24px;
         right: 24px;
@@ -207,17 +220,17 @@
         font-size: 12px;
         color: var(--ivr-text-muted);
         text-decoration: none;
-        transition: var(--ivr-transition)
+        transition: var(--ivr-transition);
     }
 
-    .ivr-card:hover .ivr-link {
+    .ivr-feat-card:hover .ivr-feat-link {
         background: var(--ivr-blue);
         border-color: var(--ivr-blue);
-        color: #fff
+        color: #fff;
     }
 
     /* cursor-follow glow — spreads outward from wherever the cursor enters the card */
-    .icp-cursor-glow {
+    .ifc-cursor-glow {
         position: absolute;
         left: 0;
         top: 0;
@@ -230,8 +243,8 @@
         z-index: 0;
     }
 
-    /* ── Decor 1: top-left rotating dashed ring ── */
-    .decor-tl {
+    /* ── Decor: top-left rotating dashed ring ── */
+    .feat-decor-tl {
         position: absolute;
         top: -110px;
         left: -110px;
@@ -240,12 +253,12 @@
         border: 2px dashed var(--ivr-primary);
         border-radius: 50%;
         opacity: .25;
-        animation: decor-spin 18s linear infinite;
+        animation: feat-decor-spin 18s linear infinite;
         pointer-events: none;
         z-index: 0;
     }
 
-    @keyframes decor-spin {
+    @keyframes feat-decor-spin {
         from {
             transform: rotate(0deg);
         }
@@ -255,8 +268,8 @@
         }
     }
 
-    /* ── Decor 2: top-right fading dot-grid ── */
-    .decor-tr {
+    /* ── Decor: top-right fading dot-grid ── */
+    .feat-decor-tr {
         position: absolute;
         top: -20px;
         right: -20px;
@@ -269,10 +282,10 @@
         opacity: .3;
         pointer-events: none;
         z-index: 0;
-        animation: grid-shift 10s ease-in-out infinite;
+        animation: feat-grid-shift 10s ease-in-out infinite;
     }
 
-    @keyframes grid-shift {
+    @keyframes feat-grid-shift {
 
         0%,
         100% {
@@ -284,8 +297,8 @@
         }
     }
 
-    /* ── Decor 3: bottom-left floating sparkle dots ── */
-    .decor-bl {
+    /* ── Decor: bottom-left floating sparkle dots ── */
+    .feat-decor-bl {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -295,51 +308,51 @@
         z-index: 0;
     }
 
-    .decor-dot {
+    .feat-decor-dot {
         position: absolute;
         border-radius: 50%;
         background: var(--ivr-gold);
     }
 
-    .decor-dot.d1 {
+    .feat-decor-dot.d1 {
         width: 12px;
         height: 12px;
         bottom: 30px;
         left: 26px;
         opacity: .35;
-        animation: dot-bob-1 5.5s ease-in-out infinite;
+        animation: feat-dot-bob-1 5.5s ease-in-out infinite;
     }
 
-    .decor-dot.d2 {
+    .feat-decor-dot.d2 {
         width: 8px;
         height: 8px;
         bottom: 90px;
         left: 70px;
         opacity: .3;
         background: var(--ivr-primary);
-        animation: dot-bob-2 6.5s ease-in-out infinite;
+        animation: feat-dot-bob-2 6.5s ease-in-out infinite;
     }
 
-    .decor-dot.d3 {
+    .feat-decor-dot.d3 {
         width: 16px;
         height: 16px;
         bottom: 50px;
         left: 120px;
         opacity: .24;
-        animation: dot-bob-3 7.5s ease-in-out infinite;
+        animation: feat-dot-bob-3 7.5s ease-in-out infinite;
     }
 
-    .decor-dot.d4 {
+    .feat-decor-dot.d4 {
         width: 9px;
         height: 9px;
         bottom: 140px;
         left: 40px;
         opacity: .28;
         background: var(--ivr-primary);
-        animation: dot-bob-1 6s ease-in-out infinite .4s;
+        animation: feat-dot-bob-1 6s ease-in-out infinite .4s;
     }
 
-    @keyframes dot-bob-1 {
+    @keyframes feat-dot-bob-1 {
 
         0%,
         100% {
@@ -351,7 +364,7 @@
         }
     }
 
-    @keyframes dot-bob-2 {
+    @keyframes feat-dot-bob-2 {
 
         0%,
         100% {
@@ -363,7 +376,7 @@
         }
     }
 
-    @keyframes dot-bob-3 {
+    @keyframes feat-dot-bob-3 {
 
         0%,
         100% {
@@ -375,8 +388,8 @@
         }
     }
 
-    /* ── Decor 4: bottom-right soft ambient glow ── */
-    .decor-br {
+    /* ── Decor: bottom-right soft ambient glow ── */
+    .feat-decor-br {
         position: absolute;
         bottom: -180px;
         right: -150px;
@@ -387,10 +400,10 @@
         filter: blur(8px);
         pointer-events: none;
         z-index: 0;
-        animation: glow-pulse 9s ease-in-out infinite;
+        animation: feat-glow-pulse 9s ease-in-out infinite;
     }
 
-    @keyframes glow-pulse {
+    @keyframes feat-glow-pulse {
 
         0%,
         100% {
@@ -404,153 +417,147 @@
         }
     }
 
-    /* ════ RESPONSIVE ════ */
     @media (max-width: 900px) {
-        .ivr-products {
+        .ivr-features {
             padding: 60px 24px;
         }
     }
 
-    @media(max-width:640px) {
-        .section {
-            padding: 60px 0
-        }
-    }
+    /* //////////////////////////////////// Key Features Section End ///////////////////////////////////// */
 </style>
 
-<!-- ////////////////////////////////////////////////// Products Section //////////////////////////////////////-->
-<section class="ivr-products" id="products">
-    <div class="decor-tl"></div>
-    <div class="decor-tr"></div>
-    <div class="decor-bl">
-        <div class="decor-dot d1"></div>
-        <div class="decor-dot d2"></div>
-        <div class="decor-dot d3"></div>
-        <div class="decor-dot d4"></div>
+<!-- ////////////////////////////////////////////////// Key Features Section //////////////////////////////////////-->
+<section class="ivr-features" id="features">
+    <div class="feat-decor-tl"></div>
+    <div class="feat-decor-tr"></div>
+    <div class="feat-decor-bl">
+        <div class="feat-decor-dot d1"></div>
+        <div class="feat-decor-dot d2"></div>
+        <div class="feat-decor-dot d3"></div>
+        <div class="feat-decor-dot d4"></div>
     </div>
-    <div class="decor-br"></div>
+    <div class="feat-decor-br"></div>
 
-    <div class="ivr-product_content">
-        <div class="ivr-product_content--heading">
-            <h1>Everything You Need for <span>Business Voice Communication</span></h1>
+    <div class="ivr-features_content">
+        <div class="ivr-features_content--heading">
+            <h1>Key Features of <span>Cloud IVR Solutions</span></h1>
+            <p>Modern IVR software offers robust tools engineered to optimize voice communication, track customer behavior, and maximize live agent efficiency.</p>
         </div>
-        <div class="ivr-product_content--cards">
-            <div class="ivr-grid">
-                <div class="ivr-card reveal">
-                    <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-phone"></i></div>
-                    <div class="ivr-name">Hosted IVR</div>
-                    <div class="ivr-desc">Hosted IVR is a cloud-managed automated phone system that greets callers with pre-recorded voice menus and routes their calls based on keypad inputs or voice commands.</div>
-                    <div class="ivr-tags">
-                        <span class="stag">Cloud IVR</span>
-                        <span class="stag">IVR call routing</span>
-                        <span class="stag">24/7 customer support automation</span>
-                        <span class="stag">Best hosted IVR providers</span>
-                    </div>
-                </div>
-                <div class="ivr-card reveal">
-                    <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-microphone-lines"></i></div>
-                    <div class="ivr-name">Toll-Free</div>
-                    <div class="ivr-desc">A toll-free number is a special telephone number that allows callers to reach a business or organization without being charged.</div>
-                    <div class="ivr-tags">
-                        <span class="stag">Buy toll-free number</span>
-                        <span class="stag">Free toll-free number trial</span>
-                        <span class="stag">Customer care number</span>
-                        <span class="stag">Call tracking marketing</span>
-                    </div>
-                </div>
-                <div class="ivr-card reveal">
-                    <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-solid fa-voicemail"></i></div>
-                    <div class="ivr-name">Missed Call Alert</div>
-                    <div class="ivr-desc">It is a cloud tool that logs customer numbers for free lead generation and auto-replies.</div>
-                    <div class="ivr-tags">
-                        <span class="stag">Virtual Mobile Number (VMN)</span>
-                        <span class="stag">Lead Capture</span>
-                        <span class="stag">Auto Callback</span>
-                        <span class="stag">Toll-Free</span>
-                    </div>
-                </div>
-                <div class="ivr-card reveal">
-                    <a href="#" class="ivr-link"><i class="fas fa-arrow-right"></i></a>
-                    <div class="ivr-ico" style="background:#EEF2FF;color:#4F46E5"><i class="fa-brands fa-teamspeak"></i></div>
-                    <div class="ivr-name">OBD Voice</div>
-                    <div class="ivr-desc">An automated communication technology that dials a list of phone numbers and plays a pre-recorded audio message or text-to-speech alert to thousands of recipients simultaneously without manual intervention.</div>
-                    <div class="ivr-tags">
-                        <span class="stag">Outbound Dialing (OBD)</span>
-                        <span class="stag">Voice SMS</span>
-                        <span class="stag">Live Agent Transfer</span>
-                        <span class="stag">Call Delivery Reports (CDR)</span>
-                    </div>
+
+        <div class="ivr-feat-grid" id="ivrFeatGrid">
+
+            <div class="ivr-feat-card">
+                <div class="ivr-feat-ico"><i class="fa-solid fa-route"></i></div>
+                <div class="ivr-feat-name">Smart Call Routing</div>
+                <div class="ivr-feat-desc">Intelligence-powered routing — skill-based, round-robin, priority, and geographical — limits wait times and connects callers with the right expert directly.</div>
+                <div class="ivr-feat-tags">
+                    <span class="stag">Skill-Based Routing</span>
+                    <span class="stag">Round-Robin</span>
+                    <span class="stag">Priority Routing</span>
+                    <span class="stag">Geo Routing</span>
                 </div>
             </div>
+
+            <div class="ivr-feat-card">
+                <div class="ivr-feat-ico"><i class="fa-solid fa-sitemap"></i></div>
+                <div class="ivr-feat-name">Multi-Level IVR Menus</div>
+                <div class="ivr-feat-desc">Unlimited nested menu hierarchies — "Press 1 for Sales, Press 2 for Support" — handle call traffic properly and route complex issues to the right sub-department.</div>
+                <div class="ivr-feat-tags">
+                    <span class="stag">Nested Menus</span>
+                    <span class="stag">Multi-Level IVR</span>
+                    <span class="stag">Call Traffic Management</span>
+                </div>
+            </div>
+
+            <div class="ivr-feat-card">
+                <div class="ivr-feat-ico"><i class="fa-solid fa-language"></i></div>
+                <div class="ivr-feat-name">Multilingual Support</div>
+                <div class="ivr-feat-desc">Voice prompts spoken in local regional dialects and international languages, so customers feel comfortable communicating in their language of choice.</div>
+                <div class="ivr-feat-tags">
+                    <span class="stag">Regional Dialects</span>
+                    <span class="stag">International Languages</span>
+                    <span class="stag">Localized Prompts</span>
+                </div>
+            </div>
+
+            <div class="ivr-feat-card">
+                <div class="ivr-feat-ico"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="ivr-feat-name">Real-Time Analytics & Reporting</div>
+                <div class="ivr-feat-desc">Live dashboards, call volume trends, agent performance monitoring, and downloadable logs to get the most out of your data.</div>
+                <div class="ivr-feat-tags">
+                    <span class="stag">Live Dashboards</span>
+                    <span class="stag">Call Volume Trends</span>
+                    <span class="stag">Agent Performance</span>
+                </div>
+            </div>
+
+            <div class="ivr-feat-card">
+                <div class="ivr-feat-ico"><i class="fa-solid fa-circle-play"></i></div>
+                <div class="ivr-feat-name">Call Recording & Monitoring</div>
+                <div class="ivr-feat-desc">Cloud-based call recording with barge-in monitoring and call whispering, so supervisors can guide agents in real time.</div>
+                <div class="ivr-feat-tags">
+                    <span class="stag">Cloud Call Recording</span>
+                    <span class="stag">Barge-In</span>
+                    <span class="stag">Whisper Coaching</span>
+                </div>
+            </div>
+
+            <div class="ivr-feat-card">
+                <div class="ivr-feat-ico"><i class="fa-solid fa-plug"></i></div>
+                <div class="ivr-feat-name">CRM & Webhook Integration</div>
+                <div class="ivr-feat-desc">REST API integration with Salesforce, HubSpot, Zoho, and databases — sending call history and account data to agent screens before the call connects.</div>
+                <div class="ivr-feat-tags">
+                    <span class="stag">REST API</span>
+                    <span class="stag">Salesforce</span>
+                    <span class="stag">HubSpot</span>
+                    <span class="stag">Zoho</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
-<!-- ///////////////////////////////////////// Products Section End ///////////////////////////////////////////-->
+<!-- ///////////////////////////////////////// Key Features Section End ///////////////////////////////////////////-->
 
 <script>
-    /* ===========================
-       PRODUCTS HEADING SCROLL EFFECT
-    =========================== */
-
-    var ivrProductsSection = document.querySelector(".ivr-products");
-
-    if (ivrProductsSection) {
-        var ivrProductsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show-animation");
-                }
-            });
-        }, {
-            threshold: 0.35
-        });
-
-        ivrProductsObserver.observe(ivrProductsSection);
-    }
-
     (function() {
         "use strict";
 
-        var icpCards = document.querySelectorAll('.ivr-card');
-        var icpGlowRadius = 230; // px — soft glow that spreads out from the cursor's corner
-        var icpMaxTilt = 12; // deg — max corner tilt
+        var grid = document.getElementById('ivrFeatGrid');
+        if (!grid) return;
 
-        icpCards.forEach(function(card) {
+        var cards = grid.querySelectorAll('.ivr-feat-card');
+        var glowRadius = 230; // px
+        var maxTilt = 12; // deg
 
-            // create the cursor-follow glow layer once per card
-            var icpGlow = document.createElement('div');
-            icpGlow.className = 'icp-cursor-glow';
-            icpGlow.style.width = (icpGlowRadius * 0.5) + 'px';
-            icpGlow.style.height = (icpGlowRadius * 0.5) + 'px';
-            card.appendChild(icpGlow);
+        cards.forEach(function(card) {
+            var glow = document.createElement('div');
+            glow.className = 'ifc-cursor-glow';
+            glow.style.width = (glowRadius * 0.5) + 'px';
+            glow.style.height = (glowRadius * 0.5) + 'px';
+            card.appendChild(glow);
 
             card.addEventListener('mousemove', function(e) {
                 var rect = card.getBoundingClientRect();
                 var x = e.clientX - rect.left;
                 var y = e.clientY - rect.top;
 
-                // 3D tilt — rotate toward whichever corner/edge the cursor is near
-                var px = (x / rect.width) - 0.5; // -0.5 .. 0.5
-                var py = (y / rect.height) - 0.5; // -0.5 .. 0.5
-                var rotateY = px * icpMaxTilt * 2;
-                var rotateX = py * -icpMaxTilt * 2;
+                var px = (x / rect.width) - 0.5;
+                var py = (y / rect.height) - 0.5;
+                var rotateY = px * maxTilt * 2;
+                var rotateX = py * -maxTilt * 2;
                 card.style.transform =
                     'perspective(800px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateZ(-6px) translateY(-4px)';
 
-                // glow following the cursor, clipped to a 50px radius
-                icpGlow.style.left = x + 'px';
-                icpGlow.style.top = y + 'px';
-                icpGlow.style.opacity = '1';
+                glow.style.left = x + 'px';
+                glow.style.top = y + 'px';
+                glow.style.opacity = '1';
             });
 
             card.addEventListener('mouseleave', function() {
                 card.style.transform = '';
-                icpGlow.style.opacity = '0';
+                glow.style.opacity = '0';
             });
         });
-
     })();
 </script>

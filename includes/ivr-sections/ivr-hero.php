@@ -18,7 +18,7 @@
         /* Backgrounds */
         --ivr-bg: #F8FAFC;
         --ivr-bg-light: #EEF2FF;
-        --ivr-bg-blue: #E5EFFD;
+        --ivr-bg-blue: #EFF6FF;
         --ivr-bg-dark: #0F172A;
         --ivr-bg-dark-alt: #111827;
 
@@ -33,6 +33,7 @@
         --ivr-text-secondary: #475569;
         --ivr-text-muted: #64748B;
         --ivr-text-light: #F8FAFC;
+        --ivr-text-muted-light: #A5B4CB;
 
         /* Gradients */
         --ivr-gradient-primary: linear-gradient(135deg, #6366F1 0%, #2563EB 100%);
@@ -63,48 +64,32 @@
         --ivr-transition-slow: 0.6s ease;
     }
 
-
-    /* //////////////////////////////////// Hero Section Start Here ///////////////////////////////////// */
-
-    .ivr-hero {
+    .ivr-about {
         position: relative;
         width: 100%;
-        min-height: 578px;
-        display: flex;
-        align-items: center;
-        padding: 35px 80px;
+        padding: 40px 80px;
         overflow: hidden;
-        background: var(--ivr-bg-blue);
-        font-family: "Segoe UI", Roboto, sans-serif;
+        background: var(--ivr-bg);
     }
 
-    #canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .ivr-hero_content {
+    .ivr-about_content {
         position: relative;
         z-index: 10;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
-        gap: 48px;
+        gap: 54px;
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
     }
 
-    .ivr-hero_content-text {
-        max-width: 560px;
+    .ivr-about_content-text {
+        max-width: 480px;
+        flex: 0 0 auto;
     }
 
-    .ivr-hero_content-text .eyebrow {
+    .ivr-about_content-text .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -121,7 +106,7 @@
         margin-bottom: 20px;
     }
 
-    .ivr-hero_content-text .eyebrow i {
+    .ivr-about_content-text .eyebrow i {
         width: 8px;
         height: 8px;
         border-radius: 50%;
@@ -129,29 +114,26 @@
         display: inline-block;
     }
 
-    .ivr-hero_content-text h1 {
-        font-size: clamp(32px, 4vw, 48px);
-        line-height: 1.15;
+    .ivr-about_content-text h2 {
+        font-size: clamp(28px, 3.4vw, 44px);
+        line-height: 1.18;
         font-weight: 700;
         margin: 0 0 20px;
         color: var(--ivr-text-primary);
     }
 
-    .ivr-hero_content-text p {
-        font-size: 17px;
-        line-height: 1.6;
+    .ivr-about_content-text p {
+        font-size: 16px;
+        line-height: 1.7;
         color: var(--ivr-text-secondary);
-        margin: 0 0 32px;
+        margin: 0 0 18px;
     }
 
-    .ivr-hero_content--cta {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
+    .ivr-about_content-text p:last-of-type {
+        margin-bottom: 32px;
     }
 
-    .ivr-hero_content--cta-btn-one,
-    .ivr-hero_content--cta-btn-two {
+    .ivr-about_content-text .ivr-about_cta {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -160,339 +142,176 @@
         font-weight: 600;
         font-size: 15px;
         text-decoration: none;
-        transition: transform var(--ivr-transition-fast), box-shadow var(--ivr-transition-fast);
-    }
-
-    .ivr-hero_content--cta-btn-one {
         background: var(--ivr-gradient-primary);
         color: var(--ivr-text-light);
         box-shadow: var(--ivr-glow-purple);
+        transition: transform var(--ivr-transition-fast), box-shadow var(--ivr-transition-fast);
     }
 
-    .ivr-hero_content--cta-btn-one:hover {
+    .ivr-about_content-text .ivr-about_cta:hover {
         transform: translateY(-2px);
         box-shadow: var(--ivr-glow-blue);
     }
 
-    .ivr-hero_content--cta-btn-two {
-        background: var(--ivr-card);
-        color: var(--ivr-text-primary);
-        border: 1px solid var(--ivr-border);
+    .ivr-about_content-features {
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 
-    .ivr-hero_content--cta-btn-two:hover {
-        transform: translateY(-2px);
+    .ivr-feature-card {
+        position: relative;
+        background: var(--ivr-card);
+        border: 1px solid var(--ivr-border);
+        border-radius: var(--ivr-radius-lg);
+        padding: 26px 22px;
+        box-shadow: var(--ivr-shadow-sm);
+        transition: transform var(--ivr-transition-fast), box-shadow var(--ivr-transition-fast);
+    }
+
+    .ivr-feature-card:hover {
+        transform: translateY(-4px);
         box-shadow: var(--ivr-shadow-md);
     }
 
-    .ivr-hero_content-visual {
-        flex: 0 0 auto;
+    .ivr-feature-card--icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--ivr-radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        background: var(--ivr-gradient-ai);
+        color: var(--ivr-text-light);
+        font-size: 18px;
     }
 
-    .ivr-hero_content-visual--img {
-        width: 520px;
-        /* max-width: 40vw; */
-        border-radius: var(--ivr-radius-lg);
-        overflow: hidden;
-        box-shadow: var(--ivr-shadow-lg);
-        background: var(--ivr-card);
+    .ivr-feature-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        color: var(--ivr-text-primary);
     }
 
-    .ivr-hero_content-visual--img img {
-        display: block;
-        width: 100%;
-        height: auto;
+    .ivr-feature-card p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--ivr-text-muted);
+        margin: 0;
     }
 
     @media (max-width: 900px) {
-        .ivr-hero {
-            padding: 90px 20px 40px;
+        .ivr-about {
+            padding: 60px 20px;
         }
 
-        .ivr-hero_content {
-            flex-direction: column-reverse;
+        .ivr-about_content {
+            flex-direction: column;
+        }
+
+        .ivr-about_content-text {
+            max-width: 100%;
             text-align: center;
         }
 
-        .ivr-hero_content-text {
-            max-width: 100%;
+        .ivr-about_content-text .ivr-about_cta {
+            margin: 0 auto;
         }
 
-        .ivr-hero_content--cta {
-            justify-content: center;
-        }
-
-        .ivr-hero_content-visual--img {
+        .ivr-about_content-features {
+            grid-template-columns: 1fr 1fr;
             width: 100%;
-            max-width: 420px;
         }
     }
 
-    .decor-hero-glow {
+    @media (max-width: 560px) {
+        .ivr-about_content-features {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .decor-about-glow {
         position: absolute;
-        top: -180px;
-        left: -160px;
-        width: 480px;
-        height: 480px;
+        bottom: -160px;
+        right: -140px;
+        width: 460px;
+        height: 460px;
         border-radius: 50%;
         background: var(--ivr-gradient-glow);
-        opacity: .18;
-        filter: blur(60px);
+        opacity: .14;
+        filter: blur(70px);
         z-index: 0;
         pointer-events: none;
-        animation: hero-glow-drift 12s ease-in-out infinite;
+        animation: hero-glow-drift 14s ease-in-out infinite;
     }
 
-    @keyframes hero-glow-drift {
-
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(30px, 20px) scale(1.08);
-        }
-    }
-
-    .decor-hero-ring {
+    .decor-about-grid {
         position: absolute;
-        top: -90px;
-        right: -90px;
-        width: 300px;
-        height: 300px;
-        border: 2px dashed var(--ivr-primary-light, #818CF8);
-        border-radius: 50%;
-        opacity: .3;
-        z-index: 1;
-        pointer-events: none;
-        animation: hero-ring-spin 20s linear infinite;
-    }
-
-    .decor-hero-ring::before {
-        content: '';
-        position: absolute;
-        inset: 34px;
-        border: 2px dashed var(--ivr-cyan);
-        border-radius: 50%;
-        opacity: .6;
-    }
-
-    @keyframes hero-ring-spin {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .decor-hero-grid {
-        position: absolute;
-        bottom: -20px;
+        top: -10px;
         left: -20px;
-        width: 260px;
-        height: 220px;
+        width: 220px;
+        height: 200px;
         background-image: radial-gradient(circle, var(--ivr-primary) 1.6px, transparent 1.6px);
         background-size: 24px 24px;
-        -webkit-mask-image: radial-gradient(ellipse at bottom left, black 0%, black 25%, transparent 72%);
-        mask-image: radial-gradient(ellipse at bottom left, black 0%, black 25%, transparent 72%);
-        opacity: .28;
+        -webkit-mask-image: radial-gradient(ellipse at top left, black 0%, black 25%, transparent 72%);
+        mask-image: radial-gradient(ellipse at top left, black 0%, black 25%, transparent 72%);
+        opacity: .22;
         z-index: 0;
         pointer-events: none;
-        animation: hero-grid-shift 9s ease-in-out infinite;
     }
 
-    @keyframes hero-grid-shift {
-
-        0%,
-        100% {
-            background-position: 0 0;
-        }
-
-        50% {
-            background-position: 8px -8px;
-        }
-    }
-
-    .decor-hero-orb {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .decor-hero-orb.o1 {
-        width: 14px;
-        height: 14px;
-        top: 40px;
-        right: 70px;
-        background: var(--ivr-purple);
-        opacity: .5;
-        animation: hero-orb-1 5s ease-in-out infinite;
-    }
-
-    .decor-hero-orb.o2 {
-        width: 9px;
-        height: 9px;
-        bottom: 100px;
-        right: 20px;
-        background: var(--ivr-cyan);
-        opacity: .5;
-        animation: hero-orb-2 6s ease-in-out infinite .3s;
-    }
-
-    .decor-hero-orb.o3 {
-        width: 20px;
-        height: 20px;
-        top: 200px;
-        right: -10px;
-        background: var(--ivr-blue);
-        opacity: .3;
-        animation: hero-orb-1 7s ease-in-out infinite .6s;
-    }
-
-    @keyframes hero-orb-1 {
-
-        0%,
-        100% {
-            transform: translate(0, 0);
-        }
-
-        50% {
-            transform: translate(-10px, -14px);
-        }
-    }
-
-    @keyframes hero-orb-2 {
-
-        0%,
-        100% {
-            transform: translate(0, 0);
-        }
-
-        50% {
-            transform: translate(-8px, 10px);
-        }
-    }
+    /* ////////////////////////// About / Value Section End ///////////////////////////////////// */
 </style>
 
-<!-- ////////////////////////////////////////////////// Hero Section //////////////////////////////////////-->
-<section class="ivr-hero" id="first-section">
-    <div class="decor-hero-glow"></div>
-    <div class="decor-hero-ring"></div>
-    <div class="decor-hero-grid"></div>
-    <div class="decor-hero-orb o1"></div>
-    <div class="decor-hero-orb o2"></div>
-    <div class="decor-hero-orb o3"></div>
-    <!-- <canvas id="canvas"></canvas> -->
-    <div class="ivr-hero_content">
-        <div class="ivr-hero_content-text">
-            <span class="eyebrow"><i></i>IVR, VOICE & TELECOM</span>
-            <h1>Power Every Conversation With Intelligent Voice Communication</h1>
-            <p>Automate calls, connect customers, and streamline communication with powerful IVR, toll-free, missed-call, OBD voice and shortcode solutions.</p>
-            <div class="ivr-hero_content--cta">
-                <a href="contact.php" class="ivr-hero_content--cta-btn-one">Get Started</a>
-                <a href="#products" class="ivr-hero_content--cta-btn-two">Explore More</a>
-            </div>
+<!-- /////////////////////////////////// About / Value Section //////////////////////////////////////-->
+<section class="ivr-about" id="about-section">
+    <div class="decor-about-glow"></div>
+    <div class="decor-about-grid"></div>
+
+    <div class="ivr-about_content">
+        <div class="ivr-about_content-text">
+            <span class="eyebrow"><i></i>CLOUD-HOSTED IVR SOLUTION</span>
+            <h2>Turn Every Missed Call Into Business Growth</h2>
+            <p>Every busy tone is a lost customer. When urgent buyers call, long hold times, manual line transfers, and restrictive office hours drive them straight to your competitors.</p>
+            <p>An enterprise-grade IVR service transforms your voice channels into an automated, 24/7 sales and customer support engine — answering thousands of calls simultaneously without missing a beat. Hosted in the cloud, it gives fast-growing startups, e-commerce brands, and large enterprises alike the backbone they need for a smooth, professional customer experience at a fraction of the cost.</p>
+            <a href="contact.php" class="ivr-about_cta">Talk to an Expert</a>
         </div>
-        <div class="ivr-hero_content-visual">
-            <div class="ivr-hero_content-visual--img" style="background: var(--ivr-bg-blue);">
-                <img src="assets/images/ivr1.png" alt="IVR platform preview" onerror="this.closest('.ivr-hero_content-visual--img').style.display='none'">
+
+        <div class="ivr-about_content-features">
+            <div class="ivr-feature-card">
+                <div class="ivr-feature-card--icon">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+                <h3>Intelligent Call Routing</h3>
+                <p>Automatically direct every caller to the right department or agent, every single time.</p>
+            </div>
+
+            <div class="ivr-feature-card">
+                <div class="ivr-feature-card--icon">
+                    <i class="fa-solid fa-hand-pointer"></i>
+                </div>
+                <h3>Self-Service Options</h3>
+                <p>Let customers resolve common queries instantly, without waiting on hold for an agent.</p>
+            </div>
+
+            <div class="ivr-feature-card">
+                <div class="ivr-feature-card--icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3>Multi-Language Prompts</h3>
+                <p>Greet and guide callers in the language they're most comfortable with.</p>
+            </div>
+
+            <div class="ivr-feature-card">
+                <div class="ivr-feature-card--icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h3>Easy CRM Integration</h3>
+                <p>Sync call data seamlessly with your existing CRM for one unified customer view.</p>
             </div>
         </div>
     </div>
 </section>
-<!-- ///////////////////////////////////////// Hero Section End ///////////////////////////////////////////-->
-
-<script>
-    (function() {
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const hero = document.querySelector('.ivr-hero');
-
-        let width, height, dots = [],
-            rafId = null;
-
-        const SPACING = 20,
-            BASE_RADIUS = 1,
-            REPEL_RADIUS = 120,
-            REPEL_STRENGTH = 40,
-            EASE = 0.12;
-
-        const mouse = {
-            x: -9999,
-            y: -9999
-        };
-
-        function resize() {
-            width = canvas.width = hero.offsetWidth;
-            height = canvas.height = hero.offsetHeight;
-            initDots();
-        }
-
-        function initDots() {
-            dots = [];
-            const cols = Math.ceil(width / SPACING) + 1;
-            const rows = Math.ceil(height / SPACING) + 1;
-            for (let i = 0; i < cols; i++) {
-                for (let j = 0; j < rows; j++) {
-                    dots.push({
-                        baseX: i * SPACING,
-                        baseY: j * SPACING,
-                        x: i * SPACING,
-                        y: j * SPACING
-                    });
-                }
-            }
-        }
-
-        function onMouseMove(e) {
-            const rect = hero.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
-        }
-
-        function onMouseLeave() {
-            mouse.x = -9999;
-            mouse.y = -9999;
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            for (const dot of dots) {
-                const dx = dot.baseX - mouse.x,
-                    dy = dot.baseY - mouse.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                let targetX = dot.baseX,
-                    targetY = dot.baseY;
-                if (dist < REPEL_RADIUS) {
-                    const force = 1 - dist / REPEL_RADIUS;
-                    const angle = Math.atan2(dy, dx);
-                    targetX += Math.cos(angle) * force * REPEL_STRENGTH;
-                    targetY += Math.sin(angle) * force * REPEL_STRENGTH;
-                }
-                dot.x += (targetX - dot.x) * EASE;
-                dot.y += (targetY - dot.y) * EASE;
-                ctx.beginPath();
-                ctx.arc(dot.x, dot.y, BASE_RADIUS, 0, Math.PI * 2);
-                ctx.fillStyle = '#818CF8';
-                ctx.fill();
-            }
-            rafId = requestAnimationFrame(animate);
-        }
-
-        resize();
-        window.addEventListener('resize', resize);
-        hero.addEventListener('mousemove', onMouseMove);
-        hero.addEventListener('mouseleave', onMouseLeave);
-        animate();
-
-        // Cleanup if this markup is ever removed from the DOM dynamically
-        window.addEventListener('beforeunload', () => {
-            if (rafId) cancelAnimationFrame(rafId);
-            window.removeEventListener('resize', resize);
-        });
-    })();
-</script>
+<!-- ///////////////////////////////////////// About / Value Section End ///////////////////////////////////////////-->
