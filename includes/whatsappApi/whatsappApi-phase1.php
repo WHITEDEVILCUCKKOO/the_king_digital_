@@ -182,6 +182,12 @@
         height: 100%;
         overflow: visible;
         z-index: 1;
+        opacity: 0;
+        transition: opacity .6s ease .5s;
+    }
+
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-lines {
+        opacity: 1;
     }
 
 
@@ -218,8 +224,41 @@
 
         z-index: 5;
 
+        opacity: 0;
+        transform: translateY(-42px);
+    }
+
+
+    /* Nodes drop in one-by-one, like raindrops, once the
+       section scrolls into view (see .is-visible toggled by JS). */
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-trigger,
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-message,
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-crm,
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-ai,
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-finish {
         animation:
+            whatsappApi-phase1_dropIn .7s cubic-bezier(.34, 1.56, .64, 1) both,
             whatsappApi-phase1_floatingFlow 5s ease-in-out infinite;
+    }
+
+
+    @keyframes whatsappApi-phase1_dropIn {
+
+        0% {
+            opacity: 0;
+            transform: translateY(-42px);
+        }
+
+        60% {
+            opacity: 1;
+            transform: translateY(6px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     }
 
 
@@ -293,7 +332,10 @@
     .whatsappApi-phase1_content-message {
         left: 15%;
         top: 28%;
-        animation-delay: -.8s;
+    }
+
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-message {
+        animation-delay: .15s, -.8s;
     }
 
 
@@ -367,7 +409,10 @@
     .whatsappApi-phase1_content-crm {
         left: 50%;
         top: 12%;
-        animation-delay: -2.1s;
+    }
+
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-crm {
+        animation-delay: .3s, -2.1s;
     }
 
 
@@ -420,7 +465,10 @@
     .whatsappApi-phase1_content-ai {
         left: 50%;
         top: 58%;
-        animation-delay: -3.4s;
+    }
+
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-ai {
+        animation-delay: .4s, -3.4s;
     }
 
 
@@ -477,7 +525,10 @@
         flex-direction: column;
         align-items: center;
         gap: 8px;
-        animation-delay: -1.5s;
+    }
+
+    .whatsappApi-phase1_content.is-visible .whatsappApi-phase1_content-finish {
+        animation-delay: .6s, -1.5s;
     }
 
 
@@ -1360,3 +1411,29 @@
     </div>
 
 </section>
+
+<script>
+    (function () {
+        var contents = document.querySelectorAll('.whatsappApi-phase1_content');
+
+        if (!contents.length || !('IntersectionObserver' in window)) {
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    // Reset so the raindrop sequence replays next time
+                    // the user scrolls back into this section.
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, { threshold: 0.35 });
+
+        contents.forEach(function (el) {
+            observer.observe(el);
+        });
+    })();
+</script>
