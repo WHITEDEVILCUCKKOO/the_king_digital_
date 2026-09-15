@@ -43,7 +43,7 @@
     .ivr-why_head h2 {
         font-size: clamp(28px, 3.4vw, 44px);
         line-height: 1.2;
-        font-weight: 700;
+        font-weight: 800;
         margin: 0 0 18px;
         color: var(--ivr-text-light);
     }
@@ -127,7 +127,7 @@
     .ivr-why_subhead h3 {
         font-size: clamp(22px, 2.6vw, 30px);
         line-height: 1.25;
-        font-weight: 700;
+        font-weight: 800;
         margin: 0;
         color: var(--ivr-text-light);
     }

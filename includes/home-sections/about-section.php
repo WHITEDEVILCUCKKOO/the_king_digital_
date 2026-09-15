@@ -136,7 +136,6 @@
         color: #101827;
         margin-bottom: 20px;
         text-align: center;
-
         font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 

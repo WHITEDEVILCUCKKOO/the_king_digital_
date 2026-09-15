@@ -117,7 +117,7 @@
     .ivr-about_content-text h2 {
         font-size: clamp(28px, 3.4vw, 44px);
         line-height: 1.18;
-        font-weight: 700;
+        font-weight: 800;
         margin: 0 0 20px;
         color: var(--ivr-text-primary);
     }

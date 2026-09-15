@@ -15,7 +15,7 @@
     .ivr-cta_content {
         position: relative;
         z-index: 10;
-        max-width: 780px;
+        max-width: 800px;
         margin: 0 auto;
     }
 

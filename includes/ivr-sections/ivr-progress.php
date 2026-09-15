@@ -50,9 +50,9 @@
     }
 
     .ivr-process_head h2 {
-        font-size: clamp(28px, 3.4vw, 40px);
+        font-size: clamp(28px, 3.4vw, 44px);
         line-height: 1.2;
-        font-weight: 700;
+        font-weight: 800;
         margin: 0 0 16px;
         color: var(--ivr-text-primary);
     }
