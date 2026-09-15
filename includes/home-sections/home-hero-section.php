@@ -1191,6 +1191,33 @@
             display: none;
         }
     }
+
+    @media (max-width: 900px) {
+        .home-hero-section_info {
+            text-align: center;
+        }
+
+        .home-hero-section_title {
+            font-size: 28px;
+        }
+
+        .home-hero-section_title span {
+            font-size: 30px;
+        }
+
+        .home-hero-section_description {
+            font-size: 20px;
+        }
+
+        .home-hero-section_cta-button {
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-size: 10px;
+        }
+        .home-hero-section_autotyping {
+            font-size: 15px;
+        }
+    }
 </style>
 
 <section class="home-hero-section" id="home-hero-section">
