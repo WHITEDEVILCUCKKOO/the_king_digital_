@@ -214,6 +214,7 @@
         transform: translateY(-12px) scale(1.035) rotateX(3deg);
         border-color: rgba(255, 255, 255, .58);
         box-shadow: 0 28px 58px rgba(239, 86, 13, .23), inset 0 1px 1px rgba(255, 255, 255, .58);
+        cursor: pointer;
     }
 
     .kdts-card:hover::before {
@@ -498,7 +499,7 @@
             <div class="kdts-track-group" id="kdts-group-a">
 
                 <!-- card 1 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/11.jpg" class="kdts-avatar" src="" alt="Mia R.">
                         <div>
@@ -516,7 +517,7 @@
                 </div>
 
                 <!-- card 2 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/15.jpg" class="kdts-avatar" src="" alt="James C.">
                         <div>
@@ -534,7 +535,7 @@
                 </div>
 
                 <!-- card 3 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/21.jpg" class="kdts-avatar" src="" alt="Ava T.">
                         <div>
@@ -552,7 +553,7 @@
                 </div>
 
                 <!-- card 4 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/32.jpg" class="kdts-avatar" src="" alt="Robert M.">
                         <div>
@@ -570,7 +571,7 @@
                 </div>
 
                 <!-- card 5 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/44.jpg" class="kdts-avatar" src="" alt="Sophia L.">
                         <div>
@@ -588,7 +589,7 @@
                 </div>
 
                 <!-- card 6 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/45.jpg" class="kdts-avatar" src="" alt="Daniel K.">
                         <div>
@@ -612,7 +613,7 @@
             <div class="kdts-track-group" id="kdts-group-b" aria-hidden="true">
 
                 <!-- card 7 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/52.jpg" class="kdts-avatar" src="" alt="Mia R.">
                         <div>
@@ -630,7 +631,7 @@
                 </div>
 
                 <!-- card 8 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/62.jpg" class="kdts-avatar" src="" alt="James C.">
                         <div>
@@ -648,7 +649,7 @@
                 </div>
 
                 <!-- card 9 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/68.jpg" class="kdts-avatar" src="" alt="Ava T.">
                         <div>
@@ -666,7 +667,7 @@
                 </div>
 
                 <!-- card 10 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/71.jpg" class="kdts-avatar" src="" alt="Robert M.">
                         <div>
@@ -684,7 +685,7 @@
                 </div>
 
                 <!-- card 11 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/75.jpg" class="kdts-avatar" src="" alt="Sophia L.">
                         <div>
@@ -702,7 +703,7 @@
                 </div>
 
                 <!-- card 12 -->
-                <div class="kdts-card">
+                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
                         <img src="assets/images/img/90.jpg" class="kdts-avatar" src="" alt="Daniel K.">
                         <div>

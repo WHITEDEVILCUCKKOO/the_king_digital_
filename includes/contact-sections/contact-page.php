@@ -539,9 +539,9 @@
                     <div>
                         <p class="qcontact-info-label">SALES EMAIL</p>
                         <p class="qcontact-info-value">info@kingdigital.in</p>
-                        <p class="qcontact-info-value">sales@staticking.com</p>
+                        <!-- <p class="qcontact-info-value">sales@staticking.com</p> -->
                         <p class="qcontact-info-value">support@staticking.com</p>
-                        <p class="qcontact-info-value">billing@staticking.com</p>
+                        <!-- <p class="qcontact-info-value">billing@staticking.com</p> -->
                     </div>
                 </div>
 
@@ -560,7 +560,7 @@
                     <div>
                         <p class="qcontact-info-label">Sales</p>
 
-                        <p class="qcontact-info-value qcontact-teal">+91-9211339966</p>
+                        <!-- <p class="qcontact-info-value qcontact-teal">+91-9211339966</p> -->
                         <p class="qcontact-info-value qcontact-teal">+91-9210763636</p>
                     </div>
                 </div>
