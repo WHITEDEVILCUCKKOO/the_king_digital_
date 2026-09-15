@@ -134,7 +134,7 @@
     }
 
     .ivr-about_content-text .ivr-about_cta {
-        display: inline-flex;
+        display: none;
         align-items: center;
         justify-content: center;
         padding: 14px 28px;
@@ -146,12 +146,12 @@
         color: var(--ivr-text-light);
         box-shadow: var(--ivr-glow-purple);
         transition: transform var(--ivr-transition-fast), box-shadow var(--ivr-transition-fast);
-    }
+    } 
 
-    .ivr-about_content-text .ivr-about_cta:hover {
+    /* .ivr-about_content-text .ivr-about_cta:hover {
         transform: translateY(-2px);
         box-shadow: var(--ivr-glow-blue);
-    }
+    } */
 
     .ivr-about_content-features {
         flex: 1 1 auto;
@@ -276,7 +276,7 @@
             <h2>Turn Every Missed Call Into Business Growth</h2>
             <p>Every busy tone is a lost customer. When urgent buyers call, long hold times, manual line transfers, and restrictive office hours drive them straight to your competitors.</p>
             <p>An enterprise-grade IVR service transforms your voice channels into an automated, 24/7 sales and customer support engine — answering thousands of calls simultaneously without missing a beat. Hosted in the cloud, it gives fast-growing startups, e-commerce brands, and large enterprises alike the backbone they need for a smooth, professional customer experience at a fraction of the cost.</p>
-            <a href="contact.php" class="ivr-about_cta">Talk to an Expert</a>
+            <!-- <a href="contact.php" class="ivr-about_cta">Talk to an Expert</a> -->
         </div>
 
         <div class="ivr-about_content-features">

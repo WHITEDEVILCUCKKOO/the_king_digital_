@@ -2,6 +2,7 @@
 
 <main style="overflow: hidden; font-family:'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif">
 
+    <?php require_once __DIR__ . '/includes/ivr-sections/ivr-hero-1.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-hero.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-why.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-features.php' ?>
