@@ -329,28 +329,28 @@
  
     <div class="qplead-clients" id="qpleadClients">
       <div class="qplead-client-card card1298he">
-        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">Pizza Hut</h3>
-        <p class="qplead-client-cat" style="font-size: 12px;">QSR &amp; Food Tech</p>
+        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">Amul</h3>
+        <p class="qplead-client-cat" style="font-size: 12px;">The Taste of India</p>
       </div>
       <div class="qplead-client-card card1298he">
-        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">FirstCry</h3>
-        <p class="qplead-client-cat" style="font-size: 12px;">E-commerce &amp; Retail</p>
+        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">DLF</h3>
+        <p class="qplead-client-cat" style="font-size: 12px;">Brand LTD.</p>
       </div>
       <div class="qplead-client-card card1298he">
-        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">Mamaearth</h3>
-        <p class="qplead-client-cat" style="font-size: 12px;">D2C &amp; Personal Care</p>
+        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">SBI</h3>
+        <p class="qplead-client-cat" style="font-size: 12px;">State Bank of India</p>
       </div>
       <div class="qplead-client-card card1298he">
-        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">AU Bank</h3>
-        <p class="qplead-client-cat" style="font-size: 12px;">BFSI &amp; Digital Banking</p>
+        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">TATA</h3>
+        <p class="qplead-client-cat" style="font-size: 12px;">TATA Consu</p>
       </div>
       <div class="qplead-client-card card1298he">
-        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">Guardian</h3>
-        <p class="qplead-client-cat" style="font-size: 12px;">HealthTech &amp; Pharmacy</p>
+        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">TCI</h3>
+        <p class="qplead-client-cat" style="font-size: 12px;">Leaders in Logistics</p>
       </div>
       <div class="qplead-client-card card1298he">
-        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">Huphen</h3>
-        <p class="qplead-client-cat" style="font-size: 12px;">SaaS &amp; Enterprise Tech</p>
+        <h3 class="qplead-client-name" style="font-size: 15px;color:var(--text-body);">Reniso</h3>
+        <p class="qplead-client-cat" style="font-size: 12px;">Property Management Simplified</p>
       </div>
     </div>
  

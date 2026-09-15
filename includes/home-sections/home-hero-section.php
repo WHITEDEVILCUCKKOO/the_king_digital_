@@ -277,16 +277,16 @@
 
     .home-hero-section_title {
         margin: 0 0 18px;
-        font-size: 56px;
+        font-size: 50px;
         line-height: 1.18;
         font-weight: bolder;
         color: var(--color-text-light);
         letter-spacing: -0.5px;
-        font-family: Manrope;
+        /* font-family: Manrope; */
     }
 
     .home-hero-section_title span {
-        font-size: 62px;
+        font-size: 50px;
         background: var(--gradient-brand);
         -webkit-background-clip: text;
         background-clip: text;
@@ -1235,15 +1235,15 @@
                 <div class="home-hero-section_badge-rating"><span>4.5</span> Customer Rating</div>
             </div>
             <h1 class="home-hero-section_title">
-                Empowering Communication with
-                <span>AI-Driven King Digital</span>
+                Powering Better Business Communication
+                <span>AI-Driven KingDigital</span>
             </h1>
             <div class="home-hero-section_autotyping">
                 <span class="typed">Smart Solutions for</span>
                 <span class="typing"></span>
             </div>
             <p class="home-hero-section_description">
-                Deploy official WhatsApp Business API, A2P bulk SMS, IVR, and AI voice bots on your own server — or use our secure cloud communications platform.
+                Reach your audience through SMS, WhatsApp, voice, and other communication channels with solutions built around the way your business actually works.
             </p>
             <div class="home-hero-section_cta-section">
                 <a href="contact.php" class="home-hero-section_cta-button">Get Started</a>
