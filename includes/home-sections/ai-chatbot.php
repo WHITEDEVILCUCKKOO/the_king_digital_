@@ -125,6 +125,7 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        text-align: left;
         max-width: 52ch;
         font-size: 15.5px;
         line-height: 1.7;
