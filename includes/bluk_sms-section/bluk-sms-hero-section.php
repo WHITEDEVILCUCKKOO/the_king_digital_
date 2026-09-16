@@ -1,4 +1,2153 @@
 <style>
+/* =========================================================
+   KING DIGITAL — BULK SMS HERO
+   CLEAN PREMIUM FINAL
+========================================================= */
+
+.kdsms-hero,
+.kdsms-hero *{
+    box-sizing:border-box;
+}
+
+.kdsms-hero{
+    --blue:#0A5CFF;
+    --blue2:#4C7DFF;
+    --navy:#101828;
+    --text:#5F6878;
+    --green:#18A765;
+
+    position:relative;
+    width:100%;
+    overflow:hidden;
+
+    padding:88px 48px;
+
+    font-family:'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,
+    'Open Sans','Helvetica Neue',sans-serif;
+
+    background:
+        radial-gradient(circle at 88% 25%,
+        rgba(67,116,255,.14),transparent 34%),
+
+        radial-gradient(circle at 10% 92%,
+        rgba(102,86,255,.10),transparent 32%),
+
+        linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f8faff 38%,
+        #edf3ff 72%,
+        #e7eeff 100%
+        );
+}
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.kdsms-hero::before{
+    content:"";
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    right:-180px;
+    top:-200px;
+
+    border-radius:50%;
+
+    border:1px dashed rgba(10,92,255,.13);
+
+    animation:kdsmsRotate 28s linear infinite;
+}
+
+@keyframes kdsmsRotate{
+    to{transform:rotate(360deg);}
+}
+
+.kdsms-dots{
+    position:absolute;
+
+    left:-30px;
+    bottom:-45px;
+
+    width:280px;
+    height:230px;
+
+    opacity:.18;
+
+    background-image:
+    radial-gradient(circle,#4F46E5 1.4px,transparent 1.4px);
+
+    background-size:24px 24px;
+
+    -webkit-mask-image:
+    radial-gradient(ellipse at bottom left,#000,transparent 72%);
+
+    mask-image:
+    radial-gradient(ellipse at bottom left,#000,transparent 72%);
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.kdsms-container{
+    position:relative;
+    z-index:5;
+
+    width:100%;
+    max-width:1380px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    minmax(0,1.08fr)
+    minmax(500px,.92fr);
+
+    align-items:center;
+
+    gap:70px;
+}
+
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.kdsms-content{
+    width:100%;
+}
+
+
+/* badge */
+
+.kdsms-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 13px;
+
+    border-radius:999px;
+
+    background:#07355f21;
+
+    color:#0A5CFF;
+
+    font-size:13px;
+    line-height:1.2;
+    font-weight:600;
+}
+
+.kdsms-badge svg{
+    width:15px;
+    height:15px;
+}
+
+
+/* title */
+
+.kdsms-title{
+    max-width:760px;
+
+    margin:15px 0 0;
+
+    color:#111827;
+
+    font-family:'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,
+    'Open Sans','Helvetica Neue',sans-serif;
+
+    font-size:clamp(35px,3.5vw,44px);
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+
+    font-weight:800;
+}
+
+.kdsms-title span{
+    display:block;
+    color:#0A5CFF;
+}
+
+
+/* description */
+
+.kdsms-description{
+    width:100%;
+    max-width:720px;
+
+    margin:18px 0 0;
+
+    color:#606978;
+
+    font-size:15px;
+
+    line-height:1.75;
+}
+
+.kdsms-description strong{
+    color:#101828;
+}
+
+.kdsms-extra{
+    display:none;
+}
+
+#kdsmsRead{
+    color:#0A5CFF;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.kdsms-features{
+    display:flex;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:23px;
+}
+
+.kdsms-feature{
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    padding:7px 11px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(10,92,255,.18);
+
+    color:#0A5CFF;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    transition:.25s ease;
+}
+
+.kdsms-feature span{
+    width:17px;
+    height:17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#E8F1FF;
+
+    font-size:10px;
+}
+
+.kdsms-feature:hover{
+    transform:translateY(-3px);
+
+    background:#0A5CFF;
+
+    color:#fff;
+}
+
+.kdsms-feature:hover span{
+    background:rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.kdsms-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    margin-top:23px;
+
+    padding:12px 27px;
+
+    border:0;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(135deg,#0B5CFF,#172A50);
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 12px 28px rgba(10,92,255,.20);
+
+    transition:.28s ease;
+}
+
+.kdsms-btn svg{
+    width:17px;
+    height:17px;
+
+    transition:.28s ease;
+}
+
+.kdsms-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 17px 35px rgba(10,92,255,.27);
+}
+
+.kdsms-btn:hover svg{
+    transform:translateX(4px);
+}
+
+
+/* =========================================================
+   RIGHT VISUAL STAGE
+========================================================= */
+
+.kdsms-visual{
+    position:relative;
+
+    width:520px;
+    height:480px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* background glow */
+
+.kdsms-visual-glow{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:410px;
+    height:410px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    rgba(10,92,255,.16) 0%,
+    rgba(10,92,255,.07) 38%,
+    transparent 68%
+    );
+
+    animation:kdsmsGlow 4s ease-in-out infinite;
+}
+
+@keyframes kdsmsGlow{
+
+    0%,100%{
+        transform:
+        translate(-50%,-50%)
+        scale(.94);
+
+        opacity:.75;
+    }
+
+    50%{
+        transform:
+        translate(-50%,-50%)
+        scale(1.05);
+
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   MAIN COMPOSER CARD
+========================================================= */
+
+.kdsms-composer{
+    position:relative;
+
+    z-index:10;
+
+    width:425px;
+
+    padding:20px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,.96),
+    rgba(248,251,255,.91)
+    );
+
+    border:1px solid rgba(10,92,255,.10);
+
+    box-shadow:
+    0 35px 75px rgba(35,64,116,.16);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    animation:kdsmsCardFloat 5s ease-in-out infinite;
+}
+
+@keyframes kdsmsCardFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.kdsms-composer-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding-bottom:16px;
+
+    border-bottom:1px solid #EDF1F7;
+}
+
+.kdsms-brand{
+    display:flex;
+    align-items:center;
+
+    gap:11px;
+}
+
+.kdsms-logo{
+    width:44px;
+    height:44px;
+
+    flex:0 0 44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:
+    linear-gradient(135deg,#0A5CFF,#5B82FF);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    box-shadow:
+    0 8px 18px rgba(10,92,255,.20);
+}
+
+.kdsms-brand-copy strong{
+    display:block;
+
+    color:#101828;
+
+    font-size:15px;
+
+    line-height:1.2;
+}
+
+.kdsms-brand-copy span{
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:4px;
+
+    color:#18A765;
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+.kdsms-brand-copy span::before{
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#20C878;
+
+    animation:kdsmsOnline 1.8s infinite;
+}
+
+@keyframes kdsmsOnline{
+
+    0%{
+        box-shadow:
+        0 0 0 0 rgba(32,200,120,.4);
+    }
+
+    70%{
+        box-shadow:
+        0 0 0 7px rgba(32,200,120,0);
+    }
+
+    100%{
+        box-shadow:
+        0 0 0 0 rgba(32,200,120,0);
+    }
+}
+
+.kdsms-live{
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    background:#EAF2FF;
+
+    color:#0A5CFF;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   CAMPAIGN TYPE
+========================================================= */
+
+.kdsms-label{
+    display:block;
+
+    margin-top:17px;
+
+    color:#8A94A6;
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+.kdsms-type-row{
+    display:flex;
+
+    gap:7px;
+
+    margin-top:8px;
+}
+
+.kdsms-type{
+    flex:1;
+
+    padding:8px 5px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    background:#F4F7FC;
+
+    color:#7A8495;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    border:1px solid transparent;
+
+    transition:.25s ease;
+}
+
+.kdsms-type.active{
+    background:#EAF2FF;
+
+    border-color:rgba(10,92,255,.13);
+
+    color:#0A5CFF;
+}
+
+
+/* =========================================================
+   MESSAGE PREVIEW
+========================================================= */
+
+.kdsms-message-box{
+    position:relative;
+
+    margin-top:14px;
+
+    padding:17px;
+
+    min-height:142px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    145deg,
+    #F6F9FF,
+    #EDF3FF
+    );
+
+    border:1px solid rgba(10,92,255,.08);
+}
+
+.kdsms-message-box::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+    bottom:0;
+
+    width:4px;
+
+    background:
+    linear-gradient(
+    180deg,
+    #0A5CFF,
+    #6B88FF
+    );
+}
+
+.kdsms-message-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+}
+
+.kdsms-sender{
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    color:#101828;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.kdsms-sender-icon{
+    width:26px;
+    height:26px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:8px;
+
+    background:#fff;
+
+    color:#0A5CFF;
+
+    box-shadow:
+    0 4px 12px rgba(30,62,120,.08);
+}
+
+.kdsms-sender-icon svg{
+    width:13px;
+    height:13px;
+}
+
+.kdsms-char{
+    color:#9AA4B5;
+
+    font-size:10px;
+}
+
+#kdsmsMessage{
+    margin:13px 0 0;
+
+    min-height:54px;
+
+    color:#4E5A6D;
+
+    font-size:13px;
+
+    line-height:1.55;
+
+    transition:
+    opacity .22s ease,
+    transform .22s ease;
+}
+
+
+/* =========================================================
+   MESSAGE BOTTOM
+========================================================= */
+
+.kdsms-message-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:13px;
+
+    padding-top:11px;
+
+    border-top:1px solid rgba(15,23,42,.06);
+}
+
+.kdsms-audience{
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    color:#7C8798;
+
+    font-size:10px;
+}
+
+.kdsms-audience svg{
+    width:13px;
+    height:13px;
+
+    color:#0A5CFF;
+}
+
+.kdsms-ready{
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+    color:#18A765;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.kdsms-ready i{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#20C878;
+}
+
+
+/* =========================================================
+   SEND AREA
+========================================================= */
+
+.kdsms-send-area{
+    display:flex;
+    align-items:center;
+
+    gap:11px;
+
+    margin-top:15px;
+}
+
+.kdsms-send-button{
+    position:relative;
+
+    flex:1;
+
+    height:48px;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:13px;
+
+    background:
+    linear-gradient(135deg,#0A5CFF,#426FDD);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    box-shadow:
+    0 10px 22px rgba(10,92,255,.20);
+}
+
+.kdsms-send-button svg{
+    width:16px;
+    height:16px;
+}
+
+.kdsms-send-shine{
+    position:absolute;
+
+    top:0;
+    left:-80px;
+
+    width:55px;
+    height:100%;
+
+    transform:skewX(-20deg);
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+    );
+
+    animation:kdsmsShine 3s infinite;
+}
+
+@keyframes kdsmsShine{
+
+    0%,20%{
+        left:-80px;
+    }
+
+    70%,100%{
+        left:115%;
+    }
+}
+
+.kdsms-speed{
+    width:108px;
+    height:48px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:#F3F7FF;
+
+    border:1px solid rgba(10,92,255,.07);
+}
+
+.kdsms-speed small{
+    color:#98A2B3;
+
+    font-size:9px;
+}
+
+.kdsms-speed strong{
+    margin-top:2px;
+
+    color:#101828;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.kdsms-progress{
+    position:relative;
+
+    width:100%;
+    height:5px;
+
+    margin-top:14px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:#E8EDF6;
+}
+
+.kdsms-progress span{
+    display:block;
+
+    width:0;
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(90deg,#0A5CFF,#5C83FF);
+
+    animation:kdsmsProgress 3.6s ease-in-out infinite;
+}
+
+@keyframes kdsmsProgress{
+
+    0%{
+        width:0;
+    }
+
+    75%,100%{
+        width:100%;
+    }
+}
+
+
+/* =========================================================
+   DELIVERY POPUP
+========================================================= */
+
+.kdsms-delivery{
+    position:absolute;
+
+    z-index:30;
+
+    right:-16px;
+    bottom:34px;
+
+    width:180px;
+
+    padding:13px;
+
+    border-radius:16px;
+
+    background:#fff;
+
+    border:1px solid rgba(24,167,101,.13);
+
+    box-shadow:
+    0 18px 38px rgba(31,64,110,.15);
+
+    animation:kdsmsDelivery 3.6s ease-in-out infinite;
+}
+
+@keyframes kdsmsDelivery{
+
+    0%,15%{
+        opacity:0;
+
+        transform:
+        translateY(14px)
+        scale(.94);
+    }
+
+    28%,78%{
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+        translateY(-8px)
+        scale(.98);
+    }
+}
+
+.kdsms-delivery-top{
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+}
+
+.kdsms-delivery-check{
+    width:34px;
+    height:34px;
+
+    flex:0 0 34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#EAF8F1;
+
+    color:#18A765;
+}
+
+.kdsms-delivery-check svg{
+    width:17px;
+    height:17px;
+}
+
+.kdsms-delivery-copy strong{
+    display:block;
+
+    color:#101828;
+
+    font-size:12px;
+}
+
+.kdsms-delivery-copy span{
+    display:block;
+
+    margin-top:3px;
+
+    color:#18A765;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+.kdsms-delivery-number{
+    margin-top:10px;
+
+    padding-top:9px;
+
+    border-top:1px solid #EEF1F5;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    color:#8D97A8;
+
+    font-size:9px;
+}
+
+.kdsms-delivery-number strong{
+    color:#101828;
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   SMALL TOP FLOAT
+========================================================= */
+
+.kdsms-small-float{
+    position:absolute;
+
+    z-index:20;
+
+    left:-12px;
+    top:45px;
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    padding:11px 13px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.96);
+
+    border:1px solid rgba(10,92,255,.08);
+
+    box-shadow:
+    0 15px 32px rgba(35,64,110,.12);
+
+    animation:kdsmsSmallFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes kdsmsSmallFloat{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(5px,-7px);
+    }
+}
+
+.kdsms-small-icon{
+    width:35px;
+    height:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:#EAF2FF;
+
+    color:#0A5CFF;
+}
+
+.kdsms-small-icon svg{
+    width:16px;
+    height:16px;
+}
+
+.kdsms-small-copy small{
+    display:block;
+
+    color:#98A2B3;
+
+    font-size:9px;
+}
+
+.kdsms-small-copy strong{
+    display:block;
+
+    margin-top:2px;
+
+    color:#101828;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .kdsms-hero{
+        padding:75px 30px;
+    }
+
+    .kdsms-container{
+        grid-template-columns:
+        minmax(0,1fr)
+        470px;
+
+        gap:40px;
+    }
+
+    .kdsms-title{
+        font-size:46px;
+    }
+
+    .kdsms-visual{
+        width:470px;
+    }
+
+    .kdsms-composer{
+        width:400px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .kdsms-hero{
+        padding:60px 22px 50px;
+    }
+
+    .kdsms-container{
+        grid-template-columns:1fr;
+
+        gap:48px;
+    }
+
+    .kdsms-content{
+        text-align:center;
+    }
+
+    .kdsms-badge{
+        margin:auto;
+    }
+
+    .kdsms-title{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .kdsms-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .kdsms-features{
+        justify-content:center;
+    }
+
+    .kdsms-visual{
+        width:520px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .kdsms-hero{
+        padding:46px 15px 38px;
+    }
+
+    .kdsms-container{
+        gap:35px;
+    }
+
+    .kdsms-badge{
+        font-size:11px;
+
+        padding:6px 10px;
+    }
+
+    .kdsms-title{
+        font-size:34px;
+
+        line-height:1.14;
+
+        letter-spacing:-1px;
+    }
+
+    .kdsms-description{
+        margin-top:15px;
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+    .kdsms-features{
+        display:grid;
+
+        grid-template-columns:
+        1fr 1fr;
+
+        gap:7px;
+
+        width:100%;
+    }
+
+    .kdsms-feature{
+        width:100%;
+
+        justify-content:center;
+
+        padding:7px 4px;
+
+        font-size:10px;
+    }
+
+    .kdsms-btn{
+        margin-top:20px;
+
+        padding:11px 22px;
+
+        font-size:15px;
+    }
+
+
+    /* right */
+
+    .kdsms-visual{
+        width:100%;
+        height:auto;
+
+        padding:
+        20px 0 62px;
+    }
+
+    .kdsms-visual-glow{
+        width:300px;
+        height:300px;
+    }
+
+    .kdsms-composer{
+        width:100%;
+        max-width:350px;
+
+        padding:15px;
+
+        border-radius:23px;
+    }
+
+    .kdsms-logo{
+        width:38px;
+        height:38px;
+
+        flex-basis:38px;
+
+        font-size:16px;
+    }
+
+    .kdsms-brand-copy strong{
+        font-size:13px;
+    }
+
+    .kdsms-brand-copy span{
+        font-size:9px;
+    }
+
+    .kdsms-live{
+        font-size:8px;
+    }
+
+    .kdsms-type{
+        font-size:8px;
+
+        padding:7px 3px;
+    }
+
+    .kdsms-message-box{
+        min-height:132px;
+
+        padding:14px;
+    }
+
+    #kdsmsMessage{
+        font-size:11px;
+    }
+
+    .kdsms-send-button{
+        font-size:11px;
+    }
+
+    .kdsms-speed{
+        width:90px;
+    }
+
+    .kdsms-small-float{
+        display:none;
+    }
+
+    .kdsms-delivery{
+        right:50%;
+        bottom:0;
+
+        width:175px;
+
+        transform:translateX(50%);
+
+        animation:kdsmsDeliveryMobile 3.6s ease-in-out infinite;
+    }
+
+    @keyframes kdsmsDeliveryMobile{
+
+        0%,15%{
+            opacity:0;
+
+            transform:
+            translateX(50%)
+            translateY(12px)
+            scale(.94);
+        }
+
+        28%,78%{
+            opacity:1;
+
+            transform:
+            translateX(50%)
+            translateY(0)
+            scale(1);
+        }
+
+        100%{
+            opacity:0;
+
+            transform:
+            translateX(50%)
+            translateY(-6px)
+            scale(.98);
+        }
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media(max-width:380px){
+
+    .kdsms-title{
+        font-size:31px;
+    }
+
+    .kdsms-composer{
+        max-width:325px;
+    }
+
+    .kdsms-type-row{
+        gap:4px;
+    }
+
+    .kdsms-type{
+        font-size:7.5px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .kdsms-hero *,
+    .kdsms-hero *::before,
+    .kdsms-hero *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+    }
+}
+
+</style>
+
+
+<!-- ======================================================
+     COMPLETE HERO
+======================================================= -->
+
+<section class="kdsms-hero">
+
+    <div class="kdsms-dots"></div>
+
+
+    <div class="kdsms-container">
+
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+        <div class="kdsms-content">
+
+
+            <div class="kdsms-badge">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <path d="m22 2-7 20-4-9-9-4Z"></path>
+
+                    <path d="M22 2 11 13"></path>
+
+                </svg>
+
+                Bulk SMS Provider in Delhi
+
+            </div>
+
+
+
+            <h1 class="kdsms-title">
+
+                Bulk SMS Service
+
+                <span>
+                    Provider in Delhi
+                </span>
+
+            </h1>
+
+
+
+            <p class="kdsms-description">
+
+                In a world where emails get buried and ad budgets burn fast
+                without guaranteed returns, text messaging remains the single
+                most effective way to grab immediate attention. Over 70% of
+                text messages are opened within three minutes of delivery,
+                making SMS the ultimate channel for urgent alerts, flash
+                offers, and seamless customer communications.
+
+
+            </p>
+
+
+
+          
+
+
+
+            <div class="kdsms-features">
+
+
+                <div class="kdsms-feature">
+
+                    <span>✓</span>
+
+                    Bulk SMS
+
+                </div>
+
+
+                <div class="kdsms-feature">
+
+                    <span>✓</span>
+
+                    Promotional SMS
+
+                </div>
+
+
+                <div class="kdsms-feature">
+
+                    <span>✓</span>
+
+                    Transactional SMS
+
+                </div>
+
+
+                <div class="kdsms-feature">
+
+                    <span>✓</span>
+
+                    OTP SMS
+
+                </div>
+
+
+            </div>
+
+
+
+            <button class="kdsms-btn">
+
+                Start Free Trial
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+
+                    <path d="M5 12h14"></path>
+
+                    <path d="m13 6 6 6-6 6"></path>
+
+                </svg>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT SIDE
+        ================================================== -->
+
+        <div class="kdsms-visual">
+
+
+            <div class="kdsms-visual-glow"></div>
+
+
+
+            <!-- SMALL FLOAT -->
+
+            <div class="kdsms-small-float">
+
+
+                <div class="kdsms-small-icon">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="kdsms-small-copy">
+
+                    <small>
+                        Campaign
+                    </small>
+
+                    <strong>
+                        Bulk SMS Live
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MAIN COMPOSER
+            ================================================== -->
+
+            <div class="kdsms-composer">
+
+
+                <!-- HEADER -->
+
+                <div class="kdsms-composer-header">
+
+
+                    <div class="kdsms-brand">
+
+
+                        <div class="kdsms-logo">
+                            K
+                        </div>
+
+
+                        <div class="kdsms-brand-copy">
+
+                            <strong>
+                                King Digital
+                            </strong>
+
+                            <span>
+                                SMS Platform Online
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="kdsms-live">
+                        LIVE
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CAMPAIGN TYPE -->
+
+                <span class="kdsms-label">
+                    Campaign Type
+                </span>
+
+
+                <div class="kdsms-type-row">
+
+
+                    <div class="kdsms-type active"
+                         data-type="0">
+
+                        Promotional
+
+                    </div>
+
+
+                    <div class="kdsms-type"
+                         data-type="1">
+
+                        OTP
+
+                    </div>
+
+
+                    <div class="kdsms-type"
+                         data-type="2">
+
+                        Transactional
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="kdsms-message-box">
+
+
+                    <div class="kdsms-message-top">
+
+
+                        <div class="kdsms-sender">
+
+
+                            <div class="kdsms-sender-icon">
+
+                                <svg viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+
+                                    <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+
+                                </svg>
+
+                            </div>
+
+
+                            <span id="kdsmsSender">
+                                KINGDIGITAL
+                            </span>
+
+
+                        </div>
+
+
+                        <span class="kdsms-char"
+                              id="kdsmsChar">
+
+                            118 / 160
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <p id="kdsmsMessage">
+
+                        Flash Sale is live! Get 30% OFF today.
+                        Limited-time offer. Shop now and save more.
+
+                    </p>
+
+
+
+                    <div class="kdsms-message-bottom">
+
+
+                        <div class="kdsms-audience">
+
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+
+                                <circle cx="9" cy="7" r="4"></circle>
+
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+
+                            </svg>
+
+                            <span id="kdsmsAudience">
+                                25,000 recipients
+                            </span>
+
+                        </div>
+
+
+                        <div class="kdsms-ready">
+
+                            <i></i>
+
+                            Ready to send
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SEND -->
+
+                <div class="kdsms-send-area">
+
+
+                    <div class="kdsms-send-button">
+
+
+                        <div class="kdsms-send-shine"></div>
+
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="m22 2-7 20-4-9-9-4Z"></path>
+
+                            <path d="M22 2 11 13"></path>
+
+                        </svg>
+
+
+                        <span id="kdsmsSendText">
+                            Sending Campaign
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="kdsms-speed">
+
+                        <small>
+                            Delivery
+                        </small>
+
+                        <strong>
+                            Instant
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="kdsms-progress">
+
+                    <span></span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DELIVERY POPUP
+            ================================================== -->
+
+            <div class="kdsms-delivery">
+
+
+                <div class="kdsms-delivery-top">
+
+
+                    <div class="kdsms-delivery-check">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2.5"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="m20 6-11 11-5-5"></path>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="kdsms-delivery-copy">
+
+                        <strong>
+                            SMS Delivered
+                        </strong>
+
+                        <span>
+                            Successfully sent
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="kdsms-delivery-number">
+
+                    <span>
+                        Delivery Rate
+                    </span>
+
+                    <strong>
+                        98.9%
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+(function(){
+
+
+
+
+
+    /* =====================================================
+       CAMPAIGN ANIMATION
+    ===================================================== */
+
+    var campaigns = [
+
+        {
+            type:0,
+
+            sender:"KINGDIGITAL",
+
+            text:
+            "Flash Sale is live! Get 30% OFF today. Limited-time offer. Shop now and save more.",
+
+            char:"118 / 160",
+
+            audience:
+            "25,000 recipients",
+
+            send:
+            "Sending Promotional SMS"
+        },
+
+
+        {
+            type:1,
+
+            sender:"KD-SECURE",
+
+            text:
+            "Your verification OTP is 482916. This code is valid for 10 minutes. Do not share it.",
+
+            char:"104 / 160",
+
+            audience:
+            "Secure OTP delivery",
+
+            send:
+            "Sending Secure OTP"
+        },
+
+
+        {
+            type:2,
+
+            sender:"KD-UPDATE",
+
+            text:
+            "Your order has been shipped successfully and is on the way. Track your delivery now.",
+
+            char:"109 / 160",
+
+            audience:
+            "Customer update",
+
+            send:
+            "Sending Transactional SMS"
+        }
+
+    ];
+
+
+    var current = 0;
+
+
+    var sender =
+        document.getElementById("kdsmsSender");
+
+    var message =
+        document.getElementById("kdsmsMessage");
+
+    var chars =
+        document.getElementById("kdsmsChar");
+
+    var audience =
+        document.getElementById("kdsmsAudience");
+
+    var sendText =
+        document.getElementById("kdsmsSendText");
+
+    var types =
+        document.querySelectorAll(".kdsms-type");
+
+
+    function updateCampaign(){
+
+
+        current++;
+
+        if(current >= campaigns.length){
+            current = 0;
+        }
+
+
+        if(message){
+
+            message.style.opacity = "0";
+
+            message.style.transform =
+                "translateY(6px)";
+
+        }
+
+
+        setTimeout(function(){
+
+
+            var data =
+                campaigns[current];
+
+
+            if(sender){
+                sender.textContent =
+                    data.sender;
+            }
+
+
+            if(message){
+                message.textContent =
+                    data.text;
+
+                message.style.opacity =
+                    "1";
+
+                message.style.transform =
+                    "translateY(0)";
+            }
+
+
+            if(chars){
+                chars.textContent =
+                    data.char;
+            }
+
+
+            if(audience){
+                audience.textContent =
+                    data.audience;
+            }
+
+
+            if(sendText){
+                sendText.textContent =
+                    data.send;
+            }
+
+
+            types.forEach(
+                function(item,index){
+
+                    if(index === data.type){
+
+                        item.classList.add(
+                            "active"
+                        );
+
+                    }else{
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+
+        },220);
+
+    }
+
+
+    setInterval(
+        updateCampaign,
+        3600
+    );
+
+
+})();
+</script>
+
+
+<!-- <style>
     .bluk-sms-hero {
         width: 100%;
         background:
@@ -637,4 +2786,4 @@
 
     document.addEventListener("click")
     
-</script>
+</script> -->
