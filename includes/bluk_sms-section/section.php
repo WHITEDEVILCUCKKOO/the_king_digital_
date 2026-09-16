@@ -1,768 +1,507 @@
 <style>
-    #kdFaqSection {
-        --kd-primary: #0B5CFF;
-        --kd-primary-dark: #193798;
-        --kd-navy: #263347;
-        --kd-text: #667085;
-        --kd-border: #e6e9ed;
-        --kd-white: #ffffff;
+    :root {
+        --kd-navy: #1B2A5B;
+        --kd-navy-dark: #142048;
+        --kd-orange: #F2701D;
+        --kd-orange-dark: #DB5F12;
+        --kd-whatsapp: #25D366;
+        --kd-whatsapp-dark: #1DA851;
+        --kd-meet: #48567A;
+        --kd-meet-dark: #3B4766;
 
-        position: relative;
-        width: 100%;
-
-        padding: 65px 20px;
-
-        overflow: hidden;
-
-        background-color: #fff;
-        /* background:
-            radial-gradient(circle at 8% 12%,
-                rgba(182, 31, 41, .045) 0,
-                transparent 24%),
-            radial-gradient(circle at 92% 88%,
-                rgba(182, 31, 41, .035) 0,
-                transparent 22%),
-            linear-gradient(135deg,
-                #ffffff 0%,
-                #fafbfc 50%,
-                #ffffff 100%); */
+        --kd-bg: #F4F6FB;
+        --kd-heading: #14213D;
+        --kd-text-muted: #6B7280;
+        --kd-border: #E7E9F0;
+        --kd-white: #FFFFFF;
     }
 
+    .kd-faq-section {
+        padding: 64px 24px;
+    }
 
-    #kdFaqSection .kd-faq-container {
-        width: 100%;
-        max-width: 900px;
-
+    .kd-faq-container {
+        max-width: 1160px;
         margin: 0 auto;
     }
 
-
-    #kdFaqSection .kd-faq-header {
-        max-width: 720px;
-
-        margin: 0 auto 35px;
-
-        text-align: center;
+    .kd-faq-header {
+        margin-bottom: 30px;
     }
 
-
-    #kdFaqSection .kd-faq-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        gap: 9px;
-
-        padding: 8px 15px;
-
-        margin-bottom: 17px;
-
-        border: 1px solid rgba(31, 59, 182, 0.14);
-        border-radius: 50px;
-
-        color: #0B5CFF;
-        background: rgba(31, 41, 182, 0.04);
-
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: .6px;
-        text-transform: uppercase;
-    }
-
-
-    #kdFaqSection .kd-faq-badge-dot {
-        position: relative;
-
-        width: 7px;
-        height: 7px;
-
-        flex: 0 0 7px;
-
-        border-radius: 50%;
-
-        background: #0B5CFF;
-
-        animation: kdFaqDotBlink 1.5s ease-in-out infinite;
-    }
-
-
-    #kdFaqSection .kd-faq-badge-dot::before {
-        content: "";
-
-        position: absolute;
-
-        top: 50%;
-        left: 50%;
-
-        width: 100%;
-        height: 100%;
-
-        border-radius: 50%;
-
-        background: rgba(31, 79, 182, 0.25);
-
-        transform: translate(-50%, -50%);
-
-        animation: kdFaqDotPulse 1.5s ease-out infinite;
-    }
-
-
-    @keyframes kdFaqDotBlink {
-
-        0%,
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        50% {
-            opacity: .35;
-            transform: scale(.7);
-        }
-
-    }
-
-
-    @keyframes kdFaqDotPulse {
-
-        0% {
-            width: 7px;
-            height: 7px;
-
-            opacity: .7;
-        }
-
-        70% {
-            width: 22px;
-            height: 22px;
-
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 0;
-        }
-
-    }
-
-
-    #kdFaqSection .kd-faq-header h2 {
-        margin: 0;
-
-        color: black;
-
-        font-size: clamp(30px, 4vw, 44px);
-        line-height: 1.2;
-
+    .kd-faq-header h1 {
+        margin: 0 0 10px;
+        font-size: clamp(28px, 3.4vw, 36px);
         font-weight: 800;
-
-        letter-spacing: -1.2px;
+        color: var(--kd-heading);
+        letter-spacing: -0.02em;
     }
 
-
-    #kdFaqSection .kd-faq-header h2 span {
-        color: #0B5CFF;
+    .kd-faq-header p {
+        margin: 0;
+        font-size: 15px;
+        color: var(--kd-text-muted);
     }
 
-    #kdFaqSection .kd-faq-header p {
-        max-width: 650px;
-
-        margin: 16px auto 0;
-
-        color: var(--kd-text);
-
-        font-size: 14px;
-        line-height: 1.8;
+    .kd-faq-layout {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 24px;
+        align-items: start;
     }
 
+    /* ---------------- FAQ LIST ---------------- */
 
-    #kdFaqSection .kd-faq-list {
+    .kd-faq-list {
         display: flex;
         flex-direction: column;
-
-        gap: 11px;
+        gap: 12px;
     }
 
-
-    #kdFaqSection .kd-faq-item {
-        overflow: hidden;
-
-        border: 1px solid var(--kd-border);
-        border-radius: 12px;
-
+    .kd-faq-item {
         background: var(--kd-white);
-
-        box-shadow: 0 7px 20px rgba(35, 45, 58, .035);
-
-        transition:
-            border-color .25s ease,
-            box-shadow .25s ease;
+        border: 1px solid var(--kd-border);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-
-    #kdFaqSection .kd-faq-item.active {
-        border-color: rgba(31, 54, 182, 0.25);
-
-        box-shadow: 0 12px 28px rgba(35, 45, 58, .06);
+    .kd-faq-item.active {
+        border-color: rgba(27, 42, 91, 0.18);
+        box-shadow: 0 6px 18px rgba(20, 33, 61, 0.05);
     }
 
-
-    #kdFaqSection .kd-faq-question {
+    .kd-faq-question {
         width: 100%;
-        min-height: 65px;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        gap: 20px;
-
-        padding: 15px 22px;
-
-        border: 0;
-
-        color: var(--kd-navy);
-        background: transparent;
-
+        gap: 16px;
+        background: none;
+        border: none;
         cursor: pointer;
-
         text-align: left;
-
-        font-family: inherit;
-
-        transition:
-            color .25s ease,
-            background .25s ease;
+        padding: 17px 20px;
+        font-size: 14.5px;
+        font-weight: 600;
+        color: var(--kd-heading);
     }
 
-
-    #kdFaqSection .kd-faq-question:hover {
-        color: var(--kd-primary);
+    .kd-faq-question:focus-visible {
+        outline: 2px solid var(--kd-orange);
+        outline-offset: -2px;
     }
 
-
-    #kdFaqSection .kd-faq-item.active .kd-faq-question {
-        color: var(--kd-primary);
-
-        background: linear-gradient(90deg,
-                rgba(182, 31, 41, .04),
-                rgba(255, 255, 255, 0));
+    .kd-faq-chevron {
+        flex: none;
+        width: 18px;
+        height: 18px;
+        color: var(--kd-text-muted);
+        transition: transform 0.25s ease, color 0.25s ease;
     }
 
-
-    #kdFaqSection .kd-faq-question-text {
-        flex: 1;
-
-        font-size: 15px;
-        line-height: 1.5;
-
-        font-weight: 700;
+    .kd-faq-item.active .kd-faq-chevron {
+        transform: rotate(180deg);
+        color: var(--kd-orange);
     }
 
-
-    #kdFaqSection .kd-faq-icon {
-        position: relative;
-
-        width: 30px;
-        height: 30px;
-
-        flex: 0 0 30px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border: 1px solid #e3e7eb;
-        border-radius: 50%;
-
-        background: #ffffff;
-
-        transition:
-            background .25s ease,
-            border-color .25s ease;
-    }
-
-
-    #kdFaqSection .kd-faq-icon-horizontal,
-    #kdFaqSection .kd-faq-icon-vertical {
-        position: absolute;
-
-        width: 11px;
-        height: 2px;
-
-        border-radius: 5px;
-
-        background: #667085;
-
-        transition:
-            opacity .25s ease,
-            background .25s ease;
-    }
-
-
-    #kdFaqSection .kd-faq-icon-vertical {
-        transform: rotate(90deg);
-    }
-
-
-    #kdFaqSection .kd-faq-item.active .kd-faq-icon {
-        border-color: var(--kd-primary);
-
-        background: var(--kd-primary);
-    }
-
-
-    #kdFaqSection .kd-faq-item.active .kd-faq-icon-horizontal,
-    #kdFaqSection .kd-faq-item.active .kd-faq-icon-vertical {
-        background: #ffffff;
-    }
-
-
-    #kdFaqSection .kd-faq-item.active .kd-faq-icon-vertical {
-        opacity: 0;
-    }
-
-    #kdFaqSection .kd-faq-answer {
+    .kd-faq-answer {
         display: grid;
-
         grid-template-rows: 0fr;
-
         opacity: 0;
-
-        transition:
-            grid-template-rows .4s ease,
-            opacity .3s ease;
+        transition: grid-template-rows 0.35s ease, opacity 0.3s ease;
     }
 
-
-    #kdFaqSection .kd-faq-answer-inner {
-        min-height: 0;
-
-        overflow: hidden;
-    }
-
-
-    #kdFaqSection .kd-faq-item.active .kd-faq-answer {
+    .kd-faq-item.active .kd-faq-answer {
         grid-template-rows: 1fr;
-
         opacity: 1;
     }
 
-    #kdFaqSection .kd-faq-answer p {
+    .kd-faq-answer-inner {
+        overflow: hidden;
+    }
+
+    .kd-faq-answer p {
         margin: 0;
+        padding: 0 20px 18px;
+        font-size: 13.5px;
+        line-height: 1.7;
+        color: var(--kd-text-muted);
+    }
 
-        padding: 16px 55px 16px 22px;
+    /* ---------------- CTA PANEL ---------------- */
 
-        border-top: 1px solid #edf0f3;
+    .kd-cta {
+        position: sticky;
+        top: 24px;
+        background: var(--kd-navy);
+        border-radius: 20px;
+        padding: 46px 40px;
+        text-align: center;
+        color: var(--kd-white);
+        overflow: hidden;
+        position: relative;
+    }
 
-        color: var(--kd-text);
+    .kd-cta::before {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.04);
+        top: -130px;
+        right: -80px;
+        pointer-events: none;
+    }
 
+    .kd-cta>* {
+        position: relative;
+    }
+
+    .kd-cta h2 {
+        margin: 0 0 12px;
+        font-size: 27px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+    }
+
+    .kd-cta p {
+        margin: 0 auto 26px;
+        max-width: 380px;
+        font-size: 13.5px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    .kd-cta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        border: none;
+        border-radius: 10px;
+        padding: 14px 20px;
+        font-size: 14.5px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .kd-cta-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .kd-cta-btn svg {
+        width: 15px;
+        height: 15px;
+        flex: none;
+    }
+
+    .kd-cta-btn--primary {
+        background: var(--kd-orange);
+        color: #FFFFFF;
+        box-shadow: 0 10px 24px rgba(242, 112, 29, 0.35);
+    }
+
+    .kd-cta-btn--primary:hover {
+        background: var(--kd-orange-dark);
+    }
+
+    .kd-cta-divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 340px;
+        margin: 16px auto;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 12px;
+    }
+
+    .kd-cta-divider::before,
+    .kd-cta-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    .kd-cta-btn--secondary {
+        background: #FFFFFF;
+        color: var(--kd-navy);
+    }
+
+    .kd-cta-foot {
+        margin-top: 26px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .kd-cta-foot span {
+        display: block;
+        margin-bottom: 14px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .kd-cta-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .kd-cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 10px 18px;
+        border-radius: 8px;
         font-size: 13px;
-        line-height: 1.8;
+        font-weight: 700;
+        text-decoration: none;
+        color: #FFFFFF;
+        border: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-
-    @media (max-width: 1024px) {
-
-        #kdFaqSection {
-            padding: 55px 20px;
-        }
-
+    .kd-cta-link:hover {
+        transform: translateY(-2px);
     }
 
-    @media (max-width: 767px) {
-
-        #kdFaqSection {
-            padding: 48px 14px;
-        }
-
-
-        #kdFaqSection .kd-faq-header {
-            margin-bottom: 28px;
-        }
-
-
-        #kdFaqSection .kd-faq-header h2 {
-            font-size: 30px;
-
-            letter-spacing: -.8px;
-        }
-
-
-        #kdFaqSection .kd-faq-header p {
-            margin-top: 13px;
-
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-
-        #kdFaqSection .kd-faq-question {
-            min-height: 60px;
-
-            gap: 14px;
-
-            padding: 13px 15px;
-        }
-
-
-        #kdFaqSection .kd-faq-question-text {
-            font-size: 13px;
-        }
-
-
-        #kdFaqSection .kd-faq-icon {
-            width: 27px;
-            height: 27px;
-
-            flex-basis: 27px;
-        }
-
-
-        #kdFaqSection .kd-faq-answer p {
-            padding: 15px 17px 15px 17px;
-
-            font-size: 12px;
-            line-height: 1.75;
-        }
-
+    .kd-cta-link svg {
+        width: 14px;
+        height: 14px;
+        flex: none;
     }
 
+    .kd-cta-link--whatsapp {
+        background: var(--kd-whatsapp);
+        box-shadow: 0 8px 18px rgba(37, 211, 102, 0.35);
+    }
+
+    .kd-cta-link--whatsapp:hover {
+        background: var(--kd-whatsapp-dark);
+    }
+
+    .kd-cta-link--meet {
+        background: var(--kd-meet);
+        box-shadow: 0 8px 18px rgba(72, 86, 122, 0.35);
+    }
+
+    .kd-cta-link--meet:hover {
+        background: var(--kd-meet-dark);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .kd-faq-answer,
+        .kd-faq-chevron,
+        .kd-cta-btn,
+        .kd-cta-link {
+            transition: none;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .kd-faq-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .kd-cta {
+            position: static;
+        }
+    }
 
     @media (max-width: 480px) {
-
-        #kdFaqSection {
-            padding: 42px 12px;
+        .kd-faq-section {
+            padding: 44px 16px;
         }
 
-
-        #kdFaqSection .kd-faq-badge {
-            padding: 7px 11px;
-
-            font-size: 9px;
+        .kd-cta {
+            padding: 36px 24px;
         }
 
-
-        #kdFaqSection .kd-faq-header h2 {
-            font-size: 27px;
+        .kd-cta-links {
+            flex-direction: column;
         }
-
-
-        #kdFaqSection .kd-faq-header p {
-            font-size: 12px;
-        }
-
-
-        #kdFaqSection .kd-faq-list {
-            gap: 9px;
-        }
-
-
-        #kdFaqSection .kd-faq-item {
-            border-radius: 10px;
-        }
-
-
-        #kdFaqSection .kd-faq-question {
-            min-height: 58px;
-
-            padding: 12px 13px;
-        }
-
-
-        #kdFaqSection .kd-faq-question-text {
-            font-size: 12px;
-        }
-
-
-        #kdFaqSection .kd-faq-answer p {
-            padding: 14px 14px 14px 14px;
-
-            font-size: 11px;
-            line-height: 1.7;
-        }
-
     }
 </style>
-<section class="kd-faq-section" id="kdFaqSection">
 
+
+<section class="kd-faq-section">
     <div class="kd-faq-container">
 
-        <!-- =====================================================
-    SECTION HEADER
-    ====================================================== -->
         <div class="kd-faq-header">
-
-            <div class="kd-faq-badge">
-                <span class="kd-faq-badge-dot"></span>
-                <span>Frequently Asked Questions</span>
-            </div>
-
-            <h2>
-                Questions About Our
-                <span>Promotional SMS Service?</span>
-            </h2>
-
-            <p>
-                Find answers to common questions about Promotional SMS campaigns,
-                message delivery, campaign management and how King Digital can help
-                your business connect with more customers.
-            </p>
-
+            <h1>Frequently asked questions</h1>
+            <p>Everything you need to know before getting started with King Digital.</p>
         </div>
 
+        <div class="kd-faq-layout">
 
-        <!-- =====================================================
-    FAQ LIST
-    ====================================================== -->
-        <div class="kd-faq-list">
+            <!-- FAQ LIST -->
+            <div class="kd-faq-list">
 
-
-            <!-- FAQ 1 -->
-            <div class="kd-faq-item">
-
-                <button class="kd-faq-question" type="button" aria-expanded="false">
-
-                    <span class="kd-faq-question-text">
-                        What is the difference between Promotional and Transactional SMS?
-                    </span>
-
-                    <span class="kd-faq-icon" aria-hidden="true">
-                        <span class="kd-faq-icon-horizontal"></span>
-                        <span class="kd-faq-icon-vertical"></span>
-                    </span>
-
-                </button>
-
-                <div class="kd-faq-answer">
-
-                    <div class="kd-faq-answer-inner">
-                        <p>
-                            Promotional SMS refers to messages containing some marketing related information on offers, sales updates, and discounts only for the Non-DND numbers between the hours of 10 AM and 9 PM. Transactional SMS relates to important non-marketing alerts such as OTPs, reminders of appointments, and other messages relating to the user’s account sent at any time of the day or night to all numbers irrespective of whether they are registered in the DND list or not.
-
-                        </p>
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        Who is the best digital marketing company in Delhi?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>There are many agencies to choose from, but King Digital stands out for combining SEO, bulk SMS, WhatsApp, RCS, hosting and voice AI under one roof, with a Delhi-based team that understands the local market and DLT compliance requirements.</p>
+                        </div>
                     </div>
+                </div>
 
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        What is DLT registration and why do I need it for bulk SMS?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>DLT (Distributed Ledger Technology) registration is a TRAI requirement for any business sending commercial SMS in India. You register your entity, sender ID and message templates on the operator portal before you can send bulk messages — we help you complete this end to end.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        How long does it take to build a website?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>Most business websites take 2 to 4 weeks from kickoff to launch, depending on the number of pages, custom design work, and how quickly content and approvals come back from your side. Larger or e-commerce builds can take longer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        Do you provide WhatsApp Business API for small businesses?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>Yes. We set up WhatsApp Business API access, get your templates approved, and help you send order updates, support messages and campaigns, scaled to fit small businesses as well as larger accounts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        What is your pricing for bulk SMS services?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>Bulk SMS pricing depends on message volume, route type (promotional vs. transactional) and whether you need DLT setup support. Share your expected monthly volume and we'll put together a plan and rate that fits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        Do you work with political parties and election campaigns?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>Yes. We support political and campaign clients with voter outreach via bulk SMS, WhatsApp and voice calling, all set up to follow TRAI and Election Commission messaging guidelines.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kd-faq-item">
+                    <button type="button" class="kd-faq-question" aria-expanded="false">
+                        Do you provide support after the project is delivered?
+                        <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="kd-faq-answer">
+                        <div class="kd-faq-answer-inner">
+                            <p>Yes. Every project includes a post-launch support window, and we offer ongoing maintenance and support plans after that for websites, campaigns and messaging services.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
+            <!-- CTA PANEL -->
+            <div class="kd-cta">
+                <h2>Still have questions?</h2>
+                <p>Our team is here to help. Get a free 30-minute consultation with our digital expert — no pressure, no obligation.</p>
 
-            <!-- FAQ 2 -->
-            <div class="kd-faq-item">
+                <a href="contact.php" class="kd-cta-btn kd-cta-btn--primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+                    </svg>
+                    Send Us a Message
+</a>
 
-                <button class="kd-faq-question" type="button" aria-expanded="false">
+                <div class="kd-cta-divider">— or —</div>
 
-                    <span class="kd-faq-question-text">
-                        Why is DLT Registration mandatory for sending Bulk SMS in Delhi?
-                    </span>
-
-                    <span class="kd-faq-icon" aria-hidden="true">
-                        <span class="kd-faq-icon-horizontal"></span>
-                        <span class="kd-faq-icon-vertical"></span>
-                    </span>
-
+                <button type="button" class="kd-cta-btn kd-cta-btn--secondary">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" />
+                    </svg>
+                    Call Now
                 </button>
 
-                <div class="kd-faq-answer">
-
-                    <div class="kd-faq-answer-inner">
-                        <p>
-                            To combat spam and unauthorized commercial communications TRAI has introduced registration for Distributed Ledger Technology (DLT). Any organization that uses business messaging services in India has to register its business name, its Sender ID, and the message templates on the operator portal before sending messages.
-
-                        </p>
+                <div class="kd-cta-foot">
+                    <span>Also Reach Us On</span>
+                    <div class="kd-cta-links">
+                        <a href="https://wa.me/919211339966?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="kd-cta-link kd-cta-link--whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.15 8.15 0 0 1-1.25-4.34c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.81c0 4.54-3.7 8.21-8.23 8.21zm4.52-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.96-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.15 0-.31-.02-.48-.02-.16 0-.43.06-.66.3-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a href="#" class="kd-cta-link kd-cta-link--meet">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z" />
+                            </svg>
+                            Meet Online
+                        </a>
                     </div>
-
                 </div>
-
             </div>
-
-
-            <!-- FAQ 3 -->
-            <div class="kd-faq-item">
-
-                <button class="kd-faq-question" type="button" aria-expanded="false">
-
-                    <span class="kd-faq-question-text">
-                        How long does it take to activate a Bulk SMS account with Kings Digital?
-
-                    </span>
-
-                    <span class="kd-faq-icon" aria-hidden="true">
-                        <span class="kd-faq-icon-horizontal"></span>
-                        <span class="kd-faq-icon-vertical"></span>
-                    </span>
-
-                </button>
-
-                <div class="kd-faq-answer">
-
-                    <div class="kd-faq-answer-inner">
-                        <p>
-
-                            Once your DLT Entity ID, Sender ID, and Content Templates are approved on the operator portal, your Kings Digital panel can be configured and activated immediately for live messaging.
-
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FAQ 4 -->
-            <div class="kd-faq-item">
-
-                <button class="kd-faq-question" type="button" aria-expanded="false">
-
-                    <span class="kd-faq-question-text">
-                       Can I integrate the SMS Gateway with custom corporate CRM software?
-
-                    </span>
-
-                    <span class="kd-faq-icon" aria-hidden="true">
-                        <span class="kd-faq-icon-horizontal"></span>
-                        <span class="kd-faq-icon-vertical"></span>
-                    </span>
-
-                </button>
-
-                <div class="kd-faq-answer">
-
-                    <div class="kd-faq-answer-inner">
-                        <p>
-                           Yes. Kings Digital provides developer-friendly REST APIs, HTTP protocols, and SMPP connections that integrate smoothly with custom CRMs, ERPs, e-commerce storefronts, and mobile applications.
-
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FAQ 5 -->
-            <div class="kd-faq-item">
-
-                <button class="kd-faq-question" type="button" aria-expanded="false">
-
-                    <span class="kd-faq-question-text">
-                        What happens if a recipient's phone is switched off during a campaign dispatch?
-
-                    </span>
-
-                    <span class="kd-faq-icon" aria-hidden="true">
-                        <span class="kd-faq-icon-horizontal"></span>
-                        <span class="kd-faq-icon-vertical"></span>
-                    </span>
-
-                </button>
-
-                <div class="kd-faq-answer">
-
-                    <div class="kd-faq-answer-inner">
-                        <p>
-                            The device will receive its delivery again based on the standard validity period given by the carrier, which usually lasts 24 hours. The status of the delivered message will be logged in your delivery report after you switch on the device.
-
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FAQ 6 -->
-            <div class="kd-faq-item">
-
-                <button class="kd-faq-question" type="button" aria-expanded="false">
-
-                    <span class="kd-faq-question-text">
-                        How are dynamic variables used within DLT-approved templates?
-
-                    </span>
-
-                    <span class="kd-faq-icon" aria-hidden="true">
-                        <span class="kd-faq-icon-horizontal"></span>
-                        <span class="kd-faq-icon-vertical"></span>
-                    </span>
-
-                </button>
-
-                <div class="kd-faq-answer">
-
-                    <div class="kd-faq-answer-inner">
-                        <p>
-                            Dynamic variables can be used as placeholders in a fixed message template, so you would be able to automatically add personalized information such as the name of the client, the invoice number, date, or the unique verification code in each message.
-
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
 
         </div>
 
     </div>
-
 </section>
+
 <script>
     (function() {
-
-        const faqSection = document.getElementById("kdFaqSection");
-
-        if (!faqSection) return;
-
-
-        const faqItems = faqSection.querySelectorAll(".kd-faq-item");
-
-
-        faqItems.forEach(function(item) {
-
-            const question = item.querySelector(".kd-faq-question");
-
-
-            question.addEventListener("click", function() {
-
-                const isCurrentlyOpen =
-                    item.classList.contains("active");
-
-
-                /* CLOSE ALL OPEN FAQ */
-
-                faqItems.forEach(function(faqItem) {
-
-                    faqItem.classList.remove("active");
-
-                    const faqButton =
-                        faqItem.querySelector(".kd-faq-question");
-
-                    faqButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                });
-
-
-                /* CLICKED CLOSED FAQ OPEN HOGA */
-
-                if (!isCurrentlyOpen) {
-
-                    item.classList.add("active");
-
-                    question.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
-
-                }
-
+        document.querySelectorAll(".kd-faq-item").forEach(function(item) {
+            var btn = item.querySelector(".kd-faq-question");
+            btn.addEventListener("click", function() {
+                var isOpen = item.classList.contains("active");
+                item.classList.toggle("active", !isOpen);
+                btn.setAttribute("aria-expanded", String(!isOpen));
             });
-
         });
-
     })();
 </script>
