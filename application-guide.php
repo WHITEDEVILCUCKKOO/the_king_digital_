@@ -808,7 +808,7 @@
 
         .all_drive_box:hover {
             transform: scale(1.02);
-               box-shadow: 0 0px 13px 2px #00000059;
+            box-shadow: 0 0px 13px 2px #00000059;
         }
 
         .qunike-table-container {
@@ -1339,10 +1339,11 @@
             overflow: hidden;
             transition: .25s ease;
         }
+
         .step_impear:hover {
             transition: .25s ease;
             transform: scale(1.02);
-                box-shadow: 0 0px 13px 2px #00000059;
+            box-shadow: 0 0px 13px 2px #00000059;
         }
     </style>
 
@@ -1596,7 +1597,7 @@
         <section class="right_section_1 widh_wmob">
 
             <!-- section 1 overview -->
-            <section id="overview_contect_box" class="section_sub_with all_sejmca8974 ">
+            <section id="overview_contect_box" class="section_sub_with all_sejmca8974 show_active">
 
                 <div class="overview_hero">
                     <h3 class="htaw85">Omni Portal</h3>
@@ -4934,7 +4935,7 @@
             </section>
 
             <!-- sublink box 3 -->
-            <section id="contect_3_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa show_active">
+            <section id="contect_3_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
 
                 <div class="login_hero">
                     <span class="brad_kaem">
@@ -5049,7 +5050,7 @@
                             <img src="assets/appliction_imgs/sms/sms_contect_3/img_3.png" alt="">
                         </span>
                     </div>
-                    
+
                     <!-- img step -->
                     <div class="step_impear">
                         <span class="img_box">
@@ -5122,7 +5123,7 @@
                                 <td>Paste the long URL</td>
                             </tr>
 
-                           
+
                         </tbody>
                     </table>
                 </div>
@@ -5134,7 +5135,7 @@
                     </span>
                 </div>
 
-                <p style="margin-top: 30px;">Navigation: <b>Campaign  → SMS Campaign</b></p>
+                <p style="margin-top: 30px;">Navigation: <b>Campaign → SMS Campaign</b></p>
 
                 <!-- steps with img -->
                 <div class="om-guide-shell">
@@ -5148,7 +5149,7 @@
                         </div>
                     </div>
 
-                    
+
 
                     <!-- Step 2 -->
                     <div class="om-step-card">
@@ -5191,7 +5192,7 @@
                         </div>
                     </div>
 
-                   
+
                     <!-- Step 5 -->
                     <div class="om-step-card">
                         <div class="om-circle-badge">5</div>
@@ -5201,7 +5202,7 @@
                         </div>
                     </div>
 
-                    
+
 
                 </div>
 
@@ -5217,17 +5218,16 @@
                     </div>
                 </div>
 
-                    <!-- line -->
+                <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
                     <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
                         Step 3: Select SMS Template
                     </span>
                 </div>
 
-                
+
                 <!-- steps with img -->
                 <div class="om-guide-shell">
-
                     <!-- Step 1 -->
                     <div class="om-step-card">
                         <div class="om-circle-badge">1</div>
@@ -5237,7 +5237,7 @@
                         </div>
                     </div>
 
-                     <!-- img step -->
+                    <!-- img step -->
                     <div class="step_impear">
                         <span class="img_box">
                             <img src="assets/appliction_imgs/sms/sms_contect_3/img_8.png" alt="">
@@ -5253,7 +5253,7 @@
                         </div>
                     </div>
 
-                    
+
 
                     <!-- Step 3 -->
                     <div class="om-step-card">
@@ -5264,7 +5264,7 @@
                         </div>
                     </div>
 
-                   
+
 
                     <!-- Step 4 -->
                     <div class="om-step-card">
@@ -5275,7 +5275,7 @@
                         </div>
                     </div>
 
-                   
+
                     <!-- Step 5 -->
                     <div class="om-step-card">
                         <div class="om-circle-badge">5</div>
@@ -5284,8 +5284,6 @@
                             <p class="om-step-detail">Click to confirm the selected template.</p>
                         </div>
                     </div>
-
-                    
 
                 </div>
 
@@ -5297,7 +5295,7 @@
                     </span>
                 </div>
 
-                
+
                 <!-- steps with img -->
                 <div class="om-guide-shell">
 
@@ -5310,7 +5308,7 @@
                         </div>
                     </div>
 
-                     <!-- img step -->
+                    <!-- img step -->
                     <div class="step_impear">
                         <span class="img_box">
                             <img src="assets/appliction_imgs/sms/sms_contect_3/img_9.png" alt="">
@@ -5326,7 +5324,7 @@
                         </div>
                     </div>
 
-                      <!-- img step -->
+                    <!-- img step -->
                     <div class="step_impear">
                         <span class="img_box">
                             <img src="assets/appliction_imgs/sms/sms_contect_3/img_10.png" alt="">
@@ -5363,7 +5361,7 @@
                     </div>
                 </div>
 
-                 <!-- preview and next btn -->
+                <!-- preview and next btn -->
                 <div class="void-control-deck">
 
                     <!-- Left Button (Previous) -->
@@ -5387,38 +5385,2721 @@
             </section>
 
             <!-- sublink box 4 -->
-            <section id="contect_4_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                4
+            <section id="contect_4_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Manage Sender ID
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>SMS Campaign</h4>
+                </div>
+
+                <h2>Manage Sender ID</h2>
+
+                <p>The Manage Sender ID module allows users to create, upload, edit, and manage Sender IDs used for SMS campaign delivery.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_4/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;">Final Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">
+                                Sender IDs identify the sender of an SMS message and are required before creating SMS campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Functions
+                    </span>
+                </div>
+
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th>FUNCTION</th>
+                                <th>DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Add Sender ID</td>
+                                <td>Create a new Sender ID</td>
+                            </tr>
+                            <tr>
+                                <td>Upload Sender IDs</td>
+                                <td>Import Sender IDs using supported files</td>
+                            </tr>
+                            <tr>
+                                <td>Edit</td>
+                                <td>Modify existing Sender ID details</td>
+                            </tr>
+
+                            <tr>
+                                <td>Delete</td>
+                                <td>Remove a Sender ID</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Status</td>
+                                <td>Displays approval status of Sender ID</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Sender ID Information
+                    </span>
+                </div>
+
+                <div class="void-horizon" style="margin: 0 auto;">
+                    <!-- Grid Layout -->
+                    <div class="cyber-grid-array">
+
+                        <!-- Row 1 Items -->
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Sender ID</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Message Type</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Entity ID / PEID</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">DLT Chain</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Approval Status</span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Add Sender ID
+
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_4/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <p>The Add Sender ID feature allows users to register a new Sender ID for SMS communication.</p>
+
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th>DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Sender ID</td>
+                                <td>Unique sender name displayed to recipients</td>
+                            </tr>
+                            <tr>
+                                <td>Sender ID Type</td>
+                                <td>Type of SMS communication</td>
+                            </tr>
+                            <tr>
+                                <td>Entity ID / PEID</td>
+                                <td>Registered Principal Entity Identifier</td>
+                            </tr>
+
+                            <tr>
+                                <td>DLT Chain</td>
+                                <td>Distributed Ledger Technology chain identifier</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Sender ID Types
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_4/img_3.png" alt="">
+                    </span>
+                </div>
+
+
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+
+                                <svg width="30" fill="#197553" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M525.2 82.9C536.7 88 544 99.4 544 112L544 528C544 540.6 536.7 552 525.2 557.1C513.7 562.2 500.4 560.3 490.9 552L444.3 511.3C400.7 473.2 345.6 451 287.9 448.3L287.9 544C287.9 561.7 273.6 576 255.9 576L223.9 576C206.2 576 191.9 561.7 191.9 544L191.9 448C121.3 448 64 390.7 64 320C64 249.3 121.3 192 192 192L276.5 192C338.3 191.8 397.9 169.3 444.4 128.7L491 88C500.4 79.7 513.9 77.8 525.3 82.9zM288 384L288 384.2C358.3 386.9 425.8 412.7 480 457.6L480 182.3C425.8 227.2 358.3 253 288 255.7L288 384z" />
+                                </svg>
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Promotional</h5>
+                        <p class="c-desc12 " style="margin: 0;">Used for marketing and promotional SMS campaigns.</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+
+                                <svg width="30" fill="#197553" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M256 160C256 124.7 284.7 96 320 96C351.7 96 378 119 383.1 149.3C386 166.7 402.5 178.5 420 175.6C437.5 172.7 449.2 156.2 446.3 138.7C436.1 78.1 383.5 32 320 32C249.3 32 192 89.3 192 160L192 224C156.7 224 128 252.7 128 288L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 288C512 252.7 483.3 224 448 224L256 224L256 160z" />
+                                </svg>
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Transactional</h5>
+                        <p class="c-desc12 " style="margin: 0;">Used for OTP, alerts and service-related messages.</p>
+                    </div>
+
+
+
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Steps to Add Sender ID
+                    </span>
+                </div>
+
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Sender ID</h3>
+                            <p class="om-step-detail">Open the Add Sender ID form.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Sender ID</h3>
+                            <p class="om-step-detail">Provide a Sender ID between 3–8 characters.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Sender ID Type</h3>
+                            <p class="om-step-detail">Choose Promotional or Transactional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter PEID</h3>
+                            <p class="om-step-detail">Provide the registered Entity ID / PEID.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter DLT Chain</h3>
+                            <p class="om-step-detail">Provide the DLT chain identifier.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">6</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Submit</h3>
+                            <p class="om-step-detail">Click Submit to save the Sender ID.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--notification with title -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">
+                                The Sender ID request is submitted and appears in the Sender ID list for approval and future campaign usage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__3').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">Tiny Campaign</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__5').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">Manage Template</span>
+                    </a>
+
+                </div>
+
+
+
             </section>
 
             <!-- sublink box 5 -->
-            <section id="contect_5_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                5
+            <section id="contect_5_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+
+                        Manage Template
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>SMS Template Management</h4>
+                </div>
+
+                <h2>
+                    Manage Template
+
+                </h2>
+
+                <p>
+                    The Manage Template module allows users to create, manage, and use DLT-approved SMS templates for campaign delivery.
+                </p>
+
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">
+                                Templates must be approved on the DLT platform before they can be used in SMS campaigns.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_5/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Template Features
+
+                    </span>
+                </div>
+
+
+
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📝
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Create Template</h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Create new SMS templates.
+
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📂
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Manage Templates
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">View and organize approved templates.
+                        </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                ✏️
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Edit
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">Modify template details if required.
+
+                        </p>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                🔍
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Search
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">Quickly find templates using filters.
+
+                        </p>
+                    </div>
+
+                </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Template Information
+
+                    </span>
+                </div>
+
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Template Name</td>
+                                <td>Name of the template</td>
+                            </tr>
+                            <tr>
+                                <td>Template ID</td>
+                                <td>Name of the template</td>
+                            </tr>
+                            <tr>
+                                <td>Message Content</td>
+                                <td>Approved SMS content</td>
+
+                            </tr>
+                            <tr>
+                                <td>Template Type</td>
+                                <td>Promotional or Transactional</td>
+
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>Approval status</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Create a Template
+
+                    </span>
+                </div>
+
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Template Module
+                            </h3>
+                            <p class="om-step-detail">Navigate to Manage Template.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Template
+                            </h3>
+                            <p class="om-step-detail">Open the template creation form.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/sms/sms_contect_5/img_2.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Template Details
+                            </h3>
+                            <p class="om-step-detail">Provide template name and DLT Template ID.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Message Content
+                            </h3>
+                            <p class="om-step-detail">Enter the approved SMS text.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Template
+                            </h3>
+                            <p class="om-step-detail">Submit and store the template.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Using Templates in Campaigns
+
+                    </span>
+                </div>
+
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Create Campaign
+                            </h3>
+                            <p class="om-step-detail">Open SMS Campaign.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Template
+                            </h3>
+                            <p class="om-step-detail">Choose a DLT-approved template.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Auto Populate
+                            </h3>
+                            <p class="om-step-detail">The template content automatically fills the message box.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Send Campaign
+                            </h3>
+                            <p class="om-step-detail">Complete campaign setup and submit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">Approved templates are available for selection during SMS campaign creation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__4').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">Manage Sender ID</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__6').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">MY Routes</span>
+                    </a>
+
+                </div>
+
+
+
+
+
+
             </section>
 
             <!-- sublink box 6 -->
-            <section id="contect_6_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                6
+            <section id="contect_6_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        My Routes
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>SMS Configuration</h4>
+                </div>
+
+                <h2>My Routes</h2>
+
+                <p>The My Routes section allows users to view and manage available SMS delivery routes used for sending messages.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_6/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Information
+
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Route ID</td>
+                                <td>Unique identifier of the route</td>
+                            </tr>
+                            <tr>
+                                <td>Route Name</td>
+                                <td>Name of the SMS delivery route</td>
+                            </tr>
+                            <tr>
+                                <td>Is Default</td>
+                                <td>Indicates whether the route is the default route</td>
+                            </tr>
+
+                            <tr>
+                                <td>Action</td>
+                                <td>Allows users to set a route as the default route</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Actions
+
+                    </span>
+                </div>
+
+
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                ⭐
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Make Default
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Set the selected route as the default SMS delivery route.
+
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result
+                            </h3>
+                            <p class="om-step-detail" style="color: #31964f;">Users can view available routes and configure the preferred default route for SMS delivery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__5').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">Manage Template</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__7').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">Contect Manager</span>
+                    </a>
+
+                </div>
+
+
+
+
             </section>
 
             <!-- sublink box 7 -->
-            <section id="contect_7_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                7
+            <section id="contect_7_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Contact Manager
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>Contact Management</h4>
+                </div>
+
+                <h2>Contact Manager</h2>
+
+                <p>The Contact Manager module helps users organize, import, manage, and group recipient contacts for SMS campaigns.</p>
+
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Contact Groups allow you to send campaigns to multiple recipients without uploading numbers every time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Key Features
+
+                    </span>
+                </div>
+
+
+
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                👥
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">Create Groups
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Create contact groups for campaign targeting.
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📥
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Import Contacts
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Upload contacts using supported files.
+
+                        </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                ✏️
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Edit Contacts
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Modify contact details when needed.
+
+                        </p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                🗑️
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Delete Contacts
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Remove unwanted contacts or groups.
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Create a Contact Group
+
+                    </span>
+                </div>
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Contact Manager
+                            </h3>
+                            <p class="om-step-detail">Navigate to Contact Manager.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Create New Group
+                            </h3>
+                            <p class="om-step-detail">Click Add Group.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Group Details
+                            </h3>
+                            <p class="om-step-detail">Provide group name and description.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Group
+                            </h3>
+                            <p class="om-step-detail">Save the newly created group.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Import Contacts
+
+                    </span>
+                </div>
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Group
+                            </h3>
+                            <p class="om-step-detail">Open an existing contact group.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Upload File
+                            </h3>
+                            <p class="om-step-detail">Upload CSV or Excel contact file.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Map Fields
+                            </h3>
+                            <p class="om-step-detail">Verify mobile number and contact fields.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Import Contacts
+                            </h3>
+                            <p class="om-step-detail">Confirm import process.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Using Groups in Campaigns
+
+                    </span>
+                </div>
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Create Campaign
+                            </h3>
+                            <p class="om-step-detail">Open SMS Campaign.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Group
+                            </h3>
+                            <p class="om-step-detail">Choose the desired contact group.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Verify Recipients
+                            </h3>
+                            <p class="om-step-detail">Review contact count and recipients.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Send Campaign
+                            </h3>
+                            <p class="om-step-detail">Submit the campaign.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result
+                            </h3>
+                            <p class="om-step-detail" style="color: #31964f;">Contacts are organized into groups and can be selected directly while creating SMS campaigns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__6').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">My Routes</span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__8').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">Manage Group</span>
+                    </a>
+
+                </div>
+
+
             </section>
 
             <!-- sublink box 8 -->
-            <section id="contect_8_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                8
+            <section id="contect_8_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Manage Group
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>Group Management</h4>
+                </div>
+
+                <h2>Manage Group
+                </h2>
+
+                <p>The Manage Group section allows users to create and maintain contact groups for SMS campaigns. Groups help organize recipients and simplify campaign management.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_8/img_1.png" alt="">
+                    </span>
+                </div>
+
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Contact groups allow users to reuse recipient lists across multiple SMS campaigns without re-uploading contacts.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Information
+
+                    </span>
+                </div>
+
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Group Name</td>
+                                <td>Name of the contact group</td>
+                            </tr>
+                            <tr>
+                                <td>Total Contacts</td>
+                                <td>Total number of contacts in the group</td>
+                            </tr>
+                            <tr>
+                                <td>Actions</td>
+                                <td>Available management actions for the group</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Actions
+                    </span>
+                </div>
+
+
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                👁️
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">View Contacts
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            View all contacts available in the group.
+
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📥
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Import Contacts
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Upload contacts into the selected group.
+
+                        </p>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📤
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Export Contacts
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Download contacts from the group.
+
+                        </p>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                ✏️
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Edit Group
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Modify group details.
+
+                        </p>
+                    </div>
+                    <!-- card 5 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                🗑️
+
+                            </span>
+                        </div>
+
+                        <h5 class="c-title12">
+                            Delete Group
+
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Remove the selected group.
+
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Create a New Group
+
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_8/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Manage Group
+                            </h3>
+                            <p class="om-step-detail">Navigate to the Manage Group page.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Group
+                            </h3>
+                            <p class="om-step-detail">Open the Add Group form.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Group Name
+                            </h3>
+                            <p class="om-step-detail">Provide a unique name for the group.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Save
+                            </h3>
+                            <p class="om-step-detail">Save the newly created group.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result
+                            </h3>
+                            <p class="om-step-detail" style="color: #31964f;">The new group is created successfully and appears in the group listing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__7').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Contect Manager
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__9').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Blocklist Numbers
+                        </span>
+                    </a>
+
+                </div>
+
+
+
             </section>
 
             <!-- sublink box 9 -->
-            <section id="contect_9_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                9
+            <section id="contect_9_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Blacklist Numbers
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>Blacklist Management</h4>
+                </div>
+
+                <h2>Blacklist Numbers</h2>
+
+                <p>The Blacklist Numbers module allows users to block specific mobile numbers from receiving SMS campaigns. Blacklisted numbers are excluded from campaign delivery, helping organizations avoid sending messages to unwanted or restricted recipients.
+
+                </p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_9/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!--notification yellow -->
+                <div class="hdah651" style="margin-top: 10px;">
+                    <div class="om-step-card" style="border-left: 8px solid #a76e04; background: #fdf3e7;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;display:none; "></h3>
+                            <p class="om-step-detail" style="color: #967331;">Any number added to the blacklist will not receive SMS campaigns until it is removed from the blacklist.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Information
+
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Number</td>
+                                <td>Blacklisted mobile number</td>
+                            </tr>
+                            <tr>
+                                <td>Created Date</td>
+                                <td>Date when the number was added to the blacklist</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Actions
+
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Action</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Delete Selected</td>
+                                <td>Removes selected blacklisted numbers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result
+                            </h3>
+                            <p class="om-step-detail" style="color: #31964f;">Users can view and manage all blacklisted mobile numbers from a centralized list.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Upload Blacklist Numbers via Excel
+
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">Users can upload multiple blacklisted numbers using an Excel file.
+
+                </p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_9/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Options
+
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Choose File</td>
+                                <td>Select an Excel file containing mobile numbers</td>
+                            </tr>
+                            <tr>
+                                <td>Sample File</td>
+                                <td>Download sample format for upload</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Supported Formats
+
+                    </span>
+                </div>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">.xls</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">.xlsx</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Steps
+
+                    </span>
+                </div>
+
+                <!-- steps  -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Blacklist Numbers
+                            </h3>
+                            <p class="om-step-detail">Navigate to the Blacklist Numbers page.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click + Blacklist Numbers
+                            </h3>
+                            <p class="om-step-detail">Open the blacklist popup window.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Upload Excel
+                            </h3>
+                            <p class="om-step-detail">Choose the Upload Excel tab.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Choose Excel File
+                            </h3>
+                            <p class="om-step-detail">Browse and select the Excel file containing mobile numbers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Save
+                            </h3>
+                            <p class="om-step-detail">Upload and save the blacklist numbers.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result
+                            </h3>
+                            <p class="om-step-detail" style="color: #31964f;">All valid mobile numbers from the uploaded file are added to the blacklist.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__8').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Manage Group
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__10').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            SMS Reports
+                        </span>
+                    </a>
+
+                </div>
+
+
             </section>
 
             <!-- sublink box 10 -->
-            <section id="contect_10_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                10
+            <section id="contect_10_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
+                
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS Reports
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>Reports Module
+                    </h4>
+                </div>
+
+                <h2>SMS Reports
+                </h2>
+
+                <p>The Reports module provides insights into SMS campaign performance, delivery statistics, and archived reporting data. Users can monitor campaign effectiveness, review delivery outcomes, and access historical reports.
+
+                </p>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Report Dashboard
+
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_1.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Purpose
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">The Reports module provides insights into SMS campaign performance, delivery statistics, and archived reporting data. Users can monitor campaign effectiveness, review delivery outcomes, and access historical reports.
+                </p>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Report Sections
+
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Section</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Campaign Activity</td>
+                                <td>View campaign performance and activity details.</td>
+                            </tr>
+                            <tr>
+                                <td>Delivery Statistics</td>
+                                <td>Analyze SMS delivery metrics and status information.</td>
+                            </tr>
+                            <tr>
+                                <td>Archive Report</td>
+                                <td>Access historical and archived reports.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Benefits
+                    </span>
+                </div>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Monitor campaign performance.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Track RCS delivery outcomes.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Track customer engagement and CTA responses.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Analyze messaging effectiveness.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result:
+                            </h3>
+                            <p class="om-step-detail" style="color: #31964f;">Users can access reporting tools and monitor SMS campaign performance from a centralized location.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Campaign Activity
+
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_2.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Purpose</p>
+                <p style="margin-top:25px;">The Campaign Activity report provides detailed information about SMS campaigns executed during a selected date range. Users can review campaign performance, delivery status, scheduled campaigns, and fallback reports.</p>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Date Range Filter
+                </p>
+                <p style="margin-top:25px;">Users can select a custom date range to view campaign records.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_3.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Purpose</p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Today
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Yesterday
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Last 7 Days
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Last 30 Days
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000;">This Month
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000;">Last Month
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000;">Custom Range
+                                <br>Click <b>Apply</b> to load campaign data for the selected period.
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Campaign Report Information
+                </p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_4.png" alt="">
+                    </span>
+                </div>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Campaign Date</td>
+                                <td>Displays the date and time when the campaign was created.</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Name</td>
+                                <td>Displays the name of the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Template Name</td>
+                                <td>Displays the template used in the campaign.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Agent Info</td>
+                                <td>Displays the Agent Name and Agent ID associated with the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>Displays the interface used to create the campaign, such as Web or HTTP.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Message Type</td>
+                                <td>Displays the type of RCS message sent, such as RichCard.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Scheduled Info</td>
+                                <td>Displays whether the campaign is scheduled along with the scheduled date and time.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Is Journey Campaign</td>
+                                <td>Indicates whether the campaign is part of a Journey Campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Total Count</td>
+                                <td>Displays the total number of messages sent in the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Credit Used</td>
+                                <td>Displays the total credits consumed by the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Campaign Status</td>
+                                <td>Displays the current campaign status along with the start and end timestamps.</td>
+
+                            </tr>
+                            <tr>
+                                <td>View</td>
+                                <td>Provides options to view campaign details and related information.</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Available Actions
+
+                </p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">View Campaign Details
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">View Delivery Information
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Download Report
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delivery Report
+
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_5.png" alt="">
+                    </span>
+                </div>
+
+                <p style="margin-top:25px;">The Delivery Report displays recipient-level delivery information and helps users verify message delivery status.
+
+                </p>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Received Date</td>
+                                <td>Displays the date and time when the RCS message was received.</td>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>Displays the recipient mobile number.</td>
+                            </tr>
+                            <tr>
+                                <td>Reference ID</td>
+                                <td>Unique identifier generated for the RCS message transaction.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Template Info</td>
+                                <td>Displays the template name and message type used in the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Delivery Info</td>
+                                <td>Displays the message status along with delivery and read timestamps.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>Displays the interface used to send the RCS message, such as Web or HTTP.</td>
+
+                            </tr>
+                            <tr>
+                                <td>SMS Cost</td>
+                                <td>Displays the cost incurred for sending the SMS message.</td>
+
+                            </tr>
+                            <tr>
+                                <td>View</td>
+                                <td>Allows users to view detailed information about the message.</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Features
+
+                </p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">View delivery records.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Download delivery report.
+
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Schedule Report
+
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_6.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;">The Schedule Report displays scheduled campaigns that are pending execution.</p>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>ScheduleDate</td>
+                                <td>Scheduled execution date and time.</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Date</td>
+                                <td>Campaign creation date and time.</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Name</td>
+                                <td>Name of the campaign.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Template Name</td>
+                                <td>Name of the template used in the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Agent Info</td>
+                                <td>Displays the RCS Agent Name and Agent ID.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>Interface used to create the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Message Type</td>
+                                <td>Type of message sent in the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Total Count</td>
+                                <td>Total number of recipients.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Credit Used</td>
+                                <td>Total credits consumed by the campaign.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Campaign Status</td>
+                                <td>Displays the current status along with start and end time.</td>
+
+                            </tr>
+                            <tr>
+                                <td>Action</td>
+                                <td>Displays the available actions for the campaign.</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Fallback Report
+
+                    </span>
+                </div>
+
+                <p style="margin-top:25px;">The Fallback Report displays fallback campaign activity when messages are redirected through alternate channels.
+
+                </p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                <b>
+                                    SMS to SMS Fallback –
+                                </b>
+                                Redirected to alternate SMS route.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_7.png" alt="">
+                    </span>
+                </div>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                <b>
+                                    RCS Fallback -
+                                </b>
+                                Redirected from RCS to SMS or another supported channel.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_8.png" alt="">
+                    </span>
+                </div>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                <b>
+                                    WA Fallback –
+                                </b>
+                                Redirected to WhatsApp channels.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_9.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Available Information
+                </p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Redirected to WhatsApp channels.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Campaign Date
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Campaign Name
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Template Information
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Interface / Channel
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Scheduled Information
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Campaign Status
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Total Count
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Cost
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Error Details
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delivery Statistics
+
+                    </span>
+                </div>
+
+                <p style="margin-top:25px;">The Delivery Statistics report provides a summary of SMS delivery performance for a selected date range. It helps users monitor message delivery status, identify failed messages, and analyze overall campaign performance.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_10.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Delivery Statistics Page</p>
+
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>From Date</td>
+                                <td>Start date for the report</td>
+                            </tr>
+                            <tr>
+                                <td>To Date</td>
+                                <td>End date for the report</td>
+                            </tr>
+                            <tr>
+                                <td>Statistics</td>
+                                <td>Fetch delivery statistics for the selected period</td>
+                            </tr>
+
+                            <tr>
+                                <td>Reset</td>
+                                <td>Clear filters and reload default values</td>
+
+                            </tr>
+                            <tr>
+                                <td>Export</td>
+                                <td>Download the report</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Available Information
+                </p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:decimal;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Select the From Date.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Select the To Date.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Click the Statistics button.
+                                <br>
+                            <p style="margin-top: 15px;margin:0;">
+                                The system will generate delivery statistics for the selected date range.
+                            </p>
+                            </p>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Report Columns
+                </p>
+
+                <!-- ul  -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Received Date
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                Pending
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">
+                                DLR Awaited
+                            </p>
+                        <li>
+                            <p style="margin:0px;color:#000;">
+                                Delivered </p>
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000000;">Undelivered
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000000;">Expired</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000000;">Rejected</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000000;">Others</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color:#000000;">Total</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Archive Report
+
+                    </span>
+                </div>
+
+                <p style="margin-top:25px;">The Archive Report feature allows users to view and download historical SMS campaign data within a specified date range.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_10/img_11.png" alt="">
+                    </span>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Archive Report Page
+
+                </p>
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Field</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Start Date</td>
+                                <td>Select the starting date for the report</td>
+                            </tr>
+                            <tr>
+                                <td>End Date</td>
+                                <td>Select the ending date for the report</td>
+                            </tr>
+                            <tr>
+                                <td>Search Username</td>
+                                <td>Search reports for a specific username</td>
+                            </tr>
+
+                            <tr>
+                                <td>Show Data</td>
+                                <td>Display report data based on selected filters</td>
+
+                            </tr>
+                            <tr>
+                                <td>Download</td>
+                                <td>Download the report file</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--notification yellow -->
+                <div class="hdah651" style="margin-top: 10px;">
+                    <div class="om-step-card" style="border-left: 8px solid #a76e04; background: #fdf3e7;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #967331;">Important Note:
+                            </h3>
+                            <p class="om-step-detail" style="color: #967331;">Archive reports are available for a maximum period of 30 days. Selecting a date range beyond 30 days may not return any data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__9').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Blocklist Number
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__11').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            SMS API Integration
+                        </span>
+                    </a>
+
+                </div>
+
+
             </section>
 
             <!-- sublink box 11 -->
@@ -5682,24 +8363,24 @@
         let haw_linw969 = document.getElementById("haw_linw969");
 
         // if koi btn pa click kar to ya chale ga 
-            haamer_id_btn.addEventListener("click", () => {
+        haamer_id_btn.addEventListener("click", () => {
 
-                dash_box_slie.classList.toggle("dashbord_revile_gl");
-                haamer_id_btn.classList.toggle("haamer_btn_nikw5");
+            dash_box_slie.classList.toggle("dashbord_revile_gl");
+            haamer_id_btn.classList.toggle("haamer_btn_nikw5");
 
-                if (haamer_id_btn.classList.contains("haamer_btn_nikw5")) {
+            if (haamer_id_btn.classList.contains("haamer_btn_nikw5")) {
 
-                    close_linw969.style.display = "flex";
-                    haw_linw969.style.display = "none";
+                close_linw969.style.display = "flex";
+                haw_linw969.style.display = "none";
 
-                } else {
+            } else {
 
-                    close_linw969.style.display = "none";
-                    haw_linw969.style.display = "flex";
+                close_linw969.style.display = "none";
+                haw_linw969.style.display = "flex";
 
-                }
+            }
 
-            });
+        });
 
         function show_this_box(el) {
 
@@ -6639,9 +9320,9 @@
                 contect_box_59.classList.toggle("show_active");
             }
 
-                if (box_id === "contect-60") {
-                    contect_box_60.classList.toggle("show_active");
-                }
+            if (box_id === "contect-60") {
+                contect_box_60.classList.toggle("show_active");
+            }
 
         }
 
