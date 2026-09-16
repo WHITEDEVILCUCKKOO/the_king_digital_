@@ -40,6 +40,10 @@
     <?php require_once __DIR__ . '/includes/aggregator_platform_section/aggregator_powering-industry-leaders.php' ?>
 
 
+    <!-- Section 9 ( Faqs  ) -->
+    <?php require_once __DIR__ . '/includes/aggregator_platform_section/aggregator_faqs.php' ?>
+
+
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

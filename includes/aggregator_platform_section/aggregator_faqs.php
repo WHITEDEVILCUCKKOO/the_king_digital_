@@ -16,6 +16,16 @@
         --kd-white: #FFFFFF;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: var(--kd-bg);
+        font-family: "Inter", system-ui, sans-serif;
+    }
+
     .kd-faq-section {
         padding: 64px 24px;
     }
@@ -82,6 +92,7 @@
         cursor: pointer;
         text-align: left;
         padding: 17px 20px;
+        font-family: inherit;
         font-size: 14.5px;
         font-weight: 600;
         color: var(--kd-heading);
@@ -185,6 +196,7 @@
         border: none;
         border-radius: 10px;
         padding: 14px 20px;
+        font-family: inherit;
         font-size: 14.5px;
         font-weight: 700;
         cursor: pointer;
@@ -334,13 +346,12 @@
     }
 </style>
 
-
 <section class="kd-faq-section">
     <div class="kd-faq-container">
 
         <div class="kd-faq-header">
             <h1>Frequently asked questions</h1>
-            <p>Everything you need to know before getting started with King Digital.</p>
+            <p>Everything you need to know before getting started with the King Digital Aggregator Platform.</p>
         </div>
 
         <div class="kd-faq-layout">
@@ -350,98 +361,98 @@
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        Who is the best digital marketing company in Delhi?
+                        What is the King Digital Aggregator Platform?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>There are many agencies to choose from, but King Digital stands out for combining SEO, bulk SMS, WhatsApp, RCS, hosting and voice AI under one roof, with a Delhi-based team that understands the local market and DLT compliance requirements.</p>
+                            <p>It's a single platform that brings SMS, WhatsApp, RCS, Voice and Email into one dashboard and one set of APIs, so you can send and manage every customer communication channel from the same place instead of juggling separate vendor logins.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        What is DLT registration and why do I need it for bulk SMS?
+                        Which channels can I access through the platform?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>DLT (Distributed Ledger Technology) registration is a TRAI requirement for any business sending commercial SMS in India. You register your entity, sender ID and message templates on the operator portal before you can send bulk messages — we help you complete this end to end.</p>
+                            <p>Bulk SMS (promotional and transactional), WhatsApp Business API, RCS messaging, voice calling and AI voice agents, and email — all routed and reported through the same account.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        How long does it take to build a website?
+                        Can I white-label the platform for my own clients?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>Most business websites take 2 to 4 weeks from kickoff to launch, depending on the number of pages, custom design work, and how quickly content and approvals come back from your side. Larger or e-commerce builds can take longer.</p>
+                            <p>Yes. Agencies and resellers can run the platform under their own brand, with their own logo, domain and pricing, while King Digital handles the underlying infrastructure and operator connections.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        Do you provide WhatsApp Business API for small businesses?
+                        Does the platform support multiple routes for better delivery?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>Yes. We set up WhatsApp Business API access, get your templates approved, and help you send order updates, support messages and campaigns, scaled to fit small businesses as well as larger accounts.</p>
+                            <p>Yes. The platform connects to multiple telecom operators and channel partners and can automatically route messages through the best-performing path, so delivery stays reliable even if one route is congested.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        What is your pricing for bulk SMS services?
+                        Is there a single API for all channels?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>Bulk SMS pricing depends on message volume, route type (promotional vs. transactional) and whether you need DLT setup support. Share your expected monthly volume and we'll put together a plan and rate that fits.</p>
+                            <p>Yes. A unified REST API lets you send SMS, WhatsApp, RCS or trigger voice calls with the same integration pattern, so your developers don't need to build and maintain separate integrations for each channel.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        Do you work with political parties and election campaigns?
+                        What kind of reporting and analytics do I get?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>Yes. We support political and campaign clients with voter outreach via bulk SMS, WhatsApp and voice calling, all set up to follow TRAI and Election Commission messaging guidelines.</p>
+                            <p>You get real-time delivery reports, channel-wise usage and cost breakdowns, campaign performance, and exportable logs across every channel from one unified dashboard.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="kd-faq-item">
                     <button type="button" class="kd-faq-question" aria-expanded="false">
-                        Do you provide support after the project is delivered?
+                        How do I get started and onboard onto the platform?
                         <svg class="kd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9" />
                         </svg>
                     </button>
                     <div class="kd-faq-answer">
                         <div class="kd-faq-answer-inner">
-                            <p>Yes. Every project includes a post-launch support window, and we offer ongoing maintenance and support plans after that for websites, campaigns and messaging services.</p>
+                            <p>Share which channels you need and your expected volume, and our team will set up your account, complete any DLT or WhatsApp approvals required, and hand you API keys and dashboard access to go live.</p>
                         </div>
                     </div>
                 </div>
@@ -451,14 +462,14 @@
             <!-- CTA PANEL -->
             <div class="kd-cta">
                 <h2>Still have questions?</h2>
-                <p>Our team is here to help. Get a free 30-minute consultation with our digital expert — no pressure, no obligation.</p>
+                <p>Our team is here to help. Get a free 30-minute walkthrough of the platform with our integration expert — no pressure, no obligation.</p>
 
-                <a href="contact.php" class="kd-cta-btn kd-cta-btn--primary">
+                <button type="button" class="kd-cta-btn kd-cta-btn--primary">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
                     </svg>
                     Send Us a Message
-</a>
+                </button>
 
                 <div class="kd-cta-divider">— or —</div>
 
@@ -472,7 +483,7 @@
                 <div class="kd-cta-foot">
                     <span>Also Reach Us On</span>
                     <div class="kd-cta-links">
-                        <a href="https://wa.me/919211339966?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="kd-cta-link kd-cta-link--whatsapp">
+                        <a href="#" class="kd-cta-link kd-cta-link--whatsapp">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.15 8.15 0 0 1-1.25-4.34c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.81c0 4.54-3.7 8.21-8.23 8.21zm4.52-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.96-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.15 0-.31-.02-.48-.02-.16 0-.43.06-.66.3-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z" />
                             </svg>
