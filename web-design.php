@@ -38,6 +38,9 @@
     <!-- section 9 (   ) -->
     <?php require_once __DIR__ . '/includes/web-design-section/section_9.php'; ?>
 
+    <!-- section 10 (   ) -->
+    <?php require_once __DIR__ . '/includes/web-design-section/section_10.php'; ?>
+
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
