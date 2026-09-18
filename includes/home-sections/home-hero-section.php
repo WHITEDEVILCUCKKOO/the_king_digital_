@@ -812,19 +812,18 @@ ai_interaction_assets_once();
         }
     }
 
-    /* NOTE: the nested orange cube geometry, color theming, sizing and
-       reduced-motion/pause behavior now live in the shared
-       ai-interaction-widget.php component (class prefix .ai-interaction__*).
-       Only the Hero-specific call-state accents remain below. */
-    /* ---- listening / speaking state accents on the cube loader ---- */
-    .ai-assistant-card.is-listening .ai-interaction__cube {
-        animation-duration: 3s;
-        filter: drop-shadow(0 0 18px rgba(79, 127, 247, 0.85));
-    }
-
-    .ai-assistant-card.is-speaking .ai-interaction__cube {
-        animation-duration: 1.4s;
-        filter: drop-shadow(0 0 22px rgba(244, 123, 32, 0.9));
+    /* NOTE: the AI Assistant card's visual is now the THREE.js orb from
+       ai-assistant-visualizer.js, driven by ai-assistant-icpaas-adapter.js.
+       Phase-based styling (idle/listening/thinking/speaking) is handled
+       entirely inside the visualizer's own _phaseConfig(), so no CSS
+       state classes are needed here anymore. The nested cube widget
+       (ai-interaction-widget.php) is still used for the decorative
+       background cubes elsewhere on this page. */
+    .ai-orb-container {
+        width: 220px;
+        height: 220px;
+        max-width: 90%;
+        max-height: 90%;
     }
 
 
@@ -1334,11 +1333,10 @@ ai_interaction_assets_once();
                     <span></span>
                     <span></span>
 
-                    <?php echo render_ai_interaction([
-                        'id'    => 'aiInteractionHero',
-                        'theme' => 'orange', // reference/original color -- do not change
-                        'size'  => 'md', // matches the original 40px-face cube exactly
-                    ]); ?>
+                    <!-- 3D orb (THREE.js), driven live by ai-assistant-icpaas-adapter.js
+                         listening for the KD widget's kd:state / kd:level events.
+                         See the wiring script near the bottom of this file. -->
+                    <div class="ai-orb-container" id="aiOrbContainer"></div>
 
                 </div>
                 <p id="aiAssistantStatus">Select an agent, then Talk With AI</p>
@@ -1423,6 +1421,21 @@ ai_interaction_assets_once();
     one assistant UI is ever visible at a time. See the "ICPaaS floating
     widget visibility" block at the bottom of global.js.
 -->
+
+<!--
+    Orb visual for the AI Assistant card (#aiOrbContainer above).
+    Order matters: THREE must load before ai-assistant-visualizer.js.
+    ai-assistant-icpaas-adapter.js has no dependency on THREE and can load
+    in either order relative to it, but must be present before the
+    instantiation code at the bottom of the wiring script below runs.
+
+    ADJUST THESE PATHS to wherever the two files actually live in the
+    project's asset structure -- they're written here as siblings of this
+    section file, matching the convention used by ai-interaction-widget.php.
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="ai-assistant-visualizer.js"></script>
+<script src="ai-assistant-icpaas-adapter.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1535,7 +1548,6 @@ ai_interaction_assets_once();
         });
 
         /* ---- ICPaaS AI Connector (Voice) wiring ---- */
-        var card = document.getElementById('aiAssistantCard');
         var statusEl = document.getElementById('aiAssistantStatus');
         var talkBtn = document.getElementById('talkWithAiBtn');
         var talkLabel = document.getElementById('talkWithAiLabel');
@@ -1623,36 +1635,57 @@ ai_interaction_assets_once();
             }
         }
 
-        /* ---- Listen for KD widget events to animate the orb / show status ---- */
-        window.addEventListener('kd:state', function(e) {
-            var detail = e.detail || {};
-            refreshCallUi();
-
-            card.classList.remove('is-listening', 'is-speaking');
-
-            if (window.KD && window.KD.phase === 'listening') {
-                card.classList.add('is-listening');
-                setStatus('Listening…', 'live');
-            } else if (window.KD && window.KD.phase === 'speaking') {
-                card.classList.add('is-speaking');
-                setStatus('Speaking…', 'live');
-            } else if (window.KD && window.KD.inCall) {
-                setStatus('Connected.', 'live');
-            } else {
-                setStatus(defaultStatusText);
-            }
-
-            console.log('kd:state', detail);
-        });
-
-        window.addEventListener('kd:level', function(e) {
-            // Optional: e.detail typically carries an audio level (0–1) you
-            // could use to scale .ai-assistant-circle for a live VU-meter look.
-            console.log('kd:level', e.detail);
-        });
+        window.addEventListener('kd:state', refreshCallUi);
 
         // In case the widget script loads after this one and already has a
         // state by the time everything settles, sync the UI once on load.
         setTimeout(refreshCallUi, 500);
+
+        /* ---- 3D orb: single source of truth for phase/level ----
+           ai-assistant-icpaas-adapter.js listens for kd:state / kd:level
+           itself (see that file), normalizes them into one of
+           idle/listening/thinking/speaking + a 0..1 level, and calls back
+           on every change. ai-assistant-visualizer.js reads that adapter
+           once per animation frame to drive the orb. The status text below
+           piggybacks on the same callback instead of re-parsing KD events
+           itself, so there's only one place that decides what "listening"
+           etc. means. */
+        var orbContainer = document.getElementById('aiOrbContainer');
+
+        if (!orbContainer) {
+            console.error('[HomeHero] #aiOrbContainer not found in markup.');
+        } else if (!window.AIAssistantVisualizer || !window.AIAssistantICPaaSAdapter) {
+            console.error(
+                '[HomeHero] AIAssistantVisualizer / AIAssistantICPaaSAdapter not found on window ' +
+                '-- check that three.js, ai-assistant-visualizer.js and ' +
+                'ai-assistant-icpaas-adapter.js are loading (and in that order) before this script.'
+            );
+        } else {
+            var aiOrbAdapter = new AIAssistantICPaaSAdapter({
+                onChange: function(state) {
+                    if (!window.KD) return;
+
+                    if (state.phase === 'listening') {
+                        setStatus('Listening…', 'live');
+                    } else if (state.phase === 'speaking') {
+                        setStatus('Speaking…', 'live');
+                    } else if (state.phase === 'thinking') {
+                        setStatus('Thinking…', 'live');
+                    } else if (window.KD.inCall) {
+                        setStatus('Connected.', 'live');
+                    } else {
+                        setStatus(defaultStatusText);
+                    }
+                }
+            });
+
+            var aiOrb = new AIAssistantVisualizer({
+                container: orbContainer,
+                color: '#4F7FF7', // == --color-secondary
+                accentColor: '#F47B20', // == --color-primary
+                size: 'medium'
+            });
+            aiOrb.attachAdapter(aiOrbAdapter);
+        }
     });
 </script>
