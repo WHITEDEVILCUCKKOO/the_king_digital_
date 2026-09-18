@@ -1429,13 +1429,16 @@ ai_interaction_assets_once();
     in either order relative to it, but must be present before the
     instantiation code at the bottom of the wiring script below runs.
 
-    ADJUST THESE PATHS to wherever the two files actually live in the
-    project's asset structure -- they're written here as siblings of this
-    section file, matching the convention used by ai-interaction-widget.php.
+    These paths resolve from the SITE ROOT (the browser has no idea this
+    markup came from a PHP include, so it resolves src="..." against the
+    page's URL, not this file's folder on disk) -- matching the same
+    "assets/js/" convention footer.php already uses for global.js. Put
+    ai-assistant-visualizer.js and ai-assistant-icpaas-adapter.js in that
+    same assets/js/ folder on the server.
 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="ai-assistant-visualizer.js"></script>
-<script src="ai-assistant-icpaas-adapter.js"></script>
+<script src="assets/js/ai-assistant-visualizer.js"></script>
+<script src="assets/js/ai-assistant-icpaas-adapter.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
