@@ -1,3 +1,11 @@
+<?php
+// Shared AI interaction cube (color-themed nested-cube animation).
+// Adjust this path to wherever ai-interaction-widget.php lives in the
+// project's include structure -- it currently assumes it sits next to
+// this file.
+require_once __DIR__ . '/ai-interaction-widget.php';
+ai_interaction_assets_once();
+?>
 <style>
     :root {
 
@@ -195,6 +203,287 @@
         pointer-events: none;
         z-index: 1;
     }
+
+    /* ---------- Floating background AI-cube accents ---------- */
+
+    .home-hero-cubes {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        overflow: hidden;
+        pointer-events: none;
+        /* perspective adds subtle depth to the parallax tilt on hover/move */
+        perspective: 900px;
+    }
+
+    /* Outer wrapper: purely positional + parallax (moved by JS on mousemove).
+       Kept separate from the drift/hover transforms below so the two never
+       fight over the `transform` property. */
+    .home-hero-cube {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Inner wrapper: idle drift animation + all interactive states
+       (hover/focus/active). This is the part the user can actually click
+       and hover, same spirit as the AI Assistant card's cube. */
+    .home-hero-cube__inner {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0.55;
+        cursor: pointer;
+        pointer-events: auto;
+        animation-name: hero-cube-drift;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+            opacity 0.3s ease,
+            filter 0.3s ease;
+    }
+
+    .home-hero-cube__inner:hover,
+    .home-hero-cube__inner:focus-visible,
+    .home-hero-cube__inner.is-active {
+        opacity: 1;
+        transform: scale(1.45) rotate(6deg);
+        filter: drop-shadow(0 0 14px var(--cube-glow, rgba(255, 255, 255, 0.8))) brightness(1.15);
+        animation-play-state: paused;
+        outline: none;
+        z-index: 3;
+    }
+
+    .home-hero-cube__inner:active,
+    .home-hero-cube__inner.is-clicked {
+        transform: scale(1.2) rotate(-4deg);
+    }
+
+    /* Expanding "ping" ring, fired on click — echoes the AI card's own
+       pulse-wave rings so the two feel like one interactive family. */
+    .home-hero-cube__ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1.5px solid var(--cube-glow, rgba(255, 255, 255, 0.8));
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .home-hero-cube__ring.is-pinging {
+        animation: hero-cube-ping 0.7s ease-out;
+    }
+
+    @keyframes hero-cube-ping {
+        0% {
+            transform: translate(-50%, -50%) scale(0.4);
+            opacity: 0.7;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(2.6);
+            opacity: 0;
+        }
+    }
+
+    @keyframes hero-cube-drift {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(var(--cube-drift-x, 8px), var(--cube-drift-y, -16px));
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Per-theme glow color used by the hover/click states above */
+    .home-hero-cube--theme-orange {
+        --cube-glow: rgba(244, 123, 32, 0.85);
+    }
+
+    .home-hero-cube--theme-blue {
+        --cube-glow: rgba(79, 127, 247, 0.85);
+    }
+
+    .home-hero-cube--theme-green {
+        --cube-glow: rgba(58, 199, 150, 0.85);
+    }
+
+    .home-hero-cube--theme-purple {
+        --cube-glow: rgba(168, 85, 247, 0.85);
+    }
+
+    .home-hero-cube--theme-cyan {
+        --cube-glow: rgba(34, 211, 238, 0.85);
+    }
+
+    .home-hero-cube--1 {
+        top: 8%;
+        left: 6%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-hero-cube--1 .home-hero-cube__inner {
+        --cube-drift-x: 10px;
+        --cube-drift-y: -14px;
+        animation-duration: 7.5s;
+        animation-delay: 0s;
+    }
+
+    .home-hero-cube--2 {
+        top: 12%;
+        left: 88%;
+        width: 34px;
+        height: 34px;
+    }
+
+    .home-hero-cube--2 .home-hero-cube__inner {
+        --cube-drift-x: -10px;
+        --cube-drift-y: 12px;
+        animation-duration: 6.8s;
+        animation-delay: 0.5s;
+    }
+
+    .home-hero-cube--3 {
+        top: 46%;
+        left: 3%;
+        width: 44px;
+        height: 44px;
+    }
+
+    .home-hero-cube--3 .home-hero-cube__inner {
+        --cube-drift-x: 8px;
+        --cube-drift-y: 14px;
+        animation-duration: 8.2s;
+        animation-delay: 1s;
+    }
+
+    .home-hero-cube--4 {
+        top: 60%;
+        left: 92%;
+        width: 36px;
+        height: 36px;
+    }
+
+    .home-hero-cube--4 .home-hero-cube__inner {
+        --cube-drift-x: -8px;
+        --cube-drift-y: -12px;
+        animation-duration: 7.1s;
+        animation-delay: 1.4s;
+    }
+
+    .home-hero-cube--5 {
+        top: 82%;
+        left: 18%;
+        width: 38px;
+        height: 38px;
+    }
+
+    .home-hero-cube--5 .home-hero-cube__inner {
+        --cube-drift-x: 9px;
+        --cube-drift-y: -10px;
+        animation-duration: 6.5s;
+        animation-delay: 0.8s;
+    }
+
+    .home-hero-cube--6 {
+        top: 24%;
+        left: 40%;
+        width: 26px;
+        height: 26px;
+    }
+
+    .home-hero-cube--6 .home-hero-cube__inner {
+        --cube-drift-x: 7px;
+        --cube-drift-y: 10px;
+        animation-duration: 6.2s;
+        animation-delay: 0.3s;
+    }
+
+    .home-hero-cube--7 {
+        top: 68%;
+        left: 42%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .home-hero-cube--7 .home-hero-cube__inner {
+        --cube-drift-x: -9px;
+        --cube-drift-y: -11px;
+        animation-duration: 7.8s;
+        animation-delay: 1.6s;
+    }
+
+    .home-hero-cube--8 {
+        top: 4%;
+        left: 62%;
+        width: 28px;
+        height: 28px;
+    }
+
+    .home-hero-cube--8 .home-hero-cube__inner {
+        --cube-drift-x: 11px;
+        --cube-drift-y: -8px;
+        animation-duration: 6.9s;
+        animation-delay: 1.1s;
+    }
+
+    .home-hero-cube--9 {
+        top: 92%;
+        left: 68%;
+        width: 32px;
+        height: 32px;
+    }
+
+    .home-hero-cube--9 .home-hero-cube__inner {
+        --cube-drift-x: -7px;
+        --cube-drift-y: 13px;
+        animation-duration: 7.3s;
+        animation-delay: 0.2s;
+    }
+
+    .home-hero-cube--10 {
+        top: 34%;
+        left: 96%;
+        width: 24px;
+        height: 24px;
+    }
+
+    .home-hero-cube--10 .home-hero-cube__inner {
+        --cube-drift-x: -8px;
+        --cube-drift-y: 9px;
+        animation-duration: 6.4s;
+        animation-delay: 1.8s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .home-hero-cube__inner {
+            animation: none;
+        }
+
+        .home-hero-cube {
+            transition: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .home-hero-cubes {
+            display: none;
+        }
+    }
+
 
     .home-hero-section_conetent {
         position: relative;
@@ -523,305 +812,19 @@
         }
     }
 
-    /* From Uiverse.io by andrew-manzyk */
-    /* .loader {
-        --color-one: #D6E8FF;
-        --color-two: #8BB9F7;
-        --color-three: #4F8FEF;
-        --color-four: #2864C7;
-        --color-five: #123A7A;
-        --time-animation: 5s;
-        --size: 1;
-        position: relative;
-        border-radius: 50%;
-        transform: scale(var(--size));
-        box-shadow:
-            0 0 25px 0 var(--color-three),
-            0 20px 50px 0 var(--color-four);
-        animation: colorize calc(var(--time-animation) * 3) ease-in-out infinite;
+    /* NOTE: the nested orange cube geometry, color theming, sizing and
+       reduced-motion/pause behavior now live in the shared
+       ai-interaction-widget.php component (class prefix .ai-interaction__*).
+       Only the Hero-specific call-state accents remain below. */
+    /* ---- listening / speaking state accents on the cube loader ---- */
+    .ai-assistant-card.is-listening .ai-interaction__cube {
+        animation-duration: 3s;
+        filter: drop-shadow(0 0 18px rgba(79, 127, 247, 0.85));
     }
 
-    .loader::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border-top: solid 1px var(--color-one);
-        border-bottom: solid 1px var(--color-two);
-        background: linear-gradient(180deg, var(--color-five), var(--color-four));
-        box-shadow:
-            inset 0 10px 10px 0 var(--color-three),
-            inset 0 -10px 10px 0 var(--color-four);
-    }
-
-    .loader .box {
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(180deg,
-                var(--color-one) 30%,
-                var(--color-two) 70%);
-        mask: url(#clipping);
-        -webkit-mask: url(#clipping);
-    }
-
-    .loader svg {
-        position: absolute;
-    }
-
-    .loader svg #clipping {
-        filter: contrast(15);
-        animation: roundness calc(var(--time-animation) / 2) linear infinite;
-    }
-
-    .loader svg #clipping polygon {
-        filter: blur(7px);
-    }
-
-    .loader svg #clipping polygon:nth-child(1) {
-        transform-origin: 75% 25%;
-        transform: rotate(90deg);
-    }
-
-    .loader svg #clipping polygon:nth-child(2) {
-        transform-origin: 50% 50%;
-        animation: rotation var(--time-animation) linear infinite reverse;
-    }
-
-    .loader svg #clipping polygon:nth-child(3) {
-        transform-origin: 50% 60%;
-        animation: rotation var(--time-animation) linear infinite;
-        animation-delay: calc(var(--time-animation) / -3);
-    }
-
-    .loader svg #clipping polygon:nth-child(4) {
-        transform-origin: 40% 40%;
-        animation: rotation var(--time-animation) linear infinite reverse;
-    }
-
-    .loader svg #clipping polygon:nth-child(5) {
-        transform-origin: 40% 40%;
-        animation: rotation var(--time-animation) linear infinite reverse;
-        animation-delay: calc(var(--time-animation) / -2);
-    }
-
-    .loader svg #clipping polygon:nth-child(6) {
-        transform-origin: 60% 40%;
-        animation: rotation var(--time-animation) linear infinite;
-    }
-
-    .loader svg #clipping polygon:nth-child(7) {
-        transform-origin: 60% 40%;
-        animation: rotation var(--time-animation) linear infinite;
-        animation-delay: calc(var(--time-animation) / -1.5);
-    }
-
-    @keyframes rotation {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes roundness {
-        0% {
-            filter: contrast(15);
-        }
-
-        20% {
-            filter: contrast(3);
-        }
-
-        40% {
-            filter: contrast(3);
-        }
-
-        60% {
-            filter: contrast(15);
-        }
-
-        100% {
-            filter: contrast(15);
-        }
-    }
-
-    @keyframes colorize {
-        0% {
-            filter: hue-rotate(-10deg);
-        }
-
-        20% {
-            filter: hue-rotate(5deg);
-        }
-
-        40% {
-            filter: hue-rotate(20deg);
-        }
-
-        60% {
-            filter: hue-rotate(10deg);
-        }
-
-        80% {
-            filter: hue-rotate(-5deg);
-        }
-
-        100% {
-            filter: hue-rotate(-10deg);
-        }
-    } */
-
-    /* From Uiverse.io by KSAplay */
-    .loader {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .simple-text {
-        position: absolute;
-        top: -100px;
-        color: white;
-        width: 200px;
-        text-align: center;
-    }
-
-    .cube {
-        position: absolute;
-        width: 40px;
-        transform-style: preserve-3d;
-        transform: rotateX(-30deg) rotateY(45deg);
-        transition: 300ms ease;
-        cursor: pointer;
-        animation: rotateCube 10s infinite linear;
-    }
-
-    /* change the distance between cubes with translateX */
-    .cube-front,
-    .cube-back {
-        transform: translateX(40px) translateZ(-20px);
-        animation: none;
-    }
-
-    /* change the distance between cubes with translateZ */
-    .cube-top,
-    .cube-bottom {
-        transform: translateZ(20px);
-        animation: none;
-    }
-
-    /* change the distance between cubes with translateX */
-    .cube-left,
-    .cube-right {
-        transform: translateX(40px) translateZ(-20px);
-        animation: none;
-    }
-
-    .face {
-        position: absolute;
-        transform-style: preserve-3d;
-        width: 40px;
-        height: 40px;
-
-        background: rgb(145, 88, 47);
-
-        background: radial-gradient(circle,
-                rgb(126, 61, 8) 0%,
-                rgb(248, 99, 0) 100%);
-    }
-
-    .front {
-        transform: rotateY(0deg) translateZ(20px);
-    }
-
-    .back {
-        transform: rotateY(180deg) translateZ(20px);
-    }
-
-    .left {
-        transform: rotateY(-90deg) translateZ(20px);
-    }
-
-    .right {
-        transform: rotateY(90deg) translateZ(20px);
-    }
-
-    .top {
-        transform: rotateX(90deg) translateZ(20px);
-    }
-
-    .bottom {
-        transform: rotateX(-90deg) translateZ(20px);
-    }
-
-    .cube-back:hover .face,
-    .cube-front:hover .face,
-    .cube-top:hover .face,
-    .cube-bottom:hover .face,
-    .cube-left:hover .face,
-    .cube-right:hover .face {
-        background: rgb(255, 255, 255);
-
-        background: radial-gradient(circle,
-                #fff7ed 0%,
-                #fed7aa 45%,
-                #fb923c 100%);
-
-        filter:
-            drop-shadow(0px 0px 5px #fff7ed) drop-shadow(0px 0px 15px #fb923c) drop-shadow(0px 0px 30px rgba(249, 115, 22, 0.9));
-    }
-
-    .cube:active {
-        transform: translateX(0px) translateZ(-20px);
-    }
-
-    .cube-back:active .face,
-    .cube-front:active .face,
-    .cube-top:active .face,
-    .cube-bottom:active .face,
-    .cube-left:active .face,
-    .cube-right:active .face {
-        background: rgb(255, 255, 255);
-
-        background: radial-gradient(circle,
-                #fff7ed 0%,
-                #fed7aa 45%,
-                #fb923c 100%);
-
-        filter:
-            drop-shadow(0px 0px 5px #fff7ed) drop-shadow(0px 0px 15px #fb923c) drop-shadow(0px 0px 30px rgba(249, 115, 22, 0.9));
-    }
-
-    .middle {
-        background: transparent;
-    }
-
-    @keyframes rotateCube {
-        0% {
-            transform: rotateX(-30deg) rotateY(45deg);
-        }
-
-        25% {
-            transform: rotateX(-10deg) rotateY(135deg);
-        }
-
-        50% {
-            transform: rotateX(30deg) rotateY(225deg);
-        }
-
-        75% {
-            transform: rotateX(10deg) rotateY(315deg);
-        }
-
-        100% {
-            transform: rotateX(-30deg) rotateY(405deg);
-        }
+    .ai-assistant-card.is-speaking .ai-interaction__cube {
+        animation-duration: 1.4s;
+        filter: drop-shadow(0 0 22px rgba(244, 123, 32, 0.9));
     }
 
 
@@ -978,6 +981,19 @@
         font-style: italic;
         color: var(--color-text-muted);
         margin: 0 0 18px;
+        transition: color var(--transition-fast);
+    }
+
+    .home-hero-section_ai-card>p.status-error {
+        color: var(--color-danger);
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    .home-hero-section_ai-card>p.status-live {
+        color: var(--color-success);
+        font-style: normal;
+        font-weight: 600;
     }
 
     /* ---- Select Agent trigger button ---- */
@@ -1066,6 +1082,10 @@
         background: rgba(255, 255, 255, 0.05);
     }
 
+    .ai-assistant-options_item.is-selected {
+        background: rgba(255, 255, 255, 0.09);
+    }
+
     .ai-assistant-options_item-icon {
         width: 26px;
         height: 26px;
@@ -1140,6 +1160,7 @@
         border-radius: 999px;
         cursor: pointer;
         flex: 1;
+        transition: background var(--transition-fast), opacity var(--transition-fast);
     }
 
     .buttons-row>button::before {
@@ -1149,6 +1170,26 @@
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
         border-left: 8px solid #ffffff;
+        transition: border-color var(--transition-fast);
+    }
+
+    .buttons-row>button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+    }
+
+    /* When a call is active, swap the "play" triangle for a "stop" square
+       and shift the button to a danger color so it reads as "End Call". */
+    .buttons-row>button.in-call {
+        background: var(--color-danger);
+    }
+
+    .buttons-row>button.in-call::before {
+        border-left: none;
+        width: 9px;
+        height: 9px;
+        background: #ffffff;
+        border-radius: 2px;
     }
 
     .home-hero-section_ai-card .buttons-row {
@@ -1214,6 +1255,7 @@
             border-radius: 999px;
             font-size: 10px;
         }
+
         .home-hero-section_autotyping {
             font-size: 15px;
         }
@@ -1222,6 +1264,39 @@
 
 <section class="home-hero-section" id="home-hero-section">
     <!-- <canvas class="home-hero-water" id="homeHeroWater"></canvas> -->
+    <div class="home-hero-cubes" id="homeHeroCubes" aria-hidden="true">
+        <?php
+        // Each background cube: outer div handles mouse-parallax (JS),
+        // inner div handles idle drift + hover/click states (CSS), ring
+        // handles the click "ping" pulse. data-depth controls how strongly
+        // a cube reacts to the parallax — bigger/closer cubes move more.
+        $home_hero_bg_cubes = [
+            ['n' => 1,  'theme' => 'orange', 'unit' => 8, 'depth' => 22],
+            ['n' => 2,  'theme' => 'blue',   'unit' => 7, 'depth' => 16],
+            ['n' => 3,  'theme' => 'green',  'unit' => 8, 'depth' => 24],
+            ['n' => 4,  'theme' => 'purple', 'unit' => 7, 'depth' => 14],
+            ['n' => 5,  'theme' => 'cyan',   'unit' => 7, 'depth' => 18],
+            ['n' => 6,  'theme' => 'blue',   'unit' => 5, 'depth' => 10],
+            ['n' => 7,  'theme' => 'orange', 'unit' => 6, 'depth' => 12],
+            ['n' => 8,  'theme' => 'purple', 'unit' => 5, 'depth' => 9],
+            ['n' => 9,  'theme' => 'cyan',   'unit' => 6, 'depth' => 13],
+            ['n' => 10, 'theme' => 'green',  'unit' => 4, 'depth' => 8],
+        ];
+        foreach ($home_hero_bg_cubes as $cube):
+        ?>
+            <div class="home-hero-cube home-hero-cube--<?php echo $cube['n']; ?> home-hero-cube--theme-<?php echo $cube['theme']; ?>"
+                data-depth="<?php echo $cube['depth']; ?>">
+                <div class="home-hero-cube__inner" tabindex="-1">
+                    <?php echo render_ai_interaction([
+                        'id'    => 'heroCubeBg' . $cube['n'],
+                        'theme' => $cube['theme'],
+                        'unit'  => $cube['unit'],
+                    ]); ?>
+                    <span class="home-hero-cube__ring"></span>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
     <div class="home-hero-section_conetent">
         <div class="home-hero-section_info">
             <div class="home-hero-section_badge" style="display: none;">
@@ -1253,107 +1328,29 @@
         <div class="home-hero-section_ai">
             <div class="home-hero-section_ai-card">
                 <h3>AI Assistant</h3>
-                <div class="ai-assistant-card">
+                <div class="ai-assistant-card" id="aiAssistantCard">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    <!-- From Uiverse.io by andrew-manzyk -->
-                    <!-- <div class="loader">
-                        <svg width="100" height="100" viewBox="0 0 100 100">
-                            <defs>
-                                <mask id="clipping">
-                                    <polygon points="0,0 100,0 100,100 0,100" fill="black"></polygon>
-                                    <polygon points="25,25 75,25 50,75" fill="white"></polygon>
-                                    <polygon points="50,25 75,75 25,75" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                </mask>
-                            </defs>
-                        </svg>
-                        <div class="box"></div>
-                    </div> -->
 
-                    <!-- From Uiverse.io by KSAplay -->
-                    <div class="loader">
-                        <div class="cube">
-                            <div class="face middle front">
-                                <div class="cube cube-front">
-                                    <div class="face front"></div>
-                                    <div class="face back"></div>
-                                    <div class="face left"></div>
-                                    <div class="face right"></div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
-                            <div class="face middle back">
-                                <div class="cube cube-back">
-                                    <div class="face front"></div>
-                                    <div class="face back"></div>
-                                    <div class="face left"></div>
-                                    <div class="face right"></div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
-                            <div class="face middle left">
-                                <div class="cube cube-left">
-                                    <div class="face front"></div>
-                                    <div class="face back"></div>
-                                    <div class="face left"></div>
-                                    <div class="face right"></div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
-                            <div class="face middle right">
-                                <div class="cube cube-right">
-                                    <div class="face front"></div>
-                                    <div class="face back"></div>
-                                    <div class="face left"></div>
-                                    <div class="face right"></div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
-                            <div class="face middle top">
-                                <div class="cube cube-top">
-                                    <div class="face front"></div>
-                                    <div class="face back"></div>
-                                    <div class="face left"></div>
-                                    <div class="face right"></div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
-                            <div class="face middle bottom">
-                                <div class="cube cube-bottom">
-                                    <div class="face front"></div>
-                                    <div class="face back"></div>
-                                    <div class="face left"></div>
-                                    <div class="face right"></div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <?php echo render_ai_interaction([
+                        'id'    => 'aiInteractionHero',
+                        'theme' => 'orange', // reference/original color -- do not change
+                        'size'  => 'md', // matches the original 40px-face cube exactly
+                    ]); ?>
 
                 </div>
-                <p>Select an agent, then Talk With AI</p>
+                <p id="aiAssistantStatus">Select an agent, then Talk With AI</p>
                 <div class="buttons-row">
                     <div class="ai-assistant-options" id="agentDropdown">
                         <button type="button" id="agentDropdownToggle">
                             <span></span>
-                            Select Agent
+                            <span id="agentDropdownLabel">Select Agent</span>
                             <span></span>
                         </button>
                         <div class="ai-assistant-options_list">
-                            <div class="ai-assistant-options_item">
+                            <div class="ai-assistant-options_item" data-persona="IND_Female">
                                 <div class="ai-assistant-options_item-icon">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
@@ -1365,7 +1362,7 @@
                                 </div>
                                 <span class="ai-assistant-options_item-tag ind">IND</span>
                             </div>
-                            <div class="ai-assistant-options_item">
+                            <div class="ai-assistant-options_item" data-persona="IND_Male">
                                 <div class="ai-assistant-options_item-icon">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
@@ -1377,7 +1374,7 @@
                                 </div>
                                 <span class="ai-assistant-options_item-tag ind">IND</span>
                             </div>
-                            <div class="ai-assistant-options_item">
+                            <div class="ai-assistant-options_item" data-persona="ENG_Male">
                                 <div class="ai-assistant-options_item-icon">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
@@ -1389,7 +1386,7 @@
                                 </div>
                                 <span class="ai-assistant-options_item-tag eng">ENG</span>
                             </div>
-                            <div class="ai-assistant-options_item">
+                            <div class="ai-assistant-options_item" data-persona="ENG_Female">
                                 <div class="ai-assistant-options_item-icon">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
@@ -1403,13 +1400,29 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button">Talk With AI</button>
+                    <button type="button" id="talkWithAiBtn" disabled>
+                        <span id="talkWithAiLabel">Talk With AI</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
 </section>
+
+<!--
+    NOTE: the ICPaaS AI Connector voice script (blob-widget.js, namespace KD)
+    is no longer loaded here. It's loaded once, site-wide, from footer.php —
+    see footer.php near </body>. That script is what defines window.KD, which
+    this hero card's own UI below calls into (KD.start / KD.end / KD.setPersona).
+
+    That connector script also auto-injects its OWN floating launcher bubble
+    + panel (the black "AI Voice Assistant" card you saw overlapping this hero
+    card). global.js now hides that auto-widget while this hero section is on
+    screen, and reveals it once the visitor scrolls past the hero — so only
+    one assistant UI is ever visible at a time. See the "ICPaaS floating
+    widget visibility" block at the bottom of global.js.
+-->
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1446,9 +1459,71 @@
 
         tick();
 
+        /* ---- Background cubes: mouse-parallax + click ping ---- */
+        var heroSection = document.getElementById('home-hero-section');
+        var cubesLayer = document.getElementById('homeHeroCubes');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (heroSection && cubesLayer) {
+            var bgCubes = Array.prototype.slice.call(cubesLayer.querySelectorAll('.home-hero-cube'));
+            var rafId = null;
+            var pointerX = 0.5; // 0..1 across the section
+            var pointerY = 0.5;
+
+            function applyParallax() {
+                rafId = null;
+                bgCubes.forEach(function(cube) {
+                    var depth = parseFloat(cube.getAttribute('data-depth')) || 12;
+                    var dx = (pointerX - 0.5) * 2 * depth;
+                    var dy = (pointerY - 0.5) * 2 * depth;
+                    cube.style.transform = 'translate3d(' + dx.toFixed(1) + 'px, ' + dy.toFixed(1) + 'px, 0)';
+                });
+            }
+
+            if (!reduceMotion) {
+                heroSection.addEventListener('mousemove', function(e) {
+                    var rect = heroSection.getBoundingClientRect();
+                    pointerX = (e.clientX - rect.left) / rect.width;
+                    pointerY = (e.clientY - rect.top) / rect.height;
+                    if (rafId === null) {
+                        rafId = requestAnimationFrame(applyParallax);
+                    }
+                });
+
+                heroSection.addEventListener('mouseleave', function() {
+                    pointerX = 0.5;
+                    pointerY = 0.5;
+                    if (rafId === null) {
+                        rafId = requestAnimationFrame(applyParallax);
+                    }
+                });
+            }
+
+            // Click / tap on a cube: brief highlight + expanding ring pulse.
+            bgCubes.forEach(function(cube) {
+                var inner = cube.querySelector('.home-hero-cube__inner');
+                var ring = cube.querySelector('.home-hero-cube__ring');
+                if (!inner) return;
+
+                inner.addEventListener('click', function() {
+                    inner.classList.add('is-active', 'is-clicked');
+                    if (ring) {
+                        ring.classList.remove('is-pinging');
+                        // restart the animation even on rapid repeat clicks
+                        void ring.offsetWidth;
+                        ring.classList.add('is-pinging');
+                    }
+                    setTimeout(function() {
+                        inner.classList.remove('is-active', 'is-clicked');
+                    }, 550);
+                });
+            });
+        }
+
         /* ---- Agent dropdown toggle ---- */
         var dropdown = document.getElementById('agentDropdown');
         var toggle = document.getElementById('agentDropdownToggle');
+        var toggleLabel = document.getElementById('agentDropdownLabel');
 
         toggle.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -1459,1035 +1534,125 @@
             dropdown.classList.remove('open');
         });
 
+        /* ---- ICPaaS AI Connector (Voice) wiring ---- */
+        var card = document.getElementById('aiAssistantCard');
+        var statusEl = document.getElementById('aiAssistantStatus');
+        var talkBtn = document.getElementById('talkWithAiBtn');
+        var talkLabel = document.getElementById('talkWithAiLabel');
+
+        var selectedPersona = null;
+        var defaultStatusText = 'Select an agent, then Talk With AI';
+
+        function setStatus(text, kind) {
+            statusEl.textContent = text;
+            statusEl.classList.remove('status-error', 'status-live');
+            if (kind) {
+                statusEl.classList.add(kind === 'error' ? 'status-error' : 'status-live');
+            }
+        }
+
         dropdown.querySelectorAll('.ai-assistant-options_item').forEach(function(item) {
             item.addEventListener('click', function() {
                 var name = item.querySelector('strong').textContent;
-                toggle.childNodes[1].textContent = ' ' + name + ' ';
+                var sub = item.querySelector('small').textContent;
+                var persona = item.getAttribute('data-persona');
+
+                toggleLabel.textContent = name + ' — ' + sub;
                 dropdown.classList.remove('open');
+
+                dropdown.querySelectorAll('.ai-assistant-options_item').forEach(function(el) {
+                    el.classList.remove('is-selected');
+                });
+                item.classList.add('is-selected');
+
+                selectedPersona = persona;
+                talkBtn.disabled = false;
+
+                if (window.KD && typeof window.KD.setPersona === 'function') {
+                    try {
+                        window.KD.setPersona(persona);
+                        if (!(window.KD.inCall)) {
+                            setStatus('Agent set: ' + sub + '. Tap "Talk With AI" to start.');
+                        }
+                    } catch (err) {
+                        setStatus('Could not set agent voice. Please retry.', 'error');
+                        console.error('KD.setPersona failed:', err);
+                    }
+                } else {
+                    // Widget script not loaded yet (or missing API key) — still
+                    // remember the choice so it applies once KD becomes available.
+                    setStatus('Agent selected: ' + sub + '. Connecting…');
+                }
             });
         });
+
+        /* ---- Talk With AI button: start/stop a voice call via KD ---- */
+        talkBtn.addEventListener('click', function() {
+            if (!window.KD) {
+                setStatus('AI voice assistant is not available right now.', 'error');
+                return;
+            }
+            if (!selectedPersona) {
+                setStatus('Please select an agent first.', 'error');
+                return;
+            }
+
+            try {
+                if (window.KD.inCall) {
+                    window.KD.end();
+                } else {
+                    window.KD.setPersona(selectedPersona);
+                    window.KD.start();
+                }
+            } catch (err) {
+                setStatus('Something went wrong starting the call.', 'error');
+                console.error('KD call toggle failed:', err);
+            }
+        });
+
+        /* ---- Reflect KD call state on the button + status text ---- */
+        function refreshCallUi() {
+            if (!window.KD) return;
+
+            if (window.KD.inCall) {
+                talkBtn.classList.add('in-call');
+                talkLabel.textContent = 'End Call';
+            } else {
+                talkBtn.classList.remove('in-call');
+                talkLabel.textContent = 'Talk With AI';
+            }
+        }
+
+        /* ---- Listen for KD widget events to animate the orb / show status ---- */
+        window.addEventListener('kd:state', function(e) {
+            var detail = e.detail || {};
+            refreshCallUi();
+
+            card.classList.remove('is-listening', 'is-speaking');
+
+            if (window.KD && window.KD.phase === 'listening') {
+                card.classList.add('is-listening');
+                setStatus('Listening…', 'live');
+            } else if (window.KD && window.KD.phase === 'speaking') {
+                card.classList.add('is-speaking');
+                setStatus('Speaking…', 'live');
+            } else if (window.KD && window.KD.inCall) {
+                setStatus('Connected.', 'live');
+            } else {
+                setStatus(defaultStatusText);
+            }
+
+            console.log('kd:state', detail);
+        });
+
+        window.addEventListener('kd:level', function(e) {
+            // Optional: e.detail typically carries an audio level (0–1) you
+            // could use to scale .ai-assistant-circle for a live VU-meter look.
+            console.log('kd:level', e.detail);
+        });
+
+        // In case the widget script loads after this one and already has a
+        // state by the time everything settles, sync the UI once on load.
+        setTimeout(refreshCallUi, 500);
     });
-
-    // document.addEventListener("DOMContentLoaded", () => {
-
-    //     /* ========================================
-    //        ELEMENTS
-    //     ======================================== */
-
-    //     const hero = document.querySelector(".home-hero-section");
-    //     const canvas = document.getElementById("homeHeroWater");
-
-    //     if (!hero || !canvas) {
-    //         return;
-    //     }
-
-    //     const ctx = canvas.getContext("2d");
-
-    //     if (!ctx) {
-    //         return;
-    //     }
-
-
-    //     /* ========================================
-    //        CANVAS VARIABLES
-    //     ======================================== */
-
-    //     let width = 0;
-    //     let height = 0;
-
-    //     let dpr = Math.min(
-    //         window.devicePixelRatio || 1,
-    //         2
-    //     );
-
-
-    //     /* ========================================
-    //        MOUSE VARIABLES
-    //     ======================================== */
-
-    //     let mouseX = -1000;
-    //     let mouseY = -1000;
-
-    //     let previousMouseX = -1000;
-    //     let previousMouseY = -1000;
-
-    //     let lastRippleX = -1000;
-    //     let lastRippleY = -1000;
-
-    //     let mouseInside = false;
-
-
-    //     /* ========================================
-    //        RIPPLE STORAGE
-    //     ======================================== */
-
-    //     const ripples = [];
-
-
-    //     /* ========================================
-    //        SETTINGS
-    //     ======================================== */
-
-    //     const settings = {
-
-    //         /*
-    //          * Minimum and maximum final ripple size.
-    //          *
-    //          * These are deliberately much larger
-    //          * than the previous version.
-    //          */
-
-    //         minSize: 50,
-    //         maxSize: 150,
-
-
-    //         /*
-    //          * Expansion speed.
-    //          */
-
-    //         animationSpeed: 2.1,
-
-
-    //         /*
-    //          * Existing water color family.
-    //          *
-    //          * This does NOT change your hero theme.
-    //          */
-
-    //         color: "148, 217, 255",
-
-
-    //         /*
-    //          * Keep the effect subtle.
-    //          */
-
-    //         opacity: 0.18,
-
-
-    //         /*
-    //          * Cursor must move this far before
-    //          * another disturbance is created.
-    //          */
-
-    //         rippleDistance: 26,
-
-
-    //         /*
-    //          * Maximum simultaneous disturbances.
-    //          */
-
-    //         maxRipples: 16,
-
-
-    //         /*
-    //          * Number of points used to draw
-    //          * an irregular water circumference.
-    //          */
-
-    //         ringPoints: 100
-    //     };
-
-
-    //     /* ========================================
-    //        RESIZE CANVAS
-    //     ======================================== */
-
-    //     function resizeCanvas() {
-
-    //         const rect =
-    //             hero.getBoundingClientRect();
-
-
-    //         width = rect.width;
-    //         height = rect.height;
-
-
-    //         dpr = Math.min(
-    //             window.devicePixelRatio || 1,
-    //             2
-    //         );
-
-
-    //         canvas.width =
-    //             Math.round(width * dpr);
-
-    //         canvas.height =
-    //             Math.round(height * dpr);
-
-
-    //         canvas.style.width =
-    //             `${width}px`;
-
-    //         canvas.style.height =
-    //             `${height}px`;
-
-
-    //         /*
-    //          * Draw using CSS pixel coordinates
-    //          * while keeping the canvas sharp on
-    //          * high-DPI displays.
-    //          */
-
-    //         ctx.setTransform(
-    //             dpr,
-    //             0,
-    //             0,
-    //             dpr,
-    //             0,
-    //             0
-    //         );
-    //     }
-
-
-    //     resizeCanvas();
-
-
-    //     window.addEventListener(
-    //         "resize",
-    //         resizeCanvas
-    //     );
-
-
-    //     /* ========================================
-    //        DISTANCE
-    //     ======================================== */
-
-    //     function getDistance(
-    //         x1,
-    //         y1,
-    //         x2,
-    //         y2
-    //     ) {
-
-    //         const dx = x2 - x1;
-    //         const dy = y2 - y1;
-
-    //         return Math.sqrt(
-    //             dx * dx +
-    //             dy * dy
-    //         );
-    //     }
-
-
-    //     /* ========================================
-    //        CREATE RIPPLE
-    //     ======================================== */
-
-    //     function createRipple(
-    //         x,
-    //         y,
-    //         velocity
-    //     ) {
-
-    //         /*
-    //          * Remove oldest ripple if we
-    //          * reach the maximum.
-    //          */
-
-    //         if (
-    //             ripples.length >=
-    //             settings.maxRipples
-    //         ) {
-
-    //             ripples.shift();
-    //         }
-
-
-    //         /*
-    //          * Convert cursor velocity into
-    //          * a value between 0 and 1.
-    //          */
-
-    //         const strength =
-    //             Math.min(
-    //                 velocity / 35,
-    //                 1
-    //             );
-
-
-    //         /*
-    //          * Faster cursor =
-    //          * larger disturbance.
-    //          */
-
-    //         const maxRadius =
-    //             settings.minSize +
-    //             (
-    //                 settings.maxSize -
-    //                 settings.minSize
-    //             ) * strength;
-
-
-    //         /*
-    //          * Give every ripple slightly
-    //          * different characteristics.
-    //          */
-
-    //         const ripple = {
-
-    //             x: x,
-    //             y: y,
-
-
-    //             /*
-    //              * Current radius.
-    //              */
-
-    //             radius: 5,
-
-
-    //             /*
-    //              * Final radius.
-    //              */
-
-    //             maxRadius: maxRadius,
-
-
-    //             /*
-    //              * Animation speed.
-    //              */
-
-    //             speed: settings.animationSpeed +
-    //                 strength * 1.3,
-
-
-    //             /*
-    //              * Base opacity.
-    //              */
-
-    //             opacity: settings.opacity +
-    //                 strength * 0.10,
-
-
-    //             /*
-    //              * Random seed for
-    //              * irregular water shape.
-    //              */
-
-    //             seed: Math.random() * 10000,
-
-
-    //             /*
-    //              * Rotation prevents all
-    //              * ripples from looking identical.
-    //              */
-
-    //             rotation: Math.random() *
-    //                 Math.PI *
-    //                 2,
-
-
-    //             /*
-    //              * Small variation in shape.
-    //              */
-
-    //             distortion: 0.018 +
-    //                 Math.random() * 0.012,
-
-
-    //             /*
-    //              * Current life.
-    //              */
-
-    //             life: 0
-    //         };
-
-
-    //         ripples.push(ripple);
-    //     }
-
-
-    //     /* ========================================
-    //        CREATE MULTIPLE WATER BANDS
-    //     ======================================== */
-
-    //     function drawWaterRing(
-    //         ripple,
-    //         radius,
-    //         opacity,
-    //         lineWidth,
-    //         blur
-    //     ) {
-
-    //         ctx.save();
-
-
-    //         ctx.translate(
-    //             ripple.x,
-    //             ripple.y
-    //         );
-
-
-    //         ctx.rotate(
-    //             ripple.rotation
-    //         );
-
-
-    //         /*
-    //          * Slightly flatten the ring.
-    //          *
-    //          * This prevents it from looking
-    //          * like a perfect geometric circle.
-    //          */
-
-    //         ctx.scale(
-    //             1,
-    //             0.88
-    //         );
-
-
-    //         ctx.beginPath();
-
-
-    //         const points =
-    //             settings.ringPoints;
-
-
-    //         for (
-    //             let i = 0; i <= points; i++
-    //         ) {
-
-    //             const angle =
-    //                 (
-    //                     i / points
-    //                 ) *
-    //                 Math.PI *
-    //                 2;
-
-
-    //             /*
-    //              * Multiple low-frequency
-    //              * sine waves create the
-    //              * irregular water surface.
-    //              */
-
-    //             const noise1 =
-    //                 Math.sin(
-    //                     angle * 3 +
-    //                     ripple.seed
-    //                 ) *
-    //                 ripple.distortion;
-
-
-    //             const noise2 =
-    //                 Math.sin(
-    //                     angle * 6 +
-    //                     ripple.seed * 1.7
-    //                 ) *
-    //                 ripple.distortion *
-    //                 0.55;
-
-
-    //             const noise3 =
-    //                 Math.sin(
-    //                     angle * 11 +
-    //                     ripple.seed * 0.63
-    //                 ) *
-    //                 ripple.distortion *
-    //                 0.25;
-
-
-    //             /*
-    //              * Combine the distortions.
-    //              */
-
-    //             const distortion =
-    //                 1 +
-    //                 noise1 +
-    //                 noise2 +
-    //                 noise3;
-
-
-    //             const currentRadius =
-    //                 radius *
-    //                 distortion;
-
-
-    //             const x =
-    //                 Math.cos(angle) *
-    //                 currentRadius;
-
-
-    //             const y =
-    //                 Math.sin(angle) *
-    //                 currentRadius;
-
-
-    //             if (i === 0) {
-
-    //                 ctx.moveTo(
-    //                     x,
-    //                     y
-    //                 );
-
-    //             } else {
-
-    //                 ctx.lineTo(
-    //                     x,
-    //                     y
-    //                 );
-    //             }
-    //         }
-
-
-    //         ctx.closePath();
-
-
-    //         /*
-    //          * Blur creates the soft water
-    //          * appearance from your reference.
-    //          */
-
-    //         ctx.filter =
-    //             `blur(${blur}px)`;
-
-
-    //         ctx.strokeStyle =
-    //             `rgba(
-    //             ${settings.color},
-    //             ${opacity}
-    //         )`;
-
-
-    //         ctx.lineWidth =
-    //             lineWidth;
-
-
-    //         ctx.stroke();
-
-
-    //         ctx.restore();
-    //     }
-
-
-    //     /* ========================================
-    //        DRAW ONE RIPPLE
-    //     ======================================== */
-
-    //     function drawRipple(ripple) {
-
-    //         /*
-    //          * Progress from 0 to 1.
-    //          */
-
-    //         const progress =
-    //             ripple.radius /
-    //             ripple.maxRadius;
-
-
-    //         /*
-    //          * Smooth expansion.
-    //          *
-    //          * Starts gently and expands
-    //          * naturally.
-    //          */
-
-    //         const easedProgress =
-    //             1 -
-    //             Math.pow(
-    //                 1 - progress,
-    //                 3
-    //             );
-
-
-    //         const radius =
-    //             5 +
-    //             (
-    //                 ripple.maxRadius - 5
-    //             ) *
-    //             easedProgress;
-
-
-    //         /* ====================================
-    //            OPACITY CURVE
-    //         ====================================
-
-    //         0%       invisible
-    //         10%      appears
-    //         30-40%   strongest
-    //         60%      fading
-    //         80%      very faint
-    //         100%     gone
-    //         */
-
-    //         let fade;
-
-
-    //         if (progress < 0.10) {
-
-    //             fade =
-    //                 progress / 0.10;
-
-    //         } else if (progress < 0.38) {
-
-    //             fade = 1;
-
-    //         } else {
-
-    //             fade =
-    //                 1 -
-    //                 (
-    //                     (progress - 0.38) /
-    //                     0.62
-    //                 );
-    //         }
-
-
-    //         fade =
-    //             Math.max(
-    //                 0,
-    //                 Math.min(
-    //                     1,
-    //                     fade
-    //                 )
-    //             );
-
-
-    //         /*
-    //          * Slight organic movement.
-    //          */
-
-    //         const movement =
-    //             Math.sin(
-    //                 ripple.life * 8 +
-    //                 ripple.seed
-    //             ) *
-    //             0.025;
-
-
-    //         const finalOpacity =
-    //             ripple.opacity *
-    //             fade;
-
-
-    //         /* ====================================
-    //            OUTER ATMOSPHERIC GLOW
-    //         ==================================== */
-
-    //         ctx.save();
-
-
-    //         ctx.translate(
-    //             ripple.x,
-    //             ripple.y
-    //         );
-
-
-    //         ctx.rotate(
-    //             ripple.rotation
-    //         );
-
-
-    //         ctx.scale(
-    //             1 + movement,
-    //             0.88 - movement
-    //         );
-
-
-    //         /*
-    //          * Large soft gradient surrounding
-    //          * the actual water ring.
-    //          */
-
-    //         const outerGradient =
-    //             ctx.createRadialGradient(
-    //                 0,
-    //                 0,
-    //                 radius * 0.72,
-
-    //                 0,
-    //                 0,
-    //                 radius * 1.04
-    //             );
-
-
-    //         outerGradient.addColorStop(
-    //             0,
-    //             `rgba(
-    //             ${settings.color},
-    //             0
-    //         )`
-    //         );
-
-
-    //         outerGradient.addColorStop(
-    //             0.72,
-    //             `rgba(
-    //             ${settings.color},
-    //             0
-    //         )`
-    //         );
-
-
-    //         outerGradient.addColorStop(
-    //             0.86,
-    //             `rgba(
-    //             ${settings.color},
-    //             ${finalOpacity * 0.08}
-    //         )`
-    //         );
-
-
-    //         outerGradient.addColorStop(
-    //             0.93,
-    //             `rgba(
-    //             ${settings.color},
-    //             ${finalOpacity * 0.20}
-    //         )`
-    //         );
-
-
-    //         outerGradient.addColorStop(
-    //             0.97,
-    //             `rgba(
-    //             ${settings.color},
-    //             ${finalOpacity * 0.10}
-    //         )`
-    //         );
-
-
-    //         outerGradient.addColorStop(
-    //             1,
-    //             `rgba(
-    //             ${settings.color},
-    //             0
-    //         )`
-    //         );
-
-
-    //         ctx.fillStyle =
-    //             outerGradient;
-
-
-    //         ctx.beginPath();
-
-
-    //         ctx.arc(
-    //             0,
-    //             0,
-    //             radius * 1.04,
-    //             0,
-    //             Math.PI * 2
-    //         );
-
-
-    //         ctx.fill();
-
-
-    //         ctx.restore();
-
-
-    //         /* ====================================
-    //            MAIN WATER RING
-    //         ==================================== */
-
-    //         drawWaterRing(
-    //             ripple,
-    //             radius,
-    //             finalOpacity * 0.62,
-    //             1.2,
-    //             4
-    //         );
-
-
-    //         /* ====================================
-    //            SECONDARY WAVE
-    //         ==================================== */
-
-    //         /*
-    //          * A second ring slightly inside
-    //          * the main ring makes the effect
-    //          * feel like actual water rather
-    //          * than one outline.
-    //          */
-
-    //         drawWaterRing(
-    //             ripple,
-    //             radius * 0.91,
-    //             finalOpacity * 0.30,
-    //             1,
-    //             7
-    //         );
-
-
-    //         /* ====================================
-    //            INNER WAVE
-    //         ==================================== */
-
-    //         drawWaterRing(
-    //             ripple,
-    //             radius * 0.78,
-    //             finalOpacity * 0.16,
-    //             1,
-    //             9
-    //         );
-
-
-    //         /* ====================================
-    //            SUBTLE HIGHLIGHT
-    //         ==================================== */
-
-    //         /*
-    //          * Only visible while the ripple
-    //          * is relatively young.
-    //          */
-
-    //         if (progress < 0.55) {
-
-    //             const highlightFade =
-    //                 Math.max(
-    //                     0,
-    //                     1 -
-    //                     progress / 0.55
-    //                 );
-
-
-    //             drawWaterRing(
-    //                 ripple,
-    //                 radius * 0.96,
-    //                 finalOpacity *
-    //                 highlightFade *
-    //                 0.20,
-    //                 0.8,
-    //                 2
-    //             );
-    //         }
-
-
-    //         /*
-    //          * Increase life.
-    //          */
-
-    //         ripple.life += 0.016;
-    //     }
-
-
-    //     /* ========================================
-    //        MOUSE ENTER
-    //     ======================================== */
-
-    //     hero.addEventListener(
-    //         "mouseenter",
-    //         (event) => {
-
-    //             mouseInside = true;
-
-
-    //             const rect =
-    //                 hero.getBoundingClientRect();
-
-
-    //             mouseX =
-    //                 event.clientX -
-    //                 rect.left;
-
-
-    //             mouseY =
-    //                 event.clientY -
-    //                 rect.top;
-
-
-    //             previousMouseX =
-    //                 mouseX;
-
-
-    //             previousMouseY =
-    //                 mouseY;
-
-
-    //             lastRippleX =
-    //                 mouseX;
-
-
-    //             lastRippleY =
-    //                 mouseY;
-    //         }
-    //     );
-
-
-    //     /* ========================================
-    //        MOUSE MOVE
-    //     ======================================== */
-
-    //     hero.addEventListener(
-    //         "mousemove",
-    //         (event) => {
-
-    //             const rect =
-    //                 hero.getBoundingClientRect();
-
-
-    //             mouseX =
-    //                 event.clientX -
-    //                 rect.left;
-
-
-    //             mouseY =
-    //                 event.clientY -
-    //                 rect.top;
-
-
-    //             /*
-    //              * How quickly is the cursor moving?
-    //              */
-
-    //             const velocity =
-    //                 getDistance(
-    //                     mouseX,
-    //                     mouseY,
-    //                     previousMouseX,
-    //                     previousMouseY
-    //                 );
-
-
-    //             /*
-    //              * How far since the last
-    //              * ripple was generated?
-    //              */
-
-    //             const distanceSinceRipple =
-    //                 getDistance(
-    //                     mouseX,
-    //                     mouseY,
-    //                     lastRippleX,
-    //                     lastRippleY
-    //                 );
-
-
-    //             /*
-    //              * Only generate another
-    //              * disturbance after the cursor
-    //              * has travelled a certain distance.
-    //              */
-
-    //             if (
-    //                 distanceSinceRipple >=
-    //                 settings.rippleDistance
-    //             ) {
-
-    //                 createRipple(
-    //                     mouseX,
-    //                     mouseY,
-    //                     velocity
-    //                 );
-
-
-    //                 lastRippleX =
-    //                     mouseX;
-
-
-    //                 lastRippleY =
-    //                     mouseY;
-    //             }
-
-
-    //             previousMouseX =
-    //                 mouseX;
-
-
-    //             previousMouseY =
-    //                 mouseY;
-    //         }
-    //     );
-
-
-    //     /* ========================================
-    //        MOUSE LEAVE
-    //     ======================================== */
-
-    //     hero.addEventListener(
-    //         "mouseleave",
-    //         () => {
-
-    //             mouseInside = false;
-
-    //             mouseX = -1000;
-    //             mouseY = -1000;
-
-    //             previousMouseX = -1000;
-    //             previousMouseY = -1000;
-    //         }
-    //     );
-
-
-    //     /* ========================================
-    //        ANIMATION LOOP
-    //     ======================================== */
-
-    //     function animate() {
-
-    //         /*
-    //          * Completely clear the transparent
-    //          * canvas every frame.
-    //          */
-
-    //         ctx.clearRect(
-    //             0,
-    //             0,
-    //             width,
-    //             height
-    //         );
-
-
-    //         /*
-    //          * Draw ripples from newest to oldest.
-    //          */
-
-    //         for (
-    //             let i = ripples.length - 1; i >= 0; i--
-    //         ) {
-
-    //             const ripple =
-    //                 ripples[i];
-
-
-    //             /*
-    //              * Expand ripple.
-    //              */
-
-    //             ripple.radius +=
-    //                 ripple.speed;
-
-
-    //             /*
-    //              * Remove finished ripples.
-    //              */
-
-    //             if (
-    //                 ripple.radius >=
-    //                 ripple.maxRadius
-    //             ) {
-
-    //                 ripples.splice(
-    //                     i,
-    //                     1
-    //                 );
-
-    //                 continue;
-    //             }
-
-
-    //             /*
-    //              * Draw current ripple.
-    //              */
-
-    //             drawRipple(
-    //                 ripple
-    //             );
-    //         }
-
-
-    //         requestAnimationFrame(
-    //             animate
-    //         );
-    //     }
-
-
-    //     /* ========================================
-    //        START
-    //     ======================================== */
-
-    //     animate();
-
-    // });
 </script>

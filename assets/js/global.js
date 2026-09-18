@@ -263,3 +263,164 @@ document.querySelectorAll(".randomNumber").forEach(function (element) {
 // for use do this ( <span class="randomNumber">0</span> )
 
 
+
+// ==================== ICPaaS floating widget visibility ====================
+//
+// The ICPaaS voice connector script (blob-widget.js, loaded from footer.php)
+// auto-injects its OWN floating launcher bubble + panel into the page,
+// separate from the hand-built "AI Assistant" card in the Home hero section.
+// Requirement: that auto-widget must be completely hidden while the Home
+// hero is on screen, and appear normally everywhere else (other pages, and
+// on the Home page once the visitor scrolls past the hero) — without ever
+// removing the widget from the DOM or touching the ICPaaS SDK itself.
+//
+// Identifying the widget:
+// ICPaaS doesn't publish a selector for the element(s) it injects, but we do
+// control (and therefore know) one real, non-arbitrary signal: the
+// `data-namespace="KD"` attribute on the connector <script> tag in
+// footer.php. Widget scripts built this way conventionally name their root
+// element(s) after that namespace (e.g. id/class "kd-widget",
+// "KD_panel", "icpaas-launcher"). So detection here is namespace-first:
+// look for elements whose id/class token is exactly "kd"/"icpaas" or starts
+// with "kd-"/"kd_"/"icpaas-"/"icpaas_" (case-insensitive). Only if nothing
+// matches that do we fall back to a narrower generic check (a fixed/sticky
+// direct child of <body> that isn't one of our own known elements) so we
+// still degrade gracefully if ICPaaS ever changes their internal naming.
+//
+// Timing:
+// blob-widget.js has no defer/async, so its own DOM injection can happen
+// before this deferred script even starts. To handle that without polling
+// or arbitrary setTimeout delays, we do one immediate scan on startup (which
+// catches anything already mounted), then rely purely on a MutationObserver
+// for anything the widget injects later (e.g. opening a panel on click).
+(function () {
+
+    var HERO_SELECTOR = '#home-hero-section';
+    var HIDDEN_CLASS = 'icpaas-widget-hidden';
+    var WIDGET_TAG_CLASS = 'icpaas-floating-widget';
+
+    // The connector's own configured namespace (see footer.php:
+    // data-namespace="KD") — the real, known identifier for its widget.
+    var NAMESPACE_PATTERN = /(^|[-_])(kd|icpaas)([-_]|$)/i;
+
+    // Elements that belong to THIS site's own UI — never candidates.
+    var OWN_ELEMENT_SELECTORS = [
+        '#home-hero-section',
+        '#main-nav',
+        '#mob-nav',
+        '#hamburger',
+        'header',
+        'footer'
+    ];
+
+    var hero = document.querySelector(HERO_SELECTOR);
+    var heroIsVisible = true; // assume visible until IntersectionObserver says otherwise
+    var trackedWidgetEls = [];
+
+    function isOwnElement(el) {
+        for (var i = 0; i < OWN_ELEMENT_SELECTORS.length; i++) {
+            var match = document.querySelector(OWN_ELEMENT_SELECTORS[i]);
+            if (match && (match === el || match.contains(el))) return true;
+        }
+        return false;
+    }
+
+    function matchesNamespace(el) {
+        if (el.id && NAMESPACE_PATTERN.test(el.id)) return true;
+        if (el.className && typeof el.className === 'string') {
+            var tokens = el.className.split(/\s+/);
+            for (var i = 0; i < tokens.length; i++) {
+                if (NAMESPACE_PATTERN.test(tokens[i])) return true;
+            }
+        }
+        return false;
+    }
+
+    function isFixedOrSticky(el) {
+        var cs = window.getComputedStyle(el);
+        return cs.position === 'fixed' || cs.position === 'sticky';
+    }
+
+    function applyVisibility(el) {
+        el.classList.toggle(HIDDEN_CLASS, heroIsVisible);
+    }
+
+    function track(el) {
+        if (trackedWidgetEls.indexOf(el) !== -1) return;
+        trackedWidgetEls.push(el);
+        el.classList.add(WIDGET_TAG_CLASS);
+        applyVisibility(el);
+    }
+
+    function considerElement(el) {
+        if (!(el instanceof Element)) return;
+        if (trackedWidgetEls.indexOf(el) !== -1) return;
+        if (['SCRIPT', 'STYLE', 'LINK'].indexOf(el.tagName) !== -1) return;
+        if (isOwnElement(el)) return;
+
+        // Primary signal: it's actually named after the connector's namespace.
+        if (matchesNamespace(el)) {
+            track(el);
+            return;
+        }
+
+        // Fallback signal: a top-level floating element that isn't ours.
+        // Scoped tightly (direct body children only) to avoid catching
+        // unrelated in-page UI.
+        if (el.parentElement === document.body && isFixedOrSticky(el)) {
+            track(el);
+        }
+    }
+
+    function scanExisting() {
+        // Namespace matches can live anywhere in the tree, so search broadly
+        // for those specifically (narrow pattern = safe to search wide).
+        document.querySelectorAll('[id], [class]').forEach(function (el) {
+            if (matchesNamespace(el) && !isOwnElement(el)) considerElement(el);
+        });
+        // Generic fallback stays scoped to direct <body> children.
+        Array.prototype.slice.call(document.body.children).forEach(considerElement);
+    }
+
+    // One immediate scan — covers the case where blob-widget.js (no defer)
+    // already injected its widget before this deferred script ran.
+    scanExisting();
+
+    // From here on, no polling: just react to whatever the widget adds later
+    // (e.g. a panel it creates only when opened).
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            mutation.addedNodes.forEach(function (node) {
+                if (!(node instanceof Element)) return;
+                considerElement(node);
+                node.querySelectorAll && node.querySelectorAll('[id], [class]').forEach(function (el) {
+                    if (matchesNamespace(el) && !isOwnElement(el)) considerElement(el);
+                });
+            });
+        });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    function syncAllVisibility() {
+        trackedWidgetEls.forEach(applyVisibility);
+    }
+
+    if (hero && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                heroIsVisible = entry.isIntersecting;
+                syncAllVisibility();
+            });
+        }, { threshold: 0.15 });
+        io.observe(hero);
+    } else {
+        // No hero on this page (or no IntersectionObserver support) — the
+        // widget should just show normally, as on any other page.
+        heroIsVisible = false;
+        syncAllVisibility();
+    }
+
+    // Handy for debugging from devtools: window.__icpaasWidgetEls
+    window.__icpaasWidgetEls = trackedWidgetEls;
+
+})();

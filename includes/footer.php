@@ -1,4 +1,4 @@
-   <style>
+<style>
        /* ========================================
    FOOTER WAVE WRAPPER
 ======================================== */
@@ -530,6 +530,14 @@
                                                         Header 
     ======================================================================================================================-->
 
+   <style>
+       /* Hides the ICPaaS connector's auto-injected floating widget while
+          the home hero section is on screen — see global.js. */
+       .icpaas-widget-hidden {
+           display: none !important;
+       }
+   </style>
+
 
    <footer style="position:relative; overflow: hidden;">
        <div class="footer-top">
@@ -914,6 +922,24 @@
 
 
    <script src="assets/js/global.js" defer></script>
+
+   <!--
+       ICPaaS AI Connector — Voice widget.
+       Loaded ONCE here, site-wide, per the integration guide ("Paste before
+       </body>"). Do not also add this script on individual pages/sections —
+       one copy per page is enough, and it defines window.KD globally.
+
+       Replace YOUR_API_KEY_HERE with your real key from the ICPaaS AI
+       Connector dashboard. This script also auto-injects its own floating
+       launcher bubble + panel; global.js hides/shows that automatically
+       depending on whether the home hero section is on screen (see the
+       "ICPaaS floating widget visibility" block in global.js).
+   -->
+   <script
+       src="https://connector.icpaas.ai/blob-widget.js"
+       data-api-key="YOUR_API_KEY_HERE"
+       data-agent-id="agent_0442d6869a13424ae12d41535bf498be"
+       data-namespace="KD"></script>
 
    </body>
 
