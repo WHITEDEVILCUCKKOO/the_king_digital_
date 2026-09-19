@@ -2160,37 +2160,6 @@ ai_interaction_assets_once();
 
 </section>
 
-<!--
-    NOTE: the ICPaaS AI Connector voice script (blob-widget.js, namespace KD)
-    is no longer loaded here. It's loaded once, site-wide, from footer.php —
-    see footer.php near </body>. That script is what defines window.KD, which
-    this hero card's own UI below calls into (KD.start / KD.end / KD.setPersona).
-
-    That connector script also auto-injects its OWN floating launcher bubble
-    + panel (the black "AI Voice Assistant" card you saw overlapping this hero
-    card). global.js now hides that auto-widget while this hero section is on
-    screen, and reveals it once the visitor scrolls past the hero — so only
-    one assistant UI is ever visible at a time. See the "ICPaaS floating
-    widget visibility" block at the bottom of global.js.
--->
-
-<!--
-    Blob visual for the AI Assistant card (#aiChatbotLoader above). No
-    three.js / WebGL anymore -- just the adapter (state/level normalizer)
-    plus a small driver that writes CSS custom properties. Order matters:
-    the adapter must load before the driver.
-
-    These paths resolve from the SITE ROOT (the browser has no idea this
-    markup came from a PHP include, so it resolves src="..." against the
-    page's URL, not this file's folder on disk) -- matching the same
-    "assets/js/" convention footer.php already uses for global.js. Put
-    ai-assistant-icpaas-adapter.js, ai-assistant-blob-driver.js and
-    ai-assistant-text-chat.js in that same assets/js/ folder on the server.
-
-    ai-assistant-text-chat.js powers the "Text Chat" mode. It lazy-loads the
-    ICPaaS text SDK on first use and reads the API key from the voice
-    <script data-api-key=...> tag, so no key is duplicated in this file.
--->
 <script src="assets/js/ai-assistant-icpaas-adapter.js"></script>
 <script src="assets/js/ai-assistant-blob-driver.js"></script>
 <script src="assets/js/ai-assistant-text-chat.js"></script>
