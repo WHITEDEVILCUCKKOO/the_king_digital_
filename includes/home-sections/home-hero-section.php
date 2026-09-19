@@ -6,6 +6,7 @@
 require_once __DIR__ . '/ai-interaction-widget.php';
 ai_interaction_assets_once();
 ?>
+
 <style>
     :root {
 
@@ -1090,7 +1091,8 @@ ai_interaction_assets_once();
      so it spans the full card width and is never clipped. */
     .ai-assistant-options_list {
         position: absolute;
-        bottom: 70px;
+        bottom: 126px;
+        /* clears the action row (12px pad + ~42px) + the mode switch (64px) + 8px gap */
         left: 20px;
         right: 20px;
         max-height: 260px;
@@ -1247,6 +1249,631 @@ ai_interaction_assets_once();
         flex: 1;
     }
 
+    /* ==========================================================
+       AI Assistant card -- mode switch (AI Voice Chat / Text Chat)
+       ========================================================== */
+
+    /* The voice orb and the text chat share one 300px slot and the
+       action row / composer share one row, so the card NEVER changes
+       height when the visitor switches modes. Which one shows is driven
+       purely by data-mode on .home-hero-section_ai-card. */
+    .ai-stage {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+
+    .ai-stage>.ai-assistant-card {
+        position: absolute;
+        inset: 0;
+        height: auto;
+        transition: opacity var(--transition-slow), transform var(--transition-slow), visibility var(--transition-slow);
+    }
+
+    .home-hero-section_ai-card[data-mode="text"] .ai-stage>.ai-assistant-card {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.94);
+        pointer-events: none;
+    }
+
+    /* One status line per mode, same slot, same styling (the shared
+       ".home-hero-section_ai-card>p" rules above apply to both). */
+    .home-hero-section_ai-card[data-mode="text"]>#aiAssistantStatus,
+    .home-hero-section_ai-card[data-mode="voice"]>#aiTextStatus {
+        display: none;
+    }
+
+    /* Bottom action slot: voice buttons OR the message composer.
+       Opacity-only swap on purpose -- a transform here would trap the
+       agent dropdown (position:absolute, relative to the card). */
+    .ai-controls {
+        display: grid;
+        width: 100%;
+    }
+
+    .ai-controls>* {
+        grid-area: 1 / 1;
+        transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    }
+
+    .ai-controls>.buttons-row {
+        box-sizing: border-box;
+        padding-bottom: 12px;
+    }
+
+    .home-hero-section_ai-card[data-mode="text"] .ai-controls>.buttons-row,
+    .home-hero-section_ai-card[data-mode="voice"] .ai-controls>.ai-text-composer {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    /* ---- The two mode buttons ---- */
+    .ai-mode-switch-wrap {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px 20px;
+    }
+
+    .ai-mode-switch {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 44px;
+        box-sizing: border-box;
+        padding: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+    }
+
+    .ai-mode-switch__thumb {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        height: calc(100% - 8px);
+        background: #ffffff;
+        border-radius: 999px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+        transition: transform 0.38s cubic-bezier(0.34, 1.25, 0.64, 1);
+        pointer-events: none;
+    }
+
+    .ai-mode-switch[data-active="text"] .ai-mode-switch__thumb {
+        transform: translateX(100%);
+    }
+
+    .ai-mode-btn {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 0;
+        padding: 0 10px;
+        background: none;
+        border: none;
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.75);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: color var(--transition-normal);
+    }
+
+    .ai-mode-btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        fill: currentColor;
+    }
+
+    .ai-mode-btn:hover {
+        color: #ffffff;
+    }
+
+    .ai-mode-btn.is-active,
+    .ai-mode-btn.is-active:hover {
+        color: var(--color-text);
+    }
+
+    .ai-mode-btn:focus-visible {
+        outline: 2px solid var(--color-secondary-light);
+        outline-offset: 2px;
+    }
+
+    .ai-mode-btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+    }
+
+    /* ==========================================================
+       Text chat panel
+       ========================================================== */
+
+    .ai-text-chat {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity var(--transition-slow), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), visibility var(--transition-slow);
+    }
+
+    .home-hero-section_ai-card[data-mode="text"] .ai-text-chat {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .ai-text-chat__bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px 10px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .ai-text-chat__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #3ac796;
+        box-shadow: 0 0 0 0 rgba(58, 199, 150, 0.6);
+        animation: ai-online-pulse 2.4s ease-out infinite;
+    }
+
+    .ai-text-chat__title {
+        flex: 1;
+        min-width: 0;
+        font-size: 12px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ai-text-chat__clear {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        padding: 4px 9px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.85);
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-normal), background var(--transition-fast);
+    }
+
+    .ai-text-chat__clear svg {
+        width: 12px;
+        height: 12px;
+        fill: currentColor;
+    }
+
+    .ai-text-chat.has-messages .ai-text-chat__clear {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .ai-text-chat__clear:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    .ai-text-chat__clear:focus-visible,
+    .ai-chip:focus-visible,
+    .ai-msg__retry:focus-visible,
+    .ai-text-composer button:focus-visible {
+        outline: 2px solid var(--color-secondary-light);
+        outline-offset: 2px;
+    }
+
+    .ai-text-chat__body {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+    }
+
+    /* ---- Welcome screen (until the first message) ---- */
+    .ai-text-chat__welcome {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 0 22px 6px;
+        text-align: center;
+    }
+
+    .ai-text-chat.has-messages .ai-text-chat__welcome {
+        display: none;
+    }
+
+    .ai-text-chat__orb,
+    .ai-msg__avatar {
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #ffffff 0%, var(--color-secondary-light) 38%, var(--color-secondary-dark) 100%);
+        box-shadow: 0 0 14px rgba(127, 163, 255, 0.55);
+    }
+
+    .ai-text-chat__orb {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 6px;
+        animation: ai-orb-float 4s ease-in-out infinite;
+    }
+
+    .ai-text-chat__hello {
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .ai-text-chat__hint {
+        font-size: 12px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 300px;
+        text-wrap: balance;
+    }
+
+    .ai-text-chat__chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .ai-chip {
+        margin: 0;
+        padding: 7px 11px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .ai-chip:hover {
+        background: rgba(255, 255, 255, 0.17);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-1px);
+    }
+
+    /* ---- Message thread ---- */
+    .ai-text-chat__thread {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 14px 10px 16px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 8px), transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 8px), transparent 100%);
+    }
+
+    .ai-text-chat__thread::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .ai-text-chat__thread::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.28);
+        border-radius: 999px;
+    }
+
+    .ai-msg {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        flex-shrink: 0;
+        animation: ai-msg-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .ai-msg--user {
+        justify-content: flex-end;
+    }
+
+    .ai-msg__avatar {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+
+    .ai-msg__bubble {
+        max-width: 82%;
+        padding: 9px 13px;
+        font-size: 13px;
+        line-height: 1.5;
+        border-radius: 16px;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    .ai-msg--assistant .ai-msg__bubble {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        color: #ffffff;
+        border-bottom-left-radius: 5px;
+        white-space: normal;
+    }
+
+    .ai-msg--user .ai-msg__bubble {
+        background: #ffffff;
+        color: var(--color-text);
+        border-bottom-right-radius: 5px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .ai-msg__bubble p {
+        margin: 0;
+    }
+
+    .ai-msg__bubble p+p,
+    .ai-msg__bubble p+ul,
+    .ai-msg__bubble p+ol,
+    .ai-msg__bubble ul+p,
+    .ai-msg__bubble ol+p {
+        margin-top: 6px;
+    }
+
+    .ai-msg__bubble ul,
+    .ai-msg__bubble ol {
+        margin: 6px 0 0;
+        padding-left: 18px;
+    }
+
+    .ai-msg__bubble li {
+        margin: 2px 0;
+    }
+
+    .ai-msg__bubble strong {
+        font-weight: 700;
+    }
+
+    .ai-msg__bubble a {
+        color: #ffd2a6;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .ai-msg__bubble code {
+        padding: 1px 5px;
+        background: rgba(0, 0, 0, 0.28);
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    /* Error bubble + retry */
+    .ai-msg--error .ai-msg__bubble {
+        background: rgba(220, 38, 38, 0.18);
+        border-color: rgba(252, 165, 165, 0.45);
+        color: #ffe1e1;
+    }
+
+    .ai-msg__retry {
+        display: inline-block;
+        margin: 8px 0 0;
+        padding: 5px 12px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 999px;
+        font-family: inherit;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background var(--transition-fast);
+    }
+
+    .ai-msg__error-text {
+        display: block;
+    }
+
+    .ai-msg__retry:hover {
+        background: rgba(255, 255, 255, 0.26);
+    }
+
+    /* Typing indicator */
+    .ai-msg--typing .ai-msg__bubble {
+        padding: 12px 14px;
+    }
+
+    .ai-typing {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .ai-typing__dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.8);
+        animation: ai-typing-bounce 1.2s ease-in-out infinite;
+    }
+
+    .ai-typing__dot:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .ai-typing__dot:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    /* ---- Composer ---- */
+    .ai-text-composer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 0 20px 12px;
+    }
+
+    .ai-text-composer input {
+        flex: 1;
+        min-width: 0;
+        height: 42px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 18px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        box-shadow: none;
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+        font-family: inherit;
+        font-size: 13px;
+        color: #ffffff;
+        transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .ai-text-composer input::placeholder {
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .ai-text-composer input:focus {
+        background: rgba(255, 255, 255, 0.13);
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 3px rgba(127, 163, 255, 0.28);
+    }
+
+    .ai-text-composer button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        padding: 0;
+        background: var(--gradient-primary);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform var(--transition-fast), opacity var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .ai-text-composer button svg {
+        width: 18px;
+        height: 18px;
+        margin-left: 2px;
+        fill: #ffffff;
+    }
+
+    .ai-text-composer button:not(:disabled):hover {
+        transform: translateY(-1px) scale(1.06);
+        box-shadow: var(--shadow-orange);
+    }
+
+    .ai-text-composer button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+    }
+
+    @keyframes ai-msg-in {
+        from {
+            opacity: 0;
+            transform: translateY(8px) scale(0.98);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes ai-typing-bounce {
+
+        0%,
+        60%,
+        100% {
+            transform: translateY(0);
+            opacity: 0.45;
+        }
+
+        30% {
+            transform: translateY(-4px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes ai-online-pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(58, 199, 150, 0.55);
+        }
+
+        70%,
+        100% {
+            box-shadow: 0 0 0 7px rgba(58, 199, 150, 0);
+        }
+    }
+
+    @keyframes ai-orb-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .ai-msg,
+        .ai-text-chat__dot,
+        .ai-text-chat__orb,
+        .ai-typing__dot {
+            animation: none;
+        }
+
+        .ai-stage>.ai-assistant-card,
+        .ai-text-chat,
+        .ai-controls>*,
+        .ai-mode-switch__thumb {
+            transition: none;
+        }
+    }
+
     @media (max-width: 900px) {
         .home-hero-section_conetent {
             grid-template-columns: 1fr;
@@ -1369,98 +1996,163 @@ ai_interaction_assets_once();
             </div>
         </div>
         <div class="home-hero-section_ai">
-            <div class="home-hero-section_ai-card">
+            <div class="home-hero-section_ai-card" id="aiAssistantRoot" data-mode="voice">
                 <h3>AI Assistant</h3>
-                <div class="ai-assistant-card" id="aiAssistantCard">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <!-- Stage: the voice orb and the text chat share this one slot. -->
+                <div class="ai-stage">
+                    <div class="ai-assistant-card" id="aiAssistantCard">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
 
-                    <!-- Gooey CSS/SVG blob, driven live by ai-assistant-blob-driver.js
+                        <!-- Gooey CSS/SVG blob, driven live by ai-assistant-blob-driver.js
                          (reads phase/level off ai-assistant-icpaas-adapter.js, which
                          listens for the KD widget's kd:state / kd:level events).
                          See the wiring script near the bottom of this file. -->
-                    <div class="chatbot_loader" id="aiChatbotLoader">
-                        <svg width="100" height="100" viewBox="0 0 100 100">
-                            <defs>
-                                <mask id="aiChatbotLoaderClip">
-                                    <polygon points="0,0 100,0 100,100 0,100" fill="black"></polygon>
-                                    <polygon points="25,25 75,25 50,75" fill="white"></polygon>
-                                    <polygon points="50,25 75,75 25,75" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
-                                </mask>
-                            </defs>
-                        </svg>
-                        <div class="box"></div>
+                        <div class="chatbot_loader" id="aiChatbotLoader">
+                            <svg width="100" height="100" viewBox="0 0 100 100">
+                                <defs>
+                                    <mask id="aiChatbotLoaderClip">
+                                        <polygon points="0,0 100,0 100,100 0,100" fill="black"></polygon>
+                                        <polygon points="25,25 75,25 50,75" fill="white"></polygon>
+                                        <polygon points="50,25 75,75 25,75" fill="white"></polygon>
+                                        <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                        <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                        <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                        <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                    </mask>
+                                </defs>
+                            </svg>
+                            <div class="box"></div>
+                        </div>
+
                     </div>
 
-                </div>
-                <p id="aiAssistantStatus">Select an agent, then Talk With AI</p>
-                <div class="buttons-row">
-                    <div class="ai-assistant-options" id="agentDropdown">
-                        <button type="button" id="agentDropdownToggle">
-                            <span></span>
-                            <span id="agentDropdownLabel">Select Agent</span>
-                            <span></span>
-                        </button>
-                        <div class="ai-assistant-options_list">
-                            <div class="ai-assistant-options_item" data-persona="IND_Female">
-                                <div class="ai-assistant-options_item-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
-                                    </svg>
+                    <!-- ============ Text chat panel (mode = text) ============ -->
+                    <div class="ai-text-chat" data-ai-panel>
+                        <div class="ai-text-chat__bar">
+                            <span class="ai-text-chat__dot" aria-hidden="true"></span>
+                            <span class="ai-text-chat__title">King Digital Assistant</span>
+                            <button type="button" class="ai-text-chat__clear" data-ai-clear aria-label="Start a new chat" title="Start a new chat">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+                                </svg>
+                                New chat
+                            </button>
+                        </div>
+                        <div class="ai-text-chat__body">
+                            <div class="ai-text-chat__thread" data-ai-thread role="log" aria-live="polite" aria-label="Conversation"></div>
+                            <div class="ai-text-chat__welcome" data-ai-welcome>
+                                <div class="ai-text-chat__orb" aria-hidden="true"></div>
+                                <div class="ai-text-chat__hello">Hi, I'm the King Digital Assistant</div>
+                                <div class="ai-text-chat__hint">Ask me about our services, pricing or how to get started.</div>
+                                <div class="ai-text-chat__chips">
+                                    <button type="button" class="ai-chip" data-ai-chip="Tell me about your Bulk SMS service">Bulk SMS</button>
+                                    <button type="button" class="ai-chip" data-ai-chip="How does the Business WhatsApp API work?">WhatsApp API</button>
+                                    <button type="button" class="ai-chip" data-ai-chip="What IVR solutions do you offer?">IVR solutions</button>
+                                    <button type="button" class="ai-chip" data-ai-chip="How can I get started with KingDigital?">Get started</button>
                                 </div>
-                                <div class="ai-assistant-options_item-text">
-                                    <strong>AI Assistant</strong>
-                                    <small>Female · Hinglish</small>
-                                </div>
-                                <span class="ai-assistant-options_item-tag ind">IND</span>
-                            </div>
-                            <div class="ai-assistant-options_item" data-persona="IND_Male">
-                                <div class="ai-assistant-options_item-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
-                                    </svg>
-                                </div>
-                                <div class="ai-assistant-options_item-text">
-                                    <strong>AI Assistant</strong>
-                                    <small>Male · Hinglish</small>
-                                </div>
-                                <span class="ai-assistant-options_item-tag ind">IND</span>
-                            </div>
-                            <div class="ai-assistant-options_item" data-persona="ENG_Male">
-                                <div class="ai-assistant-options_item-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
-                                    </svg>
-                                </div>
-                                <div class="ai-assistant-options_item-text">
-                                    <strong>AI Assistant</strong>
-                                    <small>Male · English</small>
-                                </div>
-                                <span class="ai-assistant-options_item-tag eng">ENG</span>
-                            </div>
-                            <div class="ai-assistant-options_item" data-persona="ENG_Female">
-                                <div class="ai-assistant-options_item-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
-                                    </svg>
-                                </div>
-                                <div class="ai-assistant-options_item-text">
-                                    <strong>AI Assistant</strong>
-                                    <small>Female · English</small>
-                                </div>
-                                <span class="ai-assistant-options_item-tag eng">ENG</span>
                             </div>
                         </div>
                     </div>
-                    <button type="button" id="talkWithAiBtn" disabled>
-                        <span id="talkWithAiLabel">Talk With AI</span>
-                    </button>
+                </div><!-- /.ai-stage -->
+
+                <p id="aiAssistantStatus">Select an agent, then Talk With AI</p>
+                <p id="aiTextStatus">Ask anything about our services</p>
+
+                <!-- Bottom action slot: voice buttons OR the message composer -->
+                <div class="ai-controls">
+                    <div class="buttons-row">
+                        <div class="ai-assistant-options" id="agentDropdown">
+                            <button type="button" id="agentDropdownToggle">
+                                <span></span>
+                                <span id="agentDropdownLabel">Select Agent</span>
+                                <span></span>
+                            </button>
+                            <div class="ai-assistant-options_list">
+                                <div class="ai-assistant-options_item" data-persona="IND_Female">
+                                    <div class="ai-assistant-options_item-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="ai-assistant-options_item-text">
+                                        <strong>AI Assistant</strong>
+                                        <small>Female · Hinglish</small>
+                                    </div>
+                                    <span class="ai-assistant-options_item-tag ind">IND</span>
+                                </div>
+                                <div class="ai-assistant-options_item" data-persona="IND_Male">
+                                    <div class="ai-assistant-options_item-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="ai-assistant-options_item-text">
+                                        <strong>AI Assistant</strong>
+                                        <small>Male · Hinglish</small>
+                                    </div>
+                                    <span class="ai-assistant-options_item-tag ind">IND</span>
+                                </div>
+                                <div class="ai-assistant-options_item" data-persona="ENG_Male">
+                                    <div class="ai-assistant-options_item-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="ai-assistant-options_item-text">
+                                        <strong>AI Assistant</strong>
+                                        <small>Male · English</small>
+                                    </div>
+                                    <span class="ai-assistant-options_item-tag eng">ENG</span>
+                                </div>
+                                <div class="ai-assistant-options_item" data-persona="ENG_Female">
+                                    <div class="ai-assistant-options_item-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="ai-assistant-options_item-text">
+                                        <strong>AI Assistant</strong>
+                                        <small>Female · English</small>
+                                    </div>
+                                    <span class="ai-assistant-options_item-tag eng">ENG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="talkWithAiBtn" disabled>
+                            <span id="talkWithAiLabel">Talk With AI</span>
+                        </button>
+                    </div>
+
+                    <form class="ai-text-composer" data-ai-form autocomplete="off">
+                        <input type="text" data-ai-input placeholder="Type your message…" maxlength="1000" aria-label="Type your message">
+                        <button type="submit" data-ai-send aria-label="Send message" disabled>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div><!-- /.ai-controls -->
+
+                <!-- The two mode buttons -->
+                <div class="ai-mode-switch-wrap">
+                    <div class="ai-mode-switch" id="aiModeSwitch" role="group" aria-label="Choose how to chat" data-active="voice">
+                        <span class="ai-mode-switch__thumb" aria-hidden="true"></span>
+                        <button type="button" class="ai-mode-btn is-active" data-ai-mode="voice" aria-pressed="true">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z" />
+                            </svg>
+                            <span>AI Voice Chat</span>
+                        </button>
+                        <button type="button" class="ai-mode-btn" data-ai-mode="text" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
+                            </svg>
+                            <span>Text Chat</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1492,11 +2184,16 @@ ai_interaction_assets_once();
     markup came from a PHP include, so it resolves src="..." against the
     page's URL, not this file's folder on disk) -- matching the same
     "assets/js/" convention footer.php already uses for global.js. Put
-    ai-assistant-icpaas-adapter.js and ai-assistant-blob-driver.js in that
-    same assets/js/ folder on the server.
+    ai-assistant-icpaas-adapter.js, ai-assistant-blob-driver.js and
+    ai-assistant-text-chat.js in that same assets/js/ folder on the server.
+
+    ai-assistant-text-chat.js powers the "Text Chat" mode. It lazy-loads the
+    ICPaaS text SDK on first use and reads the API key from the voice
+    <script data-api-key=...> tag, so no key is duplicated in this file.
 -->
 <script src="assets/js/ai-assistant-icpaas-adapter.js"></script>
 <script src="assets/js/ai-assistant-blob-driver.js"></script>
+<script src="assets/js/ai-assistant-text-chat.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1792,6 +2489,97 @@ ai_interaction_assets_once();
             // hovering the small blob itself.
             blobDriver = new AIAssistantBlobDriver(loaderEl, aiAdapter, {
                 pointerEl: document.getElementById('aiAssistantCard')
+            });
+        }
+
+        /* ---- Mode switch: AI Voice Chat <-> Text Chat ----
+           Two buttons under the card. data-mode on the card drives ALL the
+           show/hide (orb <-> chat panel, voice buttons <-> composer), so
+           this is just state + the side effects that CSS can't do:
+           hanging up an active call before leaving voice mode, and waking
+           the text chat up when it's shown. */
+        var aiRoot = document.getElementById('aiAssistantRoot');
+        var modeSwitch = document.getElementById('aiModeSwitch');
+        var textStatusEl = document.getElementById('aiTextStatus');
+        var modeBtns = modeSwitch ? Array.prototype.slice.call(modeSwitch.querySelectorAll('[data-ai-mode]')) : [];
+        var currentMode = 'voice';
+        var textChat = null;
+
+        function setTextStatus(text, kind) {
+            if (!textStatusEl) return;
+            textStatusEl.textContent = text;
+            textStatusEl.classList.remove('status-error', 'status-live');
+            if (kind) {
+                textStatusEl.classList.add(kind === 'error' ? 'status-error' : 'status-live');
+            }
+        }
+
+        if (aiRoot && modeSwitch) {
+            if (window.AIAssistantTextChat) {
+                try {
+                    textChat = new AIAssistantTextChat({
+                        root: aiRoot,
+                        onStatus: setTextStatus
+                    });
+                } catch (err) {
+                    console.error('[HomeHero] Could not start text chat (non-fatal):', err);
+                }
+            } else {
+                console.error(
+                    '[HomeHero] AIAssistantTextChat not found on window -- check that ' +
+                    'assets/js/ai-assistant-text-chat.js is loading before this script.'
+                );
+            }
+
+            // Text mode can't work without the module, so don't offer a dead button.
+            if (!textChat) {
+                modeBtns.forEach(function(btn) {
+                    if (btn.getAttribute('data-ai-mode') === 'text') {
+                        btn.disabled = true;
+                        btn.title = 'Text chat is unavailable right now';
+                    }
+                });
+            }
+
+            function setMode(mode) {
+                if (mode === currentMode) return;
+                if (mode === 'text' && !textChat) return;
+
+                if (mode === 'text') {
+                    dropdown.classList.remove('open');
+
+                    // Leaving voice mode hangs up any live call so the mic
+                    // never stays open behind the text UI.
+                    if (window.KD && window.KD.inCall) {
+                        safeForcePhase('idle');
+                        try {
+                            window.KD.end();
+                        } catch (err) {
+                            console.error('KD.end failed while switching to text chat:', err);
+                        }
+                        setStatus(defaultStatusText);
+                    }
+                }
+
+                currentMode = mode;
+                aiRoot.setAttribute('data-mode', mode);
+                modeSwitch.setAttribute('data-active', mode);
+
+                modeBtns.forEach(function(btn) {
+                    var on = btn.getAttribute('data-ai-mode') === mode;
+                    btn.classList.toggle('is-active', on);
+                    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+
+                safePulse(); // the blob visibly reacts to the switch too
+
+                if (mode === 'text') textChat.open();
+            }
+
+            modeBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    setMode(btn.getAttribute('data-ai-mode'));
+                });
             });
         }
     });
