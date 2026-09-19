@@ -194,16 +194,6 @@ ai_interaction_assets_once();
         pointer-events: none;
     }
 
-    .home-hero-water {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-
-        pointer-events: none;
-        z-index: 1;
-    }
-
     /* ---------- Floating background AI-cube accents ---------- */
 
     .home-hero-cubes {
@@ -812,168 +802,223 @@ ai_interaction_assets_once();
         }
     }
 
-    /* NOTE: the AI Assistant card's visual is now the THREE.js orb from
-       ai-assistant-visualizer.js, driven by ai-assistant-icpaas-adapter.js.
-       Phase-based styling (idle/listening/thinking/speaking) is handled
-       entirely inside the visualizer's own _phaseConfig(), so no CSS
-       state classes are needed here anymore. The nested cube widget
-       (ai-interaction-widget.php) is still used for the decorative
-       background cubes elsewhere on this page. */
-    .ai-orb-container {
-        width: 220px;
-        height: 220px;
-        max-width: 90%;
-        max-height: 90%;
+    /* NOTE: the AI Assistant card's visual is the gooey CSS/SVG blob below
+       (.chatbot_loader), driven live by ai-assistant-blob-driver.js, which
+       reads phase/level off ai-assistant-icpaas-adapter.js. No three.js /
+       WebGL involved, which also sidesteps the CDN + CSP issues the earlier
+       orb build ran into. The nested cube widget (ai-interaction-widget.php)
+       is still used separately for the decorative background cubes. */
+
+    /* Registering the five gradient stops as real <color> custom properties
+       lets the browser interpolate them (and anything that reads them --
+       the box-shadow glow, the box gradient) instead of hard-cutting when
+       ai-assistant-blob-driver.js swaps palettes. Safari < 16.4 and older
+       Firefox ignore @property and just snap instantly -- harmless. */
+    @property --color-one {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #D6E8FF;
     }
 
+    @property --color-two {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #8BB9F7;
+    }
 
-    /* ---- central glass AI orb ---- */
-    .ai-assistant-circle {
+    @property --color-three {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #4F8FEF;
+    }
+
+    @property --color-four {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #2864C7;
+    }
+
+    @property --color-five {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #123A7A;
+    }
+
+    .chatbot_loader {
+        --color-one: #D6E8FF;
+        --color-two: #8BB9F7;
+        --color-three: #4F8FEF;
+        --color-four: #2864C7;
+        --color-five: #123A7A;
+        --time-animation: 5s;
+        --size: 2;
+        --tilt-x: 0px;
+        --tilt-y: 0px;
         position: relative;
-        z-index: 2;
-        width: 96px;
-        height: 96px;
-        background: radial-gradient(circle at 35% 30%, #BFD3FF 0%, #5F88F5 42%, #284FAE 75%, #183579 100%);
-        filter: drop-shadow(0 0 34px rgba(32, 138, 199, 0.5));
-        animation:
-            blob-glow 2.6s ease-in-out infinite,
-            blob-drift 8s ease-in-out infinite,
-            blob-morph 6s linear infinite,
-            blob-spin 10s linear infinite;
+        border-radius: 50%;
+        transform: scale(var(--size)) translate(var(--tilt-x), var(--tilt-y));
+        box-shadow:
+            0 0 25px 0 var(--color-three),
+            0 20px 50px 0 var(--color-four);
+        animation: colorize calc(var(--time-animation) * 3) ease-in-out infinite;
+        transition:
+            --color-one 0.7s ease,
+            --color-two 0.7s ease,
+            --color-three 0.7s ease,
+            --color-four 0.7s ease,
+            --color-five 0.7s ease,
+            filter 0.25s ease;
     }
 
-    @keyframes blob-spin {
-        to {
+    /* Cheap, CSS-only reaction to a plain hover -- the JS-driven cursor
+       parallax (--tilt-x/--tilt-y) handles movement, this just adds a
+       touch of extra brightness so the blob visibly "wakes up". */
+    .chatbot_loader:hover {
+        filter: brightness(1.08);
+    }
+
+    /* .chatbot_loader is 100x100 pre-transform; --size scales the whole
+       thing (blur/shadow included) to fit the card without touching the
+       mask coordinate space below. */
+    .home-hero-section_ai-card .chatbot_loader {
+        margin: 40px 0;
+    }
+
+    .chatbot_loader::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-top: solid 1px var(--color-one);
+        border-bottom: solid 1px var(--color-two);
+        background: linear-gradient(180deg, var(--color-five), var(--color-four));
+        box-shadow:
+            inset 0 10px 10px 0 var(--color-three),
+            inset 0 -10px 10px 0 var(--color-four);
+    }
+
+    .chatbot_loader .box {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(180deg,
+                var(--color-one) 30%,
+                var(--color-two) 70%);
+        mask: url(#aiChatbotLoaderClip);
+        -webkit-mask: url(#aiChatbotLoaderClip);
+    }
+
+    .chatbot_loader svg {
+        position: absolute;
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip {
+        filter: contrast(15);
+        animation: roundness calc(var(--time-animation) / 2) linear infinite;
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon {
+        filter: blur(7px);
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(1) {
+        transform-origin: 75% 25%;
+        transform: rotate(90deg);
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(2) {
+        transform-origin: 50% 50%;
+        animation: rotation var(--time-animation) linear infinite reverse;
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(3) {
+        transform-origin: 50% 60%;
+        animation: rotation var(--time-animation) linear infinite;
+        animation-delay: calc(var(--time-animation) / -3);
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(4) {
+        transform-origin: 40% 40%;
+        animation: rotation var(--time-animation) linear infinite reverse;
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(5) {
+        transform-origin: 40% 40%;
+        animation: rotation var(--time-animation) linear infinite reverse;
+        animation-delay: calc(var(--time-animation) / -2);
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(6) {
+        transform-origin: 60% 40%;
+        animation: rotation var(--time-animation) linear infinite;
+    }
+
+    .chatbot_loader svg #aiChatbotLoaderClip polygon:nth-child(7) {
+        transform-origin: 60% 40%;
+        animation: rotation var(--time-animation) linear infinite;
+        animation-delay: calc(var(--time-animation) / -1.5);
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
             transform: rotate(360deg);
         }
     }
 
-    @keyframes blob-glow {
-
-        0%,
-        100% {
-            filter: drop-shadow(0 0 26px rgba(51, 112, 193, 0.55));
-        }
-
-        50% {
-            filter: drop-shadow(0 0 46px rgba(16, 68, 210, 0.9));
-        }
-    }
-
-    @keyframes blob-drift {
-
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(0, -2.5px) scale(1.2);
-        }
-    }
-
-    @keyframes blob-morph {
-
+    @keyframes roundness {
         0% {
-            border-radius: 58% 42% 45% 55% / 55% 48% 58% 42%;
-            transform: rotate(0deg) scale(1);
+            filter: contrast(15);
         }
 
-        12.5% {
-            border-radius: 75% 25% 38% 62% / 42% 68% 32% 58%;
-            transform: rotate(8deg) scale(1.04);
+        20% {
+            filter: contrast(3);
         }
 
-        25% {
-            border-radius: 32% 68% 62% 38% / 70% 30% 64% 36%;
-            transform: rotate(-6deg) scale(0.97);
+        40% {
+            filter: contrast(3);
         }
 
-        37.5% {
-            border-radius: 68% 32% 28% 72% / 35% 72% 28% 65%;
-            transform: rotate(10deg) scale(1.06);
-        }
-
-        50% {
-            border-radius: 25% 75% 68% 32% / 62% 35% 65% 38%;
-            transform: rotate(-8deg) scale(0.96);
-        }
-
-        62.5% {
-            border-radius: 72% 28% 35% 65% / 30% 65% 35% 70%;
-            transform: rotate(7deg) scale(1.05);
-        }
-
-        75% {
-            border-radius: 38% 62% 72% 28% / 68% 32% 58% 42%;
-            transform: rotate(-10deg) scale(0.98);
-        }
-
-        87.5% {
-            border-radius: 64% 36% 42% 58% / 52% 72% 28% 48%;
-            transform: rotate(5deg) scale(1.03);
+        60% {
+            filter: contrast(15);
         }
 
         100% {
-            border-radius: 58% 42% 45% 55% / 55% 48% 58% 42%;
-            transform: rotate(0deg) scale(1);
+            filter: contrast(15);
         }
     }
 
-    /* ---- internal glass reflections ---- */
-    .ai-assistant-circle span {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-    }
+    @keyframes colorize {
+        0% {
+            filter: hue-rotate(-10deg);
+        }
 
-    .ai-assistant-circle span:nth-of-type(1) {
-        top: 14%;
-        left: 22%;
-        width: 34px;
-        height: 20px;
-        background: rgba(255, 255, 255, 0.75);
-        filter: blur(3px);
-        transform: rotate(-20deg);
-        animation: light-shift 5s ease-in-out infinite;
-    }
+        20% {
+            filter: hue-rotate(5deg);
+        }
 
-    .ai-assistant-circle span:nth-of-type(3) {
-        top: 30%;
-        left: 32%;
-        width: 20px;
-        height: 12px;
-        background: rgba(255, 255, 255, 0.30);
-        filter: blur(4px);
-        transform: rotate(-15deg);
-    }
+        40% {
+            filter: hue-rotate(20deg);
+        }
 
-    .ai-assistant-circle span:nth-of-type(2) {
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        height: 24px;
-        background: rgba(6, 40, 28, 0.35);
-        filter: blur(6px);
-    }
+        60% {
+            filter: hue-rotate(10deg);
+        }
 
-    .ai-assistant-circle span:nth-of-type(4) {
-        display: none;
-    }
+        80% {
+            filter: hue-rotate(-5deg);
+        }
 
-    @keyframes light-shift {
-
-        0%,
         100% {
-            opacity: 0.75;
-            transform: rotate(-20deg) translate(0, 0);
-        }
-
-        50% {
-            opacity: 0.9;
-            transform: rotate(-18deg) translate(1px, -1px);
+            filter: hue-rotate(-10deg);
         }
     }
+
 
     .home-hero-section_ai-card>p {
         font-size: 12px;
@@ -1262,7 +1307,6 @@ ai_interaction_assets_once();
 </style>
 
 <section class="home-hero-section" id="home-hero-section">
-    <!-- <canvas class="home-hero-water" id="homeHeroWater"></canvas> -->
     <div class="home-hero-cubes" id="homeHeroCubes" aria-hidden="true">
         <?php
         // Each background cube: outer div handles mouse-parallax (JS),
@@ -1333,10 +1377,26 @@ ai_interaction_assets_once();
                     <span></span>
                     <span></span>
 
-                    <!-- 3D orb (THREE.js), driven live by ai-assistant-icpaas-adapter.js
-                         listening for the KD widget's kd:state / kd:level events.
+                    <!-- Gooey CSS/SVG blob, driven live by ai-assistant-blob-driver.js
+                         (reads phase/level off ai-assistant-icpaas-adapter.js, which
+                         listens for the KD widget's kd:state / kd:level events).
                          See the wiring script near the bottom of this file. -->
-                    <div class="ai-orb-container" id="aiOrbContainer"></div>
+                    <div class="chatbot_loader" id="aiChatbotLoader">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <defs>
+                                <mask id="aiChatbotLoaderClip">
+                                    <polygon points="0,0 100,0 100,100 0,100" fill="black"></polygon>
+                                    <polygon points="25,25 75,25 50,75" fill="white"></polygon>
+                                    <polygon points="50,25 75,75 25,75" fill="white"></polygon>
+                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                    <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+                                </mask>
+                            </defs>
+                        </svg>
+                        <div class="box"></div>
+                    </div>
 
                 </div>
                 <p id="aiAssistantStatus">Select an agent, then Talk With AI</p>
@@ -1423,22 +1483,20 @@ ai_interaction_assets_once();
 -->
 
 <!--
-    Orb visual for the AI Assistant card (#aiOrbContainer above).
-    Order matters: THREE must load before ai-assistant-visualizer.js.
-    ai-assistant-icpaas-adapter.js has no dependency on THREE and can load
-    in either order relative to it, but must be present before the
-    instantiation code at the bottom of the wiring script below runs.
+    Blob visual for the AI Assistant card (#aiChatbotLoader above). No
+    three.js / WebGL anymore -- just the adapter (state/level normalizer)
+    plus a small driver that writes CSS custom properties. Order matters:
+    the adapter must load before the driver.
 
     These paths resolve from the SITE ROOT (the browser has no idea this
     markup came from a PHP include, so it resolves src="..." against the
     page's URL, not this file's folder on disk) -- matching the same
     "assets/js/" convention footer.php already uses for global.js. Put
-    ai-assistant-visualizer.js and ai-assistant-icpaas-adapter.js in that
+    ai-assistant-icpaas-adapter.js and ai-assistant-blob-driver.js in that
     same assets/js/ folder on the server.
 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="assets/js/ai-assistant-visualizer.js"></script>
 <script src="assets/js/ai-assistant-icpaas-adapter.js"></script>
+<script src="assets/js/ai-assistant-blob-driver.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1558,11 +1616,44 @@ ai_interaction_assets_once();
         var selectedPersona = null;
         var defaultStatusText = 'Select an agent, then Talk With AI';
 
+        // Assigned further down once ai-assistant-icpaas-adapter.js /
+        // ai-assistant-blob-driver.js are confirmed loaded. Declared here
+        // (rather than with `var` down where they're created) so the click
+        // handlers above that point in the file can still reference them --
+        // by the time a user can actually click anything, this whole
+        // DOMContentLoaded callback has already run once, top to bottom.
+        var aiAdapter = null;
+        var blobDriver = null;
+
         function setStatus(text, kind) {
             statusEl.textContent = text;
             statusEl.classList.remove('status-error', 'status-live');
             if (kind) {
                 statusEl.classList.add(kind === 'error' ? 'status-error' : 'status-live');
+            }
+        }
+
+        // Wraps aiAdapter.forcePhase() so a blob/visual failure -- a stale
+        // adapter file without this method, a future bug in it, anything --
+        // can NEVER take down the actual KD call flow below. Purely
+        // cosmetic, purely best-effort.
+        function safeForcePhase(phase) {
+            if (!aiAdapter || typeof aiAdapter.forcePhase !== 'function') return;
+            try {
+                aiAdapter.forcePhase(phase);
+            } catch (err) {
+                console.error('[HomeHero] aiAdapter.forcePhase failed (non-fatal):', err);
+            }
+        }
+
+        // Same idea as safeForcePhase() above -- never let a blob/visual
+        // failure block the actual agent-selection logic below it.
+        function safePulse() {
+            if (!blobDriver || typeof blobDriver.pulse !== 'function') return;
+            try {
+                blobDriver.pulse();
+            } catch (err) {
+                console.error('[HomeHero] blobDriver.pulse failed (non-fatal):', err);
             }
         }
 
@@ -1582,6 +1673,10 @@ ai_interaction_assets_once();
 
                 selectedPersona = persona;
                 talkBtn.disabled = false;
+
+                // Visible acknowledgment right on the blob for this
+                // discrete action, independent of any KD call state.
+                safePulse();
 
                 if (window.KD && typeof window.KD.setPersona === 'function') {
                     try {
@@ -1614,12 +1709,22 @@ ai_interaction_assets_once();
 
             try {
                 if (window.KD.inCall) {
+                    // Snap the blob back down immediately -- don't wait for
+                    // KD's own kd:state event to confirm the call ended.
+                    safeForcePhase('idle');
                     window.KD.end();
                 } else {
+                    // Optimistically switch the blob into "listening" the
+                    // instant the user taps this button, rather than sitting
+                    // static until KD's kd:state event round-trips. The real
+                    // event (whatever phase KD actually reports) still wins
+                    // once it arrives.
+                    safeForcePhase('listening');
                     window.KD.setPersona(selectedPersona);
                     window.KD.start();
                 }
             } catch (err) {
+                safeForcePhase('idle');
                 setStatus('Something went wrong starting the call.', 'error');
                 console.error('KD call toggle failed:', err);
             }
@@ -1644,27 +1749,27 @@ ai_interaction_assets_once();
         // state by the time everything settles, sync the UI once on load.
         setTimeout(refreshCallUi, 500);
 
-        /* ---- 3D orb: single source of truth for phase/level ----
+        /* ---- Blob: single source of truth for phase/level ----
            ai-assistant-icpaas-adapter.js listens for kd:state / kd:level
            itself (see that file), normalizes them into one of
            idle/listening/thinking/speaking + a 0..1 level, and calls back
-           on every change. ai-assistant-visualizer.js reads that adapter
-           once per animation frame to drive the orb. The status text below
-           piggybacks on the same callback instead of re-parsing KD events
-           itself, so there's only one place that decides what "listening"
-           etc. means. */
-        var orbContainer = document.getElementById('aiOrbContainer');
+           on every change. ai-assistant-blob-driver.js reads that same
+           adapter once per animation frame to drive the blob's colors,
+           tempo and size. The status text below piggybacks on the same
+           adapter callback instead of re-parsing KD events itself, so
+           there's only one place that decides what "listening" etc. means. */
+        var loaderEl = document.getElementById('aiChatbotLoader');
 
-        if (!orbContainer) {
-            console.error('[HomeHero] #aiOrbContainer not found in markup.');
-        } else if (!window.AIAssistantVisualizer || !window.AIAssistantICPaaSAdapter) {
+        if (!loaderEl) {
+            console.error('[HomeHero] #aiChatbotLoader not found in markup.');
+        } else if (!window.AIAssistantBlobDriver || !window.AIAssistantICPaaSAdapter) {
             console.error(
-                '[HomeHero] AIAssistantVisualizer / AIAssistantICPaaSAdapter not found on window ' +
-                '-- check that three.js, ai-assistant-visualizer.js and ' +
-                'ai-assistant-icpaas-adapter.js are loading (and in that order) before this script.'
+                '[HomeHero] AIAssistantBlobDriver / AIAssistantICPaaSAdapter not found on window ' +
+                '-- check that ai-assistant-icpaas-adapter.js and ai-assistant-blob-driver.js ' +
+                'are loading (in that order) before this script.'
             );
         } else {
-            var aiOrbAdapter = new AIAssistantICPaaSAdapter({
+            aiAdapter = new AIAssistantICPaaSAdapter({
                 onChange: function(state) {
                     if (!window.KD) return;
 
@@ -1682,13 +1787,12 @@ ai_interaction_assets_once();
                 }
             });
 
-            var aiOrb = new AIAssistantVisualizer({
-                container: orbContainer,
-                color: '#4F7FF7', // == --color-secondary
-                accentColor: '#F47B20', // == --color-primary
-                size: 'medium'
+            // pointerEl = the whole card, not just the blob, so the cursor
+            // parallax reacts across the full card area, not only when
+            // hovering the small blob itself.
+            blobDriver = new AIAssistantBlobDriver(loaderEl, aiAdapter, {
+                pointerEl: document.getElementById('aiAssistantCard')
             });
-            aiOrb.attachAdapter(aiOrbAdapter);
         }
     });
 </script>

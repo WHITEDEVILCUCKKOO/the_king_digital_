@@ -1,5 +1,3 @@
-
-
 (function (global) {
   "use strict";
 
@@ -48,6 +46,16 @@
       (this.targetLevel - this.currentLevel) * this._smoothing;
     if (Math.abs(this.currentLevel) < 0.0005) this.currentLevel = 0;
     return this.currentLevel;
+  };
+
+  /**
+   * Public, explicit override -- lets UI code (a button click, an agent
+   * pick, etc.) push a phase immediately instead of waiting for KD's own
+   * kd:state event to round-trip. Any real KD event that arrives afterwards
+   * still wins and simply confirms/corrects it.
+   */
+  ICPaaSAdapter.prototype.forcePhase = function (phase) {
+    this._setPhase(phase);
   };
 
   ICPaaSAdapter.prototype.destroy = function () {
