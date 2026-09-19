@@ -84,11 +84,14 @@
 
   // Base --size (pre-transform box is 100x100) per phase; live audio level
   // adds a little on top each frame.
+  // Scaled to 70% of the original sizes below (idle 2.0 -> 1.4, etc.) so the
+  // blob reads as noticeably smaller inside the card without changing its
+  // relative "grows a bit per phase" behavior.
   var BASE_SIZE_BY_PHASE = {
-    idle: 2.0,
-    listening: 2.15,
-    thinking: 2.05,
-    speaking: 2.2,
+    idle: 1.4,
+    listening: 1.505,
+    thinking: 1.435,
+    speaking: 1.54,
   };
 
   // Loop duration fed into --time-animation; shorter = more energetic.
@@ -99,11 +102,11 @@
     speaking: "1.6s",
   };
 
-  var LEVEL_SIZE_BOOST = 0.35;
+  var LEVEL_SIZE_BOOST = 0.245; // 70% of the original 0.35, to match the smaller base size
 
   // A UI acknowledgment pulse (e.g. picking an agent) adds this much extra
   // --size on top, decaying to 0 over PULSE_DURATION_MS.
-  var PULSE_STRENGTH = 0.22;
+  var PULSE_STRENGTH = 0.154; // 70% of the original 0.22, to match the smaller base size
   var PULSE_DURATION_MS = 500;
 
   // How far the blob can drift toward the cursor, in pre-scale px (the

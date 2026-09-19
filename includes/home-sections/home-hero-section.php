@@ -852,7 +852,7 @@ ai_interaction_assets_once();
         --color-four: #2864C7;
         --color-five: #123A7A;
         --time-animation: 5s;
-        --size: 2;
+        --size: 1.4;
         --tilt-x: 0px;
         --tilt-y: 0px;
         position: relative;
