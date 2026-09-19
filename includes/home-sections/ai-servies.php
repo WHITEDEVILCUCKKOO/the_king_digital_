@@ -602,7 +602,7 @@
   <div class="qk-features-grid" id="qkFeaturesGrid">
 
     <!-- Card 1 : AI Agent -->
-    <div class="qk-feature-card">
+    <div class="qk-feature-card"  onclick="window.location.href='ai_service.php'" >
       <div class="qk-feature-blob qk-blob-purple"></div>
       <div class="qk-feature-icon qk-icon-purple">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -622,7 +622,7 @@
     </div>
 
     <!-- Card 2 : AI Chatbot -->
-    <div class="qk-feature-card">
+    <div class="qk-feature-card"  onclick="window.location.href='ai_service.php'" >
       <div class="qk-feature-blob qk-blob-green"></div>
       <div class="qk-feature-icon qk-icon-green">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -638,7 +638,7 @@
     </div>
 
     <!-- Card 3 : Knowledge Base -->
-    <div class="qk-feature-card">
+    <div class="qk-feature-card"  onclick="window.location.href='ai_service.php'" >
       <div class="qk-feature-blob qk-blob-blue"></div>
       <div class="qk-feature-icon qk-icon-blue">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -655,7 +655,7 @@
     </div>
 
     <!-- Card 4 : Voice AI -->
-    <div class="qk-feature-card">
+    <div class="qk-feature-card"  onclick="window.location.href='ai_service.php'" >
       <div class="qk-feature-blob qk-blob-yellow"></div>
       <div class="qk-feature-icon qk-icon-yellow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -674,7 +674,7 @@
     </div>
 
     <!-- Card 5 : Prompt Studio -->
-    <div class="qk-feature-card">
+    <div class="qk-feature-card"  onclick="window.location.href='ai_service.php'" >
       <div class="qk-feature-blob qk-blob-pink"></div>
       <div class="qk-feature-icon qk-icon-pink">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -698,7 +698,7 @@
     </div>
 
     <!-- Card 6 : AI Workflow -->
-    <div class="qk-feature-card">
+    <div class="qk-feature-card"  onclick="window.location.href='ai_service.php'" >
       <div class="qk-feature-blob qk-blob-teal"></div>
       <div class="qk-feature-icon qk-icon-teal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
