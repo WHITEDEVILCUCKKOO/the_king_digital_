@@ -197,7 +197,7 @@
 
             <!-- ============ NORMAL CARDS (hamesha "All Work" par bhi dikhte hain) ============ -->
 
-            <div class="port-card reveal tlasma-card" data-type="website">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://lakshmibaicollege.in/'" data-type="website">
                 <div class="port-thumb" style="background:#E8F5FF;font-size:48px">
                     <span class="port-badge" style="background:#2563EB;color:#fff">Website</span>
                     <div class="img_box">
@@ -209,8 +209,8 @@
                     <p>University website — Delhi University</p>
                 </div>
             </div>
-
-            <div class="port-card reveal tlasma-card" data-type="website">
+<!-- 
+            <div class="port-card reveal tlasma-card" onclick="window.location.href=''" data-type="website">
                 <div class="port-thumb" style="background:#ECFDF5;font-size:48px">
                     <span class="port-badge" style="background:#059669;color:#fff">E-Commerce</span>
                     <div class="img_box_static">
@@ -221,7 +221,7 @@
                     <h4>Kumar Electric</h4>
                     <p>Product catalogue & B2B inquiry portal</p>
                 </div>
-            </div>
+            </div> -->
 
             <div class="port-card reveal tlasma-card" data-type="sms">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
@@ -265,7 +265,7 @@
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card" data-type="website">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://www.way2itservices.com/'" data-type="website">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -294,7 +294,7 @@
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card" data-type="website">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://www.staticking.com/'" data-type="website">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -307,6 +307,18 @@
                 </div>
             </div>
 
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://shrivinayakjyotish.com/'" data-type="website" >
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_2.png" alt="Static King" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Shri Vinayak Jyotish</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
 
             <!-- ============ EXTRA CARDS ============
                  Yahan "extra-card" class + style="display:none" lagaya hai.
@@ -316,7 +328,8 @@
                  bas data-type badal do aur extra-card class + display:none rakho — kaam khud ho jayega.
             -->
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://tarotalkbyaarti.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -324,25 +337,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Tarotalk Byaarti</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_2.png" alt="Static King" class="pic">
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Static King</h4>
-                    <p>Institutional web design & development</p>
-                </div>
-            </div>
-
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://shreeramastrology.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -350,12 +350,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Shreerama Strology </h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://snakked.in/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -363,12 +363,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Snakked</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://seracasdim.in/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -376,12 +376,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Sera Casdim</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://retirebychoice.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -389,12 +389,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Retireby Choice</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://mywealthcreator.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -402,12 +402,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Mywealth Creator</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://minerdiastudio.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -415,12 +415,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Minerdia Studio</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://moneyadvise.co.in/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -428,12 +428,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Money Advise</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://prudentialearning.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -441,12 +441,12 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Prudentia Learning</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card" data-type="website" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card" onclick="window.location.href='https://bespokebypaul.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
@@ -454,7 +454,7 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>Static King</h4>
+                    <h4>Paul Bespokeby</h4>
                     <p>Institutional web design & development</p>
                 </div>
             </div>
@@ -470,7 +470,7 @@
         </div>
 
         <div class="port-cta reveal">
-            <a href="/portfolio.php" class="btn btn-outline"><i class="fas fa-eye"></i> View Full Portfolio</a>
+            <a href="portfolio.php" class="btn btn-outline"><i class="fas fa-eye"></i> View Full Portfolio</a>
         </div>
     </div>
 </section>
