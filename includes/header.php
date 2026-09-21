@@ -139,7 +139,7 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="/portfolio.php" class="bottom_link_78">Portfolio</a>
+                        <a href="portfolio.php" class="bottom_link_78">Portfolio</a>
                         <a href="about.php" class="bottom_link_78">About</a>
 
                         <!-- <div class="has-dd">
@@ -174,7 +174,7 @@
                 <a href="index.php">Home</a>
                 <a href="about.php">About Us</a>
                 <!-- <a href="/client.php">Our Clients</a> -->
-                <a href="/portfolio.php">Portfolio</a>
+                <a href="portfolio.php">Portfolio</a>
                 <!-- <a href="/blog/">Blog</a> -->
                 <a href="contact.php">Contact Us</a>
                 <div class="mob-nav-sep">Integration</div>
