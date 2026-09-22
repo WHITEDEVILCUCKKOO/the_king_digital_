@@ -83,7 +83,7 @@
 
     .kd-rcs-official__text {
         margin: 0;
-        max-width: 62ch;
+        /* max-width: 62ch; */
         font-size: 16.5px;
         line-height: 1.75;
         color: var(--muted);
@@ -208,7 +208,7 @@
     }
 
     .kd-rcs-official__media {
-        height: 104px;
+        height: 100%;
         background:
             radial-gradient(circle at 25% 30%, rgba(255, 255, 255, .5), transparent 45%),
             linear-gradient(135deg, var(--blue) 0%, var(--indigo) 60%, var(--orange) 130%);
@@ -256,40 +256,72 @@
         box-shadow: 0 24px 50px -30px rgba(43, 67, 105, .3);
     }
 
-    .kd-rcs-official__note .kd-rcs-official__text {
-        max-width: 88ch;
-    }
-
-    .kd-rcs-official__chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 24px 0 0;
-        padding: 0;
-        list-style: none;
-    }
 
     .kd-rcs-official__chip {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         padding: 9px 16px;
+        margin-top: 10px;
         border: 1px solid var(--line);
         border-radius: 999px;
+
         background: #f6f8fe;
         font-size: 13.5px;
         font-weight: 600;
         color: var(--navy);
+
+        /* Smooth hover */
+        transition:
+            background-color 250ms ease,
+            color 250ms ease,
+            border-color 250ms ease,
+            transform 250ms ease,
+            box-shadow 250ms ease;
+    }
+
+    .kd-rcs-official__chip:hover {
+        background: var(--navy);
+        color: var(--surface);
+        border-color: var(--navy);
+
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(16, 36, 72, 0.12);
     }
 
     .kd-rcs-official__chip svg {
         flex: none;
+
+        transition:
+            stroke 250ms ease,
+            transform 250ms ease;
+    }
+
+    .kd-rcs-official__chip:hover svg {
+        stroke: white;
+        transform: scale(1.05);
     }
 
     .kd-rcs-official__chip--accent {
         border-color: rgba(240, 100, 47, .3);
         background: #fff4ee;
         color: #b8431a;
+
+        transition:
+            background-color 250ms ease,
+            color 250ms ease,
+            border-color 250ms ease,
+            transform 250ms ease,
+            box-shadow 250ms ease;
+    }
+
+    .kd-rcs-official__chip--accent:hover {
+        background: #f0642f;
+        border-color: #f0642f;
+        color: #ffffff;
+
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(240, 100, 47, 0.20);
     }
 
     /* ---------- Responsive ---------- */
@@ -351,7 +383,9 @@
                                 <span class="kd-rcs-official__verified">Verified sender</span>
                             </span>
                         </div>
-                        <div class="kd-rcs-official__media"></div>
+                        <div class="kd-rcs-official__media">
+                            <img src="web-design_hero.png" alt="image">
+                        </div>
                         <div class="kd-rcs-official__body">
                             <span class="kd-rcs-official__line kd-rcs-official__line--w75"></span>
                             <span class="kd-rcs-official__line kd-rcs-official__line--w50"></span>

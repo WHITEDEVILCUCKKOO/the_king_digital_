@@ -34,7 +34,7 @@
 
     /* ---------- Header ---------- */
     .kd-rcs-upgrade__head {
-        max-width: 800px;
+        /* max-width: 800px; */
         margin: 0 auto;
         text-align: center;
     }
@@ -84,7 +84,7 @@
 
     .kd-rcs-upgrade__intro {
         margin: 0 auto;
-        max-width: 70ch;
+        /* max-width: 70ch; */
         font-size: 16.5px;
         line-height: 1.75;
         color: var(--muted);
