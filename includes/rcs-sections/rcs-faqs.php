@@ -648,7 +648,7 @@
                 <!-- FAQ 1 -->
                 <div class="kd-rcs-faq-item">
                     <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">What is RCS messaging?</span>
+                        <span class="kd-rcs-faq-question-text">What is the primary difference between SMS and RCS Messaging?</span>
                         <span class="kd-rcs-faq-icon" aria-hidden="true">
                             <span class="kd-rcs-faq-icon-horizontal"></span>
                             <span class="kd-rcs-faq-icon-vertical"></span>
@@ -656,7 +656,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>RCS, or Rich Communication Services, is an advanced business messaging solution that allows brands to create richer and more interactive conversations. Messages can include branded content, images, buttons, suggested actions and other engaging elements.</p>
+                            <p>SMS is a traditional text-only messaging service limited to 160 plain characters. RCS (Rich Communication Services) is an advanced IP-based messaging protocol that supports verified branded sender IDs, high-res photos, video, audio, interactive action buttons, swipable carousels, and rich analytics directly within native messaging apps.</p>
                         </div>
                     </div>
                 </div>
@@ -664,7 +664,7 @@
                 <!-- FAQ 2 -->
                 <div class="kd-rcs-faq-item">
                     <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">How is RCS different from traditional SMS?</span>
+                        <span class="kd-rcs-faq-question-text">Does the recipient need to install a separate mobile app to receive RCS messages?</span>
                         <span class="kd-rcs-faq-icon" aria-hidden="true">
                             <span class="kd-rcs-faq-icon-horizontal"></span>
                             <span class="kd-rcs-faq-icon-vertical"></span>
@@ -672,7 +672,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>Traditional SMS is mainly text-based, while RCS supports a more interactive messaging experience. Businesses can use rich media, branded messaging, visual content and action buttons to create more engaging customer communication.</p>
+                            <p>No. RCS messages arrive directly within the smartphone's pre-installed, default SMS/messaging application (such as Google Messages on Android devices), requiring no separate software downloads.</p>
                         </div>
                     </div>
                 </div>
@@ -680,7 +680,7 @@
                 <!-- FAQ 3 -->
                 <div class="kd-rcs-faq-item">
                     <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">Can I add images and buttons to RCS messages?</span>
+                        <span class="kd-rcs-faq-question-text">What happens if a recipient's phone or carrier network does not support RCS?</span>
                         <span class="kd-rcs-faq-icon" aria-hidden="true">
                             <span class="kd-rcs-faq-icon-horizontal"></span>
                             <span class="kd-rcs-faq-icon-vertical"></span>
@@ -688,7 +688,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>Yes. RCS messaging can support rich visual content and interactive features such as images, cards, buttons and suggested actions, helping customers interact with your business more easily.</p>
+                            <p>The Kings Digital platform uses intelligent, automated fallback technology. If a device or network cannot process RCS content, the system automatically delivers a traditional SMS or MMS message to ensure 100% campaign reach.</p>
                         </div>
                     </div>
                 </div>
@@ -696,7 +696,7 @@
                 <!-- FAQ 4 -->
                 <div class="kd-rcs-faq-item">
                     <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">Can RCS messages be branded with my business identity?</span>
+                        <span class="kd-rcs-faq-question-text">How do businesses obtain the verified brand checkmark on RCS messaging?</span>
                         <span class="kd-rcs-faq-icon" aria-hidden="true">
                             <span class="kd-rcs-faq-icon-horizontal"></span>
                             <span class="kd-rcs-faq-icon-vertical"></span>
@@ -704,7 +704,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>Yes. RCS can help businesses create a more recognizable brand experience by presenting communication in a professional and visually engaging format that is designed around your brand identity and messaging goals.</p>
+                            <p>Brand verification is conducted through Google and underlying telecom carrier registries. Kings Digital manages this complete onboarding process by submitting your official business registration documents, website details, brand logo, and sender profile for verification.</p>
                         </div>
                     </div>
                 </div>
@@ -712,7 +712,7 @@
                 <!-- FAQ 5 -->
                 <div class="kd-rcs-faq-item">
                     <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">What businesses can benefit from RCS messaging?</span>
+                        <span class="kd-rcs-faq-question-text">Can RCS messaging be integrated into our company's existing CRM or ERP software?</span>
                         <span class="kd-rcs-faq-icon" aria-hidden="true">
                             <span class="kd-rcs-faq-icon-horizontal"></span>
                             <span class="kd-rcs-faq-icon-vertical"></span>
@@ -720,7 +720,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>RCS messaging can be useful for businesses across many industries that want to create more interactive customer communication, promote products or services, share important updates and improve overall audience engagement.</p>
+                            <p>Yes. Kings Digital provides developer-ready REST APIs, Webhooks, and pre-built integration modules that allow seamless connection to platforms like Salesforce, HubSpot, Zoho, Shopify, and custom databases.</p>
                         </div>
                     </div>
                 </div>
@@ -728,7 +728,7 @@
                 <!-- FAQ 6 -->
                 <div class="kd-rcs-faq-item">
                     <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">Can RCS help improve customer engagement?</span>
+                        <span class="kd-rcs-faq-question-text">How are message dispatches charged on an RCS Business Messaging platform?</span>
                         <span class="kd-rcs-faq-icon" aria-hidden="true">
                             <span class="kd-rcs-faq-icon-horizontal"></span>
                             <span class="kd-rcs-faq-icon-vertical"></span>
@@ -736,23 +736,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>Yes. Rich visual content and interactive actions can make customer communication more engaging and easier to respond to, helping businesses create more meaningful conversations with their audience.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 7 -->
-                <div class="kd-rcs-faq-item">
-                    <button class="kd-rcs-faq-question" type="button" aria-expanded="false">
-                        <span class="kd-rcs-faq-question-text">How can I get started with King Digital RCS services?</span>
-                        <span class="kd-rcs-faq-icon" aria-hidden="true">
-                            <span class="kd-rcs-faq-icon-horizontal"></span>
-                            <span class="kd-rcs-faq-icon-vertical"></span>
-                        </span>
-                    </button>
-                    <div class="kd-rcs-faq-answer">
-                        <div class="kd-rcs-faq-answer-inner">
-                            <p>Simply contact the King Digital team and share your business communication requirements. Our team can help you understand the available RCS messaging solutions and plan the right approach for your customer engagement goals.</p>
+                            <p>RCS pricing operates on a session-based or event-based model divided into single rich messages, basic transactional alerts, or interactive two-way conversational sessions depending on campaign structure.</p>
                         </div>
                     </div>
                 </div>

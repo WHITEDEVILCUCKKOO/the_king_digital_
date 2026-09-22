@@ -16,6 +16,8 @@
     <?php require_once __DIR__ . '/includes/rcs-sections/rcs-core-features.php' ?>
     <?php require_once __DIR__ . '/includes/rcs-sections/rcs-message-type.php' ?>
     <?php require_once __DIR__ . '/includes/rcs-sections/rcs-how-it-work.php' ?>
+    <?php require_once __DIR__ . '/includes/rcs-sections/rcs-industry.php' ?>
+    <?php require_once __DIR__ . '/includes/rcs-sections/rcs-strategic.php' ?>
 
 </main>
 
