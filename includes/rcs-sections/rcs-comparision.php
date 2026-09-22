@@ -314,6 +314,127 @@
       color: var(--blue);
     }
   }
+
+  /* ========================================
+   TABLE HOVER EFFECT
+   ======================================== */
+
+  /* Smooth transitions */
+  .kd-rcs-compare__table tbody tr {
+    position: relative;
+    transition:
+      background-color 220ms ease,
+      box-shadow 220ms ease,
+      transform 220ms ease;
+  }
+
+  /* Cell transitions */
+  .kd-rcs-compare__table tbody th,
+  .kd-rcs-compare__table tbody td {
+    transition:
+      background-color 220ms ease,
+      color 220ms ease;
+  }
+
+  /* Row hover */
+  .kd-rcs-compare__table tbody tr:hover {
+    background: #fbfcff;
+    box-shadow:
+      inset 4px 0 0 var(--blue),
+      0 8px 24px rgba(43, 67, 105, 0.08);
+  }
+
+  /* Feature name becomes slightly stronger */
+  .kd-rcs-compare__table tbody tr:hover th {
+    color: var(--blue);
+  }
+
+  /* Normal cells */
+  .kd-rcs-compare__table tbody tr:hover td {
+    color: #4f5f78;
+  }
+
+  /* Keep the RCS column visually distinct */
+  .kd-rcs-compare__table tbody tr:hover td.is-rcs {
+    background: rgba(49, 95, 198, 0.10);
+    color: var(--navy);
+  }
+
+  /* RCS status icons get a tiny emphasis */
+  .kd-rcs-compare__table tbody tr:hover .kd-rcs-compare__status {
+    transform: scale(1.08);
+  }
+
+  .kd-rcs-compare__status {
+    transition: transform 220ms ease;
+  }
+
+
+  /* ========================================
+   HEADER HOVER
+   ======================================== */
+
+  .kd-rcs-compare__table thead th {
+    transition:
+      background 220ms ease,
+      color 220ms ease;
+  }
+
+  .kd-rcs-compare__table thead th:hover {
+    background: #243652;
+  }
+
+  .kd-rcs-compare__table thead th.is-rcs:hover {
+    background: linear-gradient(90deg,
+        #3b6fd8,
+        #6657c9);
+  }
+
+
+  /* ========================================
+   MOBILE
+   ======================================== */
+
+  @media (max-width: 760px) {
+
+    .kd-rcs-compare__table tbody tr {
+      transition:
+        box-shadow 220ms ease,
+        transform 220ms ease;
+    }
+
+    .kd-rcs-compare__table tbody tr:hover {
+      background: var(--surface);
+      box-shadow:
+        0 16px 35px rgba(43, 67, 105, 0.12),
+        inset 4px 0 0 var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .kd-rcs-compare__table tbody tr:hover th {
+      color: #ffffff;
+    }
+
+    .kd-rcs-compare__table tbody tr:hover td.is-rcs {
+      background: rgba(49, 95, 198, 0.08);
+    }
+  }
+
+
+  /* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .kd-rcs-compare__table tbody tr,
+    .kd-rcs-compare__table tbody th,
+    .kd-rcs-compare__table tbody td,
+    .kd-rcs-compare__status,
+    .kd-rcs-compare__table thead th {
+      transition: none;
+    }
+  }
 </style>
 
 <section class="kd-rcs-compare" id="rcs-vs-sms-vs-whatsapp" aria-labelledby="kd-rcs-compare-title">
