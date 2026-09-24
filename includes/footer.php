@@ -545,7 +545,7 @@
                <div class="footer-grid">
                    <div>
                        <div class="f-brand"><img src="assets/images/logos/king-digital-logo.png" alt=""></div>
-                       <div class="f-tagline">Delhi's #1 360° digital marketing company since 2010. Serving 15,000+ businesses across India with websites, SMS, WhatsApp, IVR, SEO, hosting, and more.</div>
+                       <div class="f-tagline">Delhi's #1, 360° digital marketing company since 2010. Serving 15,000+ businesses across India with websites, SMS, WhatsApp, IVR, SEO, hosting, and more.</div>
                        <!-- <div class="f-sub-brands">
                            <span class="f-sub">staticking.com</span>
                            <span class="f-sub">kingdigitalstudio.in</span>
@@ -609,11 +609,11 @@
                                    <span class="list_text">Ai Powered</span>
                                </li>
                            </ul>
-                           <button class="button">Book a Demo
+                           <a class="button" href="contact.php">Contact Us
                                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                </svg>
-                           </button>
+                           </a>
                        </div>
 
 
@@ -621,40 +621,39 @@
                    <div>
                        <h4>Our Services</h4>
                        <ul>
-                           <li><a class="bottom_link_79" href="/website-designing-company-india.html">Website Design</a></li>
-                           <li><a class="bottom_link_79" href="https://www.staticking.com/bulk-sms.shtml">Bulk SMS</a></li>
-                           <li><a class="bottom_link_79" href="/wabasignup.html">WhatsApp Business API</a></li>
-                           <li><a class="bottom_link_79" href="/social-media-marketing-agency-in-delhi.html">Social Media</a></li>
-                           <li><a class="bottom_link_79" href="/seo-service-company-in-delhi.html">SEO Services</a></li>
-                           <li><a class="bottom_link_79" href="https://www.ivrking.in/">IVR & Voice</a></li>
-                           <li><a class="bottom_link_79" href="/email-marketing-company-india.html">Email Marketing</a></li>
-                           <li><a class="bottom_link_79" href="https://www.kingcloud.in/">Hosting & Cloud</a></li>
-                           <li><a class="bottom_link_79" href="/rich-communication-services.html">RCS Messaging</a></li>
+                           <li><a class="bottom_link_79" href="web-design.php">Website Design</a></li>
+                           <li><a class="bottom_link_79" href="service-bluk-sms.php">Bulk SMS</a></li>
+                           <li><a class="bottom_link_79" href="service-whatsAppApi.php">WhatsApp Business API</a></li>
+                           <li><a class="bottom_link_79" href="social-media-marketing.php">Social Media</a></li>
+                           <li><a class="bottom_link_79" href="seo-service.php">SEO Services</a></li>
+                           <li><a class="bottom_link_79" href="service-ivr.php">IVR & Voice</a></li>
+                           <li><a class="bottom_link_79" href="hosting-cloud.php">Hosting & Cloud</a></li>
+                           <li><a class="bottom_link_79" href="rcs-service.php">RCS Messaging</a></li>
                        </ul>
                    </div>
                    <div>
                        <h4>Company</h4>
                        <ul>
-                           <li><a class="bottom_link_79" href="/who-we-are.html">Who We Are</a></li>
-                           <li><a class="bottom_link_79" href="/client.php">Our Clients</a></li>
-                           <li><a class="bottom_link_79" href="/portfolio.php">Portfolio</a></li>
-                           <li><a class="bottom_link_79" href="/blog/">Blog</a></li>
+                           <li><a class="bottom_link_79" href="about.php">Who We Are</a></li>
+                           <li><a class="bottom_link_79" href="portfolio.php">Our Clients</a></li>
+                           <li><a class="bottom_link_79" href="portfolio.php">Portfolio</a></li>
+                           <li><a class="bottom_link_79" href="blog/">Blog</a></li>
                            <li><a class="bottom_link_79" href="https://academy.kingdigital.in/">Academy</a></li>
                            <li><a class="bottom_link_79" href="https://www.linkedin.com/company/kingdigitalpl/jobs/">Careers</a></li>
-                           <li><a class="bottom_link_79" href="/contactus.html">Contact Us</a></li>
+                           <li><a class="bottom_link_79" href="contact.php">Contact Us</a></li>
                        </ul>
                    </div>
                    <div>
                        <h4>Account & Help</h4>
                        <ul>
-                           <li><a class="bottom_link_79" href="/enquiry.php">Get a Quote</a></li>
-                           <li><a class="bottom_link_79" href="/pay/">Pay Now</a></li>
-                           <li><a class="bottom_link_79" href="/my-account.html">Login</a></li>
-                           <li><a class="bottom_link_79" href="/online-meeting.php">Online Meeting</a></li>
-                           <li><a class="bottom_link_79" href="/clients/submitticket.php?step=2&deptid=26">Support Ticket</a></li>
-                           <li><a class="bottom_link_79" href="/term-and-condition.html">Terms of Service</a></li>
-                           <li><a class="bottom_link_79" href="/privacy-policy.html">Privacy Policy</a></li>
-                           <li><a class="bottom_link_79" href="/term-and-condition.html">Refund Policy</a></li>
+                           <li><a class="bottom_link_79" href="contact.php">Get a Quote</a></li>
+                           <li><a class="bottom_link_79" href="pay/">Pay Now</a></li>
+                           <li><a class="bottom_link_79" href="my-account.html">Login</a></li>
+                           <li><a class="bottom_link_79" href="online-meeting.php">Online Meeting</a></li>
+                           <li><a class="bottom_link_79" href="clients/submitticket.php?step=2&deptid=26">Support Ticket</a></li>
+                           <li><a class="bottom_link_79" href="terms_and_conditions.php">Terms of Service</a></li>
+                           <li><a class="bottom_link_79" href="privacy_policy.php">Privacy Policy</a></li>
+                           <li><a class="bottom_link_79" href="refund-policy.html">Refund Policy</a></li>
                        </ul>
                    </div>
 
@@ -705,11 +704,11 @@
                                    <span class="list_text">Ai Powered</span>
                                </li>
                            </ul>
-                           <button class="button">Book a Demo
+                           <a class="button" href="contact.php">Contact Us
                                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                </svg>
-                           </button>
+                           </a>
                        </div>
                </div>
            </div>
@@ -719,10 +718,10 @@
                <div class="footer-bottom-in">
                    <p>© 2010–2026 King Digital Pvt. Ltd. All Rights Reserved &nbsp;|&nbsp; CIN: U72300DL2014PTC264951 &nbsp;|&nbsp; MSME Registered</p>
                    <div style="display:flex;gap:16px;flex-wrap:wrap">
-                       <a href="/privacy-policy.html">Privacy</a>
-                       <a href="/term-and-condition.html">Terms</a>
-                       <a href="/term-and-condition.html">Anti-Spam</a>
-                       <a href="/contactus.html">Contact</a>
+                       <a href="privacy_policy.php">Privacy</a>
+                       <a href="terms_and_conditions.php">Terms</a>
+                       <a href="erm-and-condition.html">Anti-Spam</a>
+                       <a href="contact.php">Contact</a>
                    </div>
                </div>
            </div>
