@@ -466,32 +466,37 @@
 
                 <form id="qcontactForm" novalidate>
 
-                    <div class="qcontact-field">
-                        <label class="qcontact-label" for="qcontactName">Full Name <span class="qcontact-required">*</span></label>
-                        <input class="qcontact-input" type="text" id="qcontactName" name="fullName" placeholder="John Doe" required>
-                    </div>
-
                     <div class="qcontact-field qcontact-field-row">
+                        <div>
+                            <label class="qcontact-label" for="qcontactName">Full Name <span class="qcontact-required">*</span></label>
+                            <input class="qcontact-input" type="text" id="qcontactName" name="fullName" placeholder="John Doe" required>
+                        </div>
                         <div>
                             <label class="qcontact-label" for="qcontactEmail">Work Email <span class="qcontact-required">*</span></label>
                             <input class="qcontact-input" type="email" id="qcontactEmail" name="workEmail" placeholder="you@company.com" required>
                         </div>
+                    </div>
+
+                    <div class="qcontact-field qcontact-field-row">
                         <div>
                             <label class="qcontact-label" for="qcontactPhone">Phone Number</label>
                             <input class="qcontact-input" type="tel" id="qcontactPhone" name="phone" placeholder="9900000000">
                         </div>
+                        <div>
+                            <label class="qcontact-label" for="qcontactSubject">Subject <span class="qcontact-required">*</span></label>
+                            <select class="qcontact-select" id="qcontactSubject" name="subject" required>
+                                <option value="" selected disabled>Select Service</option>
+                                <option value="bulk-sms">Bulk SMS</option>
+                                <option value="whatsapp-api">WhatsApp API</option>
+                                <option value="otp-sms">OTP SMS</option>
+                                <option value="voice">Voice / IVR</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="qcontact-field">
-                        <label class="qcontact-label" for="qcontactSubject">Subject <span class="qcontact-required">*</span></label>
-                        <select class="qcontact-select" id="qcontactSubject" name="subject" required>
-                            <option value="" selected disabled>Select Service</option>
-                            <option value="bulk-sms">Bulk SMS</option>
-                            <option value="whatsapp-api">WhatsApp API</option>
-                            <option value="otp-sms">OTP SMS</option>
-                            <option value="voice">Voice / IVR</option>
-                            <option value="other">Other</option>
-                        </select>
+
                     </div>
 
                     <div class="qcontact-field">
@@ -525,7 +530,7 @@
             <!-- Right form panel -->
             <div class="qcontact-panel">
                 <h3 class="qcontact-panel-title">Let's Connect</h3>
-                <p class="qcontact-panel-desc">Have a question or a project in mind? Fill out the form and our team will get back to you within 24 hours. We're here to understand your needs and find the right solution for your business.
+                <p class="qcontact-panel-desc">Have a question or a project in mind? Fill out the form and our team will get back to you within 24 hours.
                 </p>
 
                 <div class="qcontact-info-card">
@@ -537,12 +542,24 @@
                             <polyline points="2 6 12 13 22 6" />
                         </svg>
                     </div>
-                    <div>
-                        <p class="qcontact-info-label">SALES EMAIL</p>
-                        <p class="qcontact-info-value">info@kingdigital.in</p>
+                    <div style="display: none;">
+                        <p class="qcontact-info-label"></p>
+                        <p class="qcontact-info-value"></p>
                         <!-- <p class="qcontact-info-value">sales@staticking.com</p> -->
-                        <p class="qcontact-info-value">support@staticking.com</p>
+                        <p class="qcontact-info-value"></p>
                         <!-- <p class="qcontact-info-value">billing@staticking.com</p> -->
+                    </div>
+                     <div>
+                        <p class="qcontact-info-label">MAIN EMAIL</p>
+                        <p class="qcontact-info-value qcontact-teal">info@kingdigital.in</p>
+
+                    </div>
+                    <div></div>
+                    <div>
+                        <p class="qcontact-info-label">Sales</p>
+
+                        <!-- <p class="qcontact-info-value qcontact-teal">+91-9211339966</p> -->
+                        <p class="qcontact-info-value qcontact-teal">support@kingdigital.com</p>
                     </div>
                 </div>
 
@@ -571,7 +588,7 @@
                         <span>⏱️</span>
                         <p class="qcontact-response-title">Response Time</p>
                     </div>
-                    <p class="qcontact-response-text">We typically respond to all inquiries within <strong> 24 hours </strong> during business days. Our team carefully reviews every request to understand your needs and provide the most relevant information, guidance, and next steps. For urgent queries, we make every effort to get back to you as quickly as possible.</p>
+                    <p class="qcontact-response-text">We typically respond to all inquiries within <strong> 24 hours </strong> during business days. For urgent queries, we make every effort to get back to you as quickly as possible.</p>
                 </div>
             </div>
 

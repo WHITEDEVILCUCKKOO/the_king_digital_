@@ -506,7 +506,7 @@
         <div class="svc-tags"><span class="stag">Video</span><span class="stag">Voice Over</span><span class="stag">Podcast</span><span class="stag">Audio</span></div>
       </div>
       <div class="svc-card reveal" onclick="window.location.href='podcast-studio.php'">
-        <a href="podcast-service.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+        <a href="podcast-studio.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#F0FDF4;color:#16A34A"><i class="fa-solid fa-podcast"></i></div>
         <div class="svc-name">Podcast Studio </div>
         <div class="svc-desc">Professional podcast studio solutions with high-quality audio, video recording, and reliable cloud infrastructure for seamless content creation.</div>
