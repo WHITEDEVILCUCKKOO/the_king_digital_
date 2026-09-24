@@ -1,4 +1,4 @@
-<!-- ============ Core Features of the Kings Digital RCS Messaging Gateway ============ -->
+<!-- ============ Core Features of the King Digital RCS Messaging Gateway ============ -->
 <style>
   /* ========================================
    RCS CORE FEATURES
@@ -429,7 +429,7 @@
 
         <h2>
           Core Features of
-          the Kings Digital
+          the King Digital
           <span>RCS Messaging Gateway</span>
         </h2>
 
@@ -640,4 +640,4 @@
     update();
   })();
 </script>
-<!-- ============ /Core Features of the Kings Digital RCS Messaging Gateway ============ -->
+<!-- ============ /Core Features of the King Digital RCS Messaging Gateway ============ -->

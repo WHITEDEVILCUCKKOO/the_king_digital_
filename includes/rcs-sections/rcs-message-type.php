@@ -292,7 +292,7 @@
         What Types of <span>RCS Messages</span> Can You Send?
       </h2>
       <p class="kd-rcs-types__intro">
-        The Kings Digital RCS platform supports multiple messaging formats tailored to specific campaign goals and operational workflows:
+        The King Digital RCS platform supports multiple messaging formats tailored to specific campaign goals and operational workflows:
       </p>
     </header>
 

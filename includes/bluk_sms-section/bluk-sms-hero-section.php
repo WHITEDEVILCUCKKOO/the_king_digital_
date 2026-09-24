@@ -2616,7 +2616,7 @@
                 In a world where emails get buried and ad budgets burn fast without guaranteed returns, text messaging remains the single most effective way to grab immediate attention. Over 70% of text messages are opened within three minutes of delivery making SMS the ultimate channel for urgent alerts, flash offers, and seamless customer communications. <span id="read_btn">Read More</span>
             </p>
             <p class="tital_pera" id="extr_texrt" style="display: none;">
-                At <em>Kings Digital </em> , we operate as a premier <em> Bulk SMS Service Provider in Delhi </em>, delivering a high-speed, enterprise-grade messaging infrastructure designed to help your business reach thousands of customers instantly. Whether you run a bustling retail outlet in Lajpat Nagar, manage property leads across Dwarka, or coordinate corporate logistics in Cyber City, our platform turns direct mobile communication into measurable revenue growth all with 100% TRAI DLT compliance.
+                At <em>King Digital </em> , we operate as a premier <em> Bulk SMS Service Provider in Delhi </em>, delivering a high-speed, enterprise-grade messaging infrastructure designed to help your business reach thousands of customers instantly. Whether you run a bustling retail outlet in Lajpat Nagar, manage property leads across Dwarka, or coordinate corporate logistics in Cyber City, our platform turns direct mobile communication into measurable revenue growth all with 100% TRAI DLT compliance.
             </p>
 
 

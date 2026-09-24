@@ -217,7 +217,8 @@
         background: #1C3D7B;
         border: 1px solid #ececf5;
         border-radius: 22px;
-        padding: 24px 34px 13px;
+        padding: 20px 34px 12px;
+
         box-shadow: 0 20px 50px rgba(30, 34, 90, 0.06);
         opacity: 0;
         transform: translateY(24px);
@@ -257,7 +258,7 @@
         background: #ffffff;
         border: 1px solid #dcdfe8;
         border-radius: 10px;
-        padding: 12px 14px;
+        padding: 8px 14px;
         transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -276,7 +277,7 @@
 
     .qcontact-textarea {
         resize: vertical;
-        min-height: 100px;
+        min-height: 68px;
     }
 
     .qcontact-select {

@@ -355,7 +355,7 @@
                     Official RCS Business <span>Messaging Service</span>
                 </h2>
                 <p class="kd-rcs-official__text">
-                    Stop losing the interest of customers with plain, dull 160-character text messages. The traditional SMS plain text no longer offers enough possibilities to make an impression in either one’s messages‘ inbox or into the crowded mobile industry. Consumers nowadays are accustomed to enjoying interactive app-like experiences right in their own messaging applications, without the need to download and use third-party services. Rich Communication Services (RCS) offers you a chance to turn traditional text messaging routines into an engaging, branded, media-rich experience, as it is made possible by Kings Digital and its RCS business messaging platform that works among all major mobile messaging platforms.
+                    Stop losing the interest of customers with plain, dull 160-character text messages. The traditional SMS plain text no longer offers enough possibilities to make an impression in either one’s messages‘ inbox or into the crowded mobile industry. Consumers nowadays are accustomed to enjoying interactive app-like experiences right in their own messaging applications, without the need to download and use third-party services. Rich Communication Services (RCS) offers you a chance to turn traditional text messaging routines into an engaging, branded, media-rich experience, as it is made possible by King Digital and its RCS business messaging platform that works among all major mobile messaging platforms.
                 </p>
             </div>
 

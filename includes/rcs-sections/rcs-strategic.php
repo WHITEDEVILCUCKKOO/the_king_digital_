@@ -1,4 +1,4 @@
-<!-- ============ Strategic Advantages of Choosing Kings Digital as Your RCS Provider ============ -->
+<!-- ============ Strategic Advantages of Choosing King Digital as Your RCS Provider ============ -->
 <style>
     .kd-rcs-advantages {
         --navy: #18283f;
@@ -171,12 +171,12 @@
     <div class="kd-rcs-advantages__wrap">
 
         <header class="kd-rcs-advantages__head">
-            <span class="kd-rcs-advantages__eyebrow">Why Kings Digital</span>
+            <span class="kd-rcs-advantages__eyebrow">Why King Digital</span>
             <h2 class="kd-rcs-advantages__title" id="kd-rcs-advantages-title">
-                Strategic Advantages of Choosing <span>Kings Digital</span>
+                Strategic Advantages of Choosing <span>King Digital</span>
             </h2>
             <p class="kd-rcs-advantages__intro">
-                When you collaborate with Kings Digital on your corporate RCS business messaging infrastructure, you gain access to direct carrier connections, leading API technology, and complete onboarding help.
+                When you collaborate with King Digital on your corporate RCS business messaging infrastructure, you gain access to direct carrier connections, leading API technology, and complete onboarding help.
             </p>
         </header>
 
@@ -261,4 +261,4 @@
 
     </div>
 </section>
-<!-- ============ /Strategic Advantages of Choosing Kings Digital as Your RCS Provider ============ -->
+<!-- ============ /Strategic Advantages of Choosing King Digital as Your RCS Provider ============ -->

@@ -197,7 +197,7 @@
     <div class="ivr-cta_content">
         <span class="eyebrow"><i></i>MAKE THE SWITCH</span>
         <h2>Transform Your Enterprise <span>Communication Infrastructure</span> Today</h2>
-        <p>Got a problem with antiquated voice systems affecting customers or revenue goals? Migrate with Kings Digital to a modern cloud IVR — with 24/7 call handling, a scalable experience, integrated intelligent CRM data, and automated self-service processes that will boost your business.</p>
+        <p>Got a problem with antiquated voice systems affecting customers or revenue goals? Migrate with King Digital to a modern cloud IVR — with 24/7 call handling, a scalable experience, integrated intelligent CRM data, and automated self-service processes that will boost your business.</p>
 
         <div class="ivr-cta_chips">
             <span><i class="fa-solid fa-circle-check"></i>24/7 Call Handling</span>

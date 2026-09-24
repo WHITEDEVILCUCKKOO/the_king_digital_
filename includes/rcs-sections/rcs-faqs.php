@@ -688,7 +688,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>The Kings Digital platform uses intelligent, automated fallback technology. If a device or network cannot process RCS content, the system automatically delivers a traditional SMS or MMS message to ensure 100% campaign reach.</p>
+                            <p>The King Digital platform uses intelligent, automated fallback technology. If a device or network cannot process RCS content, the system automatically delivers a traditional SMS or MMS message to ensure 100% campaign reach.</p>
                         </div>
                     </div>
                 </div>
@@ -704,7 +704,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>Brand verification is conducted through Google and underlying telecom carrier registries. Kings Digital manages this complete onboarding process by submitting your official business registration documents, website details, brand logo, and sender profile for verification.</p>
+                            <p>Brand verification is conducted through Google and underlying telecom carrier registries. King Digital manages this complete onboarding process by submitting your official business registration documents, website details, brand logo, and sender profile for verification.</p>
                         </div>
                     </div>
                 </div>
@@ -720,7 +720,7 @@
                     </button>
                     <div class="kd-rcs-faq-answer">
                         <div class="kd-rcs-faq-answer-inner">
-                            <p>Yes. Kings Digital provides developer-ready REST APIs, Webhooks, and pre-built integration modules that allow seamless connection to platforms like Salesforce, HubSpot, Zoho, Shopify, and custom databases.</p>
+                            <p>Yes. King Digital provides developer-ready REST APIs, Webhooks, and pre-built integration modules that allow seamless connection to platforms like Salesforce, HubSpot, Zoho, Shopify, and custom databases.</p>
                         </div>
                     </div>
                 </div>

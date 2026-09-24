@@ -199,7 +199,7 @@
         <div class="ivr-deploy_head">
             <span class="eyebrow"><i></i>GET STARTED</span>
             <h2>Steps to Deploy Your Hosted IVR Platform</h2>
-            <p>Establishing a cloud IVR system through Kings Digital is an easy, straightforward process.</p>
+            <p>Establishing a cloud IVR system through King Digital is an easy, straightforward process.</p>
         </div>
 
         <div class="ivr-deploy_row">

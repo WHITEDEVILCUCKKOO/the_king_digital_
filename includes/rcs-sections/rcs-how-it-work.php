@@ -262,7 +262,7 @@
           </span>
         </div>
         <h3 class="kd-rcs-how__step-title">Capability Validation</h3>
-        <p class="kd-rcs-how__step-text">Kings Digital gateway checks whether the recipient's phone number is in the carrier databases to confirm the RCS capability of the network and the device.</p>
+        <p class="kd-rcs-how__step-text">King Digital gateway checks whether the recipient's phone number is in the carrier databases to confirm the RCS capability of the network and the device.</p>
       </div>
 
       <div class="kd-rcs-how__step kd-rcs-how__step--indigo">

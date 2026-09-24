@@ -372,7 +372,7 @@
   <div class="qscale-inner">
 
     <div class="qscale-left">
-      <h2 class="qscale-title">Strategic Advantages<span class="qscale-title-accent"> Kings Digital Delivers</span></h2>
+      <h2 class="qscale-title">Strategic Advantages<span class="qscale-title-accent"> King Digital Delivers</span></h2>
       <p class="qscale-desc">Choosing the ideal Bulk SMS provider in Delhi can help your firm get great benefits not only in the market competition.</p>
 
       <div class="qscale-features" id="qscaleFeatures">

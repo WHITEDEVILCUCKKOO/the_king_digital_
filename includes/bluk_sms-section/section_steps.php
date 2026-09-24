@@ -348,7 +348,7 @@
                     
                     <div>
                         <h3>Database Preparation & System Integration</h3>
-                        <p>Plus, you can also import the required contacts into the Kings Digital control panel by applying filtering tags that relate to geolocation, history of purchases, or demographics. For transactional communication, integrate our API endpoints into the software of your website, CRM, or billing software.</p>
+                        <p>Plus, you can also import the required contacts into the King Digital control panel by applying filtering tags that relate to geolocation, history of purchases, or demographics. For transactional communication, integrate our API endpoints into the software of your website, CRM, or billing software.</p>
                     </div>
                 </div>
             </div>

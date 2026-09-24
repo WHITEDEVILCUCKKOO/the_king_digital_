@@ -664,7 +664,7 @@
                     <div class="whatsappapi-faq_answer">
                         <div class="whatsappapi-faq_answer-inner">
                             <div class="whatsappapi-faq_answer-bubble">
-                                <p>Yes. Kings Digital provides developer-ready REST APIs, Webhooks, and pre-built connectors that integrate smoothly with major platforms like Salesforce, HubSpot, Zoho, Shopify, WooCommerce, custom ERPs, and billing software.</p>
+                                <p>Yes. King Digital provides developer-ready REST APIs, Webhooks, and pre-built connectors that integrate smoothly with major platforms like Salesforce, HubSpot, Zoho, Shopify, WooCommerce, custom ERPs, and billing software.</p>
                                 <div class="whatsappapi-faq_answer-meta">
                                     <time>09:14</time>
                                     <span class="whatsappapi-tick2"><i class="fa-solid fa-check"></i><i class="fa-solid fa-check"></i></span>

@@ -213,7 +213,7 @@
     }
 
     /* ========================================
-       WHY CHOOSE KINGS DIGITAL SECTION
+       WHY CHOOSE King DIGITAL SECTION
        ======================================== */
 
     .whatsappapi-why-choose {
@@ -405,13 +405,13 @@
     <div class="whatsappapi-why-choose_content">
 
         <div class="whatsappapi-why-choose_header">
-            <span class="whatsappapi-why-choose_eyebrow">Why Kings Digital</span>
+            <span class="whatsappapi-why-choose_eyebrow">Why King Digital</span>
             <h2 class="whatsappapi-why-choose_title">
-                Why Choose Kings Digital
+                Why Choose King Digital
                 <em>for Your Official WhatsApp Business API Solution?</em>
             </h2>
             <p class="whatsappapi-why-choose_sub">
-                When you choose Kings Digital for your business WhatsApp messaging solutions,
+                When you choose King Digital for your business WhatsApp messaging solutions,
                 you can benefit from our expert technical support and services.
             </p>
         </div>
