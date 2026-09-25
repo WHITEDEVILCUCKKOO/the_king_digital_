@@ -628,6 +628,7 @@
                            <li><a class="bottom_link_79" href="seo-service.php">SEO Services</a></li>
                            <li><a class="bottom_link_79" href="service-ivr.php">IVR & Voice</a></li>
                            <li><a class="bottom_link_79" href="hosting-cloud.php">Hosting & Cloud</a></li>
+                           <li><a class="bottom_link_79" href="app_development.php">App Development</a></li>
                            <li><a class="bottom_link_79" href="rcs-service.php">RCS Messaging</a></li>
                        </ul>
                    </div>
