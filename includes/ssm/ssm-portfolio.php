@@ -240,7 +240,7 @@
     }
 
     .ssm-portfolio_content-floating-heart-left {
-        left: -6px;
+        left: -56px;
         top: 58%;
     }
 

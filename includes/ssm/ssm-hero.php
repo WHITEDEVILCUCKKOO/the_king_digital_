@@ -404,7 +404,7 @@
 
     .smm-phone_notch {
         position: absolute;
-        top: 14px;
+        top: 20px;
         left: 50%;
         transform: translateX(-50%);
         width: 82px;
