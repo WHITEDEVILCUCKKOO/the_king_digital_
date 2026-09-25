@@ -11,10 +11,10 @@
 
 
     <!-- section 1 ( Hero ) -->
-    <?php require_once __DIR__ . '/includes/contact-sections/contact-page.php'; ?>
+    <?php require_once __DIR__ . '/includes/contact-sections/contact-page_3.php'; ?>
 
     <!-- section 2 ( loaction  ) -->
-    <?php require_once __DIR__ . '/includes/contact-sections/contact-section-2.php'; ?>
+    
 
 </main>
 

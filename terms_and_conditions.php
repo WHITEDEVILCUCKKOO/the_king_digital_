@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/logo/king-digital-logo-2.png">
 <title>Terms &amp; Conditions | King Digital Pvt. Ltd.</title>
 <meta name="description" content="Terms &amp; Conditions for the King Digital Pvt. Ltd. website, products and services, including payments, refunds, acceptable use and liability.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +86,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <header class="hero">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="/">King<i>.</i>Digital</a>
+      <a class="brand" href="/"><img src="assets/logo/king-digital-logo.png" alt=""></a>
       <a class="mail" href="mailto:info@kingdigital.in">info@kingdigital.in</a>
     </div>
     <h1>Terms &amp; Conditions</h1>
