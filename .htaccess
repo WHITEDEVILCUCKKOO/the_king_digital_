@@ -1,0 +1,2 @@
+# Custom 404 Page
+ErrorDocument 404 /king_digital_2/404.php

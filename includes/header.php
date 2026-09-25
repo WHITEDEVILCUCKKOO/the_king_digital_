@@ -94,7 +94,27 @@
                                     <span class="dd-icon" style="background:#F0FDF4;color:#16A34A"><i  style="font-size: 18px;"  class="fas fa-server"></i></span>Hosting & Cloud
                                 </a>
                                 <a href="video-audio.php">
-                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fas fa-video"></i></span>Video & Audio
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fas fa-video"></i></span>Video Production
+                                </a>
+
+                                <a href="app_development.php">
+                                    <span class="dd-icon" style="background: #f0eed6;color: #e6ad13"><i  style="font-size: 18px;"  class="fa-solid fa-code"></i></span>App Development
+                                </a>
+                                <a href="podcast-studio.php">
+                                    <span class="dd-icon" style="background: #f1f2ff;color: #1d2ae1"><i  style="font-size: 18px;"  class="fa-solid fa-podcast"></i></span>
+                                    Podcast Studio
+                                </a>
+                                <a href="social-media-marketing.php">
+                                    <span class="dd-icon" style="background: #f1fff1;color: #1de147"><i  style="font-size: 18px;"  class="fa-brands fa-threads"></i></span>
+                                    Social Media
+                                </a>
+                                <a href="404.php">
+                                    <span class="dd-icon" style="background: #FFF1F2;color: #E11D48"><i  style="font-size: 18px;"  class="fa-brands fa-viber"></i></span>
+                                    Missed Call Alert
+                                </a>
+                                <a href="ai_service.php">
+                                    <span class="dd-icon" style="background: #fcf1ff;color: #ba1de1"><i  style="font-size: 18px;"  class="fa-solid fa-robot"></i></span>
+                                    Ai Services
                                 </a>
                             </div>
                         </div>
@@ -192,7 +212,12 @@
                 <a href="service-ivr.php">IVR & Voice</a>
                 <!-- <a href="/email-marketing-company-india.html">Email Marketing</a> -->
                 <a href="hosting-cloud.php">Hosting & Cloud</a>
-                <a href="video-audio.php">Video & Audio</a>
+                <a href="video-audio.php">Video Production</a>
+                <a href="app_development.php">App Development</a>
+                <a href="podcast-studio.php">Podcast Studio</a>
+                <a href="social-media-marketing.php">Social Media</a>
+                <a href="404.php">Missed Call Alert</a>
+                <a href="ai_service.php">Ai Services</a>
                 <div class="mob-nav-sep">Brands</div>
                 <a href="https://www.staticking.com/">StaticKing</a>
                 <a href="https://kingdigitalstudio.in/">King Digital Studio</a>
