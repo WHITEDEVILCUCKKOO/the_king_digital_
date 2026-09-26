@@ -3,7 +3,8 @@
 <main style="overflow: hidden; font-family:'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif"0.>
 
     <!-- Section 1 ( hero ) -->
-    <?php require_once __DIR__ . '/includes/bluk_sms-section/bluk-sms-hero-section.php' ?>
+    <?php //require_once __DIR__ . '/includes/bluk_sms-section/bluk-sms-hero-section.php' ?>
+    <?php require_once __DIR__ . '/includes/bluk_sms-section/bluk-sms-hero2.php' ?>
 
     <!-- Section 2 ( Stars ) -->
     <?php require_once __DIR__ . '/includes/bluk_sms-section/bluk_star-section.php' ?>
