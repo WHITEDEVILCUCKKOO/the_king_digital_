@@ -8104,7 +8104,55 @@
 
             <!-- sublink box 11 -->
             <section id="contect_11_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                11
+                
+
+		<div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        SMS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        
+SMS API Integration
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>API Integration</h4>
+                </div>
+
+                <h2>SMS API Integration</h2>
+
+                <p>The SMS API Integration module allows developers to integrate SMS functionality directly into applications using REST APIs. Users can authenticate using an API Key, check wallet balance, and send SMS messages through GET and POST methods.</p>
+
+                    <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Overview
+                    </span>	
+                </div>
+
+
+                <p style="margin-top: 25px;">
+                    SMS APIs provide a secure and efficient way to send SMS messages programmatically. The API Console includes authentication, wallet balance verification, GET API, POST API, and Single SMS API operations.
+                </p>
+
+
+
+
+
+
+
+
+
+
             </section>
 
             <!-- sublink box 12 -->

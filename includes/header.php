@@ -108,7 +108,7 @@
                                     <span class="dd-icon" style="background: #f1fff1;color: #1de147"><i  style="font-size: 18px;"  class="fa-brands fa-threads"></i></span>
                                     Social Media
                                 </a>
-                                <a href="404.php">
+                                <a href="miss-call-alert.php">
                                     <span class="dd-icon" style="background: #FFF1F2;color: #E11D48"><i  style="font-size: 18px;"  class="fa-brands fa-viber"></i></span>
                                     Missed Call Alert
                                 </a>
@@ -216,7 +216,7 @@
                 <a href="app_development.php">App Development</a>
                 <a href="podcast-studio.php">Podcast Studio</a>
                 <a href="social-media-marketing.php">Social Media</a>
-                <a href="404.php">Missed Call Alert</a>
+                <a href="miss-call-alert.php">Missed Call Alert</a>
                 <a href="ai_service.php">Ai Services</a>
                 <div class="mob-nav-sep">Brands</div>
                 <a href="https://www.staticking.com/">StaticKing</a>
