@@ -2949,10 +2949,15 @@
                     </a>
 
                     <!-- Right Button (Next) -->
-                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('whatsapp_btn_124').click();">
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__12').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
                         <span class="ghost-ink">NEXT →</span>
-                        <span class="solid-ink">WhatsApp</span>
+                        <span class="solid-ink">
+                            RCS Dashbord
+                        </span>
                     </a>
+
 
                 </div>
 
@@ -3191,9 +3196,11 @@
                     </a>
 
                     <!-- Right Button (Next) -->
-                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('voice_btn_124').click();">
-                        <span class="ghost-ink">NEXT →</span>
-                        <span class="solid-ink">Voice</span>
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__20').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Whatsapp Onbordding
+                        </span>
                     </a>
 
                 </div>
@@ -7215,7 +7222,7 @@
 
             <!-- sublink box 10 -->
             <section id="contect_10_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa ">
-                
+
                 <div class="login_hero">
                     <span class="brad_kaem">
                         Docs
@@ -8104,9 +8111,9 @@
 
             <!-- sublink box 11 -->
             <section id="contect_11_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                
 
-		<div class="login_hero">
+
+                <div class="login_hero">
                     <span class="brad_kaem">
                         Docs
                     </span>/
@@ -8118,8 +8125,8 @@
 
                     </span>/
                     <span class="brad_kaem">
-                        
-SMS API Integration
+
+                        SMS API Integration
                     </span>
                 </div>
 
@@ -8132,11 +8139,11 @@ SMS API Integration
 
                 <p>The SMS API Integration module allows developers to integrate SMS functionality directly into applications using REST APIs. Users can authenticate using an API Key, check wallet balance, and send SMS messages through GET and POST methods.</p>
 
-                    <!-- line -->
+                <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
                     <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
                         Overview
-                    </span>	
+                    </span>
                 </div>
 
 
@@ -8145,84 +8152,1364 @@ SMS API Integration
                 </p>
 
 
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Accessing the API Console
+
+                    </span>
+                </div>
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Login to the Omni Portal.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Navigate to the API section.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Open the SMS API Console.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Select Authentication to configure API access.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_1.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        API Authentication
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">
+                    Authentication is required before accessing any SMS API endpoint.
+                </p>
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:decimal;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Click the Profile icon.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Open My Profile.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Copy the Public API Key.
+
+                                <!-- img step -->
+                            <div class="step_impear">
+                                <span class="img_box">
+                                    <img src="assets/appliction_imgs/sms/sms_contect_11/img_2.png" alt="">
+                                </span>
+                            </div>
+                            </p>
+                        </li>
+
+                        <li>
+                            <p style="margin: 0;color: #000000;">Open Authentication page.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Paste the API Key into API Token.
+
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Click SET.
+
+                            <div class="step_impear">
+                                <span class="img_box">
+                                    <img src="assets/appliction_imgs/sms/sms_contect_11/img_3.png" alt="">
+                                </span>
+                            </div>
+
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Once authenticated, all SMS API endpoints become available for use.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Checking Wallet Balance
+
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">
+                    The Wallet Balance API allows users to retrieve the available SMS credit balance.
+
+
+                </p>
 
 
 
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:decimal;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Open Balance → Get Wallet Balance.
+
+                                <!-- img step -->
+                            <div class="step_impear">
+                                <span class="img_box">
+                                    <img src="assets/appliction_imgs/sms/sms_contect_11/img_4.png" alt="">
+                                </span>
+                            </div>
+                            </p>
+                        </li>
+
+                        <li>
+                            <p style="margin: 0;color: #000000;">Click TRY.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">The API request is executed.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">The current balance is returned.
+                                <!-- img step -->
+                            <div class="step_impear">
+                                <span class="img_box">
+                                    <img src="assets/appliction_imgs/sms/sms_contect_11/img_5.png" alt="">
+                                </span>
+                            </div>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Response Example
+                </p>
+
+                <p style="margin-top:25px;font-size:16px; color:#000;padding-left:15px;">
+
+                    {<br>
+
+                    "walletBalance": 2.5147 <br>
+
+                    }
+                </p>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Sending SMS Using GET API
+
+                    </span>
+                </div>
+
+
+                <p style="margin-top: 25px;">
+                    The GET API allows SMS delivery through URL parameters.
 
 
 
+                </p>
 
 
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_6.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_7.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Required Parameters
+
+                </p>
+
+
+                <!-- table  -->
+                <div class="qunike-table-container">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">Parameter</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>ApiKey</td>
+                                <td>User API Key</td>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>Recipient Mobile Number</td>
+                            </tr>
+                            <tr>
+                                <td>SenderId</td>
+                                <td>Approved Sender ID</td>
+                            </tr>
+
+                            <tr>
+                                <td>Text</td>
+                                <td>SMS Message Content</td>
+
+                            </tr>
+                            <tr>
+                                <td>PEID</td>
+                                <td>Principal Entity ID</td>
+
+                            </tr>
+                            <tr>
+                                <td>DLTTemplateId</td>
+                                <td>Approved DLT Template ID</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">PEID Information
+
+
+                </p>
+
+                <p style="margin-top: 25px;">
+                    PEID (Principal Entity ID) is issued during DLT registration and must be supplied when sending DLT-compliant SMS messages.
+                </p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Sending SMS Using POST API
+
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">
+                    The POST API accepts SMS data through a JSON request body and is recommended for application integrations.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_8.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_9.png" alt="">
+                    </span>
+                </div>
+
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Steps
+                </p>
+
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Open POST SMS API endpoint.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter Sender ID.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter PEID.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter DLT Template ID.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter recipient numbers.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter SMS message content.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Click TRY.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Single SMS API
+
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">
+                    The Single SMS API provides a simplified SMS submission interface.
+                </p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_10.png" alt="">
+                    </span>
+                </div>
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/sms/sms_contect_11/img_11.png" alt="">
+                    </span>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Features
+                </p>
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:circle;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Send SMS to single or multiple recipients.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">DLT template support.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">JSON request format.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Fast API response.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Secure authentication.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Steps
+                </p>
+
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px;">
+                    <ul style="list-style:circle;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter recipient number.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter Sender ID.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter PEID.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter DLT Template ID.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Enter message content.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Click TRY.
+                            </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">The SMS is processed and delivered.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Successful requests return a delivery reference that can be tracked through SMS Reports.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Conclusion
+
+                    </span>
+                </div>
+
+                <p style="margin-top: 25px;">
+                    SMS API Integration enables secure, scalable, and automated SMS communication. Using API Authentication, Wallet Balance APIs, GET APIs, POST APIs, and Single SMS APIs, developers can integrate SMS functionality into any external application or workflow.
+                </p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__10').click(); document.getElementById('sms_btn_124').classList.add('active'); document.getElementById('sms_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            SMS Reports
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('rcs_btn_124').click();">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            RCS
+                        </span>
+                    </a>
+
+                </div>
             </section>
 
             <!-- sublink box 12 -->
             <section id="contect_12_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                12
+
+                <div class="login_hero">
+                    <span class="brad_kaem">
+                        Docs
+                    </span>/
+                    <span class="brad_kaem">
+                        Channels
+                    </span>/
+                    <span class="brad_kaem">
+                        RCS
+
+                    </span>/
+                    <span class="brad_kaem">
+                        Dashboard
+                    </span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>RCS Analytics
+                    </h4>
+                </div>
+
+                <h2>RCS Dashboard
+                </h2>
+
+                <p>The Dashboard serves as the central overview screen of the RCS platform, providing users with a quick summary of messaging activities and performance metrics.
+
+                </p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_1/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Features
+                    </span>
+                </div>
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Dashboard Widgets
+
+                    </span>
+                </div>
+
+                <!-- cards -->
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📤
+                            </span>
+                        </div>
+                        <h5 class="c-title12">Total Submit
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Displays the total number of RCS messages submitted for processing.
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                ✅
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Delivered
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Shows the total number of successfully delivered messages.
+                        </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                👁️
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Read
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Displays messages opened and read by recipients.
+                        </p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📈
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Today RCS Report
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Graphical representation of today's messaging activity.
+                        </p>
+                    </div>
+
+                    <!-- card 5 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📊
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            7-Day Status Trend
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Shows message traffic and engagement trends for last 7 days.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        🚀 Dashboard Purpose
+                    </span>
+                </div>
+
+                <!-- cards -->
+                <div class="h8wh74523">
+
+                    <!-- width="30" fill="#197553" -->
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📊
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Campaign Performance
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Monitor RCS campaign results and message activity in real time.
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📨
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Delivery Tracking
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Track submitted, delivered and failed RCS messages.
+                        </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                👁️
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Recipient Engagement
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Measure how many messages are opened and read.
+                        </p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📈
+                            </span>
+                        </div>
+                        <h5 class="c-title12">
+                            Performance Insights
+                        </h5>
+                        <p class="c-desc12 " style="margin: 0;">
+                            Analyze trends and improve campaign performance.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        📈 Chart Types
+                    </span>
+                </div>
+
+                <div class="void-horizon" style="margin: 0 auto;">
+                    <!-- Grid Layout -->
+                    <div class="cyber-grid-array">
+
+                        <!--  width="25px" fill="Color dipand on svg" -->
+
+                        <!-- Row 1 Items -->
+                        <a class="nano-brick-unit">
+                            <div class="visual-core chroma-shopify">
+                                📊
+                            </div>
+                            <span class="data-tag"> Bar Chart</span>
+                        </a>
+
+                        <a class="nano-brick-unit">
+                            <div class="visual-core chroma-clevertap">
+                                📈
+                            </div>
+                            <span class="data-tag"> Line Chart</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Select different chart views to analyze RCS performance from multiple perspectives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Line Chart View
+
+                </p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_1/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <p style="margin: 25px auto ; ">
+                    <b>Line Chart – </b>
+                    Displays message trends over time using connected data points, making it easier to identify increases or decreases in activity.
+                </p>
+
+                <p style="margin-top:25px;font-size:19px; font-weight:700;color:#000;">Column Chart View
+                </p>
+
+                Column Chart View
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_1/img_3.png" alt="">
+                    </span>
+                </div>
+
+                <p style="margin: 25px auto ; ">
+                    <b>Column Chart – </b>
+                    Displays message statistics using vertical bars, allowing users to compare message counts across different dates.
+                </p>
+
+                <!--notification -->
+                <div class="hdah651" style="margin-top: 30px;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Users can switch between chart types using the Select Chart Type dropdown available in the Today RCS Report section.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click();">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            RCS
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__13').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('sms_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            RCS Agent
+                        </span>
+                    </a>
+
+                </div>
+
+
             </section>
 
             <!-- sublink box 13 -->
             <section id="contect_13_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
+
                 13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__12').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            RCS Dashbord
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__14').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Templates
+                        </span>
+                    </a>
+
+                </div>
+
+
+
             </section>
 
             <!-- sublink box 14 -->
             <section id="contect_14_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
+
+
                 14
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__13').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            RCS Agent
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__15').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Create Campaign
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 15 -->
             <section id="contect_15_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 15
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__14').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Templates
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__16').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Manage Group
+                        </span>
+                    </a>
+
+                </div>
             </section>
 
             <!-- sublink box 16 -->
             <section id="contect_16_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 16
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__15').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Create Campaign
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__17').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Blacklist Numbers
+                        </span>
+                    </a>
+
+                </div>
             </section>
 
             <!-- sublink box 17 -->
             <section id="contect_17_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 17
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__16').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Manage Group
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__18').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            RCS Reports
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 18 -->
             <section id="contect_18_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 18
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__17').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Blacklist Numbers
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__19').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Chatbot Automation
+                        </span>
+                    </a>
+
+                </div>
+
+
             </section>
 
             <!-- sublink box 19 -->
             <section id="contect_19_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 19
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__18').click(); document.getElementById('rcs_btn_124').classList.add('active'); document.getElementById('rcs_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            RCS Reports
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__3').click(); document.getElementById('whatsapp_btn_124').click();">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Whatsapp
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 20 -->
             <section id="contect_20_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 20
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__3').click(); document.getElementById('whatsapp_btn_124').click();">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Whatsapp
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__21').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Dashbord
+                        </span>
+                    </a>
+
+                </div>
             </section>
 
             <!-- sublink box 21 -->
             <section id="contect_21_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 21
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__20').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Whatsapp Onbordding
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__22').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Templates
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 22 -->
             <section id="contect_22_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 22
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__21').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Dashbord
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__23').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Campaign
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 23 -->
             <section id="contect_23_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 23
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__22').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Templates
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__24').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Reports
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 24 -->
             <section id="contect_24_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 24
+
+
+                  <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__23').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Campaign
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__25').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Agent
+                        </span>
+                    </a>
+
+                </div>
+
             </section>
 
             <!-- sublink box 25 -->
             <section id="contect_25_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 25
+
+                  <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+
+                    </span>
+                </div>
+
+
+
+                <!-- preview and next btn -->
+                <div class="void-control-deck">
+
+                    <!-- Left Button (Previous) -->
+                    <a class="chrono-portal align-port-left " onclick="event.preventDefault(); document.getElementById('contect__24').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+                        <span class="ghost-ink">← PREVIOUS</span>
+                        <span class="solid-ink">
+                            Reports
+                        </span>
+                    </a>
+
+                    <!-- Right Button (Next) -->
+                    <a class="chrono-portal align-port-right " onclick="event.preventDefault(); document.getElementById('contect__26').click(); document.getElementById('whatsapp_btn_124').classList.add('active'); document.getElementById('whatsapp_sub_box').classList.add('sub_links_of_show_box'); ">
+
+                        <!-- event.preventDefault(); document.getElementById('contect__2').click(); document.getElementById('rcs_btn_124').click(); -->
+                        <span class="ghost-ink">NEXT →</span>
+                        <span class="solid-ink">
+                            Chatbot Builder
+                        </span>
+                    </a>
+
+                </div>
             </section>
 
             <!-- sublink box 26 -->
