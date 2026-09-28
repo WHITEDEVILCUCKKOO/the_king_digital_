@@ -6,6 +6,7 @@
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-hero.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-why.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-features.php' ?>
+    <?php require_once __DIR__ . '/includes/ivr-sections/ivr-flow.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-type.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-progress.php' ?>
     <?php require_once __DIR__ . '/includes/ivr-sections/ivr-industry.php' ?>
