@@ -4,15 +4,6 @@
 
 
 <style>
-    /* =========================================================
- RESET
-========================================================= */
-
-    .mctimeline-section,
-    .mctimeline-section * {
-        box-sizing: border-box;
-    }
-
 
     /* =========================================================
  SECTION
@@ -28,7 +19,7 @@
 
         overflow: hidden;
 
-        padding: 62px 28px 65px;
+        padding: 40px 28px;
 
         font-family:
             "Poppins",
@@ -1201,154 +1192,6 @@
     }
 </style>
 
-
-<script>
-    (function() {
-
-        const sections =
-            document.querySelectorAll('.mctimeline-section');
-
-
-        sections.forEach(function(section) {
-
-            const revealItems =
-                section.querySelectorAll('.mctimeline-reveal');
-
-            const timelineWrap =
-                section.querySelector('.mctimeline-wrap');
-
-            const lineFill =
-                section.querySelector('.mctimeline-line-fill');
-
-
-            /* =====================================================
-               REVEAL ITEMS ON SCROLL
-            ====================================================== */
-
-            const observer =
-                new IntersectionObserver(
-
-                    function(entries) {
-
-                        entries.forEach(function(entry) {
-
-                            if (entry.isIntersecting) {
-
-                                entry.target
-                                    .classList
-                                    .add('is-visible');
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        });
-
-                    },
-
-                    {
-                        threshold: 0.24,
-                        rootMargin: '0px 0px -8% 0px'
-                    }
-
-                );
-
-
-            revealItems.forEach(
-
-                function(item, index) {
-
-                    item.style.transitionDelay =
-                        (index * 70) + 'ms';
-
-                    observer.observe(item);
-
-                }
-
-            );
-
-
-            /* =====================================================
-               VERTICAL LINE FILL WITH SCROLL
-            ====================================================== */
-
-            function updateTimeline() {
-
-                if (
-                    !timelineWrap ||
-                    !lineFill
-                ) {
-                    return;
-                }
-
-
-                const rect =
-                    timelineWrap.getBoundingClientRect();
-
-                const viewportHeight =
-                    window.innerHeight;
-
-
-                /*
-                  Animation begins as timeline
-                  enters lower area of screen.
-                */
-
-                const start =
-                    viewportHeight * .78;
-
-                const totalDistance =
-                    rect.height +
-                    viewportHeight * .30;
-
-                const travelled =
-                    start - rect.top;
-
-                let progress =
-                    travelled /
-                    totalDistance;
-
-
-                progress =
-                    Math.max(
-                        0,
-                        Math.min(
-                            1,
-                            progress
-                        )
-                    );
-
-
-                lineFill.style.height =
-                    (progress * 100) + '%';
-
-            }
-
-
-            updateTimeline();
-
-
-            window.addEventListener(
-                'scroll',
-                updateTimeline, {
-                    passive: true
-                }
-            );
-
-
-            window.addEventListener(
-                'resize',
-                updateTimeline
-            );
-
-        });
-
-    })();
-</script>
-
-
 <section class="mctimeline-section">
 
     <!-- DECORATION -->
@@ -1642,3 +1485,149 @@
     </div>
 
 </section>
+
+<script>
+    (function() {
+
+        const sections =
+            document.querySelectorAll('.mctimeline-section');
+
+
+        sections.forEach(function(section) {
+
+            const revealItems =
+                section.querySelectorAll('.mctimeline-reveal');
+
+            const timelineWrap =
+                section.querySelector('.mctimeline-wrap');
+
+            const lineFill =
+                section.querySelector('.mctimeline-line-fill');
+
+
+            /* =====================================================
+               REVEAL ITEMS ON SCROLL
+            ====================================================== */
+
+            const observer =
+                new IntersectionObserver(
+
+                    function(entries) {
+
+                        entries.forEach(function(entry) {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target
+                                    .classList
+                                    .add('is-visible');
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+
+                    {
+                        threshold: 0.24,
+                        rootMargin: '0px 0px -8% 0px'
+                    }
+
+                );
+
+
+            revealItems.forEach(
+
+                function(item, index) {
+
+                    item.style.transitionDelay =
+                        (index * 70) + 'ms';
+
+                    observer.observe(item);
+
+                }
+
+            );
+
+
+            /* =====================================================
+               VERTICAL LINE FILL WITH SCROLL
+            ====================================================== */
+
+            function updateTimeline() {
+
+                if (
+                    !timelineWrap ||
+                    !lineFill
+                ) {
+                    return;
+                }
+
+
+                const rect =
+                    timelineWrap.getBoundingClientRect();
+
+                const viewportHeight =
+                    window.innerHeight;
+
+
+                /*
+                  Animation begins as timeline
+                  enters lower area of screen.
+                */
+
+                const start =
+                    viewportHeight * .78;
+
+                const totalDistance =
+                    rect.height +
+                    viewportHeight * .30;
+
+                const travelled =
+                    start - rect.top;
+
+                let progress =
+                    travelled /
+                    totalDistance;
+
+
+                progress =
+                    Math.max(
+                        0,
+                        Math.min(
+                            1,
+                            progress
+                        )
+                    );
+
+
+                lineFill.style.height =
+                    (progress * 100) + '%';
+
+            }
+
+
+            updateTimeline();
+
+
+            window.addEventListener(
+                'scroll',
+                updateTimeline, {
+                    passive: true
+                }
+            );
+
+
+            window.addEventListener(
+                'resize',
+                updateTimeline
+            );
+
+        });
+
+    })();
+</script>

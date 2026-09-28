@@ -3,16 +3,6 @@
 
 <style>
     /* =========================================================
- RESET
-========================================================= */
-
-    .mcfinalcta-section,
-    .mcfinalcta-section * {
-        box-sizing: border-box;
-    }
-
-
-    /* =========================================================
  SECTION
 ========================================================= */
 
@@ -24,7 +14,7 @@
         width: 100%;
         overflow: hidden;
 
-        padding: 60px 28px;
+        padding: 40px 28px;
 
         font-family: "Poppins", Arial, sans-serif;
 
@@ -1343,7 +1333,7 @@
             ================================================== -->
             <div class="mcfinalcta-buttons">
 
-                <a href="#contact" class="mcfinalcta-primary">
+                <a href="contact.php" class="mcfinalcta-primary">
 
                     Get Started
 
@@ -1352,7 +1342,7 @@
                 </a>
 
 
-                <a href="#contact" class="mcfinalcta-secondary">
+                <a href="contact.php" class="mcfinalcta-secondary">
 
                     <i class="fa-solid fa-phone"></i>
 
@@ -1377,7 +1367,7 @@
             <div class="mcfinalcta-image-box">
 
                 <img
-                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df7?auto=format&fit=crop&w=1200&q=85"
+                    src="assets/images/misscall-section7.png"
                     alt="Missed Call Service">
 
                 <div class="mcfinalcta-overlay"></div>

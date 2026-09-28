@@ -5,9 +5,7 @@
     /* =========================================================
                         MAIN HERO
     ========================================================= */
-
     .kdmcall-hero {
-
         position: relative;
 
         isolation: isolate;
@@ -17,7 +15,7 @@
         overflow: hidden;
 
         padding:
-            64px 28px;
+            10px 28px;
 
         font-family:
             "Poppins",
@@ -1893,7 +1891,7 @@
             <!-- BUTTONS -->
             <div class="kdmcall-buttons">
 
-                <a href="#contact" class="kdmcall-btn-primary">
+                <a href="contact.php" class="kdmcall-btn-primary">
 
                     Get Started
 
@@ -1902,7 +1900,7 @@
                 </a>
 
 
-                <a href="#contact" class="kdmcall-btn-secondary">
+                <a href="contact.php" class="kdmcall-btn-secondary">
 
                     <i class="fa-solid fa-phone"></i>
 

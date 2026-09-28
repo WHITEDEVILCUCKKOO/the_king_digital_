@@ -10,15 +10,6 @@
 
 
 <style>
-    /* =========================================================
- RESET
-========================================================= */
-
-    .mcfeat-section,
-    .mcfeat-section * {
-        box-sizing: border-box;
-    }
-
 
     /* =========================================================
  SECTION
@@ -34,7 +25,7 @@
 
         overflow: hidden;
 
-        padding: 90px 28px;
+        padding: 40px 28px;
 
         font-family:
             "Poppins",

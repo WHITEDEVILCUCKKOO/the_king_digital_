@@ -3,16 +3,6 @@
 
 <style>
     /* =========================================================
- RESET
-========================================================= */
-
-    .mcseq-section,
-    .mcseq-section * {
-        box-sizing: border-box;
-    }
-
-
-    /* =========================================================
  SECTION - REDUCED TOP/BOTTOM SPACE
 ========================================================= */
 
@@ -24,7 +14,7 @@
         width: 100%;
         overflow: hidden;
 
-        padding: 58px 28px;
+        padding: 40px 28px;
 
         font-family: "Poppins", Arial, sans-serif;
 
@@ -1851,211 +1841,6 @@
     }
 </style>
 
-
-
-<script>
-    (function() {
-
-        const sections = document.querySelectorAll('.mcseq-section');
-
-        sections.forEach(function(section) {
-
-            const card1 = section.querySelector('.mcseq-panel-one');
-            const card2 = section.querySelector('.mcseq-panel-two');
-            const card3 = section.querySelector('.mcseq-panel-three');
-
-            const bridge1 = section.querySelector('.mcseq-bridge-one');
-            const bridge2 = section.querySelector('.mcseq-bridge-two');
-
-            let timers = [];
-
-
-            /* =====================================================
-               REDUCED MOTION
-            ====================================================== */
-
-            if (
-                window.matchMedia &&
-                window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ) {
-
-                card1.classList.add('is-visible');
-                card2.classList.add('is-visible');
-                card3.classList.add('is-visible');
-
-                return;
-
-            }
-
-
-            function clearAllTimers() {
-
-                timers.forEach(function(timer) {
-                    clearTimeout(timer);
-                });
-
-                timers = [];
-
-            }
-
-
-            /* =====================================================
-               RESET
-            ====================================================== */
-
-            function resetAnimation() {
-
-                clearAllTimers();
-
-
-                /* CARD 1 ALWAYS STARTS */
-                card1.classList.add('is-visible');
-
-
-                /* HIDE 2 & 3 */
-                card2.classList.remove(
-                    'is-visible',
-                    'is-opening'
-                );
-
-                card3.classList.remove(
-                    'is-visible',
-                    'is-opening'
-                );
-
-
-                /* STOP LOADERS */
-                bridge1.classList.remove('is-loading');
-                bridge2.classList.remove('is-loading');
-
-
-                /* =================================================
-                   NEW FAST TIMELINE
-
-                   0.00 sec  Card 1 visible
-
-                   0.55 sec  Loader 1 starts
-                   1.30 sec  Card 2 opens
-
-                   1.95 sec  Loader 2 starts
-                   2.75 sec  Card 3 opens
-
-                   Card 3 remains visible for 6 seconds
-
-                   8.75 sec  Restart from Card 1
-                ================================================= */
-
-
-                /* LOADER 1 */
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        bridge1.classList.add('is-loading');
-
-                    }, 550)
-
-                );
-
-
-                /* CARD 2 */
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        bridge1.classList.remove('is-loading');
-
-                        card2.classList.add(
-                            'is-visible',
-                            'is-opening'
-                        );
-
-                    }, 1300)
-
-                );
-
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        card2.classList.remove('is-opening');
-
-                    }, 1900)
-
-                );
-
-
-                /* LOADER 2 */
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        bridge2.classList.add('is-loading');
-
-                    }, 1950)
-
-                );
-
-
-                /* CARD 3 */
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        bridge2.classList.remove('is-loading');
-
-                        card3.classList.add(
-                            'is-visible',
-                            'is-opening'
-                        );
-
-                    }, 2750)
-
-                );
-
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        card3.classList.remove('is-opening');
-
-                    }, 3350)
-
-                );
-
-
-                /* =================================================
-                   CARD 3 OPEN HONE KE BAAD
-                   EXACTLY 6 SEC WAIT
-                   THEN RESTART
-                ================================================= */
-
-                timers.push(
-
-                    setTimeout(function() {
-
-                        resetAnimation();
-
-                    }, 8750)
-
-                );
-
-            }
-
-
-            resetAnimation();
-
-        });
-
-    })();
-</script>
-
 <section class="mcseq-section">
 
     <div class="mcseq-bg-grid"></div>
@@ -2449,3 +2234,206 @@
     </div>
 
 </section>
+
+<script>
+    (function() {
+
+        const sections = document.querySelectorAll('.mcseq-section');
+
+        sections.forEach(function(section) {
+
+            const card1 = section.querySelector('.mcseq-panel-one');
+            const card2 = section.querySelector('.mcseq-panel-two');
+            const card3 = section.querySelector('.mcseq-panel-three');
+
+            const bridge1 = section.querySelector('.mcseq-bridge-one');
+            const bridge2 = section.querySelector('.mcseq-bridge-two');
+
+            let timers = [];
+
+
+            /* =====================================================
+               REDUCED MOTION
+            ====================================================== */
+
+            if (
+                window.matchMedia &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ) {
+
+                card1.classList.add('is-visible');
+                card2.classList.add('is-visible');
+                card3.classList.add('is-visible');
+
+                return;
+
+            }
+
+
+            function clearAllTimers() {
+
+                timers.forEach(function(timer) {
+                    clearTimeout(timer);
+                });
+
+                timers = [];
+
+            }
+
+
+            /* =====================================================
+               RESET
+            ====================================================== */
+
+            function resetAnimation() {
+
+                clearAllTimers();
+
+
+                /* CARD 1 ALWAYS STARTS */
+                card1.classList.add('is-visible');
+
+
+                /* HIDE 2 & 3 */
+                card2.classList.remove(
+                    'is-visible',
+                    'is-opening'
+                );
+
+                card3.classList.remove(
+                    'is-visible',
+                    'is-opening'
+                );
+
+
+                /* STOP LOADERS */
+                bridge1.classList.remove('is-loading');
+                bridge2.classList.remove('is-loading');
+
+
+                /* =================================================
+                   NEW FAST TIMELINE
+
+                   0.00 sec  Card 1 visible
+
+                   0.55 sec  Loader 1 starts
+                   1.30 sec  Card 2 opens
+
+                   1.95 sec  Loader 2 starts
+                   2.75 sec  Card 3 opens
+
+                   Card 3 remains visible for 6 seconds
+
+                   8.75 sec  Restart from Card 1
+                ================================================= */
+
+
+                /* LOADER 1 */
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        bridge1.classList.add('is-loading');
+
+                    }, 550)
+
+                );
+
+
+                /* CARD 2 */
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        bridge1.classList.remove('is-loading');
+
+                        card2.classList.add(
+                            'is-visible',
+                            'is-opening'
+                        );
+
+                    }, 1300)
+
+                );
+
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        card2.classList.remove('is-opening');
+
+                    }, 1900)
+
+                );
+
+
+                /* LOADER 2 */
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        bridge2.classList.add('is-loading');
+
+                    }, 1950)
+
+                );
+
+
+                /* CARD 3 */
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        bridge2.classList.remove('is-loading');
+
+                        card3.classList.add(
+                            'is-visible',
+                            'is-opening'
+                        );
+
+                    }, 2750)
+
+                );
+
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        card3.classList.remove('is-opening');
+
+                    }, 3350)
+
+                );
+
+
+                /* =================================================
+                   CARD 3 OPEN HONE KE BAAD
+                   EXACTLY 6 SEC WAIT
+                   THEN RESTART
+                ================================================= */
+
+                timers.push(
+
+                    setTimeout(function() {
+
+                        resetAnimation();
+
+                    }, 8750)
+
+                );
+
+            }
+
+
+            resetAnimation();
+
+        });
+
+    })();
+</script>

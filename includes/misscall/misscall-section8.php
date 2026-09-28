@@ -1,1496 +1,1014 @@
-<!-- =========================================================
- KING DIGITAL - MISSED CALL SERVICE
- SECTION 08 - FAQ
- PREMIUM PURPLE / LAVENDER THEME
- ONE FAQ OPEN AT A TIME
- COMPLETE FINAL CODE
-========================================================= -->
-
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
 <style>
-    /* =========================================================
- RESET
-========================================================= */
-
-    .mcfaq-section,
-    .mcfaq-section * {
-        box-sizing: border-box;
+    :root {
+        --blue: #1B3D7B;
+        --blue-dk: #122954;
+        --blue-md: #2451A0;
+        --blue-lt: #E8EFFE;
+        --blue-xl: #F0F4FF;
+        --gold: #F97316;
+        --gold-dk: #C45E0A;
+        --gold-lt: #FFF4EC;
+        --gold-mid: #FDBA74;
+        --green: #059669;
+        --white: #FFFFFF;
+        --bg: #F6F8FD;
+        --bg2: #EEF3FF;
+        --txt: #0F172A;
+        --txt2: #475569;
+        --txt3: #94A3B8;
+        --bdr: #E2E8F0;
+        --r: 10px;
+        --rlg: 16px;
+        --sh: 0 2px 8px rgba(0, 0, 0, .06);
+        --shlg: 0 8px 32px rgba(27, 61, 123, .12);
+        --trans: all .22s ease;
     }
 
 
-    /* =========================================================
- SECTION
-========================================================= */
 
-    .mcfaq-section {
-
-        position: relative;
-        isolation: isolate;
-
-        width: 100%;
-        overflow: hidden;
-
-        padding: 58px 28px 65px;
-
-        font-family: "Poppins", Arial, sans-serif;
-
-        background:
-
-            radial-gradient(circle at 93% 8%,
-                rgba(126, 87, 216, .09),
-                transparent 27%),
-
-            radial-gradient(circle at 4% 92%,
-                rgba(218, 78, 149, .045),
-                transparent 26%),
-
-            linear-gradient(135deg,
-                #ffffff 0%,
-                #fbf9ff 100%);
-
-    }
-
-
-    /* =========================================================
- GLOWS
-========================================================= */
-
-    .mcfaq-glow {
-
-        position: absolute;
-
-        pointer-events: none;
-
-        border-radius: 50%;
-
-        filter: blur(100px);
-
-    }
-
-
-    .mcfaq-glow-one {
-
-        width: 350px;
-        height: 350px;
-
-        right: -190px;
-        top: -180px;
-
-        background:
-            rgba(123, 84, 213, .08);
-
-    }
-
-
-    .mcfaq-glow-two {
-
-        width: 300px;
-        height: 300px;
-
-        left: -180px;
-        bottom: -170px;
-
-        background:
-            rgba(218, 78, 149, .04);
-
-    }
-
-
-    /* =========================================================
- CONTAINER
-========================================================= */
-
-    .mcfaq-container {
-
-        position: relative;
-        z-index: 3;
-
-        width: 100%;
-        max-width: 1280px;
-
+    /* Utilities */
+    .container {
+        max-width: 1200px;
         margin: 0 auto;
-
-        display: grid;
-
-        grid-template-columns:
-            minmax(340px, .78fr) minmax(0, 1.22fr);
-
-        align-items: start;
-
-        gap: 75px;
-
+        padding: 0 24px;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
-
-    /* =========================================================
- LEFT
-========================================================= */
-
-    .mcfaq-left {
-
-        position: sticky;
-
-        top: 110px;
-
-        max-width: 480px;
-
+    .section {
+        padding: 88px 0
     }
 
+    .section-sm {
+        padding: 56px 0
+    }
 
-    /* =========================================================
- LABEL
-========================================================= */
+    .flex {
+        display: flex;
+        align-items: center
+    }
 
-    .mcfaq-label {
+    .gap-8 {
+        gap: 8px
+    }
 
-        width: max-content;
+    .gap-12 {
+        gap: 12px
+    }
 
+    .gap-16 {
+        gap: 16px
+    }
+
+    .gap-24 {
+        gap: 24px
+    }
+
+    .tag {
         display: inline-flex;
-
         align-items: center;
-
-        gap: 8px;
-
-        margin-bottom: 15px;
-
-        padding:
-            6px 14px 6px 7px;
-
-        border:
-            1px solid rgba(116, 80, 201, .10);
-
-        border-radius: 30px;
-
-        background: #f1ecff;
-
-        color: #704ec5;
-
-        font-size: 9px;
-
-        line-height: 1;
-
-        font-weight: 750;
-
-        letter-spacing: 1.3px;
-
-    }
-
-
-    .mcfaq-label>span {
-
-        width: 28px;
-        height: 28px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 50%;
-
-        background: #ffffff;
-
-        color: #7954d4;
-
-    }
-
-
-    /* =========================================================
- HEADING
-========================================================= */
-
-    .mcfaq-left h2 {
-
-        margin:
-            0 0 17px;
-
-        color: #291d3f;
-
-        font-size:
-            clamp(35px,
-                3.4vw,
-                48px);
-
-        line-height: 1.12;
-
-        font-weight: 730;
-
-        letter-spacing: -1.5px;
-
-    }
-
-
-    .mcfaq-left h2 span {
-
-        display: block;
-
-        margin-top: 5px;
-
-        color: #7955d4;
-
-    }
-
-
-    /* =========================================================
- DESCRIPTION
-========================================================= */
-
-    .mcfaq-left>p {
-
-        margin: 0;
-
-        color: #716a79;
-
-        font-size: 15px;
-
-        line-height: 1.8;
-
-    }
-
-
-    /* =========================================================
- HELP BOX
-========================================================= */
-
-    .mcfaq-help {
-
-        display: grid;
-
-        grid-template-columns:
-            48px 1fr;
-
-        align-items: start;
-
-        gap: 12px;
-
-        margin-top: 27px;
-
-        padding: 16px;
-
-        border:
-            1px solid rgba(116, 80, 201, .10);
-
-        border-radius: 15px;
-
-        background:
-
-            linear-gradient(135deg,
-                #f7f3ff,
-                #ffffff);
-
-    }
-
-
-    /* HELP ICON */
-
-    .mcfaq-help-icon {
-
-        width: 48px;
-        height: 48px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 13px;
-
-        background:
-
-            linear-gradient(135deg,
-                #6847bd,
-                #9067e8);
-
-        color: #ffffff;
-
-        font-size: 16px;
-
-        box-shadow:
-            0 10px 22px rgba(104, 72, 187, .17);
-
-    }
-
-
-    /* HELP TEXT */
-
-    .mcfaq-help small,
-    .mcfaq-help strong {
-
-        display: block;
-
-    }
-
-
-    .mcfaq-help small {
-
-        margin-bottom: 4px;
-
-        color: #9e95a7;
-
-        font-size: 7px;
-
-        line-height: 1;
-
+        gap: 7px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
         font-weight: 700;
-
-        letter-spacing: .7px;
-
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        background: var(--blue-lt);
+        color: var(--blue);
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 16px
     }
 
-
-    .mcfaq-help strong {
-
-        margin-bottom: 5px;
-
-        color: #413053;
-
-        font-size: 13px;
-
-        line-height: 1.3;
-
-        font-weight: 650;
-
+    .tag.orange {
+        background: var(--gold-lt);
+        color: var(--gold)
     }
 
-
-    .mcfaq-help p {
-
-        margin: 0;
-
-        color: #857d8a;
-
-        font-size: 10.5px;
-
-        line-height: 1.55;
-
+    .tag .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+        flex-shrink: 0
     }
 
+    .sh {
+        font-size: clamp(26px, 3.8vw, 40px);
+        font-weight: 800;
+        margin-bottom: 14px;
+        letter-spacing: -.5px
+    }
 
-    /* =========================================================
- BUTTON
-========================================================= */
+    .sub {
+        font-size: 16px;
+        color: var(--txt2);
+        line-height: 1.85;
+        max-width: 560px
+    }
 
-    .mcfaq-btn,
-    .mcfaq-btn:link,
-    .mcfaq-btn:visited,
-    .mcfaq-btn:hover,
-    .mcfaq-btn:focus {
-
-        min-height: 48px;
-
-        width: max-content;
-
+    .btn {
         display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 11px 24px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: var(--trans);
+        white-space: nowrap
+    }
 
+    .btn-primary {
+        background: var(--gold);
+        color: #fff;
+        border-color: var(--gold)
+    }
+
+    .btn-primary:hover {
+        background: var(--gold-dk);
+        border-color: var(--gold-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(249, 115, 22, .35)
+    }
+
+    .btn-blue {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue)
+    }
+
+    .btn-blue:hover {
+        background: var(--blue-dk);
+        border-color: var(--blue-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(27, 61, 123, .3)
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--blue);
+        border-color: var(--blue)
+    }
+
+    .btn-outline:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px)
+    }
+
+    .btn-white {
+        background: #fff;
+        color: var(--blue);
+        border-color: #fff
+    }
+
+    .btn-white:hover {
+        background: var(--blue-lt);
+        transform: translateY(-2px)
+    }
+
+    .btn-sm {
+        padding: 8px 18px;
+        font-size: 13px
+    }
+
+
+    /* ════ FAQ ════ */
+    .faq {
+        background: var(--bg)
+    }
+
+    .faq-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 56px;
+        align-items: start;
+        margin-top: 52px
+    }
+
+    .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .faq-item {
+        background: #fff;
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--r);
+        overflow: hidden;
+        transition: border-color .2s
+    }
+
+    .faq-item.open {
+        border-color: var(--blue)
+    }
+
+    .faq-q {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 20px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--txt)
+    }
+
+    .faq-q i {
+        font-size: 13px;
+        color: var(--txt3);
+        transition: transform .25s;
+        flex-shrink: 0
+    }
+
+    .faq-item.open .faq-q i {
+        transform: rotate(180deg);
+        color: var(--blue)
+    }
+
+    .faq-a {
+        display: none;
+        padding: 0 20px 18px;
+        font-size: 14px;
+        color: var(--txt2);
+        line-height: 1.8
+    }
+
+    .faq-item.open .faq-a {
+        display: block
+    }
+
+    .faq-cta-box {
+        background: var(--blue);
+        border-radius: 20px;
+        padding: 57px 43px;
+        text-align: center;
+        color: #fff;
+        position: sticky;
+        top: 90px
+    }
+
+    .faq-cta-box h3 {
+        font-size: 44px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px
+    }
+
+    .faq-cta-box p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, .7);
+        margin-bottom: 24px;
+        line-height: 1.75
+    }
+
+    .faq-cta-box .btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 12px
+    }
+
+    .faq-cta-or {
+        font-size: 13px;
+        color: rgba(255, 255, 255, .5);
+        margin: 14px 0
+    }
+
+    /* ════ CONTACT ════ */
+    .contact {
+        background: #fff
+    }
+
+    .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        margin-top: 52px;
+        align-items: start
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 18px
+    }
+
+    .ci-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: var(--bg);
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--r);
+        padding: 20px;
+        transition: var(--trans)
+    }
+
+    .ci-item:hover {
+        border-color: var(--blue-md);
+        box-shadow: var(--sh)
+    }
+
+    .ci-ico {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        background: var(--blue-lt);
+        color: var(--blue);
+        display: flex;
         align-items: center;
         justify-content: center;
-
-        gap: 9px;
-
-        margin-top: 20px;
-
-        padding:
-            0 21px;
-
-        border-radius: 9px;
-
-        background:
-
-            linear-gradient(100deg,
-                #6545bd,
-                #8a62ec);
-
-        color: #ffffff !important;
-
-        -webkit-text-fill-color: #ffffff !important;
-
-        text-decoration: none !important;
-
-        font-size: 12px;
-
-        line-height: 1;
-
-        font-weight: 650;
-
-        box-shadow:
-            0 11px 25px rgba(107, 74, 191, .19);
-
-        transition:
-            transform .3s ease,
-            box-shadow .3s ease;
-
+        font-size: 17px;
+        flex-shrink: 0
     }
 
-
-    .mcfaq-btn:hover {
-
-        transform:
-            translateY(-2px);
-
-        box-shadow:
-            0 16px 30px rgba(107, 74, 191, .27);
-
+    .ci-item h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--txt3);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: .5px
     }
 
-
-    /* =========================================================
- FAQ LIST
-========================================================= */
-
-    .mcfaq-list {
-
-        width: 100%;
-
-        display: grid;
-
-        gap: 11px;
-
+    .ci-item p,
+    .ci-item a {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--txt)
     }
 
-
-    /* =========================================================
- FAQ ITEM
-========================================================= */
-
-    .mcfaq-item {
-
-        position: relative;
-
-        overflow: hidden;
-
-        border:
-            1px solid #ebe6f1;
-
-        border-radius: 15px;
-
-        background: #ffffff;
-
-        box-shadow:
-            0 8px 24px rgba(64, 44, 104, .035);
-
-        transition:
-            border-color .3s ease,
-            box-shadow .3s ease,
-            transform .3s ease;
-
+    .ci-item a:hover {
+        color: var(--blue)
     }
 
-
-    .mcfaq-item:hover {
-
-        border-color:
-            rgba(120, 84, 209, .18);
-
+    .contact-social {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 4px
     }
 
-
-    /* ACTIVE */
-
-    .mcfaq-item.active {
-
-        border-color:
-            rgba(121, 84, 211, .26);
-
-        box-shadow:
-            0 14px 32px rgba(66, 46, 108, .07);
-
-    }
-
-
-    /* =========================================================
- QUESTION BUTTON
-========================================================= */
-
-    .mcfaq-question {
-
-        appearance: none;
-
-        width: 100%;
-
-        min-height: 72px;
-
-        display: grid;
-
-        grid-template-columns:
-            38px 1fr 34px;
-
-        align-items: center;
-
-        gap: 13px;
-
-        padding:
-            14px 16px;
-
-        border: 0 !important;
-
-        outline: none !important;
-
-        background: transparent !important;
-
-        box-shadow: none !important;
-
-        text-align: left;
-
-        cursor: pointer;
-
-        font-family: "Poppins", Arial, sans-serif;
-
-    }
-
-
-    /* =========================================================
- NUMBER
-========================================================= */
-
-    .mcfaq-number {
-
+    .cs-link {
         width: 38px;
         height: 38px;
-
+        border-radius: 9px;
+        background: var(--bg2);
+        border: 1.5px solid var(--bdr);
         display: flex;
-
         align-items: center;
         justify-content: center;
-
-        border-radius: 11px;
-
-        background: #f1ecff;
-
-        color: #7853d3;
-
-        font-size: 9px;
-
-        line-height: 1;
-
-        font-weight: 750;
-
-        transition:
-            background .3s ease,
-            color .3s ease;
-
+        font-size: 15px;
+        color: var(--blue);
+        transition: var(--trans)
     }
 
-
-    .mcfaq-item.active .mcfaq-number {
-
-        background:
-
-            linear-gradient(135deg,
-                #6847bd,
-                #9067e8);
-
-        color: #ffffff;
-
+    .cs-link:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue)
     }
 
+    .contact-form {
+        background: var(--blue);
+        border: 1.5px solid var(--bdr);
+        border-radius: 20px;
+        padding: 32px
+    }
 
-    /* =========================================================
- QUESTION TEXT
-========================================================= */
+    .cf-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        color: var(--white);
+    }
 
-    .mcfaq-question-text {
-
-        color: #443354;
-
+    .cf-sub {
         font-size: 14px;
-
-        line-height: 1.45;
-
-        font-weight: 620;
+        color: var(--txt2);
+        margin-bottom: 28px;
+        color: #8f8787;
 
     }
 
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px
+    }
 
-    /* =========================================================
- TOGGLE ICON
-========================================================= */
+    .form-group {
+        margin-bottom: 16px
+    }
 
-    .mcfaq-toggle {
+    .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        color: #e6e1e1c5;
+        margin-bottom: 7px
+    }
 
-        width: 34px;
-        height: 34px;
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px 10px;
+        border: 1.5px solid var(--bdr);
+        border-radius: 8px;
+        font-size: 14px;
+        color: var(--txt);
+        background: #fff;
+        outline: none;
+        transition: border-color .2s;
+    }
 
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(27, 61, 123, .08)
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px
+    }
+
+    .form-submit {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        justify-content: center;
+        border: none;
+        position: relative;
+    }
+
+    .submit_btn_animtion {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 145, 0);
+        border: 2px solid white;
         display: flex;
-
         align-items: center;
         justify-content: center;
+        top: 0px;
+        left: -1000px;
+        border-radius: 8px;
+    }
 
+    .submit_btn_animtion .sesa885 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        padding: 5px;
+        animation: trailFade 3s ease-in-out infinite;
+    }
+
+    @keyframes trailFade {
+
+        0% {
+
+            opacity: .9;
+        }
+
+        18% {
+            opacity: .9;
+            transform: translate(-50%, -50%) rotate(24deg) scaleX(1);
+        }
+
+        26% {
+            opacity: .9;
+            transform: translate(10%, -120%) rotate(24deg) scaleX(1.4);
+        }
+
+        42% {
+            opacity: 0;
+            transform: translate(980%, -280%) rotate(0deg) scaleX(5.4);
+        }
+
+        43%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .submit_btn_animtion:hover {}
+
+    /* ════ RESPONSIVE ════ */
+    @media(max-width:960px) {
+        .hero-grid {
+            grid-template-columns: 1fr
+        }
+
+        .hero-card {
+            display: none
+        }
+
+        .why-wrap {
+            grid-template-columns: 1fr
+        }
+
+        .faq-wrap {
+            grid-template-columns: 1fr
+        }
+
+        .faq-cta-box {
+            position: static
+        }
+
+        .contact-wrap {
+            grid-template-columns: 1fr
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr 1fr
+        }
+
+        .wp-panel {
+            position: static
+        }
+
+        .process-steps::before {
+            display: none
+        }
+    }
+
+    @media(max-width:640px) {
+
+        .nav-links,
+        .nav-right .btn-outline {
+            display: none
+        }
+
+        .hamburger {
+            display: flex
+        }
+
+        .topbar .tb-right {
+            display: none
+        }
+
+        .section {
+            padding: 60px 0
+        }
+
+        .form-row {
+            grid-template-columns: 1fr
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr
+        }
+
+        .hc-svcs {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        .rating-bar {
+            flex-wrap: wrap
+        }
+
+        .rb-div {
+            display: none
+        }
+
+        .recog-row {
+            gap: 20px
+        }
+    }
+
+
+
+    /* Container (Left-aligned as shown in image) */
+    .reveal8494 {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        text-align: left;
+        max-width: 650px;
+    }
+
+    /* FAQS Badge Tag */
+    .tag9649 {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #EEF2FF;
+        /* Light blue/lavender tint */
+        color: #3538CD;
+        /* Navy blue text */
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+    }
+
+    /* Dot Base with Wave Animation Support */
+    .dot854 {
+        width: 7px;
+        height: 7px;
+        background-color: #3538CD;
         border-radius: 50%;
-
-        background: #f4f1f8;
-
-        color: #7251c5;
-
-        font-size: 10px;
-
-        transition:
-            transform .35s ease,
-            background .3s ease,
-            color .3s ease;
-
+        display: inline-block;
+        position: relative;
+        isolation: isolate;
     }
 
-
-    .mcfaq-item.active .mcfaq-toggle {
-
-        transform:
-            rotate(45deg);
-
-        background: #eee8ff;
-
-        color: #7854d4;
-
+    /* Wave Animation (Before & After) */
+    .dot854::before,
+    .dot854::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(53, 56, 205, 0.4);
+        border-radius: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%) scale(1);
+        animation: dotWavePulse 2s infinite ease-out;
     }
 
-
-    /* =========================================================
- ANSWER
-========================================================= */
-
-    .mcfaq-answer {
-
-        max-height: 0;
-
-        overflow: hidden;
-
-        opacity: 0;
-
-        transition:
-            max-height .45s cubic-bezier(.2, .7, .3, 1),
-            opacity .3s ease;
-
+    /* Second Wave Delay */
+    .dot854::after {
+        animation-delay: 1s;
     }
 
+    /* Keyframes for Wave Effect */
+    @keyframes dotWavePulse {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.8;
+        }
 
-    .mcfaq-item.active .mcfaq-answer {
-
-        opacity: 1;
-
+        100% {
+            transform: translate(-50%, -50%) scale(4);
+            opacity: 0;
+        }
     }
 
-
-    /* INNER */
-
-    .mcfaq-answer-inner {
-
-        padding:
-            0 63px 18px 67px;
-
+    /* Heading Styling */
+    .sh84a {
+        font-size: 44px;
+        font-weight: 800;
+        line-height: 1.15;
+        color: #0F172A;
+        /* Dark Navy Black */
+        margin: 0 0 16px 0;
+        letter-spacing: -1px;
     }
 
-
-    /* ANSWER TEXT */
-
-    .mcfaq-answer-inner p {
-
+    /* Subtitle Paragraph */
+    .subas84 {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #475569;
+        /* Slate grey */
         margin: 0;
+        font-weight: 400;
+    }
 
-        padding-top: 13px;
+    .faq {
+        position: relative;
+        overflow: hidden;
+    }
 
-        border-top:
-            1px solid #f0ecf4;
+    .faq .container {
+        position: relative;
+        z-index: 1;
+    }
 
-        color: #7d7584;
+    /* big faint watermark */
+    .decor-qmark-big {
+        position: absolute;
+        top: -70px;
+        right: 40px;
+        font-size: 280px;
+        font-weight: 800;
+        line-height: 1;
+        color: var(--blue);
+        opacity: .05;
+        font-family: Georgia, serif;
+        z-index: 0;
+        pointer-events: none;
+        animation: qmark-sway 10s ease-in-out infinite;
+    }
 
-        font-size: 13px;
+    @keyframes qmark-sway {
 
-        line-height: 1.75;
+        0%,
+        100% {
+            transform: rotate(-4deg) scale(1);
+        }
 
+        50% {
+            transform: rotate(2deg) scale(1.03);
+        }
+    }
+
+    /* scattered small marks */
+    .decor-qmarks-scatter {
+        position: absolute;
+        bottom: -10px;
+        left: -10px;
+        width: 220px;
+        height: 260px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .decor-qmark {
+        position: absolute;
+        font-weight: 800;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+
+    .decor-qmark.q1 {
+        font-size: 40px;
+        bottom: 40px;
+        left: 20px;
+        color: var(--gold);
+        opacity: .18;
+        animation: qmark-float-1 6s ease-in-out infinite;
+    }
+
+    .decor-qmark.q2 {
+        font-size: 26px;
+        bottom: 130px;
+        left: 90px;
+        color: var(--blue-md);
+        opacity: .16;
+        animation: qmark-float-2 7s ease-in-out infinite .4s;
+    }
+
+    .decor-qmark.q3 {
+        font-size: 56px;
+        bottom: 60px;
+        left: 140px;
+        color: var(--blue);
+        opacity: .1;
+        animation: qmark-float-3 8s ease-in-out infinite .8s;
+    }
+
+    .decor-qmark.q4 {
+        font-size: 20px;
+        bottom: 190px;
+        left: 40px;
+        color: var(--gold);
+        opacity: .2;
+        animation: qmark-float-1 5.5s ease-in-out infinite .2s;
+    }
+
+    @keyframes qmark-float-1 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(8px, -14px) rotate(-8deg);
+        }
+    }
+
+    @keyframes qmark-float-2 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(-10px, 10px) rotate(6deg);
+        }
+    }
+
+    @keyframes qmark-float-3 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(6px, 12px) rotate(-4deg);
+        }
     }
 
 
-    /* =========================================================
- TABLET
-========================================================= */
 
-    @media(max-width:900px) {
+    /* submit btn  */
+    .from_btn_submit {
+        width: 100%;
+        font-family: inherit;
+        font-size: 16px;
+        background: #ff7300;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
 
-        .mcfaq-section {
+    .from_btn_submit span {
+        display: block;
+        margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
+    }
 
-            padding:
-                50px 20px;
-
-        }
-
-
-        .mcfaq-container {
-
-            grid-template-columns: 1fr;
-
-            gap: 35px;
-
-        }
-
-
-        .mcfaq-left {
-
-            position: relative;
-
-            top: auto;
-
-            max-width: 700px;
-
-            margin: 0 auto;
-
-            text-align: center;
-
-        }
-
-
-        .mcfaq-label {
-
-            margin-left: auto;
-            margin-right: auto;
-
-        }
-
-
-        .mcfaq-help {
-
-            max-width: 530px;
-
-            margin-left: auto;
-            margin-right: auto;
-
-            text-align: left;
-
-        }
-
-
-        .mcfaq-btn {
-
-            margin-left: auto;
-            margin-right: auto;
-
-        }
-
-
-        .mcfaq-list {
-
-            max-width: 760px;
-
-            margin: 0 auto;
-
-        }
-
+    .from_btn_submit svg {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
     }
 
 
-    /* =========================================================
- MOBILE
-========================================================= */
-
-    @media(max-width:600px) {
-
-        .mcfaq-section {
-
-            padding:
-                40px 14px 45px;
-
-        }
-
-
-        .mcfaq-container {
-
-            gap: 28px;
-
-        }
-
-
-        .mcfaq-left h2 {
-
-            font-size: 29px;
-
-            line-height: 1.15;
-
-            letter-spacing: -1px;
-
-        }
-
-
-        .mcfaq-left>p {
-
-            font-size: 13.5px;
-
-            line-height: 1.72;
-
-        }
-
-
-        .mcfaq-help {
-
-            grid-template-columns:
-                43px 1fr;
-
-            padding: 13px;
-
-            margin-top: 21px;
-
-        }
-
-
-        .mcfaq-help-icon {
-
-            width: 43px;
-            height: 43px;
-
-        }
-
-
-        .mcfaq-help p {
-
-            font-size: 10px;
-
-        }
-
-
-        .mcfaq-btn {
-
-            min-height: 44px;
-
-            margin-top: 17px;
-
-            padding:
-                0 17px;
-
-            font-size: 10.5px;
-
-        }
-
-
-        /* FAQ */
-
-        .mcfaq-list {
-
-            gap: 8px;
-
-        }
-
-
-        .mcfaq-question {
-
-            min-height: 65px;
-
-            grid-template-columns:
-                34px 1fr 31px;
-
-            gap: 10px;
-
-            padding:
-                12px;
-
-        }
-
-
-        .mcfaq-number {
-
-            width: 34px;
-            height: 34px;
-
-        }
-
-
-        .mcfaq-question-text {
-
-            font-size: 12.5px;
-
-            line-height: 1.4;
-
-        }
-
-
-        .mcfaq-toggle {
-
-            width: 31px;
-            height: 31px;
-
-        }
-
-
-        .mcfaq-answer-inner {
-
-            padding:
-                0 53px 15px 56px;
-
-        }
-
-
-        .mcfaq-answer-inner p {
-
-            padding-top: 11px;
-
-            font-size: 11.5px;
-
-            line-height: 1.7;
-
-        }
-
+    .from_btn_submit:hover {
+        background: royalblue;
+        transition: .25s ease;
     }
 
+    .from_btn_submit .svg-wrapper {
+        animation: fly-1 0.6s ease-in-out infinite alternate;
+    }
 
-    /* =========================================================
- SMALL MOBILE
-========================================================= */
+    .from_btn_submit:hover svg {
+        transform: translateX(1em) rotate(45deg) scale(1.1);
+    }
 
-    @media(max-width:390px) {
+    .from_btn_submit:hover span {
+        /* transform: translateX(1); */
+    }
 
-        .mcfaq-left h2 {
+    .from_btn_submit:active {
+        transform: scale(0.95);
+    }
 
-            font-size: 26px;
-
+    @keyframes fly-1 {
+        from {
+            transform: translateY(0.1em);
         }
 
-
-        .mcfaq-question {
-
-            grid-template-columns:
-                32px 1fr 29px;
-
-            padding:
-                11px 10px;
-
-            gap: 8px;
-
+        to {
+            transform: translateY(-0.1em);
         }
-
-
-        .mcfaq-number {
-
-            width: 32px;
-            height: 32px;
-
-            font-size: 8px;
-
-        }
-
-
-        .mcfaq-question-text {
-
-            font-size: 11.5px;
-
-        }
-
-
-        .mcfaq-toggle {
-
-            width: 29px;
-            height: 29px;
-
-        }
-
-
-        .mcfaq-answer-inner {
-
-            padding:
-                0 45px 14px 50px;
-
-        }
-
     }
 </style>
 
 
-<section class="mcfaq-section">
-
-    <!-- BACKGROUND DECORATION -->
-    <div class="mcfaq-glow mcfaq-glow-one"></div>
-    <div class="mcfaq-glow mcfaq-glow-two"></div>
-
-    <div class="mcfaq-container">
-
-        <!-- =================================================
-             LEFT CONTENT
-        ================================================== -->
-        <div class="mcfaq-left">
-
-            <div class="mcfaq-label">
-
-                <span>
-                    <i class="fa-solid fa-circle-question"></i>
-                </span>
-
-                FREQUENTLY ASKED QUESTIONS
-
-            </div>
-
-
-            <h2>
-                Questions About
-                <span>Missed Call Service?</span>
-            </h2>
-
-
-            <p>
-                Find quick answers about how missed call services work,
-                how leads are captured and how automated follow-up workflows
-                can support your business.
-            </p>
-
-
-            <!-- SMALL CONTACT BOX -->
-            <div class="mcfaq-help">
-
-                <div class="mcfaq-help-icon">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-
-                <div>
-
-                    <small>
-                        STILL HAVE QUESTIONS?
-                    </small>
-
-                    <strong>
-                        Talk To Our Team
-                    </strong>
-
-                    <p>
-                        Get help choosing the right missed call workflow
-                        for your business.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- CTA -->
-            <a href="#contact" class="mcfaq-btn">
-
-                Request A Demo
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-
-
-        <!-- =================================================
-             RIGHT FAQ
-        ================================================== -->
-        <div class="mcfaq-list">
-
-
-            <!-- =================================================
-                 FAQ 01
-            ================================================== -->
-            <div class="mcfaq-item active">
-
-                <button class="mcfaq-question" type="button">
-
-                    <span class="mcfaq-number">
-                        01
-                    </span>
-
-                    <span class="mcfaq-question-text">
-                        What is a missed call service?
-                    </span>
-
-                    <span class="mcfaq-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-
-                </button>
-
-
-                <div class="mcfaq-answer">
-
-                    <div class="mcfaq-answer-inner">
-
-                        <p>
-                            A missed call service allows customers to connect
-                            with your business by giving a missed call to a
-                            dedicated number. The system captures the caller's
-                            mobile number and can trigger actions such as lead
-                            creation, SMS responses or callback workflows.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 FAQ 02
-            ================================================== -->
-            <div class="mcfaq-item">
-
-                <button class="mcfaq-question" type="button">
-
-                    <span class="mcfaq-number">
-                        02
-                    </span>
-
-                    <span class="mcfaq-question-text">
-                        How does a missed call generate a lead?
-                    </span>
-
-                    <span class="mcfaq-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-
-                </button>
-
-
-                <div class="mcfaq-answer">
-
-                    <div class="mcfaq-answer-inner">
-
-                        <p>
-                            When a customer gives a missed call, the incoming
-                            phone number is detected and recorded automatically.
-                            The captured number can then be stored as a lead,
-                            added to your CRM or routed to your sales team.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 FAQ 03
-            ================================================== -->
-            <div class="mcfaq-item">
-
-                <button class="mcfaq-question" type="button">
-
-                    <span class="mcfaq-number">
-                        03
-                    </span>
-
-                    <span class="mcfaq-question-text">
-                        Can an automatic SMS be sent after a missed call?
-                    </span>
-
-                    <span class="mcfaq-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-
-                </button>
-
-
-                <div class="mcfaq-answer">
-
-                    <div class="mcfaq-answer-inner">
-
-                        <p>
-                            Yes. A missed call workflow can be configured to
-                            trigger an automated SMS confirmation, campaign
-                            message or other predefined response after the
-                            customer's call is detected.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 FAQ 04
-            ================================================== -->
-            <div class="mcfaq-item">
-
-                <button class="mcfaq-question" type="button">
-
-                    <span class="mcfaq-number">
-                        04
-                    </span>
-
-                    <span class="mcfaq-question-text">
-                        Can missed call leads be connected with a CRM?
-                    </span>
-
-                    <span class="mcfaq-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-
-                </button>
-
-
-                <div class="mcfaq-answer">
-
-                    <div class="mcfaq-answer-inner">
-
-                        <p>
-                            Missed call data can be integrated with supported
-                            CRM systems or business workflows so captured leads
-                            can be organized, assigned and followed up by your
-                            team more efficiently.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 FAQ 05
-            ================================================== -->
-            <div class="mcfaq-item">
-
-                <button class="mcfaq-question" type="button">
-
-                    <span class="mcfaq-number">
-                        05
-                    </span>
-
-                    <span class="mcfaq-question-text">
-                        Where can a missed call number be promoted?
-                    </span>
-
-                    <span class="mcfaq-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-
-                </button>
-
-
-                <div class="mcfaq-answer">
-
-                    <div class="mcfaq-answer-inner">
-
-                        <p>
-                            You can promote your dedicated missed call number
-                            across websites, digital advertisements, social
-                            media campaigns, printed materials, outdoor
-                            advertising and other customer communication channels.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 FAQ 06
-            ================================================== -->
-            <div class="mcfaq-item">
-
-                <button class="mcfaq-question" type="button">
-
-                    <span class="mcfaq-number">
-                        06
-                    </span>
-
-                    <span class="mcfaq-question-text">
-                        Can missed call campaign activity be tracked?
-                    </span>
-
-                    <span class="mcfaq-toggle">
-                        <i class="fa-solid fa-plus"></i>
-                    </span>
-
-                </button>
-
-
-                <div class="mcfaq-answer">
-
-                    <div class="mcfaq-answer-inner">
-
-                        <p>
-                            Yes. Your missed call workflow can provide call
-                            activity and lead information that helps your team
-                            monitor campaign responses and manage follow-up
-                            actions from a structured system.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+<!-- ════ FAQ ════ -->
+<section class="faq section" id="faq">
+    <div class="decor-qmark-big">?</div>
+    <div class="decor-qmarks-scatter">
+        <span class="decor-qmark q1">?</span>
+        <span class="decor-qmark q2">?</span>
+        <span class="decor-qmark q3">?</span>
+        <span class="decor-qmark q4">?</span>
     </div>
+    <div class="container">
+        <div class="reveal8494">
+            <div class="tag9649"><span class="dot854"></span>FAQs</div>
+            <h2 class="sh84a">Frequently asked questions</h2>
+            <p class="subas84">Everything you need to know before getting started with King Digital.</p>
+        </div>
+        <div class="faq-wrap">
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-q">What is a missed call service?<i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a"> A missed call service allows customers to connect
+                        with your business by giving a missed call to a
+                        dedicated number. The system captures the caller's
+                        mobile number and can trigger actions such as lead
+                        creation, SMS responses or callback workflows.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">How does a missed call generate a lead?<i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">When a customer gives a missed call, the incoming
+                        phone number is detected and recorded automatically.
+                        The captured number can then be stored as a lead,
+                        added to your CRM or routed to your sales team.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can an automatic SMS be sent after a missed call?<i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">Yes. A missed call workflow can be configured to
+                        trigger an automated SMS confirmation, campaign
+                        message or other predefined response after the
+                        customer's call is detected.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can missed call leads be connected with a CRM?<i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-a">Missed call data can be integrated with supported
+                        CRM systems or business workflows so captured leads
+                        can be organized, assigned and followed up by your
+                        team more efficiently.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Where can a missed call number be promoted?<i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">You can promote your dedicated missed call number
+                        across websites, digital advertisements, social
+                        media campaigns, printed materials, outdoor
+                        advertising and other customer communication channels.</div>
+                </div>
 
+
+                <div class="faq-item">
+                    <div class="faq-q">Can missed call campaign activity be tracked?<i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a"> Yes. Your missed call workflow can provide call
+                        activity and lead information that helps your team
+                        monitor campaign responses and manage follow-up
+                        actions from a structured system.</div>
+                </div>
+            </div>
+
+            <div class="faq-cta-box reveal visible">
+                <h3>Still have questions?</h3>
+                <p>Our team is here to help. Get a free 30-minute consultation with our digital expert — no pressure, no obligation.</p>
+                <a href="contact.php" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Us a Message
+                </a>
+                <div class="faq-cta-or">— or —</div>
+                <a href="tel:+919211339966" class="btn btn-white">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)">
+                    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px">ALSO REACH US ON</div>
+                    <div style="display:flex;gap:10px;justify-content:center">
+                        <a href="https://wa.me/919211339966" style="background: rgb(81 131 38);border-radius: 7px;padding: 8px 14px;color: #fff;font-size: 16px;font-weight: 600;display: flex;align-items: center;"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp</a>
+                        <a href="https://kingdigital.in/online-meeting.php" style="background:rgba(255,255,255,.1);border-radius:7px;padding:8px 14px;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;gap:6px"><i class="fas fa-video"></i> Meet Online</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
 <script>
-    (function() {
+    function submit_btn_form() {
 
-        const faqSections =
-            document.querySelectorAll('.mcfaq-section');
-
-
-        faqSections.forEach(function(section) {
-
-            const items =
-                section.querySelectorAll('.mcfaq-item');
-
-
-            function openItem(item) {
-
-                const answer =
-                    item.querySelector('.mcfaq-answer');
-
-                item.classList.add('active');
-
-                answer.style.maxHeight =
-                    answer.scrollHeight + 'px';
-
-            }
-
-
-            function closeItem(item) {
-
-                const answer =
-                    item.querySelector('.mcfaq-answer');
-
-                item.classList.remove('active');
-
-                answer.style.maxHeight =
-                    '0px';
-
-            }
-
-
-            /* =====================================================
-               INITIAL STATE
-            ====================================================== */
-
-            items.forEach(function(item, index) {
-
-                const answer =
-                    item.querySelector('.mcfaq-answer');
-
-                const button =
-                    item.querySelector('.mcfaq-question');
-
-
-                button.setAttribute(
-                    'aria-expanded',
-                    index === 0 ?
-                    'true' :
-                    'false'
-                );
-
-
-                if (index === 0) {
-
-                    item.classList.add('active');
-
-                    requestAnimationFrame(function() {
-
-                        answer.style.maxHeight =
-                            answer.scrollHeight + 'px';
-
-                    });
-
-                } else {
-
-                    item.classList.remove('active');
-
-                    answer.style.maxHeight =
-                        '0px';
-
-                }
-
-
-                /* =================================================
-                   CLICK
-                ================================================== */
-
-                button.addEventListener(
-                    'click',
-                    function() {
-
-                        const alreadyOpen =
-                            item.classList.contains('active');
-
-
-                        /* CLOSE ALL */
-                        items.forEach(function(otherItem) {
-
-                            closeItem(otherItem);
-
-                            const otherButton =
-                                otherItem.querySelector(
-                                    '.mcfaq-question'
-                                );
-
-                            otherButton.setAttribute(
-                                'aria-expanded',
-                                'false'
-                            );
-
-                        });
-
-
-                        /*
-                         If clicked item was closed,
-                         open it.
-                         If it was already open,
-                         all remain closed.
-                        */
-
-                        if (!alreadyOpen) {
-
-                            openItem(item);
-
-                            button.setAttribute(
-                                'aria-expanded',
-                                'true'
-                            );
-
-                        }
-
-                    }
-                );
-
-            });
-
-
-            /* =====================================================
-               RECALCULATE OPEN FAQ ON RESIZE
-            ====================================================== */
-
-            window.addEventListener(
-                'resize',
-                function() {
-
-                    const activeItem =
-                        section.querySelector(
-                            '.mcfaq-item.active'
-                        );
-
-
-                    if (activeItem) {
-
-                        const activeAnswer =
-                            activeItem.querySelector(
-                                '.mcfaq-answer'
-                            );
-
-                        activeAnswer.style.maxHeight =
-                            activeAnswer.scrollHeight + 'px';
-
-                    }
-
-                }
-            );
-
-        });
-
-    })();
+    }
 </script>
+
+
+
+<!-- <script>
+
+    function flyr_tyse(){
+ let btn_sew = document.getElementsByClassName("submit_btn_animtion")
+
+ btn_sew.style.left="0px"
+
+    }
+
+
+    /* ─ Scroll reveal ─ */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), 60 * (entry.target.dataset.delay || 0));
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    /* ─ FAQ accordion ─ */
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+</script> -->
