@@ -12,1477 +12,1440 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-
-/* =========================================================
+    /* =========================================================
  BASE
 ========================================================= */
 
-#kd-portfolio-showcase,
-#kd-portfolio-showcase *{
-    box-sizing:border-box;
-}
+    #kd-portfolio-showcase,
+    #kd-portfolio-showcase * {
+        box-sizing: border-box;
+    }
 
-#kd-portfolio-showcase{
+    #kd-portfolio-showcase {
 
-    --navy:#060F3E;
-    --navy2:#0B2148;
-    --navy3:#12365E;
+        --navy: #060F3E;
+        --navy2: #0B2148;
+        --navy3: #12365E;
 
-    --orange:#F47B20;
-    --orange2:#FF9145;
-    --orange3:#FFB36F;
-    --coral:#FF6548;
-    --gold:#FFB84D;
+        --orange: #F47B20;
+        --orange2: #FF9145;
+        --orange3: #FFB36F;
+        --coral: #FF6548;
+        --gold: #FFB84D;
 
-    --text:#667085;
-    --muted:#98A2B3;
-    --line:#E4E8ED;
+        --text: #667085;
+        --muted: #98A2B3;
+        --line: #E4E8ED;
 
-    position:relative;
+        position: relative;
 
-    width:100%;
+        width: 100%;
 
-    /* TOP PADDING REDUCED */
-    padding:38px 46px 55px;
+        /* TOP PADDING REDUCED */
+        padding: 38px 46px 55px;
 
-    overflow:hidden;
+        overflow: hidden;
 
-    font-family:'Manrope',sans-serif;
+        font-family: 'Manrope', sans-serif;
 
-    background:
-        radial-gradient(
-            circle at 94% 3%,
-            rgba(244,123,32,.09),
-            transparent 24%
-        ),
-        radial-gradient(
-            circle at 4% 88%,
-            rgba(6,15,62,.045),
-            transparent 26%
-        ),
-        linear-gradient(
-            180deg,
-            #FFFFFF 0%,
-            #F9FBFD 100%
-        );
-}
+        background:
+            radial-gradient(circle at 94% 3%,
+                rgba(244, 123, 32, .09),
+                transparent 24%),
+            radial-gradient(circle at 4% 88%,
+                rgba(6, 15, 62, .045),
+                transparent 26%),
+            linear-gradient(180deg,
+                #FFFFFF 0%,
+                #F9FBFD 100%);
+    }
 
 
-/* =========================================================
+    /* =========================================================
  BACKGROUND
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-grid-bg{
+    #kd-portfolio-showcase .kdps-grid-bg {
 
-    position:absolute;
-    inset:0;
+        position: absolute;
+        inset: 0;
 
-    pointer-events:none;
+        pointer-events: none;
 
-    opacity:.28;
+        opacity: .28;
 
-    background-image:
-        linear-gradient(
-            rgba(6,15,62,.022) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(6,15,62,.022) 1px,
-            transparent 1px
-        );
+        background-image:
+            linear-gradient(rgba(6, 15, 62, .022) 1px,
+                transparent 1px),
+            linear-gradient(90deg,
+                rgba(6, 15, 62, .022) 1px,
+                transparent 1px);
 
-    background-size:56px 56px;
+        background-size: 56px 56px;
 
-    -webkit-mask-image:
-        linear-gradient(
-            to bottom,
-            #000,
-            transparent 82%
-        );
+        -webkit-mask-image:
+            linear-gradient(to bottom,
+                #000,
+                transparent 82%);
 
-    mask-image:
-        linear-gradient(
-            to bottom,
-            #000,
-            transparent 82%
-        );
-}
+        mask-image:
+            linear-gradient(to bottom,
+                #000,
+                transparent 82%);
+    }
 
 
-#kd-portfolio-showcase .kdps-circle{
+    #kd-portfolio-showcase .kdps-circle {
 
-    position:absolute;
+        position: absolute;
 
-    right:-180px;
-    top:100px;
+        right: -180px;
+        top: 100px;
 
-    width:320px;
-    height:320px;
+        width: 320px;
+        height: 320px;
 
-    border-radius:50%;
+        border-radius: 50%;
 
-    border:1px solid rgba(244,123,32,.08);
+        border: 1px solid rgba(244, 123, 32, .08);
 
-    box-shadow:
-        0 0 0 45px rgba(244,123,32,.014),
-        0 0 0 90px rgba(244,123,32,.007);
+        box-shadow:
+            0 0 0 45px rgba(244, 123, 32, .014),
+            0 0 0 90px rgba(244, 123, 32, .007);
 
-    pointer-events:none;
-}
-
-
-#kd-portfolio-showcase .kdps-dots{
-
-    position:absolute;
-
-    left:25px;
-    bottom:35px;
-
-    width:90px;
-    height:90px;
-
-    opacity:.12;
-
-    pointer-events:none;
-
-    background-image:
-        radial-gradient(
-            var(--orange) 1px,
-            transparent 1px
-        );
-
-    background-size:14px 14px;
-}
+        pointer-events: none;
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-dots {
+
+        position: absolute;
+
+        left: 25px;
+        bottom: 35px;
+
+        width: 90px;
+        height: 90px;
+
+        opacity: .12;
+
+        pointer-events: none;
+
+        background-image:
+            radial-gradient(var(--orange) 1px,
+                transparent 1px);
+
+        background-size: 14px 14px;
+    }
+
+
+    /* =========================================================
  CONTAINER
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-container{
+    #kd-portfolio-showcase .kdps-container {
 
-    position:relative;
-    z-index:2;
+        position: relative;
+        z-index: 2;
 
-    width:100%;
-    max-width:1380px;
+        width: 100%;
+        max-width: 1380px;
 
-    margin:0 auto;
-}
+        margin: 0 auto;
+    }
 
 
-/* =========================================================
+    /* =========================================================
  HEADER
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-header{
+    #kd-portfolio-showcase .kdps-header {
 
-    max-width:880px;
+        max-width: 880px;
 
-    margin:0 auto 25px;
+        margin: 0 auto 25px;
 
-    text-align:center;
+        text-align: center;
 
-    overflow:visible!important;
-}
-
-
-/* EYEBROW */
-
-#kd-portfolio-showcase .kdps-eyebrow{
-
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    margin-bottom:11px;
-
-    padding:8px 13px;
-
-    border-radius:100px;
-
-    color:var(--orange);
-
-    font-size:10px;
-
-    line-height:1;
-
-    font-weight:800;
-
-    letter-spacing:.13em;
-
-    text-transform:uppercase;
-
-    background:
-        linear-gradient(
-            135deg,
-            #FFF8F3,
-            #FFF1E7
-        );
-
-    border:
-        1px solid rgba(244,123,32,.16);
-
-    box-shadow:
-        0 5px 16px rgba(244,123,32,.05);
-}
+        overflow: visible !important;
+    }
 
 
-#kd-portfolio-showcase .kdps-eyebrow-dot{
+    /* EYEBROW */
 
-    width:6px;
-    height:6px;
+    #kd-portfolio-showcase .kdps-eyebrow {
 
-    flex:0 0 6px;
+        display: inline-flex;
 
-    border-radius:50%;
+        align-items: center;
+        justify-content: center;
 
-    background:var(--orange);
+        gap: 8px;
 
-    box-shadow:
-        0 0 0 4px rgba(244,123,32,.10);
-}
+        margin-bottom: 11px;
+
+        padding: 8px 13px;
+
+        border-radius: 100px;
+
+        color: var(--orange);
+
+        font-size: 10px;
+
+        line-height: 1;
+
+        font-weight: 800;
+
+        letter-spacing: .13em;
+
+        text-transform: uppercase;
+
+        background:
+            linear-gradient(135deg,
+                #FFF8F3,
+                #FFF1E7);
+
+        border:
+            1px solid rgba(244, 123, 32, .16);
+
+        box-shadow:
+            0 5px 16px rgba(244, 123, 32, .05);
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-eyebrow-dot {
+
+        width: 6px;
+        height: 6px;
+
+        flex: 0 0 6px;
+
+        border-radius: 50%;
+
+        background: var(--orange);
+
+        box-shadow:
+            0 0 0 4px rgba(244, 123, 32, .10);
+    }
+
+
+    /* =========================================================
  SINGLE-LINE HEADING
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-title{
+    #kd-portfolio-showcase .kdps-title {
 
-    display:block;
+        display: block;
 
-    margin:0;
+        margin: 0;
 
-    padding:3px 5px 7px;
+        padding: 3px 5px 7px;
 
-    overflow:visible!important;
+        overflow: visible !important;
 
-    color:var(--navy);
+        color: var(--navy);
 
-    font-size:45px;
+        font-size: 45px;
 
-    line-height:1.18;
+        line-height: 1.18;
 
-    font-weight:800;
+        font-weight: 800;
 
-    letter-spacing:-1.8px;
+        letter-spacing: -1.8px;
 
-    white-space:nowrap;
-}
-
-
-#kd-portfolio-showcase .kdps-title-gradient{
-
-    display:inline;
-
-    color:transparent;
-
-    background:
-        linear-gradient(
-            100deg,
-            #D9500C 0%,
-            #F36D16 20%,
-            #FF8A32 42%,
-            #FF6548 64%,
-            #FFB84D 100%
-        );
-
-    background-size:200% 100%;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-    animation:
-        kdpsGradientMove 7s ease-in-out infinite alternate;
-}
-
-
-@keyframes kdpsGradientMove{
-
-    from{
-        background-position:0% 50%;
+        white-space: nowrap;
     }
 
-    to{
-        background-position:100% 50%;
+
+    #kd-portfolio-showcase .kdps-title-gradient {
+
+        display: inline;
+
+        color: transparent;
+
+        background:
+            linear-gradient(100deg,
+                #D9500C 0%,
+                #F36D16 20%,
+                #FF8A32 42%,
+                #FF6548 64%,
+                #FFB84D 100%);
+
+        background-size: 200% 100%;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+
+        animation:
+            kdpsGradientMove 7s ease-in-out infinite alternate;
     }
-}
 
 
-/* DESCRIPTION */
+    @keyframes kdpsGradientMove {
 
-#kd-portfolio-showcase .kdps-description{
+        from {
+            background-position: 0% 50%;
+        }
 
-    max-width:700px;
-
-    margin:8px auto 0;
-
-    color:var(--text);
-
-    font-size:15px;
-
-    line-height:1.7;
-
-    font-weight:500;
-}
+        to {
+            background-position: 100% 50%;
+        }
+    }
 
 
-/* =========================================================
+    /* DESCRIPTION */
+
+    #kd-portfolio-showcase .kdps-description {
+
+        max-width: 700px;
+
+        margin: 8px auto 0;
+
+        color: var(--text);
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        font-weight: 500;
+    }
+
+
+    /* =========================================================
  TABS
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-tabs-wrap{
+    #kd-portfolio-showcase .kdps-tabs-wrap {
 
-    display:flex;
+        display: flex;
 
-    justify-content:center;
+        justify-content: center;
 
-    margin-bottom:28px;
-}
-
-
-#kd-portfolio-showcase .kdps-tabs{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:5px;
-
-    padding:6px;
-
-    border-radius:14px;
-
-    background:rgba(244,246,248,.94);
-
-    border:1px solid #E4E8ED;
-
-    box-shadow:
-        0 8px 25px rgba(6,15,62,.045);
-}
+        margin-bottom: 28px;
+    }
 
 
-#kd-portfolio-showcase .kdps-tab{
+    #kd-portfolio-showcase .kdps-tabs {
 
-    min-width:135px;
+        display: flex;
 
-    height:43px;
+        align-items: center;
 
-    padding:0 15px;
+        justify-content: center;
 
-    border:0;
-    outline:0;
+        flex-wrap: wrap;
 
-    display:flex;
+        gap: 5px;
 
-    align-items:center;
-    justify-content:center;
+        padding: 6px;
 
-    gap:7px;
+        border-radius: 14px;
 
-    border-radius:9px;
+        background: rgba(244, 246, 248, .94);
 
-    cursor:pointer;
+        border: 1px solid #E4E8ED;
 
-    color:#687485;
-
-    font-family:'Manrope',sans-serif;
-
-    font-size:11px;
-
-    line-height:1;
-
-    font-weight:800;
-
-    background:transparent;
-
-    transition:
-        color .25s ease,
-        background .25s ease,
-        box-shadow .25s ease,
-        transform .25s ease;
-}
+        box-shadow:
+            0 8px 25px rgba(6, 15, 62, .045);
+    }
 
 
-#kd-portfolio-showcase .kdps-tab i{
+    #kd-portfolio-showcase .kdps-tab {
 
-    font-size:11px;
-}
+        min-width: 135px;
+
+        height: 43px;
+
+        padding: 0 15px;
+
+        border: 0;
+        outline: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 7px;
+
+        border-radius: 9px;
+
+        cursor: pointer;
+
+        color: #687485;
+
+        font-family: 'Manrope', sans-serif;
+
+        font-size: 11px;
+
+        line-height: 1;
+
+        font-weight: 800;
+
+        background: transparent;
+
+        transition:
+            color .25s ease,
+            background .25s ease,
+            box-shadow .25s ease,
+            transform .25s ease;
+    }
 
 
-#kd-portfolio-showcase .kdps-tab:hover{
+    #kd-portfolio-showcase .kdps-tab i {
 
-    color:var(--navy);
-
-    background:#FFFFFF;
-}
+        font-size: 11px;
+    }
 
 
-#kd-portfolio-showcase .kdps-tab.active{
+    #kd-portfolio-showcase .kdps-tab:hover {
 
-    color:#FFFFFF;
+        color: var(--navy);
 
-    background:
-        linear-gradient(
-            135deg,
-            #DE570E 0%,
-            var(--orange) 50%,
-            var(--orange2) 100%
-        );
-
-    box-shadow:
-        0 8px 20px rgba(244,123,32,.22);
-}
+        background: #FFFFFF;
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-tab.active {
+
+        color: #FFFFFF;
+
+        background:
+            linear-gradient(135deg,
+                #DE570E 0%,
+                var(--orange) 50%,
+                var(--orange2) 100%);
+
+        box-shadow:
+            0 8px 20px rgba(244, 123, 32, .22);
+    }
+
+
+    /* =========================================================
  PANELS
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-panel{
+    #kd-portfolio-showcase .kdps-panel {
 
-    display:none;
-}
-
-
-#kd-portfolio-showcase .kdps-panel.active{
-
-    display:block;
-
-    animation:
-        kdpsPanelShow .4s ease both;
-}
-
-
-@keyframes kdpsPanelShow{
-
-    from{
-        opacity:0;
-        transform:translateY(7px);
+        display: none;
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    #kd-portfolio-showcase .kdps-panel.active {
+
+        display: block;
+
+        animation:
+            kdpsPanelShow .4s ease both;
     }
-}
 
 
-/* =========================================================
+    @keyframes kdpsPanelShow {
+
+        from {
+            opacity: 0;
+            transform: translateY(7px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* =========================================================
  4 EQUAL COLUMNS
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-media-grid{
+    #kd-portfolio-showcase .kdps-media-grid {
 
-    display:grid;
+        display: grid;
 
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-    gap:17px;
+        gap: 17px;
 
-    align-items:stretch;
-}
+        align-items: stretch;
+    }
 
 
-/* =========================================================
+    /* =========================================================
  YOUTUBE CARD
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-youtube-card{
+    #kd-portfolio-showcase .kdps-youtube-card {
 
-    min-width:0;
+        min-width: 0;
 
-    overflow:hidden;
+        overflow: hidden;
 
-    border-radius:16px;
+        border-radius: 16px;
 
-    background:#FFFFFF;
+        background: #FFFFFF;
 
-    border:1px solid var(--line);
+        border: 1px solid var(--line);
 
-    box-shadow:
-        0 8px 25px rgba(6,15,62,.055);
+        box-shadow:
+            0 8px 25px rgba(6, 15, 62, .055);
 
-    transition:
-        transform .32s ease,
-        box-shadow .32s ease,
-        border-color .32s ease;
-}
-
-
-#kd-portfolio-showcase .kdps-youtube-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:
-        rgba(244,123,32,.30);
-
-    box-shadow:
-        0 19px 40px rgba(6,15,62,.11);
-}
+        transition:
+            transform .32s ease,
+            box-shadow .32s ease,
+            border-color .32s ease;
+    }
 
 
-#kd-portfolio-showcase .kdps-youtube-media{
+    #kd-portfolio-showcase .kdps-youtube-card:hover {
 
-    position:relative;
+        transform: translateY(-5px);
 
-    width:100%;
+        border-color:
+            rgba(244, 123, 32, .30);
 
-    aspect-ratio:16/9;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #07172F,
-            #0D2A50
-        );
-
-    cursor:pointer;
-}
+        box-shadow:
+            0 19px 40px rgba(6, 15, 62, .11);
+    }
 
 
-#kd-portfolio-showcase .kdps-youtube-media video{
+    #kd-portfolio-showcase .kdps-youtube-media {
 
-    display:block;
+        position: relative;
 
-    width:100%;
-    height:100%;
+        width: 100%;
 
-    object-fit:cover;
+        aspect-ratio: 16/9;
 
-    transition:transform .5s ease;
-}
+        overflow: hidden;
 
+        background:
+            linear-gradient(135deg,
+                #07172F,
+                #0D2A50);
 
-#kd-portfolio-showcase .kdps-youtube-card:hover video{
-
-    transform:scale(1.025);
-}
-
-
-#kd-portfolio-showcase .kdps-youtube-media::after{
-
-    content:"";
-
-    position:absolute;
-
-    z-index:2;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(4,13,35,.35),
-            transparent 55%
-        );
-}
+        cursor: pointer;
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-youtube-media video {
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        transition: transform .5s ease;
+    }
+
+
+    #kd-portfolio-showcase .kdps-youtube-card:hover video {
+
+        transform: scale(1.025);
+    }
+
+
+    #kd-portfolio-showcase .kdps-youtube-media::after {
+
+        content: "";
+
+        position: absolute;
+
+        z-index: 2;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        background:
+            linear-gradient(to top,
+                rgba(4, 13, 35, .35),
+                transparent 55%);
+    }
+
+
+    /* =========================================================
  BADGE
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-badge{
+    #kd-portfolio-showcase .kdps-badge {
 
-    position:absolute;
+        position: absolute;
 
-    z-index:7;
+        z-index: 7;
 
-    left:11px;
-    top:11px;
+        left: 11px;
+        top: 11px;
 
-    min-height:28px;
+        min-height: 28px;
 
-    padding:0 9px;
+        padding: 0 9px;
 
-    display:flex;
+        display: flex;
 
-    align-items:center;
+        align-items: center;
 
-    gap:6px;
+        gap: 6px;
 
-    border-radius:7px;
+        border-radius: 7px;
 
-    color:var(--navy);
+        color: var(--navy);
 
-    font-size:9px;
+        font-size: 9px;
 
-    line-height:1;
+        line-height: 1;
 
-    font-weight:800;
+        font-weight: 800;
 
-    letter-spacing:.05em;
+        letter-spacing: .05em;
 
-    text-transform:uppercase;
+        text-transform: uppercase;
 
-    background:rgba(255,255,255,.94);
+        background: rgba(255, 255, 255, .94);
 
-    box-shadow:
-        0 5px 15px rgba(6,15,62,.11);
+        box-shadow:
+            0 5px 15px rgba(6, 15, 62, .11);
 
-    backdrop-filter:blur(8px);
-}
-
-
-#kd-portfolio-showcase .kdps-badge i{
-
-    color:var(--orange);
-
-    font-size:10px;
-}
+        backdrop-filter: blur(8px);
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-badge i {
+
+        color: var(--orange);
+
+        font-size: 10px;
+    }
+
+
+    /* =========================================================
  PLAY BUTTON
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-play,
-#kd-portfolio-showcase .kdps-reel-play{
+    #kd-portfolio-showcase .kdps-play,
+    #kd-portfolio-showcase .kdps-reel-play {
 
-    position:absolute;
+        position: absolute;
 
-    z-index:8;
+        z-index: 8;
 
-    display:flex;
+        display: flex;
 
-    align-items:center;
-    justify-content:center;
+        align-items: center;
+        justify-content: center;
 
-    border-radius:50%;
+        border-radius: 50%;
 
-    color:#FFFFFF;
+        color: #FFFFFF;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--orange),
-            var(--orange2)
-        );
+        background:
+            linear-gradient(135deg,
+                var(--orange),
+                var(--orange2));
 
-    box-shadow:
-        0 8px 22px rgba(0,0,0,.22);
+        box-shadow:
+            0 8px 22px rgba(0, 0, 0, .22);
 
-    pointer-events:none;
+        pointer-events: none;
 
-    transition:
-        opacity .25s ease,
-        transform .25s ease;
-}
+        transition:
+            opacity .25s ease,
+            transform .25s ease;
+    }
 
 
-#kd-portfolio-showcase .kdps-play{
+    #kd-portfolio-showcase .kdps-play {
 
-    left:50%;
-    top:50%;
+        left: 50%;
+        top: 50%;
 
-    width:46px;
-    height:46px;
+        width: 46px;
+        height: 46px;
 
-    transform:translate(-50%,-50%);
+        transform: translate(-50%, -50%);
 
-    font-size:11px;
+        font-size: 11px;
 
-    box-shadow:
-        0 9px 24px rgba(0,0,0,.20),
-        0 0 0 6px rgba(255,255,255,.14);
-}
-
-
-#kd-portfolio-showcase .kdps-reel-play{
-
-    right:13px;
-    top:13px;
-
-    width:39px;
-    height:39px;
-
-    font-size:10px;
-}
+        box-shadow:
+            0 9px 24px rgba(0, 0, 0, .20),
+            0 0 0 6px rgba(255, 255, 255, .14);
+    }
 
 
-#kd-portfolio-showcase .kdps-playing .kdps-play{
+    #kd-portfolio-showcase .kdps-reel-play {
 
-    opacity:0;
+        right: 13px;
+        top: 13px;
 
-    transform:
-        translate(-50%,-50%)
-        scale(.75);
-}
+        width: 39px;
+        height: 39px;
 
-
-#kd-portfolio-showcase .kdps-playing .kdps-reel-play{
-
-    opacity:0;
-
-    transform:scale(.75);
-}
+        font-size: 10px;
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-playing .kdps-play {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%) scale(.75);
+    }
+
+
+    #kd-portfolio-showcase .kdps-playing .kdps-reel-play {
+
+        opacity: 0;
+
+        transform: scale(.75);
+    }
+
+
+    /* =========================================================
  YOUTUBE CONTENT
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-video-content{
+    #kd-portfolio-showcase .kdps-video-content {
 
-    padding:15px 16px 17px;
-}
-
-
-#kd-portfolio-showcase .kdps-label{
-
-    margin-bottom:5px;
-
-    color:var(--orange);
-
-    font-size:9px;
-
-    line-height:1.2;
-
-    font-weight:800;
-
-    letter-spacing:.10em;
-
-    text-transform:uppercase;
-}
+        padding: 15px 16px 17px;
+    }
 
 
-#kd-portfolio-showcase .kdps-card-title{
+    #kd-portfolio-showcase .kdps-label {
 
-    margin:0;
+        margin-bottom: 5px;
 
-    color:var(--navy);
+        color: var(--orange);
 
-    font-size:17px;
+        font-size: 9px;
 
-    line-height:1.38;
+        line-height: 1.2;
 
-    font-weight:800;
+        font-weight: 800;
 
-    letter-spacing:-.3px;
-}
+        letter-spacing: .10em;
 
-
-#kd-portfolio-showcase .kdps-card-text{
-
-    margin:6px 0 0;
-
-    color:var(--text);
-
-    font-size:12px;
-
-    line-height:1.62;
-
-    font-weight:500;
-}
+        text-transform: uppercase;
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-card-title {
+
+        margin: 0;
+
+        color: var(--navy);
+
+        font-size: 17px;
+
+        line-height: 1.38;
+
+        font-weight: 800;
+
+        letter-spacing: -.3px;
+    }
+
+
+    #kd-portfolio-showcase .kdps-card-text {
+
+        margin: 6px 0 0;
+
+        color: var(--text);
+
+        font-size: 12px;
+
+        line-height: 1.62;
+
+        font-weight: 500;
+    }
+
+
+    /* =========================================================
  VERTICAL VIDEO CARDS
  REELS / EDUCATION / ANCHOR
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-reel-card{
+    #kd-portfolio-showcase .kdps-reel-card {
 
-    position:relative;
+        position: relative;
 
-    width:100%;
+        width: 100%;
 
-    min-width:0;
+        min-width: 0;
 
-    aspect-ratio:9/13;
+        aspect-ratio: 9/13;
 
-    overflow:hidden;
+        overflow: hidden;
 
-    border-radius:16px;
+        border-radius: 16px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #07172F,
-            #0B274B
-        );
+        background:
+            linear-gradient(145deg,
+                #07172F,
+                #0B274B);
 
-    border:
-        1px solid rgba(6,15,62,.08);
+        border:
+            1px solid rgba(6, 15, 62, .08);
 
-    box-shadow:
-        0 9px 27px rgba(6,15,62,.09);
+        box-shadow:
+            0 9px 27px rgba(6, 15, 62, .09);
 
-    cursor:pointer;
+        cursor: pointer;
 
-    transition:
-        transform .32s ease,
-        box-shadow .32s ease,
-        border-color .32s ease;
-}
+        transition:
+            transform .32s ease,
+            box-shadow .32s ease,
+            border-color .32s ease;
+    }
 
 
-#kd-portfolio-showcase .kdps-reel-card:hover{
+    #kd-portfolio-showcase .kdps-reel-card:hover {
 
-    transform:translateY(-5px);
+        transform: translateY(-5px);
 
-    border-color:
-        rgba(244,123,32,.30);
+        border-color:
+            rgba(244, 123, 32, .30);
 
-    box-shadow:
-        0 20px 40px rgba(6,15,62,.15);
-}
+        box-shadow:
+            0 20px 40px rgba(6, 15, 62, .15);
+    }
 
 
-#kd-portfolio-showcase .kdps-reel-card video{
+    #kd-portfolio-showcase .kdps-reel-card video {
 
-    display:block;
+        display: block;
 
-    width:100%;
-    height:100%;
+        width: 100%;
+        height: 100%;
 
-    object-fit:cover;
+        object-fit: cover;
 
-    transition:transform .55s ease;
-}
+        transition: transform .55s ease;
+    }
 
 
-#kd-portfolio-showcase .kdps-reel-card:hover video{
+    #kd-portfolio-showcase .kdps-reel-card:hover video {
 
-    transform:scale(1.025);
-}
+        transform: scale(1.025);
+    }
 
 
-#kd-portfolio-showcase .kdps-reel-card::after{
+    #kd-portfolio-showcase .kdps-reel-card::after {
 
-    content:"";
+        content: "";
 
-    position:absolute;
+        position: absolute;
 
-    z-index:2;
+        z-index: 2;
 
-    inset:0;
+        inset: 0;
 
-    pointer-events:none;
+        pointer-events: none;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(4,12,31,.84) 0%,
-            rgba(4,12,31,.26) 41%,
-            transparent 67%
-        );
-}
+        background:
+            linear-gradient(to top,
+                rgba(4, 12, 31, .84) 0%,
+                rgba(4, 12, 31, .26) 41%,
+                transparent 67%);
+    }
 
 
-/* TYPE BADGE */
+    /* TYPE BADGE */
 
-#kd-portfolio-showcase .kdps-vertical-badge{
+    #kd-portfolio-showcase .kdps-vertical-badge {
 
-    position:absolute;
+        position: absolute;
 
-    z-index:7;
+        z-index: 7;
 
-    left:13px;
-    top:13px;
+        left: 13px;
+        top: 13px;
 
-    min-height:28px;
+        min-height: 28px;
 
-    padding:0 9px;
+        padding: 0 9px;
 
-    display:flex;
+        display: flex;
 
-    align-items:center;
+        align-items: center;
 
-    gap:6px;
+        gap: 6px;
 
-    border-radius:7px;
+        border-radius: 7px;
 
-    color:#FFFFFF;
+        color: #FFFFFF;
 
-    font-size:8px;
+        font-size: 8px;
 
-    line-height:1;
+        line-height: 1;
 
-    font-weight:800;
+        font-weight: 800;
 
-    letter-spacing:.06em;
+        letter-spacing: .06em;
 
-    text-transform:uppercase;
+        text-transform: uppercase;
 
-    background:
-        rgba(6,15,62,.68);
+        background:
+            rgba(6, 15, 62, .68);
 
-    border:
-        1px solid rgba(255,255,255,.13);
+        border:
+            1px solid rgba(255, 255, 255, .13);
 
-    backdrop-filter:blur(8px);
-}
+        backdrop-filter: blur(8px);
+    }
 
 
-#kd-portfolio-showcase .kdps-vertical-badge i{
+    #kd-portfolio-showcase .kdps-vertical-badge i {
 
-    color:#FFAC70;
-}
+        color: #FFAC70;
+    }
 
 
-/* REEL TEXT */
+    /* REEL TEXT */
 
-#kd-portfolio-showcase .kdps-reel-info{
+    #kd-portfolio-showcase .kdps-reel-info {
 
-    position:absolute;
+        position: absolute;
 
-    z-index:7;
+        z-index: 7;
 
-    left:17px;
-    right:17px;
-    bottom:16px;
+        left: 17px;
+        right: 17px;
+        bottom: 16px;
 
-    color:#FFFFFF;
-}
+        color: #FFFFFF;
+    }
 
 
-#kd-portfolio-showcase .kdps-reel-info span{
+    #kd-portfolio-showcase .kdps-reel-info span {
 
-    display:block;
+        display: block;
 
-    margin-bottom:5px;
+        margin-bottom: 5px;
 
-    color:#FFB078;
+        color: #FFB078;
 
-    font-size:10px;
+        font-size: 10px;
 
-    line-height:1.2;
+        line-height: 1.2;
 
-    font-weight:800;
+        font-weight: 800;
 
-    letter-spacing:.10em;
+        letter-spacing: .10em;
 
-    text-transform:uppercase;
-}
+        text-transform: uppercase;
+    }
 
 
-#kd-portfolio-showcase .kdps-reel-info strong{
+    #kd-portfolio-showcase .kdps-reel-info strong {
 
-    display:block;
+        display: block;
 
-    font-size:17px;
+        font-size: 17px;
 
-    line-height:1.35;
+        line-height: 1.35;
 
-    font-weight:800;
+        font-weight: 800;
 
-    letter-spacing:-.2px;
-}
+        letter-spacing: -.2px;
+    }
 
 
-/* =========================================================
+    /* =========================================================
  IMAGE CARDS
 ========================================================= */
 
-#kd-portfolio-showcase .kdps-image-card{
+    #kd-portfolio-showcase .kdps-image-card {
 
-    position:relative;
+        position: relative;
 
-    width:100%;
+        width: 100%;
 
-    min-width:0;
+        min-width: 0;
 
-    aspect-ratio:1/1;
+        aspect-ratio: 1/1;
 
-    overflow:hidden;
+        overflow: hidden;
 
-    border-radius:16px;
+        border-radius: 16px;
 
-    background:#ECEFF2;
+        background: #ECEFF2;
 
-    border:1px solid var(--line);
+        border: 1px solid var(--line);
 
-    box-shadow:
-        0 8px 25px rgba(6,15,62,.065);
+        box-shadow:
+            0 8px 25px rgba(6, 15, 62, .065);
 
-    transition:
-        transform .32s ease,
-        box-shadow .32s ease,
-        border-color .32s ease;
-}
-
-
-#kd-portfolio-showcase .kdps-image-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:
-        rgba(244,123,32,.30);
-
-    box-shadow:
-        0 20px 40px rgba(6,15,62,.13);
-}
+        transition:
+            transform .32s ease,
+            box-shadow .32s ease,
+            border-color .32s ease;
+    }
 
 
-#kd-portfolio-showcase .kdps-image-card img{
+    #kd-portfolio-showcase .kdps-image-card:hover {
 
-    display:block;
+        transform: translateY(-5px);
 
-    width:100%;
-    height:100%;
+        border-color:
+            rgba(244, 123, 32, .30);
 
-    object-fit:cover;
-
-    transition:
-        transform .6s cubic-bezier(.2,.7,.2,1);
-}
+        box-shadow:
+            0 20px 40px rgba(6, 15, 62, .13);
+    }
 
 
-#kd-portfolio-showcase .kdps-image-card:hover img{
+    #kd-portfolio-showcase .kdps-image-card img {
 
-    transform:scale(1.045);
-}
+        display: block;
 
+        width: 100%;
+        height: 100%;
 
-#kd-portfolio-showcase .kdps-image-card::after{
+        object-fit: cover;
 
-    content:"";
-
-    position:absolute;
-
-    z-index:2;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(4,13,35,.80) 0%,
-            rgba(4,13,35,.15) 46%,
-            transparent 70%
-        );
-}
+        transition:
+            transform .6s cubic-bezier(.2, .7, .2, 1);
+    }
 
 
-#kd-portfolio-showcase .kdps-image-info{
+    #kd-portfolio-showcase .kdps-image-card:hover img {
 
-    position:absolute;
-
-    z-index:7;
-
-    left:17px;
-    right:17px;
-    bottom:16px;
-
-    color:#FFFFFF;
-}
+        transform: scale(1.045);
+    }
 
 
-#kd-portfolio-showcase .kdps-image-info span{
+    #kd-portfolio-showcase .kdps-image-card::after {
 
-    display:block;
+        content: "";
 
-    margin-bottom:5px;
+        position: absolute;
 
-    color:#FFB078;
+        z-index: 2;
 
-    font-size:10px;
+        inset: 0;
 
-    line-height:1.2;
+        pointer-events: none;
 
-    font-weight:800;
-
-    letter-spacing:.10em;
-
-    text-transform:uppercase;
-}
-
-
-#kd-portfolio-showcase .kdps-image-info strong{
-
-    display:block;
-
-    font-size:17px;
-
-    line-height:1.35;
-
-    font-weight:800;
-}
+        background:
+            linear-gradient(to top,
+                rgba(4, 13, 35, .80) 0%,
+                rgba(4, 13, 35, .15) 46%,
+                transparent 70%);
+    }
 
 
-/* =========================================================
+    #kd-portfolio-showcase .kdps-image-info {
+
+        position: absolute;
+
+        z-index: 7;
+
+        left: 17px;
+        right: 17px;
+        bottom: 16px;
+
+        color: #FFFFFF;
+    }
+
+
+    #kd-portfolio-showcase .kdps-image-info span {
+
+        display: block;
+
+        margin-bottom: 5px;
+
+        color: #FFB078;
+
+        font-size: 10px;
+
+        line-height: 1.2;
+
+        font-weight: 800;
+
+        letter-spacing: .10em;
+
+        text-transform: uppercase;
+    }
+
+
+    #kd-portfolio-showcase .kdps-image-info strong {
+
+        display: block;
+
+        font-size: 17px;
+
+        line-height: 1.35;
+
+        font-weight: 800;
+    }
+
+
+    /* =========================================================
  TABLET
 ========================================================= */
 
-@media(max-width:1050px){
+    @media(max-width:1050px) {
 
-    #kd-portfolio-showcase{
+        #kd-portfolio-showcase {
 
-        padding:
-            34px 28px 48px;
+            padding:
+                34px 28px 48px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-title {
+
+            font-size: 38px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-description {
+
+            font-size: 14px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-media-grid {
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-tabs {
+
+            max-width: 720px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-reel-card {
+
+            aspect-ratio: 9/12;
+        }
+
     }
 
 
-    #kd-portfolio-showcase .kdps-title{
-
-        font-size:38px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-description{
-
-        font-size:14px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-media-grid{
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-        gap:16px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-tabs{
-
-        max-width:720px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-reel-card{
-
-        aspect-ratio:9/12;
-    }
-
-}
-
-
-/* =========================================================
+    /* =========================================================
  MOBILE
 ========================================================= */
 
-@media(max-width:620px){
+    @media(max-width:620px) {
 
-    #kd-portfolio-showcase{
+        #kd-portfolio-showcase {
 
-        padding:
-            29px 16px 36px;
+            padding:
+                29px 16px 36px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-header {
+
+            margin-bottom: 19px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-eyebrow {
+
+            margin-bottom: 9px;
+
+            padding: 7px 10px;
+
+            font-size: 8px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-title {
+
+            padding-bottom: 5px;
+
+            font-size: 29px;
+
+            line-height: 1.22;
+
+            letter-spacing: -.9px;
+
+            white-space: normal;
+        }
+
+
+        #kd-portfolio-showcase .kdps-description {
+
+            margin-top: 5px;
+
+            font-size: 12.5px;
+
+            line-height: 1.65;
+        }
+
+
+        /* TABS HORIZONTAL SCROLL */
+
+        #kd-portfolio-showcase .kdps-tabs-wrap {
+
+            display: block;
+
+            width: 100%;
+
+            margin-bottom: 19px;
+
+            overflow-x: auto;
+
+            scrollbar-width: none;
+
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+        #kd-portfolio-showcase .kdps-tabs-wrap::-webkit-scrollbar {
+
+            display: none;
+        }
+
+
+        #kd-portfolio-showcase .kdps-tabs {
+
+            width: max-content;
+
+            min-width: 100%;
+
+            flex-wrap: nowrap;
+
+            justify-content: flex-start;
+
+            gap: 3px;
+
+            padding: 4px;
+
+            border-radius: 11px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-tab {
+
+            min-width: max-content;
+
+            height: 38px;
+
+            padding: 0 11px;
+
+            gap: 5px;
+
+            font-size: 8px;
+
+            border-radius: 7px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-tab i {
+
+            font-size: 8px;
+        }
+
+
+        /* 2 CARDS */
+
+        #kd-portfolio-showcase .kdps-media-grid {
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 10px;
+        }
+
+
+        /* YOUTUBE */
+
+        #kd-portfolio-showcase .kdps-youtube-card {
+
+            border-radius: 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-video-content {
+
+            padding: 10px 10px 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-label {
+
+            font-size: 7px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-card-title {
+
+            font-size: 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-card-text {
+
+            margin-top: 4px;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+        }
+
+
+        #kd-portfolio-showcase .kdps-play {
+
+            width: 34px;
+            height: 34px;
+
+            font-size: 8px;
+
+            box-shadow:
+                0 7px 17px rgba(0, 0, 0, .20),
+                0 0 0 4px rgba(255, 255, 255, .13);
+        }
+
+
+        #kd-portfolio-showcase .kdps-badge {
+
+            left: 7px;
+            top: 7px;
+
+            min-height: 22px;
+
+            padding: 0 6px;
+
+            font-size: 6px;
+        }
+
+
+        /* VERTICAL */
+
+        #kd-portfolio-showcase .kdps-reel-card {
+
+            aspect-ratio: 9/13;
+
+            border-radius: 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-reel-info {
+
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-reel-info span {
+
+            margin-bottom: 3px;
+
+            font-size: 7px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-reel-info strong {
+
+            font-size: 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-reel-play {
+
+            width: 30px;
+            height: 30px;
+
+            right: 8px;
+            top: 8px;
+
+            font-size: 7px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-vertical-badge {
+
+            left: 8px;
+            top: 8px;
+
+            min-height: 22px;
+
+            padding: 0 6px;
+
+            font-size: 6px;
+        }
+
+
+        /* IMAGES */
+
+        #kd-portfolio-showcase .kdps-image-card {
+
+            border-radius: 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-image-info {
+
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-image-info span {
+
+            margin-bottom: 3px;
+
+            font-size: 7px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-image-info strong {
+
+            font-size: 12px;
+        }
+
+
+        #kd-portfolio-showcase .kdps-dots {
+
+            display: none;
+        }
+
     }
 
 
-    #kd-portfolio-showcase .kdps-header{
+    @media(max-width:380px) {
 
-        margin-bottom:19px;
+        #kd-portfolio-showcase .kdps-title {
+
+            font-size: 26px;
+        }
+
     }
 
 
-    #kd-portfolio-showcase .kdps-eyebrow{
-
-        margin-bottom:9px;
-
-        padding:7px 10px;
-
-        font-size:8px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-title{
-
-        padding-bottom:5px;
-
-        font-size:29px;
-
-        line-height:1.22;
-
-        letter-spacing:-.9px;
-
-        white-space:normal;
-    }
-
-
-    #kd-portfolio-showcase .kdps-description{
-
-        margin-top:5px;
-
-        font-size:12.5px;
-
-        line-height:1.65;
-    }
-
-
-    /* TABS HORIZONTAL SCROLL */
-
-    #kd-portfolio-showcase .kdps-tabs-wrap{
-
-        display:block;
-
-        width:100%;
-
-        margin-bottom:19px;
-
-        overflow-x:auto;
-
-        scrollbar-width:none;
-
-        -webkit-overflow-scrolling:touch;
-    }
-
-
-    #kd-portfolio-showcase .kdps-tabs-wrap::-webkit-scrollbar{
-
-        display:none;
-    }
-
-
-    #kd-portfolio-showcase .kdps-tabs{
-
-        width:max-content;
-
-        min-width:100%;
-
-        flex-wrap:nowrap;
-
-        justify-content:flex-start;
-
-        gap:3px;
-
-        padding:4px;
-
-        border-radius:11px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-tab{
-
-        min-width:max-content;
-
-        height:38px;
-
-        padding:0 11px;
-
-        gap:5px;
-
-        font-size:8px;
-
-        border-radius:7px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-tab i{
-
-        font-size:8px;
-    }
-
-
-    /* 2 CARDS */
-
-    #kd-portfolio-showcase .kdps-media-grid{
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
-        gap:10px;
-    }
-
-
-    /* YOUTUBE */
-
-    #kd-portfolio-showcase .kdps-youtube-card{
-
-        border-radius:12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-video-content{
-
-        padding:10px 10px 12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-label{
-
-        font-size:7px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-card-title{
-
-        font-size:12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-card-text{
-
-        margin-top:4px;
-
-        font-size:9px;
-
-        line-height:1.5;
-    }
-
-
-    #kd-portfolio-showcase .kdps-play{
-
-        width:34px;
-        height:34px;
-
-        font-size:8px;
-
-        box-shadow:
-            0 7px 17px rgba(0,0,0,.20),
-            0 0 0 4px rgba(255,255,255,.13);
-    }
-
-
-    #kd-portfolio-showcase .kdps-badge{
-
-        left:7px;
-        top:7px;
-
-        min-height:22px;
-
-        padding:0 6px;
-
-        font-size:6px;
-    }
-
-
-    /* VERTICAL */
-
-    #kd-portfolio-showcase .kdps-reel-card{
-
-        aspect-ratio:9/13;
-
-        border-radius:12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-reel-info{
-
-        left:10px;
-        right:10px;
-        bottom:10px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-reel-info span{
-
-        margin-bottom:3px;
-
-        font-size:7px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-reel-info strong{
-
-        font-size:12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-reel-play{
-
-        width:30px;
-        height:30px;
-
-        right:8px;
-        top:8px;
-
-        font-size:7px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-vertical-badge{
-
-        left:8px;
-        top:8px;
-
-        min-height:22px;
-
-        padding:0 6px;
-
-        font-size:6px;
-    }
-
-
-    /* IMAGES */
-
-    #kd-portfolio-showcase .kdps-image-card{
-
-        border-radius:12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-image-info{
-
-        left:10px;
-        right:10px;
-        bottom:10px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-image-info span{
-
-        margin-bottom:3px;
-
-        font-size:7px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-image-info strong{
-
-        font-size:12px;
-    }
-
-
-    #kd-portfolio-showcase .kdps-dots{
-
-        display:none;
-    }
-
-}
-
-
-@media(max-width:380px){
-
-    #kd-portfolio-showcase .kdps-title{
-
-        font-size:26px;
-    }
-
-}
-
-
-/* =========================================================
+    /* =========================================================
  REDUCED MOTION
 ========================================================= */
 
-@media(prefers-reduced-motion:reduce){
+    @media(prefers-reduced-motion:reduce) {
 
-    #kd-portfolio-showcase *,
-    #kd-portfolio-showcase *::before,
-    #kd-portfolio-showcase *::after{
+        #kd-portfolio-showcase *,
+        #kd-portfolio-showcase *::before,
+        #kd-portfolio-showcase *::after {
 
-        animation:none!important;
+            animation: none !important;
 
-        transition:none!important;
+            transition: none !important;
+        }
+
     }
-
-}
-
 </style>
 
 
@@ -1636,7 +1599,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                             preload="metadata">
 
                             <source
-                                src=""
+                                src="assets/videos/sqwe.mp4"
                                 type="video/mp4">
 
                         </video>
@@ -2003,30 +1966,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
-                    </video>
-
-                    <div class="kdps-vertical-badge">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        Reel
-                    </div>
-
-                    <div class="kdps-reel-play">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-
-                    <div class="kdps-reel-info">
-                        <span>Social Reel</span>
-                        <strong>Short-Form Creative</strong>
-                    </div>
-
-                </article>
-
-
-                <article class="kdps-reel-card kdps-video-item">
-
-                    <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/Alpha Auto 1 720 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2040,7 +1980,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                     <div class="kdps-reel-info">
                         <span>Brand Reel</span>
-                        <strong>Visual Storytelling</strong>
+                        <strong>Reel 1</strong>
                     </div>
 
                 </article>
@@ -2049,7 +1989,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/Alpha Auto 2 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2062,8 +2002,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Campaign Reel</span>
-                        <strong>Promotional Content</strong>
+                        <span>Brand Reel</span>
+                        <strong>Reel 2</strong>
                     </div>
 
                 </article>
@@ -2072,7 +2012,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/Lennore - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2085,8 +2025,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Creative Reel</span>
-                        <strong>Digital Content</strong>
+                        <span>Brand Reel</span>
+                        <strong>Reel 3</strong>
                     </div>
 
                 </article>
@@ -2095,7 +2035,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/Lennore 2 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2108,8 +2048,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Product Reel</span>
-                        <strong>Product Creative</strong>
+                        <span>Brand Reel</span>
+                        <strong>Reel 4</strong>
                     </div>
 
                 </article>
@@ -2118,7 +2058,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/M3M - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2131,8 +2071,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Digital Reel</span>
-                        <strong>Modern Content</strong>
+                        <span>Brand Reel</span>
+                        <strong>Reel 5</strong>
                     </div>
 
                 </article>
@@ -2141,7 +2081,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/M3M 2 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2154,8 +2094,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Creative Reel</span>
-                        <strong>Visual Campaign</strong>
+                        <span>Brand Reel</span>
+                        <strong>Reel 6</strong>
                     </div>
 
                 </article>
@@ -2164,7 +2104,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/reels_hd/Mansha Reel 1 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
@@ -2177,8 +2117,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Social Content</span>
-                        <strong>Short Video</strong>
+                        <span>Brand Reel</span>
+                        <strong>Reel 7</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="kdps-reel-card kdps-video-item">
+
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/reels_hd/Sofia Reel - Minerdia Studio (720p, h264).mp4" type="video/mp4">
+                    </video>
+
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 8</strong>
                     </div>
 
                 </article>
@@ -2736,245 +2699,243 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 <script>
+    (function() {
 
-(function(){
+        const section =
+            document.querySelector('#kd-portfolio-showcase');
 
-    const section =
-        document.querySelector('#kd-portfolio-showcase');
-
-    if(!section) return;
-
-
-    /* =====================================================
-       TABS
-    ====================================================== */
-
-    const tabs =
-        section.querySelectorAll('.kdps-tab');
-
-    const panels =
-        section.querySelectorAll('.kdps-panel');
+        if (!section) return;
 
 
-    function stopAllVideos(){
+        /* =====================================================
+           TABS
+        ====================================================== */
 
-        section
-        .querySelectorAll('video')
-        .forEach(function(video){
+        const tabs =
+            section.querySelectorAll('.kdps-tab');
 
-            video.pause();
-
-            try{
-                video.currentTime = 0;
-            }catch(e){}
-
-            const item =
-                video.closest('.kdps-video-item');
-
-            if(item){
-                item.classList.remove('kdps-playing');
-            }
-
-        });
-
-    }
+        const panels =
+            section.querySelectorAll('.kdps-panel');
 
 
-    tabs.forEach(function(tab){
-
-        tab.addEventListener('click',function(){
-
-            const target =
-                this.getAttribute('data-tab');
-
-            stopAllVideos();
-
-
-            tabs.forEach(function(button){
-
-                button.classList.remove('active');
-
-            });
-
-
-            panels.forEach(function(panel){
-
-                panel.classList.remove('active');
-
-            });
-
-
-            this.classList.add('active');
-
-
-            const targetPanel =
-                section.querySelector(
-                    '[data-panel="' + target + '"]'
-                );
-
-
-            if(targetPanel){
-
-                targetPanel.classList.add('active');
-
-            }
-
-        });
-
-    });
-
-
-    /* =====================================================
-       VIDEO PLAY / PAUSE
-    ====================================================== */
-
-    const videoItems =
-        section.querySelectorAll('.kdps-video-item');
-
-
-    videoItems.forEach(function(item){
-
-        const video =
-            item.querySelector('video');
-
-        if(!video) return;
-
-
-        function stopOtherVideos(){
+        function stopAllVideos() {
 
             section
-            .querySelectorAll('video')
-            .forEach(function(otherVideo){
+                .querySelectorAll('video')
+                .forEach(function(video) {
 
-                if(otherVideo !== video){
+                    video.pause();
 
-                    otherVideo.pause();
+                    try {
+                        video.currentTime = 0;
+                    } catch (e) {}
 
-                    const parent =
-                        otherVideo.closest(
-                            '.kdps-video-item'
-                        );
+                    const item =
+                        video.closest('.kdps-video-item');
 
-                    if(parent){
+                    if (item) {
+                        item.classList.remove('kdps-playing');
+                    }
 
-                        parent.classList.remove(
-                            'kdps-playing'
-                        );
+                });
+
+        }
+
+
+        tabs.forEach(function(tab) {
+
+            tab.addEventListener('click', function() {
+
+                const target =
+                    this.getAttribute('data-tab');
+
+                stopAllVideos();
+
+
+                tabs.forEach(function(button) {
+
+                    button.classList.remove('active');
+
+                });
+
+
+                panels.forEach(function(panel) {
+
+                    panel.classList.remove('active');
+
+                });
+
+
+                this.classList.add('active');
+
+
+                const targetPanel =
+                    section.querySelector(
+                        '[data-panel="' + target + '"]'
+                    );
+
+
+                if (targetPanel) {
+
+                    targetPanel.classList.add('active');
+
+                }
+
+            });
+
+        });
+
+
+        /* =====================================================
+           VIDEO PLAY / PAUSE
+        ====================================================== */
+
+        const videoItems =
+            section.querySelectorAll('.kdps-video-item');
+
+
+        videoItems.forEach(function(item) {
+
+            const video =
+                item.querySelector('video');
+
+            if (!video) return;
+
+
+            function stopOtherVideos() {
+
+                section
+                    .querySelectorAll('video')
+                    .forEach(function(otherVideo) {
+
+                        if (otherVideo !== video) {
+
+                            otherVideo.pause();
+
+                            const parent =
+                                otherVideo.closest(
+                                    '.kdps-video-item'
+                                );
+
+                            if (parent) {
+
+                                parent.classList.remove(
+                                    'kdps-playing'
+                                );
+
+                            }
+
+                        }
+
+                    });
+
+            }
+
+
+            function playVideo() {
+
+                const source =
+                    video.querySelector('source');
+
+                /*
+                 Prevent error when src="" has not
+                 yet been replaced with your video.
+                */
+
+                if (
+                    !source ||
+                    !source.getAttribute('src') ||
+                    source.getAttribute('src').trim() === ''
+                ) {
+                    return;
+                }
+
+
+                stopOtherVideos();
+
+
+                const promise =
+                    video.play();
+
+
+                if (promise !== undefined) {
+
+                    promise
+                        .then(function() {
+
+                            item.classList.add(
+                                'kdps-playing'
+                            );
+
+                        })
+                        .catch(function() {});
+
+                }
+
+            }
+
+
+            function pauseVideo() {
+
+                video.pause();
+
+                item.classList.remove(
+                    'kdps-playing'
+                );
+
+            }
+
+
+            /* DESKTOP HOVER */
+
+            item.addEventListener(
+                'mouseenter',
+                function() {
+
+                    if (window.innerWidth > 768) {
+
+                        playVideo();
 
                     }
 
                 }
-
-            });
-
-        }
-
-
-        function playVideo(){
-
-            const source =
-                video.querySelector('source');
-
-            /*
-             Prevent error when src="" has not
-             yet been replaced with your video.
-            */
-
-            if(
-                !source ||
-                !source.getAttribute('src') ||
-                source.getAttribute('src').trim() === ''
-            ){
-                return;
-            }
-
-
-            stopOtherVideos();
-
-
-            const promise =
-                video.play();
-
-
-            if(promise !== undefined){
-
-                promise
-                .then(function(){
-
-                    item.classList.add(
-                        'kdps-playing'
-                    );
-
-                })
-                .catch(function(){});
-
-            }
-
-        }
-
-
-        function pauseVideo(){
-
-            video.pause();
-
-            item.classList.remove(
-                'kdps-playing'
             );
 
-        }
 
+            item.addEventListener(
+                'mouseleave',
+                function() {
 
-        /* DESKTOP HOVER */
+                    if (window.innerWidth > 768) {
 
-        item.addEventListener(
-            'mouseenter',
-            function(){
+                        pauseVideo();
 
-                if(window.innerWidth > 768){
-
-                    playVideo();
+                    }
 
                 }
-
-            }
-        );
+            );
 
 
-        item.addEventListener(
-            'mouseleave',
-            function(){
+            /* CLICK / MOBILE */
 
-                if(window.innerWidth > 768){
+            item.addEventListener(
+                'click',
+                function() {
 
-                    pauseVideo();
+                    if (video.paused) {
 
-                }
+                        playVideo();
 
-            }
-        );
+                    } else {
 
+                        pauseVideo();
 
-        /* CLICK / MOBILE */
-
-        item.addEventListener(
-            'click',
-            function(){
-
-                if(video.paused){
-
-                    playVideo();
-
-                }else{
-
-                    pauseVideo();
+                    }
 
                 }
+            );
 
-            }
-        );
+        });
 
-    });
-
-})();
-
+    })();
 </script>

@@ -446,13 +446,101 @@
             transform: none;
         }
     }
+
+    .check-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14.5px;
+        color: #fff;
+    }
+
+    .check-item input {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--blue);
+        margin: 0;
+    }
+
+    .checks {
+        display: flex;
+        gap: 20px;
+        padding: 10px 0 30px;
+        flex-wrap: wrap;
+    }
+
+    .req {
+        color: red;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field.full {
+        grid-column: 1 / -1;
+    }
+
+    .aer5454 {
+        display: flex;
+        color: #fff;
+        font-weight: 700;
+
+    }
+
+    @media (max-width: 900px) {
+        .field.full {
+            grid-column: 1;
+        }
+    }
+
+
+    .iauwe {
+        position: relative;
+    }
+
+    .whatsapp_qr20 {
+
+
+        display: flex;
+        position: absolute;
+        left: 100%;
+        top: 0%;
+        transform: translateX(57%) translateY(50%);
+
+
+        animation: qrLeftAnimation 1.5s ease-in-out infinite;
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .ohterivcon_qr20 {
+
+
+        display: flex;
+        position: absolute;
+        left: -50%;
+        top: 100%;
+        transform: translateX(10%) translateY(-150%);
+
+
+        animation: qrRightAnimation 1.5s ease-in-out infinite;
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+
 </style>
 
 <section class="qcontact-wrap">
     <div class="qcontact-inner">
 
         <div class="qcontact-head">
-            <h2 class="qcontact-title">Get in touch with <span class="qcontact-title-accent">Smart Technology King Digital</span></h2>
+            <h2 class="qcontact-title">Get in touch with <span class="qcontact-title-accent"> King Digital</span></h2>
             <p class="qcontact-sub">Have questions about WhatsApp API or Bulk SMS? Reach out to King Digital leading communication experts.</p>
         </div>
 
@@ -504,6 +592,17 @@
                         <textarea class="qcontact-textarea" id="qcontactMessage" name="message" placeholder="Tell us about your requirements, use case, or question..." required></textarea>
                     </div>
 
+                    <div class="field full aer5454">
+                        <label>Interested In<span class="req">*</span></label>
+                        <div class="checks">
+                            <label class="check-item"><input type="checkbox"> Partnership</label>
+                            <label class="check-item"><input type="checkbox"> Bulk Purchase</label>
+                            <label class="check-item"><input type="checkbox"> Integration</label>
+                            <label class="check-item"><input type="checkbox"> Reseller</label>
+                            <label class="check-item"><input type="checkbox"> Other</label>
+                        </div>
+                    </div>
+
                     <div class="qcontact-field">
                         <label class="qcontact-label">Enter CAPTCHA: <span class="qcontact-required">*</span></label>
                         <div class="qcontact-captcha-row">
@@ -549,7 +648,7 @@
                         <p class="qcontact-info-value"></p>
                         <!-- <p class="qcontact-info-value">billing@staticking.com</p> -->
                     </div>
-                     <div>
+                    <div>
                         <p class="qcontact-info-label">MAIN EMAIL</p>
                         <p class="qcontact-info-value qcontact-teal">info@kingdigital.in</p>
 
@@ -559,7 +658,7 @@
                         <p class="qcontact-info-label">Sales</p>
 
                         <!-- <p class="qcontact-info-value qcontact-teal">+91-9211339966</p> -->
-                        <p class="qcontact-info-value qcontact-teal">support@kingdigital.com</p>
+                        <p class="qcontact-info-value qcontact-teal">support@kingdigital.in</p>
                     </div>
                 </div>
 
@@ -583,12 +682,56 @@
                     </div>
                 </div>
 
-                <div class="qcontact-response-card">
-                    <div class="qcontact-response-head">
+                <div class="qcontact-response-card" >
+                    <div class="qcontact-response-head" style="justify-content: center;">
                         <span>⏱️</span>
-                        <p class="qcontact-response-title">Response Time</p>
+                        <p class="qcontact-response-title">Scan To Connect ( 24 / 7 )</p>
                     </div>
-                    <p class="qcontact-response-text">We typically respond to all inquiries within <strong> 24 hours </strong> during business days. For urgent queries, we make every effort to get back to you as quickly as possible.</p>
+                    <!-- Yahan text aur QR code ke liye naya layout structure add kiya hai -->
+                    <div class="qcontact-response-body" style="display: flex; align-items: center; justify-content: space-around; gap: 40px; flex-wrap: wrap;">
+
+                        <!-- Pehla QR Code (Left wala) -->
+                        <div class="qr-code-container iauwe" style="flex-shrink: 0; position: relative;">
+                            <img src="assets/contact-qr.jpg.jpeg" alt="Scan QR Code" style="width: 133px; height: 151px; object-fit: contain;">
+                            <span class="whatsapp_qr20" style="display: none;">
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 31C23.732 31 30 24.732 30 17C30 9.26801 23.732 3 16 3C8.26801 3 2 9.26801 2 17C2 19.5109 2.661 21.8674 3.81847 23.905L2 31L9.31486 29.3038C11.3014 30.3854 13.5789 31 16 31ZM16 28.8462C22.5425 28.8462 27.8462 23.5425 27.8462 17C27.8462 10.4576 22.5425 5.15385 16 5.15385C9.45755 5.15385 4.15385 10.4576 4.15385 17C4.15385 19.5261 4.9445 21.8675 6.29184 23.7902L5.23077 27.7692L9.27993 26.7569C11.1894 28.0746 13.5046 28.8462 16 28.8462Z" fill="#BFC8D0"></path>
+                                    <path d="M28 16C28 22.6274 22.6274 28 16 28C13.4722 28 11.1269 27.2184 9.19266 25.8837L5.09091 26.9091L6.16576 22.8784C4.80092 20.9307 4 18.5589 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16Z" fill="url(#paint0_linear_87_7264)"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 18.5109 2.661 20.8674 3.81847 22.905L2 30L9.31486 28.3038C11.3014 29.3854 13.5789 30 16 30ZM16 27.8462C22.5425 27.8462 27.8462 22.5425 27.8462 16C27.8462 9.45755 22.5425 4.15385 16 4.15385C9.45755 4.15385 4.15385 9.45755 4.15385 16C4.15385 18.5261 4.9445 20.8675 6.29184 22.7902L5.23077 26.7692L9.27993 25.7569C11.1894 27.0746 13.5046 27.8462 16 27.8462Z" fill="white"></path>
+                                    <path d="M12.5 9.49989C12.1672 8.83131 11.6565 8.8905 11.1407 8.8905C10.2188 8.8905 8.78125 9.99478 8.78125 12.05C8.78125 13.7343 9.52345 15.578 12.0244 18.3361C14.438 20.9979 17.6094 22.3748 20.2422 22.3279C22.875 22.2811 23.4167 20.0154 23.4167 19.2503C23.4167 18.9112 23.2062 18.742 23.0613 18.696C22.1641 18.2654 20.5093 17.4631 20.1328 17.3124C19.7563 17.1617 19.5597 17.3656 19.4375 17.4765C19.0961 17.8018 18.4193 18.7608 18.1875 18.9765C17.9558 19.1922 17.6103 19.083 17.4665 19.0015C16.9374 18.7892 15.5029 18.1511 14.3595 17.0426C12.9453 15.6718 12.8623 15.2001 12.5959 14.7803C12.3828 14.4444 12.5392 14.2384 12.6172 14.1483C12.9219 13.7968 13.3426 13.254 13.5313 12.9843C13.7199 12.7145 13.5702 12.305 13.4803 12.05C13.0938 10.953 12.7663 10.0347 12.5 9.49989Z" fill="white"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_87_7264" x1="26.5" y1="7" x2="4" y2="28" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#5BD066"></stop>
+                                            <stop offset="1" stop-color="#27B43E"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+
+                        <!-- Doosra QR Code (Right wala) - Aap yahan bhi upar wale ki tarah icon class add kar sakte hain agar zaroorat ho -->
+                        <div class="qr-code-container iauwe" style="flex-shrink: 0; position: relative;">
+                            <img src="assets/contact-qr.jpg.jpeg" alt="Scan QR Code" style="width: 133px; height: 151px; object-fit: contain;">
+                            <!-- Agar right wale par bhi icon chahiye toh yahan span class dal sakte hain -->
+
+                            <span class="ohterivcon_qr20" style="display: none;">
+                                <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path d="M66 485.5a399.2 315.1 0 1 0 798.4 0 399.2 315.1 0 1 0-798.4 0Z" fill="#438444"></path>
+                                        <path d="M198.6 666.6L148 866.1l197.3-80z" fill="#438444"></path>
+                                        <path d="M906.9 528.5C900.4 672.9 756.6 836 564.7 836c-30.9 0-60 1.3-88.6-4.3 50.1 34.6 118.4 43.7 191.5 43.7 155.9 0 269.3-84.5 276.1-212.4 3-56.3-19-106.4-36.8-134.5z" fill="#48A4FF"></path>
+                                        <path d="M890.3 764.4l35.8 135.5-139.5-54.3z" fill="#48A4FF"></path>
+                                        <path d="M309.6 470m-46.6 0a46.6 46.6 0 1 0 93.2 0 46.6 46.6 0 1 0-93.2 0Z" fill="#FFFFFF"></path>
+                                        <path d="M465.6 470m-46.6 0a46.6 46.6 0 1 0 93.2 0 46.6 46.6 0 1 0-93.2 0Z" fill="#FFFFFF"></path>
+                                        <path d="M620.8 470m-46.6 0a46.6 46.6 0 1 0 93.2 0 46.6 46.6 0 1 0-93.2 0Z" fill="#FFFFFF"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
