@@ -52,6 +52,12 @@
             margin: auto
         }
 
+        /* wider container just for the tree so all employees fit in one row */
+        .wrap-wide {
+            width: min(1400px, 96%);
+            margin: auto
+        }
+
         .js .rv {
             opacity: 0;
             transform: translateY(26px);
@@ -61,43 +67,6 @@
         .js .rv.in {
             opacity: 1;
             transform: none
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 0
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 21px;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            align-items: center;
-            gap: 10px
-        }
-
-        .logo svg {
-            width: 34px;
-            height: 34px
-        }
-
-        .pill {
-            background: var(--navy);
-            color: #fff;
-            padding: 11px 22px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            transition: transform .2s
-        }
-
-        .pill:hover {
-            transform: scale(1.06) rotate(-2deg)
         }
 
         /* HERO */
@@ -118,8 +87,9 @@
         }
 
         .hero h1 {
-            font-size: clamp(40px, 6.5vw, 80px);
+            font-size: 52px;
             max-width: 11em;
+            font-weight: 800;
             margin: 0 auto 20px
         }
 
@@ -128,20 +98,6 @@
             color: var(--orange);
             position: relative;
             white-space: nowrap
-        }
-
-        .hero h1 em svg {
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 100%;
-            height: 14px
-        }
-
-        .hero h1 em path {
-            stroke-dasharray: 320;
-            stroke-dashoffset: 320;
-            animation: draw 1.2s .4s forwards
         }
 
         .hero p {
@@ -171,10 +127,25 @@
         }
 
         .legend i {
-            width: 11px;
-            height: 11px;
             border-radius: 50%;
-            display: block
+            display: block;
+            background: var(--navy)
+        }
+
+        /* legend dots shrink with the level, like the tree */
+        .legend .l1 {
+            width: 15px;
+            height: 15px
+        }
+
+        .legend .l2 {
+            width: 12px;
+            height: 12px
+        }
+
+        .legend .l3 {
+            width: 9px;
+            height: 9px
         }
 
         .orb {
@@ -222,18 +193,6 @@
         @keyframes bob {
             50% {
                 transform: translateY(-14px)
-            }
-        }
-
-        @keyframes draw {
-            to {
-                stroke-dashoffset: 0
-            }
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg)
             }
         }
 
@@ -318,7 +277,7 @@
 
         .tree li {
             position: relative;
-            padding: 46px 8px 0;
+            padding: 46px 3px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -370,144 +329,34 @@
             border-left: 3px solid var(--ac, var(--orange))
         }
 
-        .tree ul.top {
-            padding-top: 0;
-            display: block
-        }
-
-        .tree ul.top::before,
-        .tree li.root::before,
-        .tree li.root::after {
-            display: none !important
-        }
-
-        .tree li.root {
-            padding-top: 0
-        }
-
-        .tree li.root>ul {
-            margin-top: 0
-        }
-
+        /* level 3 (employees) hang from team leaders with dashed lines */
         .tree li li>ul::before {
             border-left-style: dashed
         }
 
-        /* CHAIRMAN */
-        .chair {
+        /* TOP LEVEL = directors side by side, no connector lines above them */
+        /* equal-width columns keep the 3 director cards evenly spaced and centered,
+           no matter how wide their opened branches are */
+        .tree ul.top {
+            padding-top: 0;
             display: grid;
-            grid-template-columns: 1fr 280px 1fr;
-            gap: 44px;
-            align-items: center;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 40px;
-            padding: 44px 48px;
-            box-shadow: 0 30px 60px rgba(255, 104, 0, .10);
-            position: relative;
-            overflow: hidden;
-            text-align: left;
-            width: 100%
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: start;
+            justify-items: center;
+            gap: 18px
         }
 
-        .chair:before {
-            content: "";
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: var(--peach);
-            left: -110px;
-            top: -110px;
-            z-index: 0
+        .tree ul.top::before {
+            display: none
         }
 
-        .chair:after {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 22px solid #fff1e6;
-            right: -60px;
-            bottom: -60px;
-            z-index: 0
+        .tree ul.top>li {
+            padding: 0 8px
         }
 
-        .chair>* {
-            position: relative;
-            z-index: 1
-        }
-
-        .c-left {
-            text-align: right
-        }
-
-        .c-left .rank {
-            display: inline-block;
-            background: var(--navy);
-            color: #fff;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            padding: 7px 14px;
-            border-radius: 999px;
-            margin-bottom: 18px
-        }
-
-        .c-left h2 {
-            font-size: clamp(34px, 4vw, 50px);
-            margin-bottom: 10px
-        }
-
-        .c-left .role {
-            color: var(--orange);
-            font-weight: 700;
-            font-size: 19px
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-            justify-content: flex-end
-        }
-
-        .chips b {
-            background: var(--peach);
-            color: #a44300;
-            font-size: 13px;
-            padding: 6px 13px;
-            border-radius: 999px
-        }
-
-        .hint {
-            display: block;
-            margin-top: 14px;
-            color: var(--muted);
-            font-size: 13px;
-            text-align: center
-        }
-
-        .c-right h3 {
-            font-size: 24px;
-            margin-bottom: 14px
-        }
-
-        .c-right p {
-            color: var(--muted);
-            margin-bottom: 12px
-        }
-
-        .quote {
-            border-left: 4px solid var(--orange);
-            padding: 4px 0 4px 16px;
-            margin-top: 18px;
-            font-weight: 600;
-            font-style: italic;
-            color: var(--ink)
+        .tree ul.top>li::before,
+        .tree ul.top>li::after {
+            display: none !important
         }
 
         /* DIRECTORS */
@@ -556,37 +405,204 @@
             line-height: 1.5
         }
 
-        /* EMPLOYEES */
+        /* TEAM LEADERS + EMPLOYEES: big photo-first cards.
+           The photo fills the whole card, name and role sit on a gradient at the bottom. */
+        .lead,
         .emp {
-            width: 118px;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 12px 8px 14px;
+            position: relative;
+            background: var(--ac);
             transition: transform .3s
         }
 
-        .emp:hover {
-            transform: translateY(-5px)
+        .lead {
+            width: 210px;
+            height: 300px;
+            border-radius: 26px;
+            box-shadow: 0 0 0 4px var(--ac), 0 18px 34px rgba(11, 27, 46, .18)
+        }
+
+        .emp {
+            width: 156px;
+            height: 218px;
+            border-radius: 22px;
+            box-shadow: 0 0 0 3px #fff, 0 12px 24px rgba(11, 27, 46, .16)
+        }
+
+        .lead .flip,
+        .emp .flip {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0
+        }
+
+        .lead .flip {
+            --r: 26px
         }
 
         .emp .flip {
-            --w: 88px;
-            --h: 98px;
-            --r: 15px;
-            margin-bottom: 10px
+            --r: 22px
         }
 
-        .emp h4 {
+        .lead .face,
+        .emp .face {
+            box-shadow: none
+        }
+
+        .js .rv.in.lead:hover,
+        .js .rv.in.emp:hover {
+            transform: translateY(-6px)
+        }
+
+        .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            padding: 60px 12px 14px;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(to top, rgba(11, 27, 46, .95) 0%, rgba(11, 27, 46, .72) 55%, rgba(11, 27, 46, 0) 100%);
+            pointer-events: none
+        }
+
+        .lead .cap {
+            border-radius: 0 0 26px 26px
+        }
+
+        .emp .cap {
+            padding: 46px 8px 12px;
+            border-radius: 0 0 22px 22px
+        }
+
+        .cap h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 7px
+        }
+
+        .emp .cap h4 {
             font-size: 14px;
-            margin-bottom: 3px
+            margin-bottom: 5px
         }
 
-        .emp span {
-            display: block;
-            color: var(--muted);
+        .cap .role-pill {
+            background: var(--tint);
+            color: var(--ink);
             font-size: 12px;
-            line-height: 1.35
+            padding: 4px 12px;
+            margin-bottom: 0
+        }
+
+        .emp .cap span {
+            display: inline-block;
+            background: var(--ac);
+            color: #fff;
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 1.3;
+            padding: 3px 10px;
+            border-radius: 999px
+        }
+
+        /* EXPAND / COLLAPSE */
+        .tools {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 8px
+        }
+
+        .tools button {
+            font: inherit;
+            cursor: pointer;
+            background: #fff;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background .2s, color .2s
+        }
+
+        .tools button:hover {
+            background: var(--navy);
+            color: #fff
+        }
+
+        .toggle {
+            font: inherit;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            width: 100%;
+            margin-top: 12px;
+            background: var(--tint, var(--peach));
+            color: var(--ink);
+            border: 0;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: background .2s, color .2s
+        }
+
+        .toggle:hover {
+            background: var(--ac);
+            color: #fff
+        }
+
+        .toggle i {
+            width: 8px;
+            height: 8px;
+            border-right: 3px solid currentColor;
+            border-bottom: 3px solid currentColor;
+            transform: rotate(45deg) translateY(-2px);
+            transition: transform .3s;
+            flex: none
+        }
+
+        .node.open>article .toggle i {
+            transform: rotate(225deg) translateY(-2px)
+        }
+
+        .tree .node:not(.open)>ul {
+            display: none
+        }
+
+        .node.open>ul {
+            animation: pop .35s ease
+        }
+
+        @keyframes pop {
+            from {
+                opacity: 0;
+                transform: translateY(-8px)
+            }
+        }
+
+        .cap .toggle {
+            pointer-events: auto;
+            margin-top: 10px;
+            padding: 7px 12px;
+            font-size: 12.5px;
+            background: #fff;
+            color: var(--ink)
+        }
+
+        .cap .toggle:hover {
+            background: var(--ac);
+            color: #fff
+        }
+
+        /* the open director gets a ring so it is clear whose team is showing */
+        .node.open>.dir {
+            box-shadow: 0 0 0 3px var(--ac), 0 18px 36px rgba(11, 27, 46, .12)
         }
 
         /* FOOT */
@@ -668,15 +684,50 @@
             animation-delay: -3s
         }
 
-        footer {
-            text-align: center;
-            color: var(--muted);
-            font-size: 14px;
-            padding: 0 0 40px
+        /* DESKTOP: the 3 directors sit in one row; only ONE director's team is open at a time,
+           shown in a wide panel underneath that spans the full width */
+        @media (min-width:1301px) {
+            .tree ul.top {
+                grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr))
+            }
+
+            .tree ul.top>li {
+                display: contents
+            }
+
+            .tree ul.top>li>article {
+                grid-row: 1;
+                justify-self: center
+            }
+
+            .tree ul.top>li>ul {
+                grid-column: 1/-1;
+                grid-row: 2;
+                width: 100%;
+                margin-top: 14px;
+                padding: 46px 24px 40px;
+                border-top: 4px solid var(--ac);
+                border-radius: 34px;
+                background: var(--tint);
+                background: color-mix(in srgb, var(--ac) 8%, #fff)
+            }
+
+            /* little arrow pointing up at the open director */
+            .tree ul.top>li>ul::after {
+                content: "";
+                position: absolute;
+                top: -14px;
+                left: var(--pos, 50%);
+                width: 22px;
+                height: 22px;
+                background: var(--ac);
+                border-radius: 5px 0 0 0;
+                transform: translateX(-50%) rotate(45deg)
+            }
         }
 
-        /* TREE — tablet and mobile: vertical rail */
-        @media (max-width:1240px) {
+        /* TREE — tablet and mobile: vertical rail (Director > Team Leader > Employee) */
+        @media (max-width:1300px) {
             .tree ul {
                 display: block;
                 padding: 0 0 0 20px;
@@ -685,6 +736,7 @@
             }
 
             .tree ul.top {
+                display: block;
                 border: 0;
                 margin: 0;
                 padding: 0
@@ -700,8 +752,8 @@
                 text-align: left
             }
 
-            .tree li.root {
-                padding: 0
+            .tree ul.top>li {
+                padding: 0 0 30px
             }
 
             .tree li::before,
@@ -727,6 +779,11 @@
                 display: none
             }
 
+            .tree ul.top>li::before,
+            .tree ul.top>li::after {
+                display: none !important
+            }
+
             .dir {
                 width: 100%;
                 display: grid;
@@ -734,7 +791,8 @@
                 gap: 4px 16px;
                 align-items: start;
                 border-radius: 22px;
-                padding: 16px
+                padding: 16px;
+                text-align: left
             }
 
             .dir .flip {
@@ -744,60 +802,22 @@
                 margin: 0
             }
 
+            .lead {
+                width: 200px;
+                height: 286px
+            }
+
             .emp {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                gap: 14px;
-                padding: 10px 12px;
-                text-align: left
-            }
-
-            .emp .flip {
-                --w: 62px;
-                --h: 70px;
-                --r: 14px;
-                margin: 0
+                width: 156px;
+                height: 218px
             }
         }
 
-        @media (max-width:860px) {
-            .chair {
-                grid-template-columns: 1fr;
-                gap: 22px;
-                padding: 34px 22px;
-                text-align: center;
-                border-radius: 30px
+                @media (max-width:520px) {
+            .hero h1 {
+                font-size: 38px
             }
 
-            .c-left,
-            .c-right {
-                text-align: center
-            }
-
-            .chips {
-                justify-content: center
-            }
-
-            .quote {
-                text-align: left
-            }
-
-            .c-mid {
-                order: -1
-            }
-
-            .chair .flip {
-                --w: 230px !important;
-                --h: 330px !important
-            }
-
-            .c-right h3 {
-                font-size: 22px
-            }
-        }
-
-        @media (max-width:520px) {
             .dir {
                 grid-template-columns: 96px 1fr
             }
@@ -825,25 +845,21 @@
     </style>
 
     <div class="wrap">
-        <nav>
-            <a class="logo" href="#"><svg viewBox="0 0 34 34">
-                    <rect width="34" height="34" rx="10" fill="#ff6800" />
-                    <path d="M7 25L5.500 11l7 6L17 8l4.500 9 7-6L27 25z" fill="#0b1b2e" />
-                </svg>King Digital</a>
-            <a class="pill" href="#join">Join the team</a>
-        </nav>
-
         <header class="hero">
             <i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="orb o4"></i>
             <span class="eyebrow">Meet the team</span>
-            <h1>The people behind <em>King Digital<svg viewBox="0 0 300 14" preserveAspectRatio="none">
-                        <path d="M3 9c60-8 140-8 294-2" fill="none" stroke="#ff6800" stroke-width="5" stroke-linecap="round" />
-                    </svg></em></h1>
-            <p>Every branch of our tree grows from the same root: helping local businesses thrive online. Hover over any photo to meet the person behind the profile.</p>
-            <div class="legend"><span><i style="background:#ff6800"></i>Chairman</span><span><i style="background:#19b6a6"></i>Directors</span><span><i style="background:#ff5d7d"></i>Team members</span></div>
+            <h1>The people behind <em>King Digital</em></h1>
+            <p>Every branch of our tree grows from the same root: helping local businesses thrive online.</p>
+            <div class="legend">
+                <span><i class="l1"></i>Directors</span>
+                <span><i class="l2"></i>Team Leaders</span>
+                <span><i class="l3"></i>Team members</span>
+            </div>
         </header>
+    </div>
 
-        <main class="tree" id="tree"><noscript>Please enable JavaScript to see the team tree.</noscript></main>
+    <div class="wrap-wide">
+        <div class="tree" id="tree"><noscript>Please enable JavaScript to see the team tree.</noscript></div>
     </div>
 
     <div class="final" id="join">
@@ -860,86 +876,90 @@
     <script>
         document.documentElement.classList.add('js');
 
-        /* =====================================================================
+        /* =====================================================
            EDIT YOUR TEAM HERE
-           f = first photo URL, b = second (hover) photo URL.
-           Leave f / b empty ("") to use the illustrated placeholder avatars.
-           ===================================================================== */
-        var CHAIRMAN = {
-            n: "Chairman Name",
-            role: "Founder & Chairman",
-            f: "",
-            b: "",
-            chips: ["Vision", "Partnerships", "Growth"],
-            head: "A few words from our chairman",
-            bio: [
-                "Write your chairman's story here: how King Digital began, what drives the company and what he or she believes about helping local businesses grow online.",
-                "Add achievements, background and the values that guide every franchise partner. This is the space with the most room, so tell the story properly."
-            ],
-            quote: "Add a favourite line or company promise here."
+           Director > leaders (Team Leaders) > team (Employees)
+           f = front photo URL, b = back photo URL (leave "" for the illustrated avatar)
+           Add or remove any { ... } block and the tree lines redraw themselves.
+           ===================================================== */
+        var P = function(role) {
+            return {
+                n: "Name Surname",
+                role: role,
+                f: "",
+                b: ""
+            }
         };
+
         var DIRECTORS = [{
                 n: "Director Name",
                 role: "Director · Operations",
-                bio: "Keeps every franchise running smoothly, from onboarding to daily support.",
+                bio: "Keeps every franchise running smoothly.",
                 f: "",
                 b: "",
                 ac: "#ff6800",
                 tint: "#ffe9d6",
-                team: [{
-                    n: "Name Surname",
-                    role: "Operations Executive"
-                }, {
-                    n: "Name Surname",
-                    role: "Client Success Manager"
-                }]
+                leaders: [{
+                        n: "TL Name",
+                        role: "Team Leader",
+                        f: "",
+                        b: "",
+                        team: [P("Executive"), P("Executive")]
+                    },
+                    {
+                        n: "TL Name",
+                        role: "Team Leader",
+                        f: "",
+                        b: "",
+                        team: [P("Executive"), P("Executive")]
+                    },
+                    {
+                        n: "TL Name",
+                        role: "Team Leader",
+                        f: "",
+                        b: "",
+                        team: [P("Executive"), P("Executive")]
+                    }
+                ]
             },
             {
                 n: "Director Name",
                 role: "Director · Technology",
-                bio: "Leads the developers who build fast, reliable websites and tools.",
+                bio: "Leads the developers who build fast, reliable websites.",
                 f: "",
                 b: "",
                 ac: "#19b6a6",
                 tint: "#d8f5f1",
-                team: [{
-                    n: "Name Surname",
-                    role: "Web Developer"
-                }, {
-                    n: "Name Surname",
-                    role: "SEO Specialist"
-                }]
+                leaders: [{
+                        n: "TL Name",
+                        role: "Team Leader",
+                        f: "",
+                        b: "",
+                        team: [P("Web Developer"), P("Web Developer")]
+                    },
+                    {
+                        n: "TL Name",
+                        role: "Team Leader",
+                        f: "",
+                        b: "",
+                        team: [P("SEO Specialist"), P("SEO Specialist")]
+                    }
+                ]
             },
             {
                 n: "Director Name",
                 role: "Director · Creative",
-                bio: "Shapes the design, content and social media that clients love.",
+                bio: "Shapes the design, content and social media clients love.",
                 f: "",
                 b: "",
                 ac: "#ff5d7d",
                 tint: "#ffe3e9",
-                team: [{
-                    n: "Name Surname",
-                    role: "Graphic Designer"
-                }, {
-                    n: "Name Surname",
-                    role: "Social Media Manager"
-                }]
-            },
-            {
-                n: "Director Name",
-                role: "Director · Franchise Partners",
-                bio: "Welcomes new partners and helps each city launch with confidence.",
-                f: "",
-                b: "",
-                ac: "#3b8be0",
-                tint: "#dcebfb",
-                team: [{
-                    n: "Name Surname",
-                    role: "Partner Onboarding Lead"
-                }, {
-                    n: "Name Surname",
-                    role: "Training Coordinator"
+                leaders: [{
+                    n: "TL Name",
+                    role: "Team Leader",
+                    f: "",
+                    b: "",
+                    team: [P("Designer"), P("Designer"), P("Content Writer"), P("Social Media")]
                 }]
             }
         ];
@@ -968,7 +988,7 @@
             return x + '</g></svg>';
         }
 
-        function photo(p, i, cls, tall, ac, tint, chair) {
+        function photo(p, i, cls, tall, ac, tint) {
             var base = {
                 skin: SK[i % 5],
                 hair: HR[(i * 2 + 1) % 5],
@@ -999,30 +1019,72 @@
             return '<div class="flip ' + cls + '" tabindex="0" role="button" aria-label="' + p.n + ': flip photo"><div class="inner"><div class="face front">' + face(0) + '</div><div class="face back">' + face(1) + '</div></div></div>';
         }
 
-        /* ---------- build the tree ---------- */
-        var C = CHAIRMAN,
-            k = 0,
-            html = '';
-        html += '<ul class="top"><li class="root" style="--ac:#ff6800"><article class="chair rv">' +
-            '<div class="c-left"><span class="rank">Chairman</span><h2>' + C.n + '</h2><div class="role">' + C.role + '</div><div class="chips">' + C.chips.map(function(c) {
-                return '<b>' + c + '</b>'
-            }).join('') + '</div></div>' +
-            '<div class="c-mid">' + photo(C, 0, '', true, '#ff6800', '#ffe9d6') + '<span class="hint">↻ Hover to see the other side</span></div>' +
-            '<div class="c-right"><h3>' + C.head + '</h3>' + C.bio.map(function(t) {
-                return '<p>' + t + '</p>'
-            }).join('') + '<div class="quote">' + C.quote + '</div></div></article>';
-        html += '<ul>';
+        /* ---------- build the tree: Director > Team Leader > Employee ---------- */
+        var k = 0,
+            uid = 0,
+            html = '<ul class="top" style="--n:' + DIRECTORS.length + '">';
+
+        function toggle(label, count, id) {
+            return '<button class="toggle" type="button" aria-expanded="false" aria-controls="' + id + '"><span>' + label + ' (' + count + ')</span><i></i></button>';
+        }
+
+        function caption(inner) {
+            return '<div class="cap">' + inner + '</div>';
+        }
+
         DIRECTORS.forEach(function(d, di) {
             k++;
-            html += '<li style="--ac:' + d.ac + ';--tint:' + d.tint + '"><article class="dir rv">' + photo(d, k, '', false, d.ac, d.tint) + '<div><h3>' + d.n + '</h3><span class="role-pill">' + d.role + '</span><p>' + d.bio + '</p></div></article><ul>';
-            d.team.forEach(function(e) {
+            var did = 'b' + (++uid),
+                n = DIRECTORS.length,
+                pos = 'calc((100% - ' + ((n - 1) * 18) + 'px) / ' + n + ' * ' + (di + .5) + ' + ' + (di * 18) + 'px)';
+            /* the first director starts open, the others closed */
+            html += '<li class="node' + (di === 0 ? ' open' : '') + '" style="--ac:' + d.ac + ';--tint:' + d.tint + '">' +
+                '<article class="dir rv" style="grid-column:' + (di + 1) + '">' + photo(d, k, '', false, d.ac, d.tint) +
+                '<div><h3>' + d.n + '</h3><span class="role-pill">' + d.role + '</span><p>' + d.bio + '</p>' +
+                toggle('Team leaders', d.leaders.length, did) + '</div></article><ul id="' + did + '" style="--pos:' + pos + '">';
+
+            d.leaders.forEach(function(l) {
                 k++;
-                html += '<li style="--ac:' + d.ac + '"><div class="emp rv">' + photo(e, k, '', false, d.ac, d.tint) + '<div><h4>' + e.n + '</h4><span>' + e.role + '</span></div></div></li>';
+                var lid = 'b' + (++uid);
+                html += '<li class="node"><article class="lead rv">' + photo(l, k, '', false, d.ac, d.tint) +
+                    caption('<h4>' + l.n + '</h4><span class="role-pill">' + l.role + '</span>' +
+                        toggle('Team', l.team.length, lid)) + '</article><ul id="' + lid + '">';
+
+                l.team.forEach(function(e) {
+                    k++;
+                    html += '<li><div class="emp rv">' + photo(e, k, '', false, d.ac, d.tint) +
+                        caption('<h4>' + e.n + '</h4><span>' + e.role + '</span>') + '</div></li>';
+                });
+
+                html += '</ul></li>';
             });
+
             html += '</ul></li>';
         });
-        html += '</ul></li></ul>';
+
+        html += '</ul>';
         document.getElementById('tree').innerHTML = html;
+
+        /* open / close branches */
+        function sync() {
+            document.querySelectorAll('.toggle').forEach(function(b) {
+                b.setAttribute('aria-expanded', b.closest('.node').classList.contains('open'));
+            });
+        }
+        document.querySelectorAll('.toggle').forEach(function(b) {
+            b.addEventListener('click', function() {
+                var node = b.closest('.node');
+                node.classList.toggle('open');
+                /* directors work as an accordion: only one team can be active */
+                if (node.parentElement.classList.contains('top') && node.classList.contains('open')) {
+                    node.parentElement.querySelectorAll(':scope > .node').forEach(function(o) {
+                        if (o !== node) o.classList.remove('open');
+                    });
+                }
+                sync();
+            });
+        });
+        sync();
 
         /* touch devices: tap to flip */
         var canHover = window.matchMedia('(hover:hover)').matches;
