@@ -170,7 +170,8 @@
             }
 
             .hero h1 {
-                font-size: 44px;
+                font-size: 52px;
+                font-weight: 800;
                 margin-bottom: 22px
             }
 
@@ -532,7 +533,7 @@
                 gap: 20px
             }
 
-            .card {
+            .about-card {
                 background: #fff;
                 border: 1px solid var(--line);
                 border-radius: 22px;
@@ -540,7 +541,7 @@
                 transition: transform .3s, box-shadow .3s
             }
 
-            .card:hover {
+            .about-card:hover {
                 transform: translateY(-8px);
                 box-shadow: 0 22px 40px rgba(255, 104, 0, .12)
             }
@@ -557,7 +558,7 @@
                 transition: transform .4s
             }
 
-            .card:hover .badge {
+            .about-card:hover .badge {
                 transform: rotate(-10deg) scale(1.1)
             }
 
@@ -566,12 +567,12 @@
                 height: 27px
             }
 
-            .card h3 {
+            .about-card h3 {
                 font-size: 20px;
                 margin-bottom: 8px
             }
 
-            .card p {
+            .about-card p {
                 color: var(--muted);
                 font-size: 15px;
                 line-height: 1.55
@@ -808,7 +809,7 @@
             /* CLIENTS */
             .clients {
                 background: #fff;
-                padding: 90px 0;
+                padding: 40px 0;
                 overflow: hidden
             }
 
@@ -826,7 +827,7 @@
             }
 
             .clients:hover .row {
-                animation-play-state: paused
+                animation-play-state: continue
             }
 
             .cl {
@@ -1182,10 +1183,10 @@
                 <div>
                     <span class="eyebrow">About King Digital</span>
                     <h1>Digital marketing <em>without borders</em></h1>
-                    <p>King Digital is a full-service digital marketing group. Strategy, creative, technology and media live under one roof, for brands that want to be seen well beyond their own backyard.</p>
+                    <p>King Digital is a full-service digital marketing group. Strategy, creative, technology and media live under one roof.</p>
                     <div class="btns"><a class="cta" href="#group">Explore our group <svg class="ic">
                                 <use href="#globe" />
-                            </svg></a><a class="ghost" href="king-digital-team.html">Meet our leadership</a></div>
+                            </svg></a><a class="ghost" href="about-team.php">Meet our leadership</a></div>
                     <div class="proof"><span><svg class="ic">
                                 <use href="#layers" />
                             </svg>Full-service</span><span><svg class="ic">
@@ -1288,17 +1289,46 @@
         </div>
 
         <section class="story" id="story">
-            <div class="wrap">
-                <div class="rv">
-                    <span class="eyebrow">Our story</span>
-                    <h2>A simple idea, built into a group</h2>
-                    <!-- REPLACE the two paragraphs below with your real founding story -->
-                    <p>King Digital began with a belief that every business deserves marketing that is smart, honest and measurable, whether it sells from one street corner or to customers across the world.</p>
-                    <p>Today that belief runs through a full-service agency, a network of franchise partners and a family of sister companies, all working to the same standard.</p>
+    <div class="wrap">
+        <div class="rv">
+            <span class="eyebrow">Who we are</span>
+            <h2>Trusted by 15000+ customers</h2>
+            <p>King Digital Private Limited is a company that provides online marketing and digital services in Delhi. The company specialises in a range of web development and design processes, technical management of online accounts and digital marketing strategies. We strive to make the optimum use of technology for providing the best when it comes to creating a strong brand awareness for our clients at several levels.</p>
+            <!-- <p>King Digital Private Limited lays equal emphasis on the core values of dedication and a united effort towards achieving the goals regardless of whether those goals are set on a long term or short term basis. We believe in emerging as a knowledge based enterprise with an emphasis on making our ultimate vision a reality.</p> -->
+        </div>
+
+        <ul class="tl rv" id="timeline">
+            <li>
+                <div class="dot">15K+</div>
+                <div>
+                    <h4>Customers and resellers worldwide</h4>
+                    <p>Growth and expansion for businesses at every level.</p>
                 </div>
-                <ul class="tl rv" id="timeline"></ul>
-            </div>
-        </section>
+            </li>
+            <li>
+                <div class="dot">15+</div>
+                <div>
+                    <h4>Years of experience</h4>
+                    <p>Best technical experts, skilled in their respective domains.</p>
+                </div>
+            </li>
+            <li>
+                <div class="dot">Team</div>
+                <div>
+                    <h4>Constant watch on your accounts</h4>
+                    <p>We manage your accounts on popular social networks and other platforms.</p>
+                </div>
+            </li>
+            <li>
+                <div class="dot">24/7</div>
+                <div>
+                    <h4>Round the clock support</h4>
+                    <p>Changes and updates if you're not satisfied with any service you opted for.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
 
         <section class="stats">
             <div class="wrap">
@@ -1328,13 +1358,13 @@
                             <use href="#target" />
                         </svg>
                         <h3>Our mission</h3>
-                        <p>To give every business, in every market, access to world-class digital marketing that is clear, creative and accountable.</p>
+                        <p>To provide the best services related to software and technology for optimising the growth potential of businesses across multiple domains.</p>
                     </div>
                     <div class="mvc b rv"><svg class="ic">
                             <use href="#eye" />
                         </svg>
                         <h3>Our vision</h3>
-                        <p>To be the digital partner brands trust across borders, known as much for our people as for our results.</p>
+                        <p>To emerge as a globally recognised company known for its innovative strategies in areas of online marketing and web based services.</p>
                     </div>
                 </div>
                 <div class="vals" id="vals"></div>
@@ -1385,7 +1415,7 @@
                     <p>Tell us where you are and where you want to be. A real person from our team will reply, usually within a day.</p>
                     <div class="btns"><a class="cta" href="mailto:hello@yourdomain.com?subject=Working%20with%20King%20Digital">Start a conversation <svg class="ic">
                                 <use href="#chat" />
-                            </svg></a><a class="ghost" href="king-digital-team.html">Meet the team</a></div>
+                            </svg></a><a class="ghost" href="about-team.php">Meet the team</a></div>
                 </div>
             </div>
         </div>
@@ -1399,13 +1429,13 @@
                real facts before publishing. Never publish numbers you can't prove.
                ===================================================================== */
             var STATS = [ /* SAMPLE numbers */ {
-                    v: 10,
+                    v: 12,
                     s: "+",
                     l: "Years of experience",
                     c: "#ff6800"
                 },
                 {
-                    v: 250,
+                    v: 15000,
                     s: "+",
                     l: "Projects delivered",
                     c: "#19b6a6"
@@ -1417,30 +1447,30 @@
                     c: "#ff5d7d"
                 },
                 {
-                    v: 4,
+                    v: 6,
                     s: "",
                     l: "Group companies",
                     c: "#ffc23c"
                 }
             ];
-            var REACH = ["Delhi", "Lucknow"]; /* franchise cities that are live. Add countries / cities you serve */
+            var REACH = ["Delhi", "Lucknow", "Patna"]; /* franchise cities that are live. Add countries / cities you serve */
             var TIMELINE = [ /* SAMPLE milestones */ {
-                    y: "20XX",
+                    y: "2015",
                     t: "King Digital is founded",
-                    d: "Add a line about how it all began."
+                    d: "King Digital was made in 2012 and Registered in 2015."
                 },
                 {
-                    y: "20XX",
-                    t: "First franchise partner",
-                    d: "Add a line about your first partner city."
+                    y: "2017",
+                    t: "King Digital (Lucknow)",
+                    d: "Lucknow is the first city, where King Digital Starting Helping businesses."
                 },
                 {
-                    y: "20XX",
+                    y: "2016",
                     t: "Group companies launch",
                     d: "Add a line about your sister companies."
                 },
                 {
-                    y: "20XX",
+                    y: "2018",
                     t: "Working across borders",
                     d: "Add a line about your international clients."
                 }
@@ -1461,32 +1491,40 @@
                 ["globe", "Global standards, local heart", "World-class craft with real understanding of each market."],
                 ["shield", "Honest partnership", "Clear terms, clear reports, no surprises."]
             ];
-            var SISTERS = [ /* SAMPLE sister companies: replace names and descriptions */ {
-                    n: "Sister Company One",
-                    tag: "Web & App Development",
-                    d: "One line about what this company does.",
+            var SISTERS = [ {
+                    n: "Static King",
+                    tag: "Mobile, Bulk Sms Services",
+                    d: "Best for Bulk Sms and Mobile Services",
                     ic: "code",
                     c: "#ff6800",
                     t: "#ffe9d6"
                 },
                 {
-                    n: "Sister Company Two",
-                    tag: "Media & Production",
-                    d: "One line about what this company does.",
+                    n: "King Cloud",
+                    tag: "Cloud and Servers",
+                    d: "Affordable Servers and Clouds",
                     ic: "video",
                     c: "#19b6a6",
                     t: "#d8f5f1"
                 },
                 {
-                    n: "Sister Company Three",
+                    n: "King Digital Acadamy",
                     tag: "Training & Education",
-                    d: "One line about what this company does.",
+                    d: "Best Metors and Envirnment",
+                    ic: "video",
+                    c: "#19b63b",
+                    t: "#c3faf3"
+                },
+                {
+                    n: "King Digital Studio",
+                    tag: "Podcast Production",
+                    d: "Video, Audio and Podcast Production in Delhi.",
                     ic: "users",
                     c: "#ff5d7d",
                     t: "#ffe3e9"
                 },
                 {
-                    n: "Sister Company Four",
+                    n: "IVR King",
                     tag: "Technology & Data",
                     d: "One line about what this company does.",
                     ic: "chart",
@@ -1494,10 +1532,11 @@
                     t: "#dcebfb"
                 }
             ];
-            var CLIENTS = ["Client One", "Client Two", "Client Three", "Client Four", "Client Five", "Client Six", "Client Seven", "Client Eight", "Client Nine", "Client Ten"]; /* SAMPLE: real client names */
+            var CLIENTS = ["Amul india", "Bharatiya Janata Party", "Aam Aadmi Party", "Dulux Paints", "TATA Consultancy", "DDA", "BAJAJ CORP", "DLF Brand Ltd.", "Lakshmibai College", "State Bank Of India"];
+
             var TESTIMONIAL = {
-                q: "Add a real testimonial from one of your clients here. Short, specific and honest works best.",
-                n: "Client name",
+                q: "We Are Very Satisfied With The Bulk SMS Services And The Support. We Highly Appreciate Their Effort To Execute The Work Satisfactorily.",
+                n: "Amul India",
                 r: "Role, Company"
             };
             var PARTNERS = [ /* SAMPLE partners: replace names */
@@ -1544,7 +1583,7 @@
 
             /* services */
             $('svc').innerHTML = SERVICES.map(function(x) {
-                return '<div class="card rv" style="--c:' + x[3] + ';--t:' + x[4] + '"><div class="badge">' + I(x[0]) + '</div><h3>' + x[1] + '</h3><p>' + x[2] + '</p></div>'
+                return '<div class="about-card rv" style="--c:' + x[3] + ';--t:' + x[4] + '"><div class="badge">' + I(x[0]) + '</div><h3>' + x[1] + '</h3><p>' + x[2] + '</p></div>'
             }).join('');
 
             /* values */
