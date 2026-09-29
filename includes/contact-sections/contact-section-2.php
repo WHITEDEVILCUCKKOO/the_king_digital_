@@ -269,11 +269,11 @@
                     <p class="qloc-info-label">Working Hours</p>
                     <div class="qloc-hours-row">
                         <span class="qloc-hours-day">Monday – Friday</span>
-                        <span class="qloc-hours-time">10:00 AM – 7:00 PM</span>
+                        <span class="qloc-hours-time">10:00 AM – 6:30 PM</span>
                     </div>
                     <div class="qloc-hours-row">
                         <span class="qloc-hours-day">Saturday</span>
-                        <span class="qloc-hours-time">10:00 AM – 5:00 PM</span>
+                        <span class="qloc-hours-time">10:00 AM – 6:30 PM</span>
                     </div>
                     <div class="qloc-hours-row">
                         <span class="qloc-hours-day">Sunday</span>
