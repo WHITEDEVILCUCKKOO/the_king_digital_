@@ -309,6 +309,7 @@ document.querySelectorAll(".randomNumber").forEach(function (element) {
         '#main-nav',
         '#mob-nav',
         '#hamburger',
+        '#aild', // our own AI launchers (ai-assistant-launchers.js)
         'header',
         'footer'
     ];

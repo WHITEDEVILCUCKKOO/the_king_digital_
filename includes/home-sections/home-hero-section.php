@@ -2163,6 +2163,7 @@ ai_interaction_assets_once();
 <script src="assets/js/ai-assistant-icpaas-adapter.js"></script>
 <script src="assets/js/ai-assistant-blob-driver.js"></script>
 <script src="assets/js/ai-assistant-text-chat.js"></script>
+<!-- <script src="assets/js/ai-assistant-launchers.js"></script> -->
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

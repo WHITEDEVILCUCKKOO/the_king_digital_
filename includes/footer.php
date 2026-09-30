@@ -924,11 +924,14 @@
    <script src="assets/js/global.js" defer></script>
 
    
+   <script src="assets/js/ai-assistant-icpaas-adapter.js"></script>
+   <script src="assets/js/ai-assistant-text-chat.js"></script>
    <script
        src="https://connector.icpaas.ai/blob-widget.js"
        data-api-key="sk_252238a99e2827891132e69a8f249c148cb9bdc9ee4342eea0a176fff28409d8"
        data-agent-id="agent_0442d6869a13424ae12d41535bf498be"
        data-namespace="KD"></script>
+   <script src="assets/js/ai-assistant-launchers.js"></script>
 
    </body>
 
