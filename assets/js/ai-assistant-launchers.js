@@ -24,7 +24,7 @@
 
   var CSS = [
     /* Hide the vendor's own green launcher permanently (KD API keeps working). */
-    ".icpaas-floating-widget:not(#aild){display:none!important;}",
+    // ".icpaas-floating-widget:not(#aild){display:none!important;}",
     /* global.js tags any fixed body-level element as the vendor widget and
        hides it on the hero -- never let that touch our own launchers. */
     "#aild.icpaas-floating-widget,#aild.icpaas-widget-hidden{display:flex!important;}",
