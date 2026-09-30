@@ -357,18 +357,12 @@
     }
 
     .franchise>img {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-height: 520px;
-        object-fit: cover;
-        object-position: center;
-        margin: 0
+        margin: 0 auto;
     }
 
     #services {
         position: relative;
-        padding: 70px 20px 90px;
+        padding: 40px 20px;
         background: #fffaf5
     }
 
@@ -530,12 +524,12 @@
     }
 
     @media (max-width:900px) {
-        .franchise>img {
+        /* .franchise>img {
             max-height: 350px
-        }
+        } */
 
         #services {
-            padding: 60px 20px 70px
+            padding: 40px 20px
         }
 
         #services .grid {
@@ -545,8 +539,9 @@
 
     @media (max-width:600px) {
         .franchise>img {
-            max-height: 250px;
-            object-fit: cover
+            width: 90%;
+            margin-top: 18px;
+            border-radius: 14px
         }
 
         #services {
@@ -1315,6 +1310,494 @@
         margin-bottom: 14px
     }
 
+    /* PROGRESS (horizontal), DOCUMENTS, APPLY FORM */
+    .proc,
+    .docs,
+    .apply {
+        padding: 40px 0
+    }
+
+    .proc .head p,
+    .docs .head p {
+        margin-inline: auto
+    }
+
+    .steps {
+        display: flex;
+        margin-top: 46px;
+        overflow-x: auto;
+        padding-bottom: 14px;
+    }
+
+    .ps {
+        position: relative;
+        flex: 1 0 210px;
+        text-align: center;
+        padding: 0 14px;
+        scroll-snap-align: center
+    }
+
+    .ps::before {
+        content: "";
+        position: absolute;
+        top: 27px;
+        left: -50%;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background: var(--orange)
+    }
+
+    .ps:first-child::before {
+        display: none
+    }
+
+    .js .ps::before {
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .7s ease calc(var(--i) * .25s)
+    }
+
+    .js .steps.in .ps::before {
+        transform: scaleX(1)
+    }
+
+    .ps b {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        width: 58px;
+        height: 58px;
+        margin: 0 auto 16px;
+        border-radius: 50%;
+        background: var(--orange);
+        color: #fff;
+        font-size: 22px;
+        box-shadow: 0 0 0 7px var(--peach)
+    }
+
+    .ps:last-child b {
+        background: var(--navy)
+    }
+
+    .ps h3 {
+        font-size: 19px;
+        color: var(--navy);
+        margin-bottom: 4px
+    }
+
+    .ps p {
+        color: var(--muted);
+        font-size: 15.5px
+    }
+
+    .dgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 40px
+    }
+
+    .doc {
+        background: #fff;
+        border: 2px solid var(--line);
+        border-radius: 22px;
+        padding: 24px;
+        display: flex;
+        gap: 16px
+    }
+
+    .doc .di {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        background: var(--peach);
+        color: var(--orange)
+    }
+
+    .doc h3 {
+        font-size: 18px;
+        color: var(--navy)
+    }
+
+    .doc p {
+        color: var(--muted);
+        font-size: 15.5px
+    }
+
+    .doc em {
+        display: inline-block;
+        margin-top: 8px;
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--teal)
+    }
+
+    .apply .wrap {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        gap: 56px;
+        align-items: center
+    }
+
+    .apply .head p {
+        max-width: 28em
+    }
+
+    .fc {
+        display: grid;
+        perspective: 1400px
+    }
+
+    .fc .face {
+        grid-area: 1/1;
+        border-radius: 30px;
+        padding: 36px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transition: transform .9s cubic-bezier(.3, 1.2, .5, 1), visibility 0s
+    }
+
+    .fc .front {
+        background: #fff;
+        border: 2px solid var(--line);
+        box-shadow: 0 24px 50px -24px rgba(255, 104, 0, .45)
+    }
+
+    .fc .back {
+        background: var(--navy);
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotateY(-180deg);
+        visibility: hidden
+    }
+
+    .fc.done .front {
+        transform: rotateY(180deg);
+        visibility: hidden;
+        transition: transform .9s cubic-bezier(.3, 1.2, .5, 1), visibility 0s .45s
+    }
+
+    .fc.done .back {
+        transform: none;
+        visibility: visible;
+        transition: transform .9s cubic-bezier(.3, 1.2, .5, 1), visibility 0s 0s
+    }
+
+    .front label {
+        display: block;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--navy);
+        margin-bottom: 6px
+    }
+
+    .front input {
+        width: 100%;
+        font: inherit;
+        padding: 13px 16px;
+        border: 2px solid var(--line);
+        border-radius: 14px;
+        background: var(--cream);
+        margin-bottom: 18px
+    }
+
+    .front input:focus {
+        outline: 0;
+        border-color: var(--orange)
+    }
+
+    .fbtn {
+        display: inline-block;
+        width: 100%;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        border: 0;
+        border-radius: 14px;
+        padding: 15px 24px;
+        background: var(--orange);
+        color: #fff;
+        box-shadow: 0 6px 0 #c24e00
+    }
+
+    .fbtn:active {
+        transform: translateY(3px);
+        box-shadow: 0 3px 0 #c24e00
+    }
+
+    .front small {
+        display: block;
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 14px
+    }
+
+    .back .ok {
+        display: grid;
+        place-items: center;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--teal);
+        margin-bottom: 18px
+    }
+
+    .back .ok .ic {
+        width: 36px;
+        height: 36px
+    }
+
+    .back h3 {
+        font-size: 26px;
+        margin-bottom: 10px
+    }
+
+    .back p {
+        color: #cfd8e6;
+        margin-bottom: 24px
+    }
+
+    .blinks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center
+    }
+
+    .blinks a {
+        font-weight: 700;
+        text-decoration: none;
+        padding: 12px 22px;
+        border-radius: 12px;
+        background: var(--orange);
+        color: #fff
+    }
+
+    .blinks a+a {
+        background: transparent;
+        border: 2px solid #fff
+    }
+
+    @media (max-width:860px) {
+
+        .dgrid,
+        .apply .wrap {
+            grid-template-columns: 1fr
+        }
+
+        .apply .wrap {
+            gap: 30px
+        }
+
+        .fc .face {
+            padding: 26px 22px
+        }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+        .fc .face,
+        .js .ps::before {
+            transition-duration: .01s !important
+        }
+    }
+
+    /* SERVICES: two equal columns (popular left, all services right) */
+    .duo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+        margin-top: 42px;
+        align-items: stretch
+    }
+
+    .pn {
+        display: flex;
+        flex-direction: column;
+        border-radius: 32px;
+        padding: 32px
+    }
+
+    .pn>h3 {
+        font-size: 24px;
+        color: var(--navy)
+    }
+
+    .pn .sub {
+        color: var(--muted);
+        margin: 4px 0 22px
+    }
+
+    .pop {
+        background: var(--peach)
+    }
+
+    .all {
+        background: #fff;
+        border: 2px solid var(--line)
+    }
+
+    .pl {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 1fr;
+        gap: 14px
+    }
+
+    .pi {
+        background: #fff;
+        border-radius: 22px;
+        padding: 20px;
+        box-shadow: 0 10px 22px -16px rgba(11, 27, 46, .4)
+    }
+
+    .pi h4 {
+        font-size: 18px;
+        color: var(--navy);
+        margin: 12px 0 4px
+    }
+
+    .pi p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.5
+    }
+
+    .tile {
+        display: inline-grid;
+        place-items: center;
+        flex: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        color: var(--c);
+        background: var(--b)
+    }
+
+    .tile .ic {
+        width: 21px;
+        height: 21px
+    }
+
+    .al {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px 16px
+    }
+
+    .al li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        font-size: 15.5px;
+        color: #3d4a5c
+    }
+
+    .vall {
+        margin-top: auto;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 700;
+        background: var(--navy);
+        color: #fff;
+        padding: 15px 24px;
+        border-radius: 14px;
+        box-shadow: 0 6px 0 #000;
+        transition: transform .15s
+    }
+
+    .vall:hover {
+        transform: translateY(-2px)
+    }
+
+    /* FORM: one wide card, orange panel on the left, fields on the right */
+    .apply .wrap {
+        display: block;
+        max-width: 1000px
+    }
+
+    .fc .front {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        box-shadow: 0 30px 60px -28px rgba(255, 104, 0, .55)
+    }
+
+    .fl {
+        color: #fff;
+        padding: 44px 38px;
+        background: radial-gradient(circle at 110% 110%, rgba(255, 255, 255, .25) 0 26%, transparent 27%), radial-gradient(circle at -10% -10%, rgba(255, 255, 255, .18) 0 20%, transparent 21%), linear-gradient(150deg, var(--orange), #ff9a3c)
+    }
+
+    .fl .eyebrow {
+        color: #fff;
+        opacity: .9
+    }
+
+    .fl h2 {
+        font-size: clamp(26px, 3vw, 36px);
+        margin-bottom: 14px
+    }
+
+    .fl p {
+        opacity: .95;
+        margin-bottom: 22px
+    }
+
+    .fchips {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap
+    }
+
+    .fchips span {
+        background: rgba(255, 255, 255, .22);
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 14px
+    }
+
+    .fr {
+        padding: 40px 38px
+    }
+
+    @media (max-width:860px) {
+
+        .duo,
+        .pl,
+        .al,
+        .fc .front {
+            grid-template-columns: 1fr
+        }
+
+        .pn {
+            padding: 24px 20px
+        }
+
+        .fl,
+        .fr {
+            padding: 28px 22px
+        }
+    }
+
     .cities {
         padding: 40px 0 70px;
         background: linear-gradient(180deg, var(--cream), #fff3e6 55%, var(--cream))
@@ -1436,7 +1919,7 @@
             <div class="tag"><i></i>Live in Delhi, Lucknow &amp; Patna</div>
             <h1>Your digital business, <span style="color: var(--orange);">right at home</span></h1>
             <p>Partner with King Digital in your territory. You bring the local relationships, we bring the tools, the training and a team that has your back.</p>
-            <a class="cta" href="#talk">Start the conversation <svg class="ic">
+            <a class="cta" href="contact.php">Start the conversation <svg class="ic">
                     <use href="#rocket" />
                 </svg></a><a class="ghost" href="#cities">Meet our live cities</a>
         </div>
@@ -1545,6 +2028,188 @@
             </svg>Reporting</span>
     </div>
 </div>
+
+<div class="franchise">
+    <img src="assets/images/franchaise.png" alt="King Digital office with social media and advertising signage" loading="lazy">
+    <section id="services">
+        <div class="wrap">
+            <div class="head rv"><span class="eyebrow">What you'll offer</span>
+                <h2>Everything your clients need, ready to offer</h2>
+                <p>Every local business wants to be found and remembered. You bring the conversation, we deliver the work.</p>
+            </div>
+            <?php
+            /* icon symbol, title, text, text colour, tile colour */
+            $pop = [
+                ['web', 'Websites', 'Clean, fast sites that make a small business look like a big one.', '#4f46e5', '#e0e7ff'],
+                ['heart', 'Social media', 'Posts, stories and a steady voice that keeps customers coming back.', '#e11d48', '#ffe4e6'],
+                ['mega', 'Advertising', 'Ads that reach the right neighbours without wasting a budget.', '#ea580c', '#ffedd5'],
+                ['search', 'Search visibility', 'Help customers find your clients first when they search nearby.', '#2563eb', '#dbeafe'],
+                ['pen', 'Branding', 'Logos, colours and a look people remember.', '#16a34a', '#dcfce7'],
+                ['chart', 'Clear reports', 'Simple numbers you can explain over a coffee.', '#c026d3', '#fae8ff'],
+            ];
+            $all = [
+                ['chat', 'Bulk SMS', '#ea580c', '#ffedd5'],
+                ['chat', 'WhatsApp API', '#16a34a', '#dcfce7'],
+                ['chart', 'Aggregator Platform', '#2563eb', '#dbeafe'],
+                ['web', 'Website Design', '#4f46e5', '#e0e7ff'],
+                ['search', 'SEO Services', '#2563eb', '#dbeafe'],
+                ['chat', 'RCS Service', '#ea580c', '#ffedd5'],
+                ['mega', 'IVR & Voice', '#d97706', '#fef3c7'],
+                ['mega', 'AI Voice', '#e11d48', '#ffe4e6'],
+                ['web', 'Hosting & Cloud', '#16a34a', '#dcfce7'],
+                ['eye', 'Video Production', '#e11d48', '#ffe4e6'],
+                ['rocket', 'App Development', '#ca8a04', '#fef9c3'],
+                ['mega', 'Podcast Studio', '#4f46e5', '#e0e7ff'],
+                ['heart', 'Social Media', '#16a34a', '#dcfce7'],
+                ['pin', 'Missed Call Alert', '#e11d48', '#ffe4e6'],
+                ['star', 'AI Services', '#c026d3', '#fae8ff'],
+            ];
+
+            ?>
+            <div class="duo">
+                <div class="pn pop rv">
+                    <h3>Most popular digital marketing</h3>
+                    <p class="sub">The services local businesses ask for first.</p>
+                    <div class="pl">
+                        <?php foreach ($pop as $x): ?>
+                            <div class="pi">
+                                <span class="tile" style="--c:<?= $x[3] ?>;--b:<?= $x[4] ?>"><svg class="ic">
+                                        <use href="#<?= $x[0] ?>" />
+                                    </svg></span>
+                                <h4><?= $x[1] ?></h4>
+                                <p><?= $x[2] ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="pn all rv">
+                    <h3>All our services</h3>
+                    <p class="sub">Fifteen ways we help a business grow.</p>
+                    <ul class="al">
+                        <?php foreach ($all as $x): ?>
+                            <li><span class="tile" style="--c:<?= $x[2] ?>;--b:<?= $x[3] ?>"><svg class="ic">
+                                        <use href="#<?= $x[0] ?>" />
+                                    </svg></span><?= htmlspecialchars($x[1]) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <a class="vall" href="contact.php">Talk to Expert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<?php
+/* ---- edit these ---- */
+$wa_number = '918178819623'; // WhatsApp number that receives the enquiry: country code + number, no + or spaces
+$steps = [
+    ['Enquire', 'Tell us about yourself and the city you want to serve.'],
+    ['Talk to us', 'A short call to match your plans with our franchise model.'],
+    ['Sign up', 'Complete the paperwork and confirm your territory.'],
+    ['Get trained', 'Learn the tools, the pitch and the process with our team.'],
+    ['Go live', 'Launch in your city with King Digital behind you.'],
+];
+$docs = [
+    ['users', 'Identity proof', 'Aadhaar card or passport of the owner.', 'Required'],
+    ['check', 'PAN card', 'PAN of the owner or of the firm.', 'Required'],
+    ['pin', 'Address proof', 'Utility bill or rent agreement for your office or home.', 'Required'],
+    ['shop', 'Business registration', 'GST, Udyam or firm registration.', 'If you have one'],
+    ['chart', 'Bank details', 'Cancelled cheque or first page of the passbook.', 'Required'],
+    ['star', 'Passport-size photo', 'A recent photograph of the owner.', 'Required'],
+];
+?>
+<div class="proc" id="process">
+    <div class="wrap">
+        <div class="head rv" style="text-align:center;margin-inline:auto;max-width:720px"><span class="eyebrow">How it works</span>
+            <h2>Five steps from hello to live</h2>
+            <p>No long waiting and no confusing paperwork. Here is the road to opening your franchise.</p>
+        </div>
+        <div class="steps rv">
+            <?php foreach ($steps as $i => $st): ?>
+                <div class="ps" style="--i:<?= $i ?>"><b><?= $i + 1 ?></b>
+                    <h3><?= $st[0] ?></h3>
+                    <p><?= $st[1] ?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<div class="docs" id="documents">
+    <div class="wrap">
+        <div class="head rv" style="text-align:center;margin-inline:auto;max-width:720px"><span class="eyebrow">Documentation</span>
+            <h2>Keep these documents ready</h2>
+            <p>Having them at hand makes sign-up quick. Scans or clear phone photos are fine.</p>
+        </div>
+        <div class="dgrid">
+            <?php foreach ($docs as $d): ?>
+                <div class="doc rv">
+                    <span class="di"><svg class="ic">
+                            <use href="#<?= $d[0] ?>" />
+                        </svg></span>
+                    <div>
+                        <h3><?= $d[1] ?></h3>
+                        <p><?= $d[2] ?></p><em><?= $d[3] ?></em>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<div class="apply" id="apply">
+    <div class="wrap">
+        <div class="fc rv" id="apply-card">
+            <div class="face front">
+                <div class="fl">
+                    <span class="eyebrow">Get started</span>
+                    <h2>Share your details, we'll take it from here</h2>
+                    <p>Fill in three fields and your enquiry opens in WhatsApp, ready to send to our team.</p>
+                    <div class="fchips"><span>Name</span><span>Phone</span><span>Email</span></div>
+                </div>
+                <form class="fr" id="apply-form" data-wa="<?= $wa_number ?>" novalidate>
+                    <label for="f-name">Name</label>
+                    <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your full name">
+                    <label for="f-phone">Phone number</label>
+                    <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+\s\-]{10,15}" placeholder="10-digit mobile number">
+                    <label for="f-email">Email</label>
+                    <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+                    <button class="fbtn" type="submit">Send on WhatsApp</button>
+                    <small>We only use your details to contact you about the franchise.</small>
+                </form>
+            </div>
+            <div class="face back" id="apply-done" tabindex="-1" aria-live="polite">
+                <span class="ok"><svg class="ic">
+                        <use href="#check" />
+                    </svg></span>
+                <h3>Thank you for choosing King Digital</h3>
+                <p>Our team will contact you as soon as possible.</p>
+                <div class="blinks"><a href="#documents">See Documents</a><a href="contact.php">Talk to Expert</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function() {
+        var f = document.getElementById('apply-form'),
+            c = document.getElementById('apply-card');
+        f.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!f.checkValidity()) {
+                f.reportValidity();
+                return;
+            }
+            var d = new FormData(f),
+                msg = 'Hi King Digital, I am interested in a franchise.\nName: ' + d.get('name') + '\nPhone: ' + d.get('phone') + '\nEmail: ' + d.get('email'),
+                w = window.open('https://wa.me/' + f.dataset.wa + '?text=' + encodeURIComponent(msg), '_blank');
+            if (w) w.opener = null;
+            c.classList.add('done');
+            setTimeout(function() {
+                document.getElementById('apply-done').focus()
+            }, 500);
+        });
+    })();
+</script>
 
 <div class="cities" id="cities">
     <div class="wrap">
@@ -1778,62 +2443,6 @@
             </div>
         </section>
     </div>
-</div>
-
-<div class="franchise">
-    <img src="assets/images/franchise.jpg" alt="">
-    <section id="services">
-        <div class="wrap">
-            <div class="head rv"><span class="eyebrow">What you'll offer</span>
-                <h2>Everything your clients need, ready to offer</h2>
-                <p>Every local business wants to be found and remembered. You bring the conversation, we deliver the work.</p>
-            </div>
-            <div class="grid">
-                <div class="card rv">
-                    <div class="badge b-o"><svg class="ic">
-                            <use href="#web" />
-                        </svg></div>
-                    <h3>Websites</h3>
-                    <p>Clean, fast sites that make a small business look like a big one.</p>
-                </div>
-                <div class="card rv">
-                    <div class="badge b-p"><svg class="ic">
-                            <use href="#heart" />
-                        </svg></div>
-                    <h3>Social media</h3>
-                    <p>Posts, stories and a steady voice that keeps customers coming back.</p>
-                </div>
-                <div class="card rv">
-                    <div class="badge b-s"><svg class="ic">
-                            <use href="#mega" />
-                        </svg></div>
-                    <h3>Advertising</h3>
-                    <p>Ads that reach the right neighbours without wasting a budget.</p>
-                </div>
-                <div class="card rv">
-                    <div class="badge b-b"><svg class="ic">
-                            <use href="#search" />
-                        </svg></div>
-                    <h3>Search visibility</h3>
-                    <p>Help customers find your clients first when they search nearby.</p>
-                </div>
-                <div class="card rv">
-                    <div class="badge b-t"><svg class="ic">
-                            <use href="#pen" />
-                        </svg></div>
-                    <h3>Branding</h3>
-                    <p>Logos, colours and a look people remember.</p>
-                </div>
-                <div class="card rv">
-                    <div class="badge b-n"><svg class="ic">
-                            <use href="#chart" />
-                        </svg></div>
-                    <h3>Clear reports</h3>
-                    <p>Simple numbers you can explain over a coffee.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 
 <script>
