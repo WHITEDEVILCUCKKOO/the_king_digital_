@@ -207,7 +207,7 @@ $steps = [
     bottom: 3%;
   }
 
-  .kd-adv__phone {
+  /* .kd-adv__phone {
     position: absolute;
     z-index: 3;
     right: 15%;
@@ -278,7 +278,7 @@ $steps = [
     background: var(--kd-red);
     border-radius: 6px;
     padding: 7px 0;
-  }
+  } */
 
   .kd-adv__badge {
     position: absolute;
@@ -596,13 +596,13 @@ $steps = [
             </svg></a>
         </div>
 
-        <div class="kd-adv__phone" aria-hidden="true">
+        <!-- <div class="kd-adv__phone" aria-hidden="true">
           <div class="kd-adv__screen">
             <div class="kd-adv__screen-bar"><i></i>Sponsored</div>
             <div class="kd-adv__screen-img"></div>
             <div class="kd-adv__screen-cta">Shop Now</div>
           </div>
-        </div>
+        </div> -->
 
         <!-- <div class="kd-adv__badge" aria-hidden="true">
           More<br>Views.<br>More<br>Reach.<br>More<br>Leads.<br>More<br>Sales.
