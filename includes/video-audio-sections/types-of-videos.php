@@ -1,6 +1,4 @@
 <?php
-// King Digital – "Types of Videos We Produce" section
-$header_image = 'hero-video.png'; // swap for the camera/studio photo from your design if you have it
 
 $icons = [
   'clap'   => '<path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 9l2.5-5 3 .8L7 9.5M10 9l2.5-5 3 .8L13 9.5M16 9l2.3-4.6 1.7.4V9"/><path d="M10.5 13.5l3 1.8-3 1.8z" fill="currentColor"/>',
@@ -9,7 +7,7 @@ $icons = [
   'phone'  => '<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10 18.5h4"/><path d="M10.6 8.8l3.2 1.9-3.2 1.9z" fill="currentColor"/>',
   'mega'   => '<path d="M4 10v4a1 1 0 0 0 1 1h2l8 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M18 9.5a3.5 3.5 0 0 1 0 5M7 15l1 5h2.5l-1-4.5"/>',
   'yt'     => '<rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10.3 9.3l4.4 2.7-4.4 2.7z" fill="currentColor"/>',
-  'event'  => '<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="M12 12.4l1 2 2.2.3-1.6 1.5.4 2.2-2-1.1-2 1.1.4-2.2-1.6-1.5 2.2-.3z" fill="currentColor" stroke="none"/>',
+  'event'  => '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3M8 21h8"/>',
   'motion' => '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M12 7l1.2 2.3 2.5.4-1.8 1.8.4 2.5-2.3-1.2-2.3 1.2.4-2.5-1.8-1.8 2.5-.4z"/>',
 ];
 
@@ -20,7 +18,7 @@ $cards = [
   ['phone',  'Social Media Videos',       'Reels, Shorts, Instagram, Facebook and platform-specific content.'],
   ['mega',   'Brand Films',               'Emotional storytelling and visual identity that builds trust.'],
   ['yt',     'YouTube Production',        'Episodes, explainers and branded content for your channel.'],
-  ['event',  'Event & Coverage',          'Events, launches, conferences and corporate functions.'],
+  ['event',  'Podcast Production',        'Audio and video podcasts, live streams and hybrid events.'],
   ['motion', 'Animation & Motion Graphics', 'Explainers, graphics, shape effects and animated storytelling.'],
 ];
 ?>
@@ -173,27 +171,6 @@ $cards = [
     margin-left: 3px;
   }
 
-  .kd-types__badge {
-    position: absolute;
-    z-index: 4;
-    right: 3%;
-    top: 12%;
-    transform: rotate(-10deg);
-    text-align: center;
-    font-family: 'Caveat', cursive;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.1;
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
-  }
-
-  .kd-types__badge svg {
-    display: block;
-    width: 100%;
-    margin-top: 2px;
-  }
-
   /* ---------- cards ---------- */
   .kd-types__grid {
     display: grid;
@@ -314,53 +291,6 @@ $cards = [
     transition-delay: 0s;
   }
 
-  /* ---------- red corner shapes ---------- */
-  .kd-types__shape {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .kd-types__shape--bl1 {
-    left: -30px;
-    bottom: 60px;
-    width: 26px;
-    height: 130px;
-    background: var(--kd-red);
-    transform: rotate(35deg);
-    transform-origin: bottom left;
-  }
-
-  .kd-types__shape--bl2 {
-    left: 0;
-    bottom: 0;
-    width: 160px;
-    height: 70px;
-    background: linear-gradient(90deg, #e3161c, #a50d12);
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
-  }
-
-  .kd-types__shape--br {
-    right: 0;
-    bottom: 70px;
-    width: 80px;
-    height: 18px;
-    background: var(--kd-red);
-    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
-    transform: rotate(-35deg);
-    transform-origin: right bottom;
-  }
-
-  .kd-types__shape--tr {
-    right: 0;
-    top: 0;
-    width: 50px;
-    height: 170px;
-    background: linear-gradient(180deg, #e3161c, transparent);
-    clip-path: polygon(100% 0, 100% 100%, 0 0);
-    opacity: .8;
-  }
-
   /* ---------- responsive ---------- */
   @media (max-width: 1100px) {
     .kd-types__grid {
@@ -391,9 +321,6 @@ $cards = [
       height: 210px;
     }
 
-    .kd-types__badge {
-      font-size: 20px;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -410,10 +337,6 @@ $cards = [
 </style>
 
 <section class="kd-types" id="kd-types">
-  <span class="kd-types__shape kd-types__shape--tr"></span>
-  <span class="kd-types__shape kd-types__shape--bl1"></span>
-  <span class="kd-types__shape kd-types__shape--bl2"></span>
-  <span class="kd-types__shape kd-types__shape--br"></span>
 
   <div class="kd-types__inner">
     <div class="kd-types__top">
@@ -425,20 +348,14 @@ $cards = [
 
       <div class="kd-types__media">
         <div class="kd-types__photo">
-          <img src="<?= htmlspecialchars($header_image) ?>" alt="Professional video camera on a studio set">
+          <img src="assets/images/hero-video.png" alt="Professional video camera on a studio set">
         </div>
         <span class="kd-types__stripe"></span>
-        <a class="kd-types__play" href="#work" aria-label="Watch our work">
+        <a class="kd-types__play" href="portfolio.php" aria-label="Watch our work">
           <svg viewBox="0 0 24 24">
             <path d="M5 3l16 9-16 9z" />
           </svg>
         </a>
-        <div class="kd-types__badge" aria-hidden="true">
-          Good<br>Videos<br>Build<br>Great<br>Brands
-          <svg viewBox="0 0 120 12" fill="none">
-            <path d="M3 8 C 35 2, 75 2, 117 5" stroke="#e3161c" stroke-width="3" stroke-linecap="round" />
-          </svg>
-        </div>
       </div>
     </div>
 
@@ -448,7 +365,7 @@ $cards = [
           <div class="kd-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><?= $icons[$c[0]] ?></svg></div>
           <h3 class="kd-card__title"><?= htmlspecialchars($c[1]) ?></h3>
           <p class="kd-card__text"><?= htmlspecialchars($c[2]) ?></p>
-          <a class="kd-card__link" href="#contact">
+          <a class="kd-card__link" href="contact.php">
             Learn More
             <span class="kd-card__arrow"><svg viewBox="0 0 24 24">
                 <path d="M4 12h16M14 6l6 6-6 6" />

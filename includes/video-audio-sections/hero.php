@@ -1,6 +1,3 @@
-<?php
-$hero_image = 'hero-video.png';
-?>
 <style>
   .kd-hero {
     --kd-red: #d7141a;
@@ -33,50 +30,6 @@ $hero_image = 'hero-video.png';
     display: block;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .55) 18%, #000 42%);
     mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .55) 18%, #000 42%);
-  }
-
-  /* ---------- red corner shapes (bottom-left) ---------- */
-  .kd-hero__shape {
-    position: absolute;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .kd-hero__shape--a {
-    left: 0;
-    bottom: 0;
-    width: 420px;
-    height: 130px;
-    background: linear-gradient(90deg, #e3161c, #b80e13);
-    clip-path: polygon(0 35%, 100% 100%, 0 100%);
-  }
-
-  .kd-hero__shape--b {
-    left: 0;
-    bottom: 0;
-    width: 240px;
-    height: 210px;
-    background: linear-gradient(180deg, #c5121a, #7e0a0f);
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
-    opacity: .95;
-  }
-
-  .kd-hero__shape--c {
-    left: 70px;
-    top: 0;
-    width: 26px;
-    height: 16px;
-    background: var(--kd-red);
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-  }
-
-  .kd-hero__shape--d {
-    right: 0;
-    bottom: 0;
-    width: 120px;
-    height: 50px;
-    background: linear-gradient(90deg, transparent, rgba(215, 20, 26, .9));
-    clip-path: polygon(40% 100%, 100% 0, 100% 100%);
   }
 
   /* ---------- content ---------- */
@@ -246,7 +199,7 @@ $hero_image = 'hero-video.png';
   }
 
   /* ---------- tag badge ---------- */
-  .kd-badge {
+  /* .kd-badge {
     position: absolute;
     z-index: 3;
     top: 8%;
@@ -266,7 +219,7 @@ $hero_image = 'hero-video.png';
     margin: 4px auto 0;
     width: 110%;
     margin-left: -5%;
-  }
+  } */
 
   /* ---------- responsive ---------- */
   @media (max-width: 1100px) {
@@ -333,19 +286,7 @@ $hero_image = 'hero-video.png';
 
 <section class="kd-hero" id="kd-hero">
   <div class="kd-hero__media">
-    <img src="<?= htmlspecialchars($hero_image) ?>" alt="King Digital videographer shooting an interview in a studio">
-  </div>
-
-  <span class="kd-hero__shape kd-hero__shape--c"></span>
-  <span class="kd-hero__shape kd-hero__shape--b"></span>
-  <span class="kd-hero__shape kd-hero__shape--a"></span>
-  <span class="kd-hero__shape kd-hero__shape--d"></span>
-
-  <div class="kd-badge" aria-hidden="true">
-    Ideas<br>Shoot<br>Edit<br>Deliver
-    <svg viewBox="0 0 120 14" fill="none">
-      <path d="M3 10 C 30 2, 70 2, 117 6" stroke="#e3161c" stroke-width="3" stroke-linecap="round" />
-    </svg>
+    <img src="assets/images/hero-video.png" alt="King Digital videographer shooting an interview in a studio">
   </div>
 
   <div class="kd-hero__inner">
@@ -365,17 +306,17 @@ $hero_image = 'hero-video.png';
       </p>
 
       <div class="kd-hero__actions">
-        <a href="#contact" class="kd-btn kd-btn--primary">
+        <a href="contact.php" class="kd-btn kd-btn--primary">
           Start Your Video Project
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 12h16M14 6l6 6-6 6" />
           </svg>
         </a>
-        <a href="#work" class="kd-btn kd-btn--ghost">
+        <a href="portfolio.php" class="kd-btn kd-btn--ghost">
           <svg width="16" height="16" viewBox="0 0 24 24">
             <path d="M5 3l16 9-16 9z" />
           </svg>
-          View Our Work
+          View Our Portfolio
         </a>
       </div>
 
