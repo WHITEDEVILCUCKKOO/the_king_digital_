@@ -142,7 +142,7 @@ $cards = [
   .kd-types__play {
     position: absolute;
     z-index: 4;
-    left: 40%;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 62px;

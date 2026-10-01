@@ -102,7 +102,6 @@
     height: 54px;
     padding: 0 34px;
     border-radius: 40px;
-    font: 600 14.5px 'Poppins', sans-serif;
     text-decoration: none;
     cursor: pointer;
     transition: transform .2s ease, background .2s ease, box-shadow .2s ease, color .2s ease;
@@ -185,16 +184,16 @@
     height: 21px;
   }
 
-  .kd-stat__num {
+  .kd-stat__num--hero {
     font-size: 18px;
     font-weight: 700;
-    color: var(--kd-ink);
+    color: var(--kd-red-dark);
     line-height: 1.2;
   }
 
-  .kd-stat__label {
+  .kd-stat__label--hero {
     font-size: 13px;
-    color: var(--kd-text);
+    color: var(--kd-red);
     line-height: 1.3;
   }
 
@@ -329,8 +328,8 @@
             </svg>
           </div>
           <div>
-            <div class="kd-stat__num"><span data-count="100">100</span>+</div>
-            <div class="kd-stat__label">Video Projects</div>
+            <div class="kd-stat__num--hero"><span data-count="100">100</span></div>
+            <div class="kd-stat__label--hero">Video Projects</div>
           </div>
         </div>
         <div class="kd-stat">
@@ -343,8 +342,8 @@
             </svg>
           </div>
           <div>
-            <div class="kd-stat__num"><span data-count="50">50</span>+</div>
-            <div class="kd-stat__label">Happy Clients</div>
+            <div class="kd-stat__num--hero"><span data-count="50">50</span></div>
+            <div class="kd-stat__label--hero">Happy Clients</div>
           </div>
         </div>
         <div class="kd-stat">
@@ -354,8 +353,8 @@
             </svg>
           </div>
           <div>
-            <div class="kd-stat__num"><span data-count="100">100</span>%</div>
-            <div class="kd-stat__label">Creative Focus</div>
+            <div class="kd-stat__num--hero"><span data-count="100">100</span>%</div>
+            <div class="kd-stat__label--hero">Creative Focus</div>
           </div>
         </div>
       </div>
