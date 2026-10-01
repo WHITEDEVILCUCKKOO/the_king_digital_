@@ -704,7 +704,7 @@
                     <span class="whatsappapi-faq_card-label">STILL HAVE QUESTIONS?</span>
                     <h3>Let's talk about your business</h3>
                     <p>Get guidance based on your business setup, WhatsApp presence and verification goals.</p>
-                    <a href="#contact" class="whatsappapi-faq_card-btn">
+                    <a href="contact.php" class="whatsappapi-faq_card-btn">
                         Talk to an expert
                         <i class="fa-solid fa-paper-plane"></i>
                     </a>

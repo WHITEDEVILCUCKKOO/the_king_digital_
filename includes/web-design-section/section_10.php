@@ -1,570 +1,1013 @@
 <style>
     :root {
-        --wd-blue: #3B6FF2;
-        --wd-blue-dark: #2952D6;
-        --wd-ink: #0F172A;
-        --wd-text: #4B5568;
-        --wd-muted: #8792A2;
-        --wd-border: #EAEDF3;
-        --wd-white: #FFFFFF;
-        --wd-bg: #FFFFFF;
+        --blue: #E31B23;
+        --blue-dk: #B91C1C;
+        --blue-md: #EF4444;
+        --blue-lt: #FEECEC;
+        --blue-xl: #FFF5F5;
 
-        --wd-blue-soft: #E9EEFF;
-        --wd-green-soft: #E4F8ED;
-        --wd-green: #16A34A;
-        --wd-purple-soft: #F1EAFE;
-        --wd-purple: #7C3AED;
-        --wd-orange-soft: #FDECE1;
-        --wd-orange: #EA6C21;
+        --gold: #E31B23;
+        --gold-dk: #B91C1C;
+        --gold-lt: #FFF5F5;
+        --gold-mid: #FCA5A5;
 
-        --wd-whatsapp: #25D366;
-        --wd-whatsapp-dark: #1DA851;
-        --wd-navy: #0F1E3D;
-        --wd-navy-dark: #0A1530;
+        --green: #16A34A;
+
+        --white: #FFFFFF;
+
+        --bg: #F7F7F8;
+        --bg2: #F1F2F4;
+
+        --txt: #111827;
+        --txt2: #4B5563;
+        --txt3: #9CA3AF;
+
+        --bdr: #E5E7EB;
+        --r: 10px;
+        --rlg: 16px;
+        --sh: 0 2px 8px rgba(0, 0, 0, .06);
+        --shlg: 0 8px 32px rgba(27, 61, 123, .12);
+        --trans: all .22s ease;
     }
 
-    * {
-        box-sizing: border-box;
-    }
 
-    body {
-        margin: 0;
-        background: var(--wd-bg);
-        font-family: "Inter", system-ui, sans-serif;
-    }
 
-    .wd-faq-section {
-        position: relative;
-        padding: 76px 24px;
-        overflow: hidden;
-    }
-
-    .wd-faq-section::before {
-        content: "";
-        position: absolute;
-        top: -80px;
-        left: 8%;
-        width: 420px;
-        height: 220px;
-        background: radial-gradient(ellipse, rgba(15, 23, 42, 0.05) 0%, transparent 70%);
-        filter: blur(20px);
-        pointer-events: none;
-    }
-
-    .wd-faq-container {
-        position: relative;
-        max-width: 820px;
+    /* Utilities */
+    .container {
+        max-width: 1200px;
         margin: 0 auto;
+        padding: 0 24px;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
-    .wd-faq-header {
-        text-align: center;
-        margin-bottom: 44px;
+    .section {
+        padding: 88px 0
     }
 
-    .wd-faq-eyebrow {
-        display: block;
-        font-family: "Inter", sans-serif;
-        font-size: 13px;
+    .section-sm {
+        padding: 56px 0
+    }
+
+    .flex {
+        display: flex;
+        align-items: center
+    }
+
+    .gap-8 {
+        gap: 8px
+    }
+
+    .gap-12 {
+        gap: 12px
+    }
+
+    .gap-16 {
+        gap: 16px
+    }
+
+    .gap-24 {
+        gap: 24px
+    }
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 1.2px;
         text-transform: uppercase;
-        color: var(--wd-blue);
+        background: var(--blue-lt);
+        color: var(--blue);
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 16px
+    }
+
+    .tag.orange {
+        background: var(--gold-lt);
+        color: var(--gold)
+    }
+
+    .tag .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+        flex-shrink: 0
+    }
+
+    .sh {
+        font-size: clamp(26px, 3.8vw, 40px);
+        font-weight: 800;
         margin-bottom: 14px;
+        letter-spacing: -.5px
     }
 
-    .wd-faq-header h1 {
-        font-family: "Baloo 2", sans-serif;
-        margin: 0;
-        font-size: clamp(30px, 4vw, 42px);
-        line-height: 1.18;
-        font-weight: 700;
-        color: var(--wd-ink);
+    .sub {
+        font-size: 16px;
+        color: var(--txt2);
+        line-height: 1.85;
+        max-width: 560px
     }
 
-    .wd-faq-header h1 span {
-        display: block;
-        color: var(--wd-blue);
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 11px 24px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: var(--trans);
+        white-space: nowrap
     }
 
-    .wd-faq-header p {
-        margin: 16px auto 0;
-        max-width: 480px;
-        font-size: 15px;
-        line-height: 1.7;
-        color: var(--wd-muted);
+    .btn-primary {
+        background: var(--gold);
+        color: #fff;
+        border-color: var(--gold)
     }
 
-    /* ---------------- FAQ LIST ---------------- */
+    .btn-primary:hover {
+        background: var(--gold-dk);
+        border-color: var(--gold-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(249, 115, 22, .35)
+    }
 
-    .wd-faq-list {
+    .btn-blue {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue)
+    }
+
+    .btn-blue:hover {
+        background: var(--blue-dk);
+        border-color: var(--blue-dk);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(27, 61, 123, .3)
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--blue);
+        border-color: var(--blue)
+    }
+
+    .btn-outline:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-2px)
+    }
+
+    .btn-white {
+        background: #fff;
+        color: var(--blue);
+        border-color: #fff
+    }
+
+    .btn-white:hover {
+        background: var(--blue-lt);
+        transform: translateY(-2px)
+    }
+
+    .btn-sm {
+        padding: 8px 18px;
+        font-size: 13px
+    }
+
+
+    /* ════ FAQ ════ */
+    .faq {
+        background: var(--bg)
+    }
+
+    .faq-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 56px;
+        align-items: start;
+        margin-top: 52px
+    }
+
+    .faq-list {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        margin-bottom: 40px;
+        gap: 10px
     }
 
-    .wd-faq-item {
-        background: var(--wd-white);
-        border: 1px solid var(--wd-border);
-        border-radius: 14px;
+    .faq-item {
+        background: #fff;
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--r);
         overflow: hidden;
-        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        transition: border-color .2s
     }
 
-    .wd-faq-item.active {
-        border-color: rgba(59, 111, 242, 0.25);
-        box-shadow: 0 10px 26px rgba(59, 111, 242, 0.08);
+    .faq-item.open {
+        border-color: var(--blue)
     }
 
-    .wd-faq-question {
-        width: 100%;
+    .faq-q {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: 16px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        text-align: left;
         padding: 18px 20px;
-        font-family: "Inter", sans-serif;
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--wd-ink);
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--txt)
     }
 
-    .wd-faq-question:focus-visible {
-        outline: 2px solid var(--wd-blue);
-        outline-offset: -2px;
+    .faq-q i {
+        font-size: 13px;
+        color: var(--txt3);
+        transition: transform .25s;
+        flex-shrink: 0
     }
 
-    .wd-faq-icon {
-        flex: none;
-        width: 38px;
-        height: 38px;
-        border-radius: 10px;
+    .faq-item.open .faq-q i {
+        transform: rotate(180deg);
+        color: var(--blue)
+    }
+
+    .faq-a {
+        display: none;
+        padding: 0 20px 18px;
+        font-size: 14px;
+        color: var(--txt2);
+        line-height: 1.8
+    }
+
+    .faq-item.open .faq-a {
+        display: block
+    }
+
+    .faq-cta-box {
+        background: radial-gradient(circle at 50% 20%,
+                #220783 0%,
+                #1e1141 25%,
+                #151018 50%,
+                #0B0D10 80%,
+                #050608 100%);
+        border-radius: 20px;
+        padding: 57px 43px;
+        text-align: center;
+        color: #fff;
+        position: sticky;
+        top: 90px
+    }
+
+    .faq-cta-box h3 {
+        font-size: 44px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px
+    }
+
+    .faq-cta-box p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, .7);
+        margin-bottom: 24px;
+        line-height: 1.75
+    }
+
+    .faq-cta-box .btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 12px
+    }
+
+    .faq-cta-or {
+        font-size: 13px;
+        color: rgba(255, 255, 255, .5);
+        margin: 14px 0
+    }
+
+    /* ════ CONTACT ════ */
+    .contact {
+        background: #fff
+    }
+
+    .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        margin-top: 52px;
+        align-items: start
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 18px
+    }
+
+    .ci-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: var(--bg);
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--r);
+        padding: 20px;
+        transition: var(--trans)
+    }
+
+    .ci-item:hover {
+        border-color: var(--blue-md);
+        box-shadow: var(--sh)
+    }
+
+    .ci-ico {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        background: var(--blue-lt);
+        color: var(--blue);
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 17px;
+        flex-shrink: 0
     }
 
-    .wd-faq-icon svg {
-        width: 18px;
-        height: 18px;
+    .ci-item h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--txt3);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: .5px
     }
 
-    .wd-faq-item:nth-child(4n+1) .wd-faq-icon {
-        background: var(--wd-blue-soft);
-        color: var(--wd-blue);
+    .ci-item p,
+    .ci-item a {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--txt)
     }
 
-    .wd-faq-item:nth-child(4n+2) .wd-faq-icon {
-        background: var(--wd-green-soft);
-        color: var(--wd-green);
+    .ci-item a:hover {
+        color: var(--blue)
     }
 
-    .wd-faq-item:nth-child(4n+3) .wd-faq-icon {
-        background: var(--wd-purple-soft);
-        color: var(--wd-purple);
+    .contact-social {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 4px
     }
 
-    .wd-faq-item:nth-child(4n+4) .wd-faq-icon {
-        background: var(--wd-orange-soft);
-        color: var(--wd-orange);
-    }
-
-    .wd-faq-question-text {
-        flex: 1;
-    }
-
-    .wd-faq-chevron {
-        flex: none;
-        width: 18px;
-        height: 18px;
-        color: var(--wd-muted);
-        transition: transform 0.25s ease, color 0.25s ease;
-    }
-
-    .wd-faq-item.active .wd-faq-chevron {
-        transform: rotate(180deg);
-        color: var(--wd-blue);
-    }
-
-    .wd-faq-answer {
-        display: grid;
-        grid-template-rows: 0fr;
-        opacity: 0;
-        transition: grid-template-rows 0.35s ease, opacity 0.3s ease;
-    }
-
-    .wd-faq-item.active .wd-faq-answer {
-        grid-template-rows: 1fr;
-        opacity: 1;
-    }
-
-    .wd-faq-answer-inner {
-        overflow: hidden;
-    }
-
-    .wd-faq-answer p {
-        margin: 0;
-        padding: 0 20px 20px 74px;
-        font-size: 13.5px;
-        line-height: 1.75;
-        color: var(--wd-text);
-    }
-
-    /* ---------------- CTA BANNER ---------------- */
-
-    .wd-cta {
-        position: relative;
-        background: linear-gradient(135deg, #3B6FF2 0%, #2952D6 100%);
-        border-radius: 20px;
-        padding: 38px 34px;
+    .cs-link {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--bg2);
+        border: 1.5px solid var(--bdr);
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
-        overflow: hidden;
-        box-shadow: 0 20px 45px rgba(59, 111, 242, 0.25);
+        justify-content: center;
+        font-size: 15px;
+        color: var(--blue);
+        transition: var(--trans)
     }
 
-    .wd-cta::before {
-        content: "";
-        position: absolute;
-        width: 230px;
-        height: 230px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.08);
-        top: -110px;
-        right: -60px;
-        pointer-events: none;
+    .cs-link:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue)
     }
 
-    .wd-cta-text {
-        position: relative;
-        max-width: 400px;
+    .contact-form {
+        background: var(--blue);
+        border: 1.5px solid var(--bdr);
+        border-radius: 20px;
+        padding: 32px
     }
 
-    .wd-cta-text h3 {
-        margin: 0 0 6px;
-        font-family: "Baloo 2", sans-serif;
-        font-size: 21px;
-        font-weight: 700;
-        color: #FFFFFF;
+    .cf-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        color: var(--white);
     }
 
-    .wd-cta-text p {
-        margin: 0;
+    .cf-sub {
+        font-size: 14px;
+        color: var(--txt2);
+        margin-bottom: 28px;
+        color: #8f8787;
+
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px
+    }
+
+    .form-group {
+        margin-bottom: 16px
+    }
+
+    .form-group label {
+        display: block;
         font-size: 13px;
-        line-height: 1.65;
-        color: rgba(255, 255, 255, 0.85);
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        color: #e6e1e1c5;
+        margin-bottom: 7px
     }
 
-    .wd-cta-actions {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px 10px;
+        border: 1.5px solid var(--bdr);
+        border-radius: 8px;
+        font-size: 14px;
+        color: var(--txt);
+        background: #fff;
+        outline: none;
+        transition: border-color .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(27, 61, 123, .08)
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px
+    }
+
+    .form-submit {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        justify-content: center;
+        border: none;
         position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
     }
 
-    .wd-cta-btn {
+    .submit_btn_animtion {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 145, 0);
+        border: 2px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        left: -1000px;
+        border-radius: 8px;
+    }
+
+    .submit_btn_animtion .sesa885 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        padding: 5px;
+        animation: trailFade 3s ease-in-out infinite;
+    }
+
+    @keyframes trailFade {
+
+        0% {
+
+            opacity: .9;
+        }
+
+        18% {
+            opacity: .9;
+            transform: translate(-50%, -50%) rotate(24deg) scaleX(1);
+        }
+
+        26% {
+            opacity: .9;
+            transform: translate(10%, -120%) rotate(24deg) scaleX(1.4);
+        }
+
+        42% {
+            opacity: 0;
+            transform: translate(980%, -280%) rotate(0deg) scaleX(5.4);
+        }
+
+        43%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .submit_btn_animtion:hover {}
+
+    /* ════ RESPONSIVE ════ */
+    @media(max-width:960px) {
+        .hero-grid {
+            grid-template-columns: 1fr
+        }
+
+        .hero-card {
+            display: none
+        }
+
+        .why-wrap {
+            grid-template-columns: 1fr
+        }
+
+        .faq-wrap {
+            grid-template-columns: 1fr
+        }
+
+        .faq-cta-box {
+            position: static
+        }
+
+        .contact-wrap {
+            grid-template-columns: 1fr
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr 1fr
+        }
+
+        .wp-panel {
+            position: static
+        }
+
+        .process-steps::before {
+            display: none
+        }
+    }
+
+    @media(max-width:640px) {
+
+        .nav-links,
+        .nav-right .btn-outline {
+            display: none
+        }
+
+        .hamburger {
+            display: flex
+        }
+
+        .topbar .tb-right {
+            display: none
+        }
+
+        .section {
+            padding: 60px 0
+        }
+
+        .form-row {
+            grid-template-columns: 1fr
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr
+        }
+
+        .hc-svcs {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        .rating-bar {
+            flex-wrap: wrap
+        }
+
+        .rb-div {
+            display: none
+        }
+
+        .recog-row {
+            gap: 20px
+        }
+    }
+
+
+
+    /* Container (Left-aligned as shown in image) */
+    .reveal8494 {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        text-align: left;
+        max-width: 650px;
+    }
+
+    /* FAQS Badge Tag */
+    .tag9649 {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 11px 18px;
-        border-radius: 999px;
-        font-family: "Inter", sans-serif;
-        font-size: 12.5px;
+        background-color: #EEF2FF;
+        /* Light blue/lavender tint */
+        color: #3538CD;
+        /* Navy blue text */
+        font-size: 12px;
         font-weight: 700;
-        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        padding: 6px 14px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+    }
+
+    /* Dot Base with Wave Animation Support */
+    .dot854 {
+        width: 7px;
+        height: 7px;
+        background-color: #3538CD;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        isolation: isolate;
+    }
+
+    /* Wave Animation (Before & After) */
+    .dot854::before,
+    .dot854::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(53, 56, 205, 0.4);
+        border-radius: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%) scale(1);
+        animation: dotWavePulse 2s infinite ease-out;
+    }
+
+    /* Second Wave Delay */
+    .dot854::after {
+        animation-delay: 1s;
+    }
+
+    /* Keyframes for Wave Effect */
+    @keyframes dotWavePulse {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) scale(4);
+            opacity: 0;
+        }
+    }
+
+    /* Heading Styling */
+    .sh84a {
+        font-size: 44px;
+        font-weight: 800;
+        line-height: 1.15;
+        color: #0F172A;
+        /* Dark Navy Black */
+        margin: 0 0 16px 0;
+        letter-spacing: -1px;
+    }
+
+    .sh84a span {
+        color: #220783;
+        /* Red Accent */
+    }
+
+    /* Subtitle Paragraph */
+    .subas84 {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #475569;
+        /* Slate grey */
+        margin: 0;
+        font-weight: 400;
+    }
+
+    .faq {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .faq .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* big faint watermark */
+    .decor-qmark-big {
+        position: absolute;
+        top: -70px;
+        right: 40px;
+        font-size: 280px;
+        font-weight: 800;
+        line-height: 1;
+        color: #3538CD;
+        opacity: .2;
+        font-family: Georgia, serif;
+        z-index: 0;
+        pointer-events: none;
+        animation: qmark-sway 10s ease-in-out infinite;
+    }
+
+    @keyframes qmark-sway {
+
+        0%,
+        100% {
+            transform: rotate(-5deg) scale(1);
+        }
+
+        50% {
+            transform: rotate(5deg) scale(1.03);
+        }
+    }
+
+    /* scattered small marks */
+    .decor-qmarks-scatter {
+        position: absolute;
+        bottom: -10px;
+        left: -10px;
+        width: 220px;
+        height: 260px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .decor-qmark {
+        position: absolute;
+        font-weight: 800;
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+
+    .decor-qmark.q1 {
+        font-size: 40px;
+        bottom: 40px;
+        left: 20px;
+        color: #3538CD;
+        opacity: .18;
+        animation: qmark-float-1 6s ease-in-out infinite;
+    }
+
+    .decor-qmark.q2 {
+        font-size: 26px;
+        bottom: 130px;
+        left: 90px;
+        color: var(--blue-md);
+        opacity: .16;
+        animation: qmark-float-2 7s ease-in-out infinite .4s;
+    }
+
+    .decor-qmark.q3 {
+        font-size: 56px;
+        bottom: 60px;
+        left: 140px;
+        color: #3538CD;
+        opacity: .1;
+        animation: qmark-float-3 8s ease-in-out infinite .8s;
+    }
+
+    .decor-qmark.q4 {
+        font-size: 20px;
+        bottom: 190px;
+        left: 40px;
+        color: var(--gold);
+        opacity: .2;
+        animation: qmark-float-1 5.5s ease-in-out infinite .2s;
+    }
+
+    @keyframes qmark-float-1 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(8px, -14px) rotate(-8deg);
+        }
+    }
+
+    @keyframes qmark-float-2 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(-10px, 10px) rotate(6deg);
+        }
+    }
+
+    @keyframes qmark-float-3 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        50% {
+            transform: translate(6px, 12px) rotate(-4deg);
+        }
+    }
+
+
+
+    /* submit btn  */
+    .from_btn_submit {
+        width: 100%;
+        font-family: inherit;
+        font-size: 16px;
+        background: #ff7300;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
         cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .wd-cta-btn:hover {
-        transform: translateY(-2px);
+    .from_btn_submit span {
+        display: block;
+        margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
     }
 
-    .wd-cta-btn svg {
-        width: 14px;
-        height: 14px;
-        flex: none;
+    .from_btn_submit svg {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
     }
 
-    .wd-cta-btn--primary {
-        background: var(--wd-ink);
-        color: #FFFFFF;
-        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.35);
+
+    .from_btn_submit:hover {
+        background: royalblue;
+        transition: .25s ease;
     }
 
-    .wd-cta-btn--secondary {
-        background: #FFFFFF;
-        color: var(--wd-blue);
+    .from_btn_submit .svg-wrapper {
+        animation: fly-1 0.6s ease-in-out infinite alternate;
     }
 
-    .wd-cta-btn--whatsapp {
-        background: var(--wd-whatsapp);
-        color: #FFFFFF;
-        box-shadow: 0 10px 22px rgba(37, 211, 102, 0.35);
+    .from_btn_submit:hover svg {
+        transform: translateX(1em) rotate(45deg) scale(1.1);
     }
 
-    .wd-cta-btn--whatsapp:hover {
-        background: var(--wd-whatsapp-dark);
+    .from_btn_submit:hover span {
+        /* transform: translateX(1); */
     }
 
-    .wd-cta-btn--meet {
-        background: var(--wd-navy);
-        color: #FFFFFF;
-        box-shadow: 0 10px 22px rgba(15, 30, 61, 0.4);
+    .from_btn_submit:active {
+        transform: scale(0.95);
     }
 
-    .wd-cta-btn--meet:hover {
-        background: var(--wd-navy-dark);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-        .wd-faq-answer,
-        .wd-faq-chevron,
-        .wd-cta-btn {
-            transition: none;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .wd-faq-section {
-            padding: 52px 16px;
+    @keyframes fly-1 {
+        from {
+            transform: translateY(0.1em);
         }
 
-        .wd-faq-answer p {
-            padding-left: 20px;
-        }
-
-        .wd-cta {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 30px 24px;
-        }
-
-        .wd-cta-text {
-            max-width: 100%;
-        }
-
-        .wd-cta-actions {
-            width: 100%;
-        }
-
-        .wd-cta-btn {
-            flex: 1;
-            justify-content: center;
+        to {
+            transform: translateY(-0.1em);
         }
     }
 </style>
 
-<section class="wd-faq-section">
-    <div class="wd-faq-container">
 
-        <div class="wd-faq-header">
-            <span class="wd-faq-eyebrow">FAQ</span>
-            <h1>
-                Got Questions About Our
-                <span>Web Design Process?</span>
-            </h1>
-            <p>Everything you need to know before we start building your website.</p>
+<!-- ════ FAQ ════ -->
+<section class="faq section" id="faq">
+    <div class="decor-qmark-big">?</div>
+    <div class="decor-qmarks-scatter">
+        <span class="decor-qmark q1">?</span>
+        <span class="decor-qmark q2">?</span>
+        <span class="decor-qmark q3">?</span>
+        <span class="decor-qmark q4">?</span>
+    </div>
+    <div class="container">
+        <div class="reveal8494">
+            <div class="tag9649"><span class="dot854"></span>FAQs</div>
+            <h2 class="sh84a">Frequently asked <span>Questions</span></h2>
+            <p class="subas84">Everything you need to know before getting started with King Digital.</p>
         </div>
+        <div class="faq-wrap">
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-q">1. What types of websites do you design?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">We design business websites, corporate websites, e-commerce stores, landing pages, portfolio websites, service websites, and custom web solutions.</div>
+                </div>
 
-        <div class="wd-faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">2. Will my website be mobile-friendly?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">Yes. We create responsive websites that work smoothly across smartphones, tablets, laptops, and desktop devices.</div>
+                </div>
 
-            <!-- 1 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2 2 7l10 5 10-5-10-5z" />
-                            <path d="M2 17l10 5 10-5" />
-                            <path d="M2 12l10 5 10-5" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">What does your web design process look like?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>We start with discovery to understand your business and goals, move into wireframes and design, then build, test and launch — with your feedback built into every stage rather than saved for the end.</p>
-                    </div>
+                <div class="faq-item">
+                    <div class="faq-q">3. Can you design a website according to my brand?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">Yes. We can customize the website design around your brand identity, including your logo, colors, typography, content, images, and overall visual style.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">4. Do you provide SEO-friendly website design?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">Yes. We follow SEO-friendly practices such as clean HTML structure, proper heading hierarchy, responsive design, optimized page structure, and search-engine-friendly URLs.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">5. Can you develop an e-commerce website?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">Yes. We can create e-commerce websites with product catalogs, shopping carts, payment integration, order management, customer accounts, and other required features.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">6. How long does it take to design a website?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">The timeline depends on the number of pages, design complexity, content, functionality, and integrations required. After understanding your requirements, we provide an estimated delivery timeline.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">7. Can you redesign my existing website?<i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-a">Yes. We can redesign existing websites to improve their appearance, user experience, mobile responsiveness, performance, navigation, and overall functionality.</div>
                 </div>
             </div>
 
-            <!-- 2 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">How long does it take to design and build a website?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>Most business websites take 2 to 4 weeks from kickoff to launch. Larger sites, custom features or online stores usually take longer, and we'll give you a clear timeline before work begins.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">Will my website work well on mobile devices?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>Yes. Every website we build is fully responsive and tested across phones, tablets and desktops, so it looks and performs well no matter what device your visitors use.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">How many rounds of revisions are included?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>Every package includes structured revision rounds at the design and pre-launch stages, so you can request changes before anything goes live. Extra rounds beyond that can be added if needed.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="9" cy="21" r="1" />
-                            <circle cx="20" cy="21" r="1" />
-                            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">Can you build an e-commerce or online store website?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>Yes. We build online stores with product catalogs, cart and checkout, payment gateway integration, and order management, tailored to how you plan to sell and fulfill orders.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">Will the website be SEO-friendly and fast to load?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>Yes. We follow clean, semantic code, optimize images and page speed, and set up on-page SEO basics from day one, so your site is ready to rank and loads fast for visitors.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7 -->
-            <div class="wd-faq-item">
-                <button type="button" class="wd-faq-question" aria-expanded="false">
-                    <span class="wd-faq-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z" />
-                        </svg>
-                    </span>
-                    <span class="wd-faq-question-text">Do you provide support after the website is launched?</span>
-                    <svg class="wd-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div class="wd-faq-answer">
-                    <div class="wd-faq-answer-inner">
-                        <p>Yes. Every project includes a post-launch support window, and we offer ongoing maintenance plans after that for updates, fixes and any new features you want to add.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CTA BANNER -->
-        <div class="wd-cta">
-            <div class="wd-cta-text">
+            <div class="faq-cta-box reveal visible">
                 <h3>Still have questions?</h3>
-                <p>Tell us about your project and our web design team will help you plan the right approach — no pressure, no obligation.</p>
+                <p>Our team is here to help. Get a free 30-minute consultation with our digital expert — no pressure, no obligation.</p>
+                <a href="contact.php" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Us a Message
+                </a>
+                <div class="faq-cta-or">— or —</div>
+                <a href="tel:+919211339966" class="btn btn-white">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)">
+                    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px">ALSO REACH US ON</div>
+                    <div style="display:flex;gap:10px;justify-content:center">
+                        <a href="https://wa.me/919211339966" style="background: rgb(81 131 38);border-radius: 7px;padding: 8px 14px;color: #fff;font-size: 16px;font-weight: 600;display: flex;align-items: center;"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp</a>
+                        <a href="https://kingdigital.in/online-meeting.php" style="background:rgba(255,255,255,.1);border-radius:7px;padding:8px 14px;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;gap:6px"><i class="fas fa-video"></i> Meet Online</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="wd-cta-actions">
-                <button type="button" class="wd-cta-btn wd-cta-btn--primary">✉ Send Us a Message</button>
-                <button type="button" class="wd-cta-btn wd-cta-btn--secondary">📞 Call Now</button>
-                <a href="#" class="wd-cta-btn wd-cta-btn--whatsapp">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.15 8.15 0 0 1-1.25-4.34c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.81c0 4.54-3.7 8.21-8.23 8.21zm4.52-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.96-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.15 0-.31-.02-.48-.02-.16 0-.43.06-.66.3-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z" />
-                    </svg>
-                    WhatsApp
-                </a>
-                <a href="#" class="wd-cta-btn wd-cta-btn--meet">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z" />
-                    </svg>
-                    Meet Online
-                </a>
-            </div>
         </div>
-
     </div>
 </section>
 
 <script>
-    (function() {
-        document.querySelectorAll(".wd-faq-item").forEach(function(item) {
-            var btn = item.querySelector(".wd-faq-question");
-            btn.addEventListener("click", function() {
-                var isOpen = item.classList.contains("active");
-                item.classList.toggle("active", !isOpen);
-                btn.setAttribute("aria-expanded", String(!isOpen));
-            });
-        });
-    })();
+    function submit_btn_form() {
+
+    }
 </script>
+
+
+
+<!-- <script>
+
+    function flyr_tyse(){
+ let btn_sew = document.getElementsByClassName("submit_btn_animtion")
+
+ btn_sew.style.left="0px"
+
+    }
+
+
+    /* ─ Scroll reveal ─ */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), 60 * (entry.target.dataset.delay || 0));
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    /* ─ FAQ accordion ─ */
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+</script> -->

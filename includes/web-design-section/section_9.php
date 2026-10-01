@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <button class="kdf-btn">Get a Free Quote &#8594;</button>
+    <a href="contact.php" class="kdf-btn">Get a Free Quote &#8594;</a>
 
   </div>
 </section>
