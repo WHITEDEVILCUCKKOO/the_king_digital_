@@ -395,7 +395,7 @@ $points = [
     </div>
 
     <div class="kd-cta__media">
-      <div class="kd-cta__photo"><img src="assets/images/hero-video.png" alt="King Digital crew filming in a studio"></div>
+      <div class="kd-cta__photo"><img src="assets/images/video-image.jpg" alt="King Digital crew filming in a studio"></div>
       <span class="kd-cta__stripe"></span>
       <div class="kd-cta__chip"><strong>100+</strong><span>video projects<br>delivered</span></div>
     </div>
