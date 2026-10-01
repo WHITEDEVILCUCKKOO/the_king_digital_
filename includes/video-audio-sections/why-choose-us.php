@@ -278,7 +278,7 @@ $icons = [
 
 <section class="kd-why" id="kd-why">
   <div class="kd-why__media">
-    <img src="assets/images/hero-video.png" alt="Video camera and studio lighting on a King Digital shoot">
+    <img src="assets/images/video-image.jpg" alt="Video camera and studio lighting on a King Digital shoot">
   </div>
 
   <div class="kd-why__inner">

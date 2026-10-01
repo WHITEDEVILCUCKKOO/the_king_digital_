@@ -590,7 +590,7 @@ $steps = [
         <div class="kd-adv__tile kd-adv__tile--yt"><?= $svg['yt'] ?></div>
 
         <div class="kd-adv__frame">
-          <img src="assets/images/hero-video.png" alt="Studio video shoot">
+          <img src="assets/images/video-image.jpg" alt="Studio video shoot">
           <a class="kd-adv__play" href="#work" aria-label="Watch our work"><svg viewBox="0 0 24 24">
               <path d="M6 3.5l14 8.5-14 8.5z" />
             </svg></a>

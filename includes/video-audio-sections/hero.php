@@ -286,7 +286,7 @@
 
 <section class="kd-hero" id="kd-hero">
   <div class="kd-hero__media">
-    <img src="assets/images/hero-video.png" alt="King Digital videographer shooting an interview in a studio">
+    <img src="assets/images/video-image.jpg" alt="King Digital videographer shooting an interview in a studio">
   </div>
 
   <div class="kd-hero__inner">

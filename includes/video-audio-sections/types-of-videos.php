@@ -348,7 +348,7 @@ $cards = [
 
       <div class="kd-types__media">
         <div class="kd-types__photo">
-          <img src="assets/images/hero-video.png" alt="Professional video camera on a studio set">
+          <img src="assets/images/video-image.jpg" alt="Professional video camera on a studio set">
         </div>
         <span class="kd-types__stripe"></span>
         <a class="kd-types__play" href="portfolio.php" aria-label="Watch our work">
