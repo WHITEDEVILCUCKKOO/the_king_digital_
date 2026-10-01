@@ -172,18 +172,301 @@ $projects = [
     'youtube' => 'https://youtu.be/-3rNIBQag2M?si=UkrPdlvreOpujDaw',
     'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
   ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social1.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social2.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social3.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social4.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social5.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social6.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social7.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social8.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social9.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Social Media',
+    'title' => '',
+    'sub' => 'Social Media | Reel',
+    'time' => '',
+    'cat' => 'social',
+    'local' => 'assets/videos/video-production/social10.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai1.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai2.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai3.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai4.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai5.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai6.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai7.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai8.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'AI Videos',
+    'title' => '',
+    'sub' => 'AI Videos | Reel',
+    'time' => '',
+    'cat' => 'ad',
+    'local' => 'assets/videos/video-production/ai9.mp4',
+    'youtube' => '',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/ZDdukEaFzAU',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/hzhdKmMwpqg',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/skLT8jhUb_w',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/xOpY4oliWJk',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/a59mw-NrojE',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/0C68sKoB02E',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/99XkJ4R5B4M',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/GHe8V-KcBIs',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
+  [
+    'tag' => 'Podcasts',
+    'title' => '',
+    'sub' => 'Podcasts | Shorts',
+    'time' => '',
+    'cat' => 'podcast',
+    'local' => '',
+    'youtube' => 'https://www.youtube.com/shorts/K01L3eqF3Rw',
+    'grad' => 'linear-gradient(160deg,#382735,#704d68 60%,#aa829f)'
+  ],
 ];
 
 $filters = [
   'all'       => 'All',
   'brand'     => 'Brand Films',
   'social'    => 'Social Media',
-  'ad'        => 'Ad Films',
-  'product'   => 'Product Videos',
-  'corporate' => 'Corporate Videos',
+  'ad'        => 'AI Videos',
+  // 'product'   => 'Product Videos',
+  // 'corporate' => 'Corporate Videos',
   'youtube'   => 'YouTube Videos',
-  'reels'     => 'Reels & Shorts',
-  'podcast'   => 'Podcasts',
+  // 'reels'     => 'Reels & Shorts',
+  'podcast'   => 'Podcasts',   
+
+
+
 ];
 
 /* ---------- helpers ---------- */
