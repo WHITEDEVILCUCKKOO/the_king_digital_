@@ -1516,7 +1516,7 @@
 
                     <i class="fa-brands fa-youtube"></i>
 
-                    YouTube Videos
+                    Podcast Videos
 
                 </button>
 
@@ -1564,7 +1564,7 @@
 
                     <i class="fa-solid fa-microphone-lines"></i>
 
-                    Anchor Videos
+                     ON-SCREEN
 
                 </button>
 
@@ -1618,14 +1618,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            YOUTUBE VIDEO
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Brand Storytelling
+                            Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Professional long-form video content
                             created for digital audiences.
                         </p>
@@ -1648,7 +1648,7 @@
                             preload="metadata">
 
                             <source
-                                src=""
+                                src="assets/videos/prodcast/How to invest in the age of 20 years_ _ 1000 se crorepati_ _ Full Podcast_0_55.mp4"
                                 type="video/mp4">
 
                         </video>
@@ -1667,14 +1667,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            BRAND VIDEO
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Campaign Creative
+                            Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Campaign-focused content built around
                             clear brand communication.
                         </p>
@@ -1697,14 +1697,14 @@
                             preload="metadata">
 
                             <source
-                                src=""
+                                src="assets/videos/prodcast/Love Horoscope 2025 💔 _ Love, S_x & Dhokha Explained by Astrologer Aarti Kakkar _ On Air Unfiltered_0_52.mp4"
                                 type="video/mp4">
 
                         </video>
 
                         <div class="kdps-badge">
                             <i class="fa-solid fa-clapperboard"></i>
-                            Video
+                            YouTube
                         </div>
 
                         <div class="kdps-play">
@@ -1716,14 +1716,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            DIGITAL VIDEO
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Video Production
+                            Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Clean video production with thoughtful
                             visuals and professional editing.
                         </p>
@@ -1746,14 +1746,14 @@
                             preload="metadata">
 
                             <source
-                                src=""
+                                src="assets/videos/prodcast/Podcast of Gulabi Sharara Boy  _ Global Chartbuster Actor Exclusive Interview 2025_0_52.mp4"
                                 type="video/mp4">
 
                         </video>
 
                         <div class="kdps-badge">
-                            <i class="fa-solid fa-film"></i>
-                            Creative
+                            <i class="fa-solid fa-clapperboard"></i>
+                            YouTube
                         </div>
 
                         <div class="kdps-play">
@@ -1765,14 +1765,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            CREATIVE VIDEO
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Visual Creative
+                            Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Modern video content created for
                             engaging digital communication.
                         </p>
@@ -1789,11 +1789,11 @@
                     <div class="kdps-youtube-media">
 
                         <video muted loop playsinline preload="metadata">
-                            <source src="" type="video/mp4">
+                            <source src="assets/videos/prodcast/Property Rights in India_ Gender Equality & Legal Reality – Adv. Manisha Sharma_0_47.mp4" type="video/mp4">
                         </video>
 
                         <div class="kdps-badge">
-                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-solid fa-clapperboard"></i>
                             YouTube
                         </div>
 
@@ -1806,14 +1806,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            PROMOTIONAL
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Promotional Video
+                            Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Promotional content for campaigns,
                             products and brand communication.
                         </p>
@@ -1830,12 +1830,12 @@
                     <div class="kdps-youtube-media">
 
                         <video muted loop playsinline preload="metadata">
-                            <source src="" type="video/mp4">
+                            <source src="assets/videos/prodcast/Soch Se Shakti Tak_ Modernism, Postmodernism and Imagination_0_97.mp4" type="video/mp4">
                         </video>
 
                         <div class="kdps-badge">
-                            <i class="fa-solid fa-circle-play"></i>
-                            Content
+                            <i class="fa-solid fa-clapperboard"></i>
+                            YouTube
                         </div>
 
                         <div class="kdps-play">
@@ -1847,14 +1847,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            BRAND CONTENT
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Brand Video
+                           Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Video content built around the
                             brand message and audience.
                         </p>
@@ -1871,12 +1871,12 @@
                     <div class="kdps-youtube-media">
 
                         <video muted loop playsinline preload="metadata">
-                            <source src="" type="video/mp4">
+                            <source src="assets/videos/prodcast/एक फेलियर जिसने सिस्टम को हिला दिया — गाँव का बेटा, गाँव का नेता!_0_57.mp4" type="video/mp4">
                         </video>
 
                         <div class="kdps-badge">
-                            <i class="fa-solid fa-video"></i>
-                            Digital
+                            <i class="fa-solid fa-clapperboard"></i>
+                            YouTube
                         </div>
 
                         <div class="kdps-play">
@@ -1888,14 +1888,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            DIGITAL CONTENT
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Digital Story
+                           Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Story-led content for today's
                             digital-first audiences.
                         </p>
@@ -1912,12 +1912,12 @@
                     <div class="kdps-youtube-media">
 
                         <video muted loop playsinline preload="metadata">
-                            <source src="" type="video/mp4">
+                            <source src="assets/videos/prodcast/तीन चेहरे, तीन सोच _ उपेन्द्र कुशवाहा, प्रशांत किशोर और सम्राट चौधरी पर @jmdajit की राजनीतिक राय_0_51.mp4" type="video/mp4">
                         </video>
 
                         <div class="kdps-badge">
-                            <i class="fa-solid fa-play"></i>
-                            Video
+                            <i class="fa-solid fa-clapperboard"></i>
+                            YouTube
                         </div>
 
                         <div class="kdps-play">
@@ -1929,14 +1929,14 @@
                     <div class="kdps-video-content">
 
                         <div class="kdps-label">
-                            VIDEO CONTENT
+                            OUR WORK
                         </div>
 
                         <h3 class="kdps-card-title">
-                            Creative Story
+                            Podcast Production
                         </h3>
 
-                        <p class="kdps-card-text">
+                        <p class="kdps-card-text" style="display: none;">
                             Professional content with a clean,
                             modern visual presentation.
                         </p>
@@ -2507,12 +2507,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/🚀 Take Your Business to the Next Level with AI Videos!Want a professional promotional video for.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2520,8 +2520,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Anchor Video</span>
-                        <strong>Brand Presentation</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2530,12 +2530,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/🚀 Want your business to get found online It starts with the right digital strategy.From Google .mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2543,8 +2543,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Presenter Video</span>
-                        <strong>Professional Delivery</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2553,12 +2553,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/Camera nahi. Model nahi. Shoot nahi. 🎥Phir bhi professional video YES!!Ab sirf ek image ko AI-p.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2566,8 +2566,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Anchor Content</span>
-                        <strong>Campaign Presenter</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2576,12 +2576,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/Customer ko product pasand aa gaya… par next week stock hi khatam 😩A great product is important.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2589,8 +2589,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Host Video</span>
-                        <strong>Audience Communication</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2599,12 +2599,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/Pehla makhana sample achha hona easy hai. Asli test re-order mein hota hai.Supplier choose karte.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2612,8 +2612,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Brand Anchor</span>
-                        <strong>Direct To Camera</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2622,12 +2622,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/Ready to bring more balance, clarity, and positivity into your life Rudraksha is believed to car.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2635,8 +2635,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Presenter Content</span>
-                        <strong>Clear Brand Message</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2645,12 +2645,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/Running SEO but not sure if its actually working 🤔Heres the truth- SEO doesnt fail its ju.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2658,8 +2658,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Anchor Reel</span>
-                        <strong>Engaging Presentation</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>
@@ -2668,12 +2668,12 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="" type="video/mp4">
+                        <source src="assets/videos/anchor/Higher education, a new home or other important family goals can become major expenses if you st.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">
                         <i class="fa-solid fa-microphone-lines"></i>
-                        Anchor
+                        ON-CAMERA
                     </div>
 
                     <div class="kdps-reel-play">
@@ -2681,8 +2681,8 @@
                     </div>
 
                     <div class="kdps-reel-info">
-                        <span>Host Content</span>
-                        <strong>Professional Presence</strong>
+                        <span> ON-CAMERA</span>
+                        <strong>Brand Storytelling</strong>
                     </div>
 
                 </article>

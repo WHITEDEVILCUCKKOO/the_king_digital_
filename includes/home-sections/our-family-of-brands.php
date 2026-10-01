@@ -600,9 +600,9 @@
                         Podcast
                     </span>
                     <div class="video_box">
-                        <img src="assets/images/img/1__asd.png" class="video_thumb" alt="">
+                        <img src="assets/videos/prodcast/thumbe/1__asd.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/images/img/1__asd.mp4" type="video/mp4">
+                            <source src="assets/videos/prodcast/1__asd.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -705,16 +705,16 @@
             -->
 
 
-              <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtube.com/@onairunfiltered1?si=fCCMCSxgEpGuwwF6'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtube.com/@onairunfiltered1?si=fCCMCSxgEpGuwwF6'" data-type="podcast" style="display:none">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
                     <span class="port-badge"
                         style="background:#F97316;color:#fff">
                         Podcast
                     </span>
                     <div class="video_box">
-                        <img src="assets/images/img/2_sjn59.png" class="video_thumb" alt="">
+                        <img src="assets/videos/prodcast/thumbe/2_sjn59.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/images/img/2_sjn59.mp4" type="video/mp4">
+                            <source src="assets/videos/prodcast/2_sjn59.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -724,16 +724,16 @@
                 </div>
             </div>
 
-              <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/XdlG5dijVrg?si=brUHlxtFQid0CkaY'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/XdlG5dijVrg?si=brUHlxtFQid0CkaY'" data-type="podcast" style="display:none">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
                     <span class="port-badge"
                         style="background:#F97316;color:#fff">
                         Podcast
                     </span>
                     <div class="video_box">
-                        <img src="assets/images/img/3_jwpko88.png" class="video_thumb" alt="">
+                        <img src="assets/videos/prodcast/thumbe/3_jwpko88.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/images/img/3_jwpko88.mp4" type="video/mp4">
+                            <source src="assets/videos/prodcast/3_jwpko88.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -743,16 +743,16 @@
                 </div>
             </div>
 
-              <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/kiPDZcKoUK4?si=dLdHPfWgZQY_0eYW'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/kiPDZcKoUK4?si=dLdHPfWgZQY_0eYW'" data-type="podcast" style="display:none">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
                     <span class="port-badge"
                         style="background:#F97316;color:#fff">
                         Podcast
                     </span>
                     <div class="video_box">
-                        <img src="assets/images/img/4_jnbas.png" class="video_thumb" alt="">
+                        <img src="assets/videos/prodcast/thumbe/4_jnbas.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/images/img/4_jnbas.mp4" type="video/mp4">
+                            <source src="assets/videos/prodcast/4_jnbas.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -761,6 +761,212 @@
                     <p>ON AIR UNFILTERED – Official Channel Promo | Raw, Honest & Unscripted</p>
                 </div>
             </div>
+
+            <!-- prpdcast  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href=''" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (112).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/How to invest in the age of 20 years_ _ 1000 se crorepati_ _ Full Podcast_0_55.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>1000 se crorepati</h4>
+                    <p>How to invest in the age of 20 years? </p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href=''" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (113).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/Love Horoscope 2025 💔 _ Love, S_x & Dhokha Explained by Astrologer Aarti Kakkar _ On Air Unfiltered_0_52.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Love Horoscope 2025</h4>
+                    <p>Love, S*x & Dhokha Explained by Astrologer Aarti Kakkar </p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/65E_FMC1f5o?si=Q9SMHPpDp_wHmcYZ'" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (114).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/Podcast of Gulabi Sharara Boy  _ Global Chartbuster Actor Exclusive Interview 2025_0_52.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Exclusive Interview</h4>
+                    <p>Podcast of Gulabi Sharara Boy | Global Chartbuster Actor Exclusive Interview</p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/3QnHvs53F_U?si=SNrOPqWs-HNj62rb'" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (119).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/🔮 Reality of Tarot & Chakras Explained _ Podcast with Aarti Kakkar __0_41.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Podcast with Aarti Kakkar</h4>
+                    <p>🔮 Reality of Tarot & Chakras Explained | Podcast with Aarti Kakkar |</p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/9cO3OA9wHx8?si=D40vSAYyJwbwJlJ8'" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (115).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/Property Rights in India_ Gender Equality & Legal Reality – Adv. Manisha Sharma_0_47.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Adv. Manisha Sharma</h4>
+                    <p>Property Rights in India: Gender Equality & Legal Reality – Adv. Manisha Sharma</p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/m5rBr7e34N8?si=OHWu3Ck12GypwWWb'" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (116).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/Soch Se Shakti Tak_ Modernism, Postmodernism and Imagination_0_97.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>
+                        Soch Se Shakti Tak</h4>
+                    <p>
+                        Soch Se Shakti Tak: Modernism, Postmodernism and Imagination
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/AN77SaScg5I?si=jzSRNEgxJpOJS0bp'" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (117).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/एक फेलियर जिसने सिस्टम को हिला दिया — गाँव का बेटा, गाँव का नेता!_0_57.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Gaon ka beta, gaon ka neta!</h4>
+                    <p>Ek Failure Jisne System Ko Hila Diya — Gaon Ka Beta, Gaon Ka Neta!</p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/otbG2KFtxgM?si=uc3wQKnysOOHC8a5'" data-type="podcast" style="display:none">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge"
+                        style="background:#F97316;color:#fff">
+                        Podcast
+                    </span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/Screenshot (118).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/तीन चेहरे, तीन सोच _ उपेन्द्र कुशवाहा, प्रशांत किशोर और सम्राट चौधरी पर @jmdajit की राजनीतिक राय_0_51.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>jmdajit ki Rajneetik Rai</h4>
+                    <p>Teen Chehre, Teen Soch | Upendra Kushwaha, Prashant Kishor aur Samrat Choudhary par @jmdajit ki Rajneetik Rai</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://tarotalkbyaarti.com/'" data-type="website" style="display:none">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
