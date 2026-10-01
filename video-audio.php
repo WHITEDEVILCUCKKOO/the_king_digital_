@@ -7,6 +7,8 @@
     <?php require_once __DIR__ . '/includes/video-audio-sections/featured-work.php'; ?>
     <?php require_once __DIR__ . '/includes/video-audio-sections/why-choose-us.php'; ?>
     <?php require_once __DIR__ . '/includes/video-audio-sections/video-advertising.php'; ?>
+    <?php require_once __DIR__ . '/includes/video-audio-sections/industries.php'; ?>
+    <?php require_once __DIR__ . '/includes/video-audio-sections/cta.php'; ?>
 
 </main>
 

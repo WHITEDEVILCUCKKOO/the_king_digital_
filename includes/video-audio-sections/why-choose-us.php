@@ -24,83 +24,257 @@ $icons = [
   'clock'  => '<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.4 2"/>',
 ];
 ?>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-  .kd-why, .kd-why * { box-sizing: border-box; margin: 0; padding: 0; }
+
   .kd-why {
     --kd-red: #d7141a;
     --kd-ink: #2b2f3a;
     --kd-text: #5b606b;
-    position: relative; width: 100%; overflow: hidden;
-    font-family: 'Poppins', sans-serif;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     background: linear-gradient(100deg, #ffffff 0%, #f4f4f5 60%, #ececee 100%);
-    padding: 64px 0 80px;
+    padding: 40px 0;
   }
-  .kd-why__inner { position: relative; z-index: 3; padding: 0 0 0 5%; width: 76%; max-width: 1150px; }
+
+  .kd-why__inner {
+    position: relative;
+    z-index: 3;
+    padding: 0 0 0 5%;
+    width: 76%;
+    max-width: 1150px;
+  }
 
   /* ---------- heading ---------- */
-  .kd-why__eyebrow { display: flex; align-items: center; gap: 12px; font-size: 11.5px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: var(--kd-text); margin-bottom: 18px; }
-  .kd-why__eyebrow::before { content: ''; width: 34px; height: 2px; background: var(--kd-red); }
-  .kd-why__title { font-size: clamp(34px, 3.9vw, 54px); line-height: 1.1; font-weight: 700; letter-spacing: -1.1px; color: var(--kd-ink); margin-bottom: 16px; }
-  .kd-why__title span { color: var(--kd-red); display: block; }
-  .kd-why__desc { font-size: 15.5px; line-height: 1.6; color: var(--kd-text); max-width: 640px; margin-bottom: 46px; }
+  .kd-why__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--kd-text);
+    margin-bottom: 18px;
+  }
+
+  .kd-why__eyebrow::before {
+    content: '';
+    width: 34px;
+    height: 2px;
+    background: var(--kd-red);
+  }
+
+  .kd-why__title {
+    font-size: clamp(34px, 3.9vw, 56px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -1.1px;
+    color: var(--kd-ink);
+    margin-bottom: 16px;
+  }
+
+  .kd-why__title span {
+    color: var(--kd-red);
+    display: block;
+  }
+
+  .kd-why__desc {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--kd-text);
+    max-width: 640px;
+    margin-bottom: 46px;
+  }
 
   /* ---------- features ---------- */
-  .kd-why__grid { display: grid; grid-template-columns: repeat(4, 1fr); row-gap: 40px; }
-  .kd-feat { display: flex; align-items: flex-start; gap: 16px; padding: 4px 22px; }
-  .kd-feat:nth-child(4n + 1) { padding-left: 0; }
-  .kd-feat:nth-child(4n + 2), .kd-feat:nth-child(4n + 3), .kd-feat:nth-child(4n) { border-left: 1px solid #dcdde1; }
-  .kd-feat__icon { flex: none; width: 46px; height: 46px; border-radius: 12px; background: #ffe6e6; color: var(--kd-red); display: grid; place-items: center; }
-  .kd-feat__icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .kd-feat__title { font-size: 14.5px; font-weight: 600; line-height: 1.3; color: var(--kd-ink); margin-bottom: 6px; }
-  .kd-feat__text { font-size: 12.5px; line-height: 1.55; color: var(--kd-text); max-width: 170px; }
+  .kd-why__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 40px;
+  }
+
+  .kd-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 4px 22px;
+  }
+
+  .kd-feat:nth-child(4n + 1) {
+    padding-left: 0;
+  }
+
+  .kd-feat:nth-child(4n + 2),
+  .kd-feat:nth-child(4n + 3),
+  .kd-feat:nth-child(4n) {
+    border-left: 1px solid #dcdde1;
+  }
+
+  .kd-feat__icon {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #ffe6e6;
+    color: var(--kd-red);
+    display: grid;
+    place-items: center;
+  }
+
+  .kd-feat__icon svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .kd-feat__title {
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--kd-ink);
+    margin-bottom: 6px;
+  }
+
+  .kd-feat__text {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--kd-text);
+    max-width: 170px;
+  }
 
   /* ---------- side photo ---------- */
-  .kd-why__media { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; width: 27%; }
+  .kd-why__media {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 27%;
+  }
+
   .kd-why__media img {
-    width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 50%;
+    display: block;
     clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
   }
+
   .kd-why__slash {
-    position: absolute; z-index: 2; top: 0; left: 15%; width: 54px; height: 92px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 15%;
+    width: 54px;
+    height: 92px;
     background: linear-gradient(180deg, #e3161c, #b80e13);
     clip-path: polygon(62% 0, 100% 0, 38% 100%, 0 100%);
     transform: translateX(2px);
   }
+
   .kd-why__badge {
-    position: absolute; z-index: 3; top: 9%; right: 6%;
-    transform: rotate(-9deg); text-align: center;
-    font-family: 'Caveat', cursive; font-weight: 700; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.1;
-    color: var(--kd-ink); text-shadow: 0 0 10px rgba(255,255,255,.8);
+    position: absolute;
+    z-index: 3;
+    top: 9%;
+    right: 6%;
+    transform: rotate(-9deg);
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(22px, 2.4vw, 34px);
+    line-height: 1.1;
+    color: var(--kd-ink);
+    text-shadow: 0 0 10px rgba(255, 255, 255, .8);
   }
-  .kd-why__badge svg { display: block; width: 100%; margin-top: 2px; }
+
+  .kd-why__badge svg {
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+  }
 
   /* ---------- bottom-left accent ---------- */
-  .kd-why__bar { position: absolute; z-index: 2; left: 0; bottom: 0; width: 22%; height: 5px; background: linear-gradient(90deg, #7d0b10, var(--kd-red) 60%, transparent); }
+  .kd-why__bar {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 22%;
+    height: 5px;
+    background: linear-gradient(90deg, #7d0b10, var(--kd-red) 60%, transparent);
+  }
 
   /* single entrance: features appear once, staggered */
-  .kd-why.is-armed .kd-feat { opacity: 0; transform: translateY(16px); }
-  .kd-why.is-in .kd-feat { opacity: 1; transform: none; transition: opacity .55s ease var(--d, 0s), transform .55s ease var(--d, 0s); }
+  .kd-why.is-armed .kd-feat {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .kd-why.is-in .kd-feat {
+    opacity: 1;
+    transform: none;
+    transition: opacity .55s ease var(--d, 0s), transform .55s ease var(--d, 0s);
+  }
 
   /* ---------- responsive ---------- */
   @media (max-width: 1100px) {
-    .kd-why__inner { width: 100%; padding: 0 5%; }
-    .kd-why__media { width: 100%; opacity: .12; }
-    .kd-why__media img { clip-path: none; }
-    .kd-why__badge, .kd-why__slash { display: none; }
-    .kd-why__grid { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
-    .kd-feat, .kd-feat:nth-child(n) { border-left: 0; padding: 0 20px 0 0; }
+    .kd-why__inner {
+      width: 100%;
+      padding: 0 5%;
+    }
+
+    .kd-why__media {
+      width: 100%;
+      opacity: .12;
+    }
+
+    .kd-why__media img {
+      clip-path: none;
+    }
+
+    .kd-why__badge,
+    .kd-why__slash {
+      display: none;
+    }
+
+    .kd-why__grid {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+    .kd-feat,
+    .kd-feat:nth-child(n) {
+      border-left: 0;
+      padding: 0 20px 0 0;
+    }
   }
+
   @media (max-width: 560px) {
-    .kd-why { padding: 50px 0 60px; }
-    .kd-why__grid { grid-template-columns: 1fr; }
-    .kd-feat__text { max-width: none; }
+    .kd-why {
+      padding: 50px 0 60px;
+    }
+
+    .kd-why__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .kd-feat__text {
+      max-width: none;
+    }
   }
+
   @media (prefers-reduced-motion: reduce) {
-    .kd-why.is-armed .kd-feat { opacity: 1; transform: none; }
+    .kd-why.is-armed .kd-feat {
+      opacity: 1;
+      transform: none;
+    }
   }
 </style>
 
@@ -110,7 +284,9 @@ $icons = [
     <span class="kd-why__slash"></span>
     <div class="kd-why__badge" aria-hidden="true">
       Better Videos.<br>Bigger Results.
-      <svg viewBox="0 0 140 12" fill="none"><path d="M4 8 C 40 2, 90 2, 136 5" stroke="#e3161c" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 140 12" fill="none">
+        <path d="M4 8 C 40 2, 90 2, 136 5" stroke="#e3161c" stroke-width="3" stroke-linecap="round" />
+      </svg>
     </div>
   </div>
   <span class="kd-why__bar"></span>
@@ -135,17 +311,22 @@ $icons = [
 </section>
 
 <script>
-(function () {
-  var sec = document.getElementById('kd-why');
-  if (!sec) return;
+  (function() {
+    var sec = document.getElementById('kd-why');
+    if (!sec) return;
 
-  // Features appear once, staggered, the first time the section is in view
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    sec.classList.add('is-armed');
-    var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) { sec.classList.add('is-in'); io.disconnect(); }
-    }, { threshold: .25 });
-    io.observe(sec);
-  }
-})();
+    // Features appear once, staggered, the first time the section is in view
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      sec.classList.add('is-armed');
+      var io = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          sec.classList.add('is-in');
+          io.disconnect();
+        }
+      }, {
+        threshold: .25
+      });
+      io.observe(sec);
+    }
+  })();
 </script>

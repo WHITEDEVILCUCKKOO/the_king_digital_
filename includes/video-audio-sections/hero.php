@@ -2,7 +2,6 @@
 $hero_image = 'hero-video.png';
 ?>
 <style>
-
   .kd-hero {
     --kd-red: #d7141a;
     --kd-red-dark: #b50f14;
