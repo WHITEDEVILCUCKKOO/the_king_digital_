@@ -276,6 +276,25 @@
         margin-top: 36px
     }
 
+    /* ════ REEL MODE (9:16) — Video Production + Our Ai Creations ════ */
+    .port-grid.reel-mode {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .port-card[data-type="video"] .port-thumb,
+    .port-card[data-type="seo"] .port-thumb {
+        height: auto;
+        aspect-ratio: 9 / 16;
+    }
+
+    .port-card[data-type="video"] .video_box,
+    .port-card[data-type="seo"] .video_box {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     .dot-99 {
         width: 6px;
         height: 6px;
@@ -555,17 +574,17 @@
             <h2 class="shas">Work that delivers <span class="">real results</span></h2>
         </div>
 
+        <!-- "All Work" button hata diya. Websites default active hai -->
         <div class="port-tabs">
-            <button class="port-tab active" onclick="filterPort(this,'all');all_show_show_note()">All Work</button>
-            <button class="port-tab" onclick="filterPort(this,'website')">Websites</button>
+            <button class="port-tab active" onclick="filterPort(this,'website')">Websites</button>
             <button class="port-tab" onclick="filterPort(this,'podcast')">Podcasts</button>
             <button class="port-tab" onclick="filterPort(this,'video')">Video Production</button>
-            <button class="port-tab" onclick="filterPort(this,'seo')">SEO Projects</button>
+            <button class="port-tab" onclick="filterPort(this,'seo')">Our Ai Creations</button>
         </div>
 
         <div class="port-grid">
 
-            <!-- ============ NORMAL CARDS (hamesha "All Work" par bhi dikhte hain) ============ -->
+            <!-- ============ WEBSITES ============ -->
 
             <div class="port-card reveal tlasma-card" onclick="window.location.href='https://lakshmibaicollege.in/'" data-type="website">
                 <div class="port-thumb" style="background:#E8F5FF;font-size:48px">
@@ -579,67 +598,6 @@
                     <p>University website — Delhi University</p>
                 </div>
             </div>
-            <!-- 
-            <div class="port-card reveal tlasma-card" onclick="window.location.href=''" data-type="website">
-                <div class="port-thumb" style="background:#ECFDF5;font-size:48px">
-                    <span class="port-badge" style="background:#059669;color:#fff">E-Commerce</span>
-                    <div class="img_box_static">
-                        <img src="assets/images/img/Kumar Electric Product 2.png" alt="Kumar Electric" class="pic_static">
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Kumar Electric</h4>
-                    <p>Product catalogue & B2B inquiry portal</p>
-                </div>
-            </div> -->
-
-            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/-3rNIBQag2M?si=VzRRPCZrcZ0z5VlX'" data-type="podcast">
-                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
-                    <div class="video_box">
-                        <img src="assets/videos/prodcast/thumbe/1__asd.png" class="video_thumb" alt="">
-                        <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/videos/prodcast/1__asd.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Podcast</h4>
-                    <p>Podcast production & promotional content</p>
-                </div>
-            </div>
-
-            <div class="port-card reveal tlasma-card" data-type="video">
-                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
-                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
-                    <div class="video_box">
-                        <img src="assets/images/img/e5cnis_sdh.png" class="video_thumb" alt="">
-                        <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/images/img/vidssave.com Static King _ Bulk SMS Company India 1080P.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>FMCG Brand Film</h4>
-                    <p>Corporate promotional & product videos</p>
-                </div>
-            </div>
-
-            <div class="port-card reveal tlasma-card" data-type="seo">
-                <div class="port-thumb" style="background:#EFF6FF;font-size:48px">
-                    <span class="port-badge" style="background:#2563EB;color:#fff">SEO</span>
-                    <div class="img_box_static">
-                        <img src="assets/images/img/seo_banner.jpg" alt="Healthcare Brand" class="pic_static">
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Healthcare Brand</h4>
-                    <p>Page 1 Google ranking in 90 days</p>
-                </div>
-            </div>
 
             <div class="port-card reveal tlasma-card" onclick="window.location.href='https://www.way2itservices.com/'" data-type="website">
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
@@ -651,22 +609,6 @@
                 <div class="port-info">
                     <h4>SERA CASDIM</h4>
                     <p>Institutional web design & development</p>
-                </div>
-            </div>
-
-            <div class="port-card reveal tlasma-card" data-type="video">
-                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
-                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
-                    <div class="video_box">
-                        <img src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital themb.png" class="video_thumb" alt="">
-                        <video class="card_video" muted playsinline preload="metadata">
-                            <source src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Brand Film</h4>
-                    <p>Corporate promotional & product videos</p>
                 </div>
             </div>
 
@@ -687,7 +629,7 @@
                 <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
                     <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
                     <div class="img_box">
-                        <img src="assets/images/website_img/extra_2.png" alt="Static King" class="pic">
+                        <img src="assets/images/website_img/extra_2.png" alt="Shri Vinayak Jyotish" class="pic">
                     </div>
                 </div>
                 <div class="port-info">
@@ -696,21 +638,157 @@
                 </div>
             </div>
 
-            <!-- ============ EXTRA CARDS ============
-                 Yahan "extra-card" class + style="display:none" lagaya hai.
-                 Ye "All Work" par kabhi nahi dikhenge.
-                 Jis category ka data-type hoga, sirf uss tab pe click karne par dikhenge.
-                 Website ke alawa SMS / Video / SEO extra cards banane ho to
-                 bas data-type badal do aur extra-card class + display:none rakho — kaam khud ho jayega.
-            -->
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://tarotalkbyaarti.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_1.png" alt="Tarotalk Byaarti" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Tarotalk Byaarti</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
 
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://shreeramastrology.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_3.png" alt="Shreerama Astrology" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Shreerama Strology </h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtube.com/@onairunfiltered1?si=fCCMCSxgEpGuwwF6'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://snakked.in/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_4.png" alt="Snakked" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Snakked</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://seracasdim.in/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_5.png" alt="Sera Casdim" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Sera Casdim</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://retirebychoice.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_6.png" alt="Retireby Choice" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Retireby Choice</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://mywealthcreator.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_7.png" alt="Mywealth Creator" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Mywealth Creator</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://minerdiastudio.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_8.png" alt="Minerdia Studio" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Minerdia Studio</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://moneyadvise.co.in/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_9.png" alt="Money Advise" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Money Advise</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://prudentialearning.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/extra_10.png" alt="Prudentia Learning" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Prudentia Learning</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://bespokebypaul.com/'" data-type="website">
+                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
+                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
+                    <div class="img_box">
+                        <img src="assets/images/website_img/11.png" alt="Paul Bespokeby" class="pic">
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Paul Bespokeby</h4>
+                    <p>Institutional web design & development</p>
+                </div>
+            </div>
+
+            <!-- ============ PODCASTS ============ -->
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/-3rNIBQag2M?si=VzRRPCZrcZ0z5VlX'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
+                    <div class="video_box">
+                        <img src="assets/videos/prodcast/thumbe/1__asd.png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/prodcast/1__asd.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="port-info">
+                    <h4>Podcast</h4>
+                    <p>Podcast production & promotional content</p>
+                </div>
+            </div>
+
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtube.com/@onairunfiltered1?si=fCCMCSxgEpGuwwF6'" data-type="podcast">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/2_sjn59.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -724,12 +802,9 @@
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/XdlG5dijVrg?si=brUHlxtFQid0CkaY'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/XdlG5dijVrg?si=brUHlxtFQid0CkaY'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/3_jwpko88.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -743,12 +818,9 @@
                 </div>
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/kiPDZcKoUK4?si=dLdHPfWgZQY_0eYW'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/kiPDZcKoUK4?si=dLdHPfWgZQY_0eYW'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/4_jnbas.png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -762,13 +834,9 @@
                 </div>
             </div>
 
-            <!-- prpdcast  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href=''" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href=''" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (112).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -782,13 +850,9 @@
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href=''" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href=''" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (113).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -802,13 +866,9 @@
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/65E_FMC1f5o?si=Q9SMHPpDp_wHmcYZ'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/65E_FMC1f5o?si=Q9SMHPpDp_wHmcYZ'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (114).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -822,13 +882,9 @@
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/3QnHvs53F_U?si=SNrOPqWs-HNj62rb'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/3QnHvs53F_U?si=SNrOPqWs-HNj62rb'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (119).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -842,13 +898,9 @@
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/9cO3OA9wHx8?si=D40vSAYyJwbwJlJ8'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/9cO3OA9wHx8?si=D40vSAYyJwbwJlJ8'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (115).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -862,13 +914,9 @@
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/m5rBr7e34N8?si=OHWu3Ck12GypwWWb'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/m5rBr7e34N8?si=OHWu3Ck12GypwWWb'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (116).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -877,21 +925,14 @@
                     </div>
                 </div>
                 <div class="port-info">
-                    <h4>
-                        Soch Se Shakti Tak</h4>
-                    <p>
-                        Soch Se Shakti Tak: Modernism, Postmodernism and Imagination
-                    </p>
+                    <h4>Soch Se Shakti Tak</h4>
+                    <p>Soch Se Shakti Tak: Modernism, Postmodernism and Imagination</p>
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/AN77SaScg5I?si=jzSRNEgxJpOJS0bp'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/AN77SaScg5I?si=jzSRNEgxJpOJS0bp'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (117).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -905,13 +946,9 @@
                 </div>
             </div>
 
-            <!--  -->
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://youtu.be/otbG2KFtxgM?si=uc3wQKnysOOHC8a5'" data-type="podcast" style="display:none">
+            <div class="port-card reveal tlasma-card" onclick="window.location.href='https://youtu.be/otbG2KFtxgM?si=uc3wQKnysOOHC8a5'" data-type="podcast">
                 <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
-                    <span class="port-badge"
-                        style="background:#F97316;color:#fff">
-                        Podcast
-                    </span>
+                    <span class="port-badge" style="background:#F97316;color:#fff">Podcast</span>
                     <div class="video_box">
                         <img src="assets/videos/prodcast/thumbe/Screenshot (118).png" class="video_thumb" alt="">
                         <video class="card_video" muted playsinline preload="metadata">
@@ -925,186 +962,106 @@
                 </div>
             </div>
 
+            <!-- ============ VIDEO PRODUCTION ============ -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://tarotalkbyaarti.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_1.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="video">
+                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
+                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
+                    <div class="video_box">
+                        <img style="display: none;"  src="assets/images/img/e5cnis_sdh.png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/reels_hd/Sofia Reel - Minerdia Studio (720p, h264).mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Tarotalk Byaarti</h4>
-                    <p>Institutional web design & development</p>
-                </div>
+                
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://shreeramastrology.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_3.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="video">
+                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
+                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
+                    <div class="video_box">
+                        <img style="display: none;" src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital themb.png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/video-production/social7.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Shreerama Strology </h4>
-                    <p>Institutional web design & development</p>
-                </div>
+               
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://snakked.in/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_4.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="video">
+                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
+                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
+                    <div class="video_box">
+                        <img style="display: none;" src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital themb.png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/reels_hd/Podcast 1 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Snakked</h4>
-                    <p>Institutional web design & development</p>
-                </div>
+               
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://seracasdim.in/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_5.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="video">
+                <div class="port-thumb" style="background:#FEF3C7;font-size:48px">
+                    <span class="port-badge" style="background:#D97706;color:#fff">Video</span>
+                    <div class="video_box">
+                        <img style="display: none;" src="assets/images/img/360° Digital Marketing Company and Institute _ King Digital themb.png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/reels_hd/Mansha Reel 2 - Minerdia Studio (720p, h264).mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Sera Casdim</h4>
-                    <p>Institutional web design & development</p>
-                </div>
+                
             </div>
 
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://retirebychoice.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_6.png" alt="Static King" class="pic">
+            <!-- ============ OUR AI CREATIONS ============ -->
+
+            <div class="port-card reveal tlasma-card" data-type="seo">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge" style="background:#F97316;color:#fff">Our Ai Creations</span>
+                    <div class="video_box">
+                        <img style="display: none;"  src="assets/videos/prodcast/thumbe/Screenshot (113).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/ai gen/📞 Ek missed call = ek missed opportunity 👀Ab calls miss hone ki tension nahi!With King Digital.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Retireby Choice</h4>
-                    <p>Institutional web design & development</p>
-                </div>
             </div>
-
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://mywealthcreator.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_7.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="seo">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge" style="background:#F97316;color:#fff">Our Ai Creations</span>
+                    <div class="video_box">
+                        <img style="display: none;"  src="assets/videos/prodcast/thumbe/Screenshot (113).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/ai gen/🌙 𝗦𝗹𝗲𝗲𝗽 𝗕𝗲𝘁𝘁𝗲𝗿. 𝗕𝗿𝗲𝗮𝘁𝗵𝗲 𝗕𝗲𝘁𝘁𝗲𝗿. 𝗟𝗶𝘃𝗲 𝗕𝗲𝘁𝘁𝗲𝗿.Are you looking f.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Mywealth Creator</h4>
-                    <p>Institutional web design & development</p>
-                </div>
             </div>
-
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://minerdiastudio.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_8.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="seo">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge" style="background:#F97316;color:#fff">Our Ai Creations</span>
+                    <div class="video_box">
+                        <img style="display: none;"  src="assets/videos/prodcast/thumbe/Screenshot (113).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/ai gen/If crystals had personalities, this is probably what they’d look like.Tiger’s Eye, Amethyst, Cit.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Minerdia Studio</h4>
-                    <p>Institutional web design & development</p>
-                </div>
             </div>
-
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://moneyadvise.co.in/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_9.png" alt="Static King" class="pic">
+            <div class="port-card reveal tlasma-card" data-type="seo">
+                <div class="port-thumb" style="background:#FFF0E6;font-size:48px">
+                    <span class="port-badge" style="background:#F97316;color:#fff">Our Ai Creations</span>
+                    <div class="video_box">
+                        <img style="display: none;"  src="assets/videos/prodcast/thumbe/Screenshot (113).png" class="video_thumb" alt="">
+                        <video class="card_video" muted playsinline preload="metadata">
+                            <source src="assets/videos/ai gen/Watch the full video to understand how mutual funds actually work and what happens to your money.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
-                <div class="port-info">
-                    <h4>Money Advise</h4>
-                    <p>Institutional web design & development</p>
-                </div>
             </div>
-
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://prudentialearning.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/extra_10.png" alt="Static King" class="pic">
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Prudentia Learning</h4>
-                    <p>Institutional web design & development</p>
-                </div>
-            </div>
-
-            <div class="port-card reveal tlasma-card extra-card D_99" onclick="window.location.href='https://bespokebypaul.com/'" data-type="website" style="display:none">
-                <div class="port-thumb" style="background:#F5F3FF;font-size:48px">
-                    <span class="port-badge" style="background:#7C3AED;color:#fff">Website</span>
-                    <div class="img_box">
-                        <img src="assets/images/website_img/11.png" alt="Static King" class="pic">
-                    </div>
-                </div>
-                <div class="port-info">
-                    <h4>Paul Bespokeby</h4>
-                    <p>Institutional web design & development</p>
-                </div>
-            </div>
-
-            <!--
-                Future mein SMS / Video / SEO ke extra cards yahan isi tarah add karo:
-                <div class="port-card reveal tlasma-card extra-card" data-type="sms" style="display:none"> ... </div>
-                <div class="port-card reveal tlasma-card extra-card" data-type="video" style="display:none"> ... </div>
-                <div class="port-card reveal tlasma-card extra-card" data-type="seo" style="display:none"> ... </div>
-                JS automatically handle karega, kuch aur change nahi karna padega.
-            -->
 
         </div>
 
@@ -1115,26 +1072,16 @@
 </section>
 
 <script>
-    /* ─ Portfolio filter (generic — sab category ke extra cards ke liye kaam karega) ─ */
+    /* ─ Portfolio filter ─ */
     function filterPort(btn, type) {
         document.querySelectorAll('.port-tab').forEach(t => t.classList.remove('active'));
         btn.classList.add('active');
 
+        /* Video aur Our Ai Creations tab par reel (9:16) layout */
+        document.querySelector('.port-grid').classList.toggle('reel-mode', type === 'video' || type === 'seo');
+
         document.querySelectorAll('.port-card').forEach(card => {
-            var isExtra = card.classList.contains('extra-card');
-            var matchesType = (card.dataset.type === type);
-            var shouldShow;
-
-            if (type === 'all') {
-                // "All Work" par extra cards kabhi nahi dikhte, chahe wo kisi bhi category ke ho
-                shouldShow = !isExtra;
-
-            } else {
-                // kisi specific tab par — extra ho ya normal, agar type match karta hai to dikhega
-                shouldShow = matchesType;
-            }
-
-            if (shouldShow) {
+            if (card.dataset.type === type) {
                 card.style.display = 'block';
                 card.style.animation = 'none';
                 setTimeout(() => card.style.animation = '', 10);
@@ -1143,6 +1090,9 @@
             }
         });
     }
+
+    /* Page load par sirf Websites dikhao */
+    filterPort(document.querySelector('.port-tab.active'), 'website');
 
     /* ─ Card tilt + cursor glow effect ─ */
     (function() {
@@ -1198,19 +1148,4 @@
             thumb.style.opacity = "1";
         });
     });
-
-
-    function all_show_show_note() {
-
-        document.querySelectorAll(".extra-card").forEach(function(card) {
-
-            if (card.classList.contains("visible")) {
-                card.classList.remove("visible");
-            }
-
-            card.style.display = "none";
-
-        });
-
-    }
 </script>

@@ -630,6 +630,7 @@
                            <li><a class="bottom_link_79" href="hosting-cloud.php">Hosting & Cloud</a></li>
                            <li><a class="bottom_link_79" href="app_development.php">App Development</a></li>
                            <li><a class="bottom_link_79" href="rcs-service.php">RCS Messaging</a></li>
+                           <li><a class="bottom_link_79" href="whatsappblue.php">Blue Tick</a></li>
                        </ul>
                    </div>
                    <div>

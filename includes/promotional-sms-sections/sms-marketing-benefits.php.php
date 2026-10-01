@@ -1293,7 +1293,7 @@
                 <!-- BUTTON -->
                 <div class="kd-effect-actions">
 
-                    <a href="#enquiry" class="kd-effect-button">
+                    <a href="contact.php" class="kd-effect-button">
                         Start Your SMS Campaign
                         <span>→</span>
                     </a>

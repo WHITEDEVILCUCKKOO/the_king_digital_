@@ -1538,14 +1538,14 @@
                     type="button"
                     data-tab="images">
 
-                    <i class="fa-regular fa-images"></i>
+                    <i class="fa-solid fa-photo-film"></i>
 
-                    Images
+                    Our Ai Creations
 
                 </button>
 
 
-                <button
+                <button style="display: none;"
                     class="kdps-tab"
                     type="button"
                     data-tab="education">
@@ -1564,7 +1564,7 @@
 
                     <i class="fa-solid fa-microphone-lines"></i>
 
-                     ON-SCREEN
+                    ON-SCREEN
 
                 </button>
 
@@ -1851,7 +1851,7 @@
                         </div>
 
                         <h3 class="kdps-card-title">
-                           Podcast Production
+                            Podcast Production
                         </h3>
 
                         <p class="kdps-card-text" style="display: none;">
@@ -1892,7 +1892,7 @@
                         </div>
 
                         <h3 class="kdps-card-title">
-                           Podcast Production
+                            Podcast Production
                         </h3>
 
                         <p class="kdps-card-text" style="display: none;">
@@ -2164,121 +2164,186 @@
             <div class="kdps-media-grid">
 
 
-                <article class="kdps-image-card">
 
-                    <img
-                        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Campaign creative"
-                        loading="lazy">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <div class="kdps-image-info">
-                        <span>Campaign</span>
-                        <strong>Campaign Visual</strong>
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/Watch the full video to understand how mutual funds actually work and what happens to your money.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 1</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/4009402/pexels-photo-4009402.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Social design"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/Makhana itna fun bhi ho sakta hai 👀😂Meet the crunchiest little character in your snack-time st.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Social Media</span>
-                        <strong>Social Design</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 2</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/3379943/pexels-photo-3379943.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Brand creative"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/Kabhi-kabhi rukawat sirf effort ki nahi, energy ki bhi lagti hai.Dhyan Yog Bracelet ko intention.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Branding</span>
-                        <strong>Brand Creative</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 3</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Digital campaign"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/If crystals had personalities, this is probably what they’d look like.Tiger’s Eye, Amethyst, Cit.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Digital</span>
-                        <strong>Digital Campaign</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 4</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Creative visual"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/🚀 Turn Data into Decisions with the Power of Analytics! 📊💡Start your journey from Excel & SQL.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Creative</span>
-                        <strong>Visual Content</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 5</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/3205735/pexels-photo-3205735.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Digital visual"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/📞 Ek missed call = ek missed opportunity 👀Ab calls miss hone ki tension nahi!With King Digital.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Content</span>
-                        <strong>Digital Visual</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 6</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Website design"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/🌸 Sawan Special Dream Home Offer! 🏡✨This auspicious Sawan, bring happiness, peace, and prosper.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Website</span>
-                        <strong>Web Experience</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 7</strong>
                     </div>
 
                 </article>
 
 
-                <article class="kdps-image-card">
+                <article class="kdps-reel-card kdps-video-item">
 
-                    <img
-                        src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=900"
-                        alt="Creative direction"
-                        loading="lazy">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="assets/videos/ai gen/🌙 𝗦𝗹𝗲𝗲𝗽 𝗕𝗲𝘁𝘁𝗲𝗿. 𝗕𝗿𝗲𝗮𝘁𝗵𝗲 𝗕𝗲𝘁𝘁𝗲𝗿. 𝗟𝗶𝘃𝗲 𝗕𝗲𝘁𝘁𝗲𝗿.Are you looking f.mp4" type="video/mp4">
+                    </video>
 
-                    <div class="kdps-image-info">
-                        <span>Design</span>
-                        <strong>Creative Direction</strong>
+                    <div class="kdps-vertical-badge">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        Reel
+                    </div>
+
+                    <div class="kdps-reel-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+
+                    <div class="kdps-reel-info">
+                        <span>Brand Reel</span>
+                        <strong>Reel 8</strong>
                     </div>
 
                 </article>
@@ -2668,7 +2733,7 @@
                 <article class="kdps-reel-card kdps-video-item">
 
                     <video muted loop playsinline preload="metadata">
-                        <source src="assets/videos/anchor/Higher education, a new home or other important family goals can become major expenses if you st.mp4" type="video/mp4">
+                        <source src="assets/videos/anchor/Google 15.mp4" type="video/mp4">
                     </video>
 
                     <div class="kdps-vertical-badge">

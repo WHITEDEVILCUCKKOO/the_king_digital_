@@ -10,8 +10,8 @@
       <div class="promo-sms-services__image-bg"></div>
 
       <div class="promo-sms-services__image-card">
-        <img
-          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=90"
+        <img style="object-position: 54% center;"
+          src="assets/images/Friendly Robot SMS Assistant.png"
           alt="SMS Marketing and Mobile Communication Services"
           loading="lazy"
         >
@@ -85,7 +85,7 @@
 
       <!-- ================= SERVICE 2 ================= -->
       <a
-        href="/transactional-sms/"
+        href="#"
         class="promo-sms-services__service-card"
         aria-label="Explore Transactional SMS Service"
       >
@@ -111,7 +111,7 @@
 
       <!-- ================= SERVICE 3 ================= -->
       <a
-        href="/otp-sms/"
+        href="otp_sevice.php"
         class="promo-sms-services__service-card"
         aria-label="Explore OTP SMS Service"
       >
@@ -224,7 +224,7 @@
   position: relative;
   z-index: 2;
 
-  width: 330px;
+  width: 500px;
   height: 400px;
 
   overflow: hidden;

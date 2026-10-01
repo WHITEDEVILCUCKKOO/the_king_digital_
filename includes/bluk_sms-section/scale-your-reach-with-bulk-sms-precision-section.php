@@ -428,7 +428,7 @@
     <div class="qscale-visual">
       <div class="qscale-visual-glow"></div>
       <!-- Replace the src below with the path to your illustration image -->
-      <img class="qscale-visual-img" src="assets/images/bluk_sms_severc.png" alt="Bulk SMS communication and analytics illustration">
+      <img class="qscale-visual-img" src="assets/images/Digital Messaging Ecosystem.png" alt="Bulk SMS communication and analytics illustration">
     </div>
 
   </div>
