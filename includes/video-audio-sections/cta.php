@@ -1,10 +1,4 @@
 <?php
-// King Digital – Call-to-action section
-$cta_image = 'hero-video.png';          // photo on the right (same folder as this file)
-$phone     = '+91 00000 00000';         // <- replace with your number
-$phone_tel = '+910000000000';           // digits only, used for the tel: link
-$whatsapp  = 'https://wa.me/910000000000'; // <- replace with your WhatsApp link
-$form_url  = '#contact';                // <- link to your contact form / page
 
 $points = [
   'Free strategy call',
@@ -366,10 +360,6 @@ $points = [
 </style>
 
 <section class="kd-cta" id="kd-cta">
-  <span class="kd-cta__shape kd-cta__shape--tl1"></span>
-  <span class="kd-cta__shape kd-cta__shape--tl2"></span>
-  <span class="kd-cta__shape kd-cta__shape--br1"></span>
-  <span class="kd-cta__shape kd-cta__shape--br2"></span>
 
   <div class="kd-cta__inner">
     <div class="kd-cta__content">
@@ -378,13 +368,13 @@ $points = [
       <p class="kd-cta__desc">Tell us about your brand and goals. We’ll come back with a clear plan, a transparent quote and ideas worth shooting.</p>
 
       <div class="kd-cta__actions">
-        <a class="kd-cta__btn kd-cta__btn--primary" href="<?= htmlspecialchars($form_url) ?>">
+        <a class="kd-cta__btn kd-cta__btn--primary" href="contact.php">
           Start Your Video Project
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 12h16M14 6l6 6-6 6" />
           </svg>
         </a>
-        <a class="kd-cta__btn kd-cta__btn--ghost" href="<?= htmlspecialchars($whatsapp) ?>" target="_blank" rel="noopener">
+        <a class="kd-cta__btn kd-cta__btn--ghost" href="https://wa.me/919211339966" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z" />
             <path d="M9.2 9.2c0 3 2.6 5.6 5.6 5.6l1.1-1.3-1.8-1-.8.6a3.2 3.2 0 0 1-1.6-1.6l.6-.8-1-1.8z" />
@@ -401,11 +391,11 @@ $points = [
         <?php endforeach; ?>
       </ul>
 
-      <p class="kd-cta__call">Prefer to talk? Call us on <a href="tel:<?= htmlspecialchars($phone_tel) ?>"><?= htmlspecialchars($phone) ?></a></p>
+      <p class="kd-cta__call">Prefer to talk? Call us on <a href="tel:+919210763636">+91-9210-76-3636</a></p>
     </div>
 
     <div class="kd-cta__media">
-      <div class="kd-cta__photo"><img src="<?= htmlspecialchars($cta_image) ?>" alt="King Digital crew filming in a studio"></div>
+      <div class="kd-cta__photo"><img src="assets/images/hero-video.png" alt="King Digital crew filming in a studio"></div>
       <span class="kd-cta__stripe"></span>
       <div class="kd-cta__chip"><strong>100+</strong><span>video projects<br>delivered</span></div>
     </div>

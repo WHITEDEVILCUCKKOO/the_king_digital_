@@ -1,6 +1,4 @@
 <?php
-// King Digital – "Why Choose King Digital" section
-$side_image = 'hero-video.png'; // studio photo shown on the right (same folder as this file)
 
 $features = [
   ['target', 'Strategy-First Production',     'Every video starts with a clear goal and plan.'],
@@ -280,16 +278,8 @@ $icons = [
 
 <section class="kd-why" id="kd-why">
   <div class="kd-why__media">
-    <img src="<?= htmlspecialchars($side_image) ?>" alt="Video camera and studio lighting on a King Digital shoot">
-    <span class="kd-why__slash"></span>
-    <div class="kd-why__badge" aria-hidden="true">
-      Better Videos.<br>Bigger Results.
-      <svg viewBox="0 0 140 12" fill="none">
-        <path d="M4 8 C 40 2, 90 2, 136 5" stroke="#e3161c" stroke-width="3" stroke-linecap="round" />
-      </svg>
-    </div>
+    <img src="assets/images/hero-video.png" alt="Video camera and studio lighting on a King Digital shoot">
   </div>
-  <span class="kd-why__bar"></span>
 
   <div class="kd-why__inner">
     <div class="kd-why__eyebrow">Why Choose King Digital</div>
