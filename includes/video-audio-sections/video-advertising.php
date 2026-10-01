@@ -1,8 +1,4 @@
 <?php
-// King Digital – "Video + Advertising" section
-$video_image = 'hero-video.png'; // photo inside the tilted video frame (same folder as this file)
-
-// Simple inline brand-style icons (no external files needed)
 $svg = [
   'meta'  => '<svg viewBox="0 0 24 24" fill="none" stroke="#0866ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.8-3.8-5-6-5a4 4 0 0 0 0 10c2.2 0 4-2.2 6-5zm0 0c2 2.8 3.8 5 6 5a4 4 0 0 0 0-10c-2.2 0-4 2.2-6 5z"/></svg>',
   'ig'    => '<svg viewBox="0 0 24 24"><defs><linearGradient id="kdIg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".65" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#kdIg)"/><rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.6" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg>',
@@ -578,11 +574,6 @@ $steps = [
 </style>
 
 <section class="kd-adv" id="kd-adv">
-  <span class="kd-adv__shape kd-adv__shape--tl1"></span>
-  <span class="kd-adv__shape kd-adv__shape--tl2"></span>
-  <span class="kd-adv__shape kd-adv__shape--tr"></span>
-  <span class="kd-adv__shape kd-adv__shape--br1"></span>
-  <span class="kd-adv__shape kd-adv__shape--br2"></span>
 
   <div class="kd-adv__inner">
     <div class="kd-adv__top">
@@ -599,7 +590,7 @@ $steps = [
         <div class="kd-adv__tile kd-adv__tile--yt"><?= $svg['yt'] ?></div>
 
         <div class="kd-adv__frame">
-          <img src="<?= htmlspecialchars($video_image) ?>" alt="Studio video shoot">
+          <img src="assets/images/hero-video.png" alt="Studio video shoot">
           <a class="kd-adv__play" href="#work" aria-label="Watch our work"><svg viewBox="0 0 24 24">
               <path d="M6 3.5l14 8.5-14 8.5z" />
             </svg></a>
@@ -613,12 +604,12 @@ $steps = [
           </div>
         </div>
 
-        <div class="kd-adv__badge" aria-hidden="true">
+        <!-- <div class="kd-adv__badge" aria-hidden="true">
           More<br>Views.<br>More<br>Reach.<br>More<br>Leads.<br>More<br>Sales.
           <svg viewBox="0 0 100 10" fill="none">
             <path d="M3 7 C 30 2, 65 2, 97 4" stroke="#e3161c" stroke-width="3" stroke-linecap="round" />
           </svg>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -638,7 +629,7 @@ $steps = [
         <div class="kd-adv__cta-title">Ready to Grow with Video + Ads?</div>
         <div class="kd-adv__cta-sub">Let’s create, promote and scale your next campaign — together.</div>
       </div>
-      <a class="kd-adv__cta-btn" href="#contact">
+      <a class="kd-adv__cta-btn" href="contact.php">
         Get a Free Strategy Call
         <svg viewBox="0 0 24 24">
           <path d="M4 12h16M14 6l6 6-6 6" />

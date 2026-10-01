@@ -1,5 +1,4 @@
 <?php
-// King Digital – "Industries We Create For" section
 $industries = [
   ['home',  'Real Estate',       '<path d="M3.5 11.5L12 4l8.5 7.5"/><path d="M6 10v9.5h12V10"/><path d="M10 19.5v-5h4v5"/><path d="M16.5 6.5V4.5h2v4"/>'],
   ['heart', 'Healthcare',        '<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/><path d="M12 10v5M9.5 12.5h5"/>'],
@@ -247,11 +246,6 @@ $industries = [
 </style>
 
 <section class="kd-ind" id="kd-ind">
-  <span class="kd-ind__deco kd-ind__deco--g1"></span>
-  <span class="kd-ind__deco kd-ind__deco--g2"></span>
-  <span class="kd-ind__deco kd-ind__deco--g3"></span>
-  <span class="kd-ind__deco kd-ind__deco--r1"></span>
-  <span class="kd-ind__deco kd-ind__deco--r2"></span>
 
   <div class="kd-ind__inner">
     <div class="kd-ind__text">
