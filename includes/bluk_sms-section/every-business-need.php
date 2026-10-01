@@ -659,7 +659,7 @@
             <!-- Voice SMS & OBD -->
             <div class="qsms-panel" data-panel="alerts">
                 <div class="qsms-card12s">
-                    <div class="qsms-card12 btn-789_card_sole" onclick="window.location.href='promotional-sms.php'">
+                    <div class="qsms-card12 btn-789_card_sole" onclick="window.location.href='ai-voice.php'">
                         <div class="qsms-card12-blob qsms-blob-orange"></div>
                         <div class="qsms-icon qsms-grad-orange">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -671,7 +671,7 @@
                         <p class="qsms-card12-desc">Use pre-recorded voice messages in regional languages to reach different audiences.</p>
                         <p class="radj_8451">Read More...</p>
                     </div>
-                    <div class="qsms-card12 btn-789_card_sole" onclick="window.location.href='promotional-sms.php'">
+                    <div class="qsms-card12 btn-789_card_sole" onclick="window.location.href='ai-voice.php'">
                         <div class="qsms-card12-blob qsms-blob-red"></div>
                         <div class="qsms-icon qsms-grad-red">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -682,7 +682,7 @@
                         <p class="qsms-card12-desc">Use DTMF-enabled keypad interaction to collect instant feedback from your audience.</p>
                         <p class="radj_8451">Read More...</p>
                     </div>
-                    <div class="qsms-card12 btn-789_card_sole" onclick="window.location.href='promotional-sms.php'">
+                    <div class="qsms-card12 btn-789_card_sole" onclick="window.location.href='ai-voice.php'">
                         <div class="qsms-card12-blob qsms-blob-amber"></div>
                         <div class="qsms-icon qsms-grad-amber">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

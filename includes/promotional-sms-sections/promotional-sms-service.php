@@ -357,7 +357,7 @@
     </p>
 
     <!-- Small CTA Button -->
-    <a href="#enquiry" class="kd-promotional-cta__button">
+    <a href="contact.php" class="kd-promotional-cta__button">
       Get Started Today
       <span class="kd-promotional-cta__arrow">→</span>
     </a>

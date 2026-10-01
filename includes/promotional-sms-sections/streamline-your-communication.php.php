@@ -546,6 +546,10 @@
     }
 
   }
+
+  .asd8452asd{
+    cursor: pointer;
+  }
 </style>
 
 <section class="kd-promo-solutions-section" id="kdPromoSmsSolutions">
@@ -584,7 +588,7 @@
 
 
       <!-- CARD 1 -->
-      <div class="kd-promo-solution-card">
+      <div class="kd-promo-solution-card asd8452asd"  onclick="window.location.href='contact.php'">
 
         <div class="kd-promo-card-top">
 
@@ -615,7 +619,7 @@
 
 
       <!-- CARD 2 -->
-      <div class="kd-promo-solution-card kd-promo-featured-card">
+      <div class="kd-promo-solution-card kd-promo-featured-card asd8452asd" onclick="window.location.href='contact.php'">
 
         <div class="kd-promo-card-top">
 
@@ -650,7 +654,7 @@
 
 
       <!-- CARD 3 -->
-      <div class="kd-promo-solution-card">
+      <div class="kd-promo-solution-card asd8452asd" onclick="window.location.href='contact.php'">
 
         <div class="kd-promo-card-top">
 

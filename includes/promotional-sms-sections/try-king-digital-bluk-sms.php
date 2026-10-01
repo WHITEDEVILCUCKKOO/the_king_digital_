@@ -923,7 +923,7 @@ SMALL MOBILE
       <!-- CTA -->
       <div class="kd-free-trial-actions">
 
-        <a href="#enquiry" class="kd-free-trial-btn">
+        <a href="contact.php" class="kd-free-trial-btn">
           Start Free Trial
           <span>→</span>
         </a>

@@ -15,7 +15,9 @@
 
             <h1 class="kd-title">
                 <span>Reach More Customers</span>
-                <span>with <em>Promotional SMS</em></span>
+                <span>with <em>Promotional SMS</em>,<br> <em>Transactional SMS
+
+</em></span>
             </h1>
 
             <div class="kd-title-line"></div>
@@ -34,10 +36,10 @@
             </div>
 
             <div class="kd-actions">
-                <a href="#enquiry" class="kd-btn kd-btn-primary">
+                <a href="contact.php" class="kd-btn kd-btn-primary">
                     Get Started Now <b>→</b>
                 </a>
-                <a href="#services" class="kd-btn kd-btn-secondary">
+                <a href="index.php?#services" class="kd-btn kd-btn-secondary">
                     Explore Services
                 </a>
             </div>

@@ -738,7 +738,7 @@
 
       <!-- CTA -->
       <div class="kd-why-actions">
-        <a href="#enquiry" class="kd-why-btn">
+        <a href="contact.php" class="kd-why-btn">
           Get Started Today
           <span>→</span>
         </a>
