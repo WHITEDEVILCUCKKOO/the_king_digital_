@@ -543,6 +543,47 @@
                         </div>
                     </div>
                 </div>
+                <div class="seo-faq-qa">
+                    <h3 class="seo-question">
+                        <button type="button" class="seo-question-btn" aria-expanded="false" aria-controls="seo-answer-4" id="seo-question-4">
+                            How do you improve a website’s search engine rankings?
+                            <span class="seo-question-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="seo-answer-wrap" id="seo-answer-4" role="region" aria-labelledby="seo-question-4">
+                        <div class="seo-answer-inner">
+                            <p class="seo-answer">We use a comprehensive SEO strategy covering technical SEO, keyword research, content optimization, internal linking, website performance, structured data, and high-quality backlink development to improve organic visibility and attract relevant traffic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-faq-qa">
+                    <h3 class="seo-question">
+                        <button type="button" class="seo-question-btn" aria-expanded="false" aria-controls="seo-answer-5" id="seo-question-5">
+                            How do you measure the success of an SEO campaign?
+                            <span class="seo-question-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="seo-answer-wrap" id="seo-answer-5" role="region" aria-labelledby="seo-question-5">
+                        <div class="seo-answer-inner">
+                            <p class="seo-answer">We track keyword rankings, organic traffic, search visibility, click-through rates, conversions, engagement, indexed pages, and leads or revenue generated through organic search to measure overall SEO performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-faq-qa">
+                    <h3 class="seo-question">
+                        <button type="button" class="seo-question-btn" aria-expanded="false" aria-controls="seo-answer-6" id="seo-question-6">
+                            Can SEO help my website compete for highly competitive keywords?
+                            <span class="seo-question-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="seo-answer-wrap" id="seo-answer-6" role="region" aria-labelledby="seo-question-6">
+                        <div class="seo-answer-inner">
+                            <p class="seo-answer">Yes, but competitive keywords require a long-term strategy. We analyze search intent, competitors, content gaps, technical factors, domain authority, and backlink opportunities to build a targeted strategy for increasing organic visibility.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="seo-cta">

@@ -183,7 +183,7 @@
         <p class="kdj-eyebrow">OUR WORK</p>
         <h2 class="kdj-heading">Our Recent <em> Projects</em></h2>
       </div>
-      <button class="kdj-view-all">View All Projects &#8594;</button>
+      <a class="kdj-view-all" href="portfolio.php">View All Projects &#8594;</a>
     </div>
 
     <div class="kdj-grid" id="kdjGrid">

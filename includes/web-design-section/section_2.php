@@ -152,7 +152,7 @@
     font-weight: 600;
     color: #2f6df3;
     text-decoration: none;
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 5px;
     transition: gap 0.25s ease;
