@@ -692,7 +692,7 @@
 
                         <!-- Pehla QR Code (Left wala) -->
                         <div class="qr-code-container iauwe" style="flex-shrink: 0; position: relative;">
-                            <img src="assets/contact-qr.jpg.jpeg" alt="Scan QR Code" style="width: 133px; height: 151px; object-fit: contain;">
+                            <img src="assets/whatsapp_qr_9641.png" alt="Scan QR Code" style="width: 133px; height: 151px; object-fit: contain;">
                             <span class="whatsapp_qr20" style="display: none;">
                                 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16 31C23.732 31 30 24.732 30 17C30 9.26801 23.732 3 16 3C8.26801 3 2 9.26801 2 17C2 19.5109 2.661 21.8674 3.81847 23.905L2 31L9.31486 29.3038C11.3014 30.3854 13.5789 31 16 31ZM16 28.8462C22.5425 28.8462 27.8462 23.5425 27.8462 17C27.8462 10.4576 22.5425 5.15385 16 5.15385C9.45755 5.15385 4.15385 10.4576 4.15385 17C4.15385 19.5261 4.9445 21.8675 6.29184 23.7902L5.23077 27.7692L9.27993 26.7569C11.1894 28.0746 13.5046 28.8462 16 28.8462Z" fill="#BFC8D0"></path>

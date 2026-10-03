@@ -1,0 +1,79 @@
+/* --- Unique Styles for RCS Agent Section --- */
+
+/* Main Wrapper: Width 80% and Centered */
+.rcs-header-wrapper-unique {
+  width: 80%;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* Breadcrumb Styling */
+.rcs-breadcrumb-unique {
+  font-size: 14px;
+  color: #00875a; /* Green tone matching image */
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rcs-breadcrumb-link-unique {
+  color: #00875a;
+  text-decoration: none;
+}
+
+.rcs-breadcrumb-link-unique:hover {
+  text-decoration: underline;
+}
+
+.rcs-breadcrumb-sep-unique {
+  color: #a0aec0;
+}
+
+.rcs-breadcrumb-current-unique {
+  color: #00875a;
+  font-weight: 500;
+}
+
+/* Badge / Configuration Tag Styling */
+.rcs-badge-container-unique {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rcs-dot-unique {
+  width: 8px;
+  height: 8px;
+  background-color: #00875a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.rcs-badge-text-unique {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #00875a;
+}
+
+/* Main Title Styling */
+.rcs-main-title-unique {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a103c; /* Dark navy/purple tone from image */
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+/* Description Text Styling */
+.rcs-description-unique {
+  font-size: 18px;
+  color: #4a5568; /* Soft dark grey for readability */
+  line-height: 1.6;
+  margin: 0;
+  max-width: 900px;
+}
