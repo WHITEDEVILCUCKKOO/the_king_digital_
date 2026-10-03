@@ -8976,37 +8976,276 @@
             <!-- sublink box 13 -->
             <section id="contect_13_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
 
-                13
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">RCS Agent</span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>RCS CONFIGURATION</h4>
+                </div>
+
+                <h2>RCS Agent</h2>
+
+                <p>An RCS Agent represents the business identity that customers will see when receiving RCS messages. Every RCS campaign must be associated with a valid and approved RCS Agent.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_2/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Purpose
+                    </span>
+                </div>
+
+                <p style="width: 80%; margin: 20px auto 0 auto;">The RCS Agent acts as the verified business profile displayed to customers during RCS conversations. It contains branding information, contact details, legal information, and communication preferences.[cite: 3]</p>
+
+                <!--notification without title Green -->
+                <div class="hdah651" style="margin-top: 30px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">An RCS Agent must be created before creating templates or campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Create Agent
+                    </span>
+                </div>
+
+                <p style="width: 80%; margin: 20px auto 15px auto;">Navigation: <strong>Config → RCS Agents</strong>
+                </p>
+
+                <!-- steps -->
+                <div class="om-guide-shell" style="width: 80%; margin: 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="display:none;"></h3>
+                            <p class="om-step-detail">Open Config.[cite: 3]</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="display:none;"></h3>
+                            <p class="om-step-detail">Select RCS Agents.[cite: 3]</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="display:none;"></h3>
+                            <p class="om-step-detail">Click Add Agent.[cite: 3]</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="display:none;"></h3>
+                            <p class="om-step-detail">Fill all required business details.[cite: 3]</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="display:none;"></h3>
+                            <p class="om-step-detail">Click Save.[cite: 3]</p>
+                        </div>
+                    </div>
+                </div>
 
 
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_2/img_2.png" alt="">
+                    </span>
+                </div>
 
 
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Agent Information
+                    </span>
+                </div>
 
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
 
+                        <tbody>
+                            <tr>
+                                <td>Agent Name</td>
+                                <td>Enter the unique name of the WhatsApp Agent. This name is visible to end users as the sender name and can contain up to 40 characters.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Display Name</td>
+                                <td>Specify the display name used internally within the platform for identification and management purposes. This value is not shown to customers.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Description</td>
+                                <td>Provide a short description of the business or brand. The description helps identify the purpose of the agent and supports up to 100 characters.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Banner Image</td>
+                                <td>Upload a banner image representing your business. The recommended image size is <strong>1440 × 448 pixels</strong> with a maximum file size of <strong>360 KB (JPEG)</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Logo</td>
+                                <td>Upload the official business logo. The recommended image size is <strong>224 × 224 pixels</strong> with a maximum file size of <strong>90 KB (JPEG)</strong>. A transparent background is recommended.</td>
+                            </tr>
+                            <tr>
+                                <td>Brand Color</td>
+                                <td>Select the primary brand color that will be associated with the WhatsApp Agent and displayed in supported interfaces.</td>
+                            </tr>
+                            <tr>
+                                <td>Legal Name</td>
+                                <td>Enter the registered legal name of the organization or business associated with the WhatsApp Agent.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Use Case</td>
+                                <td>Select the primary business use case, such as Customer Support, Marketing, Utility Notifications, Authentication, or other supported categories.</td>
+                            </tr>
+                            <tr>
+                                <td>Billing Category</td>
+                                <td>Select the billing category that determines how conversations are classified and charged by the WhatsApp Business Platform.</td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>Enter the business contact number that will be visible to customers during WhatsApp conversations.</td>
+                            </tr>
+                            <tr>
+                                <td>Website</td>
+                                <td>Provide the official business website URL. This link may be displayed to customers as part of the business profile.</td>
+                            </tr>
+                            <tr>
+                                <td>Email Address</td>
+                                <td>Enter the official business email address that customers can use to contact your organization.</td>
+                            </tr>
+                            <tr>
+                                <td>Sample Message</td>
+                                <td>Provide an example of the type of message that will be sent through this WhatsApp Agent for review and verification purposes.</td>
+                            </tr>
+                            <tr>
+                                <td>Privacy Policy URL</td>
+                                <td>Enter the URL of your organization's Privacy Policy page so users can review how their information is collected and processed.</td>
+                            </tr>
+                            <tr>
+                                <td>Terms & Conditions URL</td>
+                                <td>Provide the URL of your organization's Terms & Conditions page applicable to WhatsApp communications.</td>
+                            </tr>
+                            <tr>
+                                <td>Opt-in URL</td>
+                                <td>Enter the URL where customers can provide consent (opt-in) to receive WhatsApp messages from your business.</td>
+                            </tr>
+                            <tr>
+                                <td>POC Name</td>
+                                <td>Specify the name of the primary Point of Contact responsible for managing the WhatsApp Agent.</td>
+                            </tr>
+                            <tr>
+                                <td>POC Mail ID</td>
+                                <td>Enter the email address of the Point of Contact. The email should be in a valid format (for example: name@domain.com).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Agent Creation Workflow
+                    </span>
+                </div>
 
+                <!-- steps -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Business Information</h3>
+                            <p class="om-step-detail">Provide agent name, display name and description.</p>
+                        </div>
+                    </div>
 
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Upload Branding Assets</h3>
+                            <p class="om-step-detail">Upload banner image and business logo.</p>
+                        </div>
+                    </div>
 
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Configure Contact Details</h3>
+                            <p class="om-step-detail">Add website, email address and phone number.</p>
+                        </div>
+                    </div>
 
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Compliance URLs</h3>
+                            <p class="om-step-detail">Configure Privacy Policy, Terms & Conditions and Opt-in URLs.</p>
+                        </div>
+                    </div>
 
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Agent</h3>
+                            <p class="om-step-detail">Submit and save the agent configuration.</p>
+                        </div>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <!--notification yellow -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #a76e04; background: #fdf3e7;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none; "></h3>
+                            <p class="om-step-detail" style="color: #967331;">Templates cannot be created until an RCS Agent has been successfully created.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9049,7 +9288,470 @@
             <section id="contect_14_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
 
 
-                14
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">Create Template</span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>RCS TEMPLATE MANAGEMENT</h4>
+                </div>
+
+                <h2>Create Template</h2>
+
+                <p>The Create Template module allows users to create rich and interactive RCS message templates. Templates can contain images, videos, PDF files, action buttons, dynamic variables, and carousel cards for enhanced customer engagement.</p>
+
+                <!--notification without title Green -->
+                <div class="hdah651" style="margin-top: 30px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Only approved templates can be used in RCS campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Navigation
+                    </span>
+                </div>
+
+                <p style="width: 80%; margin: 20px auto 0 auto;">Navigate to: <strong>Config → Manage Templates</strong></p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_1.png" alt="">
+                    </span>
+                </div>
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Create Template Workflow
+                    </span>
+                </div>
+
+                <!-- steps with img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Configuration</h3>
+                            <p class="om-step-detail">Navigate to the Config module from the left sidebar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Manage Templates</h3>
+                            <p class="om-step-detail">Click Manage Templates to view all available RCS templates.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_2.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Template</h3>
+                            <p class="om-step-detail">Click the Add Template button to open the template creation form.</p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_3.png" alt="">
+                        </span>
+                    </div>
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_4.png" alt="">
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Supported Template Types
+                    </span>
+                </div>
+
+                <!-- Cards -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 0 auto;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>🖼️</span>
+                        </div>
+                        <h5 class="c-title12">Rich Card</h5>
+                        <p class="c-desc12" style="margin: 0;">Single rich media card with title, description, media and action buttons. </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>🎠</span>
+                        </div>
+                        <h5 class="c-title12">Carousel</h5>
+                        <p class="c-desc12" style="margin: 0;">Multiple cards displayed in a swipeable carousel format. </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>💬</span>
+                        </div>
+                        <h5 class="c-title12">Text Message</h5>
+                        <p class="c-desc12" style="margin: 0;">Simple text-based RCS template with buttons and variables. </p>
+                    </div>
+
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_5.png" alt="">
+                    </span>
+                </div>
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_6.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Rich Card messages contain rich media and text content.</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Media Support</td>
+                                <td>Image, Video and PDF files</td>
+                            </tr>
+                            <tr>
+                                <td>Card Title</td>
+                                <td>Maximum 120 characters</td>
+                            </tr>
+                            <tr>
+                                <td>Card Description</td>
+                                <td>Maximum 2000 characters</td>
+                            </tr>
+                            <tr>
+                                <td>Action Buttons</td>
+                                <td>Suggested action/reply buttons</td>
+                            </tr>
+                            <tr>
+                                <td>Variables</td>
+                                <td>Dynamic personalization support</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Card Orientation
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for orientation -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Vertical</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Horizontal</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Media Size
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for media size -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Short</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Medium</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Tall</span>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Dynamic Variables
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Variables allow dynamic personalization within RCS templates. Instead of creating separate templates for each customer, you can use variables that are automatically replaced during campaign execution.</p>
+
+                <!--notification with title Green -->
+                <div class="hdah651" style="margin-top: 30px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Example: Hello {{1}}</h3>
+                            <p class="om-step-detail" style="color: #31964f;">If the customer name is Amit, Rahul or Priya, the system automatically replaces the variable with the corresponding value.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        2. Carousel Template
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_7.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Carousel templates display multiple cards in a swipeable format. Each card can contain different content.</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Minimum Cards</td>
+                                <td>2 Cards</td>
+                            </tr>
+                            <tr>
+                                <td>Maximum Cards</td>
+                                <td>10 Cards</td>
+                            </tr>
+                            <tr>
+                                <td>Media Support</td>
+                                <td>Image, Video and PDF</td>
+                            </tr>
+                            <tr>
+                                <td>Card Title</td>
+                                <td>Maximum 120 characters</td>
+                            </tr>
+                            <tr>
+                                <td>Card Description</td>
+                                <td>Maximum 2000 characters</td>
+                            </tr>
+                            <tr>
+                                <td>Action Buttons</td>
+                                <td>Suggested action/reply buttons</td>
+                            </tr>
+                            <tr>
+                                <td>Variables</td>
+                                <td>Dynamic personalization support</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Common Use Cases
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for common use cases -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Multiple Products</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Multiple Offers</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Service Catalogs</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Promotional Campaigns</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        3. Text Message Template
+
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_3/img_8.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Text Message templates contain only text content. </p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Text Content</td>
+                                <td>Up to 2000 characters </td>
+                            </tr>
+                            <tr>
+                                <td>Variables</td>
+                                <td>Dynamic personalization support </td>
+                            </tr>
+                            <tr>
+                                <td>Action Buttons</td>
+                                <td>Suggested action/reply buttons </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Button Examples
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for button examples -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Visit Website </span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Call Now </span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Contact Us </span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">View Details </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Template Approval
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Review Template</h3>
+                            <p class="om-step-detail">Verify all template details and content. </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Submit For Approval</h3>
+                            <p class="om-step-detail">Click Submit For Approval to send the template for review. </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Wait for Approval</h3>
+                            <p class="om-step-detail">Only approved templates become available for campaign creation. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">After approval, the template becomes available for use in RCS campaigns. </p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9087,7 +9789,263 @@
 
             <!-- sublink box 15 -->
             <section id="contect_15_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                15
+
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">Create Campaign</span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>RCS CAMPAIGN</h4>
+                </div>
+
+                <h2>Create RCS Campaign</h2>
+
+                <p>The Create RCS Campaign module allows users to send rich and interactive RCS messages using approved templates, rich cards, carousels, and text messages. Campaigns can be delivered to individual recipients, multiple recipients, uploaded contact files, or reusable groups.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_4/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Campaign Configuration
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Campaign Name</td>
+                                <td>Enter a unique name for the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent</td>
+                                <td>Select the required RCS Agent.</td>
+                            </tr>
+                            <tr>
+                                <td>Template Type</td>
+                                <td>Select Rich Card, Carousel, or Text Message.</td>
+                            </tr>
+                            <tr>
+                                <td>Select Template</td>
+                                <td>Choose an approved template created earlier.</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Type</td>
+                                <td>Select One To Many or Many To Many campaign mode.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Template Types
+                    </span>
+                </div>
+
+                <!-- Cards -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 0 auto;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>🖼️</span>
+                        </div>
+                        <h5 class="c-title12">Rich Card</h5>
+                        <p class="c-desc12" style="margin: 0;">Send messages with images, descriptions and action buttons.</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>🎞️️</span>
+                        </div>
+                        <h5 class="c-title12">Carousel</h5>
+                        <p class="c-desc12" style="margin: 0;">Display multiple cards in a swipeable format.</p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>💬</span>
+                        </div>
+                        <h5 class="c-title12">Text Message</h5>
+                        <p class="c-desc12" style="margin: 0;">Send standard text-based RCS messages.</p>
+                    </div>
+
+                </div>
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Campaign Types
+                    </span>
+                </div>
+
+                <!-- Cards -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 0 auto;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>👥</span>
+                        </div>
+                        <h5 class="c-title12">One To Many</h5>
+                        <p class="c-desc12" style="margin: 0;">Send the same message template to multiple recipients.</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>📊</span>
+                        </div>
+                        <h5 class="c-title12">Many To Many</h5>
+                        <p class="c-desc12" style="margin: 0;">Send personalized messages using uploaded recipient data and template variables.</p>
+                    </div>
+
+                </div>
+
+                <!--notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Example: A template containing Hello {{1}} can automatically personalize messages such as Hello Amit and Hello Rahul using uploaded recipient data.</h3>
+                            <p class="om-step-detail" style="color: #31964f; display:none;"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Recipient Upload Methods
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">METHOD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Upload File</td>
+                                <td>Upload recipient data using supported file formats. Recommended for large recipient lists.</td>
+                            </tr>
+                            <tr>
+                                <td>Groups</td>
+                                <td>Use saved contact groups for recurring campaigns without uploading files repeatedly.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Using Groups
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Create a Group</h3>
+                            <p class="om-step-detail">Create a contact group such as "Customers".</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Contacts</h3>
+                            <p class="om-step-detail">Import or add contacts into the group once.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Reuse Group</h3>
+                            <p class="om-step-detail">Select the same group in future campaigns without uploading contacts again.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Additional Campaign Options
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">OPTION</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Remove Duplicate</td>
+                                <td>Automatically removes duplicate mobile numbers. </td>
+                            </tr>
+                            <tr>
+                                <td>Remove Blacklist</td>
+                                <td>Excludes all numbers available in the blacklist. </td>
+                            </tr>
+                            <tr>
+                                <td>Schedule Now</td>
+                                <td>Schedule campaign delivery for a future date and time. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">After completing all campaign details, click <strong>Send Now</strong> to submit the RCS campaign for delivery. </p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9124,9 +10082,195 @@
 
             <!-- sublink box 16 -->
             <section id="contect_16_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                16
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">Manage Group</span>
+                </div>
 
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>GROUP MANAGEMENT</h4>
+                </div>
 
+                <h2>RCS Manage Group</h2>
+
+                <p>The RCS Manage Group section allows users to create and maintain recipient groups for RCS campaigns. Groups help organize customers and simplify campaign management.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_5/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!--notification without title Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Contact groups allow users to reuse recipient lists across multiple SMS campaigns without re-uploading contacts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Information
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Group Name</td>
+                                <td>Name of the contact group</td>
+                            </tr>
+                            <tr>
+                                <td>Total Contacts</td>
+                                <td>Total number of contacts in the group</td>
+                            </tr>
+                            <tr>
+                                <td>Actions</td>
+                                <td>Available management actions for the group</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Actions
+                    </span>
+                </div>
+
+                <!-- Cards -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 0 auto;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>👁️</span>
+                        </div>
+                        <h5 class="c-title12">View Contacts</h5>
+                        <p class="c-desc12" style="margin: 0;">View all contacts available in the group.</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>📥</span>
+                        </div>
+                        <h5 class="c-title12">Import Contacts</h5>
+                        <p class="c-desc12" style="margin: 0;">Upload contacts into the selected group.</p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>📤</span>
+                        </div>
+                        <h5 class="c-title12">Export Contacts</h5>
+                        <p class="c-desc12" style="margin: 0;">Download contacts from the group.</p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>✏️</span>
+                        </div>
+                        <h5 class="c-title12">Edit Group</h5>
+                        <p class="c-desc12" style="margin: 0;">Modify group details.</p>
+                    </div>
+
+                    <!-- card 5 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>🗑️</span>
+                        </div>
+                        <h5 class="c-title12">Delete Group</h5>
+                        <p class="c-desc12" style="margin: 0;">Remove the selected group.</p>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Create a New Group
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_5/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Manage Group</h3>
+                            <p class="om-step-detail">Navigate to the Manage Group page.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Group</h3>
+                            <p class="om-step-detail">Open the Add Group form.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Group Name</h3>
+                            <p class="om-step-detail">Provide a unique name for the group.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Save</h3>
+                            <p class="om-step-detail">Save the newly created group.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result</h3>
+                            <p class="om-step-detail" style="color: #31964f;">The new group is created successfully and appears in the group listing.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9134,8 +10278,6 @@
 
                     </span>
                 </div>
-
-
 
                 <!-- preview and next btn -->
                 <div class="void-control-deck">
@@ -9163,9 +10305,350 @@
 
             <!-- sublink box 17 -->
             <section id="contect_17_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                17
+
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">Blacklist Numbers</span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>RCS CONFIGURATION</h4>
+                </div>
+
+                <h2>Blacklist Numbers</h2>
+
+                <p>The Blacklist Numbers module is used to prevent message delivery to specific mobile numbers. Any number added to the blacklist will automatically be excluded from campaigns when the <strong>Remove Blacklist</strong> option is enabled during campaign creation.</p>
 
 
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_6/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- notification yellow -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #a76e04; background: #fdf3e7;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #967331;">Blacklisted numbers will not receive campaign messages when <strong>Remove Blacklist</strong> is enabled.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Navigation
+                    </span>
+                </div>
+
+                <!-- notification without title Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">📍</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Navigate to: <strong>Config → Blacklist Numbers</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Blacklist Number List
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Blacklist Numbers page displays all blacklisted mobile numbers and related information.</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">COLUMN</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Mobile Number</td>
+                                <td>Blacklisted recipient number.</td>
+                            </tr>
+                            <tr>
+                                <td>Created Date</td>
+                                <td>Date and time when the number was added.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Actions
+                    </span>
+                </div>
+
+                <!-- Cards -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 0 auto;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>➕</span>
+                        </div>
+                        <h5 class="c-title12">Add Numbers</h5>
+                        <p class="c-desc12" style="margin: 0;">Add one or multiple mobile numbers to the blacklist.</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>👁️</span>
+                        </div>
+                        <h5 class="c-title12">View Numbers</h5>
+                        <p class="c-desc12" style="margin: 0;">View all existing blacklist entries.</p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>🗑️</span>
+                        </div>
+                        <h5 class="c-title12">Delete Numbers</h5>
+                        <p class="c-desc12" style="margin: 0;">Remove selected blacklist entries.</p>
+                    </div>
+
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_6/img_2.png" alt="">
+                    </span>
+                </div>
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Add Blacklist Numbers
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Click <strong>+ Blacklist Numbers</strong> to open the Blacklist Numbers popup. The popup provides two methods for adding numbers.</p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Method 1: Enter Numbers
+                    </span>
+                </div>
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_6/img_3.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Enter Numbers Tab</h3>
+                            <p class="om-step-detail">Select the Enter Numbers tab in the popup.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Mobile Numbers</h3>
+                            <p class="om-step-detail">Add numbers manually in the text area.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Numbers</h3>
+                            <p class="om-step-detail">Click Save to add all entered numbers to the blacklist.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Supported Formats
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FORMAT</th>
+                                <th style="text-transform: uppercase;">EXAMPLE</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Comma Separated</td>
+                                <td>9876543210,9876543211,9876543212</td>
+                            </tr>
+                            <tr>
+                                <td>Line Separated</td>
+                                <td>9876543210<br>9876543211<br>9876543212</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Method 2: Upload Excel
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_6/img_4.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Users can upload an Excel file containing mobile numbers.</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">SUPPORTED FORMAT</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>.xls</td>
+                                <td>Microsoft Excel Spreadsheet</td>
+                            </tr>
+                            <tr>
+                                <td>.xlsx</td>
+                                <td>Modern Excel Spreadsheet Format</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Steps to Upload Excel File
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Upload Excel Tab</h3>
+                            <p class="om-step-detail">Select the Upload Excel tab.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Choose File</h3>
+                            <p class="om-step-detail">Click Choose File and select the Excel document.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Upload File</h3>
+                            <p class="om-step-detail">Click Save to import all numbers into the blacklist.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">A sample Excel file is available in the upload window for reference.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delete Blacklist Numbers
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Users can remove one or multiple blacklist entries when they are no longer required.</p>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Records</h3>
+                            <p class="om-step-detail">Select one or multiple blacklist entries.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Delete Selected</h3>
+                            <p class="om-step-detail">Click Delete Selected to remove the entries.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Using blacklist management helps avoid sending messages to blocked, restricted, unsubscribed, or unwanted recipients.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9203,9 +10686,810 @@
 
             <!-- sublink box 18 -->
             <section id="contect_18_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                18
+
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">RCS Reports</span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>REPORTS MODULE</h4>
+                </div>
+
+                <h2>RCS Reports</h2>
+
+                <p>The Reports module provides insights into RCS campaign performance, delivery statistics, CTA responses, and customer engagement. Users can monitor campaign effectiveness, review delivery outcomes, and analyze customer interactions in real time.</p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Report Dashboard
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Purpose
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The RCS Reports module is designed to provide comprehensive visibility into RCS campaign execution, delivery performance, CTA responses, customer engagement, and reporting records. It enables organizations to analyze communication effectiveness and monitor RCS messaging performance in real time.</p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Report Sections
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">SECTION</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Campaign Activity</td>
+                                <td>View campaign performance and activity details.</td>
+                            </tr>
+                            <tr>
+                                <td>API CTA Report</td>
+                                <td>Track CTA responses and customer interactions from RCS API campaigns.</td>
+                            </tr>
+                            <tr>
+                                <td>Day Wise Statistics</td>
+                                <td>View day-wise messaging statistics and delivery trends.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Benefits
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for benefits -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Monitor campaign performance.</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Track RCS delivery outcomes.</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Track CTA responses and engagement.</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Analyze messaging effectiveness.</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07;">Expected Result:</h3>
+                            <p class="om-step-detail" style="color: #31964f;">Users can access reporting tools and monitor RCS campaign performance from a centralized location.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Campaign Activity
+
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Purpose
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Campaign Activity report provides detailed information about RCS campaigns executed during a selected date range. Users can review campaign performance, delivery status, scheduled campaigns, and fallback reports.</p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Date Range Filter
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Users can select a custom date range to view campaign records.</p>
 
 
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_3.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Options
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for available options -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Today</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Yesterday</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Last 7 Days</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Last 30 Days</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">This Month</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Last Month</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Custom Range</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 15px auto 15px auto;">Click <strong>Apply</strong> to load campaign data for the selected period.</p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Campaign Report Information
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_4.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Campaign Date</td>
+                                <td>Displays the date and time when the campaign was created.</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Name</td>
+                                <td>Displays the name of the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Template Name</td>
+                                <td>Displays the template used in the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Info</td>
+                                <td>Displays the Agent Name and Agent ID associated with the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>Displays the interface used to create the campaign, such as Web or HTTP.</td>
+                            </tr>
+                            <tr>
+                                <td>Message Type</td>
+                                <td>Displays the type of RCS message sent, such as RichCard.</td>
+                            </tr>
+                            <tr>
+                                <td>Scheduled Info</td>
+                                <td>Displays whether the campaign is scheduled along with the scheduled date and time.</td>
+                            </tr>
+                            <tr>
+                                <td>Is Journey Campaign</td>
+                                <td>Indicates whether the campaign is part of a Journey Campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Total Count</td>
+                                <td>Displays the total number of messages sent in the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Credit Used</td>
+                                <td>Displays the total credits consumed by the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Status</td>
+                                <td>Displays the current campaign status along with the start and end timestamps.</td>
+                            </tr>
+                            <tr>
+                                <td>View</td>
+                                <td>Provides options to view campaign details and related information.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Actions
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for available actions -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">View Campaign Details</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">View Delivery Information</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Download Report</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delivery Report
+
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_5.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Delivery Report displays recipient-level delivery information and helps users verify message delivery status.</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Received Date</td>
+                                <td>Displays the date and time when the RCS message was received.</td>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>Displays the recipient mobile number.</td>
+                            </tr>
+                            <tr>
+                                <td>Reference ID</td>
+                                <td>Unique identifier generated for the RCS message transaction.</td>
+                            </tr>
+                            <tr>
+                                <td>Template Info</td>
+                                <td>Displays the template name and message type used in the campaign.</td>
+                            </tr>
+                            <tr>
+                                <td>Delivery Info</td>
+                                <td>Displays the message status along with delivery and read timestamps.</td>
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>Displays the interface used to send the RCS message, such as Web or HTTP.</td>
+                            </tr>
+                            <tr>
+                                <td>RCS Cost</td>
+                                <td>Displays the cost incurred for sending the RCS message.</td>
+                            </tr>
+                            <tr>
+                                <td>View</td>
+                                <td>Allows users to view detailed information about the message.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Features
+                    </span>
+                </div>
+
+                <!-- no icon box / short cards for features -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array">
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">View delivery records.</span>
+                        </a>
+                        <a class="nano-brick-unit">
+                            <span class="data-tag">Download delivery report.</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Schedule Report
+
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_6.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Schedule Report displays scheduled campaigns that are pending execution .</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>ScheduleDate</td>
+                                <td>Scheduled execution date and time .</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Date</td>
+                                <td>Campaign creation date and time .</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Name</td>
+                                <td>Name of the campaign .</td>
+                            </tr>
+                            <tr>
+                                <td>Template Name</td>
+                                <td>Name of the template used in the campaign .</td>
+                            </tr>
+                            <tr>
+                                <td>Agent Info</td>
+                                <td>Displays the RCS Agent Name and Agent ID .</td>
+                            </tr>
+                            <tr>
+                                <td>Interface</td>
+                                <td>Interface used to create the campaign .</td>
+                            </tr>
+                            <tr>
+                                <td>Message Type</td>
+                                <td>Type of message sent in the campaign .</td>
+                            </tr>
+                            <tr>
+                                <td>Total Count</td>
+                                <td>Total number of recipients .</td>
+                            </tr>
+                            <tr>
+                                <td>Credit Used</td>
+                                <td>Total credits consumed by the campaign .</td>
+                            </tr>
+                            <tr>
+                                <td>Campaign Status</td>
+                                <td>Displays the current status along with start and end time .</td>
+                            </tr>
+                            <tr>
+                                <td>Action</td>
+                                <td>Displays the available actions for the campaign .</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Fallback Report
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Fallback Report displays fallback campaign activity when messages are redirected through alternate channels .</p>
+
+                <!-- ul -->
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;"><strong>RCS to RCS Fallback</strong> – Redirected to alternate SMS route.</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_7.png" alt="">
+                    </span>
+                </div>
+
+
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;"><strong>RCS Fallback</strong> – Redirected from RCS to SMS or another supported channel.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_8.png" alt="">
+                    </span>
+                </div>
+
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;"><strong>WA Fallback </strong> – Redirected to WhatsApp channels.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_9.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Information
+                    </span>
+                </div>
+
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Campaign Date</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Campaign Name</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Template Information</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Interface / Channel</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Scheduled Information</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Campaign Status</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Total Count</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Cost</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Error Details</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        API CTA Report
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_10.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The API CTA Report provides detailed information about CTA (Call-To-Action) responses received from RCS messages sent through API integration. This report helps users monitor customer interactions, track CTA button clicks and analyze campaign engagement.</p>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Purpose
+                    </span>
+                </div>
+
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Track CTA button responses.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Monitor customer engagement.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">View Postback responses.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Export CTA report.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Filter records using date range.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        API CTA Response Page
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_11.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Report Columns
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>DateTime</td>
+                                <td>Date and time of CTA interaction. </td>
+                            </tr>
+                            <tr>
+                                <td>Number</td>
+                                <td>Recipient mobile number. </td>
+                            </tr>
+                            <tr>
+                                <td>CTA Text</td>
+                                <td>Text shown on CTA button. </td>
+                            </tr>
+                            <tr>
+                                <td>PostBack</td>
+                                <td>Returned postback value. </td>
+                            </tr>
+                            <tr>
+                                <td>Template Name</td>
+                                <td>RCS template name. </td>
+                            </tr>
+                            <tr>
+                                <td>Agent Name</td>
+                                <td>RCS Agent name. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Users can monitor all CTA responses generated from RCS API campaigns from a single report. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Day Wise Statistics
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Delivery Statistics report provides a summary of RCS delivery performance for a selected date range. It helps users monitor message delivery status, read counts, failed messages, and overall campaign performance. </p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_7/img_12.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delivery Statistics Page
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>From Date</td>
+                                <td>Start date for the report </td>
+                            </tr>
+                            <tr>
+                                <td>To Date</td>
+                                <td>End date for the report </td>
+                            </tr>
+                            <tr>
+                                <td>Statistics</td>
+                                <td>Fetch delivery statistics for the selected period </td>
+                            </tr>
+                            <tr>
+                                <td>Reset</td>
+                                <td>Clear filters and reload default values </td>
+                            </tr>
+                            <tr>
+                                <td>Export</td>
+                                <td>Download the report </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Generate Delivery Statistics
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select the From Date</h3>
+                            <p class="om-step-detail">Choose the start date for generating statistics .</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select the To Date</h3>
+                            <p class="om-step-detail">Choose the end date for generating statistics .</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click the Statistics button</h3>
+                            <p class="om-step-detail">The system will generate delivery statistics for the selected date range .</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Report Columns
+                    </span>
+                </div>
+
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Received Date </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Pending </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">DLR Awaited </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Delivered </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Undelivered </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Expired </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Rejected </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Others </p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Total </p>
+                        </li>
+                    </ul>
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9213,8 +11497,6 @@
 
                     </span>
                 </div>
-
-
 
                 <!-- preview and next btn -->
                 <div class="void-control-deck">
@@ -9244,7 +11526,1712 @@
 
             <!-- sublink box 19 -->
             <section id="contect_19_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                19
+                <!-- Header Start -->
+                <div class="login_hero">
+                    <span class="brad_kaem">Docs</span>/
+                    <span class="brad_kaem">Channels</span>/
+                    <span class="brad_kaem">RCS</span>/
+                    <span class="brad_kaem">Chatbot Automation</span>
+                </div>
+
+                <div class="loging_title">
+                    <span class="green_dot_585"></span>
+                    <h4>RCS AUTOMATION</h4>
+                </div>
+
+                <h2>RCS Chatbot Automation Flow</h2>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Introduction
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The RCS Chatbot Automation module enables businesses to create automated and interactive customer conversations using a visual drag-and-drop builder. Without writing any code, users can design chatbot workflows using triggers, text messages, quick reply buttons, rich cards, carousel cards, delay nodes, and Google Sheets integration. The platform helps businesses automate customer engagement, provide instant support, capture leads, and deliver rich conversational experiences through Google RCS Business Messaging.</p>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Chatbot Automation helps businesses automate conversations and improve customer engagement through interactive RCS messaging.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Accessing the Automation Module
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Login to Omni Hub</h3>
+                            <p class="om-step-detail">Log in to the Omni Hub platform using your registered credentials to access the Automation module.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Automation</h3>
+                            <p class="om-step-detail">Navigate to Automation from the left sidebar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Chatbot Builder</h3>
+                            <p class="om-step-detail">Open the Chatbot Builder module.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">The Chatbot Builder dashboard opens and displays all existing chatbot flows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_1.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Creating a New Chatbot Flow
+                    </span>
+                </div>
+
+
+
+
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Chatbot Flow
+                            </h3>
+                            <p class="om-step-detail">Click the + Add Chatbot Flow button.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_2.png" alt="">
+                        </span>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_3.png" alt="">
+                        </span>
+                    </div>
+
+
+                    <!-- paragraph -->
+                    <p style="width: 80%; margin: 20px auto 15px auto;">The RCS Chatbot Flow popup window appears. Enter the following information:</p>
+
+                    <!-- table -->
+                    <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                        <table class="qunike-table">
+                            <thead>
+                                <tr>
+                                    <th style="text-transform: uppercase;">FIELD</th>
+                                    <th style="text-transform: uppercase;">DESCRIPTION</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Bot Name</td>
+                                    <td>Name of the chatbot.</td>
+                                </tr>
+                                <tr>
+                                    <td>Agent</td>
+                                    <td>Assigned chatbot agent.</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>Enable or Disable chatbot.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card" style="margin-top: 20px;">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Chatbot
+                            </h3>
+                            <p class="om-step-detail">Click Save Changes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">A new chatbot flow is created and displayed on the dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Chatbot Flow Management
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">After creating a chatbot flow, it appears in the Chatbot Flow Management list where users can manage all chatbot activities.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_4.png" alt="">
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto; margin-top:20px;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">ACTION</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Design Flow</td>
+                                <td>Open the visual chatbot builder to create and manage conversation workflows using drag-and-drop nodes.</td>
+                            </tr>
+                            <tr>
+                                <td>Edit</td>
+                                <td>Modify chatbot information and settings.</td>
+                            </tr>
+                            <tr>
+                                <td>Delete</td>
+                                <td>Remove chatbot flow permanently.</td>
+                            </tr>
+                            <tr>
+                                <td>Relaunch</td>
+                                <td>Open chatbot builder to design conversation flow.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Design Flow
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Design Flow option allows users to open the visual chatbot builder and create interactive conversation journeys using drag-and-drop nodes. Users can design chatbot workflows by connecting different nodes such as:</p>
+
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Start Trigger</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Text Message</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Question Message</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Question Button</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Action Button</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Rich Card</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Carousel Card</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Google Sheets Integration</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Delay Node</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 15px auto 20px auto;">This visual interface helps businesses build automated customer conversations without writing any code.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box" style="width: 40px;display: flex;margin: auto;">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_6.png" alt="">
+                    </span>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Use the Design Flow option to visually create and customize chatbot conversations according to your business requirements. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Edit Chatbot
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Users can edit chatbot details such as Bot Name, Agent assignment, and chatbot status. </p>
+
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box" style="width: 40px;display: flex;margin: auto;">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_6.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Edit</h3>
+                            <p class="om-step-detail">Select the Edit option from the chatbot action menu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Update Information</h3>
+                            <p class="om-step-detail">Modify Bot Name, Agent, or Status.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Changes</h3>
+                            <p class="om-step-detail">Click Save Changes to update the chatbot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delete Chatbot
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Users can permanently remove chatbot flows that are no longer required.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box" style="width: 40px;display: flex;margin: auto;">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_7.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Delete</h3>
+                            <p class="om-step-detail">Click Delete from the chatbot actions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Confirm Deletion</h3>
+                            <p class="om-step-detail">Confirm the delete action to permanently remove the chatbot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- warning notification -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #d97706; background: #fffbeb;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #92400e; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #b45309;">Deleted chatbot flows cannot be recovered.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Relaunch
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Relaunch option opens the visual Chatbot Builder where users can create conversation flows using drag-and-drop nodes.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box" style="width: 40px;display: flex;margin: auto;">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_8.png" alt="">
+                    </span>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">The visual flow builder allows businesses to create interactive RCS chatbot journeys without coding.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Configuring Start Trigger
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Start Trigger is the starting point of every chatbot workflow. It allows businesses to define when a conversation should begin based on customer messages or keywords. For example, when a customer sends messages like "Hello", "Hi", or "Support", the chatbot automatically starts the configured conversation flow and provides the appropriate response.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_9.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Locate Start Trigger Node</h3>
+                            <p class="om-step-detail">Open the Chatbot Flow Designer and locate the Start Trigger node.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click On Event</h3>
+                            <p class="om-step-detail">Click the On Event option to configure chatbot trigger conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">The RCS Event Keyword configuration panel opens.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_10.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Configure Event Keyword
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Users can define chatbot trigger conditions using different keyword matching rules.</p>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">CONDITION</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Message contains</td>
+                                <td>Triggers when entered text contains the keyword.</td>
+                            </tr>
+                            <tr>
+                                <td>Message is</td>
+                                <td>Triggers when entered text exactly matches the keyword.</td>
+                            </tr>
+                            <tr>
+                                <td>Message contains whole word</td>
+                                <td>Triggers only when the exact word is found.</td>
+                            </tr>
+                            <tr>
+                                <td>Message begins with</td>
+                                <td>Triggers when message starts with the keyword.</td>
+                            </tr>
+                            <tr>
+                                <td>Message ends with</td>
+                                <td>Triggers when message ends with the keyword.</td>
+                            </tr>
+                            <tr>
+                                <td>Anything else</td>
+                                <td>Default trigger for unmatched messages.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Configuration Process
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Trigger Condition</h3>
+                            <p class="om-step-detail">Choose the required matching rule from the list.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Add Keyword</h3>
+                            <p class="om-step-detail">Add one or more keywords that will trigger the chatbot.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Configuration</h3>
+                            <p class="om-step-detail">Click Save to apply the keyword configuration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Example
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FIELD</th>
+                                <th style="text-transform: uppercase;">VALUE</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Condition</td>
+                                <td>Message contains</td>
+                            </tr>
+                            <tr>
+                                <td>Keyword</td>
+                                <td>Hii</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_11.png" alt="">
+                    </span>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">✅</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">The Start Trigger is successfully configured and displays the selected keyword condition.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Building the Conversation Flow
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Chatbot Builder provides multiple nodes that can be connected to create interactive conversation workflows using drag-and-drop functionality.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_12.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Available Chatbot Components
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Chatbot Builder provides multiple message and automation components that can be connected together to create interactive customer journeys.</p>
+
+                <!-- grid cards layout -->
+                <div class="void-horizon" style="width: 80%; margin: 20px auto 0 auto;">
+                    <div class="cyber-grid-array" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+
+                        <!-- Card 1 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">✉️</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Text Message</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Send text messages, greetings, notifications, and personalized responses to customers.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 2 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">❓</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Ask Question Message</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Ask questions and collect customer responses during the conversation.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">🔘</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Ask Question Button</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Provide quick reply buttons for faster and easier customer interaction.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 4 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">⚡</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Action Button</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Add actions such as Call Now, Visit Website, or Request Callback.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 5 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">🖼️</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Rich Card</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Showcase images, descriptions, and interactive buttons in an attractive format.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 6 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">🎞️</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Carousel Message</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Display multiple cards in a horizontal scroll view for products and offers.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 7 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">🔗</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Webhook Config</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Connect the chatbot with external applications and APIs.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 8 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">📊</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Google Sheet Report</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Export chatbot responses directly to Google Sheets for reporting.</p>
+                            </span>
+                        </a>
+
+                        <!-- Card 9 -->
+                        <a class="nano-brick-unit" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; display: block; grid-column: span 2;">
+                            <span class="data-tag" style="display: block;">
+                                <span style="font-size: 24px; display: block; margin-bottom: 10px;">⏱️</span>
+                                <strong style="color: #0f172a; font-size: 16px;">Delay</strong>
+                                <p style="margin: 5px 0 0 0; color: #64748b; font-size: 14px;">Pause the chatbot flow for a specified duration before continuing.</p>
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Text Message Node
+
+                    </span>
+                </div>
+
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_13.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_14.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The <strong>Select Variable</strong> option allows users to use chatbot variables that are automatically populated during the conversation flow. When a customer sends a message that exact like keyword, the chatbot can access related information through these variables and use it in different chatbot nodes.</p>
+
+                <!-- bullet list using custom structure -->
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;"><strong>sender_number</strong> – Displays the mobile number of the customer who initiated the conversation.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;"><strong>AgentPhoneNumber</strong> – Business or agent phone number configured for the RCS agent.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;"><strong>AggregatorName</strong> – Displays the company name.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Variables are automatically updated based on the customer's interaction and can be used throughout the chatbot workflow to display dynamic information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Text Message node is used to send informative and personalized messages to customers. It is commonly used for:</p>
+
+                <!-- bullet list using custom structure -->
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Welcome Messages</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Order Confirmations</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Customer Support Replies</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Promotional Campaigns</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Service Notifications</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 30px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:block; font-size: 16px; margin-bottom: 8px;">Example:</h3>
+                            <p class="om-step-detail" style="color: #31964f; white-space: pre-line;">Thank you for contacting us.
+                                Your request has been received successfully.
+                                Our support team will contact you shortly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_15.jpg" alt="">
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Node Title</td>
+                                <td>Name of the text message node.</td>
+                            </tr>
+                            <tr>
+                                <td>Dynamic Variables</td>
+                                <td>Insert variables dynamically into messages.</td>
+                            </tr>
+                            <tr>
+                                <td>Message Content</td>
+                                <td>Main message text shown to users.</td>
+                            </tr>
+                            <tr>
+                                <td>Save Node</td>
+                                <td>Save the configured message.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Ask Question Message
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_16.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">
+                    The Ask Question node enables businesses to collect information directly from customers during a conversation. For example: Which product are you interested in? Please share your requirement. The customer's response can be stored and used in future chatbot steps, reports, or lead management.
+
+                </p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_17.jpg" alt="">
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Question Text</td>
+                                <td>Question shown to the user.</td>
+                            </tr>
+                            <tr>
+                                <td>Save Response</td>
+                                <td>Store customer responses for future use and reporting.</td>
+                            </tr>
+                            <tr>
+                                <td>Text Validation</td>
+                                <td>Validate text input.</td>
+                            </tr>
+                            <tr>
+                                <td>Number Validation</td>
+                                <td>Validate numeric values.</td>
+                            </tr>
+                            <tr>
+                                <td>Email Validation</td>
+                                <td>Validate email addresses.</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Number Validation</td>
+                                <td>Validate mobile numbers.</td>
+                            </tr>
+                            <tr>
+                                <td>Save Node</td>
+                                <td>Save the question node.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Question Button Node
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_18.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_19.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_20.png" alt="">
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Question Button node allows customers to choose an option from predefined quick reply buttons instead of typing manually. Example: What would you like assistance with?</p>
+
+                <!-- bullet list using custom structure -->
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Explore Products</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Get Pricing Details</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Book Demo</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Latest Offers This creates a faster and more convenient customer experience.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Header</td>
+                                <td>Message header text.</td>
+                            </tr>
+                            <tr>
+                                <td>Question Message</td>
+                                <td>Main question displayed to users.</td>
+                            </tr>
+                            <tr>
+                                <td>Footer</td>
+                                <td>Footer message text.</td>
+                            </tr>
+                            <tr>
+                                <td>Quick Reply Buttons</td>
+                                <td>Maximum 4 quick reply buttons.</td>
+                            </tr>
+                            <tr>
+                                <td>Save Answer in Variable</td>
+                                <td>Store selected option.</td>
+                            </tr>
+                            <tr>
+                                <td>Input Validation</td>
+                                <td>Validate customer responses such as email, mobile number, and text values.</td>
+                            </tr>
+                            <tr>
+                                <td>Save Node</td>
+                                <td>Save the node configuration.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 30px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Quick Reply Buttons provide a better user experience by allowing users to select predefined responses instead of typing manually.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Configuring Action Button Node
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Action Button node allows users to interact using Call-To-Action buttons inside chatbot messages.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_21.png" alt="">
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_22.png" alt="">
+                    </span>
+                </div>
+
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Configuration Steps
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Action Button Node</h3>
+                            <p class="om-step-detail">Drag and drop the Action Button node into the chatbot workflow.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Connect Node</h3>
+                            <p class="om-step-detail">Connect it with Start Trigger or another node.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Configure Buttons</h3>
+                            <p class="om-step-detail">Add Reply, Call and URL buttons.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Node</h3>
+                            <p class="om-step-detail">Save the Action Button node.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_23.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Rich Card Node
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Rich Card Node allows businesses to create visually engaging messages by combining images, descriptions, and interactive buttons within a single card. Rich Cards are commonly used to showcase products, services, promotional offers, and business information in an attractive format that encourages customer interaction.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_24.png" alt="">
+                    </span>
+                </div>
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_25.png" alt="">
+                    </span>
+                </div>
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_26.png" alt="">
+                    </span>
+                </div>
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_27.jpg" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Interactive Buttons
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Rich Cards support different button types that allow customers to interact directly with the chatbot message[cite: 15].</p>
+
+                <!-- table 1 -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto 20px auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">BUTTON TYPE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Reply Button</td>
+                                <td>Allows customers to send a predefined response with a single tap. Example: Interested, Book Demo, Confirm[cite: 15].</td>
+                            </tr>
+                            <tr>
+                                <td>Call Button</td>
+                                <td>Allows customers to call the business directly from the chatbot[cite: 15].</td>
+                            </tr>
+                            <tr>
+                                <td>URL Button</td>
+                                <td>Allows customers to open a website, product page, or landing page directly from the chatbot[cite: 15].</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- table 2 -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Card Title</td>
+                                <td>Displays the title of the Rich Card[cite: 15].</td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Displays a short description of the product or service[cite: 15].</td>
+                            </tr>
+                            <tr>
+                                <td>Image</td>
+                                <td>Displays an image to make the card more attractive[cite: 15].</td>
+                            </tr>
+                            <tr>
+                                <td>Interactive Buttons</td>
+                                <td>Add Reply, Call, and URL buttons for customer interaction[cite: 15].</td>
+                            </tr>
+                            <tr>
+                                <td>Save Node</td>
+                                <td>Save the Rich Card configuration[cite: 15].</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 0 auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:block; font-size: 16px; margin-bottom: 8px;">Example:</h3>
+                            <p class="om-step-detail" style="color: #31964f;">A restaurant can create a Rich Card with:</p>
+                            <div class="diaod98641" style="margin-top: 8px;">
+                                <ul style="list-style:disc; margin: 0; padding-left: 20px; color: #31964f;">
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Restaurant Image</p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Special Offers</p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Reply Button &rarr; Reserve Table</p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Call Button &rarr; Call Restaurant</p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">URL Button &rarr; View Full Menu This allows customers to interact instantly from the chatbot conversation.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Carousel Card Node
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Carousel Card Node allows businesses to display multiple cards in a single horizontally scrollable message. Each card can contain an image, title, description, and interactive buttons, allowing customers to explore multiple products, services, or offers within a single chatbot message. Customers can swipe left or right to browse through the available cards and interact with the content easily.</p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_28.png" alt="">
+                    </span>
+                </div>
+
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_29.png" alt="">
+                    </span>
+                </div>
+
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_30.jpg" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Interactive Buttons
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Each card within the Carousel can include different button types that allow customers to perform actions directly from the chatbot p>
+
+                    <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">BUTTON TYPE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Reply Button</td>
+                                <td>Allows customers to send a predefined response such as Interested, Buy Now, or Book Demo with a single tap td>
+                            </tr>
+                            <tr>
+                                <td>Call Button</td>
+                                <td>Allows customers to call the business directly from the selected card td>
+                            </tr>
+                            <tr>
+                                <td>URL Button</td>
+                                <td>Redirects customers to a website, product page, or booking page associated with the selected card td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 30px auto 30px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:block; font-size: 16px; margin-bottom: 8px;">Example:</h3>
+                            <p class="om-step-detail" style="color: #31964f;">A travel company can use Carousel Cards to showcase multiple tour packages. Each card can contain :</p>
+                            <div class="diaod98641" style="margin-top: 8px;">
+                                <ul style="list-style:disc; margin: 0; padding-left: 20px; color: #31964f;">
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Destination Image </p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Package Details </p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Reply Button &rarr; Interested </p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">Call Button &rarr; Call Now </p>
+                                    </li>
+                                    <li>
+                                        <p style="margin: 0; color: #31964f;">URL Button &rarr; View Package Customers can browse different packages and interact directly from the chatbot p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">FEATURE</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Multiple Cards</td>
+                                <td>Display multiple cards in a single horizontally scrollable message.</td>
+                            </tr>
+                            <tr>
+                                <td>Image</td>
+                                <td>Add images to visually represent products or services.</td>
+                            </tr>
+                            <tr>
+                                <td>Title</td>
+                                <td>Display the title of each card.</td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>Display a short description for each card.</td>
+                            </tr>
+                            <tr>
+                                <td>Interactive Buttons</td>
+                                <td>Add Reply, Call, and URL buttons to each card.</td>
+                            </tr>
+                            <tr>
+                                <td>Save Node</td>
+                                <td>Save the Carousel Card configuration.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Exporting Data to Google Sheets
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Google Sheet Integration allows chatbot responses to be automatically stored in Google Sheets. Businesses can save:</p>
+
+                <!-- bullet list using custom structure -->
+                <div class="diaod98641" style="margin-top: 15px; width: 80%; margin-left: auto; margin-right: auto;">
+                    <ul style="list-style:disc;">
+                        <li>
+                            <p style="margin: 0;color: #000000;">Customer Name</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Mobile Number</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Email Address</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Product Interest</p>
+                        </li>
+                        <li>
+                            <p style="margin: 0;color: #000000;">Feedback This helps with lead management, reporting, and customer data organization.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_31.png" alt="">
+                    </span>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Configuration
+                    </span>
+                </div>
+
+                <!-- steps with img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 30px auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Google Sheet Node</h3>
+                            <p class="om-step-detail">Drag Google Sheet node into workflow.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Google Account</h3>
+                            <p class="om-step-detail">Choose the Google account.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open Google Picker</h3>
+                            <p class="om-step-detail">Select spreadsheet file.</p>
+
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_32.jpg" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Map Variables</h3>
+                            <p class="om-step-detail">Map chatbot variables with spreadsheet columns.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">5</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Configuration</h3>
+                            <p class="om-step-detail">Save Google Sheet settings.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">CHATBOT VARIABLE</th>
+                                <th style="text-transform: uppercase;">GOOGLE SHEET COLUMN</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>Mobile Number</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>Email Address</td>
+                            </tr>
+                            <tr>
+                                <td>City</td>
+                                <td>City</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Delay Node
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">The Delay node pauses the chatbot flow for a specified duration before sending the next message.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_33.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- steps with img -->
+                <div class="om-guide-shell">
+
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Delay Node
+                            </h3>
+                            <p class="om-step-detail">Drag and drop the Delay node into the chatbot flow.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Set Delay Duration
+                            </h3>
+                            <p class="om-step-detail">Enter the delay time in seconds or minutes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- img step -->
+                    <div class="step_impear">
+                        <span class="img_box">
+                            <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_34.jpg" alt="">
+                        </span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Save Node
+                            </h3>
+                            <p class="om-step-detail">Save the delay configuration.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Complete Chatbot Workflow
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">After configuring triggers, messages, buttons, rich cards, carousel and delays, the chatbot workflow is ready for deployment.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/rcs/rcs_contect_8/img_35.jpg" alt="">
+                    </span>
+                </div>
+
+
+                <!-- feature grid -->
+                <div style="width: 80%; margin: 20px auto; display: flex; gap: 20px; flex-wrap: wrap;">
+                    <!-- Card 1 -->
+                    <div class="om-step-card" style="flex: 1; min-width: 250px; border-left: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 10px;">⚡</div>
+                        <h3 class="om-step-title" style="color: #0f172a; font-size: 18px; margin-bottom: 8px;">Automation</h3>
+                        <p class="om-step-detail" style="color: #64748b; margin: 0;">Automate customer interactions with predefined workflows.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="om-step-card" style="flex: 1; min-width: 250px; border-left: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 10px;">💬</div>
+                        <h3 class="om-step-title" style="color: #0f172a; font-size: 18px; margin-bottom: 8px;">Interactive Messaging</h3>
+                        <p class="om-step-detail" style="color: #64748b; margin: 0;">Provide engaging customer experiences using RCS.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="om-step-card" style="flex: 1; min-width: 250px; border-left: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 10px;">📈</div>
+                        <h3 class="om-step-title" style="color: #0f172a; font-size: 18px; margin-bottom: 8px;">Scalability</h3>
+                        <p class="om-step-detail" style="color: #64748b; margin: 0;">Manage thousands of conversations efficiently.</p>
+                    </div>
+                </div>
+
+                <!-- notification 1 -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">🟩</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">The RCS Chatbot Automation module provides a powerful drag-and-drop workflow builder that enables businesses to automate customer journeys, improve engagement and provide rich conversational experiences.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification 2 -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto 30px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">🚀</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Before publishing the chatbot, test the complete workflow using sample messages to ensure that all triggers, buttons, cards, and responses are working correctly.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Publishing Chatbot Flow
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 15px auto;">Before deploying the chatbot, verify all nodes and workflow connections.</p>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Verify Configuration</h3>
+                            <p class="om-step-detail">Check all nodes and variable mapping.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Set Live</h3>
+                            <p class="om-step-detail">Activate the chatbot workflow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">🟩</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">The chatbot flow becomes active and starts responding to incoming RCS messages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Conclusion
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 30px auto;">The RCS Chatbot Automation module enables businesses to automate customer conversations using an easy-to-use visual builder. With features such as Start Triggers, Text Messages, Question Buttons, Rich Cards, Carousel Cards, Google Sheets Integration, and Delay Nodes, businesses can create engaging and scalable RCS chatbot experiences without writing any code.</p>
 
 
                 <!-- line -->
@@ -9283,9 +13270,627 @@
 
             <!-- sublink box 20 -->
             <section id="contect_20_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
-                20
+                <!-- breadcrumb -->
+                <div style="width: 80%; margin: 20px auto 10px auto; font-size: 14px; color: #64748b;">
+                    Docs <span style="margin: 0 5px;">/</span> Channels <span style="margin: 0 5px;">/</span> WhatsApp <span style="margin: 0 5px;">/</span> WhatsApp Onboarding
+                </div>
+
+                <!-- badge & title -->
+                <div style="width: 80%; margin: 0 auto 15px auto;">
+                    <span style="color: #03810a; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">&#9679; WhatsApp</span>
+                    <h1 style="color: #0f172a; font-size: 28px; margin: 5px 0 15px 0; font-weight: bold;">WhatsApp Onboarding</h1>
+                    <p style="color: #334155; line-height: 1.6; margin: 0;">WhatsApp Onboarding allows businesses to register and connect their WhatsApp Business Account with Omni Portal using Meta's official onboarding process. Once completed, you can manage messaging, templates, campaigns, reports and automation from a single platform. </p>
+                </div>
+
+                <!-- notification with title Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Complete the Meta onboarding process using a verified Facebook Business Manager account before sending WhatsApp messages. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Required Information
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">REQUIREMENT</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Facebook Business Manager</td>
+                                <td>Administrator access is required. </td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>A valid phone number for WhatsApp Business. </td>
+                            </tr>
+                            <tr>
+                                <td>Business Information</td>
+                                <td>Legal business name and registered address. </td>
+                            </tr>
+                            <tr>
+                                <td>Business Verification</td>
+                                <td>Your Meta Business Account should be verified. </td>
+                            </tr>
+                            <tr>
+                                <td>WhatsApp Business Account</td>
+                                <td>Administrator permission is required. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 40px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Set Up Your WhatsApp Business Account
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 30px auto;">Navigate to <strong>Configuration &rarr; WABA Channels</strong> and click <strong>Register New WhatsApp</strong>. This opens Meta's onboarding window where you can connect your WhatsApp Business Account. </p>
 
 
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_1.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Open WhatsApp Registration</h3>
+                            <p class="om-step-detail">Go to Configuration &rarr; WABA Channels and click <strong>Register New WhatsApp</strong>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Continue with Facebook</h3>
+                            <p class="om-step-detail">Click <strong>Continue with Facebook</strong> to begin Meta's official onboarding process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 1 : Select Business Portfolio
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 30px auto;">Choose the Business Portfolio associated with your organization.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_2.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Business Portfolio</h3>
+                            <p class="om-step-detail">Select the Meta Business Portfolio you want to use.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select WhatsApp Business Account</h3>
+                            <p class="om-step-detail">Choose an existing WhatsApp Business Account or create a new one.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Next</h3>
+                            <p class="om-step-detail">Continue to the next step of onboarding.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 2 : Add WhatsApp Phone Number
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_3.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Choose Display Name</h3>
+                            <p class="om-step-detail">Enter the business display name that customers will see on WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Add Phone Number</h3>
+                            <p class="om-step-detail">Use a new phone number or an existing WhatsApp Business number.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Verification</h3>
+                            <p class="om-step-detail">Meta may verify your phone number before activation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 3 : Review Permissions
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_4.png" alt="">
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 0 auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">PERMISSION</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>WhatsApp Business Account</td>
+                                <td>Manage your WhatsApp Business Account. </td>
+                            </tr>
+                            <tr>
+                                <td>Product Catalog</td>
+                                <td>Access and manage catalog information. </td>
+                            </tr>
+                            <tr>
+                                <td>Facebook Ads</td>
+                                <td>Access advertising related data. </td>
+                            </tr>
+                            <tr>
+                                <td>WhatsApp Conversations</td>
+                                <td>Allow conversation management. </td>
+                            </tr>
+                            <tr>
+                                <td>Business Management</td>
+                                <td>Manage business assets and permissions. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification Warning/Orange -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #f59e0b; background: #fffbeb;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #92400e; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #b45309;">Carefully review all requested permissions before clicking <strong>Confirm</strong>. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        WhatsApp Coexistence
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 30px auto;">WhatsApp Coexistence allows businesses to use the same WhatsApp Business App number together with the WhatsApp Business API. This enables businesses to continue using the mobile application while also accessing advanced API features through Omni Portal. </p>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_5.png" alt="">
+                    </span>
+                </div>
+
+                <!-- notification Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Coexistence allows you to continue using your existing WhatsApp Business App without changing your phone number .</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Key Advantages
+                    </span>
+                </div>
+
+
+
+                <!-- notification Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">💡</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #31964f;">Coexistence allows you to continue using your existing WhatsApp Business App without changing your phone number .</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Key Advantages
+                    </span>
+                </div>
+
+                <!-- feature grid using custom classes -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 30px auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📱
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Same Phone Number</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Continue using your existing WhatsApp Business number .</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                💬
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Existing Chats</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Keep your chats, contacts and groups .</p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📢
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Bulk Messaging</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Send campaigns using WhatsApp Business API .</p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                🤖
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Automation</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Enable chatbot and workflow automation .</p>
+                    </div>
+
+                </div>
+
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Requirements
+                    </span>
+                </div>
+
+                <!-- table -->
+                <div class="qunike-table-container" style="width: 80%; margin: 20px auto;">
+                    <table class="qunike-table">
+                        <thead>
+                            <tr>
+                                <th style="text-transform: uppercase;">REQUIREMENT</th>
+                                <th style="text-transform: uppercase;">DESCRIPTION</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>WhatsApp Business App</td>
+                                <td>Active account required.</td>
+                            </tr>
+                            <tr>
+                                <td>Meta Business Manager</td>
+                                <td>Administrator access required.</td>
+                            </tr>
+                            <tr>
+                                <td>Business Verification</td>
+                                <td>Business should be verified if requested by Meta.</td>
+                            </tr>
+                            <tr>
+                                <td>Administrator Permission</td>
+                                <td>Required for onboarding.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- notification Warning/Orange -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #f59e0b; background: #fffbeb;">
+                        <div class="">⚠️</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #92400e; display:none;"></h3>
+                            <p class="om-step-detail" style="color: #b45309;">Coexistence does not affect your existing WhatsApp Business App conversations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 1 : Select Business Assets
+                    </span>
+                </div>
+
+                <!-- paragraph -->
+                <p style="width: 80%; margin: 20px auto 30px auto;">Navigate to <strong>Configuration &rarr; Coexistence Onboarding</strong> and click <strong>Connect with Facebook</strong>.</p>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_6.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Connect with Facebook</h3>
+                            <p class="om-step-detail">Click Connect with Facebook to start onboarding.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select Business Portfolio</h3>
+                            <p class="om-step-detail">Select your Meta Business Portfolio.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Select WhatsApp Business App</h3>
+                            <p class="om-step-detail">Choose the WhatsApp Business App you want to connect.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 2 : Verify Your Phone Number
+                    </span>
+                </div>
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_7.png" alt="">
+                    </span>
+                </div>
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Enter Phone Number</h3>
+                            <p class="om-step-detail">Enter the phone number currently used in WhatsApp Business App.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Verify Number</h3>
+                            <p class="om-step-detail">Meta verifies and links your number to the selected Business Account.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Step 3 : Import Business Data
+                    </span>
+                </div>
+
+
+                <!-- img -->
+                <div class="all_drive_box">
+                    <span class="img_box">
+                        <img src="assets/appliction_imgs/whatsapp/whatsapp_contect_1/img_8.png" alt="">
+                    </span>
+                </div>
+
+
+                <!-- steps without img -->
+                <div class="om-guide-shell" style="width: 80%; margin: 20px auto 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">1</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Import Business Profile</h3>
+                            <p class="om-step-detail">Import your business profile information.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">2</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Import Contacts</h3>
+                            <p class="om-step-detail">Existing contacts are imported automatically.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">3</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Import Chat History</h3>
+                            <p class="om-step-detail">Import up to six months of chat history, if supported by Meta.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="om-step-card">
+                        <div class="om-circle-badge">4</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title">Click Finish</h3>
+                            <p class="om-step-detail">Click the <strong>Finish</strong> button to complete the onboarding process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- notification Green -->
+                <div class="hdah651" style="width: 80%; margin: 20px auto 30px auto;">
+                    <div class="om-step-card" style="border-left: 8px solid #03810a; background: #e7fde8;">
+                        <div class="">🟩</div>
+                        <div class="om-card-left">
+                            <h3 class="om-step-title" style="color: #0c4b07; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Onboarding Completed Successfully</h3>
+                            <p class="om-step-detail" style="color: #31964f; margin-bottom: 12px;">Your WhatsApp Business Account is now connected to Omni Portal. You can continue using the WhatsApp Business App while also accessing WhatsApp Business API features such as:</p>
+                            <ul style="color: #31964f; margin: 0; padding-left: 20px; line-height: 1.6;">
+                                <li>Campaign Management</li>
+                                <li>Template Messaging</li>
+                                <li>Broadcast Campaigns</li>
+                                <li>Automation &amp; Chatbots</li>
+                                <li>Reports &amp; Analytics</li>
+                                <li>Agent Console</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- line -->
+                <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
+                    <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
+                        Best Practices
+                    </span>
+                </div>
+
+                <!-- feature grid using custom classes -->
+                <div class="h8wh74523" style="width: 80%; margin: 20px auto 30px auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+
+                    <!-- card 1 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                🔒
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Verify Business</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Complete Meta Business Verification before production use.</p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📱
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Use Active Number</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Use an active business phone number for onboarding.</p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                👨‍💼
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Administrator Access</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Ensure you have administrator access to Meta Business Manager.</p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="uhujh2294sas" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
+                        <div class="aseh" style="padding: 15px 0">
+                            <span>
+                                📁
+                            </span>
+                        </div>
+                        <h5 class="c-title12" style="color: #0f172a; font-size: 16px; margin-bottom: 8px; font-weight: bold;">Backup Data</h5>
+                        <p class="c-desc12" style="color: #64748b; margin: 0; font-size: 14px;">Backup important conversations before onboarding.</p>
+                    </div>
+
+                </div>
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9323,6 +13928,45 @@
             <!-- sublink box 21 -->
             <section id="contect_21_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 21
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
@@ -9441,7 +14085,7 @@
                 24
 
 
-                  <!-- line -->
+                <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
                     <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
 
@@ -9479,7 +14123,7 @@
             <section id="contect_25_contect_box" class="section_sub_with all_sejmca8974 auto_margin_notwa">
                 25
 
-                  <!-- line -->
+                <!-- line -->
                 <div class="line_rola" style="width: 80%;margin:auto;margin-top: 30px;">
                     <span style="position: absolute;top: -15px;left: 0;background: #fff;padding: 1px 10px;">
 
