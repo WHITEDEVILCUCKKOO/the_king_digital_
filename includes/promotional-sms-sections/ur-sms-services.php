@@ -59,7 +59,7 @@
 
       <!-- ================= SERVICE 1 ================= -->
       <a
-        href="service-bluk-sms.php"
+        href="bulk-sms-company-in-delhi.php"
         class="promo-sms-services__service-card"
         aria-label="Explore Bulk SMS Service"
       >

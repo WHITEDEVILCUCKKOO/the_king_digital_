@@ -622,15 +622,15 @@
                        <h4>Our Services</h4>
                        <ul>
                            <li><a class="bottom_link_79" href="web-design.php">Website Design</a></li>
-                           <li><a class="bottom_link_79" href="service-bluk-sms.php">Bulk SMS</a></li>
-                           <li><a class="bottom_link_79" href="service-whatsAppApi.php">WhatsApp Business API</a></li>
+                           <li><a class="bottom_link_79" href="bulk-sms-company-in-delhi.php">Bulk SMS</a></li>
+                           <li><a class="bottom_link_79" href="whatsapp-marketing-company-in-delhi.php">WhatsApp Business API</a></li>
                            <li><a class="bottom_link_79" href="social-media-marketing.php">Social Media</a></li>
                            <li><a class="bottom_link_79" href="seo-service.php">SEO Services</a></li>
                            <li><a class="bottom_link_79" href="service-ivr.php">IVR & Voice</a></li>
-                           <li><a class="bottom_link_79" href="hosting-cloud.php">Hosting & Cloud</a></li>
+                           <li><a class="bottom_link_79" href="cloud-hosting-provider.php">Hosting & Cloud</a></li>
                            <li><a class="bottom_link_79" href="app_development.php">App Development</a></li>
-                           <li><a class="bottom_link_79" href="rcs-service.php">RCS Messaging</a></li>
-                           <li><a class="bottom_link_79" href="whatsappblue.php">Blue Tick</a></li>
+                           <li><a class="bottom_link_79" href="RCS-messaging-service-provider-in-delhi.php">RCS Messaging</a></li>
+                           <li><a class="bottom_link_79" href="whatsapp-blue-tick-service-provider-in-delhi.php">Blue Tick</a></li>
                        </ul>
                    </div>
                    <div>
