@@ -235,8 +235,9 @@
         width: 18px;
         height: 18px;
         background: var(--smm-gradient);
-        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-6.7-4.35-9.3-8.1C.6 9.9 1.7 6.2 5 5.1c2-.66 3.9.1 5 1.7 1.1-1.6 3-2.36 5-1.7 3.3 1.1 4.4 4.8 2.3 7.8C18.7 16.65 12 21 12 21z'/%3E%3C/svg%3E") center / contain no-repeat;
-        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-6.7-4.35-9.3-8.1C.6 9.9 1.7 6.2 5 5.1c2-.66 3.9.1 5 1.7 1.1-1.6 3-2.36 5-1.7 3.3 1.1 4.4 4.8 2.3 7.8C18.7 16.65 12 21 12 21z'/%3E%3C/svg%3E") center / contain no-repeat;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") center / contain no-repeat;
+
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") center / contain no-repeat;
     }
 
     .ssm-portfolio_content-floating-heart-left {
@@ -485,37 +486,6 @@
         height: 12px;
     }
 
-    .ssm-portfolio_content-swipper-card-tag {
-        position: absolute;
-        top: 40%;
-        left: 10px;
-        right: 10px;
-        z-index: 2;
-        color: #fff;
-        font-size: 17px;
-        font-weight: 800;
-        line-height: 1.15;
-        text-align: center;
-        text-shadow: 0 2px 10px rgba(91, 33, 182, .4);
-    }
-
-    .ssm-portfolio_content-swipper-card-shop {
-        position: absolute;
-        bottom: 34px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        padding: 5px 12px;
-        border-radius: 999px;
-        background: var(--smm-gradient);
-        color: #fff;
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: .04em;
-        text-transform: uppercase;
-        white-space: nowrap;
-    }
-
     .ssm-portfolio_content-swipper-card-label {
         display: flex;
         flex-direction: column;
@@ -613,7 +583,7 @@
     }
 </style>
 
-<section class="ssm-portfolio">
+<section class="ssm-portfolio" id="ssm-portfolio">
     <div class="ssm-portfolio_content">
         <div class="ssm-portfolio_content--text">
             <p class="ssm-portfolio_content--text-eyebrow">
@@ -625,7 +595,7 @@
             <p class="ssm-portfolio_content--text-para">
                 We create scroll-stopping content that spark conversations, build brand love and delivers real business outcomes.
             </p>
-            <a href="#" class="ssm-portfolio_content--text-cta">See More Work
+            <a href="portfolio.php" class="ssm-portfolio_content--text-cta">See More Work
                 <span>
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9438 3.33038C22.0707 2.96779 21.9787 2.56456 21.7071 2.29292C21.4354 2.02128 21.0322 1.92926 20.6696 2.05617L1.85999 8.63954C0.577721 9.08834 0.504876 10.8743 1.74631 11.426L9.24237 14.7576L12.574 22.2537C13.1257 23.4951 14.9117 23.4223 15.3605 22.14L21.9438 3.33038ZM9.77851 12.8073L3.71105 10.1106L19.37 4.63L13.8894 20.289L11.1927 14.2215L14.7071 10.7071C15.0976 10.3166 15.0976 9.68342 14.7071 9.29289C14.3166 8.90237 13.6834 8.90237 13.2929 9.29289L9.77851 12.8073Z" fill="#ffffff"></path>
@@ -743,8 +713,6 @@
                         <span class="ssm-portfolio_content-swipper-card-lines"><i></i><i></i></span>
                         <span class="ssm-portfolio_content-swipper-card-menu">&#8942;</span>
                     </div>
-                    <div class="ssm-portfolio_content-swipper-card-tag">NEW<br>ARRIVAL</div>
-                    <div class="ssm-portfolio_content-swipper-card-shop">Shop Now</div>
                     <div class="ssm-portfolio_content-swipper-card-bottom">
                         <span class="ssm-portfolio_content-swipper-card-stat">
                             <svg viewBox="0 0 24 24" fill="currentColor">

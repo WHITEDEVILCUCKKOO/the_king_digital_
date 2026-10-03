@@ -259,7 +259,7 @@
             radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.18), transparent 60%);
     }
 
-    .ssm-case_content-container-card-visual::after {
+    /* .ssm-case_content-container-card-visual::after {
         content: "\f03e";
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
@@ -269,7 +269,7 @@
         transform: translate(-50%, -50%);
         font-size: 17px;
         color: rgba(124, 58, 237, 0.35);
-    }
+    } */
 
     /* ---------- Content ---------- */
 
@@ -283,15 +283,16 @@
     }
 
     .ssm-case_content-container-card-content h3 {
-        font-size: 14.5px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 800;
         color: var(--smm-text);
         margin-bottom: 2px;
     }
 
     .ssm-case_content-container-card-content > p {
-        font-size: 11px;
+        font-size: 14px;
         line-height: 1.4;
+        font-weight: 600;
         color: var(--smm-text-muted);
         margin-bottom: 12px;
     }
@@ -313,14 +314,14 @@
 
     .ssm-case_content-container-card-stats-card strong {
         display: block;
-        font-size: 13.5px;
+        font-size: 16px;
         font-weight: 800;
         line-height: 1.2;
         margin-bottom: 2px;
     }
 
     .ssm-case_content-container-card-stats-card p {
-        font-size: 9px;
+        font-size: 14px;
         line-height: 1.3;
         color: var(--smm-text-muted);
         white-space: nowrap;
@@ -432,16 +433,18 @@
                 <h2>Result That Speak</h2>
                 <p>Real Results from Real Businesses</p>
             </div>
-            <a class="ssm-case_content-cta">View All Case Studies</a>
+            <a href="ssm-portfolio.php" class="ssm-case_content-cta">View Our Portfolio</a>
         </div>
         <div class="ssm-case_content-container">
             <div class="ssm-case_content-container-card">
                 <div class="ssm-case_content-container-card-visual">
-                    <!-- Here we will have video or image -->
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/video-production/social1.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="ssm-case_content-container-card-content">
-                    <h3>Fashion Brand</h3>
-                    <p>Instagram Growth Campiagn</p>
+                    <h3>Investment Firm</h3>
+                    <p>Instagram Growth Campaign</p>
                     <div class="ssm-case_content-container-card-stats">
                         <div class="ssm-case_content-container-card-stats-card">
                             <strong>125%+</strong>
@@ -456,15 +459,16 @@
                             <p>Website Traffic</p>
                         </div>
                     </div>
-                    <a class="ssm-case_content-container-card-link" href="#">View Case Study</a>
                 </div>
             </div>
             <div class="ssm-case_content-container-card">
                 <div class="ssm-case_content-container-card-visual">
-                    <!-- Here we will have video or image -->
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/video-production/social2.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="ssm-case_content-container-card-content">
-                    <h3>Home Decor Brand</h3>
+                    <h3>Tero Card Platform</h3>
                     <p>Facebook and Insta Ads</p>
                     <div class="ssm-case_content-container-card-stats">
                         <div class="ssm-case_content-container-card-stats-card">
@@ -480,16 +484,17 @@
                             <p>ROAS</p>
                         </div>
                     </div>
-                    <a class="ssm-case_content-container-card-link" href="#">View Case Study</a>
                 </div>
             </div>
             <div class="ssm-case_content-container-card">
                 <div class="ssm-case_content-container-card-visual">
-                    <!-- Here we will have video or image -->
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/video-production/social3.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="ssm-case_content-container-card-content">
-                    <h3>SaaS Company</h3>
-                    <p>Linkedin Awarness Campiagn</p>
+                    <h3>Production Company</h3>
+                    <p>Instagram Advertisement Campaign</p>
                     <div class="ssm-case_content-container-card-stats">
                         <div class="ssm-case_content-container-card-stats-card">
                             <strong>75%+</strong>
@@ -504,7 +509,6 @@
                             <p>Demo Requests</p>
                         </div>
                     </div>
-                    <a class="ssm-case_content-container-card-link" href="#">View Case Study</a>
                 </div>
             </div>
         </div>

@@ -640,7 +640,7 @@
                            <li><a class="bottom_link_79" href="portfolio.php">Our Clients</a></li>
                            <li><a class="bottom_link_79" href="portfolio.php">Portfolio</a></li>
                            <li><a class="bottom_link_79" href="blog/">Blog</a></li>
-                           <li><a class="bottom_link_79" href="https://academy.kingdigital.in/">Academy</a></li>
+                           <!-- <li><a class="bottom_link_79" href="https://academy.kingdigital.in/">Academy</a></li> -->
                            <li><a class="bottom_link_79" href="https://www.linkedin.com/company/kingdigitalpl/jobs/">Careers</a></li>
                            <li><a class="bottom_link_79" href="contact.php">Contact Us</a></li>
                        </ul>

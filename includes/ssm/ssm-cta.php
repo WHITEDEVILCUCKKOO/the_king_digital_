@@ -387,7 +387,7 @@
 <section class="ssm-cta">
     <div class="ssm-cta_content">
         <div class="ssm-cta_content-visual">
-            <img src="#" alt="Social content preview">
+            <img src="assets/images/Social-Media-Growth-Poster.png" alt="Social content preview">
             <span class="ssm-cta_content-visual-card ssm-cta_content-visual-card--a"><span class="ssm-cta_content-visual-avatar"></span></span>
             <span class="ssm-cta_content-visual-card ssm-cta_content-visual-card--b"><span class="ssm-cta_content-visual-avatar"></span></span>
             <span class="ssm-cta_content-visual-card ssm-cta_content-visual-card--c"><span class="ssm-cta_content-visual-avatar"></span></span>
@@ -397,14 +397,14 @@
             <p>Let's create powerful social media campaign that drive real result for your business.</p>
         </div>
         <div class="ssm-cta_content-cta">
-            <a href="#">Start Your Compaign
+            <a href="contact.php">Start Your Compaign
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                         <path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9L229.2 276.1c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8l496.9-178z" />
                     </svg>
                 </span>
             </a>
-            <a href="#">Talk to Our Expert
+            <a href="tel:+919210763636">Talk to Our Expert
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                         <path d="M384 144c0 97.2-86 176-192 176-26.7 0-52.1-5-75.2-14L35.2 349.2c-9.3 4.9-20.7 3.2-28.2-4.2s-9.2-18.9-4.2-28.2l35.6-67.2C14.3 220.2 0 183.6 0 144 0 46.8 86-32 192-32S384 46.8 384 144zm0 368c-94.1 0-172.4-62.1-188.8-144 120-1.5 224.3-86.9 235.8-202.7 83.3 19.2 145 88.3 145 170.7 0 39.6-14.3 76.2-38.4 105.6l35.6 67.2c4.9 9.3 3.2 20.7-4.2 28.2s-18.9 9.2-28.2 4.2L459.2 498c-23.1 9-48.5 14-75.2 14z" />

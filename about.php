@@ -1,5 +1,9 @@
 <?php require_once __DIR__ . '/includes/header.php'; ?>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
 <main class="about-main">
 
     <style>
@@ -16,16 +20,7 @@
             --ink: #1b2430;
             --muted: #5b6673;
             --line: #f0e2d3;
-            --font: "Segoe UI", "Segoe UI Variable Text", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0
+            --font: 'Lato', sans-serif;
         }
 
         body {
@@ -667,6 +662,10 @@
         }
 
         /* GROUP TREE */
+        #group {
+            display: none;
+        }
+
         .gt {
             display: flex;
             flex-direction: column;
@@ -828,9 +827,9 @@
         }
 
         /* FIX: valid value is "paused" (was "continue") */
-        .clients:hover .row {
+        /* .clients:hover .row {
             animation-play-state: paused
-        }
+        } */
 
         .cl {
             display: flex;
