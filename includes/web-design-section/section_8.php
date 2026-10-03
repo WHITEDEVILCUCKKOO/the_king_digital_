@@ -1,4 +1,3 @@
-
 <!-- ==================================================================== -->
 <!-- ==== SECTION 8: CLIENT TESTIMONIALS ==== -->
 <!-- ==================================================================== -->
@@ -144,36 +143,36 @@
 
     <div class="kdte-card">
       <div class="kdte-quote-icon">&#8220;</div>
-      <p class="kdte-quote-text">King Digital transformed our vision into a stunning website. Their attention to detail and support is incredible!</p>
+      <p class="kdte-quote-text">Their Google Ads management is outstanding. They optimised our campaigns and helped us generate quality leads while keeping the budget under control.</p>
       <div class="kdte-person">
-        <span class="kdte-avatar"><img src="assets/images/img/52.jpg" alt=""></span>
+        <span class="kdte-avatar" style="background:#78909c;border-color:#78909c;color:#fff;font-size:17px;font-weight:600;">T</span>
         <div>
-          <div class="kdte-person-name">Rohit Sharma</div>
-          <div class="kdte-person-role">CEO, Interior Studio</div>
+          <div class="kdte-person-name">Tia Arora</div>
+          <div class="kdte-person-role">Google Review</div>
         </div>
       </div>
     </div>
 
     <div class="kdte-card">
       <div class="kdte-quote-icon">&#8220;</div>
-      <p class="kdte-quote-text">Professional, creative and reliable! Our website not only looks great but also brings in more customers.</p>
+      <p class="kdte-quote-text">We partnered with KING DIGITAL for SEO, and within a few months we started seeing noticeable improvements in our website traffic. Great experience.</p>
       <div class="kdte-person">
-        <span class="kdte-avatar"><img src="assets/images/img/71.jpg" alt=""></span>
+        <span class="kdte-avatar" style="background:#6a5fc1;border-color:#6a5fc1;color:#fff;font-size:17px;font-weight:600;">K</span>
         <div>
-          <div class="kdte-person-name">Priya Mehta</div>
-          <div class="kdte-person-role">Marketing Head, Foodies</div>
+          <div class="kdte-person-name">Kirthana Nair</div>
+          <div class="kdte-person-role">Google Review</div>
         </div>
       </div>
     </div>
 
     <div class="kdte-card">
       <div class="kdte-quote-icon">&#8220;</div>
-      <p class="kdte-quote-text">Excellent team to work with. They delivered on time and the support after launch is fantastic.</p>
+      <p class="kdte-quote-text">Excellent service and a highly professional team. They delivered our website on time and exceeded our expectations.</p>
       <div class="kdte-person">
-        <span class="kdte-avatar"><img src="assets/images/img/68.jpg" alt=""></span>
+        <span class="kdte-avatar" style="background:#4b7f52;border-color:#4b7f52;color:#fff;font-size:17px;font-weight:600;">T</span>
         <div>
-          <div class="kdte-person-name">Vikram Patel</div>
-          <div class="kdte-person-role">Founder, TechVision</div>
+          <div class="kdte-person-name">Tushar Sinha</div>
+          <div class="kdte-person-role">Google Review</div>
         </div>
       </div>
     </div>

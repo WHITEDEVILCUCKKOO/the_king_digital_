@@ -159,8 +159,30 @@
                                 </a>
                             </div>
                         </div>
+
+
+                       
+
+
                         <a href="portfolio.php" class="bottom_link_78">Portfolio</a>
-                        <a href="about.php" class="bottom_link_78">About</a>
+                        
+                        <!-- integration links -->
+                        <div class="has-dd_about">
+                               <a href="#" class="botom_link_78">About</a>
+                            <!-- <a href="#" class="botom_link_78">Integration</a> -->
+                             
+                            <div class="dd-about">
+                                <a href="#">
+                                    <span class="dd-icon" style="background: #e9ffe6;color: #23a811"><i  style="font-size: 18px;"  class="fa-solid fa-puzzle-piece"></i></span>Link 1
+                                </a>
+                                <a href="#">
+                                    <span class="dd-icon" style="background: #f0f6fd;color: #1658a3"><i style="font-size: 18px;" class="fa-solid fa-circle-info"></i></span>Link 2
+                                </a>
+                                <a href="#">
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fa-solid fa-circle-question"></i></span>Link 3
+                                </a>
+                            </div>
+                        </div>
 
                         <!-- <div class="has-dd">
                             <a href="#">Brands</a>

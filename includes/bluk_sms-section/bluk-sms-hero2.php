@@ -44,12 +44,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             <!-- BUTTONS -->
             <div class="smshero-actions">
 
-                <a href="#contact" class="smshero-btn-primary">
+                <a href="contact.php" class="smshero-btn-primary">
                     Get Started
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
 
-                <a href="#contact" class="smshero-btn-secondary">
+                <a href="contact.php" class="smshero-btn-secondary">
                     <i class="fa-regular fa-calendar"></i>
                     Request Demo
                 </a>

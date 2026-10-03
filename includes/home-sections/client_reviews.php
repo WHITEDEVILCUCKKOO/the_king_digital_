@@ -5,21 +5,13 @@
         --kdts-orange-dark: #f2660a;
         --kdts-ink: #1c2230;
         --kdts-sub: #6b7280;
-        --kdts-card-bg: #ffffff;
-        --kdts-card-border: #eef0f4;
-        --kdts-duration: 32s;
+        --kdts-duration: 40s;
 
         position: relative;
         overflow: hidden;
-        padding: clamp(20px, 2vw, 20px) 0;
-        /* background:
-        radial-gradient(60% 55% at 12% 15%, rgba(255, 159, 90, 0.20), rgba(255, 159, 90, 0) 70%),
-        radial-gradient(50% 50% at 85% 10%, rgba(255, 122, 26, 0.10), rgba(255, 122, 26, 0) 70%),
-        #fbfbfc; */
+        padding: 20px 0;
         font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         background-color: #EAE9EF;
-        /* background-image: radial-gradient(ellipse 46% 28% at 8% 34%, rgba(90, 86, 84, 0.06) 0%, rgba(41, 39, 38, 0.02) 45%, transparent 76%), radial-gradient(ellipse 49% 29% at 92% 70%, rgba(16, 58, 107, .072) 0%, rgba(16, 58, 107, .024) 46%, transparent 76%), linear-gradient(180deg, #eef2f7 0%, #eef2f7 10%, #f1f4f8 20%, #f6f8fb 31%, #fbfcfe 43%, #ffffff 55%, #fafbfd 68%, #f7f9fc 80%, #f3f6fa 91%, #f1f4f8 100%); */
-        /* background-repeat: no-repeat; */
         background-position: center;
         background-size: 100% 100%;
     }
@@ -31,20 +23,8 @@
         text-align: center;
     }
 
-    .kdts-logo-row {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 18px;
-    }
-
-    /* Placeholder slot for the client logo — swap the <img src="">
-    with the real logo path when ready. */
-    .kdts-logo-slot {
-        height: 34px;
-        width: auto;
-        max-width: 180px;
-        object-fit: contain;
-    }
+    .kdts-logo-row { display: flex; justify-content: center; margin-bottom: 18px; }
+    .kdts-logo-slot { height: 34px; width: auto; max-width: 180px; object-fit: contain; }
 
     .kdts-badge {
         display: inline-flex;
@@ -70,9 +50,7 @@
         margin: 0 0 14px;
     }
 
-    .kdts-title-accent {
-        color: var(--kdts-orange);
-    }
+    .kdts-title-accent { color: var(--kdts-orange); }
 
     .kdts-subtitle {
         font-size: clamp(14px, 1.6vw, 16px);
@@ -85,46 +63,17 @@
 
     .kdts-viewport {
         position: relative;
-        /* width: 70%; */
-        -webkit-mask-image: linear-gradient(to right,
-                /* transparent 0, */
-                #000 5%,
-                #000 95%
-                /* transparent 100% */
-            );
-        mask-image: linear-gradient(to right,
-                /* transparent 0, */
-                #000 5%,
-                #000 95%
-                /* transparent 100% */
-            );
-        /* -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 5%,
-    #000 95%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 5%,
-    #000 95%,
-    transparent 100%
-  ); */
-
         margin: auto;
+        -webkit-mask-image: linear-gradient(to right, #000 5%, #000 95%);
+        mask-image: linear-gradient(to right, #000 5%, #000 95%);
     }
 
     .kdts-track {
         display: flex;
         width: max-content;
+        padding-top: 12px;
         animation: kdts-scroll var(--kdts-duration) linear infinite;
     }
-
-    /* .kdts-viewport:hover .kdts-track {
-      animation-play-state: paused;
-    } */
 
     .kdts-track-group {
         display: flex;
@@ -133,30 +82,15 @@
     }
 
     @keyframes kdts-scroll {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
     }
 
     /* ---------------- CARD ---------------- */
 
     .kdts-card {
-        /* position: relative;
-  flex: 0 0 auto;
-  width: clamp(240px, 26vw, 300px);
-  background: var(--kdts-card-bg);
-  border: 1px solid var(--kdts-card-border);
-  border-radius: 18px;
-  padding: 26px 24px 22px;
-  box-shadow: 0 10px 28px rgba(20, 20, 43, 0.05);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease; */
-
         position: relative;
-        width: 225px;
+        width: 250px;
         min-height: 180px;
         padding: 9px 25px 10px;
         border-radius: 24px;
@@ -169,12 +103,10 @@
         box-shadow: 0 14px 32px rgba(15, 23, 42, .055), 0 8px 22px rgba(239, 86, 13, .055), inset 0 1px 1px rgba(255, 255, 255, .98);
         transition: transform .75s cubic-bezier(.22, 1, .36, 1), box-shadow .75s cubic-bezier(.22, 1, .36, 1), border-color .75s ease, background .75s ease;
         animation: kdFloatCard 8s ease-in-out infinite;
+        cursor: pointer;
     }
 
-    .kdts-card>* {
-        position: relative;
-        z-index: 2;
-    }
+    .kdts-card > * { position: relative; z-index: 2; }
 
     .kdts-card::before {
         content: "";
@@ -183,7 +115,7 @@
         z-index: 0;
         opacity: 0;
         background: radial-gradient(circle at 18% 15%, rgba(255, 255, 255, .38), transparent 35%), linear-gradient(135deg, #ffefe6 0%, #ff9b5a 48%, #ef560d 100%);
-        transition: opacity .75s cubic-bezier(.22, 1, .36, 1)
+        transition: opacity .75s cubic-bezier(.22, 1, .36, 1);
     }
 
     .kdts-card::after {
@@ -200,44 +132,15 @@
         pointer-events: none;
     }
 
-    .kdts-card:hover::after {
-        left: 170%;
-    }
+    .kdts-card:hover::after { left: 170%; }
 
     .kdts-card:hover {
-        /* transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(255, 122, 26, 0.35);
-  z-index: 2;
-  background: linear-gradient(135deg, var(--kdts-orange) 0%, var(--kdts-orange-dark) 100%);
-  border-color: transparent; */
-
         transform: translateY(-12px) scale(1.035) rotateX(3deg);
         border-color: rgba(255, 255, 255, .58);
         box-shadow: 0 28px 58px rgba(239, 86, 13, .23), inset 0 1px 1px rgba(255, 255, 255, .58);
-        cursor: pointer;
     }
 
-    .kdts-card:hover::before {
-        opacity: 1;
-    }
-
-    /* .kdts-card:hover .kdts-text,
-.kdts-card:hover .kdts-name {
-  color: #fffaf6;
-}
-
-.kdts-card:hover .kdts-role {
-  color: #ffe3cc;
-}
-
-.kdts-card:hover .kdts-stars,
-.kdts-card:hover .kdts-quote-icon {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.kdts-card:hover .kdts-footer {
-  border-top-color: rgba(255, 255, 255, 0.25);
-} */
+    .kdts-card:hover::before { opacity: 1; }
 
     .kdts-card-top {
         display: flex;
@@ -247,43 +150,23 @@
         position: relative;
     }
 
-    .kdts-stars {
-        /* color: var(--kdts-orange); */
-        color: rgb(255, 208, 0);
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
+    .kdts-stars { color: rgb(255, 208, 0); font-size: 16px; letter-spacing: 2px; }
 
     .kdts-quote-icon {
-        position: fixed;
-        top: 7px;
-        right: 15px;
-
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 60px;
-        font-weight: 900;
-        /* line-height: 1; */
-        color: rgba(255, 122, 26, 0.28);
-        transform: rotate(180deg);
+        position: absolute;
+    top: -47px;
+    right: -5px;
+    width: 20px;
     }
 
-    .kdts-quote-icon {
-        color: rgba(255, 122, 26, 0.22);
-        width: 17px;
-
-        img {
-            width: 100%;
-            transform: rotate(180deg);
-        }
-    }
+    .kdts-quote-icon img { width: 100%; display: block; }
 
     .kdts-text {
         font-size: 11.4px;
         line-height: 1.65;
         color: #384153;
-        /* margin: 0 0 20px; */
-        /* font-weight: 700; */
         font-style: italic;
+        margin: 0;
     }
 
     .kdts-footer {
@@ -291,84 +174,58 @@
         align-items: center;
         gap: 12px;
         padding-top: 16px;
-        /* border-top: 1px solid rgba(0, 0, 0, 0.06); */
         padding-bottom: 8px;
     }
 
+    /* Letter avatar (Google style) */
     .kdts-avatar {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        object-fit: cover;
-        background: #e9edf3;
         flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
-    .kdts-name {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--kdts-ink);
-        margin: 0;
-    }
-
-    .kdts-role {
-        font-size: 12.5px;
-        font-weight: 700;
-        color: var(--kdts-orange-dark);
-        margin: 2px 0 0;
-    }
-
+    .kdts-name { font-size: 14px; font-weight: 700; color: var(--kdts-ink); margin: 0; }
+    .kdts-role { font-size: 12.5px; font-weight: 700; color: var(--kdts-orange-dark); margin: 2px 0 0; }
 
     .kdts-card:hover .kdts-text,
     .kdts-card:hover .kdts-name,
-    .kdts-card:hover .kdts-role {
-        color: white;
-    }
+    .kdts-card:hover .kdts-role { color: #fff; }
 
+    /* ---------------- DECOR ---------------- */
 
-    .kdts-header,
-    .kdts-viewport {
-        position: relative;
-        z-index: 1;
-    }
+    .kdts-header, .kdts-viewport { position: relative; z-index: 1; }
 
-    .kdts-decor-blob,
-    .kdts-decor-ring,
-    .kdts-decor-dots {
+    .kdts-decor-blob, .kdts-decor-ring, .kdts-decor-dots {
         position: absolute;
         z-index: 0;
         pointer-events: none;
     }
 
-    /* Warm blurred blob, top-left corner — sliced by section's overflow:hidden */
     .kdts-decor-blob {
         top: -120px;
         left: -100px;
         width: 320px;
         height: 320px;
         border-radius: 42% 58% 63% 37% / 55% 45% 55% 45%;
-        background: radial-gradient(circle at 35% 30%,
-                var(--kdts-orange) 0%,
-                var(--kdts-orange-dark) 55%,
-                transparent 75%);
+        background: radial-gradient(circle at 35% 30%, var(--kdts-orange) 0%, var(--kdts-orange-dark) 55%, transparent 75%);
         opacity: 0.16;
         filter: blur(28px);
         animation: kdts-blob-drift 14s ease-in-out infinite;
     }
 
     @keyframes kdts-blob-drift {
-
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-
-        50% {
-            transform: translate(24px, 18px) scale(1.08);
-        }
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50%      { transform: translate(24px, 18px) scale(1.08); }
     }
 
-    /* Dashed rotating ring, bottom-right corner, shifted inward slightly */
     .kdts-decor-ring {
         bottom: -60px;
         right: 6%;
@@ -381,16 +238,10 @@
     }
 
     @keyframes kdts-ring-spin {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
     }
 
-    /* Fading dot-grid texture, anchored 1/7 in from the left, upper area */
     .kdts-decor-dots {
         top: 6%;
         left: 14.28%;
@@ -404,73 +255,25 @@
         mask-image: radial-gradient(ellipse at center, #000 0%, transparent 75%);
     }
 
-    /* Respect reduced-motion preference */
-    @media (prefers-reduced-motion: reduce) {
-
-        .kdts-decor-blob,
-        .kdts-decor-ring {
-            animation: none;
-        }
-    }
-
-    /* Scale down / thin out on small screens so decorations don't dominate */
-    @media (max-width: 640px) {
-        .kdts-decor-blob {
-            width: 200px;
-            height: 200px;
-            top: -80px;
-            left: -70px;
-        }
-
-        .kdts-decor-ring {
-            width: 120px;
-            height: 120px;
-            right: 2%;
-            bottom: -40px;
-        }
-
-        .kdts-decor-dots {
-            display: none;
-            /* keep mobile clean */
-        }
-    }
-
     /* ---------------- RESPONSIVE ---------------- */
 
     @media (max-width: 1024px) {
-        .kdts-card {
-            width: clamp(220px, 40vw, 280px);
-        }
-
-        .kdts-section {
-            --kdts-duration: 26s;
-        }
+        .kdts-card { width: clamp(220px, 40vw, 280px); }
+        .kdts-section { --kdts-duration: 32s; }
     }
 
     @media (max-width: 640px) {
-        .kdts-card {
-            width: 76vw;
-            padding: 22px 20px 18px;
-        }
-
-        .kdts-track-group {
-            gap: 16px;
-            padding: 8px 8px 26px;
-        }
-
-        .kdts-section {
-            --kdts-duration: 20s;
-        }
-
-        .kdts-text {
-            font-size: 14px;
-        }
+        .kdts-card { width: 76vw; padding: 22px 20px 18px; }
+        .kdts-track-group { gap: 16px; padding: 8px 8px 26px; }
+        .kdts-section { --kdts-duration: 26s; }
+        .kdts-text { font-size: 14px; }
+        .kdts-decor-blob { width: 200px; height: 200px; top: -80px; left: -70px; }
+        .kdts-decor-ring { width: 120px; height: 120px; right: 2%; bottom: -40px; }
+        .kdts-decor-dots { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .kdts-track {
-            animation: none;
-        }
+        .kdts-track, .kdts-decor-blob, .kdts-decor-ring { animation: none; }
     }
 </style>
 
@@ -481,248 +284,164 @@
     <div class="kdts-decor-dots"></div>
 
     <div class="kdts-header">
-
-        <div class="kdts-logo-row">
-            <!-- LOGO PLACEHOLDER: replace src="" with your logo file path -->
-            <!-- <img src="assets/images/img/.jpg" class="kdts-logo-slot" src="" alt="Company logo"> -->
-        </div>
-
+        <div class="kdts-logo-row"></div>
         <span class="kdts-badge">★★★★★ Client Reviews</span>
         <h2 class="kdts-title">What Our <span class="kdts-title-accent">Customers Say</span></h2>
-        <p class="kdts-subtitle">Real feedback from real clients — smooth motion, clean and professional styling.</p>
+        <p class="kdts-subtitle">Real Google reviews from real clients of King Digital.</p>
     </div>
 
     <div class="kdts-viewport">
-        <div class="kdts-track" style="padding-top: 12px;"> 
+        <div class="kdts-track" id="kdtsTrack">
 
-            <!-- GROUP A -->
+            <!-- GROUP A: sirf yahin cards add/edit karo.
+                 Group B (loop duplicate) neeche wali script khud bana deti hai. -->
             <div class="kdts-track-group" id="kdts-group-a">
 
                 <!-- card 1 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/11.jpg" class="kdts-avatar" src="" alt="Mia R.">
+                        <div class="kdts-avatar" style="background:#78909c">T</div>
                         <div>
-                            <p class="kdts-name">Mia R.</p>
-                            <p class="kdts-role">Ecommerce Owner</p>
+                            <p class="kdts-name">Tia Arora</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
                         <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">Very reliable team. Every detail was handled with care and the final result looked
-                        polished.</p>
-
+                    <p class="kdts-text">Their Google Ads management is outstanding. They optimised our campaigns and helped us generate quality leads while keeping the budget under control.</p>
                 </div>
 
                 <!-- card 2 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/15.jpg" class="kdts-avatar" src="" alt="James C.">
+                        <div class="kdts-avatar" style="background:#6a5fc1">K</div>
                         <div>
-                            <p class="kdts-name">James C.</p>
-                            <p class="kdts-role">Founder</p>
+                            <p class="kdts-name">Kirthana Nair</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">Our website speed and enquiry flow improved a lot. The design quality was truly
-                        premium.</p>
-
+                    <p class="kdts-text">We partnered with KING DIGITAL for SEO, and within a few months we started seeing noticeable improvements in our website traffic. Great experience.</p>
                 </div>
 
                 <!-- card 3 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/21.jpg" class="kdts-avatar" src="" alt="Ava T.">
+                        <div class="kdts-avatar" style="background:#4b7f52">T</div>
                         <div>
-                            <p class="kdts-name">Ava T.</p>
-                            <p class="kdts-role">Business Client</p>
+                            <p class="kdts-name">Tushar Sinha</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">The campaign setup was neat and transparent. We started getting better quality
-                        enquiries within weeks.</p>
-
+                    <p class="kdts-text">Excellent service and a highly professional team. They delivered our website on time and exceeded our expectations.</p>
                 </div>
 
                 <!-- card 4 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/32.jpg" class="kdts-avatar" src="" alt="Robert M.">
+                        <div class="kdts-avatar" style="background:#3d3a6b">J</div>
                         <div>
-                            <p class="kdts-name">Robert M.</p>
-                            <p class="kdts-role">Service Provider</p>
+                            <p class="kdts-name">Jatin</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">Creative ideas, clean execution and quick support. They made our brand look far more
-                        professional online.</p>
-
+                    <p class="kdts-text">Boht acha support mila King Digital se WhatsApp API service ke liye, thank you so much! 🙌</p>
                 </div>
 
                 <!-- card 5 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/44.jpg" class="kdts-avatar" src="" alt="Sophia L.">
+                        <div class="kdts-avatar" style="background:#8a6d5a">M</div>
                         <div>
-                            <p class="kdts-name">Sophia L.</p>
-                            <p class="kdts-role">Marketing Manager</p>
+                            <p class="kdts-name">Mr Mukke</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">Their digital strategy was practical and effective, and the business presentation came
-                        out beautifully.</p>
-
+                    <p class="kdts-text">I received excellent service for bulk SMS and WhatsApp SMS from King Digital. Great support from Kirti. Thank you so much!</p>
                 </div>
 
                 <!-- card 6 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/45.jpg" class="kdts-avatar" src="" alt="Daniel K.">
+                        <div class="kdts-avatar" style="background:#8d6e63">U</div>
                         <div>
-                            <p class="kdts-name">Daniel K.</p>
-                            <p class="kdts-role">Operations Head</p>
+                            <p class="kdts-name">Udika Singh</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">From planning to delivery, communication stayed clear the whole way. Exactly the kind
-                        of partner we needed.</p>
-
+                    <p class="kdts-text">Very good services &amp; great support specially by Pooja Maam. Thanks King Digital, keep it up.</p>
                 </div>
-
-            </div>
-
-            <!-- GROUP B — exact duplicate of GROUP A, required for the seamless loop.
-           When you add a card, mirror it here too. -->
-            <div class="kdts-track-group" id="kdts-group-b" aria-hidden="true">
 
                 <!-- card 7 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/52.jpg" class="kdts-avatar" src="" alt="Mia R.">
+                        <div class="kdts-avatar" style="background:#0097a7">M</div>
                         <div>
-                            <p class="kdts-name">Mia R.</p>
-                            <p class="kdts-role">Ecommerce Owner</p>
+                            <p class="kdts-name">Motivational Status</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">Very reliable team. Every detail was handled with care and the final result looked
-                        polished.</p>
-
+                    <p class="kdts-text">Good service and your team are fully prepared, greatest knowledge Pooja mam 🌹💗💗</p>
                 </div>
 
                 <!-- card 8 -->
                 <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
                     <div class="kdts-footer">
-                        <img src="assets/images/img/62.jpg" class="kdts-avatar" src="" alt="James C.">
+                        <div class="kdts-avatar" style="background:#ef6c00">K</div>
                         <div>
-                            <p class="kdts-name">James C.</p>
-                            <p class="kdts-role">Founder</p>
+                            <p class="kdts-name">Kajal Rani</p>
+                            <p class="kdts-role">Google Review</p>
                         </div>
                     </div>
                     <div class="kdts-card-top">
                         <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
+                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt=""></span>
                     </div>
-                    <p class="kdts-text">Our website speed and enquiry flow improved a lot. The design quality was truly
-                        premium.</p>
-
-                </div>
-
-                <!-- card 9 -->
-                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
-                    <div class="kdts-footer">
-                        <img src="assets/images/img/68.jpg" class="kdts-avatar" src="" alt="Ava T.">
-                        <div>
-                            <p class="kdts-name">Ava T.</p>
-                            <p class="kdts-role">Business Client</p>
-                        </div>
-                    </div>
-                    <div class="kdts-card-top">
-                        <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
-                    </div>
-                    <p class="kdts-text">The campaign setup was neat and transparent. We started getting better quality
-                        enquiries within weeks.</p>
-
-                </div>
-
-                <!-- card 10 -->
-                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
-                    <div class="kdts-footer">
-                        <img src="assets/images/img/71.jpg" class="kdts-avatar" src="" alt="Robert M.">
-                        <div>
-                            <p class="kdts-name">Robert M.</p>
-                            <p class="kdts-role">Service Provider</p>
-                        </div>
-                    </div>
-                    <div class="kdts-card-top">
-                        <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
-                    </div>
-                    <p class="kdts-text">Creative ideas, clean execution and quick support. They made our brand look far more
-                        professional online.</p>
-
-                </div>
-
-                <!-- card 11 -->
-                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
-                    <div class="kdts-footer">
-                        <img src="assets/images/img/75.jpg" class="kdts-avatar" src="" alt="Sophia L.">
-                        <div>
-                            <p class="kdts-name">Sophia L.</p>
-                            <p class="kdts-role">Marketing Manager</p>
-                        </div>
-                    </div>
-                    <div class="kdts-card-top">
-                        <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
-                    </div>
-                    <p class="kdts-text">Their digital strategy was practical and effective, and the business presentation came
-                        out beautifully.</p>
-
-                </div>
-
-                <!-- card 12 -->
-                <div class="kdts-card" onclick="window.open('https://g.page/r/CRUzKSGo_BXAEAE/review', '_blank')">
-                    <div class="kdts-footer">
-                        <img src="assets/images/img/90.jpg" class="kdts-avatar" src="" alt="Daniel K.">
-                        <div>
-                            <p class="kdts-name">Daniel K.</p>
-                            <p class="kdts-role">Operations Head</p>
-                        </div>
-                    </div>
-                    <div class="kdts-card-top">
-                        <span class="kdts-stars">★★★★★</span>
-                        <span class="kdts-quote-icon"><img src="assets/images/img/google_icon_png.png" alt="" srcset=""></span>
-                    </div>
-                    <p class="kdts-text">From planning to delivery, communication stayed clear the whole way. Exactly the kind
-                        of partner we needed.</p>
-
+                    <p class="kdts-text">I recieved owsm service and well management thank you.</p>
                 </div>
 
             </div>
-
+            <!-- GROUP B yahan JS se auto-generate hota hai -->
         </div>
     </div>
 
 </section>
+
+<script>
+(function () {
+    var track = document.getElementById('kdtsTrack');
+    var groupA = document.getElementById('kdts-group-a');
+    if (!track || !groupA) return;
+
+    // Seamless loop ke liye Group A ki exact copy
+    var groupB = groupA.cloneNode(true);
+    groupB.id = 'kdts-group-b';
+    groupB.setAttribute('aria-hidden', 'true');
+    track.appendChild(groupB);
+})();
+</script>

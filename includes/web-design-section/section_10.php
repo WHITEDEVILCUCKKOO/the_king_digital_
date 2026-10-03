@@ -962,7 +962,7 @@
                     <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px">ALSO REACH US ON</div>
                     <div style="display:flex;gap:10px;justify-content:center">
                         <a href="https://wa.me/919211339966" style="background: rgb(81 131 38);border-radius: 7px;padding: 8px 14px;color: #fff;font-size: 16px;font-weight: 600;display: flex;align-items: center;"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp</a>
-                        <a href="https://kingdigital.in/online-meeting.php" style="background:rgba(255,255,255,.1);border-radius:7px;padding:8px 14px;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;gap:6px"><i class="fas fa-video"></i> Meet Online</a>
+                        <a href="contact.php" style="background:rgba(255,255,255,.1);border-radius:7px;padding:8px 14px;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;gap:6px"><i class="fas fa-video"></i> Meet Online</a>
                     </div>
                 </div>
             </div>

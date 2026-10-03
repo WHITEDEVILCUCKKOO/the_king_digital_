@@ -1438,7 +1438,7 @@
                 </button>
 
 
-                <button
+                <button style="display: none !important;"
                     type="button"
                     class="kdfg-tab"
                     data-category="ads">
@@ -1460,7 +1460,7 @@
                 </button>
 
 
-                <button
+                <button style="display: none !important;"
                     type="button"
                     class="kdfg-tab"
                     data-category="brand">
@@ -1955,7 +1955,7 @@
             reels: [
 
                 {
-                    src: "",
+                    src: "assets/videos/ai gen/🌸 Sawan Special Dream Home Offer! 🏡✨This auspicious Sawan, bring happiness, peace, and prosper.mp4",
                     type: "AI Reel",
                     category: "AI Creative",
                     title: "Creative AI Reel",
@@ -1963,7 +1963,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/ai gen/🌙 𝗦𝗹𝗲𝗲𝗽 𝗕𝗲𝘁𝘁𝗲𝗿. 𝗕𝗿𝗲𝗮𝘁𝗵𝗲 𝗕𝗲𝘁𝘁𝗲𝗿. 𝗟𝗶𝘃𝗲 𝗕𝗲𝘁𝘁𝗲𝗿.Are you looking f.mp4",
                     type: "AI Reel",
                     category: "Social Content",
                     title: "Social AI Reel",
@@ -1971,7 +1971,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/ai gen/📞 Ek missed call = ek missed opportunity 👀Ab calls miss hone ki tension nahi!With King Digital.mp4",
                     type: "AI Reel",
                     category: "Short Form",
                     title: "Dynamic AI Reel",
@@ -1979,7 +1979,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/ai gen/🚀 Turn Data into Decisions with the Power of Analytics! 📊💡Start your journey from Excel & SQL.mp4",
                     type: "AI Reel",
                     category: "Visual Story",
                     title: "AI Story Reel",
@@ -1987,7 +1987,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/ai gen/If crystals had personalities, this is probably what they’d look like.Tiger’s Eye, Amethyst, Cit.mp4",
                     type: "AI Reel",
                     category: "AI Voice",
                     title: "Voiceover AI Reel",
@@ -1995,7 +1995,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/ai gen/Kabhi-kabhi rukawat sirf effort ki nahi, energy ki bhi lagti hai.Dhyan Yog Bracelet ko intention.mp4",
                     type: "AI Reel",
                     category: "Creative Video",
                     title: "Cinematic AI Reel",
@@ -2065,7 +2065,7 @@
             product: [
 
                 {
-                    src: "",
+                    src: "assets/videos/reels_hd/Alpha Auto 1 720 - Minerdia Studio (720p, h264).mp4",
                     type: "Product",
                     category: "Product Video",
                     title: "Premium Product Reveal",
@@ -2073,7 +2073,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/reels_hd/Alpha Auto 1 720 - Minerdia Studio (720p, h264).mp4",
                     type: "Product",
                     category: "Product Showcase",
                     title: "AI Product Showcase",
@@ -2081,7 +2081,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/reels_hd/Lennore 2 - Minerdia Studio (720p, h264).mp4",
                     type: "Product",
                     category: "Product Creative",
                     title: "Cinematic Product Reel",
@@ -2089,7 +2089,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/reels_hd/M3M - Minerdia Studio (720p, h264).mp4",
                     type: "Product",
                     category: "Feature Video",
                     title: "Product Feature Story",
@@ -2097,7 +2097,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/reels_hd/Mansha Reel 2 - Minerdia Studio (720p, h264).mp4",
                     type: "Product",
                     category: "Ecommerce",
                     title: "AI Ecommerce Video",
@@ -2105,7 +2105,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/reels_hd/Sofia Reel - Minerdia Studio (720p, h264).mp4",
                     type: "Product",
                     category: "Product Promo",
                     title: "Creative Product Promo",
@@ -2175,7 +2175,7 @@
             youtube: [
 
                 {
-                    src: "",
+                    src: "assets/videos/prodcast/🔮 Reality of Tarot & Chakras Explained _ Podcast with Aarti Kakkar __0_41.mp4",
                     type: "YouTube",
                     category: "YouTube Video",
                     title: "AI Business Story",
@@ -2183,7 +2183,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/prodcast/Love Horoscope 2025 💔 _ Love, S_x & Dhokha Explained by Astrologer Aarti Kakkar _ On Air Unfiltered_0_52.mp4",
                     type: "YouTube",
                     category: "YouTube Content",
                     title: "AI Explainer Video",
@@ -2191,7 +2191,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/prodcast/Property Rights in India_ Gender Equality & Legal Reality – Adv. Manisha Sharma_0_47.mp4",
                     type: "YouTube",
                     category: "Long Form",
                     title: "Brand Story Video",
@@ -2199,7 +2199,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/prodcast/तीन चेहरे, तीन सोच _ उपेन्द्र कुशवाहा, प्रशांत किशोर और सम्राट चौधरी पर @jmdajit की राजनीतिक राय_0_51.mp4",
                     type: "YouTube",
                     category: "Educational",
                     title: "AI Educational Video",
@@ -2207,7 +2207,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/prodcast/एक फेलियर जिसने सिस्टम को हिला दिया — गाँव का बेटा, गाँव का नेता!_0_57.mp4",
                     type: "YouTube",
                     category: "Product Story",
                     title: "Product Overview Video",
@@ -2215,7 +2215,7 @@
                 },
 
                 {
-                    src: "",
+                    src: "assets/videos/prodcast/How to invest in the age of 20 years_ _ 1000 se crorepati_ _ Full Podcast_0_55.mp4",
                     type: "YouTube",
                     category: "Creative Content",
                     title: "Cinematic YouTube Video",
