@@ -1624,7 +1624,7 @@ ai_interaction_assets_once();
     .ai-msg--assistant .ai-msg__bubble {
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.13);
-        color: #ffffff;
+        color: var(--color-text);
         border-bottom-left-radius: 5px;
         white-space: normal;
     }
@@ -1981,7 +1981,7 @@ ai_interaction_assets_once();
             </div>
             <h1 class="home-hero-section_title">
                 Powering Better Business Communication
-                <span>AI-Driven KingDigital</span>
+                <span>AI-Driven King Digital</span>
             </h1>
             <div class="home-hero-section_autotyping">
                 <span class="typed">Smart Solutions for</span>

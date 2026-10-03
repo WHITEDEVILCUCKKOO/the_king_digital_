@@ -830,7 +830,7 @@
             </p>
             <div class="ssm-hero_content-text-cta">
                 <a href="contact.php">Start Your Campeign<span></span></a>
-                <a href="#ssm-content">See Our Work<span></span></a>
+                <a href="#ssm-portfolio">See Our Work<span></span></a>
             </div>
             <div class="ssm-hero_content-text-trust">
                 <span></span>
