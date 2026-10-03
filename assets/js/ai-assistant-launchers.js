@@ -1,16 +1,24 @@
 /**
- * Site-wide AI launchers -- replaces the green ICPaaS blob.
+ * Site-wide AI launchers -- the floating astronaut mascot.
  *
- *   1. VOICE  -> a dark "signal capsule" (bottom-right, where the green blob
- *      was). One tap starts/ends the call; the equalizer bars inside it move
- *      with the live audio level. No panel needed.
- *   2. TEXT   -> a paper-white speech-bubble button (sits just left of the
- *      capsule) that opens a light messenger card.
+ *   1. VOICE  -> the mascot himself (bottom-right). He floats, waves, and
+ *      leans toward your cursor. One tap starts/ends the voice call; during a
+ *      call a glow + rings around him react to the live audio level.
+ *   2. TEXT   -> a paper-white "Aa" keycap (sits just above the mascot) that
+ *      opens a light messenger card, whose avatars use the mascot's face.
+ *
+ * Mascot assets (default folder: assets/images/mascot/, resolved from this
+ * script's own URL: .../assets/js/x.js -> .../assets/images/mascot/):
+ *   mascot-poster.webp  tiny still of frame 1 -- shown instantly
+ *   mascot.webp         transparent animated loop -- swapped in after page load
+ *   mascot-face.webp    head crop used for chat avatars
+ * Override the folder with  <script data-mascot-base="/path/to/mascot/">  or
+ * window.AI_MASCOT_BASE = "/path/to/mascot/"  (set before this file loads).
  *
  * Load order in footer.php (before this file):
  *   ai-assistant-icpaas-adapter.js  -> window.AIAssistantICPaaSAdapter
  *   ai-assistant-text-chat.js       -> window.AIAssistantTextChat
- *   blob-widget.js (ICPaaS)         -> window.KD (its own green bubble is hidden here)
+ *   blob-widget.js (ICPaaS)         -> window.KD (its own bubble is hidden here)
  *
  * Both launchers hide while #home-hero-section is on screen (the hero has its
  * own AI card).
@@ -22,62 +30,121 @@
   var DEFAULT_PERSONA = "ENG_Male"; // IND_Male | IND_Female | ENG_Male | ENG_Female
   var TITLE = "King Digital Assistant";
 
+  /* ---- where the mascot images live ---- */
+  var SCRIPT = document.currentScript;
+  var BASE =
+    global.AI_MASCOT_BASE ||
+    (SCRIPT && SCRIPT.getAttribute("data-mascot-base")) ||
+    (SCRIPT && SCRIPT.src
+      ? SCRIPT.src.replace(/[^\/]*$/, "").replace(/js\/$/, "images/mascot/")
+      : "assets/images/mascot/");
+  if (BASE.charAt(BASE.length - 1) !== "/") BASE += "/";
+  var POSTER_URL = BASE + "mascot-poster.webp";
+  var ANIM_URL = BASE + "mascot.webp";
+  var FACE_URL = BASE + "mascot-face.webp";
+
+  var REDUCED =
+    !!global.matchMedia &&
+    global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var COARSE =
+    !!global.matchMedia && global.matchMedia("(pointer: coarse)").matches;
+
   var CSS = [
-    /* Hide the vendor's own green launcher permanently (KD API keeps working). */
+    /* Hide the vendor's own launcher permanently (KD API keeps working). */
+    // ".icpaas-floating-widget:not(#aild){display:none!important;}",
     /* global.js tags any fixed body-level element as the vendor widget and
        hides it on the hero -- never let that touch our own launchers. */
     "#aild.icpaas-floating-widget,#aild.icpaas-widget-hidden{display:flex!important;}",
 
-    "#aild{position:fixed;right:20px;bottom:20px;z-index:2147483000;display:flex;",
-    "flex-direction:column-reverse;align-items:flex-end;gap:25px;",
+    "#aild{position:fixed;right:14px;bottom:14px;z-index:2147483000;display:flex;",
+    "flex-direction:column-reverse;align-items:flex-end;gap:14px;",
     "font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;}",
     "#aild.aild-hidden{display:none!important;}",
     "#aild button{font-family:inherit;}",
-    "#aild :focus-visible{outline:3px solid #8FB2FF;outline-offset:3px;}",
+    "#aild :focus-visible{outline:3px solid #FFB673;outline-offset:3px;}",
 
     /* shared hover tag (sits left of each button) */
-    ".aild-label,.aild-chat__t{position:absolute;right:calc(100% + 12px);top:50%;",
+    ".aild-label,.aild-chat__t{position:absolute;right:calc(100% + 8px);top:50%;",
     "transform:translateY(-50%) translateX(6px);padding:7px 12px;border-radius:10px;background:#1B1A17;",
     "color:#FFFCF6;font-size:13px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;",
     "transition:opacity .15s ease,transform .15s ease;}",
-    ".aild-voice:hover .aild-label,.aild-voice.in-call .aild-label,.aild-voice.is-error .aild-label,",
+    ".aild-voice:hover .aild-label,.aild-voice:focus-visible .aild-label,.aild-voice.in-call .aild-label,.aild-voice.is-error .aild-label,",
     ".aild-chat:hover .aild-chat__t,.aild-chat:focus-visible .aild-chat__t{opacity:1;transform:translateY(-50%);}",
     ".aild-voice.is-error .aild-label{color:#FFB4B4;}",
 
-    /* ============ VOICE: ripple orb ============ */
-    ".aild-voice{position:relative;width:64px;height:64px;padding:0;border:0;border-radius:50%;cursor:pointer;",
-    "color:#fff;display:grid;place-items:center;",
-    "background:radial-gradient(circle at 30% 25%,#A283F0,#5D26C1 48%,#2152FF);",
-    "box-shadow:0 12px 28px rgba(60,50,200,.45),inset 0 -7px 14px rgba(0,0,0,.22),inset 0 5px 9px rgba(255,255,255,.35);",
-    "transition:transform .18s ease;}",
-    ".aild-voice:hover{transform:scale(1.06);}",
-    ".aild-voice::before,.aild-voice::after{content:'';position:absolute;inset:0;border-radius:50%;",
-    "border:2px solid rgba(93,38,193,.6);pointer-events:none;animation:aild-ripple 3.2s ease-out infinite;}",
-    ".aild-voice::after{animation-delay:1.6s;}",
-    "@keyframes aild-ripple{from{transform:scale(1);opacity:.75;}to{transform:scale(1.75);opacity:0;}}",
-    ".aild-mic{display:grid;place-items:center;}",
-    ".aild-mic svg{grid-area:1/1;width:27px;height:27px;fill:#fff;}",
-    /* live: rings are driven by audio level instead of the idle loop */
-    ".aild-voice[data-phase='listening']::before,.aild-voice[data-phase='speaking']::before,",
-    ".aild-voice[data-phase='listening']::after,.aild-voice[data-phase='speaking']::after{animation:none;",
-    "transition:transform .07s linear,opacity .07s linear;}",
-    ".aild-voice[data-phase='listening']::before,.aild-voice[data-phase='speaking']::before{",
+    /* ============ VOICE: the floating astronaut ============ */
+    ".aild-voice{position:relative;width:112px;height:144px;padding:0;border:0;background:none;",
+    "cursor:pointer;display:block;border-radius:28px;-webkit-tap-highlight-color:transparent;",
+    "animation:aild-enter .75s cubic-bezier(.2,1.5,.4,1) both;}",
+    "@keyframes aild-enter{from{opacity:0;transform:translateY(28px) scale(.55);}to{opacity:1;transform:none;}}",
+
+    /* warm glow behind him; swells with the audio level */
+    ".aild-aura{position:absolute;left:50%;top:46%;width:176px;height:176px;margin:-88px 0 0 -88px;",
+    "border-radius:50%;pointer-events:none;",
+    "background:radial-gradient(circle,rgba(244,123,32,.36) 0%,rgba(244,123,32,.13) 42%,rgba(244,123,32,0) 70%);",
+    "transform:scale(calc(.9 + var(--lvl,0) * .55));opacity:.75;",
+    "transition:transform .08s linear,opacity .3s ease;animation:aild-breathe 4s ease-in-out infinite;}",
+    "@keyframes aild-breathe{50%{opacity:.4;}}",
+    ".aild-voice.in-call .aild-aura{animation:none;opacity:1;}",
+
+    /* ring ripples (only during a call) */
+    ".aild-ring{position:absolute;left:50%;top:48%;width:92px;height:92px;margin:-46px 0 0 -46px;",
+    "border-radius:50%;border:2px solid #F47B20;opacity:0;pointer-events:none;}",
+    ".aild-voice.in-call .aild-ring{animation:aild-ripple 2.4s ease-out infinite;}",
+    ".aild-voice.in-call .aild-r2{animation-delay:1.2s;}",
+    "@keyframes aild-ripple{from{transform:scale(1);opacity:.7;}to{transform:scale(1.9);opacity:0;}}",
+    ".aild-voice.in-call[data-phase='listening'] .aild-ring,.aild-voice.in-call[data-phase='speaking'] .aild-ring{",
+    "animation:none;transition:transform .07s linear,opacity .07s linear;}",
+    ".aild-voice.in-call[data-phase='listening'] .aild-r1,.aild-voice.in-call[data-phase='speaking'] .aild-r1{",
     "transform:scale(calc(1.08 + var(--lvl,0) * .8));opacity:.7;}",
-    ".aild-voice[data-phase='listening']::after,.aild-voice[data-phase='speaking']::after{",
-    "transform:scale(calc(1.25 + var(--lvl,0) * 1.2));opacity:.4;}",
-    ".aild-voice[data-phase='speaking']::before,.aild-voice[data-phase='speaking']::after{border-color:#F47B20;}",
-    ".aild-voice[data-phase='thinking']::before,.aild-voice[data-phase='thinking']::after{animation-duration:1s;}",
-    ".aild-voice[data-phase='thinking']::after{animation-delay:.5s;}",
-    ".aild-voice.in-call{background:radial-gradient(circle at 30% 25%,#FF8A8E,#E5484D 55%,#B42332);}",
-    ".aild-voice.in-call::before,.aild-voice.in-call::after{border-color:rgba(229,72,77,.6);}",
-    ".aild-voice.in-call svg.aild-i-mic,.aild-voice.in-call .aild-i-mic{display:none;}",
+    ".aild-voice.in-call[data-phase='listening'] .aild-r2,.aild-voice.in-call[data-phase='speaking'] .aild-r2{",
+    "transform:scale(calc(1.3 + var(--lvl,0) * 1.2));opacity:.38;}",
+    ".aild-voice.in-call[data-phase='speaking'] .aild-ring{border-color:#FFC24D;}",
+    ".aild-voice.in-call[data-phase='thinking'] .aild-ring{animation-duration:1s;}",
+    ".aild-voice.in-call[data-phase='thinking'] .aild-r2{animation-delay:.5s;}",
+
+    /* ground shadow -- shrinks as he floats up, which sells the hover */
+    ".aild-shadow{position:absolute;left:50%;bottom:-6px;width:62px;height:12px;margin-left:-31px;",
+    "border-radius:50%;pointer-events:none;",
+    "background:radial-gradient(ellipse at center,rgba(40,25,10,.3),rgba(40,25,10,0) 70%);",
+    "animation:aild-shadow 3.6s ease-in-out infinite;}",
+    "@keyframes aild-shadow{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(.76);opacity:.55;}}",
+
+    /* bobbing wrapper + the mascot image */
+    ".aild-bob{position:absolute;inset:0;transform-origin:50% 92%;animation:aild-bob 3.6s ease-in-out infinite;}",
+    "@keyframes aild-bob{0%,100%{transform:translateY(0) rotate(-1.6deg);}50%{transform:translateY(-10px) rotate(1.6deg);}}",
+    ".aild-mascot{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;",
+    "-webkit-user-select:none;user-select:none;",
+    "transform:translateX(var(--tx,0px)) rotate(var(--rot,0deg)) scale(calc(var(--sc,1) + var(--lvl,0) * .07));",
+    "transform-origin:50% 90%;transition:transform .2s ease-out;",
+    "filter:drop-shadow(0 6px 8px rgba(40,25,10,.2));}",
+    ".aild-voice.in-call .aild-mascot{transition:transform .08s linear;}",
+    ".aild-voice:hover{--sc:1.07;}",
+    ".aild-voice:active{--sc:.96;}",
+
+    /* mic / stop badge on his shoulder -- tells people he's tappable for voice */
+    ".aild-badge{position:absolute;right:0;bottom:24px;width:32px;height:32px;border-radius:50%;",
+    "background:#1B1A17;display:grid;place-items:center;border:2px solid #FFFCF6;",
+    "box-shadow:0 4px 10px rgba(0,0,0,.28);transition:transform .15s ease,background .2s ease;}",
+    ".aild-badge svg{grid-area:1/1;width:16px;height:16px;fill:#fff;}",
+    ".aild-voice:hover .aild-badge{transform:scale(1.12);}",
     ".aild-voice .aild-i-end{display:none;}.aild-voice.in-call .aild-i-end{display:block;}",
+    ".aild-voice.in-call .aild-i-mic{display:none;}",
+    ".aild-voice.in-call .aild-badge{background:#E5484D;}",
+
+    /* image failed to load -> plain orange orb so the launcher still works */
+    ".aild-voice.aild-noimg{width:64px;height:64px;border-radius:50%;",
+    "background:radial-gradient(circle at 30% 25%,#FFB673,#F47B20 55%,#C75A0B);",
+    "box-shadow:0 12px 28px rgba(199,90,11,.4);}",
+    ".aild-noimg .aild-bob,.aild-noimg .aild-shadow{display:none;}",
+    ".aild-noimg .aild-badge{right:auto;bottom:auto;left:50%;top:50%;margin:-16px 0 0 -16px;border-color:transparent;background:transparent;box-shadow:none;}",
+    ".aild-noimg .aild-badge svg{width:26px;height:26px;}",
 
     /* ============ TEXT: keycap ============ */
     ".aild-chat{position:relative;width:52px;height:52px;padding:0;cursor:pointer;display:flex;",
     "align-items:center;justify-content:center;gap:2px;background:#FFFCF6;color:#1B1A17;",
     "border:1.5px solid #1B1A17;border-bottom-width:5px;border-radius:14px;",
-    "font-size:19px;font-weight:800;letter-spacing:-.02em;",
+    "font-size:19px;font-weight:800;letter-spacing:-.02em;margin-right:30px;",
     "box-shadow:0 10px 20px rgba(60,40,10,.18);transition:transform .1s ease,border-bottom-width .1s ease;}",
     ".aild-chat:hover{transform:translateY(-2px);}",
     ".aild-chat:active{transform:translateY(3px);border-bottom-width:2px;}",
@@ -86,7 +153,7 @@
     "#aild[data-open='true'] .aild-caret{animation:none;}",
 
     /* ============ TEXT PANEL ============ */
-    ".aild-panel{position:absolute;right:calc(100% + 14px);bottom:0;width:344px;max-width:calc(100vw - 32px);",
+    ".aild-panel{position:absolute;right:calc(100% + 10px);bottom:0;width:344px;max-width:calc(100vw - 32px);",
     "height:490px;max-height:calc(100vh - 40px);display:flex;flex-direction:column;overflow:hidden;",
     "background:#FFFCF6;color:#1B1A17;border-radius:20px 20px 6px 20px;",
     "box-shadow:0 18px 50px rgba(60,40,10,.25),0 0 0 1.5px #1B1A17;",
@@ -94,10 +161,10 @@
     "transition:opacity .18s ease,transform .18s ease;}",
     "#aild[data-open='true'] .aild-panel{opacity:1;transform:none;pointer-events:auto;}",
 
-    ".aild-head{display:flex;align-items:center;gap:10px;padding:14px 14px 12px 16px;",
+    ".aild-head{display:flex;align-items:center;gap:10px;padding:12px 14px 12px 14px;",
     "border-bottom:1.5px solid #1B1A17;flex:none;}",
-    ".aild-avatar{width:34px;height:34px;border-radius:10px;background:#F47B20;flex:none;display:grid;place-items:center;}",
-    ".aild-avatar svg{width:18px;height:18px;fill:#fff;}",
+    ".aild-avatar{width:40px;height:40px;border-radius:12px;flex:none;border:1.5px solid #1B1A17;",
+    "background:#FFE8D2 url(" + FACE_URL + ") center/cover no-repeat;}",
     ".aild-head__t{flex:1;min-width:0;line-height:1.25;}",
     ".aild-head__t b{display:block;font-size:14.5px;}",
     ".aild-head__t span{font-size:12px;color:#6B665C;display:flex;align-items:center;gap:5px;}",
@@ -120,7 +187,8 @@
     ".ai-msg{display:flex;gap:8px;max-width:88%;}",
     ".ai-msg--user{align-self:flex-end;flex-direction:row-reverse;}",
     ".ai-msg--assistant{align-self:flex-start;}",
-    ".ai-msg__avatar{width:22px;height:22px;border-radius:7px;flex:none;margin-top:2px;background:#F47B20;}",
+    ".ai-msg__avatar{width:26px;height:26px;border-radius:8px;flex:none;margin-top:1px;",
+    "border:1.5px solid #1B1A17;background:#FFE8D2 url(" + FACE_URL + ") center/cover no-repeat;}",
     ".ai-msg__bubble{font-size:13px;line-height:1.5;padding:8px 12px;border-radius:14px;word-break:break-word;}",
     ".ai-msg--assistant .ai-msg__bubble{background:#fff;border:1.5px solid #E4DCC8;border-bottom-left-radius:4px;}",
     ".ai-msg--user .ai-msg__bubble{background:#1B1A17;color:#FFFCF6;border-bottom-right-radius:4px;}",
@@ -151,11 +219,16 @@
     ".aild-form button svg{width:17px;height:17px;fill:currentColor;}",
     ".aild-form button:disabled{opacity:.45;cursor:not-allowed;}",
 
-    "@media (max-width:560px){#aild{right:12px;bottom:12px;}",
-    ".aild-panel{right:0;bottom:calc(100% + 12px);width:calc(100vw - 24px);height:460px;max-height:calc(100vh - 190px);",
+    "@media (max-width:560px){#aild{right:6px;bottom:8px;}",
+    ".aild-voice{width:92px;height:118px;}.aild-aura{width:144px;height:144px;margin:-72px 0 0 -72px;}",
+    ".aild-ring{width:76px;height:76px;margin:-38px 0 0 -38px;}",
+    ".aild-badge{width:28px;height:28px;bottom:20px;}",
+    ".aild-chat{margin-right:20px;}",
+    ".aild-panel{right:0;bottom:calc(100% + 12px);width:calc(100vw - 24px);height:460px;max-height:calc(100vh - 230px);",
     "transform-origin:bottom right;}}",
 
-    "@media (prefers-reduced-motion:reduce){.aild-voice::before,.aild-voice::after,.aild-caret,.ai-typing__dot{animation:none!important;}}",
+    "@media (prefers-reduced-motion:reduce){.aild-voice,.aild-bob,.aild-shadow,.aild-aura,.aild-ring,.aild-caret,.ai-typing__dot{animation:none!important;}",
+    ".aild-mascot{transition:none;}}",
   ].join("");
 
   function svg(vb, inner) {
@@ -163,7 +236,6 @@
   }
   var I_MIC = svg("0 0 24 24", '<path class="aild-i-mic" d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15zm6-3.5a6 6 0 0 1-12 0H4.5a7.5 7.5 0 0 0 6.75 7.46V22h1.5v-3.04A7.5 7.5 0 0 0 19.5 11.5z"/>');
   var I_END = svg("0 0 24 24", '<path class="aild-i-end" d="M6 6h12v12H6z"/>');
-  var I_SPARK = svg("0 0 24 24", '<path d="M12 2l2.2 6.3L20.5 10l-6.3 1.7L12 18l-2.2-6.3L3.5 10l6.3-1.7zM19 15l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z"/>');
   var I_X = svg("0 0 24 24", '<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>');
   var I_SEND = svg("0 0 24 24", '<path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>');
 
@@ -173,7 +245,12 @@
     root.setAttribute("data-open", "false");
     root.innerHTML =
       '<button type="button" class="aild-voice" id="aildVoice" data-phase="idle" aria-label="Talk to our AI assistant">' +
-      '<span class="aild-mic">' + I_MIC + I_END + "</span>" +
+      '<span class="aild-aura" aria-hidden="true"></span>' +
+      '<span class="aild-ring aild-r1" aria-hidden="true"></span>' +
+      '<span class="aild-ring aild-r2" aria-hidden="true"></span>' +
+      '<span class="aild-shadow" aria-hidden="true"></span>' +
+      '<span class="aild-bob"><img class="aild-mascot" src="' + POSTER_URL + '" alt="" width="252" height="324" draggable="false"></span>' +
+      '<span class="aild-badge" aria-hidden="true">' + I_MIC + I_END + "</span>" +
       '<span class="aild-label" id="aildLabel" aria-live="polite">Talk to AI</span>' +
       "</button>" +
       '<button type="button" class="aild-chat" id="aildChat" aria-label="Chat with our AI assistant" aria-expanded="false" aria-controls="aildPanel">' +
@@ -181,7 +258,7 @@
       '<span class="aild-chat__t">Chat with us</span>' +
       "</button>" +
       '<section class="aild-panel" id="aildPanel" role="dialog" aria-label="' + TITLE + '">' +
-      '<header class="aild-head"><span class="aild-avatar">' + I_SPARK + "</span>" +
+      '<header class="aild-head"><span class="aild-avatar" aria-hidden="true"></span>' +
       '<div class="aild-head__t"><b>' + TITLE + "</b><span>Replies instantly</span></div>" +
       '<button type="button" class="aild-x" id="aildClose" aria-label="Close chat">' + I_X + "</button></header>" +
       '<div class="aild-text" data-ai-panel>' +
@@ -214,15 +291,69 @@
     this.label = this.root.querySelector("#aildLabel");
     this.chat = this.root.querySelector("#aildChat");
     this.panel = this.root.querySelector("#aildPanel");
+    this.mascot = this.root.querySelector(".aild-mascot");
     this.adapter = null;
     this.textChat = null;
     this._raf = null;
     this._errTimer = null;
 
+    this._initMascot();
     this._initVoice();
     this._initText();
     this._initHero();
   }
+
+  /* ---- mascot: instant still, then swap in the animated loop ---- */
+  Launchers.prototype._initMascot = function () {
+    var self = this;
+    var img = this.mascot;
+
+    img.addEventListener("error", function () {
+      // Still failed to load (wrong folder?) -- fall back to a plain orb.
+      self.voice.classList.add("aild-noimg");
+      console.error("[AILaunchers] mascot image not found at " + POSTER_URL +
+        " -- set data-mascot-base on the script tag or window.AI_MASCOT_BASE.");
+    });
+
+    var saveData = global.navigator && navigator.connection && navigator.connection.saveData;
+    if (REDUCED || saveData) return; // keep the still frame
+
+    function loadAnimated() {
+      var pre = new Image();
+      pre.onload = function () {
+        img.src = ANIM_URL; // frame 1 == the poster, so the swap is invisible
+      };
+      pre.src = ANIM_URL; // on error we simply stay on the still
+    }
+    if (document.readyState === "complete") setTimeout(loadAnimated, 300);
+    else global.addEventListener("load", function () { setTimeout(loadAnimated, 300); });
+
+    this._initLook();
+  };
+
+  /* He leans a little toward your cursor (desktop only). */
+  Launchers.prototype._initLook = function () {
+    if (COARSE) return;
+    var self = this;
+    var pending = null;
+    global.addEventListener("pointermove", function (e) {
+      pending = e;
+      if (self._lookRaf) return;
+      self._lookRaf = requestAnimationFrame(function () {
+        self._lookRaf = null;
+        var r = self.voice.getBoundingClientRect();
+        if (!r.width || self.voice.classList.contains("in-call")) return;
+        var dx = pending.clientX - (r.left + r.width / 2);
+        var k = Math.max(-1, Math.min(1, dx / 500));
+        self.voice.style.setProperty("--tx", (k * 4).toFixed(1) + "px");
+        self.voice.style.setProperty("--rot", (k * 5).toFixed(1) + "deg");
+      });
+    }, { passive: true });
+    document.addEventListener("mouseleave", function () {
+      self.voice.style.setProperty("--tx", "0px");
+      self.voice.style.setProperty("--rot", "0deg");
+    });
+  };
 
   Launchers.prototype._setLabel = function (t, err) {
     this.label.textContent = t;
@@ -234,7 +365,12 @@
     this.voice.classList.toggle("in-call", inCall);
     this.voice.setAttribute("aria-label", inCall ? "End call" : "Talk to our AI assistant");
     if (!inCall) this._setLabel("Talk to AI");
-    if (inCall) this._startTicker();
+    if (inCall) {
+      // stand up straight while he's on the call
+      this.voice.style.setProperty("--tx", "0px");
+      this.voice.style.setProperty("--rot", "0deg");
+      this._startTicker();
+    }
   };
 
   Launchers.prototype._startTicker = function () {
@@ -351,7 +487,7 @@
 
 
   /* --------------------------------------------------------------------
-   * Hide the vendor's green blob no matter what it's called or whether it
+   * Hide the vendor's own blob no matter what it's called or whether it
    * lives in a shadow root: any body-level fixed element (or "kd"/"icpaas"
    * named one / shadow host) sitting small in the bottom-right corner that
    * isn't ours gets display:none. KD's JS API keeps working.
