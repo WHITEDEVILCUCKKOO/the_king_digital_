@@ -1,8 +1,7 @@
 /**
- * Site-wide AI launchers -- the floating astronaut mascot.
+ * Site-wide AI launchers -- the floating robot mascot.
  *
- *   1. VOICE  -> the mascot himself (bottom-right). He floats, waves, and
- *      leans toward your cursor. One tap starts/ends the voice call; during a
+ *   1. VOICE  -> the mascot himself (bottom-right). He floats and waves. One tap starts/ends the voice call; during a
  *      call a glow + rings around him react to the live audio level.
  *   2. TEXT   -> a paper-white "Aa" keycap (sits just above the mascot) that
  *      opens a light messenger card, whose avatars use the mascot's face.
@@ -72,8 +71,8 @@
     ".aild-chat:hover .aild-chat__t,.aild-chat:focus-visible .aild-chat__t{opacity:1;transform:translateY(-50%);}",
     ".aild-voice.is-error .aild-label{color:#FFB4B4;}",
 
-    /* ============ VOICE: the floating astronaut ============ */
-    ".aild-voice{position:relative;width:112px;height:144px;padding:0;border:0;background:none;",
+    /* ============ VOICE: the floating robot king ============ */
+    ".aild-voice{position:relative;width:128px;height:130px;padding:0;border:0;background:none;",
     "cursor:pointer;display:block;border-radius:28px;-webkit-tap-highlight-color:transparent;",
     "animation:aild-enter .75s cubic-bezier(.2,1.5,.4,1) both;}",
     "@keyframes aild-enter{from{opacity:0;transform:translateY(28px) scale(.55);}to{opacity:1;transform:none;}}",
@@ -112,7 +111,7 @@
 
     /* bobbing wrapper + the mascot image */
     ".aild-bob{position:absolute;inset:0;transform-origin:50% 92%;animation:aild-bob 3.6s ease-in-out infinite;}",
-    "@keyframes aild-bob{0%,100%{transform:translateY(0) rotate(-1.6deg);}50%{transform:translateY(-10px) rotate(1.6deg);}}",
+    "@keyframes aild-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}",
     ".aild-mascot{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;",
     "-webkit-user-select:none;user-select:none;",
     "transform:translateX(var(--tx,0px)) rotate(var(--rot,0deg)) scale(calc(var(--sc,1) + var(--lvl,0) * .07));",
@@ -123,7 +122,7 @@
     ".aild-voice:active{--sc:.96;}",
 
     /* mic / stop badge on his shoulder -- tells people he's tappable for voice */
-    ".aild-badge{position:absolute;right:0;bottom:24px;width:32px;height:32px;border-radius:50%;",
+    ".aild-badge{position:absolute;right:6px;bottom:20px;width:32px;height:32px;border-radius:50%;",
     "background:#1B1A17;display:grid;place-items:center;border:2px solid #FFFCF6;",
     "box-shadow:0 4px 10px rgba(0,0,0,.28);transition:transform .15s ease,background .2s ease;}",
     ".aild-badge svg{grid-area:1/1;width:16px;height:16px;fill:#fff;}",
@@ -144,7 +143,7 @@
     ".aild-chat{position:relative;width:52px;height:52px;padding:0;cursor:pointer;display:flex;",
     "align-items:center;justify-content:center;gap:2px;background:#FFFCF6;color:#1B1A17;",
     "border:1.5px solid #1B1A17;border-bottom-width:5px;border-radius:14px;",
-    "font-size:19px;font-weight:800;letter-spacing:-.02em;margin-right:30px;",
+    "font-size:19px;font-weight:800;letter-spacing:-.02em;margin-right:38px;",
     "box-shadow:0 10px 20px rgba(60,40,10,.18);transition:transform .1s ease,border-bottom-width .1s ease;}",
     ".aild-chat:hover{transform:translateY(-2px);}",
     ".aild-chat:active{transform:translateY(3px);border-bottom-width:2px;}",
@@ -220,10 +219,10 @@
     ".aild-form button:disabled{opacity:.45;cursor:not-allowed;}",
 
     "@media (max-width:560px){#aild{right:6px;bottom:8px;}",
-    ".aild-voice{width:92px;height:118px;}.aild-aura{width:144px;height:144px;margin:-72px 0 0 -72px;}",
+    ".aild-voice{width:104px;height:105px;}.aild-aura{width:150px;height:150px;margin:-75px 0 0 -75px;}",
     ".aild-ring{width:76px;height:76px;margin:-38px 0 0 -38px;}",
     ".aild-badge{width:28px;height:28px;bottom:20px;}",
-    ".aild-chat{margin-right:20px;}",
+    ".aild-chat{margin-right:26px;}",
     ".aild-panel{right:0;bottom:calc(100% + 12px);width:calc(100vw - 24px);height:460px;max-height:calc(100vh - 230px);",
     "transform-origin:bottom right;}}",
 
@@ -249,7 +248,7 @@
       '<span class="aild-ring aild-r1" aria-hidden="true"></span>' +
       '<span class="aild-ring aild-r2" aria-hidden="true"></span>' +
       '<span class="aild-shadow" aria-hidden="true"></span>' +
-      '<span class="aild-bob"><img class="aild-mascot" src="' + POSTER_URL + '" alt="" width="252" height="324" draggable="false"></span>' +
+      '<span class="aild-bob"><img class="aild-mascot" src="' + POSTER_URL + '" alt="" width="400" height="403" draggable="false"></span>' +
       '<span class="aild-badge" aria-hidden="true">' + I_MIC + I_END + "</span>" +
       '<span class="aild-label" id="aildLabel" aria-live="polite">Talk to AI</span>' +
       "</button>" +
@@ -328,31 +327,6 @@
     if (document.readyState === "complete") setTimeout(loadAnimated, 300);
     else global.addEventListener("load", function () { setTimeout(loadAnimated, 300); });
 
-    this._initLook();
-  };
-
-  /* He leans a little toward your cursor (desktop only). */
-  Launchers.prototype._initLook = function () {
-    if (COARSE) return;
-    var self = this;
-    var pending = null;
-    global.addEventListener("pointermove", function (e) {
-      pending = e;
-      if (self._lookRaf) return;
-      self._lookRaf = requestAnimationFrame(function () {
-        self._lookRaf = null;
-        var r = self.voice.getBoundingClientRect();
-        if (!r.width || self.voice.classList.contains("in-call")) return;
-        var dx = pending.clientX - (r.left + r.width / 2);
-        var k = Math.max(-1, Math.min(1, dx / 500));
-        self.voice.style.setProperty("--tx", (k * 4).toFixed(1) + "px");
-        self.voice.style.setProperty("--rot", (k * 5).toFixed(1) + "deg");
-      });
-    }, { passive: true });
-    document.addEventListener("mouseleave", function () {
-      self.voice.style.setProperty("--tx", "0px");
-      self.voice.style.setProperty("--rot", "0deg");
-    });
   };
 
   Launchers.prototype._setLabel = function (t, err) {

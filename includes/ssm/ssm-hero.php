@@ -438,7 +438,13 @@
         height: 32px;
         border-radius: 50%;
         flex: 0 0 32px;
-        background: var(--smm-gradient);
+    }
+
+    .smm-social_avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
     }
 
     .smm-social_header div {
@@ -850,7 +856,11 @@
                 <div class="smm-phone_notch"></div>
                 <div class="smm-phone_screen">
                     <div class="smm-social_header">
-                        <div class="smm-social_avatar"></div>
+                        <div class="smm-social_avatar">
+                            <img
+                                src="assets/logo/king-digital-logo-2.png"
+                                alt="King Digital logo">
+                        </div>
                         <div>
                             <strong>King Digital</strong>
                             <span>Sponsored</span>
@@ -859,7 +869,7 @@
                     </div>
                     <div class="smm-social_image">
                         <img
-                            src="assets/images/ssm1.avif"
+                            src="assets/images/Social-Media-Growth-Poster.png"
                             alt="Social media marketing campaign">
                     </div>
                     <div class="smm-social_actions">
