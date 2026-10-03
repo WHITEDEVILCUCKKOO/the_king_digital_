@@ -336,19 +336,21 @@
 
     .ssm-portfolio_content-swipper-card:hover .ssm-portfolio_content-swipper-card-media {
         transform: translateY(-6px) scale(1.02);
-        /* box-shadow: 0 26px 60px rgba(124, 58, 237, .28); */
     }
 
+    /* FIX: video was opacity:0 — now visible, sits below the overlays */
     .ssm-portfolio_content-swipper-card-media video {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0;
+        opacity: 1;
+        z-index: 1;
+        pointer-events: none;
     }
 
-    /* mood backgrounds standing in for real reels until real footage is wired up */
+    /* mood backgrounds = fallback while video loads / if it fails */
     .ssm-portfolio_content-swipper-card--fashion .ssm-portfolio_content-swipper-card-media {
         background: linear-gradient(165deg, #F2A65A 0%, #E8628F 55%, #7C3AED 130%);
     }
@@ -372,10 +374,16 @@
     .ssm-portfolio_content-swipper-card-icon {
         position: absolute;
         inset: 0;
+        z-index: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: .5;
+    }
+
+    /* FIX: hide placeholder icon once a video is really playing */
+    .ssm-portfolio_content-swipper-card-media.has-video .ssm-portfolio_content-swipper-card-icon {
+        display: none;
     }
 
     .ssm-portfolio_content-swipper-card-icon svg {
@@ -469,7 +477,7 @@
         color: #fff;
         font-size: 11px;
         font-weight: 600;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, .55);
     }
 
     .ssm-portfolio_content-swipper-card-stat svg {
@@ -627,9 +635,9 @@
         </div>
 
         <div class="ssm-portfolio_content-swipper">
+            <!-- Videos: spaces are URL-encoded (%20). Renaming files to e.g. lennore.mp4 is even safer. -->
             <div class="ssm-portfolio_content-swipper-card ssm-portfolio_content-swipper-card--fashion">
                 <div class="ssm-portfolio_content-swipper-card-media">
-                    <video src="#"></video>
                     <div class="ssm-portfolio_content-swipper-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <circle cx="8" cy="13" r="3.2" />
@@ -637,6 +645,7 @@
                             <path d="M11.2 12.5h1.6M4.5 12.5 2 10M19.5 12.5 22 10" stroke-linecap="round" />
                         </svg>
                     </div>
+                    <video src="assets/videos/reels/Lennore%20-%20Minerdia%20Studio%20(240p,%20h264).mp4" autoplay muted loop playsinline preload="auto"></video>
                     <div class="ssm-portfolio_content-swipper-card-top">
                         <span class="ssm-portfolio_content-swipper-card-avatar"></span>
                         <span class="ssm-portfolio_content-swipper-card-lines"><i></i><i></i></span>
@@ -659,13 +668,13 @@
 
             <div class="ssm-portfolio_content-swipper-card ssm-portfolio_content-swipper-card--skincare">
                 <div class="ssm-portfolio_content-swipper-card-media">
-                    <video src="#"></video>
                     <div class="ssm-portfolio_content-swipper-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <rect x="9" y="8" width="6" height="13" rx="1.4" />
                             <path d="M10.5 8V5.6a1.5 1.5 0 0 1 1.5-1.5h0a1.5 1.5 0 0 1 1.5 1.5V8" stroke-linecap="round" />
                         </svg>
                     </div>
+                    <video src="assets/videos/reels/M3M%20-%20Minerdia%20Studio%20(240p,%20h264).mp4" autoplay muted loop playsinline preload="auto"></video>
                     <div class="ssm-portfolio_content-swipper-card-top">
                         <span class="ssm-portfolio_content-swipper-card-avatar"></span>
                         <span class="ssm-portfolio_content-swipper-card-lines"><i></i><i></i></span>
@@ -694,13 +703,13 @@
 
             <div class="ssm-portfolio_content-swipper-card ssm-portfolio_content-swipper-card--food">
                 <div class="ssm-portfolio_content-swipper-card-media">
-                    <video src="#"></video>
                     <div class="ssm-portfolio_content-swipper-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <circle cx="12" cy="12" r="8" />
                             <circle cx="12" cy="12" r="3.2" />
                         </svg>
                     </div>
+                    <video src="assets/videos/reels/vidssave.com%20Alpha%20Auto%201%20720%20240P.mp4" autoplay muted loop playsinline preload="auto"></video>
                     <div class="ssm-portfolio_content-swipper-card-top">
                         <span class="ssm-portfolio_content-swipper-card-avatar"></span>
                         <span class="ssm-portfolio_content-swipper-card-lines"><i></i><i></i></span>
@@ -723,12 +732,12 @@
 
             <div class="ssm-portfolio_content-swipper-card ssm-portfolio_content-swipper-card--sneaker">
                 <div class="ssm-portfolio_content-swipper-card-media">
-                    <video src="#"></video>
                     <div class="ssm-portfolio_content-swipper-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <path d="M3 16.5c0-1.2.9-1.9 1.8-2.4L9 12c.6-.3 1-.9 1-1.6V9c1.7 1.9 4.1 3 6.7 3H20a2 2 0 0 1 2 2v.5c0 1.1-.9 2-2 2H4a1 1 0 0 1-1-1z" />
                         </svg>
                     </div>
+                    <video src="assets/videos/reels/M3M%202%20-%20Minerdia%20Studio%20(240p,%20h264).mp4" autoplay muted loop playsinline preload="auto"></video>
                     <div class="ssm-portfolio_content-swipper-card-top">
                         <span class="ssm-portfolio_content-swipper-card-avatar"></span>
                         <span class="ssm-portfolio_content-swipper-card-lines"><i></i><i></i></span>
@@ -737,7 +746,7 @@
                     <div class="ssm-portfolio_content-swipper-card-tag">NEW<br>ARRIVAL</div>
                     <div class="ssm-portfolio_content-swipper-card-shop">Shop Now</div>
                     <div class="ssm-portfolio_content-swipper-card-bottom">
-                        <span class="ssm-portfolio_content-swipper-card-stat" style="color:var(--smm-primary-dark)">
+                        <span class="ssm-portfolio_content-swipper-card-stat">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
@@ -753,13 +762,13 @@
 
             <div class="ssm-portfolio_content-swipper-card ssm-portfolio_content-swipper-card--portrait">
                 <div class="ssm-portfolio_content-swipper-card-media">
-                    <video src="#"></video>
                     <div class="ssm-portfolio_content-swipper-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <circle cx="12" cy="8.5" r="3.2" />
                             <path d="M5 20c0-3.6 3.1-6.5 7-6.5s7 2.9 7 6.5" stroke-linecap="round" />
                         </svg>
                     </div>
+                    <video src="assets/videos/reels/vidssave.com%20Alpha%20Auto%202%20240P.mp4" autoplay muted loop playsinline preload="auto"></video>
                     <div class="ssm-portfolio_content-swipper-card-top">
                         <span class="ssm-portfolio_content-swipper-card-avatar"></span>
                         <span class="ssm-portfolio_content-swipper-card-lines"><i></i><i></i></span>
@@ -795,6 +804,57 @@
         var GAP = 20;
         var rafId = null;
 
+        /* ---------- video loading (FIX) ---------- */
+        cards.forEach(function(card) {
+            var media = card.querySelector('.ssm-portfolio_content-swipper-card-media');
+            var video = media && media.querySelector('video');
+            if (!video) return;
+
+            // set as properties too — some browsers ignore the attributes for autoplay
+            video.muted = true;
+            video.defaultMuted = true;
+            video.loop = true;
+            video.playsInline = true;
+
+            video.addEventListener('playing', function() {
+                media.classList.add('has-video');
+            });
+
+            video.addEventListener('error', function() {
+                video.style.display = 'none'; // keep the gradient + icon fallback
+                console.warn('Video failed to load:', video.currentSrc || video.src);
+            });
+
+            function tryPlay() {
+                var p = video.play();
+                if (p && p.catch) p.catch(function() {});
+            }
+
+            video.addEventListener('loadeddata', tryPlay);
+            tryPlay();
+        });
+
+        // if the browser blocked autoplay, start everything on the first user interaction
+        function resumeAll() {
+            cards.forEach(function(card) {
+                var v = card.querySelector('video');
+                if (v && v.paused) {
+                    var p = v.play();
+                    if (p && p.catch) p.catch(function() {});
+                }
+            });
+            document.removeEventListener('pointerdown', resumeAll);
+            document.removeEventListener('scroll', resumeAll);
+        }
+        document.addEventListener('pointerdown', resumeAll, {
+            once: true
+        });
+        document.addEventListener('scroll', resumeAll, {
+            once: true,
+            passive: true
+        });
+
+        /* ---------- swiper ---------- */
         function step() {
             var w = cards[0].getBoundingClientRect().width + GAP;
             var perView = Math.max(1, Math.round(track.clientWidth / w));
