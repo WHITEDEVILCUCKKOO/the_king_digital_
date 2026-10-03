@@ -62,10 +62,10 @@
                         <div class="has-dd">
                             <a href="#" class="botom_link_78">Services</a>
                             <div class="dd">
-                                <a href="service-bluk-sms.php">
+                                <a href="bulk-sms-company-in-delhi.php">
                                     <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i  style="font-size: 18px;"  class="fas fa-comment-sms"></i></span>Bulk SMS
                                 </a>
-                                <a href="service-whatsAppApi.php">
+                                <a href="whatsapp-marketing-company-in-delhi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i  style="font-size: 18px;"  class="fab fa-whatsapp"></i></span>WhatsApp API
                                 </a>
                                 <a href="aggregator_platform.php">
@@ -78,29 +78,29 @@
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i  style="font-size: 18px;"  class="fas fa-chart-line"></i></span>SEO Services
                                 </a>
                                 <!-- <div class="dd-sep"></div> -->
-                                <a href="rcs-service.php">
+                                <a href="RCS-messaging-service-provider-in-delhi.php">
                                     <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i  style="font-size: 18px;"  class="fa-solid fa-mobile-screen-button"></i></span>RCS Service
                                 </a>
                                 <a href="service-ivr.php">
                                     <span class="dd-icon" style="background:#FEF3C7;color:#D97706"><i  style="font-size: 18px;"  class="fas fa-phone-volume"></i></span>IVR & Voice
                                 </a>
-                                <a href="ai-voice.php">
+                                <a href="ai-voice-agent-in-delhi.php">
                                     <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fa-solid fa-robot"></i></span>Ai Voice
                                 </a>
                                 <!-- <a href="/email-marketing-company-india.html">
                                     <span class="dd-icon" style="background:#F5F3FF;color:#7C3AED"><i  style="font-size: 18px;"  class="fas fa-envelope-open"></i></span>Email Marketing
                                 </a> -->
-                                <a href="hosting-cloud.php">
+                                <a href="cloud-hosting-provider.php">
                                     <span class="dd-icon" style="background:#F0FDF4;color:#16A34A"><i  style="font-size: 18px;"  class="fas fa-server"></i></span>Hosting & Cloud
                                 </a>
-                                <a href="video-audio.php">
+                                <a href="video-production-company-in-delhi.php">
                                     <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fas fa-video"></i></span>Video Production
                                 </a>
 
                                 <a href="app_development.php">
                                     <span class="dd-icon" style="background: #f0eed6;color: #e6ad13"><i  style="font-size: 18px;"  class="fa-solid fa-code"></i></span>App Development
                                 </a>
-                                <a href="podcast-studio.php">
+                                <a href="podcast-studio-in-delhi.php">
                                     <span class="dd-icon" style="background: #f1f2ff;color: #1d2ae1"><i  style="font-size: 18px;"  class="fa-solid fa-podcast"></i></span>
                                     Podcast Studio
                                 </a>
@@ -108,7 +108,7 @@
                                     <span class="dd-icon" style="background: #f1fff1;color: #1de147"><i  style="font-size: 18px;"  class="fa-brands fa-threads"></i></span>
                                     Social Media
                                 </a>
-                                <a href="miss-call-alert.php">
+                                <a href="missedcall-alert-provider.php">
                                     <span class="dd-icon" style="background: #FFF1F2;color: #E11D48"><i  style="font-size: 18px;"  class="fa-brands fa-viber"></i></span>
                                     Missed Call Alert
                                 </a>
@@ -126,7 +126,7 @@
                                 <a href="omni.php">
                                     <span class="dd-icon" style="background: #e9ffe6;color: #23a811"><i  style="font-size: 18px;"  class="fa-solid fa-puzzle-piece"></i></span>Omni API
                                 </a>
-                                <!-- <a href="service-whatsAppApi.php">
+                                <!-- <a href="whatsapp-marketing-company-in-delhi.php">
                                     <span class="dd-icon" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></span>WhatsApp API
                                 </a>
                                 <a href="aggregator_platform.php">
@@ -139,13 +139,13 @@
                                     <span class="dd-icon" style="background:#EFF6FF;color:#2563EB"><i class="fas fa-chart-line"></i></span>SEO Services
                                 </a> -->
                                 <!-- <div class="dd-sep"></div> -->
-                                <!-- <a href="rcs-service.php">
+                                <!-- <a href="RCS-messaging-service-provider-in-delhi.php">
                                     <span class="dd-icon" style="background:#FFF0E6;color:#F97316"><i class="fa-solid fa-mobile-screen-button"></i></span>RCS Service
                                 </a>
                                 <a href="service-ivr.php">
                                     <span class="dd-icon" style="background:#FEF3C7;color:#D97706"><i class="fas fa-phone-volume"></i></span>IVR & Voice
                                 </a>
-                                <a href="ai-voice.php">
+                                <a href="ai-voice-agent-in-delhi.php">
                                     <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i class="fa-solid fa-robot"></i></span>Ai Voice
                                 </a> -->
                                 <!-- <a href="/email-marketing-company-india.html">
@@ -168,18 +168,17 @@
                         
                         <!-- integration links -->
                         <div class="has-dd_about">
-                               <a href="#" class="botom_link_78">About</a>
-                            <!-- <a href="#" class="botom_link_78">Integration</a> -->
+                               <a href="about.php" class="botom_link_78">About</a>
                              
                             <div class="dd-about">
-                                <a href="#">
-                                    <span class="dd-icon" style="background: #e9ffe6;color: #23a811"><i  style="font-size: 18px;"  class="fa-solid fa-puzzle-piece"></i></span>Link 1
+                                <a href="about.php">
+                                    <span class="dd-icon" style="background: #e9ffe6;color: #23a811"><i  style="font-size: 18px;"  class="fa-solid fa-exclamation"></i></span>About King Digital
                                 </a>
-                                <a href="#">
-                                    <span class="dd-icon" style="background: #f0f6fd;color: #1658a3"><i style="font-size: 18px;" class="fa-solid fa-circle-info"></i></span>Link 2
+                                <a href="about-team.php">
+                                    <span class="dd-icon" style="background: #f0f6fd;color: #1658a3"><i style="font-size: 18px;" class="fa-solid fa-people-group"></i></span>Our Team
                                 </a>
-                                <a href="#">
-                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fa-solid fa-circle-question"></i></span>Link 3
+                                <a href="franchais.php">
+                                    <span class="dd-icon" style="background:#FFF1F2;color:#E11D48"><i  style="font-size: 18px;"  class="fa-solid fa-store"></i></span>Franchise
                                 </a>
                             </div>
                         </div>
@@ -226,19 +225,19 @@
 
 
                 <div class="mob-nav-sep">Services</div>
-                <a href="service-bluk-sms.php">Bulk SMS</a>
-                <a href="service-whatsAppApi.php">WhatsApp Business API</a>
+                <a href="bulk-sms-company-in-delhi.php">Bulk SMS</a>
+                <a href="whatsapp-marketing-company-in-delhi.php">WhatsApp Business API</a>
                 <a href="web-design.php">Website Design</a>
                 <a href="seo-service.php">SEO Services</a>
                 <a href="aggregator_platform.php">Aggregator Platform</a>
                 <a href="service-ivr.php">IVR & Voice</a>
                 <!-- <a href="/email-marketing-company-india.html">Email Marketing</a> -->
-                <a href="hosting-cloud.php">Hosting & Cloud</a>
-                <a href="video-audio.php">Video Production</a>
+                <a href="cloud-hosting-provider.php">Hosting & Cloud</a>
+                <a href="video-production-company-in-delhi.php">Video Production</a>
                 <a href="app_development.php">App Development</a>
-                <a href="podcast-studio.php">Podcast Studio</a>
+                <a href="podcast-studio-in-delhi.php">Podcast Studio</a>
                 <a href="social-media-marketing.php">Social Media</a>
-                <a href="miss-call-alert.php">Missed Call Alert</a>
+                <a href="missedcall-alert-provider.php">Missed Call Alert</a>
                 <a href="ai_service.php">Ai Services</a>
                 <div class="mob-nav-sep">Brands</div>
                 <a href="https://www.staticking.com/">StaticKing</a>

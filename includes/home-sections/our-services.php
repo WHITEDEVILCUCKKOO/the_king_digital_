@@ -462,22 +462,22 @@
     </div>
     <div class="svc-grid">
 
-      <div class="svc-card reveal" onclick="window.location.href='service-bluk-sms.php'">
-        <a href="service-bluk-sms.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+      <div class="svc-card reveal" onclick="window.location.href='bulk-sms-company-in-delhi.php'">
+        <a href="bulk-sms-company-in-delhi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FFF0E6;color:#F97316"><i class="fas fa-comment-sms"></i></div>
         <div class="svc-name">Bulk SMS Services</div>
         <div class="svc-desc">DLT-compliant promotional, transactional, OTP, and election SMS. Reach lakhs of customers in seconds with 99%+ delivery rates.</div>
         <div class="svc-tags"><span class="stag">Promotional</span><span class="stag">Transactional</span><span class="stag">OTP</span><span class="stag">Election</span></div>
       </div>
-      <div class="svc-card reveal" onclick="window.location.href='service-whatsAppApi.php'">
-        <a href="service-whatsAppApi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+      <div class="svc-card reveal" onclick="window.location.href='whatsapp-marketing-company-in-delhi.php'">
+        <a href="whatsapp-marketing-company-in-delhi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#ECFDF5;color:#059669"><i class="fab fa-whatsapp"></i></div>
         <div class="svc-name">WhatsApp Business API</div>
         <div class="svc-desc">Official Meta-approved WhatsApp Business API. Bulk campaigns, chatbots, automated workflows, and real-time analytics.</div>
         <div class="svc-tags"><span class="stag">WABA Signup</span><span class="stag">Chatbot</span><span class="stag">Automation</span></div>
       </div>
-      <div class="svc-card reveal" onclick="window.location.href='rcs-service.php'">
-        <a href="rcs-service.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+      <div class="svc-card reveal" onclick="window.location.href='RCS-messaging-service-provider-in-delhi.php'">
+        <a href="RCS-messaging-service-provider-in-delhi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#F5F3FF;color:#7C3AED"><i class="fas fa-envelope-open-text"></i></div>
         <div class="svc-name">RCS Services</div>
         <div class="svc-desc">High-deliverability email campaigns with beautiful templates, segmentation, automation drips, and real-time open/click analytics.</div>
@@ -498,15 +498,15 @@
         <div class="svc-desc">Rank on page 1 of Google. Full SEO, PPC, Google Ads, social media marketing (SMO), and ORM services for sustained online growth.</div>
         <div class="svc-tags"><span class="stag">SEO</span><span class="stag">PPC / SEM</span><span class="stag">SMO</span><span class="stag">ORM</span></div>
       </div>
-      <div class="svc-card reveal" onclick="window.location.href='video-audio.php'">
-        <a href="video-audio.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+      <div class="svc-card reveal" onclick="window.location.href='video-production-company-in-delhi.php'">
+        <a href="video-production-company-in-delhi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#FFF1F2;color:#E11D48"><i class="fas fa-video"></i></div>
         <div class="svc-name">Video Production</div>
         <div class="svc-desc">Corporate videos, explainer animations, professional voice-overs in Hindi & English, podcast production, and audio branding.</div>
         <div class="svc-tags"><span class="stag">Video</span><span class="stag">Voice Over</span><span class="stag">Podcast</span><span class="stag">Audio</span></div>
       </div>
-      <div class="svc-card reveal" onclick="window.location.href='podcast-studio.php'">
-        <a href="podcast-studio.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
+      <div class="svc-card reveal" onclick="window.location.href='podcast-studio-in-delhi.php'">
+        <a href="podcast-studio-in-delhi.php" class="svc-link"><i class="fas fa-arrow-right"></i></a>
         <div class="svc-ico" style="background:#F0FDF4;color:#16A34A"><i class="fa-solid fa-podcast"></i></div>
         <div class="svc-name">Podcast Studio </div>
         <div class="svc-desc">Professional podcast studio solutions with high-quality audio, video recording, and reliable cloud infrastructure for seamless content creation.</div>
