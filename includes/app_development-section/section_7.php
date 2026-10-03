@@ -190,7 +190,7 @@
                         </span>
                     </div>
 
-                    <a href="/contact-us/" class="kdtech-cta">
+                    <a href="contact.php" class="kdtech-cta">
                         Discuss Your Project
 
                         <span>

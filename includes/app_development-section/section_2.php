@@ -81,7 +81,7 @@ PREMIUM ORANGE + NAVY BLUE
                     </p>
 
                     <a
-                        href="/custom-app-development/"
+                        href="contact.php"
                         class="kd-card-btn"
                     >
                         MORE
@@ -125,7 +125,7 @@ PREMIUM ORANGE + NAVY BLUE
                     </p>
 
                     <a
-                        href="/app-maintenance-support/"
+                        href="contact.php"
                         class="kd-card-btn"
                     >
                         MORE
@@ -169,7 +169,7 @@ PREMIUM ORANGE + NAVY BLUE
                     </p>
 
                     <a
-                        href="/cross-platform-app-development/"
+                        href="contact.php"
                         class="kd-card-btn"
                     >
                         MORE

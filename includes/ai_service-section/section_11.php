@@ -2073,7 +2073,7 @@
                     <!-- CTA BUTTON -->
 
                     <a
-                        href="/enquiry.php"
+                        href="contact.php"
                         class="kdfc-cta-btn">
 
                         Discuss Your AI Video
